@@ -2,6 +2,7 @@
           
           
         </div>
+        
         <div class="hero_main_slider_wrap u-position-relative">
           <div class="hero_main_slider_offset">
             <div class="hero_main_slider_element swiper">
@@ -21,7 +22,10 @@
                           </div>
                         </div>
                       </div>
-                      {% render 'heading', test: section.settings.text_test %}
+                      {% render 'heading', variant: section.settings.heading_varinat, heading: section.settings.heading, tag: section.settings.heading_tag %}
+                      <div data-number="20" data-wf--typography-heading--variant="h2" class="u-heading w-variant-433d40c6-c261-f13f-c899-61d2cadf150f w-richtext">
+                        <h2>Lorem ipsum dolor sit amet elit</h2>
+                      </div>
                       <div class="u-button-wrapper">
                         <div class="u-display-contents">
                           <div data-wf--button-main--variant="primary" data-button=" " data-trigger="hover focus" class="button_main_wrap">
@@ -46,75 +50,6 @@
               <div class="hero_main_slider_bullet_item is-active"></div>
             </div>
           </div>
-        </div>
-        <div class="u-embed-js w-embed w-script">
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
-          <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-          <script>
-(function() {
-  const scriptParent = document.currentScript.parentElement.parentElement;
-  const component = scriptParent.closest("[data-slider='component']") || scriptParent;
-  document.addEventListener("DOMContentLoaded", () => {
-    const swiperElement = component.querySelector(".slider_element");
-    const swiperWrapper = component.querySelector(".slider_list");
-    if (!swiperElement || !swiperWrapper) return;
-    function flattenDisplayContents(slot) {
-      if (!slot) return;
-      let child = slot.firstElementChild;
-      while (child && child.classList.contains("u-display-contents")) {
-        while (child.firstChild) {
-          slot.insertBefore(child.firstChild, child);
-        }
-        slot.removeChild(child);
-        child = slot.firstElementChild;
-      }
-    }
-    flattenDisplayContents(swiperWrapper);
-    function removeCMSList(slot) {
-      const dynList = Array.from(slot.children).find((child) => child.classList.contains("w-dyn-list"));
-      if (!dynList) return;
-      const nestedItems = dynList?.querySelector(".w-dyn-items")?.children;
-      if (!nestedItems) return;
-      const staticWrapper = [...slot.children];
-      [...nestedItems].forEach(el => { const c = [...el.children].find(c => !c.classList.contains('w-condition-invisible')); c && slot.appendChild(c); });
-      staticWrapper.forEach((el) => el.remove());
-    }
-    removeCMSList(swiperWrapper);
-    [...swiperWrapper.children].forEach((el) => el.classList.add("swiper-slide"));
-    new Swiper(swiperElement, {
-      slidesPerView: "auto",
-      followFinger: true,
-      loopAdditionalSlides: 10,
-      freeMode: false,
-      slideToClickedSlide: false,
-      centeredSlides: false,
-      autoHeight: false,
-      speed: 600,
-      mousewheel: {
-        enabled: true,
-        forceToAxis: true,
-      },
-      keyboard: {
-        enabled: true,
-        onlyInViewport: true,
-      },
-      navigation: {
-        nextEl: component.querySelector("[data-slider='next']"),
-        prevEl: component.querySelector("[data-slider='previous']"),
-      },
-      pagination: {
-        el: component.querySelector(".slider_bullet_list"),
-        bulletActiveClass: "is-active",
-        bulletClass: "slider_bullet_item",
-        bulletElement: "button",
-        clickable: true,
-      },
-      slideActiveClass: "is-active",
-      slideDuplicateActiveClass: "is-active",
-    });
-  });
-})();
-</script>
         </div> {% schema %} {
     "tag": "section",
     "name": "Hero Main",
@@ -132,6 +67,76 @@
         {
             "type": "header",
             "content": "Content"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+            "type": "select",
+            "id": "heading_tag",
+            "label": "Heading Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "select",
+            "id": "heading_variant",
+            "label": "Heading Variant",
+            "options": [
+                {
+                    "value": "u-text-style-h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "u-text-style-h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "u-text-style-h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "u-text-style-h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "u-text-style-h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "u-text-style-h6",
+                    "label": "H6"
+                }
+            ],
+            "default": "u-text-style-h2"
         }
     ],
     "presets": [
