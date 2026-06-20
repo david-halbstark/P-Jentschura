@@ -4,7 +4,7 @@
   assign heading_variant = variant | default: 'u-text-style-h2'
 %}
                         {% if heading_text != blank %}
-                        <{{ heading_tag="" }}="" class="{{ heading_variant }}">
+                        <{{heading_tag}} class="{{ heading_variant }}">
                           {{ heading_text }}
-                        <!--{{-->
+                        <!--{{heading_tag}}-->
                         {% endif %}
