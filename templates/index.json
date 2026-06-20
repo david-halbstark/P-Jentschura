@@ -13,9 +13,9 @@
       "type": "hero_main",
       "settings": {
         "section_id": "",
-        "heading": "Heading",
-        "heading_tag": "h2",
-        "heading_variant": "u-text-style-h2"
+        "heading": "Headingsdasda",
+        "heading_tag": "h4",
+        "heading_variant": "u-text-style-h1"
       }
     }
   },
