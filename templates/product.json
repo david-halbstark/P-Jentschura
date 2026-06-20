@@ -1,0 +1,12 @@
+{
+    "sections": {
+        "placeholder": {
+            "type": "placeholder"
+        }
+    },
+    "layout": "theme",
+    "wrapper": "main#main.page_main",
+    "order": [
+        "placeholder"
+    ]
+}
