@@ -1,0 +1,139 @@
+<div class="hero_main_slider_wrap u-position-relative">
+          <div class="hero_main_slider_offset">
+            <div class="hero_main_slider_element swiper">
+              <div class="hero_main_slider_list swiper-wrapper">
+                <div class="hero_main_slide_wrap swiper-slide">
+                  <div class="hero_main_slide_background u-cover-absolute"><img src="{{ 'lumos-v2.webp' | asset_url }}" loading="lazy" sizes="(max-width: 1920px) 100vw, 1920px" srcset="{{ 'lumos-v2-p-500.webp' | asset_url }} 500w, {{ 'lumos-v2-p-800.webp' | asset_url }} 800w, {{ 'lumos-v2-p-1080.webp' | asset_url }} 1080w, {{ 'lumos-v2-p-1600.webp' | asset_url }} 1600w, {{ 'lumos-v2.webp' | asset_url }} 1920w" alt="" class="hero_main_slide_image u-cover-absolute">
+                    <div class="hero_main_slide_overlay u-cover-absolute"></div>
+                  </div>
+                  <div class="hero_main_slide_contain u-container">
+                    <div data-wf--spacer--variant="main" class="u-section-spacer w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490 u-ignore-trim"></div>
+                    <div class="hero_main_slide_content">
+                      <div class="u-eyebrow-wrapper">
+                        <div class="u-eyebrow-layout">
+                          <div class="u-eyebrow-marker"></div>
+                          <div class="u-eyebrow-text u-text-style-main w-richtext">
+                            <p>Eyebrow Text Here</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div data-number="20" data-wf--typography-heading--variant="h2" class="u-heading w-variant-433d40c6-c261-f13f-c899-61d2cadf150f w-richtext">
+                        <h2>Lorem ipsum dolor sit amet elit</h2>
+                      </div>
+                      <div class="u-button-wrapper">
+                        <div class="u-display-contents">
+                          <div data-wf--button-main--variant="primary" data-button=" " data-trigger="hover focus" class="button_main_wrap">
+                            <div data-wf--clickable--variant="focus-ring-outside" class="clickable_wrap u-cover-absolute"><button type="button" aria-label="Button Text" class="clickable_btn"></button></div>
+                            <div class="button_main_element">
+                              <div aria-hidden="true" class="button_main_text u-text-style-main">Button Text</div>
+                              <div class="button_main_icon u-hide-if-empty"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div data-wf--spacer--variant="main" class="u-section-spacer w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490 u-ignore-trim"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero_main_slider_controls u-container">
+            <div class="hero_main_slider_bullet_list">
+              <div class="hero_main_slider_bullet_item"></div>
+              <div class="hero_main_slider_bullet_item is-active"></div>
+            </div>
+          </div>
+        </div>
+        <div class="u-embed-js w-embed w-script">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+          <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+          <script>
+(function() {
+  const scriptParent = document.currentScript.parentElement.parentElement;
+  const component = scriptParent.closest("[data-slider='component']") || scriptParent;
+  document.addEventListener("DOMContentLoaded", () => {
+    const swiperElement = component.querySelector(".slider_element");
+    const swiperWrapper = component.querySelector(".slider_list");
+    if (!swiperElement || !swiperWrapper) return;
+    function flattenDisplayContents(slot) {
+      if (!slot) return;
+      let child = slot.firstElementChild;
+      while (child && child.classList.contains("u-display-contents")) {
+        while (child.firstChild) {
+          slot.insertBefore(child.firstChild, child);
+        }
+        slot.removeChild(child);
+        child = slot.firstElementChild;
+      }
+    }
+    flattenDisplayContents(swiperWrapper);
+    function removeCMSList(slot) {
+      const dynList = Array.from(slot.children).find((child) => child.classList.contains("w-dyn-list"));
+      if (!dynList) return;
+      const nestedItems = dynList?.querySelector(".w-dyn-items")?.children;
+      if (!nestedItems) return;
+      const staticWrapper = [...slot.children];
+      [...nestedItems].forEach(el => { const c = [...el.children].find(c => !c.classList.contains('w-condition-invisible')); c && slot.appendChild(c); });
+      staticWrapper.forEach((el) => el.remove());
+    }
+    removeCMSList(swiperWrapper);
+    [...swiperWrapper.children].forEach((el) => el.classList.add("swiper-slide"));
+    new Swiper(swiperElement, {
+      slidesPerView: "auto",
+      followFinger: true,
+      loopAdditionalSlides: 10,
+      freeMode: false,
+      slideToClickedSlide: false,
+      centeredSlides: false,
+      autoHeight: false,
+      speed: 600,
+      mousewheel: {
+        enabled: true,
+        forceToAxis: true,
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+      },
+      navigation: {
+        nextEl: component.querySelector("[data-slider='next']"),
+        prevEl: component.querySelector("[data-slider='previous']"),
+      },
+      pagination: {
+        el: component.querySelector(".slider_bullet_list"),
+        bulletActiveClass: "is-active",
+        bulletClass: "slider_bullet_item",
+        bulletElement: "button",
+        clickable: true,
+      },
+      slideActiveClass: "is-active",
+      slideDuplicateActiveClass: "is-active",
+    });
+  });
+})();
+</script>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Hero Main",
+    "class": "hero_main_wrap u-section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Section"
+        },
+        {
+            "type": "text",
+            "id": "id",
+            "label": "ID",
+            "default": ""
+        }
+    ],
+    "presets": [
+        {
+            "name": "Hero Main",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}
