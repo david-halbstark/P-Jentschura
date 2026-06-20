@@ -1,0 +1,52 @@
+<div li-block="Form" li-block:category="CTA" li-block:tag="" class="u-display-contents" style="">
+                    
+                      
+                    <div class="u-display-contents">
+                        <div class="form_component">
+                          <div class="form_wrap w-form">
+                            {% form 'contact', redirect, class: 'form_element' %}
+<div li-cf-theme-blocks="" class="u-display-contents">
+{% content_for 'blocks' %}
+</div>
+                            {% endform %}
+                            <div class="form_success_wrap w-form-done">
+                              <div class="form_success_text">Thank you! Your submission has been received!</div>
+                            </div>
+                            <div class="form_error_wrap w-form-fail">
+                              <div class="form_error_text">Oops! Something went wrong while submitting the form.</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    
+                    
+                </div> {% schema %} {
+    "name": "Form",
+    "blocks": [
+        {
+            "type": "fieldset"
+        },
+        {
+            "type": "text-input"
+        },
+        {
+            "type": "@app"
+        }
+    ],
+    "settings": [],
+    "presets": [
+        {
+            "name": "Form",
+            "category": "CTA",
+            "blocks": [
+                {
+                    "type": "fieldset"
+                },
+                {
+                    "type": "text-input"
+                }
+            ]
+        }
+    ],
+    "tag": null
+} {% endschema %}

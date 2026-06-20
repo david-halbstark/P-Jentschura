@@ -1,0 +1,34 @@
+<div li-block="Eyebrow" li-block:category="Content" li-block:tag="" class="u-display-contents" style="">
+                    
+                      
+                    <div class="u-display-contents">
+                        <div class="u-eyebrow-wrapper">
+                          <div class="u-eyebrow-layout">
+                            <div class="u-eyebrow-marker"></div>
+                            <div class="u-eyebrow-text u-text-style-main w-richtext">
+{{ block.settings.text_eyebrow_heading }}
+</div>
+                          </div>
+                        </div>
+                      </div>
+                    
+                    
+                </div> {% schema %} {
+    "name": "Eyebrow",
+    "settings": [
+        {
+            "id": "text_eyebrow_heading",
+            "type": "text",
+            "label": "Eyebrow Heading",
+            "default": "\n                              <p>Eyebrow Text Here<\/p>\n                            "
+        }
+    ],
+    "presets": [
+        {
+            "name": "Eyebrow",
+            "category": "Content",
+            "blocks": []
+        }
+    ],
+    "tag": null
+} {% endschema %}
