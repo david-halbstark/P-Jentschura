@@ -1,12 +1,27 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "hero_main": {
-            "type": "hero_main"
-        }
-    },
-    "layout": "theme",
-    "wrapper": "main#main.page_main",
-    "order": [
-        "hero_main"
-    ]
+  "sections": {
+    "hero_main": {
+      "type": "hero_main",
+      "settings": {
+        "section_id": "",
+        "heading": "Heading",
+        "heading_tag": "h2",
+        "heading_variant": "u-text-style-h2"
+      }
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main#main.page_main",
+  "order": [
+    "hero_main"
+  ]
 }
