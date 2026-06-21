@@ -11,14 +11,54 @@
   "sections": {
     "hero_main": {
       "type": "hero_main",
+      "blocks": {
+        "slide_348PRB": {
+          "type": "slide",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet elit",
+            "heading_tag": "h2",
+            "heading_variant": "u-text-style-h2",
+            "heading_max_width": 20,
+            "heading_visually_hidden": false,
+            "heading_id": "",
+            "eyebrow": "Eyebrow Text Here",
+            "eyebrow_variant": "u-eyebrow-main"
+          }
+        },
+        "slide_XQ98CM": {
+          "type": "slide",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet elit",
+            "heading_tag": "h2",
+            "heading_variant": "u-text-style-h2",
+            "heading_max_width": 20,
+            "heading_visually_hidden": false,
+            "heading_id": "",
+            "eyebrow": "Eyebrow Text Here",
+            "eyebrow_variant": "u-eyebrow-main"
+          }
+        },
+        "slide_qw6faa": {
+          "type": "slide",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet elit",
+            "heading_tag": "h2",
+            "heading_variant": "u-text-style-h2",
+            "heading_max_width": 20,
+            "heading_visually_hidden": false,
+            "heading_id": "",
+            "eyebrow": "Eyebrow Text Here",
+            "eyebrow_variant": "u-eyebrow-main"
+          }
+        }
+      },
+      "block_order": [
+        "slide_348PRB",
+        "slide_XQ98CM",
+        "slide_qw6faa"
+      ],
       "settings": {
-        "section_id": "",
-        "heading": "Heading",
-        "heading_tag": "h3",
-        "heading_variant": "u-text-style-h2",
-        "heading_max_width": 20,
-        "heading_visually_hidden": false,
-        "heading_id": ""
+        "section_id": ""
       }
     },
     "trust_rating_mLLdFw": {
