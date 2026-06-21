@@ -1,218 +1,210 @@
-<div class="u-display-none">
-          
-          
-          
-          
-        </div>
-        <div class="u-embed-json w-embed"></div>
-        <div class="hero_main_slider_wrap u-position-relative">
-          <div class="hero_main_slider_offset">
-            <div class="hero_main_slider_element swiper">
-              <div class="hero_main_slider_list swiper-wrapper">
-                {% for block in section.blocks %}
-    {% if block.type == "slide" %}
-                    <div li-block="Slide" class="hero_main_slide_wrap swiper-slide">
-                                    
-                  
-                                    <div class="u-display-none">
-                    
-                    
-                    
-                  </div>
-                                    
-                  
-                                    <div class="u-display-none">
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                  </div>
-                                    
-                  
-                                    <div class="hero_main_slide_background u-cover-absolute"><img sizes="(max-width: 1920px) 100vw, 1920px" srcset="{{ 'lumos-v2-p-500.webp' | asset_url }} 500w, {{ 'lumos-v2-p-800.webp' | asset_url }} 800w, {{ 'lumos-v2-p-1080.webp' | asset_url }} 1080w, {{ 'lumos-v2-p-1600.webp' | asset_url }} 1600w, {{ 'lumos-v2.webp' | asset_url }} 1920w" alt="" src="{{ 'lumos-v2.webp' | asset_url }}" loading="lazy" class="hero_main_slide_image u-cover-absolute">
-                    <div class="hero_main_slide_overlay u-cover-absolute"></div>
-                  </div>
-                                    
-                  
-                                    <div class="hero_main_slide_contain u-container">
-                    <div data-wf--spacer--variant="main" class="u-section-spacer w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490 u-ignore-trim"></div>
-                    <div class="hero_main_slide_content">
-                      {% render 'eyebrow', variant: block.settings.eyebrow_variant, text: block.settings.eyebrow %}
-                      <div data-wf--spacer--variant="main" class="u-section-spacer w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490 u-ignore-trim"></div>
-                    </div>
-                  </div>
-                                    
-                
-                            </div>
-            {% endif %}
-{% endfor %}
+<div class="u-display-none"></div>
+<div class="u-embed-json w-embed"></div>
+<div class="hero_main_slider_wrap u-position-relative">
+  <div class="hero_main_slider_offset">
+    <div class="hero_main_slider_element swiper">
+      <div class="hero_main_slider_list swiper-wrapper">
+        {% for block in section.blocks %}
+          {% if block.type == 'slide' %}
+            <div li-block="Slide" class="hero_main_slide_wrap swiper-slide">
+              <div class="u-display-none"></div>
+
+              <div class="u-display-none"></div>
+
+              <div class="hero_main_slide_background u-cover-absolute">
+                <img
+                  sizes="(max-width: 1920px) 100vw, 1920px"
+                  srcset="{{ 'lumos-v2-p-500.webp' | asset_url }} 500w, {{ 'lumos-v2-p-800.webp' | asset_url }} 800w, {{ 'lumos-v2-p-1080.webp' | asset_url }} 1080w, {{ 'lumos-v2-p-1600.webp' | asset_url }} 1600w, {{ 'lumos-v2.webp' | asset_url }} 1920w"
+                  alt=""
+                  src="{{ 'lumos-v2.webp' | asset_url }}"
+                  loading="lazy"
+                  class="hero_main_slide_image u-cover-absolute"
+                >
+                <div class="hero_main_slide_overlay u-cover-absolute"></div>
+              </div>
+
+              <div class="hero_main_slide_contain u-container">
+                <div
+                  data-wf--spacer--variant="main"
+                  class="u-section-spacer w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490 u-ignore-trim"
+                ></div>
+                <div class="hero_main_slide_content">
+                  {% render 'eyebrow', variant: block.settings.eyebrow_variant, text: block.settings.eyebrow %}
+                  <div
+                    data-wf--spacer--variant="main"
+                    class="u-section-spacer w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490 u-ignore-trim"
+                  ></div>
+                </div>
               </div>
             </div>
-            <div class="hero_main_slider_controls u-container">
-              <div class="hero_main_slider_bullet_list">
-                <div class="hero_main_slider_bullet_item"></div>
-                <div class="hero_main_slider_bullet_item is-active"></div>
-              </div>
-            </div>
-          </div>
-          <div></div>
-      </div> {% schema %} {
-    "tag": "section",
-    "name": "Hero Main",
-    "class": "hero_main_wrap u-section",
-    "blocks": [
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="hero_main_slider_controls u-container">
+      <div class="hero_main_slider_bullet_list">
+        <div class="hero_main_slider_bullet_item"></div>
+        <div class="hero_main_slider_bullet_item is-active"></div>
+      </div>
+    </div>
+  </div>
+  <div></div>
+</div>
+{% schema %}
+{
+  "tag": "section",
+  "name": "Hero Main",
+  "class": "hero_main_wrap u-section",
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings": [
         {
-            "name": "Slide",
-            "type": "slide",
-            "settings": [
-                {
-                    "type": "header",
-                    "content": "\u00dcbertitel"
-                },
-                {
-                    "type": "text",
-                    "id": "eyebrow",
-                    "label": "Text",
-                    "default": "Eyebrow Text Here"
-                },
-                {
-                    "type": "select",
-                    "id": "eyebrow_variant",
-                    "label": "Eyebrow Variant",
-                    "options": [
-                        {
-                            "value": "u-eyebrow-small",
-                            "label": "Small"
-                        },
-                        {
-                            "value": "u-eyebrow-main",
-                            "label": "Main"
-                        },
-                        {
-                            "value": "u-eyebrow-large",
-                            "label": "Large"
-                        }
-                    ],
-                    "default": "u-eyebrow-main"
-                },
-                {
-                    "type": "header",
-                    "content": "\u00dcberschrift"
-                },
-                {
-                    "type": "text",
-                    "id": "heading",
-                    "label": "Text",
-                    "default": "Lorem ipsum dolor sit amet elit"
-                },
-                {
-                    "type": "select",
-                    "id": "heading_tag",
-                    "label": "HTML-Tag",
-                    "options": [
-                        {
-                            "value": "h1",
-                            "label": "H1"
-                        },
-                        {
-                            "value": "h2",
-                            "label": "H2"
-                        },
-                        {
-                            "value": "h3",
-                            "label": "H3"
-                        },
-                        {
-                            "value": "h4",
-                            "label": "H4"
-                        },
-                        {
-                            "value": "h5",
-                            "label": "H5"
-                        },
-                        {
-                            "value": "h6",
-                            "label": "H6"
-                        }
-                    ],
-                    "default": "h2"
-                },
-                {
-                    "type": "select",
-                    "id": "heading_variant",
-                    "label": "Heading Variant",
-                    "options": [
-                        {
-                            "value": "u-text-style-h1",
-                            "label": "H1"
-                        },
-                        {
-                            "value": "u-text-style-h2",
-                            "label": "H2"
-                        },
-                        {
-                            "value": "u-text-style-h3",
-                            "label": "H3"
-                        },
-                        {
-                            "value": "u-text-style-h4",
-                            "label": "H4"
-                        },
-                        {
-                            "value": "u-text-style-h5",
-                            "label": "H5"
-                        },
-                        {
-                            "value": "u-text-style-h6",
-                            "label": "H6"
-                        }
-                    ],
-                    "default": "u-text-style-h2"
-                },
-                {
-                    "type": "number",
-                    "id": "heading_max_width",
-                    "label": "Heading Max Width",
-                    "default": 20
-                },
-                {
-                    "type": "checkbox",
-                    "id": "heading_visually_hidden",
-                    "label": "Heading Visually Hidden",
-                    "default": false
-                },
-                {
-                    "type": "text",
-                    "id": "heading_id",
-                    "label": "Heading ID"
-                }
-            ]
-        }
-    ],
-    "settings": [
-        {
-            "type": "header",
-            "content": "Sektion"
+          "type": "header",
+          "content": "\u00dcbertitel"
         },
         {
-            "type": "text",
-            "id": "section_id",
-            "label": "ID"
-        }
-    ],
-    "presets": [
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Text",
+          "default": "Eyebrow Text Here"
+        },
         {
-            "name": "Hero Main",
-            "category": "Liquify",
-            "blocks": [
-                {
-                    "type": "slide"
-                }
-            ]
+          "type": "select",
+          "id": "eyebrow_variant",
+          "label": "Eyebrow Variant",
+          "options": [
+            {
+              "value": "u-eyebrow-small",
+              "label": "Small"
+            },
+            {
+              "value": "u-eyebrow-main",
+              "label": "Main"
+            },
+            {
+              "value": "u-eyebrow-large",
+              "label": "Large"
+            }
+          ],
+          "default": "u-eyebrow-main"
+        },
+        {
+          "type": "header",
+          "content": "\u00dcberschrift"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Text",
+          "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+          "type": "select",
+          "id": "heading_tag",
+          "label": "HTML-Tag",
+          "options": [
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            },
+            {
+              "value": "h6",
+              "label": "H6"
+            }
+          ],
+          "default": "h2"
+        },
+        {
+          "type": "select",
+          "id": "heading_variant",
+          "label": "Heading Variant",
+          "options": [
+            {
+              "value": "u-text-style-h1",
+              "label": "H1"
+            },
+            {
+              "value": "u-text-style-h2",
+              "label": "H2"
+            },
+            {
+              "value": "u-text-style-h3",
+              "label": "H3"
+            },
+            {
+              "value": "u-text-style-h4",
+              "label": "H4"
+            },
+            {
+              "value": "u-text-style-h5",
+              "label": "H5"
+            },
+            {
+              "value": "u-text-style-h6",
+              "label": "H6"
+            }
+          ],
+          "default": "u-text-style-h2"
+        },
+        {
+          "type": "number",
+          "id": "heading_max_width",
+          "label": "Heading Max Width",
+          "default": 20
+        },
+        {
+          "type": "checkbox",
+          "id": "heading_visually_hidden",
+          "label": "Heading Visually Hidden",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "heading_id",
+          "label": "Heading ID"
         }
-    ]
-} {% endschema %}
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Sektion"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "ID"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Main",
+      "category": "Liquify",
+      "blocks": [
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
