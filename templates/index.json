@@ -18,7 +18,7 @@
             "heading": "Lorem ipsum dolor sit amet elitsss",
             "heading_tag": "h2",
             "heading_variant": "u-text-style-h2",
-            "heading_max_width": 20,
+            "heading_max_width": 0,
             "heading_visually_hidden": false,
             "heading_id": "",
             "eyebrow": "Eyebrow Text Here",
