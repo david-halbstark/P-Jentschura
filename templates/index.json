@@ -1,0 +1,16 @@
+{
+    "sections": {
+        "trust_rating": {
+            "type": "trust_rating"
+        },
+        "hero_main": {
+            "type": "hero_main"
+        }
+    },
+    "layout": "theme",
+    "wrapper": "main#main.page_main",
+    "order": [
+        "trust_rating",
+        "hero_main"
+    ]
+}
