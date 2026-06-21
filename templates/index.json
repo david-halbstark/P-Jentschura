@@ -17,8 +17,18 @@
         "heading_tag": "h3",
         "heading_variant": "u-text-style-h2",
         "heading_max_width": 20,
-        "heading_tidy_text": true,
         "heading_visually_hidden": true,
+        "heading_id": ""
+      }
+    },
+    "trust_rating_mLLdFw": {
+      "type": "trust_rating",
+      "name": "Trust Rating",
+      "settings": {
+        "section_id": "",
+        "heading": "Lorem ipsum dolor sit amet elit",
+        "heading_variant": "u-text-style-h2",
+        "heading_max_width": 20,
         "heading_id": ""
       }
     }
@@ -26,6 +36,7 @@
   "layout": "theme",
   "wrapper": "main#main.page_main",
   "order": [
-    "hero_main"
+    "hero_main",
+    "trust_rating_mLLdFw"
   ]
 }
