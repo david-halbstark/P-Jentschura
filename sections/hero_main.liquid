@@ -1,4 +1,11 @@
-<div class="u-display-none">
+<div class="u-embed-css w-embed">
+          <style>
+  [li-snippet:1] {
+    display: none;
+  }
+</style>
+        </div>
+        <div class="u-display-none">
           
           
         </div>
@@ -22,10 +29,7 @@
                           </div>
                         </div>
                       </div>
-                      {% render 'heading', variant: section.settings.heading_variant, heading: section.settings.heading, tag: section.settings.heading_tag %}
-                      <div data-number="20" data-wf--typography-heading--variant="h2" class="u-heading w-variant-433d40c6-c261-f13f-c899-61d2cadf150f w-richtext">
-                        <h2>Lorem ipsum dolor sit amet elit</h2>
-                      </div>
+                      {% render 'heading', visually_hidden: section.settings.heading_visually_hidden, heading: section.settings.heading, tag: section.settings.heading_tag, variant: section.settings.heading_variant, tidy_text: section.settings.heading_tidy_text %}
                       <div class="u-button-wrapper">
                         <div class="u-display-contents">
                           <div data-wf--button-main--variant="primary" data-button=" " data-trigger="hover focus" class="button_main_wrap">
@@ -71,7 +75,7 @@
         {
             "type": "text",
             "id": "heading",
-            "label": "Heading",
+            "label": "Heading Text",
             "default": "Lorem ipsum dolor sit amet elit"
         },
         {
@@ -137,6 +141,29 @@
                 }
             ],
             "default": "u-text-style-h2"
+        },
+        {
+            "type": "number",
+            "id": "heading_max_width",
+            "label": "Heading Max Width",
+            "default": 20
+        },
+        {
+            "type": "checkbox",
+            "id": "heading_tidy_text",
+            "label": "Heading Tidy Text",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "heading_visually_hidden",
+            "label": "Heading Visually Hidden",
+            "default": true
+        },
+        {
+            "type": "text",
+            "id": "heading_id",
+            "label": "Heading ID"
         }
     ],
     "presets": [
