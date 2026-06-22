@@ -16,7 +16,7 @@
           "type": "slide",
           "settings": {
             "eyebrow": "Eyebrow Text Here",
-            "eyebrow_variant": "u-eyebrow-main",
+            "eyebrow_variant": "u-eyebrow-small",
             "heading": "Lorem ipsum dolor sit amet elit",
             "heading_variant": "u-text-style-h2",
             "heading_tag": "h2",
