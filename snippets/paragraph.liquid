@@ -6,6 +6,7 @@
   assign paragraph_classes = 'u-text u-rich-text'
   if paragraph_tidy_text == true
     assign paragraph_text = paragraph_text | append: ' u-text-wrap-default'
+  endif
 %}
                         {% if paragraph_text != blank %}
                         <div class="{{ paragraph_classes }}" data-number="{{ paragraph_max_width }}">
