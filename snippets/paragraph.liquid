@@ -5,7 +5,7 @@
   assign paragraph_tidy_text = tidy_text | default: true
   assign paragraph_classes = 'u-text u-rich-text'
   if paragraph_tidy_text == true
-    assign paragraph_text = paragraph_text | append: ' u-text-wrap-default'
+    assign paragraph_classes = paragraph_classes | append: ' u-text-wrap-default'
   endif
 %}
                         {% if paragraph_text != blank %}
