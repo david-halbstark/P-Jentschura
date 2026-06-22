@@ -6,12 +6,12 @@
     assign eyebrow_classes = eyebrow_classes | append: ' ' | append: eyebrow_variant
   endif
 %}
-                        {% if eyebrow_text != blank %}
-                        <div class="u-eyebrow-wrapper">
-                          <div class="u-eyebrow-layout">
-                            <div class="{{ eyebrow_classes }}">
-                              {{ eyebrow_text }}
-                            </div>
-                          </div>
-                        </div>
-                        {% endif %}
+{% if eyebrow_text != blank %}
+  <div class="u-eyebrow-wrapper">
+    <div class="u-eyebrow-layout">
+      <div class="{{ eyebrow_classes }}">
+        {{ eyebrow_text }}
+      </div>
+    </div>
+  </div>
+{% endif %}
