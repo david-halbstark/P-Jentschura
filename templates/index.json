@@ -12,6 +12,24 @@
     "hero_main": {
       "type": "hero_main",
       "blocks": {
+        "slide_We7aEi": {
+          "type": "slide",
+          "settings": {
+            "eyebrow": "Eyebrow Text Here",
+            "eyebrow_variant": "u-eyebrow-main",
+            "heading": "Lorem ipsum dolor sit amet elit",
+            "heading_variant": "u-text-style-h2",
+            "heading_tag": "h2",
+            "heading_max_width": 20,
+            "heading_tidy_text": true,
+            "heading_visually_hidden": false,
+            "heading_id": "",
+            "paragraph": "<p>sdada</p>",
+            "paragraph_variant": "u-text-style-main",
+            "paragraph_max_width": 20,
+            "paragraph_tidy_text": true
+          }
+        },
         "slide_348PRB": {
           "type": "slide",
           "settings": {
@@ -25,7 +43,9 @@
             "heading_visually_hidden": false,
             "heading_id": "",
             "paragraph": "<p>TExt</p>",
-            "paragraph_max_width": 20
+            "paragraph_variant": "u-text-style-main",
+            "paragraph_max_width": 20,
+            "paragraph_tidy_text": true
           }
         },
         "slide_XQ98CM": {
@@ -41,7 +61,9 @@
             "heading_visually_hidden": false,
             "heading_id": "",
             "paragraph": "",
-            "paragraph_max_width": 20
+            "paragraph_variant": "u-text-style-main",
+            "paragraph_max_width": 20,
+            "paragraph_tidy_text": true
           }
         },
         "slide_qw6faa": {
@@ -57,11 +79,14 @@
             "heading_visually_hidden": false,
             "heading_id": "",
             "paragraph": "",
-            "paragraph_max_width": 20
+            "paragraph_variant": "u-text-style-main",
+            "paragraph_max_width": 20,
+            "paragraph_tidy_text": true
           }
         }
       },
       "block_order": [
+        "slide_We7aEi",
         "slide_348PRB",
         "slide_XQ98CM",
         "slide_qw6faa"
