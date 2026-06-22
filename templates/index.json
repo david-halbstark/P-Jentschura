@@ -18,11 +18,14 @@
             "eyebrow": "Eyebrow Text Heredsadadsa",
             "eyebrow_variant": "u-eyebrow-main",
             "heading": "Lorem ipsum dolor sit amet elitsssdsadas",
-            "heading_tag": "h2",
             "heading_variant": "u-text-style-h5",
+            "heading_tag": "h2",
             "heading_max_width": 0,
+            "heading_tidy_text": true,
             "heading_visually_hidden": false,
-            "heading_id": ""
+            "heading_id": "",
+            "paragraph": "<p>TExt</p>",
+            "paragraph_max_width": 20
           }
         },
         "slide_XQ98CM": {
@@ -31,11 +34,14 @@
             "eyebrow": "Eyebrow Text Here",
             "eyebrow_variant": "u-eyebrow-main",
             "heading": "Lorem ipsum dolor sit amet elit",
-            "heading_tag": "h2",
             "heading_variant": "u-text-style-h2",
+            "heading_tag": "h2",
             "heading_max_width": 20,
+            "heading_tidy_text": true,
             "heading_visually_hidden": false,
-            "heading_id": ""
+            "heading_id": "",
+            "paragraph": "",
+            "paragraph_max_width": 20
           }
         },
         "slide_qw6faa": {
@@ -44,11 +50,14 @@
             "eyebrow": "Eyebrow Text Here",
             "eyebrow_variant": "u-eyebrow-main",
             "heading": "Lorem ipsum dolor sit amet elit",
-            "heading_tag": "h2",
             "heading_variant": "u-text-style-h2",
+            "heading_tag": "h2",
             "heading_max_width": 20,
+            "heading_tidy_text": true,
             "heading_visually_hidden": false,
-            "heading_id": ""
+            "heading_id": "",
+            "paragraph": "",
+            "paragraph_max_width": 20
           }
         }
       },
