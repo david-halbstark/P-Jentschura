@@ -1,0 +1,14 @@
+{% liquid
+  assign paragraph_text = paragraph
+  assign paragraph_variant = variant | default: 'u-text-style-main'
+  assign paragraph_max_width = max_width | default: '-1'
+  assign paragraph_tidy_text = tidy_text | default: true
+  assign paragraph_classes = 'u-text u-rich-text'
+  if paragraph_tidy_text == true
+    assign paragraph_text = paragraph_text | append: ' u-text-wrap-default'
+%}
+                        {% if paragraph_text != blank %}
+                        <div class="{{ paragraph_classes }}" data-number="{{ paragraph_max_width }}">
+                          {{ paragraph_text }}
+                        </div>
+                        {% endif %}
