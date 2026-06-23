@@ -8,8 +8,8 @@
     assign paragraph_classes = paragraph_classes | append: ' u-text-wrap-default'
   endif
 %}
-                        {% if paragraph_text != blank %}
-                        <div class="{{ paragraph_classes }}" data-number="{{ paragraph_max_width }}">
-                          {{ paragraph_text }}
-                        </div>
-                        {% endif %}
+              {% if paragraph_text != blank %}
+              <div class="{{ paragraph_classes }}" data-number="{{ paragraph_max_width }}">
+                {{ paragraph_text }}
+              </div>
+              {% endif %}

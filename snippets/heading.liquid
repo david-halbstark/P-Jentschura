@@ -16,23 +16,23 @@
     assign heading_classes = heading_classes | append: ' u-sr-only'
   endif
 %}
-                        {% if heading_text != blank %}
-                        <div class="{{ heading_classes }}" data-number="{{ heading_max_width }}">
-                          {% case heading_tag %}
-                          {% when 'h1' %}
-                          <h1>{{ heading_text }}</h1>
-                          {% when 'h2' %}
-                          <h2>{{ heading_text }}</h2>
-                          {% when 'h3' %}
-                          <h3>{{ heading_text }}</h3>
-                          {% when 'h4' %}
-                          <h4>{{ heading_text }}</h4>
-                          {% when 'h5' %}
-                          <h5>{{ heading_text }}</h5>
-                          {% when 'h6' %}
-                          <h6>{{ heading_text }}</h6>
-                          {% else %}
-                          <h2>{{ heading_text }}</h2>
-                          {% endcase %}
-                        </div>
-                        {% endif %}
+                              {% if heading_text != blank %}
+                              <div class="{{ heading_classes }}" data-number="{{ heading_max_width }}">
+                                {% case heading_tag %}
+                                {% when 'h1' %}
+                                <h1>{{ heading_text }}</h1>
+                                {% when 'h2' %}
+                                <h2>{{ heading_text }}</h2>
+                                {% when 'h3' %}
+                                <h3>{{ heading_text }}</h3>
+                                {% when 'h4' %}
+                                <h4>{{ heading_text }}</h4>
+                                {% when 'h5' %}
+                                <h5>{{ heading_text }}</h5>
+                                {% when 'h6' %}
+                                <h6>{{ heading_text }}</h6>
+                                {% else %}
+                                <h2>{{ heading_text }}</h2>
+                                {% endcase %}
+                              </div>
+                              {% endif %}
