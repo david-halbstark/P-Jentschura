@@ -27,7 +27,15 @@
             "paragraph": "<p>dsadsa</p>",
             "paragraph_variant": "u-text-style-main",
             "paragraph_max_width": 20,
-            "paragraph_tidy_text": true
+            "paragraph_tidy_text": true,
+            "button_1_label": "",
+            "button_1_variant": "primary",
+            "button_1_mode": "action",
+            "button_1_url": "",
+            "button_2_label": "",
+            "button_2_variant": "secondary",
+            "button_2_mode": "action",
+            "button_2_url": ""
           }
         },
         "slide_348PRB": {
@@ -45,7 +53,15 @@
             "paragraph": "<p>TExt</p>",
             "paragraph_variant": "u-text-style-main",
             "paragraph_max_width": 20,
-            "paragraph_tidy_text": true
+            "paragraph_tidy_text": true,
+            "button_1_label": "",
+            "button_1_variant": "primary",
+            "button_1_mode": "link",
+            "button_1_url": "",
+            "button_2_label": "",
+            "button_2_variant": "primary",
+            "button_2_mode": "link",
+            "button_2_url": ""
           }
         },
         "slide_XQ98CM": {
@@ -63,7 +79,15 @@
             "paragraph": "",
             "paragraph_variant": "u-text-style-main",
             "paragraph_max_width": 20,
-            "paragraph_tidy_text": true
+            "paragraph_tidy_text": true,
+            "button_1_label": "",
+            "button_1_variant": "primary",
+            "button_1_mode": "link",
+            "button_1_url": "",
+            "button_2_label": "",
+            "button_2_variant": "primary",
+            "button_2_mode": "link",
+            "button_2_url": ""
           }
         },
         "slide_qw6faa": {
@@ -81,7 +105,15 @@
             "paragraph": "",
             "paragraph_variant": "u-text-style-main",
             "paragraph_max_width": 20,
-            "paragraph_tidy_text": true
+            "paragraph_tidy_text": true,
+            "button_1_label": "",
+            "button_1_variant": "primary",
+            "button_1_mode": "link",
+            "button_1_url": "",
+            "button_2_label": "",
+            "button_2_variant": "primary",
+            "button_2_mode": "link",
+            "button_2_url": ""
           }
         }
       },
