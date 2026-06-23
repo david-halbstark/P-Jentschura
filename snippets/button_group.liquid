@@ -1,0 +1,18 @@
+{% if button_1_label != blank or button_2_label != blank %}
+                        <div class="u-button-wrapper">
+                          {% render 'button',
+      label: button_1_label,
+      url: button_1_url,
+      variant: button_1_variant,
+      mode: button_1_mode,
+      attributes: button_1_attributes
+    %}
+                          {% render 'button',
+      label: button_2_label,
+      url: button_2_url,
+      variant: button_2_variant,
+      mode: button_2_mode,
+      attributes: button_2_attributes
+    %}
+                        </div>
+                        {% endif %}
