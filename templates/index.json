@@ -9,52 +9,35 @@
  */
 {
   "sections": {
-    "hero_main": {
+    "trust_rating_mLLdFw": {
+      "type": "trust_rating",
+      "name": "Trust Rating",
+      "settings": {
+        "section_id": "",
+        "heading": "Lorem ipsum dolor sit amet elit",
+        "heading_variant": "u-text-style-h2",
+        "heading_max_width": 20,
+        "heading_id": ""
+      }
+    },
+    "hero_main_WjtHea": {
       "type": "hero_main",
       "blocks": {
-        "slide_We7aEi": {
+        "slide_Qq8g6g": {
           "type": "slide",
           "settings": {
-            "eyebrow": "sdaEyebrow Text Here",
-            "eyebrow_variant": "u-eyebrow-small",
-            "heading": "Lorem ipsum dolor sit amet elitsdas",
-            "heading_variant": "u-text-style-h4",
-            "heading_tag": "h5",
-            "heading_max_width": 20,
-            "heading_tidy_text": false,
-            "heading_visually_hidden": false,
-            "heading_id": "",
-            "paragraph": "<p>dsadsa</p>",
-            "paragraph_variant": "u-text-style-main",
-            "paragraph_max_width": 20,
-            "paragraph_tidy_text": true,
-            "button_1_label": "dsadsadsadsada",
-            "button_1_variant": "primary",
-            "button_1_mode": "link",
-            "button_1_url": "shopify://blogs/blog",
-            "button_1_action": "newsletter_modal",
-            "button_2_label": "",
-            "button_2_variant": "secondary",
-            "button_2_mode": "action",
-            "button_2_url": "",
-            "button_2_action": "newsletter_modal"
-          }
-        },
-        "slide_348PRB": {
-          "type": "slide",
-          "settings": {
-            "eyebrow": "Eyebrow Text Heredsadadsa",
+            "eyebrow": "Eyebrow Text Here",
             "eyebrow_variant": "u-eyebrow-main",
-            "heading": "Lorem ipsum dolor sit amet elitsssdsadas",
-            "heading_variant": "u-text-style-h5",
+            "heading": "Lorem ipsum dolor sit amet elit",
+            "heading_variant": "u-text-style-h2",
             "heading_tag": "h2",
-            "heading_max_width": 0,
+            "heading_max_width": 20,
             "heading_tidy_text": true,
             "heading_visually_hidden": false,
             "heading_id": "",
-            "paragraph": "<p>TExt</p>",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
             "paragraph_variant": "u-text-style-main",
-            "paragraph_max_width": 20,
+            "paragraph_max_width": 60,
             "paragraph_tidy_text": true,
             "button_1_label": "",
             "button_1_variant": "primary",
@@ -68,7 +51,7 @@
             "button_2_action": "newsletter_modal"
           }
         },
-        "slide_XQ98CM": {
+        "slide_Td9LzX": {
           "type": "slide",
           "settings": {
             "eyebrow": "Eyebrow Text Here",
@@ -80,37 +63,9 @@
             "heading_tidy_text": true,
             "heading_visually_hidden": false,
             "heading_id": "",
-            "paragraph": "",
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
             "paragraph_variant": "u-text-style-main",
-            "paragraph_max_width": 20,
-            "paragraph_tidy_text": true,
-            "button_1_label": "",
-            "button_1_variant": "primary",
-            "button_1_mode": "link",
-            "button_1_url": "",
-            "button_1_action": "newsletter_modal",
-            "button_2_label": "",
-            "button_2_variant": "primary",
-            "button_2_mode": "link",
-            "button_2_url": "",
-            "button_2_action": "newsletter_modal"
-          }
-        },
-        "slide_qw6faa": {
-          "type": "slide",
-          "settings": {
-            "eyebrow": "Eyebrow Text Here",
-            "eyebrow_variant": "u-eyebrow-main",
-            "heading": "Lorem ipsum dolor sit amet elit",
-            "heading_variant": "u-text-style-h2",
-            "heading_tag": "h2",
-            "heading_max_width": 20,
-            "heading_tidy_text": true,
-            "heading_visually_hidden": false,
-            "heading_id": "",
-            "paragraph": "",
-            "paragraph_variant": "u-text-style-main",
-            "paragraph_max_width": 20,
+            "paragraph_max_width": 60,
             "paragraph_tidy_text": true,
             "button_1_label": "",
             "button_1_variant": "primary",
@@ -126,31 +81,19 @@
         }
       },
       "block_order": [
-        "slide_We7aEi",
-        "slide_348PRB",
-        "slide_XQ98CM",
-        "slide_qw6faa"
+        "slide_Qq8g6g",
+        "slide_Td9LzX"
       ],
+      "name": "Hero Main",
       "settings": {
         "section_id": ""
-      }
-    },
-    "trust_rating_mLLdFw": {
-      "type": "trust_rating",
-      "name": "Trust Rating",
-      "settings": {
-        "section_id": "",
-        "heading": "Lorem ipsum dolor sit amet elit",
-        "heading_variant": "u-text-style-h2",
-        "heading_max_width": 20,
-        "heading_id": ""
       }
     }
   },
   "layout": "theme",
   "wrapper": "main#main.page_main",
   "order": [
-    "hero_main",
-    "trust_rating_mLLdFw"
+    "trust_rating_mLLdFw",
+    "hero_main_WjtHea"
   ]
 }
