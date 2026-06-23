@@ -47,14 +47,18 @@
                     variant: block.settings.paragraph_variant,
                     max_width: block.settings.paragraph_max_width
                   %}
-                  {% render 'button_group' %}
-                  button_1_text: block.settings.button_1_text, button_1_url: block.settings.button_1_url,
-                  button_1_variant: block.settings.button_1_variant, button_1_mode: block.settings.button_1_mode,
-                  button_1_attributes: button_1_attributes,
-
-                  button_2_text: block.settings.button_2_text, button_2_url: block.settings.button_2_url,
-                  button_2_variant: block.settings.button_2_variant, button_2_mode: block.settings.button_2_mode,
-                  button_2_attributes: button_2_attributes
+                  {% render 'button_group',
+                    button_1_text: block.settings.button_1_text,
+                    button_1_url: block.settings.button_1_url,
+                    button_1_variant: block.settings.button_1_variant,
+                    button_1_mode: block.settings.button_1_mode,
+                    button_1_attributes: button_1_attributes,
+                    button_2_text: block.settings.button_2_text,
+                    button_2_url: block.settings.button_2_url,
+                    button_2_variant: block.settings.button_2_variant,
+                    button_2_mode: block.settings.button_2_mode,
+                    button_2_attributes: button_2_attributes
+                  %}
                 </div>
                 <div
                   data-wf--spacer--variant="main"
