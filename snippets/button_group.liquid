@@ -1,6 +1,18 @@
-{% if button_1_label != blank or button_2_label != blank  %}    <div li-if="button_1_label != blank or button_2_label != blank " class="u-button-wrapper">
-    
-                          {% render 'button', attributes: block.settings.button_1_attributes, label: block.settings.button_1_label, variant: block.setttings.button_1_variant, mode: block.settings.button_1_mode, url: block.settings.button_1_mode %}
-                          {% render 'button', attributes: block.settings.button_2_attributes, label: block.settings.button_2_label, variant: block.settings.button_2_variant, mode: block.settings.button_2_mode, url: block.settings.button_2_url %}
-                            </div>
+{% if button_1_label != blank or button_2_label != blank %}
+  <div li-if="button_1_label != blank or button_2_label != blank " class="u-button-wrapper">
+    {% render 'button',
+      attributes: block.settings.button_1_attributes,
+      label: block.settings.button_1_label,
+      variant: block.setttings.button_1_variant,
+      mode: block.settings.button_1_mode,
+      url: block.settings.button_1_mode
+    %}
+    {% render 'button',
+      attributes: block.settings.button_2_attributes,
+      label: block.settings.button_2_label,
+      variant: block.settings.button_2_variant,
+      mode: block.settings.button_2_mode,
+      url: block.settings.button_2_url
+    %}
+  </div>
 {% endif %}
