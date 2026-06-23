@@ -1,21 +1,21 @@
 {% liquid
-  assign button_label = label
+  assign button_text = text
   assign button_variant = variant | default: 'primary'
   assign button_mode = mode | default: 'link'
   assign button_url = url
   assign button_attributes = attributes
 %}
-                            {% if button_label != blank %}
+                            {% if button_text != blank %}
                             {% if button_mode == 'action' %}
                             <button type="button" class="button {{ button_variant }}" button_attributes="">
                               <span class="button_text">
-                                {{ button_label }}
+                                {{ button_text }}
                               </span>
                             </button>
                             {% elsif button_url != blank %}
                             <a href="{{ button_url }}" class="button {{ button_variant }}" button_attributes="">
                               <span class="button_text">
-                                {{ button_label }}
+                                {{ button_text }}
                               </span>
                             </a>
                             {% endif %}
