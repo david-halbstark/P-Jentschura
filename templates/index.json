@@ -17,9 +17,9 @@
           "settings": {
             "eyebrow": "sdaEyebrow Text Here",
             "eyebrow_variant": "u-eyebrow-small",
-            "heading": "Lorem ipsum dolor sit amet elit",
-            "heading_variant": "u-text-style-h2",
-            "heading_tag": "h2",
+            "heading": "Lorem ipsum dolor sit amet elitsdas",
+            "heading_variant": "u-text-style-h4",
+            "heading_tag": "h5",
             "heading_max_width": 20,
             "heading_tidy_text": false,
             "heading_visually_hidden": false,
