@@ -39,40 +39,12 @@
             "paragraph_variant": "u-text-style-main",
             "paragraph_max_width": 60,
             "paragraph_tidy_text": true,
-            "button_1_label": "",
+            "button_1_label": "asdas",
             "button_1_variant": "primary",
             "button_1_mode": "link",
             "button_1_url": "",
             "button_1_action": "newsletter_modal",
-            "button_2_label": "",
-            "button_2_variant": "primary",
-            "button_2_mode": "link",
-            "button_2_url": "",
-            "button_2_action": "newsletter_modal"
-          }
-        },
-        "slide_Td9LzX": {
-          "type": "slide",
-          "settings": {
-            "eyebrow": "Eyebrow Text Here",
-            "eyebrow_variant": "u-eyebrow-main",
-            "heading": "Lorem ipsum dolor sit amet elit",
-            "heading_variant": "u-text-style-h2",
-            "heading_tag": "h2",
-            "heading_max_width": 20,
-            "heading_tidy_text": true,
-            "heading_visually_hidden": false,
-            "heading_id": "",
-            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
-            "paragraph_variant": "u-text-style-main",
-            "paragraph_max_width": 60,
-            "paragraph_tidy_text": true,
-            "button_1_label": "",
-            "button_1_variant": "primary",
-            "button_1_mode": "link",
-            "button_1_url": "",
-            "button_1_action": "newsletter_modal",
-            "button_2_label": "",
+            "button_2_label": "sdaa",
             "button_2_variant": "primary",
             "button_2_mode": "link",
             "button_2_url": "",
@@ -81,8 +53,7 @@
         }
       },
       "block_order": [
-        "slide_Qq8g6g",
-        "slide_Td9LzX"
+        "slide_Qq8g6g"
       ],
       "name": "Hero Main",
       "settings": {
