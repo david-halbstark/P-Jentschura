@@ -1,424 +1,431 @@
-<div class="u-display-none"></div>
-<div class="u-embed-json w-embed"></div>
-<div class="hero_main_slider_wrap u-position-relative">
-  <div class="hero_main_slider_offset">
-    <div class="hero_main_slider_element swiper">
-      <div class="hero_main_slider_list swiper-wrapper">
-        {% for block in section.blocks %}
-          {% if block.type == 'slide' %}
-            <div li-block="Slide" class="hero_main_slide_wrap swiper-slide">
-              <div class="u-display-none"></div>
-
-              <div class="u-display-none"></div>
-
-              <div class="u-display-none"></div>
-
-              <div class="u-display-none"></div>
-
-              <div class="hero_main_slide_background u-cover-absolute">
-                <img
-                  sizes="100vw"
-                  srcset="{{ 'lumos-v2-p-500.webp' | asset_url }} 500w, {{ 'lumos-v2-p-800.webp' | asset_url }} 800w, {{ 'lumos-v2-p-1080.webp' | asset_url }} 1080w, {{ 'lumos-v2-p-1600.webp' | asset_url }} 1600w, {{ 'lumos-v2.webp' | asset_url }} 1920w"
-                  alt=""
-                  src="{{ 'lumos-v2.webp' | asset_url }}"
-                  loading="lazy"
-                  class="hero_main_slide_image u-cover-absolute"
-                >
-                <div class="hero_main_slide_overlay u-cover-absolute"></div>
-              </div>
-
-              <div class="hero_main_slide_contain u-container">
-                <div
-                  data-wf--spacer--variant="main"
-                  class="u-section-spacer w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490 u-ignore-trim"
-                ></div>
-                <div class="hero_main_slide_content">
-                  {% render 'eyebrow', variant: block.settings.eyebrow_variant, eyebrow: block.settings.eyebrow %}
-                  {% render 'heading',
-                    visually_hidden: false,
-                    heading: block.settings.heading,
-                    tag: block.settings.heading_tag,
-                    variant: block.settings.heading_variant,
-                    tidy_text: false
-                  %}
-                  {% render 'paragraph',
-                    tidy_text: block.settings.paragraph_tidy_text,
-                    paragraph: block.settings.paragraph,
-                    variant: block.settings.paragraph_variant,
-                    max_width: block.settings.paragraph_max_width
-                  %}
-                  {% render 'button_group',
-                    button_1_text: block.settings.button_1_text,
-                    button_1_url: block.settings.button_1_url,
-                    button_1_variant: block.settings.button_1_variant,
-                    button_1_mode: block.settings.button_1_mode,
-                    button_1_attributes: button_1_attributes,
-                    button_2_text: block.settings.button_2_text,
-                    button_2_url: block.settings.button_2_url,
-                    button_2_variant: block.settings.button_2_variant,
-                    button_2_mode: block.settings.button_2_mode,
-                    button_2_attributes: button_2_attributes
-                  %}
-                </div>
-                <div
-                  data-wf--spacer--variant="main"
-                  class="u-section-spacer w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490 u-ignore-trim"
-                ></div>
+<div class="u-display-none">
+          
+          
+          
+          
+        </div>
+        <div class="u-embed-json w-embed"></div>
+        <div class="hero_main_slider_wrap u-position-relative">
+          <div class="hero_main_slider_offset">
+            <div class="hero_main_slider_element swiper">
+              <div class="hero_main_slider_list swiper-wrapper">
+                {% for block in section.blocks %}
+    {% if block.type == "slide" %}
+                    <div li-block="Slide" class="hero_main_slide_wrap swiper-slide">
+                                    
+                  
+                                    <div class="u-display-none">
+                    
+                    
+                    
+                  </div>
+                                    
+                  
+                                    <div class="u-display-none">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                  </div>
+                                    
+                  
+                                    <div class="u-display-none">
+                    
+                    
+                    
+                    
+                    
+                  </div>
+                                    
+                  
+                                    <div class="u-display-none">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                  </div>
+                                    
+                  
+                                    <div class="hero_main_slide_background u-cover-absolute"><img sizes="100vw" srcset="{{ 'lumos-v2-p-500.webp' | asset_url }} 500w, {{ 'lumos-v2-p-800.webp' | asset_url }} 800w, {{ 'lumos-v2-p-1080.webp' | asset_url }} 1080w, {{ 'lumos-v2-p-1600.webp' | asset_url }} 1600w, {{ 'lumos-v2.webp' | asset_url }} 1920w" alt="" src="{{ 'lumos-v2.webp' | asset_url }}" loading="lazy" class="hero_main_slide_image u-cover-absolute">
+                    <div class="hero_main_slide_overlay u-cover-absolute"></div>
+                  </div>
+                                    
+                  
+                                    <div class="hero_main_slide_contain u-container">
+                    <div data-wf--spacer--variant="main" class="u-section-spacer w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490 u-ignore-trim"></div>
+                    <div class="hero_main_slide_content">
+                      {% render 'eyebrow', variant: block.settings.eyebrow_variant, eyebrow: block.settings.eyebrow %}
+                      {% render 'heading', visually_hidden: false, heading: block.settings.heading, tag: block.settings.heading_tag, variant: block.settings.heading_variant, tidy_text: false %}
+                      {% render 'paragraph', tidy_text: block.settings.paragraph_tidy_text, paragraph: block.settings.paragraph, variant: block.settings.paragraph_variant, max_width: block.settings.paragraph_max_width %}
+                      {% render 'button_group', button_1_url: block.settings.button_1_url, button_2_url: block.settings.button_2_url, button_2_attributes: block.settings.button_2_attributes, button_1_attributes: block.settings.button_1_attributes, button_1_label: block.settings.button_1_label, button_2_label: block.settings.button_2_label, button_2_mode: block.settings.button_2_mode, button_1_mode: block.settings.button_1_mode, button_1_variant: block.setttings.button_1_variant, button_2_variant: block.settings.button_2_variant %}
+                    </div>
+                    <div data-wf--spacer--variant="main" class="u-section-spacer w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490 u-ignore-trim"></div>
+                  </div>
+                                    
+                
+                            </div>
+            {% endif %}
+{% endfor %}
               </div>
             </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-  <div class="hero_main_slider_controls u-container">
-    <div class="hero_main_slider_bullet_list">
-      <div class="hero_main_slider_bullet_item"></div>
-      <div class="hero_main_slider_bullet_item is-active"></div>
-    </div>
-  </div>
-</div>
-{% schema %}
-{
-  "tag": "section",
-  "name": "Hero Main",
-  "class": "hero_main_wrap u-section",
-  "blocks": [
-    {
-      "name": "Slide",
-      "type": "slide",
-      "settings": [
+          </div>
+          <div class="hero_main_slider_controls u-container">
+            <div class="hero_main_slider_bullet_list">
+              <div class="hero_main_slider_bullet_item"></div>
+              <div class="hero_main_slider_bullet_item is-active"></div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Hero Main",
+    "class": "hero_main_wrap u-section",
+    "blocks": [
         {
-          "type": "header",
-          "content": "\u00dcbertitel"
-        },
-        {
-          "type": "text",
-          "id": "eyebrow",
-          "label": "Text",
-          "default": "Eyebrow Text Here"
-        },
-        {
-          "type": "select",
-          "id": "eyebrow_variant",
-          "label": "Stil",
-          "options": [
-            {
-              "value": "u-eyebrow-small",
-              "label": "Small"
-            },
-            {
-              "value": "u-eyebrow-main",
-              "label": "Main"
-            },
-            {
-              "value": "u-eyebrow-large",
-              "label": "Large"
-            }
-          ],
-          "default": "u-eyebrow-main"
-        },
-        {
-          "type": "header",
-          "content": "\u00dcberschrift"
-        },
-        {
-          "type": "text",
-          "id": "heading",
-          "label": "Text",
-          "default": "Lorem ipsum dolor sit amet elit"
-        },
-        {
-          "type": "select",
-          "id": "heading_variant",
-          "label": "Stil",
-          "options": [
-            {
-              "value": "u-text-style-h1",
-              "label": "H1"
-            },
-            {
-              "value": "u-text-style-h2",
-              "label": "H2"
-            },
-            {
-              "value": "u-text-style-h3",
-              "label": "H3"
-            },
-            {
-              "value": "u-text-style-h4",
-              "label": "H4"
-            },
-            {
-              "value": "u-text-style-h5",
-              "label": "H5"
-            },
-            {
-              "value": "u-text-style-h6",
-              "label": "H6"
-            }
-          ],
-          "default": "u-text-style-h2"
-        },
-        {
-          "type": "select",
-          "id": "heading_tag",
-          "label": "HTML-Tag",
-          "options": [
-            {
-              "value": "h1",
-              "label": "H1"
-            },
-            {
-              "value": "h2",
-              "label": "H2"
-            },
-            {
-              "value": "h3",
-              "label": "H3"
-            },
-            {
-              "value": "h4",
-              "label": "H4"
-            },
-            {
-              "value": "h5",
-              "label": "H5"
-            },
-            {
-              "value": "h6",
-              "label": "H6"
-            }
-          ],
-          "default": "h2"
-        },
-        {
-          "type": "number",
-          "id": "heading_max_width",
-          "label": "Maximale Breite",
-          "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-          "default": 20
-        },
-        {
-          "type": "checkbox",
-          "id": "heading_tidy_text",
-          "label": "Ausgewogener Zeilenumbruch",
-          "default": true
-        },
-        {
-          "type": "checkbox",
-          "id": "heading_visually_hidden",
-          "label": "Nur f\u00fcr Screenreader anzeigen",
-          "default": false
-        },
-        {
-          "type": "text",
-          "id": "heading_id",
-          "label": "ID"
-        },
-        {
-          "type": "header",
-          "content": "Text"
-        },
-        {
-          "type": "richtext",
-          "id": "paragraph",
-          "label": "Text",
-          "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
-        },
-        {
-          "type": "select",
-          "id": "paragraph_variant",
-          "label": "Stil",
-          "options": [
-            {
-              "value": "u-text-style-small",
-              "label": "Small"
-            },
-            {
-              "value": "u-text-style-main",
-              "label": "Main"
-            },
-            {
-              "value": "u-text-style-large",
-              "label": "Large"
-            }
-          ],
-          "default": "u-text-style-main"
-        },
-        {
-          "type": "number",
-          "id": "paragraph_max_width",
-          "label": "Maximale Breite",
-          "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-          "default": 60
-        },
-        {
-          "type": "checkbox",
-          "id": "paragraph_tidy_text",
-          "label": "Ausgewogener Zeilenumbruch",
-          "default": true
-        },
-        {
-          "type": "header",
-          "content": "Button 1"
-        },
-        {
-          "type": "text",
-          "id": "button_1_text",
-          "label": "Text"
-        },
-        {
-          "type": "select",
-          "id": "button_1_variant",
-          "label": "Stil",
-          "options": [
-            {
-              "value": "primary",
-              "label": "Prim\u00e4r"
-            },
-            {
-              "value": "secondary",
-              "label": "Sekund\u00e4r"
-            },
-            {
-              "value": "link",
-              "label": "Textlink"
-            }
-          ],
-          "default": "primary"
-        },
-        {
-          "type": "select",
-          "id": "button_1_mode",
-          "label": "Funktion",
-          "options": [
-            {
-              "value": "link",
-              "label": "Link \u00f6ffnen"
-            },
-            {
-              "value": "action",
-              "label": "Aktion ausf\u00fchren"
-            }
-          ],
-          "default": "link"
-        },
-        {
-          "type": "url",
-          "id": "button_1_url",
-          "label": "Link",
-          "visible_if": "{{ block.settings.button_1_mode == 'link' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_1_action",
-          "label": "Aktion",
-          "options": [
-            {
-              "value": "newsletter_modal",
-              "label": "Newsletter-Modal \u00f6ffnen"
-            },
-            {
-              "value": "contact_modal",
-              "label": "Kontaktformular-Modal \u00f6ffnen"
-            }
-          ],
-          "default": "newsletter_modal",
-          "visible_if": "{{ block.settings.button_1_mode == 'action' }}"
-        },
-        {
-          "type": "header",
-          "content": "Button 2"
-        },
-        {
-          "type": "text",
-          "id": "button_2_text",
-          "label": "Text"
-        },
-        {
-          "type": "select",
-          "id": "button_2_variant",
-          "label": "Stil",
-          "options": [
-            {
-              "value": "primary",
-              "label": "Prim\u00e4r"
-            },
-            {
-              "value": "secondary",
-              "label": "Sekund\u00e4r"
-            },
-            {
-              "value": "link",
-              "label": "Textlink"
-            }
-          ],
-          "default": "primary"
-        },
-        {
-          "type": "select",
-          "id": "button_2_mode",
-          "label": "Funktion",
-          "options": [
-            {
-              "value": "link",
-              "label": "Link \u00f6ffnen"
-            },
-            {
-              "value": "action",
-              "label": "Aktion ausf\u00fchren"
-            }
-          ],
-          "default": "link"
-        },
-        {
-          "type": "url",
-          "id": "button_2_url",
-          "label": "Link",
-          "visible_if": "{{ block.settings.button_2_mode == 'link' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_2_action",
-          "label": "Aktion",
-          "options": [
-            {
-              "value": "newsletter_modal",
-              "label": "Newsletter-Modal \u00f6ffnen"
-            },
-            {
-              "value": "contact_modal",
-              "label": "Kontaktformular-Modal \u00f6ffnen"
-            }
-          ],
-          "default": "newsletter_modal",
-          "visible_if": "{{ block.settings.button_2_mode == 'action' }}"
+            "name": "Slide",
+            "type": "slide",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "\u00dcbertitel"
+                },
+                {
+                    "type": "text",
+                    "id": "eyebrow",
+                    "label": "Text",
+                    "default": "Eyebrow Text Here"
+                },
+                {
+                    "type": "select",
+                    "id": "eyebrow_variant",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "u-eyebrow-small",
+                            "label": "Small"
+                        },
+                        {
+                            "value": "u-eyebrow-main",
+                            "label": "Main"
+                        },
+                        {
+                            "value": "u-eyebrow-large",
+                            "label": "Large"
+                        }
+                    ],
+                    "default": "u-eyebrow-main"
+                },
+                {
+                    "type": "header",
+                    "content": "\u00dcberschrift"
+                },
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Text",
+                    "default": "Lorem ipsum dolor sit amet elit"
+                },
+                {
+                    "type": "select",
+                    "id": "heading_variant",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "u-text-style-h1",
+                            "label": "H1"
+                        },
+                        {
+                            "value": "u-text-style-h2",
+                            "label": "H2"
+                        },
+                        {
+                            "value": "u-text-style-h3",
+                            "label": "H3"
+                        },
+                        {
+                            "value": "u-text-style-h4",
+                            "label": "H4"
+                        },
+                        {
+                            "value": "u-text-style-h5",
+                            "label": "H5"
+                        },
+                        {
+                            "value": "u-text-style-h6",
+                            "label": "H6"
+                        }
+                    ],
+                    "default": "u-text-style-h2"
+                },
+                {
+                    "type": "select",
+                    "id": "heading_tag",
+                    "label": "HTML-Tag",
+                    "options": [
+                        {
+                            "value": "h1",
+                            "label": "H1"
+                        },
+                        {
+                            "value": "h2",
+                            "label": "H2"
+                        },
+                        {
+                            "value": "h3",
+                            "label": "H3"
+                        },
+                        {
+                            "value": "h4",
+                            "label": "H4"
+                        },
+                        {
+                            "value": "h5",
+                            "label": "H5"
+                        },
+                        {
+                            "value": "h6",
+                            "label": "H6"
+                        }
+                    ],
+                    "default": "h2"
+                },
+                {
+                    "type": "number",
+                    "id": "heading_max_width",
+                    "label": "Maximale Breite",
+                    "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+                    "default": 20
+                },
+                {
+                    "type": "checkbox",
+                    "id": "heading_tidy_text",
+                    "label": "Ausgewogener Zeilenumbruch",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "heading_visually_hidden",
+                    "label": "Nur f\u00fcr Screenreader anzeigen",
+                    "default": false
+                },
+                {
+                    "type": "text",
+                    "id": "heading_id",
+                    "label": "ID"
+                },
+                {
+                    "type": "header",
+                    "content": "Text"
+                },
+                {
+                    "type": "richtext",
+                    "id": "paragraph",
+                    "label": "Text",
+                    "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
+                },
+                {
+                    "type": "select",
+                    "id": "paragraph_variant",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "u-text-style-small",
+                            "label": "Small"
+                        },
+                        {
+                            "value": "u-text-style-main",
+                            "label": "Main"
+                        },
+                        {
+                            "value": "u-text-style-large",
+                            "label": "Large"
+                        }
+                    ],
+                    "default": "u-text-style-main"
+                },
+                {
+                    "type": "number",
+                    "id": "paragraph_max_width",
+                    "label": "Maximale Breite",
+                    "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+                    "default": 60
+                },
+                {
+                    "type": "checkbox",
+                    "id": "paragraph_tidy_text",
+                    "label": "Ausgewogener Zeilenumbruch",
+                    "default": true
+                },
+                {
+                    "type": "header",
+                    "content": "Button 1"
+                },
+                {
+                    "type": "text",
+                    "id": "button_1_text",
+                    "label": "Text"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_variant",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "primary",
+                            "label": "Prim\u00e4r"
+                        },
+                        {
+                            "value": "secondary",
+                            "label": "Sekund\u00e4r"
+                        },
+                        {
+                            "value": "link",
+                            "label": "Textlink"
+                        }
+                    ],
+                    "default": "primary"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_mode",
+                    "label": "Funktion",
+                    "options": [
+                        {
+                            "value": "link",
+                            "label": "Link \u00f6ffnen"
+                        },
+                        {
+                            "value": "action",
+                            "label": "Aktion ausf\u00fchren"
+                        }
+                    ],
+                    "default": "link"
+                },
+                {
+                    "type": "url",
+                    "id": "button_1_url",
+                    "label": "Link",
+                    "visible_if": "{{ block.settings.button_1_mode == 'link' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_action",
+                    "label": "Aktion",
+                    "options": [
+                        {
+                            "value": "newsletter_modal",
+                            "label": "Newsletter-Modal \u00f6ffnen"
+                        },
+                        {
+                            "value": "contact_modal",
+                            "label": "Kontaktformular-Modal \u00f6ffnen"
+                        }
+                    ],
+                    "default": "newsletter_modal",
+                    "visible_if": "{{ block.settings.button_1_mode == 'action' }}"
+                },
+                {
+                    "type": "header",
+                    "content": "Button 2"
+                },
+                {
+                    "type": "text",
+                    "id": "button_2_text",
+                    "label": "Text"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_variant",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "primary",
+                            "label": "Prim\u00e4r"
+                        },
+                        {
+                            "value": "secondary",
+                            "label": "Sekund\u00e4r"
+                        },
+                        {
+                            "value": "link",
+                            "label": "Textlink"
+                        }
+                    ],
+                    "default": "primary"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_mode",
+                    "label": "Funktion",
+                    "options": [
+                        {
+                            "value": "link",
+                            "label": "Link \u00f6ffnen"
+                        },
+                        {
+                            "value": "action",
+                            "label": "Aktion ausf\u00fchren"
+                        }
+                    ],
+                    "default": "link"
+                },
+                {
+                    "type": "url",
+                    "id": "button_2_url",
+                    "label": "Link",
+                    "visible_if": "{{ block.settings.button_2_mode == 'link' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_action",
+                    "label": "Aktion",
+                    "options": [
+                        {
+                            "value": "newsletter_modal",
+                            "label": "Newsletter-Modal \u00f6ffnen"
+                        },
+                        {
+                            "value": "contact_modal",
+                            "label": "Kontaktformular-Modal \u00f6ffnen"
+                        }
+                    ],
+                    "default": "newsletter_modal",
+                    "visible_if": "{{ block.settings.button_2_mode == 'action' }}"
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "settings": [
-    {
-      "type": "header",
-      "content": "Sektion"
-    },
-    {
-      "type": "text",
-      "id": "section_id",
-      "label": "ID"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Hero Main",
-      "category": "Liquify",
-      "blocks": [
+    ],
+    "settings": [
         {
-          "type": "slide"
+            "type": "header",
+            "content": "Sektion"
+        },
+        {
+            "type": "text",
+            "id": "section_id",
+            "label": "ID"
         }
-      ]
-    }
-  ]
-}
-{% endschema %}
+    ],
+    "presets": [
+        {
+            "name": "Hero Main",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "slide"
+                }
+            ]
+        }
+    ]
+} {% endschema %}
