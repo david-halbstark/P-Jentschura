@@ -1,0 +1,20 @@
+<div class="w-embed">{% liquid
+  assign eyebrow_text = eyebrow
+  assign eyebrow_variant = variant | default: 'u-eyebrow-main'
+  assign eyebrow_custom_class = custom_class
+  assign eyebrow_classes = 'u-eyebrow-text'
+  if eyebrow_variant != blank
+    assign eyebrow_classes = eyebrow_classes | append: ' ' | append: eyebrow_variant
+  endif
+  if eyebrow_custom_class != blank
+    assign eyebrow_classes = eyebrow_classes | append: ' ' | append: eyebrow_custom_class
+  endif
+%}
+              {% if eyebrow_text != blank %}
+              <div class="u-eyebrow-wrapper">
+                <div class="u-eyebrow-layout">
+                  <div class="{{ eyebrow_classes }}">{{ eyebrow_text }}</div>
+                </div>
+              </div>
+              {% endif %}
+            </div>
