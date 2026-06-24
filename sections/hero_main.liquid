@@ -57,6 +57,10 @@
                   
                                     <div class="hero_main_slide_contain u-container">
                     <div data-wf--spacer--variant="main" class="u-section-spacer w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490 u-ignore-trim"></div>
+                    <div class="hero_main_slide_content u-margin-trim">
+                      {% render 'eyebrow', variant: section.settings.eyebrow_variant, eyebrow: section.settings.eyebrow %}
+                      {% render 'heading', tag: block.settings.heading_tag, visually_hidden: block.settings.heading_visually_hidden, tidy_text: block.settings.heading_tidy_text, heading: block.settings.heading, variant: block.settings,.heading_variant, max_width: block.settings.heading_max_width %}
+                    </div>
                     <div data-wf--spacer--variant="main" class="u-section-spacer w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490 u-ignore-trim"></div>
                   </div>
                                     
