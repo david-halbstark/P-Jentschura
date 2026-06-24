@@ -1,7 +1,18 @@
-<div class="u-container"></div> {% schema %} {
+<div class="u-container"></div>
+        <div>
+{{ section.settings.text_test }}
+</div> {% schema %} {
     "tag": "div",
     "name": "Modals",
     "class": "modals_wrap",
+    "settings": [
+        {
+            "id": "text_test",
+            "type": "text",
+            "label": "Test",
+            "default": "This is some text inside of a div block."
+        }
+    ],
     "presets": [
         {
             "name": "Modals",
