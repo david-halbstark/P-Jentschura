@@ -15,15 +15,15 @@
         "slide_jGREqV": {
           "type": "slide",
           "settings": {
-            "eyebrow": "Übertitel Text",
+            "eyebrow": "dsadasÜbertitel Text",
             "eyebrow_variant": "u-text-style-main",
-            "heading": "Lorem ipsum dolor sit amet eli",
+            "heading": "Lorem ipsum dolor sit amet elidsadsa",
             "heading_variant": "u-text-style-h2",
             "heading_tag": "h2",
             "heading_max_width": 20,
             "heading_tidy_text": true,
             "heading_visually_hidden": false,
-            "paragraph": "",
+            "paragraph": "<p>dsadsAD</p>",
             "paragraph_variant": "u-text-style-main",
             "paragraph_max_width": 60,
             "paragraph_tidy_text": true,
