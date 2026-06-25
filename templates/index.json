@@ -30,7 +30,7 @@
             "button_1_label": "Button 1 Text",
             "button_1_variant": "primary",
             "button_1_mode": "link",
-            "button_1_url": "",
+            "button_1_url": "shopify://blogs/blog",
             "button_1_action": "newsletter_modal",
             "button_2_label": "Button 2 Text",
             "button_2_variant": "primary",
