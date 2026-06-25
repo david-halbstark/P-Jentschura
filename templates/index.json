@@ -35,8 +35,8 @@
             "button_2_label": "dsadsa",
             "button_2_variant": "primary",
             "button_2_mode": "action",
-            "button_2_url": "",
-            "button_2_action": "newsletter_modal"
+            "button_2_url": "shopify://policies/privacy-policy",
+            "button_2_action": "contact_modal"
           }
         }
       },
