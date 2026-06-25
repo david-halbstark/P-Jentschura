@@ -64,8 +64,8 @@
                                     <div class="hero_main_slide_contain u-container">
                     <div data-wf--spacer--variant="main" class="u-section-spacer w-variant-60a7ad7d-02b0-6682-95a5-2218e6fd1490 u-ignore-trim"></div>
                     <div class="hero_main_slide_content u-margin-trim">
-                      {% render 'eyebrow', custom_class: 'test', eyebrow: block.settings.eyebrow, variant: block.settings.eyebrow_variant %}
-                      {% render 'heading', tag: block.settings.heading_tag, visually_hidden: block.settings.heading_visually_hidden, tidy_text: block.settings.heading_tidy_text, heading: block.settings.heading, custom_class: heading-test-class, variant: block.settings.heading_variant, max_width: block.settings.heading_max_width %}
+                      {% render 'eyebrow', variant: block.settings.eyebrow_variant, eyebrow: block.settings.eyebrow %}
+                      {% render 'heading', tag: block.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: block.settings.heading_tidy_text, heading: block.settings.heading, custom_class: 'heading-meine-test', variant: block.settings.heading_variant, max_width: block.settings.heading_max_width %}
                       {% render 'paragraph', tidy_text: block.settings.paragraph_tidy_text, custom_class: paragraph-test-class, paragraph: block.settings.paragraph, variant: block.settings.paragraph_variant, max_width: block.settings.paragraph_max_width %}
                       {% render 'button_group', button_1_url: block.settings.button_1_url, button_2_url: block.settings.button_2_url, button_2_attributes: block.settings.button_2_attributes, button_1_attributes: block.settings.button_1_attributes, button_1_label: block.settings.button_1_label, button_2_label: block.settings.button_2_label, button_2_mode: block.settings.button_2_mode, button_1_mode: block.settings.button_1_mode, button_1_variant: block.settings.button_1_variant, button_2_variant: block.settings.button_2_variant %}
                     </div>
