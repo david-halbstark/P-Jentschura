@@ -1,14 +1,14 @@
 {% assign show_button_1 = false -%}
 {%- assign show_button_2 = false -%}
 
-{%- if button_1_text != blank -%}
+{%- if button_1_label != blank -%}
   {%- if button_1_mode == 'action' and button_1_attributes != blank -%}
     {%- assign show_button_1 = true -%}
   {%- elsif button_1_mode == 'link' and button_1_url != blank -%}
     {%- assign show_button_1 = true -%}
   {%- endif -%}
 {%- endif -%}
-{%- if button_2_text != blank -%}
+{%- if button_2_label != blank -%}
   {%- if button_2_mode == 'action' and button_2_attributes != blank -%}
     {%- assign show_button_2 = true -%}
   {%- elsif button_2_mode == 'link' and button_2_url != blank -%}
