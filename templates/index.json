@@ -9,40 +9,41 @@
  */
 {
   "sections": {
-    "hero_main": {
+    "hero_main_Wx4xLA": {
       "type": "hero_main",
       "blocks": {
-        "slide_jGREqV": {
+        "slide_qqXnTn": {
           "type": "slide",
           "settings": {
-            "eyebrow": "dsadasÜbertitel Text",
+            "eyebrow": "Übertitel Text",
             "eyebrow_variant": "u-text-style-main",
-            "heading": "Lorem ipsum dolor sit amet ejkas dhsaklhd kaslhd ksajd kshadh salkdhsalk hdskalh dklsah dklhjs dklhjsa kdhsakl dhsaklh dsklahd klshdh sakdh kalidsadsadsada",
+            "heading": "Lorem ipsum dolor sit amet elit",
             "heading_variant": "u-text-style-h2",
             "heading_tag": "h2",
-            "heading_max_width": 0,
+            "heading_max_width": 20,
             "heading_tidy_text": true,
             "heading_visually_hidden": false,
-            "paragraph": "<p>dsadsAD</p>",
-            "paragraph_variant": "u-text-style-small",
-            "paragraph_max_width": 0,
+            "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
+            "paragraph_variant": "u-text-style-main",
+            "paragraph_max_width": 60,
             "paragraph_tidy_text": true,
-            "button_1_label": "Button 1 Textsdasdas",
-            "button_1_variant": "link",
+            "button_1_label": "Button 1 Text",
+            "button_1_variant": "secondary",
             "button_1_mode": "link",
-            "button_1_url": "shopify://blogs/blog",
+            "button_1_url": "shopify://collections/all",
             "button_1_action": "newsletter_modal",
-            "button_2_label": "dsadsa",
+            "button_2_label": "Button 2 Text",
             "button_2_variant": "primary",
-            "button_2_mode": "action",
-            "button_2_url": "shopify://policies/privacy-policy",
-            "button_2_action": "contact_modal"
+            "button_2_mode": "link",
+            "button_2_url": "",
+            "button_2_action": "newsletter_modal"
           }
         }
       },
       "block_order": [
-        "slide_jGREqV"
+        "slide_qqXnTn"
       ],
+      "name": "Hero Main",
       "settings": {
         "section_id": ""
       }
@@ -67,7 +68,7 @@
   "layout": "theme",
   "wrapper": "main#main.page_main",
   "order": [
-    "hero_main",
+    "hero_main_Wx4xLA",
     "trust_rating",
     "modals"
   ]
