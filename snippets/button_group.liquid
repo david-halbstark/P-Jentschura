@@ -1,26 +1,52 @@
-{% if button_1_label != blank or button_2_label != blank  %}    <div li-if="button_1_label != blank or button_2_label != blank " class="u-button-wrapper">
-    
-                          {% render 'button', attributes: button_1_attributes, label: button_1_label, variant: button_1_variant, mode: button_1_mode, url: button_1_url %}
-                          {% render 'button', attributes: button_2_attributes, label: button_2_label, variant: button_2_variant, mode: button_2_mode, url: button_2_url %}
-                            </div>
+{% if button_1_label != blank and button_2_label != blank %}
+  <div li-if="button_1_label != blank or button_2_label != blank " class="u-button-wrapper">
+    {% render 'button',
+      attributes: button_1_attributes,
+      label: button_1_label,
+      variant: button_1_variant,
+      mode: button_1_mode,
+      url: button_1_url
+    %}
+    {% render 'button',
+      attributes: button_2_attributes,
+      label: button_2_label,
+      variant: button_2_variant,
+      mode: button_2_mode,
+      url: button_2_url
+    %}
+  </div>
 {% endif %}
-                        {% if false %}    <div li-if="false" class="u-button-wrapper">
-    
-                          <div class="u-display-contents">
-                            <div data-wf--preview-button-main--preview-variant="primary" data-button=" " data-trigger="hover focus" class="button_main_wrap">
-                              <div data-wf--clickable--variant="focus-ring-outside" class="clickable_wrap u-cover-absolute"><button type="button" aria-label="Button Text" class="clickable_btn"></button></div>
-                              <div class="button_main_element">
-                                <div aria-hidden="true" class="button_main_text u-text-style-main">Button Text</div>
-                                <div class="button_main_icon u-hide-if-empty"></div>
-                              </div>
-                            </div>
-                            <div data-wf--preview-button-main--preview-variant="primary" data-button=" " data-trigger="hover focus" class="button_main_wrap">
-                              <div data-wf--clickable--variant="focus-ring-outside" class="clickable_wrap u-cover-absolute"><button type="button" aria-label="Button Text" class="clickable_btn"></button></div>
-                              <div class="button_main_element">
-                                <div aria-hidden="true" class="button_main_text u-text-style-main">Button Text</div>
-                                <div class="button_main_icon u-hide-if-empty"></div>
-                              </div>
-                            </div>
-                          </div>
-                            </div>
+{% if false %}
+  <div li-if="false" class="u-button-wrapper">
+    <div class="u-display-contents">
+      <div
+        data-wf--preview-button-main--preview-variant="primary"
+        data-button=" "
+        data-trigger="hover focus"
+        class="button_main_wrap"
+      >
+        <div data-wf--clickable--variant="focus-ring-outside" class="clickable_wrap u-cover-absolute">
+          <button type="button" aria-label="Button Text" class="clickable_btn"></button>
+        </div>
+        <div class="button_main_element">
+          <div aria-hidden="true" class="button_main_text u-text-style-main">Button Text</div>
+          <div class="button_main_icon u-hide-if-empty"></div>
+        </div>
+      </div>
+      <div
+        data-wf--preview-button-main--preview-variant="primary"
+        data-button=" "
+        data-trigger="hover focus"
+        class="button_main_wrap"
+      >
+        <div data-wf--clickable--variant="focus-ring-outside" class="clickable_wrap u-cover-absolute">
+          <button type="button" aria-label="Button Text" class="clickable_btn"></button>
+        </div>
+        <div class="button_main_element">
+          <div aria-hidden="true" class="button_main_text u-text-style-main">Button Text</div>
+          <div class="button_main_icon u-hide-if-empty"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endif %}
