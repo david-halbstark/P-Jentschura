@@ -6,7 +6,7 @@
 {% assign heading_tidy_text = tidy_text %}
 {% assign heading_visually_hidden = visually_hidden | default: false %}
 
-{% if heading_max_width <= 0 %}
+{% if heading_max_width == 0 %}
   {% assign heading_max_width = '-1' %}
 {% endif %}
 
