@@ -20,7 +20,7 @@
             "heading": "Lorem ipsum dolor sit amet elidsadsadsada",
             "heading_variant": "u-text-style-h2",
             "heading_tag": "h2",
-            "heading_max_width": -2,
+            "heading_max_width": 0,
             "heading_tidy_text": false,
             "heading_visually_hidden": false,
             "paragraph": "<p>dsadsAD</p>",
