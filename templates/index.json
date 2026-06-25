@@ -22,7 +22,7 @@
             "heading_variant": "u-text-style-h1",
             "heading_tag": "h6",
             "heading_max_width": -1,
-            "heading_tidy_text": false,
+            "heading_tidy_text": true,
             "heading_visually_hidden": false,
             "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
             "paragraph_variant": "u-text-style-main",
