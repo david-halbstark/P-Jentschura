@@ -1,4 +1,4 @@
-{% if button_1_label != blank and button_2_label != blank %}
+{% if button_1_label != blank or button_2_label != blank %}
   <div li-if="button_1_label != blank or button_2_label != blank " class="u-button-wrapper">
     {% render 'button',
       attributes: button_1_attributes,
