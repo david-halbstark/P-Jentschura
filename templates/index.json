@@ -19,7 +19,7 @@
             "eyebrow": "Übertitel",
             "eyebrow_variant": "u-text-style-large",
             "heading": "Heading",
-            "heading_variant": "u-text-style-h1",
+            "heading_variant": "u-text-style-h2",
             "heading_tag": "h2",
             "heading_max_width": 20,
             "heading_tidy_text": true,
