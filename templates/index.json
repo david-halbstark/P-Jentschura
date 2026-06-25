@@ -16,8 +16,8 @@
           "type": "slide",
           "name": "Slide",
           "settings": {
-            "eyebrow": "test",
-            "eyebrow_variant": "u-text-style-main",
+            "eyebrow": "Übertitel Textdjskahg dkjmah",
+            "eyebrow_variant": "u-text-style-large",
             "heading": "Lorem ipsum dolor sit amet elit",
             "heading_variant": "u-text-style-h2",
             "heading_tag": "h2",
