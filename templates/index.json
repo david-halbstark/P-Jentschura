@@ -28,7 +28,7 @@
             "paragraph_max_width": 0,
             "paragraph_tidy_text": true,
             "button_1_label": "Button 1 Textsdasdas",
-            "button_1_variant": "secondary",
+            "button_1_variant": "link",
             "button_1_mode": "link",
             "button_1_url": "shopify://blogs/blog",
             "button_1_action": "newsletter_modal",
