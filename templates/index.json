@@ -21,7 +21,7 @@
             "heading_variant": "u-text-style-h2",
             "heading_tag": "h2",
             "heading_max_width": 20,
-            "heading_tidy_text": true,
+            "heading_tidy_text": false,
             "heading_visually_hidden": false,
             "paragraph": "<p>dsadsAD</p>",
             "paragraph_variant": "u-text-style-small",
