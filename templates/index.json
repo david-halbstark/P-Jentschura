@@ -20,7 +20,7 @@
             "eyebrow_variant": "u-text-style-large",
             "heading": "Heading",
             "heading_variant": "u-text-style-h1",
-            "heading_tag": "h1",
+            "heading_tag": "h4",
             "heading_max_width": 20,
             "heading_tidy_text": true,
             "heading_visually_hidden": false,
