@@ -1,133 +1,131 @@
-<div class="u-display-none">
-          
-          
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          
-          
-          
-          
-        </div>
-        <div class="u-container">
-          {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: heading-class-2, variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
-        </div> {% schema %} {
-    "tag": "section",
-    "name": "Trust Rating",
-    "class": "hero_main_wrap u-section",
-    "settings": [
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div class="u-container">
+  {% render 'heading',
+    tag: section.settings.heading_tag,
+    visually_hidden: section.settings.heading_visually_hidden,
+    tidy_text: section.settings.heading_tidy_text,
+    heading: section.settings.heading,
+    custom_class: 'heading-class-2',
+    variant: section.settings.heading_variant,
+    max_width: section.settings.heading_max_width
+  %}
+</div>
+{% schema %}
+{
+  "tag": "section",
+  "name": "Trust Rating",
+  "class": "hero_main_wrap u-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Sektion"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "ID"
+    },
+    {
+      "type": "header",
+      "content": "\u00dcberschrift"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Text",
+      "default": "Lorem ipsum dolor sit amet elit"
+    },
+    {
+      "type": "select",
+      "id": "heading_variant",
+      "label": "Stil",
+      "options": [
         {
-            "type": "header",
-            "content": "Sektion"
+          "value": "u-text-style-h1",
+          "label": "H1"
         },
         {
-            "type": "text",
-            "id": "section_id",
-            "label": "ID"
+          "value": "u-text-style-h2",
+          "label": "H2"
         },
         {
-            "type": "header",
-            "content": "\u00dcberschrift"
+          "value": "u-text-style-h3",
+          "label": "H3"
         },
         {
-            "type": "text",
-            "id": "heading",
-            "label": "Text",
-            "default": "Lorem ipsum dolor sit amet elit"
+          "value": "u-text-style-h4",
+          "label": "H4"
         },
         {
-            "type": "select",
-            "id": "heading_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "u-text-style-h1",
-                    "label": "H1"
-                },
-                {
-                    "value": "u-text-style-h2",
-                    "label": "H2"
-                },
-                {
-                    "value": "u-text-style-h3",
-                    "label": "H3"
-                },
-                {
-                    "value": "u-text-style-h4",
-                    "label": "H4"
-                },
-                {
-                    "value": "u-text-style-h5",
-                    "label": "H5"
-                },
-                {
-                    "value": "u-text-style-h6",
-                    "label": "H6"
-                }
-            ],
-            "default": "u-text-style-h2"
+          "value": "u-text-style-h5",
+          "label": "H5"
         },
         {
-            "type": "select",
-            "id": "heading_tag",
-            "label": "HTML-Tag",
-            "options": [
-                {
-                    "value": "h1",
-                    "label": "H1"
-                },
-                {
-                    "value": "h2",
-                    "label": "H2"
-                },
-                {
-                    "value": "h3",
-                    "label": "H3"
-                },
-                {
-                    "value": "h4",
-                    "label": "H4"
-                },
-                {
-                    "value": "h5",
-                    "label": "H5"
-                },
-                {
-                    "value": "h6",
-                    "label": "H6"
-                }
-            ],
-            "default": "h2"
-        },
-        {
-            "type": "number",
-            "id": "heading_max_width",
-            "label": "Maximale Breite",
-            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-            "default": 20
-        },
-        {
-            "type": "checkbox",
-            "id": "heading_tidy_text",
-            "label": "Ausgewogener Zeilenumbruch",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "heading_visually_hidden",
-            "label": "Nur f\u00fcr Screenreader anzeigen",
-            "default": false
+          "value": "u-text-style-h6",
+          "label": "H6"
         }
-    ],
-    "presets": [
+      ],
+      "default": "u-text-style-h2"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "HTML-Tag",
+      "options": [
         {
-            "name": "Trust Rating",
-            "category": "Liquify",
-            "blocks": []
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
         }
-    ]
-} {% endschema %}
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "number",
+      "id": "heading_max_width",
+      "label": "Maximale Breite",
+      "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+      "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_tidy_text",
+      "label": "Ausgewogener Zeilenumbruch",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_visually_hidden",
+      "label": "Nur f\u00fcr Screenreader anzeigen",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust Rating",
+      "category": "Liquify",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
