@@ -25,7 +25,7 @@
             "heading_visually_hidden": false,
             "paragraph": "<p>dsadsAD</p>",
             "paragraph_variant": "u-text-style-small",
-            "paragraph_max_width": 30,
+            "paragraph_max_width": -2,
             "paragraph_tidy_text": false,
             "button_1_label": "Button 1 Text",
             "button_1_variant": "primary",
