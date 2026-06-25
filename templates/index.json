@@ -23,7 +23,7 @@
             "heading_max_width": 20,
             "heading_tidy_text": true,
             "heading_visually_hidden": false,
-            "paragraph": "",
+            "paragraph": "<p>Paragraph Text</p>",
             "paragraph_variant": "u-text-style-main",
             "paragraph_max_width": 60,
             "paragraph_tidy_text": true,
