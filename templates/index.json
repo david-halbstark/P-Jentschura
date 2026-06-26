@@ -35,7 +35,7 @@
             "button_2_label": "Button 2 Text",
             "button_2_variant": "primary",
             "button_2_mode": "link",
-            "button_2_url": "",
+            "button_2_url": "shopify://blogs/blog",
             "button_2_action": "newsletter_modal"
           }
         }
