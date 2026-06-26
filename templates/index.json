@@ -27,7 +27,7 @@
             "paragraph_variant": "u-text-style-main",
             "paragraph_max_width": 60,
             "paragraph_tidy_text": true,
-            "button_1_label": "",
+            "button_1_label": "Button Text 1",
             "button_1_variant": "primary",
             "button_1_mode": "action",
             "button_1_url": "shopify://collections/all",
