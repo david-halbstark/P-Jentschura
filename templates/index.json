@@ -15,8 +15,6 @@
         "slide_qqXnTn": {
           "type": "slide",
           "settings": {
-            "spacing_top": "none",
-            "spacing_bottom": "main",
             "eyebrow": "Übertitel Text",
             "eyebrow_variant": "u-text-style-main",
             "heading": "Lorem ipsum dolor sit amet elit",
@@ -47,7 +45,9 @@
       ],
       "name": "Hero Main",
       "settings": {
-        "section_id": ""
+        "section_id": "",
+        "spacing_top": "none",
+        "spacing_bottom": "none"
       }
     },
     "trust_rating": {
