@@ -28,7 +28,7 @@
             "paragraph_max_width": 60,
             "paragraph_tidy_text": true,
             "button_1_label": "Button 1 Text",
-            "button_1_variant": "secondary",
+            "button_1_variant": "link",
             "button_1_mode": "action",
             "button_1_url": "shopify://collections/all",
             "button_1_action": "contact_modal",
