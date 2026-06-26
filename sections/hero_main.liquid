@@ -61,14 +61,14 @@
                   </div>
                                     
                   
-                                    <div class="hero_main_slide_background u-cover-absolute"><img sizes="(max-width: 1920px) 100vw, 1920px" srcset="{{ 'lumos-v2-p-500.webp' | asset_url }} 500w, {{ 'lumos-v2-p-800.webp' | asset_url }} 800w, {{ 'lumos-v2-p-1080.webp' | asset_url }} 1080w, {{ 'lumos-v2-p-1600.webp' | asset_url }} 1600w, {{ 'lumos-v2.webp' | asset_url }} 1920w" alt="" src="{{ 'lumos-v2.webp' | asset_url }}" loading="lazy" class="hero_main_slide_image u-cover-absolute">
+                                    <div class="hero_main_slide_background u-cover-absolute"><img sizes="100vw" srcset="{{ 'lumos-v2-p-500.webp' | asset_url }} 500w, {{ 'lumos-v2-p-800.webp' | asset_url }} 800w, {{ 'lumos-v2-p-1080.webp' | asset_url }} 1080w, {{ 'lumos-v2-p-1600.webp' | asset_url }} 1600w, {{ 'lumos-v2.webp' | asset_url }} 1920w" alt="" src="{{ 'lumos-v2.webp' | asset_url }}" loading="lazy" class="hero_main_slide_image u-cover-absolute">
                     <div class="hero_main_slide_overlay u-cover-absolute"></div>
                   </div>
                                     
                   
                                     <div class="hero_main_slide_contain u-container">
                     {% render 'spacer', variant: section.settings.spacing_top %}
-                    <div class="hero_main_slide_content u-margin-trim">
+                    <div class="hero_main_slide_content u-content-wrapper">
                       {% render 'eyebrow', variant: block.settings.eyebrow_variant, eyebrow: block.settings.eyebrow %}
                       {% render 'heading', tag: block.settings.heading_tag, visually_hidden: block.settings.heading_visually_hidden, tidy_text: block.settings.heading_tidy_text, heading: block.settings.heading, custom_class: 'heading-meine-test', variant: block.settings.heading_variant, max_width: block.settings.heading_max_width %}
                       {% render 'paragraph', tidy_text: block.settings.paragraph_tidy_text, custom_class: 'paragraph-class', paragraph: block.settings.paragraph, variant: block.settings.paragraph_variant, max_width: block.settings.paragraph_max_width %}
