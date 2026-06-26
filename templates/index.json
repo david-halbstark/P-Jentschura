@@ -33,8 +33,8 @@
             "button_1_url": "shopify://collections/all",
             "button_1_action": "contact_modal",
             "button_2_label": "Button 2 Text",
-            "button_2_variant": "primary",
-            "button_2_mode": "link",
+            "button_2_variant": "secondary",
+            "button_2_mode": "action",
             "button_2_url": "shopify://blogs/blog",
             "button_2_action": "newsletter_modal"
           }
