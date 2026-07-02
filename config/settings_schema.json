@@ -26,7 +26,12 @@
                 "type": "text",
                 "id": "proven_expert_rating",
                 "label": "Proven Expert Bewertung"
-            }
+            },
+            {
+                "type": "text",
+                "id": "proven_expert_rates",
+                "label": "Proven Expert Bewertungen"
+            },
         ]
     }
 ]
