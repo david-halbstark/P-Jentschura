@@ -31,7 +31,8 @@
             {
                 "type": "text",
                 "id": "proven_expert_reviews_count",
-                "label": "ProvenExpert Anzahl Bewertungen"
+                "label": "ProvenExpert Anzahl Bewertungen",
+                "default": "425 Bewertungen auf ProvenExpert.com"
             },
         ]
     }
