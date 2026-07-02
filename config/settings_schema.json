@@ -25,12 +25,13 @@
             {
                 "type": "text",
                 "id": "proven_expert_rating",
-                "label": "Proven Expert Bewertung"
+                "label": "ProvenExpert Bewertung",
+                "default": "4,83 Hervorragend"
             },
             {
                 "type": "text",
                 "id": "proven_expert_reviews_count",
-                "label": "Proven Expert Bewertungen"
+                "label": "ProvenExpert Anzahl Bewertungen"
             },
         ]
     }
