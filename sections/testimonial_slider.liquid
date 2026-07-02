@@ -1,0 +1,212 @@
+<div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+          
+          
+          
+        </div>
+        <div class="newsletter_contain u-container" id="{% if section.settings.section_id != blank %}{{ section_id }}{% endif %}">
+          {% render 'spacer', variant: section.settings.spacing_top %}
+          <div class="section_layout u-grid-autofit">
+            {% render 'eyebrow', custom_class: , eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant %}
+          </div>
+          {% render 'spacer', variant: section.settings.spacing_bottom %}
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Testimonial Slider",
+    "class": "section_wrap u-section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Sektion"
+        },
+        {
+            "type": "text",
+            "id": "section_id",
+            "label": "ID"
+        },
+        {
+            "type": "header",
+            "content": "Abst\u00e4nde"
+        },
+        {
+            "type": "select",
+            "id": "spacing_top",
+            "label": "Oben",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "main",
+                    "label": "Standard"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "main"
+        },
+        {
+            "type": "select",
+            "id": "spacing_bottom",
+            "label": "Unten",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "main",
+                    "label": "Standard"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "main"
+        },
+        {
+            "type": "header",
+            "content": "\u00dcberschrift"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+            "type": "select",
+            "id": "heading_variant",
+            "label": "Stil",
+            "options": [
+                {
+                    "value": "u-text-style-h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "u-text-style-h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "u-text-style-h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "u-text-style-h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "u-text-style-h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "u-text-style-h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "u-text-style-small",
+                    "label": "Small"
+                },
+                {
+                    "value": "u-text-style-main",
+                    "label": "Main"
+                },
+                {
+                    "value": "u-text-style-large",
+                    "label": "Large"
+                }
+            ],
+            "default": "u-text-style-h2"
+        },
+        {
+            "type": "select",
+            "id": "heading_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "number",
+            "id": "heading_max_width",
+            "label": "Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 20
+        },
+        {
+            "type": "checkbox",
+            "id": "heading_tidy_text",
+            "label": "Ausgewogener Zeilenumbruch",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "heading_visually_hidden",
+            "label": "Nur f\u00fcr Screenreader anzeigen",
+            "default": false
+        }
+    ],
+    "presets": [
+        {
+            "name": "Testimonial Slider",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}

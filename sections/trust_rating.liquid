@@ -1,6 +1,9 @@
 <div class="u-display-none">
           
           
+        </div>
+        <div class="u-display-none">
+          
           
           
         </div>
@@ -13,45 +16,56 @@
           
           
         </div>
-        <div class="u-container">
-          <div data-wf--content-wrapper--variant="left" class="u-content-wrapper w-variant-e85a4315-14bc-e5ef-0d3e-2c8c9ed7d2f1" style="">
-            <div class="u-display-contents">
-              {% if false %}    <div li-if="false" data-number="20" data-wf--preview-heading--preview-variant="h2" class="u-heading w-variant-433d40c6-c261-f13f-c899-61d2cadf150f w-richtext">
-    
-                <h2>Lorem ipsum dolor sit amet elit</h2>
-                  </div>
-{% endif %}
-              {% if false %}    <div li-if="false" data-number="60" data-wf--preview-paragraph--preview-variant="inherit" class="u-text u-rich-text w-richtext tester">
-    
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                  </div>
-{% endif %}
-              {% if false %}    <div li-if="false" class="u-button-wrapper">
-    
-                <div class="u-display-contents">
-                  <div data-wf--preview-button-main--preview-variant="primary" data-button=" " data-trigger="hover focus" class="button_main_wrap">
-                    <div data-wf--clickable--variant="focus-ring-outside" class="clickable_wrap u-cover-absolute"><button type="button" aria-label="Button Text" class="clickable_btn"></button></div>
-                    <div class="button_main_element">
-                      <div aria-hidden="true" class="button_main_text u-text-style-main">Button Text</div>
-                      <div class="button_main_icon u-hide-if-empty"></div>
-                    </div>
-                  </div>
-                  <div data-wf--preview-button-main--preview-variant="primary" data-button=" " data-trigger="hover focus" class="button_main_wrap">
-                    <div data-wf--clickable--variant="focus-ring-outside" class="clickable_wrap u-cover-absolute"><button type="button" aria-label="Button Text" class="clickable_btn"></button></div>
-                    <div class="button_main_element">
-                      <div aria-hidden="true" class="button_main_text u-text-style-main">Button Text</div>
-                      <div class="button_main_icon u-hide-if-empty"></div>
-                    </div>
-                  </div>
+        <div class="trust_rating_contain u-container" id="{% if section.settings.section_id != blank %}{{ section_id }}{% endif %}">
+          {% render 'spacer', variant: section.settings.spacing_top %}
+          <div class="trust_rating_layout u-flex-horizontal-nowrap">
+            {% render 'heading', tag: section.settings.heading_tag, visually_hidden: true, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+            <div class="trust_rating_left">
+              <div class="trust_rating_stars">
+                <div class="trust_rating_star">
+                  <div aria-hidden="true" class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 14 14" fill="none">
+                      <path d="M6.34963 0.920948C6.59025 0.359032 7.40978 0.359033 7.6504 0.920949L9.07054 4.23747C9.17204 4.47436 9.40141 4.63622 9.66469 4.65672L13.3509 4.94377C13.9755 4.99241 14.2287 5.74946 13.7529 6.14537L10.9444 8.48211C10.7438 8.64905 10.6561 8.91096 10.7174 9.16048L11.5755 12.6544C11.7208 13.2464 11.0578 13.7143 10.5231 13.3971L7.36719 11.5247C7.14177 11.391 6.85827 11.391 6.63285 11.5247L3.4769 13.3971C2.94219 13.7143 2.27917 13.2464 2.42455 12.6544L3.2826 9.16048C3.34389 8.91096 3.25628 8.64905 3.05569 8.48211L0.247144 6.14537C-0.228703 5.74946 0.0245476 4.99241 0.649105 4.94377L4.33536 4.65672C4.59866 4.63622 4.82802 4.47436 4.92946 4.23747L6.34963 0.920948Z" fill="currentColor"></path>
+                    </svg></div>
                 </div>
-                  </div>
-{% endif %}
+                <div class="trust_rating_star">
+                  <div aria-hidden="true" class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 14 14" fill="none">
+                      <path d="M6.34963 0.920948C6.59025 0.359032 7.40978 0.359033 7.6504 0.920949L9.07054 4.23747C9.17204 4.47436 9.40141 4.63622 9.66469 4.65672L13.3509 4.94377C13.9755 4.99241 14.2287 5.74946 13.7529 6.14537L10.9444 8.48211C10.7438 8.64905 10.6561 8.91096 10.7174 9.16048L11.5755 12.6544C11.7208 13.2464 11.0578 13.7143 10.5231 13.3971L7.36719 11.5247C7.14177 11.391 6.85827 11.391 6.63285 11.5247L3.4769 13.3971C2.94219 13.7143 2.27917 13.2464 2.42455 12.6544L3.2826 9.16048C3.34389 8.91096 3.25628 8.64905 3.05569 8.48211L0.247144 6.14537C-0.228703 5.74946 0.0245476 4.99241 0.649105 4.94377L4.33536 4.65672C4.59866 4.63622 4.82802 4.47436 4.92946 4.23747L6.34963 0.920948Z" fill="currentColor"></path>
+                    </svg></div>
+                </div>
+                <div class="trust_rating_star">
+                  <div aria-hidden="true" class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 14 14" fill="none">
+                      <path d="M6.34963 0.920948C6.59025 0.359032 7.40978 0.359033 7.6504 0.920949L9.07054 4.23747C9.17204 4.47436 9.40141 4.63622 9.66469 4.65672L13.3509 4.94377C13.9755 4.99241 14.2287 5.74946 13.7529 6.14537L10.9444 8.48211C10.7438 8.64905 10.6561 8.91096 10.7174 9.16048L11.5755 12.6544C11.7208 13.2464 11.0578 13.7143 10.5231 13.3971L7.36719 11.5247C7.14177 11.391 6.85827 11.391 6.63285 11.5247L3.4769 13.3971C2.94219 13.7143 2.27917 13.2464 2.42455 12.6544L3.2826 9.16048C3.34389 8.91096 3.25628 8.64905 3.05569 8.48211L0.247144 6.14537C-0.228703 5.74946 0.0245476 4.99241 0.649105 4.94377L4.33536 4.65672C4.59866 4.63622 4.82802 4.47436 4.92946 4.23747L6.34963 0.920948Z" fill="currentColor"></path>
+                    </svg></div>
+                </div>
+                <div class="trust_rating_star">
+                  <div aria-hidden="true" class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 14 14" fill="none">
+                      <path d="M6.34963 0.920948C6.59025 0.359032 7.40978 0.359033 7.6504 0.920949L9.07054 4.23747C9.17204 4.47436 9.40141 4.63622 9.66469 4.65672L13.3509 4.94377C13.9755 4.99241 14.2287 5.74946 13.7529 6.14537L10.9444 8.48211C10.7438 8.64905 10.6561 8.91096 10.7174 9.16048L11.5755 12.6544C11.7208 13.2464 11.0578 13.7143 10.5231 13.3971L7.36719 11.5247C7.14177 11.391 6.85827 11.391 6.63285 11.5247L3.4769 13.3971C2.94219 13.7143 2.27917 13.2464 2.42455 12.6544L3.2826 9.16048C3.34389 8.91096 3.25628 8.64905 3.05569 8.48211L0.247144 6.14537C-0.228703 5.74946 0.0245476 4.99241 0.649105 4.94377L4.33536 4.65672C4.59866 4.63622 4.82802 4.47436 4.92946 4.23747L6.34963 0.920948Z" fill="currentColor"></path>
+                    </svg></div>
+                </div>
+                <div class="trust_rating_star">
+                  <div aria-hidden="true" class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 14 14" fill="none">
+                      <path d="M6.34963 0.920948C6.59025 0.359032 7.40978 0.359033 7.6504 0.920949L9.07054 4.23747C9.17204 4.47436 9.40141 4.63622 9.66469 4.65672L13.3509 4.94377C13.9755 4.99241 14.2287 5.74946 13.7529 6.14537L10.9444 8.48211C10.7438 8.64905 10.6561 8.91096 10.7174 9.16048L11.5755 12.6544C11.7208 13.2464 11.0578 13.7143 10.5231 13.3971L7.36719 11.5247C7.14177 11.391 6.85827 11.391 6.63285 11.5247L3.4769 13.3971C2.94219 13.7143 2.27917 13.2464 2.42455 12.6544L3.2826 9.16048C3.34389 8.91096 3.25628 8.64905 3.05569 8.48211L0.247144 6.14537C-0.228703 5.74946 0.0245476 4.99241 0.649105 4.94377L4.33536 4.65672C4.59866 4.63622 4.82802 4.47436 4.92946 4.23747L6.34963 0.920948Z" fill="currentColor"></path>
+                    </svg></div>
+                </div>
+              </div>
+              {% render 'typography', tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, tidy_text: section.settings.text_tidy_text, custom_class: , variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
             </div>
+            <div class="trust_rating_mid">
+              {% render 'typography', tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, tidy_text: section.settings.text_tidy_text, custom_class: , variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
+            </div>
+            <div class="trust_rating_right">
+              <div li-snippet:image="" class="u-display-contents" image="">
+                
+                <div data-wf--preview-image--variant="cover" class="u-image-wrapper w-variant-4972adff-107c-1f37-d19c-526a2bf55c28"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="u-image"></div>
+              </div>
+            </div>
+            <div data-wf--clickable--variant="focus-ring-outside" class="clickable_wrap u-cover-absolute"><button type="button" class="clickable_btn"></button></div>
           </div>
+          {% render 'spacer', variant: section.settings.spacing_bottom %}
         </div> {% schema %} {
     "tag": "section",
     "name": "Trust Rating",
-    "class": "hero_main_wrap u-section",
+    "class": "trust_rating_wrap u-section",
     "settings": [
         {
             "type": "header",
@@ -61,6 +75,66 @@
             "type": "text",
             "id": "section_id",
             "label": "ID"
+        },
+        {
+            "type": "header",
+            "content": "Abst\u00e4nde"
+        },
+        {
+            "type": "select",
+            "id": "spacing_top",
+            "label": "Oben",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "main",
+                    "label": "Standard"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "main"
+        },
+        {
+            "type": "select",
+            "id": "spacing_bottom",
+            "label": "Unten",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "main",
+                    "label": "Standard"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "main"
         },
         {
             "type": "header",
@@ -100,6 +174,18 @@
                 {
                     "value": "u-text-style-h6",
                     "label": "H6"
+                },
+                {
+                    "value": "u-text-style-small",
+                    "label": "Small"
+                },
+                {
+                    "value": "u-text-style-main",
+                    "label": "Main"
+                },
+                {
+                    "value": "u-text-style-large",
+                    "label": "Large"
                 }
             ],
             "default": "u-text-style-h2"
