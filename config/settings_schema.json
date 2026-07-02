@@ -24,8 +24,8 @@
             },
             {
                 "type": "text",
-                "id": "custom_section_id",
-                "label": "Custom Section ID"
+                "id": "proven_expert_rating",
+                "label": "Proven Expert Bewertung"
             }
         ]
     }
