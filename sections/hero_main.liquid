@@ -1,8 +1,6 @@
 <div class="u-display-none">
           
           
-          
-          
         </div>
         <div class="u-display-none">
           
@@ -61,7 +59,7 @@
                   </div>
                                     
                   
-                                    <div class="hero_main_slide_background u-cover-absolute"><img sizes="100vw" srcset="{{ 'lumos-v2-p-500.webp' | asset_url }} 500w, {{ 'lumos-v2-p-800.webp' | asset_url }} 800w, {{ 'lumos-v2-p-1080.webp' | asset_url }} 1080w, {{ 'lumos-v2-p-1600.webp' | asset_url }} 1600w, {{ 'lumos-v2.webp' | asset_url }} 1920w" alt="" src="{{ 'lumos-v2.webp' | asset_url }}" loading="lazy" class="hero_main_slide_image u-cover-absolute">
+                                    <div class="hero_main_slide_background u-cover-absolute"><img sizes="(max-width: 1920px) 100vw, 1920px" srcset="{{ 'lumos-v2-p-500.webp' | asset_url }} 500w, {{ 'lumos-v2-p-800.webp' | asset_url }} 800w, {{ 'lumos-v2-p-1080.webp' | asset_url }} 1080w, {{ 'lumos-v2-p-1600.webp' | asset_url }} 1600w, {{ 'lumos-v2.webp' | asset_url }} 1920w" alt="" src="{{ 'lumos-v2.webp' | asset_url }}" loading="lazy" class="hero_main_slide_image u-cover-absolute">
                     <div class="hero_main_slide_overlay u-cover-absolute"></div>
                   </div>
                                     
@@ -75,6 +73,43 @@
                       {% render 'button_group', button_1_url: block.settings.button_1_url, button_2_url: block.settings.button_2_url, button_2_action: block.settings.button_2_action, button_1_action: block.settings.button_1_action, button_1_label: block.settings.button_1_label, button_2_label: block.settings.button_2_label, button_1_trigger: 'hover focus', button_2_trigger: 'hover focus', button_2_mode: block.settings.button_2_mode, button_1_mode: block.settings.button_1_mode, button_1_variant: block.settings.button_1_variant, button_2_custom_class: , button_1_custom_class: , button_2_variant: block.settings.button_2_variant %}
                     </div>
                     {% render 'spacer', variant: section.settings.spacing_bottom %}
+                  </div>
+                                    
+                  
+                                    <div class="w-embed">
+                    <style>
+/* Bestehende Trim-Logik */ /*
+:is(.u-margin-trim, .w-richtext, .u-content-wrapper, [class*='u-container'], [class*='u-layout-column'])
+  > :not(:has(~ :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim))),
+:is(.u-margin-trim, .w-richtext, .u-content-wrapper, [class*='u-container'], [class*='u-layout-column'])
+  > .u-display-contents
+  > :not(:has(~ :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim))) {
+  margin-bottom: 0;
+} */
+/* li-snippet: erstes echtes Element innen ohne padding-top */
+:is(.u-margin-trim, .w-richtext, .u-content-wrapper, [class*='u-container'], [class*='u-layout-column'])
+  > [li-snippet].u-display-contents
+  > :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim):first-child {
+  padding-top: 0;
+}
+/* li-snippet: letztes echtes Element innen ohne padding-bottom */
+:is(.u-margin-trim, .w-richtext, .u-content-wrapper, [class*='u-container'], [class*='u-layout-column'])
+  > [li-snippet].u-display-contents
+  > :not(:has(~ :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim))) {
+  padding-bottom: 0;
+}
+/* li-snippet: wenn das letzte echte Element selbst Richtext enth&auml;lt,
+   dann auch dessen letztes Kind trimmen, z. B. p, h2 etc. */
+:is(.u-margin-trim, .w-richtext, .u-content-wrapper, [class*='u-container'], [class*='u-layout-column'])
+  > [li-snippet].u-display-contents
+  > :not(:has(~ :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim)))
+  > :not(:has(~ :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim))) {
+  margin-bottom: 0;
+}
+  .u-hide-webflow {
+    display: none;
+  }
+</style>
                   </div>
                                     
                 
