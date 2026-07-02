@@ -21,6 +21,11 @@
                 "id": "apple_touch_icon",
                 "label": "Apple touch icon image",
                 "info": "Will be scaled down to 120x120px"
+            },
+            {
+                "type": "text",
+                "id": "custom_section_id",
+                "label": "Custom Section ID"
             }
         ]
     }
