@@ -1,0 +1,165 @@
+<div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        <div class="category_cards_contain u-container" id="{% if section.settings.section_id != blank %}{{ section_id }}{% endif %}">
+          {% render 'spacer', variant: section.settings.spacing_top %}
+          <div class="category_cards_layout">
+            {% render 'heading', tag: section.settings.heading_tag, visually_hidden: true, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+            <div class="category_cards_card_wrap">
+              <div class="category_cards_card_element">
+                <div></div>
+              </div>
+            </div>
+            <div class="category_cards_card_wrap">
+              <div class="category_cards_card_element">
+                <div></div>
+              </div>
+            </div>
+            <div class="category_cards_card_wrap">
+              <div class="category_cards_card_element">
+                <div></div>
+              </div>
+            </div>
+            <div class="category_cards_card_wrap">
+              <div class="category_cards_card_element">
+                <div></div>
+              </div>
+            </div>
+          </div>
+          {% render 'spacer', variant: section.settings.spacing_bottom %}
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Category Cards",
+    "class": "category_cards_wrap u-section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Sektion"
+        },
+        {
+            "type": "text",
+            "id": "section_id",
+            "label": "ID"
+        },
+        {
+            "type": "header",
+            "content": "Abst\u00e4nde"
+        },
+        {
+            "type": "select",
+            "id": "spacing_top",
+            "label": "Oben",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "main",
+                    "label": "Standard"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "main"
+        },
+        {
+            "type": "select",
+            "id": "spacing_bottom",
+            "label": "Unten",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "main",
+                    "label": "Standard"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "main"
+        },
+        {
+            "type": "header",
+            "content": "\u00dcberschrift"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+            "type": "select",
+            "id": "heading_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                }
+            ],
+            "default": "h2"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Category Cards",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}

@@ -1,0 +1,470 @@
+<div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </div>
+        <div class="guide_slider_contain u-container" id="{% if section.settings.section_id != blank %}{{ section_id }}{% endif %}">
+          {% render 'spacer', variant: section.settings.spacing_top %}
+          <div class="guide_slider_layout u-grid-autofit">
+            {% if false %}    <div class="u-eyebrow-wrapper" li-if="false">
+    
+              <div class="u-eyebrow-layout">
+                <div class="u-eyebrow-text u-text-style-main w-richtext">
+                  <p>Eyebrow Text Here</p>
+                </div>
+              </div>
+                </div>
+{% endif %}
+            {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+            {% render 'button_group', button_1_url: section.settings.button_1_url, button_2_url: section.settings.button_2_url, button_2_action: section.settings.button_2_action, button_1_action: section.settings.button_1_action, button_1_label: section.settings.button_1_label, button_2_label: section.settings.button_2_label, button_1_trigger: 'hover focus', button_2_trigger: 'hover focus', button_2_mode: section.settings.button_2_mode, button_1_mode: section.settings.button_1_mode, button_1_variant: section.settings.button_1_variant, button_2_custom_class: , button_1_custom_class: , button_2_variant: section.settings.button_2_variant %}
+          </div>
+          {% render 'spacer', variant: section.settings.spacing_bottom %}
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Guide Slider",
+    "class": "guide_slider_wrap u-section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Sektion"
+        },
+        {
+            "type": "text",
+            "id": "section_id",
+            "label": "ID"
+        },
+        {
+            "type": "header",
+            "content": "Abst\u00e4nde"
+        },
+        {
+            "type": "select",
+            "id": "spacing_top",
+            "label": "Oben",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "main",
+                    "label": "Standard"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "main"
+        },
+        {
+            "type": "select",
+            "id": "spacing_bottom",
+            "label": "Unten",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "main",
+                    "label": "Standard"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "main"
+        },
+        {
+            "type": "header",
+            "content": "\u00dcbertitel"
+        },
+        {
+            "type": "text",
+            "id": "eyebrow",
+            "label": "Text",
+            "default": "\u00dcbertitel Text"
+        },
+        {
+            "type": "select",
+            "id": "eyebrow_variant",
+            "label": "Stil",
+            "options": [
+                {
+                    "value": "u-text-style-h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "u-text-style-h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "u-text-style-h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "u-text-style-h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "u-text-style-h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "u-text-style-h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "u-text-style-small",
+                    "label": "Small"
+                },
+                {
+                    "value": "u-text-style-main",
+                    "label": "Main"
+                },
+                {
+                    "value": "u-text-style-large",
+                    "label": "Large"
+                }
+            ],
+            "default": "u-text-style-h2"
+        },
+        {
+            "type": "select",
+            "id": "eyebrow_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "p"
+        },
+        {
+            "type": "header",
+            "content": "\u00dcberschrift"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+            "type": "select",
+            "id": "heading_variant",
+            "label": "Stil",
+            "options": [
+                {
+                    "value": "u-text-style-h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "u-text-style-h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "u-text-style-h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "u-text-style-h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "u-text-style-h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "u-text-style-h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "u-text-style-small",
+                    "label": "Small"
+                },
+                {
+                    "value": "u-text-style-main",
+                    "label": "Main"
+                },
+                {
+                    "value": "u-text-style-large",
+                    "label": "Large"
+                }
+            ],
+            "default": "u-text-style-h2"
+        },
+        {
+            "type": "select",
+            "id": "heading_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "number",
+            "id": "heading_max_width",
+            "label": "Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 20
+        },
+        {
+            "type": "checkbox",
+            "id": "heading_tidy_text",
+            "label": "Ausgewogener Zeilenumbruch",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "heading_visually_hidden",
+            "label": "Nur f\u00fcr Screenreader anzeigen",
+            "default": false
+        },
+        {
+            "type": "header",
+            "content": "Button 1"
+        },
+        {
+            "type": "text",
+            "id": "button_1_label",
+            "label": "Text",
+            "default": "Button 1 Text"
+        },
+        {
+            "type": "select",
+            "id": "button_1_variant",
+            "label": "Stil",
+            "options": [
+                {
+                    "value": "primary",
+                    "label": "Prim\u00e4r"
+                },
+                {
+                    "value": "secondary",
+                    "label": "Sekund\u00e4r"
+                },
+                {
+                    "value": "link",
+                    "label": "Textlink"
+                }
+            ],
+            "default": "primary"
+        },
+        {
+            "type": "select",
+            "id": "button_1_mode",
+            "label": "Funktion",
+            "options": [
+                {
+                    "value": "link",
+                    "label": "Link \u00f6ffnen"
+                },
+                {
+                    "value": "action",
+                    "label": "Aktion ausf\u00fchren"
+                }
+            ],
+            "default": "link"
+        },
+        {
+            "type": "url",
+            "id": "button_1_url",
+            "label": "Link",
+            "visible_if": "{{ block.settings.button_1_mode == 'link' }}"
+        },
+        {
+            "type": "select",
+            "id": "button_1_action",
+            "label": "Aktion",
+            "options": [
+                {
+                    "value": "newsletter_modal",
+                    "label": "Newsletter-Modal \u00f6ffnen"
+                },
+                {
+                    "value": "contact_modal",
+                    "label": "Kontaktformular-Modal \u00f6ffnen"
+                }
+            ],
+            "default": "newsletter_modal",
+            "visible_if": "{{ block.settings.button_1_mode == 'action' }}"
+        },
+        {
+            "type": "header",
+            "content": "Button 2"
+        },
+        {
+            "type": "text",
+            "id": "button_2_label",
+            "label": "Text",
+            "default": "Button 2 Text"
+        },
+        {
+            "type": "select",
+            "id": "button_2_variant",
+            "label": "Stil",
+            "options": [
+                {
+                    "value": "primary",
+                    "label": "Prim\u00e4r"
+                },
+                {
+                    "value": "secondary",
+                    "label": "Sekund\u00e4r"
+                },
+                {
+                    "value": "link",
+                    "label": "Textlink"
+                }
+            ],
+            "default": "primary"
+        },
+        {
+            "type": "select",
+            "id": "button_2_mode",
+            "label": "Funktion",
+            "options": [
+                {
+                    "value": "link",
+                    "label": "Link \u00f6ffnen"
+                },
+                {
+                    "value": "action",
+                    "label": "Aktion ausf\u00fchren"
+                }
+            ],
+            "default": "link"
+        },
+        {
+            "type": "url",
+            "id": "button_2_url",
+            "label": "Link",
+            "visible_if": "{{ block.settings.button_2_mode == 'link' }}"
+        },
+        {
+            "type": "select",
+            "id": "button_2_action",
+            "label": "Aktion",
+            "options": [
+                {
+                    "value": "newsletter_modal",
+                    "label": "Newsletter-Modal \u00f6ffnen"
+                },
+                {
+                    "value": "contact_modal",
+                    "label": "Kontaktformular-Modal \u00f6ffnen"
+                }
+            ],
+            "default": "newsletter_modal",
+            "visible_if": "{{ block.settings.button_2_mode == 'action' }}"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Guide Slider",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}
