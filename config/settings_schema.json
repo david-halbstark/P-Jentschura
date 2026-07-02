@@ -29,7 +29,7 @@
             },
             {
                 "type": "text",
-                "id": "proven_expert_rates",
+                "id": "proven_expert_reviews_count",
                 "label": "Proven Expert Bewertungen"
             },
         ]
