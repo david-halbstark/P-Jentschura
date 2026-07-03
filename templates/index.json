@@ -16,7 +16,7 @@
           "type": "slide",
           "settings": {
             "eyebrow": "Übertitel Text",
-            "eyebrow_variant": "u-text-style-main",
+            "eyebrow_variant": "u-text-eyebrow-large",
             "eyebrow_tag": "p",
             "heading": "Lorem ipsum dolor sit amet elitsadsad",
             "heading_variant": "u-text-style-h2",
@@ -102,7 +102,7 @@
         "spacing_top": "main",
         "spacing_bottom": "main",
         "eyebrow": "Übertitel Text",
-        "eyebrow_variant": "u-text-style-h2",
+        "eyebrow_variant": "u-text-eyebrow-small",
         "eyebrow_tag": "p",
         "heading": "Lorem ipsum dolor sit amet elit",
         "heading_variant": "u-text-style-h2",
