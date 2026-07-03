@@ -69,17 +69,17 @@ select:has(option[value=""]:checked) {
 	margin-bottom: 0;
 } */
 /* Line Height Trim */
-:not(.u-text-trim-off) > :is(h1,h2,h3,h4,h5,h6,p):not(.u-text-trim-off,:has([class*="u-text-style-"]))::before,
-[class*="u-text-style-"]:not(.u-text-trim-off,:has(h1,h2,h3,h4,h5,h6,p))::before {
+:not(.u-text-trim-off) > :is(h1,h2,h3,h4,h5,h6,p):not(.u-text-trim-off,:has([class*="u-text-"]))::before,
+[class*="u-text-"]:not(.u-text-trim-off,:has(h1,h2,h3,h4,h5,h6,p))::before {
 	content: "";
 	display: table;
-	margin-bottom: calc(-0.5lh + var(--_text-style---trim-top));
+	margin-bottom: calc(-0.5lh + var(--_text-style-1---trim-top));
 }
-:not(.u-text-trim-off) > :is(h1,h2,h3,h4,h5,h6,p):not(.u-text-trim-off,:has([class*="u-text-style-"]))::after,
-[class*="u-text-style-"]:not(.u-text-trim-off,:has(h1,h2,h3,h4,h5,h6,p))::after {
+:not(.u-text-trim-off) > :is(h1,h2,h3,h4,h5,h6,p):not(.u-text-trim-off,:has([class*="u-text-"]))::after,
+[class*="u-text-"]:not(.u-text-trim-off,:has(h1,h2,h3,h4,h5,h6,p))::after {
 	content: "";
 	display: table;
-	margin-bottom: calc(-0.5lh + var(--_text-style---trim-bottom));
+	margin-bottom: calc(-0.5lh + var(--_text-style-1---trim-bottom));
 }
 /* Rich Text Links */
 .w-richtext a {
