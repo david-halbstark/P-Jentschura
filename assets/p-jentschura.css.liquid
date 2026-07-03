@@ -114,16 +114,13 @@
   --_theme---button-primary--background-hover: var(--_theme---text);
   --_theme---button-primary--border: var(--_theme---button-primary--background);
   --_theme---button-primary--border-hover: var(--_theme---button-primary--background-hover);
+  --button-size--medium: 3rem;
   --_theme---button-secondary--text: var(--_theme---text);
   --_theme---button-secondary--text-hover: var(--_theme---background);
   --_theme---button-secondary--background: var(--swatch--transparent);
   --_theme---button-secondary--background-hover: var(--_theme---text);
   --_theme---button-secondary--border: var(--_theme---border);
   --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
-  --_theme---text-link--border: var(--_theme---border);
-  --_theme---text-link--text: var(--_theme---text);
-  --_theme---text-link--text-hover: var(--_theme---text-link--text);
-  --button-size--medium: 3rem;
   --button-size--large: 5rem;
   --_state---false: 0;
   --_state---true: 1;
@@ -140,7 +137,6 @@
   --nav--hamburger-gap: var(--_spacing---space--2);
   --nav--spacing-inner-horizontal: var(--_spacing---space--5);
   --focus--width: .125rem;
-  --_theme---text-link--border-hover: var(--_theme---text);
   --_text-style-2---font-family: var(--_typography---font--primary-family);
   --_text-style-2---font-size: var(--_typography---font-size--link-base);
   --_text-style-2---line-height: var(--_typography---line-height--normal);
@@ -185,9 +181,13 @@
   --swatch--charcoal: #232e20;
   --swatch--gray: #656d63;
   --swatch--snow: #f6f6f6;
+  --_theme---text-link--text: var(--_theme---text);
   --swatch--orange: #f09628;
+  --_theme---text-link--border: var(--_theme---border);
   --swatch--green: #5c7f53;
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
   --swatch--blue: #4f78a7;
+  --_theme---text-link--border-hover: var(--_theme---text);
   --swatch--purple: #9a5970;
   --nav--banner-height: 2.4rem;
   --_typography---font--primary-trim-top: .47em;
@@ -476,13 +476,13 @@ figure {
   --_theme---button-secondary--background-hover: var(--_theme---text);
   --_theme---button-secondary--border: var(--_theme---border);
   --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
-  --_theme---text-link--border: var(--_theme---border);
-  --_theme---text-link--text: var(--_theme---text);
-  --_theme---text-link--text-hover: var(--_theme---text-link--text);
   --_theme---nav--background: var(--_theme---background-2);
-  --_theme---text-link--border-hover: var(--swatch--brand-500);
   --_theme---selection--background: var(--swatch--brand-300);
   --_theme---selection--text: var(--swatch--brand-text);
+  --_theme---text-link--text: var(--_theme---text);
+  --_theme---text-link--border: var(--_theme---border);
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
+  --_theme---text-link--border-hover: var(--swatch--brand-500);
   overflow: clip;
 }
 
@@ -2007,13 +2007,13 @@ figure {
   --_theme---button-secondary--background-hover: var(--_theme---text);
   --_theme---button-secondary--border: var(--_theme---border);
   --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
-  --_theme---text-link--border: var(--_theme---border);
-  --_theme---text-link--text: var(--_theme---text);
-  --_theme---text-link--text-hover: var(--_theme---text-link--text);
   --_theme---nav--background: var(--_theme---background-2);
-  --_theme---text-link--border-hover: var(--_theme---text);
   --_theme---selection--background: var(--swatch--brand-300);
   --_theme---selection--text: var(--swatch--brand-text);
+  --_theme---text-link--text: var(--_theme---text);
+  --_theme---text-link--border: var(--_theme---border);
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
+  --_theme---text-link--border-hover: var(--_theme---text);
 }
 
 .u-section:where(.w-variant-857e5430-97c7-deb6-3c1a-d3063f9fe2c7) {
@@ -2035,13 +2035,13 @@ figure {
   --_theme---button-secondary--background-hover: var(--_theme---text);
   --_theme---button-secondary--border: var(--_theme---border);
   --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
-  --_theme---text-link--border: var(--_theme---border);
-  --_theme---text-link--text: var(--_theme---text);
-  --_theme---text-link--text-hover: var(--_theme---text-link--text);
   --_theme---nav--background: var(--_theme---background-2);
-  --_theme---text-link--border-hover: var(--swatch--brand-500);
   --_theme---selection--background: var(--swatch--brand-300);
   --_theme---selection--text: var(--swatch--brand-text);
+  --_theme---text-link--text: var(--_theme---text);
+  --_theme---text-link--border: var(--_theme---border);
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
+  --_theme---text-link--border-hover: var(--swatch--brand-500);
 }
 
 .u-section:where(.w-variant-25bf08d9-3196-322b-5616-019ac7f0f4f7) {
@@ -2063,13 +2063,13 @@ figure {
   --_theme---button-secondary--background-hover: var(--_theme---text);
   --_theme---button-secondary--border: var(--_theme---border);
   --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
-  --_theme---text-link--border: var(--_theme---border);
-  --_theme---text-link--text: var(--_theme---text);
-  --_theme---text-link--text-hover: var(--_theme---text-link--text);
   --_theme---nav--background: var(--_theme---background);
-  --_theme---text-link--border-hover: var(--_theme---text);
   --_theme---selection--background: var(--swatch--brand-300);
   --_theme---selection--text: var(--swatch--brand-text);
+  --_theme---text-link--text: var(--_theme---text);
+  --_theme---text-link--border: var(--_theme---border);
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
+  --_theme---text-link--border-hover: var(--_theme---text);
 }
 
 .u-section-spacer {
@@ -2214,13 +2214,13 @@ figure {
   --_theme---button-secondary--background-hover: var(--_theme---text);
   --_theme---button-secondary--border: var(--_theme---border);
   --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
-  --_theme---text-link--border: var(--_theme---border);
-  --_theme---text-link--text: var(--_theme---text);
-  --_theme---text-link--text-hover: var(--_theme---text-link--text);
   --_theme---nav--background: var(--_theme---background-2);
-  --_theme---text-link--border-hover: var(--_theme---text);
   --_theme---selection--background: var(--swatch--brand-300);
   --_theme---selection--text: var(--swatch--brand-text);
+  --_theme---text-link--text: var(--_theme---text);
+  --_theme---text-link--border: var(--_theme---border);
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
+  --_theme---text-link--border-hover: var(--_theme---text);
 }
 
 .u-theme-dark {
@@ -2244,13 +2244,13 @@ figure {
   --_theme---button-secondary--background-hover: var(--_theme---text);
   --_theme---button-secondary--border: var(--_theme---border);
   --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
-  --_theme---text-link--border: var(--_theme---border);
-  --_theme---text-link--text: var(--_theme---text);
-  --_theme---text-link--text-hover: var(--_theme---text-link--text);
   --_theme---nav--background: var(--_theme---background-2);
-  --_theme---text-link--border-hover: var(--swatch--brand-500);
   --_theme---selection--background: var(--swatch--brand-300);
   --_theme---selection--text: var(--swatch--brand-text);
+  --_theme---text-link--text: var(--_theme---text);
+  --_theme---text-link--border: var(--_theme---border);
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
+  --_theme---text-link--border-hover: var(--swatch--brand-500);
 }
 
 .u-theme-brand {
@@ -2274,13 +2274,13 @@ figure {
   --_theme---button-secondary--background-hover: var(--_theme---text);
   --_theme---button-secondary--border: var(--_theme---border);
   --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
-  --_theme---text-link--border: var(--_theme---border);
-  --_theme---text-link--text: var(--_theme---text);
-  --_theme---text-link--text-hover: var(--_theme---text-link--text);
   --_theme---nav--background: var(--_theme---background);
-  --_theme---text-link--border-hover: var(--_theme---text);
   --_theme---selection--background: var(--swatch--brand-300);
   --_theme---selection--text: var(--swatch--brand-text);
+  --_theme---text-link--text: var(--_theme---text);
+  --_theme---text-link--border: var(--_theme---border);
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
+  --_theme---text-link--border-hover: var(--_theme---text);
 }
 
 .u-text-h1-primary {
@@ -3997,7 +3997,7 @@ figure {
   padding-right: .9rem;
 }
 
-.button_main_element {
+.button_element {
   grid-column-gap: .5rem;
   grid-row-gap: .5rem;
   border-top-style: solid;
@@ -4034,26 +4034,7 @@ figure {
   position: relative;
 }
 
-.button_main_element:where(.w-variant-e85564cd-af30-a478-692b-71732aefb3ab) {
-  color: color-mix(in srgb, var(--_theme---button-secondary--text) calc(100% * var(--_trigger---on)), var(--_theme---button-secondary--text-hover) calc(100% * var(--_trigger---off)));
-  background-color: color-mix(in srgb, var(--_theme---button-secondary--background) calc(100% * var(--_trigger---on)), var(--_theme---button-secondary--background-hover) calc(100% * var(--_trigger---off)));
-  border-top-color: color-mix(in srgb, var(--_theme---button-secondary--border) calc(100% * var(--_trigger---on)), var(--_theme---button-secondary--border-hover) calc(100% * var(--_trigger---off)));
-  border-right-color: color-mix(in srgb, var(--_theme---button-secondary--border) calc(100% * var(--_trigger---on)), var(--_theme---button-secondary--border-hover) calc(100% * var(--_trigger---off)));
-  border-bottom-color: color-mix(in srgb, var(--_theme---button-secondary--border) calc(100% * var(--_trigger---on)), var(--_theme---button-secondary--border-hover) calc(100% * var(--_trigger---off)));
-  border-left-color: color-mix(in srgb, var(--_theme---button-secondary--border) calc(100% * var(--_trigger---on)), var(--_theme---button-secondary--border-hover) calc(100% * var(--_trigger---off)));
-}
-
-.button_main_element:where(.w-variant-625d5df4-ad91-f7dc-9e2f-2e69f3fd7400) {
-  border-top-style: none;
-  border-right-style: none;
-  border-bottom-color: var(--_theme---text-link--border);
-  color: color-mix(in srgb, var(--_theme---text-link--text) calc(100% * var(--_trigger---on)), var(--_theme---text-link--text-hover) calc(100% * var(--_trigger---off)));
-  background-color: #0000;
-  border-left-style: none;
-  padding: .5rem 0;
-}
-
-.button_main_text {
+.button_text {
   line-height: inherit;
   position: relative;
 }
@@ -4736,13 +4717,13 @@ figure {
   --_theme---button-secondary--background-hover: var(--_theme---text);
   --_theme---button-secondary--border: var(--_theme---border);
   --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
-  --_theme---text-link--border: var(--_theme---border);
-  --_theme---text-link--text: var(--_theme---text);
-  --_theme---text-link--text-hover: var(--_theme---text-link--text);
   --_theme---nav--background: var(--_theme---background-2);
-  --_theme---text-link--border-hover: var(--swatch--brand-500);
   --_theme---selection--background: var(--swatch--brand-300);
   --_theme---selection--text: var(--swatch--brand-text);
+  --_theme---text-link--text: var(--_theme---text);
+  --_theme---text-link--border: var(--_theme---border);
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
+  --_theme---text-link--border-hover: var(--swatch--brand-500);
   border-style: none;
 }
 
@@ -4982,13 +4963,13 @@ figure {
   --_theme---button-secondary--background-hover: var(--_theme---text);
   --_theme---button-secondary--border: var(--_theme---border);
   --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
-  --_theme---text-link--border: var(--_theme---border);
-  --_theme---text-link--text: var(--_theme---text);
-  --_theme---text-link--text-hover: var(--_theme---text-link--text);
   --_theme---nav--background: var(--_theme---background-2);
-  --_theme---text-link--border-hover: var(--_theme---text);
   --_theme---selection--background: var(--swatch--brand-300);
   --_theme---selection--text: var(--swatch--brand-text);
+  --_theme---text-link--text: var(--_theme---text);
+  --_theme---text-link--border: var(--_theme---border);
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
+  --_theme---text-link--border-hover: var(--_theme---text);
   background-color: #0000;
   position: sticky;
   inset: 0% 0% auto;
@@ -5511,13 +5492,13 @@ figure {
   --_theme---button-secondary--background-hover: var(--_theme---text);
   --_theme---button-secondary--border: var(--_theme---border);
   --_theme---button-secondary--border-hover: var(--_theme---button-secondary--background-hover);
-  --_theme---text-link--border: var(--_theme---border);
-  --_theme---text-link--text: var(--_theme---text);
-  --_theme---text-link--text-hover: var(--_theme---text-link--text);
   --_theme---nav--background: var(--_theme---background-2);
-  --_theme---text-link--border-hover: var(--_theme---text);
   --_theme---selection--background: var(--swatch--brand-300);
   --_theme---selection--text: var(--swatch--brand-text);
+  --_theme---text-link--text: var(--_theme---text);
+  --_theme---text-link--border: var(--_theme---border);
+  --_theme---text-link--text-hover: var(--_theme---text-link--text);
+  --_theme---text-link--border-hover: var(--_theme---text);
   width: 100%;
   max-width: none;
   height: 100vh;
@@ -5985,13 +5966,9 @@ figure {
   flex: none;
 }
 
-.button_main_wrap {
+.button_wrap {
   display: inline-block;
   position: relative;
-}
-
-.button_main_wrap:where(.w-variant-625d5df4-ad91-f7dc-9e2f-2e69f3fd7400) {
-  border-radius: 0;
 }
 
 .button_toggle_wrap, .button_arrow_wrap, .button_close_wrap {
@@ -6155,10 +6132,6 @@ figure {
   transition-timing-function: cubic-bezier(.25, .46, .45, .94);
   position: absolute;
   inset: auto 0% 0%;
-}
-
-.button_main_line:where(.w-variant-625d5df4-ad91-f7dc-9e2f-2e69f3fd7400) {
-  background-color: var(--_theme---text-link--border-hover);
 }
 
 .form_component {
