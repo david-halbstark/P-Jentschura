@@ -48,13 +48,13 @@
 
 :root {
   --_theme---background: var(--swatch--white);
-  --_text-style---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
   --_theme---text: var(--swatch--charcoal);
-  --_text-style---font-size: var(--_typography---font-size--text-main);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
+  --_text-style-1---font-size: var(--_typography---font-size--body-base);
+  --_text-style-1---line-height: var(--_typography---line-height--relaxed);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-1---text-wrap: pretty;
   --site--gutter: clamp(1 * 1rem, ((1 - ((2 - 1) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2 - 1) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2 * 1rem);
   --_spacing---space--8: clamp(2.5 * 1rem, ((2.5 - ((4 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((4 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 4 * 1rem);
   --radius--main: .625rem;
@@ -75,7 +75,7 @@
   --_theme---background-skeleton: color-mix(in lab, currentcolor 10%, transparent);
   --_spacing---space--3: clamp(.875 * 1rem, ((.875 - ((1 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1 * 1rem);
   --border-width--main: .094rem;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
   --_spacing---space--2: clamp(.625 * 1rem, ((.625 - ((.75 - .625) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((.75 - .625) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), .75 * 1rem);
   --_spacing---section-space--none: 0px;
   --_spacing---section-space--small: clamp(3 * 1rem, ((3 - ((5 - 3) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((5 - 3) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 5 * 1rem);
@@ -83,15 +83,15 @@
   --_spacing---section-space--page-top: clamp(10 * 1rem, ((10 - ((14 - 10) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((14 - 10) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 14 * 1rem);
   --max-width--main: calc(var(--site--viewport-max) * 1rem);
   --max-width--full: 100%;
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
   --_spacing---space--7: clamp(2.25 * 1rem, ((2.25 - ((3 - 2.25) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((3 - 2.25) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 3 * 1rem);
-  --_typography---line-height--small: 1;
-  --_typography---line-height--medium: 1.1;
-  --_typography---line-height--large: 1.3;
-  --_typography---line-height--huge: 1.5;
-  --_typography---letter-spacing--tight: -.03em;
+  --_typography---line-height--compact: 1;
+  --_typography---line-height--tight: 1.1;
+  --_typography---line-height--snug: 1.2;
+  --_typography---line-height--normal: 1.26;
+  --_typography---letter-spacing--condensed: -.03em;
   --_typography---letter-spacing--normal: 0em;
   --_theme---heading-accent: var(--swatch--crimson);
   --_spacing---space--1: clamp(.375 * 1rem, ((.375 - ((.5 - .375) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((.5 - .375) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), .5 * 1rem);
@@ -103,7 +103,7 @@
   --radius--small: .5rem;
   --radius--round: 100vw;
   --_theme---border: var(--swatch--dark-900-o20);
-  --_typography---font-size--text-large: clamp(1.125 * 1rem, ((1.125 - ((1.25 - 1.125) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1.25 - 1.125) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1.25 * 1rem);
+  --_typography---font-size--body-large: clamp(.9375 * 1rem, ((.9375 - ((1 - .9375) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1 - .9375) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1 * 1rem);
   --swatch--transparent: transparent;
   --_trigger---on: 1;
   --_trigger---off: 0;
@@ -141,7 +141,22 @@
   --nav--spacing-inner-horizontal: var(--_spacing---space--5);
   --focus--width: .125rem;
   --_theme---text-link--border-hover: var(--_theme---text);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---font-family: var(--_typography---font--primary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--link-base);
+  --_text-style-2---line-height: var(--_typography---line-height--normal);
+  --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_typography---font--secondary-family: "Ms Madi", Georgia, sans-serif;
+  --_typography---font--secondary-regular: 400;
+  --_typography---line-height--relaxed: 1.5;
+  --_typography---line-height--spacious: 1.66;
+  --_typography---line-height--airy: 1.7;
+  --_typography---letter-spacing--subtle: .002em;
+  --_typography---letter-spacing--slight: .01em;
+  --_typography---letter-spacing--wide: .02em;
+  --_typography---letter-spacing--wider: .03em;
+  --_typography---letter-spacing--widest: .04em;
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
   --site--viewport-max: 90;
   --site--viewport-min: 20;
   --_theme---selection--background: var(--swatch--brand-300);
@@ -176,176 +191,193 @@
   --swatch--purple: #9a5970;
   --nav--banner-height: 2.4rem;
   --_typography---font--primary-trim-top: .47em;
-  --_typography---font--primary-trim-bottom: .26em;
-  --_typography---font--secondary-family: "Ms Madi", Georgia, sans-serif;
+  --_typography---font--primary-trim-bottom: .27em;
   --_typography---font--secondary-trim-top: .38em;
-  --_typography---font--secondary-trim-bottom: .27em;
-  --_typography---font--secondary-regular: 400;
-  --_typography---font-size--text-small: clamp(.875 * 1rem, ((.875 - ((1 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1 * 1rem);
-  --_typography---font-size--text-main: clamp(1 * 1rem, ((1 - ((1.125 - 1) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1.125 - 1) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1.125 * 1rem);
-  --_typography---font-size--h6: clamp(1 * 1rem, ((1 - ((1.125 - 1) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1.125 - 1) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1.125 * 1rem);
-  --_typography---font-size--h5: clamp(1.375 * 1rem, ((1.375 - ((1.5 - 1.375) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1.5 - 1.375) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1.5 * 1rem);
-  --_typography---font-size--h4: clamp(1.75 * 1rem, ((1.75 - ((2 - 1.75) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2 - 1.75) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2 * 1rem);
-  --_typography---font-size--h3: clamp(2.25 * 1rem, ((2.25 - ((3 - 2.25) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((3 - 2.25) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 3 * 1rem);
-  --_typography---font-size--h2: clamp(2.5 * 1rem, ((2.5 - ((4 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((4 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 4 * 1rem);
-  --_typography---font-size--h1: clamp(3 * 1rem, ((3 - ((5 - 3) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((5 - 3) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 5 * 1rem);
-  --_typography---font-size--display: clamp(4 * 1rem, ((4 - ((7 - 4) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((7 - 4) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 7 * 1rem);
+  --_typography---font--secondary-trim-bottom: .28em;
+  --_typography---font-size--link-small: clamp(.75 * 1rem, ((.75 - ((.75 - .75) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((.75 - .75) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), .75 * 1rem);
+  --_typography---font-size--link-base: clamp(.8125 * 1rem, ((.8125 - ((.875 - .8125) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((.875 - .8125) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), .875 * 1rem);
+  --_typography---font-size--link-large: clamp(.9375 * 1rem, ((.9375 - ((1 - .9375) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1 - .9375) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1 * 1rem);
+  --_typography---font-size--body-small: clamp(.8125 * 1rem, ((.8125 - ((.8125 - .8125) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((.8125 - .8125) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), .8125 * 1rem);
+  --_typography---font-size--body-base: clamp(.875 * 1rem, ((.875 - ((.875 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((.875 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), .875 * 1rem);
+  --_typography---font-size--eyebrow-small: clamp(.875 * 1rem, ((.875 - ((.875 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((.875 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), .875 * 1rem);
+  --_typography---font-size--eyebrow-base: clamp(.9375 * 1rem, ((.9375 - ((1.0625 - .9375) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1.0625 - .9375) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1.0625 * 1rem);
+  --_typography---font-size--eyebrow-large: clamp(1.0625 * 1rem, ((1.0625 - ((1.25 - 1.0625) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1.25 - 1.0625) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1.25 * 1rem);
+  --_typography---font-size--h4-primary: clamp(1.25 * 1rem, ((1.25 - ((1.5 - 1.25) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1.5 - 1.25) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1.5 * 1rem);
+  --_typography---font-size--h3-secondary: clamp(1.375 * 1rem, ((1.375 - ((2 - 1.375) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2 - 1.375) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2 * 1rem);
+  --_typography---font-size--h3-primary: clamp(1.5 * 1rem, ((1.5 - ((2 - 1.5) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2 - 1.5) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2 * 1rem);
+  --_typography---font-size--h2-secondary: clamp(1.625 * 1rem, ((1.625 - ((2.25 - 1.625) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2.25 - 1.625) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2.25 * 1rem);
+  --_typography---font-size--h2-primary: clamp(1.625 * 1rem, ((1.625 - ((2.25 - 1.625) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2.25 - 1.625) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2.25 * 1rem);
+  --_typography---font-size--h1-secondary: clamp(2.125 * 1rem, ((2.125 - ((2.5 - 2.125) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2.5 - 2.125) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2.5 * 1rem);
+  --_typography---font-size--h1-primary: clamp(2.125 * 1rem, ((2.125 - ((3.25 - 2.125) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((3.25 - 2.125) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 3.25 * 1rem);
   --_typography---text-transform--none: var(--text-transform, none);
   --_typography---text-transform--uppercase: uppercase;
   --_typography---text-transform--capitalize: capitalize;
   --_typography---text-transform--lowercase: lowercase;
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  --_typography---font-size--display\<deleted\|variable-8247495a-a8b2-1b3d-3284-0d41fead6587\>: clamp(4 * 1rem, ((4 - ((7 - 4) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((7 - 4) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 7 * 1rem);
 }
 
 body {
   background-color: var(--_theme---background);
-  font-family: var(--_text-style---font-family);
+  font-family: var(--_text-style-1---font-family);
   color: var(--_theme---text);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
   text-transform: var(--_text-style---text-transform, none);
 }
 
 h1 {
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h1);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
-  text-transform: var(--_text-style---text-transform, none);
-  text-wrap: var(--_text-style---text-wrap);
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-style: italic;
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h1-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--compact);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+  text-transform: var(--_text-style-1---text-transform, none);
+  text-wrap: var(--_text-style-1---text-wrap);
   margin-top: 0;
   margin-bottom: 0;
   display: flow-root;
 }
 
 h2 {
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h2);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
-  text-wrap: var(--_text-style---text-wrap);
-  text-transform: var(--_text-style---text-transform, none);
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-style: italic;
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h3-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+  text-wrap: var(--_text-style-1---text-wrap);
+  text-transform: var(--_text-style-1---text-transform, none);
   margin-top: 0;
   margin-bottom: 0;
   display: flow-root;
 }
 
 h3 {
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h3);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
-  text-transform: var(--_text-style---text-transform, none);
-  text-wrap: var(--_text-style---text-wrap);
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-style: italic;
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h3-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+  text-transform: var(--_text-style-1---text-transform, none);
+  text-wrap: var(--_text-style-1---text-wrap);
   margin-top: 0;
   margin-bottom: 0;
   display: flow-root;
 }
 
 h4 {
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h4);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
-  text-transform: var(--_text-style---text-transform, none);
-  text-wrap: var(--_text-style---text-wrap);
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-style: italic;
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h4-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--tight);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--slight);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+  text-transform: var(--_text-style-1---text-transform, none);
+  text-wrap: var(--_text-style-1---text-wrap);
   margin-top: 0;
   margin-bottom: 0;
   display: flow-root;
 }
 
 h5 {
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h5);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
-  text-transform: var(--_text-style---text-transform, none);
-  text-wrap: var(--_text-style---text-wrap);
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-style: italic;
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-large);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+  text-transform: var(--_text-style-1---text-transform, none);
+  text-wrap: var(--_text-style-1---text-wrap);
   margin-top: 0;
   margin-bottom: 0;
   display: flow-root;
 }
 
 h6 {
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h6);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
-  text-transform: var(--_text-style---text-transform, none);
-  text-wrap: var(--_text-style---text-wrap);
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-style: italic;
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-base);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+  text-transform: var(--_text-style-1---text-transform, none);
+  text-wrap: var(--_text-style-1---text-wrap);
   margin-top: 0;
   margin-bottom: 0;
   display: flow-root;
@@ -892,20 +924,59 @@ figure {
 }
 
 .u-eyebrow-text {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-base);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
   margin-top: 0;
   margin-bottom: 0;
 }
 
+.u-eyebrow-text:where(.w-variant-365e9b2a-77fc-f2ae-631a-dff02ceac74c) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-small);
+  --_text-style-1---line-height: var(--_typography---line-height--spacious);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-eyebrow-text:where(.w-variant-bbbffc5e-8818-c205-948b-aebd839147ae) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-large);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
 .u-heading {
   min-width: 100%;
-  margin-bottom: var(--_text-style---margin-bottom);
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
+  margin-bottom: var(--_text-style-1---margin-bottom);
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
   text-transform: var(--_text-style---text-transform, none);
-  text-wrap: var(--_text-style---text-wrap);
+  text-wrap: var(--_text-style-1---text-wrap);
   justify-content: center;
   align-items: inherit;
   max-width: calc(var(--number) * 1ch);
@@ -913,410 +984,494 @@ figure {
   display: flex;
 }
 
-.u-heading:where(.w-variant-eee56f15-d7ce-d101-2f8c-83b3bbd55d4a) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--display);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--6);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
-}
-
 .u-heading:where(.w-variant-3ddfa43e-abc1-422e-6e6d-23dfb7da71f3) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h1);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h1-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--compact);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-efb733fe-da83-69a3-ea4a-b3f2f89d0389) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h2);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h2-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-ad482112-9d0e-852c-0f6e-ba1e5a3aee59) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h3);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h3-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-93e8af18-8413-e3ac-0442-72629401a3db) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h4);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h4-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--tight);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--slight);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-5c484503-e2a0-ac99-680d-56013d859efa) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h5);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-large);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-b8555f10-fa7d-e9ba-e262-f9aa44c27c1c) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h6);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-base);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-fdb8e663-01e0-aae6-13eb-e6dfca16b689) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-large);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-large);
+  --_text-style-1---line-height: var(--_typography---line-height--airy);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-61d538b2-709c-eb7a-4258-8c0890dc07fc) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-main);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-base);
+  --_text-style-1---line-height: var(--_typography---line-height--relaxed);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-4099173f-f581-635c-a5fe-cf4a89c62029), .u-heading:where(.w-variant-fe6f474d-1651-566b-eeff-3c86e8cbf153) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-small);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-small);
+  --_text-style-1---line-height: var(--_typography---line-height--relaxed);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-26cc9f23-e71c-deee-cd61-36dc24f35fae) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-main);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-base);
+  --_text-style-1---line-height: var(--_typography---line-height--relaxed);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-c8b8ac88-1ac7-e9f6-41cc-82c548bf142d) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-large);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-large);
+  --_text-style-1---line-height: var(--_typography---line-height--airy);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-47e40b0d-02af-2673-f429-546cac42dc5a) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h6);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-base);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-12e93187-f8ac-b1a1-2e50-59d85a6bf516) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h5);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-large);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-f196774e-dbfd-d1b4-1196-b3e824fc5f7d) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h4);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h4-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--tight);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--slight);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-7bfbf33b-fb56-d8df-e2d2-8fe65a7f2e44) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h3);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h3-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-9af60b09-c3a1-8c2a-eb78-8e29460ca7a9) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h2);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h2-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-83c598b0-8cc2-f955-1996-fcb8fb10bf70) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h1);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
-}
-
-.u-heading:where(.w-variant-8ee37a78-065b-6879-973d-319c65e28313) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--display);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--6);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h1-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--compact);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-3fbd0d32-5675-1947-73b3-abb16c1fb986) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-small);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-small);
+  --_text-style-1---line-height: var(--_typography---line-height--relaxed);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-9027c8ae-1ba5-f702-ea6e-4a1c3fca9f64) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-main);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-base);
+  --_text-style-1---line-height: var(--_typography---line-height--relaxed);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-74a3180a-e505-b452-032f-599c8e557249) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-large);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-large);
+  --_text-style-1---line-height: var(--_typography---line-height--airy);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-823daff2-fd84-8da0-4ed1-92a39b869ad0) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h6);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-base);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-326a9562-3263-06da-e8ef-16981fd70f1c) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h5);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-large);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-7c7eb163-b37d-338d-2369-5eae7e6d458a) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h4);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h4-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--tight);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--slight);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-701c4b6c-37cf-de59-d80d-80a1822c4994) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h3);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h3-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-433d40c6-c261-f13f-c899-61d2cadf150f) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h2);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h2-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading:where(.w-variant-792802b6-ccdb-f982-5023-5fa970cf03d0) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h1);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h1-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--compact);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
-.u-heading:where(.w-variant-41c609dc-9c80-9eef-75df-03bf0eea00b4) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--display);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--6);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+.u-heading:where(.w-variant-953108e9-15e0-0458-137f-3862ae613a12) {
+  --_text-style-2---font-family: var(--_typography---font--secondary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--h1-secondary);
+  --_text-style-2---line-height: var(--_typography---line-height--spacious);
+  --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+}
+
+.u-heading:where(.w-variant-cc6a8c92-33ea-0c44-0708-19676fc12b9b) {
+  --_text-style-2---font-family: var(--_typography---font--secondary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--h2-secondary);
+  --_text-style-2---line-height: var(--_typography---line-height--spacious);
+  --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+}
+
+.u-heading:where(.w-variant-7c6c71bb-10fb-12c7-f4ff-35776c8bfcbc) {
+  --_text-style-2---font-family: var(--_typography---font--secondary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--h3-secondary);
+  --_text-style-2---line-height: var(--_typography---line-height--spacious);
+  --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+}
+
+.u-heading:where(.w-variant-2ddce81c-1a58-511b-bf37-bd3dc561049c) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h1-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--compact);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-heading:where(.w-variant-b6ab13e9-e13e-d10f-84bf-95d83c772698) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h2-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-heading:where(.w-variant-49d1351c-8bdf-ea16-fbc1-dcb960a98783) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h3-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-heading:where(.w-variant-c3e70cb6-b79f-d2dc-9a6d-d29196b46efa) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h1-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--compact);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-heading:where(.w-variant-e7c9956e-0606-e568-f12d-9286052a429a) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h2-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-heading:where(.w-variant-4b12b989-cc2f-c253-8ef8-d943568fa39e) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h3-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-heading h1, .u-heading h2, .u-heading h3, .u-heading h4, .u-heading h5, .u-heading h6 {
@@ -1333,14 +1488,14 @@ figure {
 
 .u-text {
   min-width: 100%;
-  margin-bottom: var(--_text-style---margin-bottom);
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
+  margin-bottom: var(--_text-style-1---margin-bottom);
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
   text-transform: var(--_text-style---text-transform, none);
-  text-wrap: var(--_text-style---text-wrap);
+  text-wrap: var(--_text-style-1---text-wrap);
   justify-content: center;
   align-items: inherit;
   max-width: calc(var(--number) * 1ch);
@@ -1348,410 +1503,466 @@ figure {
   display: flex;
 }
 
-.u-text:where(.w-variant-eee56f15-d7ce-d101-2f8c-83b3bbd55d4a) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--display);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--6);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
-}
-
 .u-text:where(.w-variant-3ddfa43e-abc1-422e-6e6d-23dfb7da71f3) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h1);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h1-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--compact);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-efb733fe-da83-69a3-ea4a-b3f2f89d0389) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h2);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h2-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-ad482112-9d0e-852c-0f6e-ba1e5a3aee59) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h3);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h3-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-93e8af18-8413-e3ac-0442-72629401a3db) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h4);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h4-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--tight);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--slight);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-5c484503-e2a0-ac99-680d-56013d859efa) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h5);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-large);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-b8555f10-fa7d-e9ba-e262-f9aa44c27c1c) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h6);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-base);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-fdb8e663-01e0-aae6-13eb-e6dfca16b689) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-large);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-large);
+  --_text-style-1---line-height: var(--_typography---line-height--airy);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-61d538b2-709c-eb7a-4258-8c0890dc07fc) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-main);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-base);
+  --_text-style-1---line-height: var(--_typography---line-height--relaxed);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-4099173f-f581-635c-a5fe-cf4a89c62029), .u-text:where(.w-variant-fe6f474d-1651-566b-eeff-3c86e8cbf153) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-small);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-small);
+  --_text-style-1---line-height: var(--_typography---line-height--relaxed);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-26cc9f23-e71c-deee-cd61-36dc24f35fae) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-main);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-base);
+  --_text-style-1---line-height: var(--_typography---line-height--relaxed);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-c8b8ac88-1ac7-e9f6-41cc-82c548bf142d) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-large);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-large);
+  --_text-style-1---line-height: var(--_typography---line-height--airy);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-47e40b0d-02af-2673-f429-546cac42dc5a) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h6);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-base);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-12e93187-f8ac-b1a1-2e50-59d85a6bf516) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h5);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-large);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-f196774e-dbfd-d1b4-1196-b3e824fc5f7d) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h4);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h4-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--tight);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--slight);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-7bfbf33b-fb56-d8df-e2d2-8fe65a7f2e44) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h3);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h3-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-9af60b09-c3a1-8c2a-eb78-8e29460ca7a9) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h2);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h2-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-83c598b0-8cc2-f955-1996-fcb8fb10bf70) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h1);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
-}
-
-.u-text:where(.w-variant-8ee37a78-065b-6879-973d-319c65e28313) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--display);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--6);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h1-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--compact);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-3fbd0d32-5675-1947-73b3-abb16c1fb986) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-small);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-small);
+  --_text-style-1---line-height: var(--_typography---line-height--relaxed);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-9027c8ae-1ba5-f702-ea6e-4a1c3fca9f64) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-main);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-base);
+  --_text-style-1---line-height: var(--_typography---line-height--relaxed);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-74a3180a-e505-b452-032f-599c8e557249) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-large);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-large);
+  --_text-style-1---line-height: var(--_typography---line-height--airy);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-823daff2-fd84-8da0-4ed1-92a39b869ad0) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h6);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-base);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-326a9562-3263-06da-e8ef-16981fd70f1c) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h5);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-large);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-7c7eb163-b37d-338d-2369-5eae7e6d458a) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h4);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h4-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--tight);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--slight);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-701c4b6c-37cf-de59-d80d-80a1822c4994) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h3);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h3-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-text:where(.w-variant-433d40c6-c261-f13f-c899-61d2cadf150f) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h2);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h2-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
-.u-text:where(.w-variant-792802b6-ccdb-f982-5023-5fa970cf03d0) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h1);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+.u-text:where(.w-variant-792802b6-ccdb-f982-5023-5fa970cf03d0), .u-text:where(.w-variant-953108e9-15e0-0458-137f-3862ae613a12), .u-text:where(.w-variant-cc6a8c92-33ea-0c44-0708-19676fc12b9b) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h1-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--compact);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
-.u-text:where(.w-variant-41c609dc-9c80-9eef-75df-03bf0eea00b4) {
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--display);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--6);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+.u-text:where(.w-variant-7c6c71bb-10fb-12c7-f4ff-35776c8bfcbc) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h3-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-text:where(.w-variant-2ddce81c-1a58-511b-bf37-bd3dc561049c) {
+  --_text-style-2---font-family: var(--_typography---font--secondary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--h1-secondary);
+  --_text-style-2---line-height: var(--_typography---line-height--spacious);
+  --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+}
+
+.u-text:where(.w-variant-b6ab13e9-e13e-d10f-84bf-95d83c772698) {
+  --_text-style-2---font-family: var(--_typography---font--secondary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--h2-secondary);
+  --_text-style-2---line-height: var(--_typography---line-height--spacious);
+  --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+}
+
+.u-text:where(.w-variant-49d1351c-8bdf-ea16-fbc1-dcb960a98783) {
+  --_text-style-2---font-family: var(--_typography---font--secondary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--h3-secondary);
+  --_text-style-2---line-height: var(--_typography---line-height--spacious);
+  --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+}
+
+.u-text:where(.w-variant-c3e70cb6-b79f-d2dc-9a6d-d29196b46efa) {
+  --_text-style-2---font-family: var(--_typography---font--secondary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--h1-secondary);
+  --_text-style-2---line-height: var(--_typography---line-height--spacious);
+  --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+}
+
+.u-text:where(.w-variant-e7c9956e-0606-e568-f12d-9286052a429a) {
+  --_text-style-2---font-family: var(--_typography---font--secondary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--h2-secondary);
+  --_text-style-2---line-height: var(--_typography---line-height--spacious);
+  --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+}
+
+.u-text:where(.w-variant-4b12b989-cc2f-c253-8ef8-d943568fa39e) {
+  --_text-style-2---font-family: var(--_typography---font--secondary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--h3-secondary);
+  --_text-style-2---line-height: var(--_typography---line-height--spacious);
+  --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
 }
 
 .u-button-wrapper {
@@ -2072,256 +2283,238 @@ figure {
   --_theme---selection--text: var(--swatch--brand-text);
 }
 
-.u-text-style-display {
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--display);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--6);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
-  text-transform: var(--_text-style---text-transform, none);
-  text-wrap: var(--_text-style---text-wrap);
+.u-text-h1-primary {
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-style: italic;
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h1-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--compact);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+  text-transform: var(--_text-style-1---text-transform, none);
+  text-wrap: var(--_text-style-1---text-wrap);
   display: flow-root;
 }
 
-.u-text-style-h1 {
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h1);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
-  text-transform: var(--_text-style---text-transform, none);
-  text-wrap: var(--_text-style---text-wrap);
+.u-text-h2-primary {
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-style: italic;
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h2-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+  text-transform: var(--_text-style-1---text-transform, none);
+  text-wrap: var(--_text-style-1---text-wrap);
   display: flow-root;
 }
 
-.u-text-style-h2 {
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h2);
-  --_text-style---line-height: var(--_typography---line-height--small);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
-  text-transform: var(--_text-style---text-transform, none);
-  text-wrap: var(--_text-style---text-wrap);
+.u-text-h3-primary {
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-style: italic;
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h3-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+  text-transform: var(--_text-style-1---text-transform, none);
+  text-wrap: var(--_text-style-1---text-wrap);
   display: flow-root;
 }
 
-.u-text-style-h3 {
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h3);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--tight);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--5);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
-  text-transform: var(--_text-style---text-transform, none);
-  text-wrap: var(--_text-style---text-wrap);
-  display: flow-root;
-}
-
-.u-text-style-h4 {
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h4);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
-  text-transform: var(--_text-style---text-transform, none);
-  text-wrap: var(--_text-style---text-wrap);
+.u-text-h4-primary {
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-style: italic;
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h4-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--tight);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--slight);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+  text-transform: var(--_text-style-1---text-transform, none);
+  text-wrap: var(--_text-style-1---text-wrap);
   display: flow-root;
 }
 
 .u-text-style-h5 {
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h5);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-large);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
   text-transform: var(--_text-style---text-transform, none);
-  text-wrap: var(--_text-style---text-wrap);
+  text-wrap: var(--_text-style-1---text-wrap);
   display: flow-root;
 }
 
 .u-text-style-h6 {
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h6);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-base);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
   text-transform: var(--_text-style---text-transform, none);
-  text-wrap: var(--_text-style---text-wrap);
+  text-wrap: var(--_text-style-1---text-wrap);
   display: flow-root;
 }
 
-.u-text-style-large {
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-large);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
-  text-transform: var(--_text-style---text-transform, none);
-  text-wrap: var(--_text-style---text-wrap);
+.u-text-body-large {
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-large);
+  --_text-style-1---line-height: var(--_typography---line-height--airy);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+  text-transform: var(--_text-style-1---text-transform, none);
+  text-wrap: var(--_text-style-1---text-wrap);
   display: flow-root;
 }
 
-.u-text-style-main {
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-main);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
-  text-transform: var(--_text-style---text-transform, none);
-  text-wrap: var(--_text-style---text-wrap);
+.u-text-body-base {
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-base);
+  --_text-style-1---line-height: var(--_typography---line-height--relaxed);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+  text-transform: var(--_text-style-1---text-transform, none);
+  text-wrap: var(--_text-style-1---text-wrap);
   display: flow-root;
 }
 
-.u-text-style-small {
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-small);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
-  text-transform: var(--_text-style---text-transform, none);
-  text-wrap: var(--_text-style---text-wrap);
+.u-text-body-small {
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-small);
+  --_text-style-1---line-height: var(--_typography---line-height--relaxed);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+  text-transform: var(--_text-style-1---text-transform, none);
+  text-wrap: var(--_text-style-1---text-wrap);
   display: flow-root;
 }
 
 .u-rich-text {
-  text-wrap: var(--_text-style---text-wrap);
+  text-wrap: var(--_text-style-1---text-wrap);
   align-items: inherit;
   justify-content: inherit;
 }
 
 .u-rich-text h1, .u-rich-text h2, .u-rich-text h3, .u-rich-text h4, .u-rich-text h5, .u-rich-text h6, .u-rich-text p {
-  margin-top: var(--_text-style---margin-top);
-  margin-bottom: var(--_text-style---margin-bottom);
+  margin-top: var(--_text-style-1---margin-top);
+  margin-bottom: var(--_text-style-1---margin-bottom);
 }
 
 .u-rich-text blockquote {
   margin-top: var(--_spacing---space--6);
   margin-bottom: var(--_spacing---space--6);
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-large);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-large);
+  --_text-style-1---line-height: var(--_typography---line-height--airy);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
   text-transform: var(--_text-style---text-transform, none);
   border-left-style: solid;
   border-left-width: .2rem;
@@ -2329,8 +2522,8 @@ figure {
 }
 
 .u-rich-text ol {
-  margin-top: var(--_text-style---margin-top);
-  margin-bottom: var(--_text-style---margin-bottom);
+  margin-top: var(--_text-style-1---margin-top);
+  margin-bottom: var(--_text-style-1---margin-bottom);
   grid-column-gap: .9em;
   grid-row-gap: .9em;
   align-items: inherit;
@@ -2342,14 +2535,14 @@ figure {
 }
 
 .u-rich-text li {
-  margin-top: calc(var(--_text-style---trim-top) * -1);
-  margin-bottom: calc(var(--_text-style---trim-bottom) * -1);
+  margin-top: calc(var(--_text-style-1---trim-top) * -1);
+  margin-bottom: calc(var(--_text-style-1---trim-bottom) * -1);
   display: list-item;
 }
 
 .u-rich-text ul {
-  margin-top: var(--_text-style---margin-top);
-  margin-bottom: var(--_text-style---margin-bottom);
+  margin-top: var(--_text-style-1---margin-top);
+  margin-bottom: var(--_text-style-1---margin-bottom);
   grid-column-gap: .9em;
   grid-row-gap: .9em;
   align-items: inherit;
@@ -2365,24 +2558,24 @@ figure {
   margin-bottom: var(--_spacing---space--7);
 }
 
-.u-line-height-small {
-  line-height: var(--_typography---line-height--small);
+.u-line-height-compact {
+  line-height: var(--_typography---line-height--compact);
 }
 
-.u-line-height-medium {
-  line-height: var(--_typography---line-height--medium);
+.u-line-height-tight {
+  line-height: var(--_typography---line-height--tight);
 }
 
-.u-line-height-large {
-  line-height: var(--_typography---line-height--large);
+.u-line-height-snug {
+  line-height: var(--_typography---line-height--snug);
 }
 
-.u-line-height-huge {
-  line-height: var(--_typography---line-height--huge);
+.u-line-height-normal {
+  line-height: var(--_typography---line-height--normal);
 }
 
 .u-letter-spacing-tight {
-  letter-spacing: var(--_typography---letter-spacing--tight);
+  letter-spacing: var(--_typography---letter-spacing--condensed);
 }
 
 .u-letter-spacing-normal {
@@ -2712,7 +2905,7 @@ figure {
 }
 
 .u-margin-top-text {
-  margin-top: var(--_text-style---margin-top);
+  margin-top: var(--_text-style-1---margin-top);
 }
 
 .u-margin-top-1 {
@@ -2760,7 +2953,7 @@ figure {
 }
 
 .u-margin-bottom-text {
-  margin-bottom: var(--_text-style---margin-bottom);
+  margin-bottom: var(--_text-style-1---margin-bottom);
 }
 
 .u-margin-bottom-1 {
@@ -2795,17 +2988,17 @@ figure {
   margin-bottom: var(--_spacing---space--8);
 }
 
-.u-weight-regular {
+.u-weight-primary-regular {
   font-family: var(--_typography---font--primary-family);
   font-weight: var(--_typography---font--primary-regular);
 }
 
-.u-weight-medium {
+.u-weight-primary-medium {
   font-family: var(--_typography---font--primary-family);
   font-weight: var(--_typography---font--primary-semibold);
 }
 
-.u-weight-bold {
+.u-weight-primary-bold {
   font-family: var(--_typography---font--primary-family);
   font-weight: var(--_typography---font--primary-bold);
 }
@@ -3657,7 +3850,7 @@ figure {
   background-color: var(--_theme---text);
   min-width: 4rem;
   color: var(--_theme---background);
-  line-height: var(--_typography---line-height--small);
+  line-height: var(--_typography---line-height--compact);
   text-align: center;
   padding: .5rem .75rem;
   display: inline-block;
@@ -3707,7 +3900,7 @@ figure {
 
 .form_label_text:where(.w-variant-e8e97384-daa0-7ce7-bc12-14efcd69bcd4) {
   margin-bottom: var(--_spacing---space--2);
-  font-size: var(--_typography---font-size--text-large);
+  font-size: var(--_typography---font-size--body-large);
   font-weight: var(--_typography---font--primary-bold);
 }
 
@@ -3761,22 +3954,22 @@ figure {
   border-bottom-right-radius: var(--radius--small);
   width: 100%;
   height: 3rem;
-  font-family: var(--_text-style---font-family);
-  font-size: var(--_text-style---font-size);
-  line-height: var(--_text-style---line-height);
-  font-weight: var(--_text-style---font-weight);
-  letter-spacing: var(--_text-style---letter-spacing);
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--text-large);
-  --_text-style---line-height: var(--_typography---line-height--huge);
-  --_text-style---font-weight: var(--_typography---font--primary-regular);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: pretty;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--4);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-large);
+  --_text-style-1---line-height: var(--_typography---line-height--airy);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
   color: inherit;
   text-transform: var(--_text-style---text-transform, none);
   appearance: none;
@@ -3863,10 +4056,6 @@ figure {
 .button_main_text {
   line-height: inherit;
   position: relative;
-}
-
-.button_main_text.u-text-style-main:where(.w-variant-e85564cd-af30-a478-692b-71732aefb3ab) {
-  position: static;
 }
 
 .button_toggle_element {
@@ -4086,7 +4275,7 @@ figure {
   justify-content: flex-start;
   align-items: flex-start;
   display: grid;
-  overflow: auto clip;
+  overflow-x: auto;
   -webkit-mask-image: linear-gradient(to right, #0000, #000 3% 97%, #0000);
   mask-image: linear-gradient(to right, #0000, #000 3% 97%, #0000);
 }
@@ -5761,17 +5950,17 @@ figure {
 
 .card_primary_title.u-text-style-h4:where(.w-variant-da648fa9-bbba-c8cb-e549-1d22cb8af97b) {
   margin-bottom: var(--_spacing---space--3);
-  --_text-style---font-family: var(--_typography---font--primary-family);
-  --_text-style---font-size: var(--_typography---font-size--h5);
-  --_text-style---line-height: var(--_typography---line-height--medium);
-  --_text-style---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style---letter-spacing: var(--_typography---letter-spacing--normal);
-  --_text-style---text-wrap: balance;
-  --_text-style---margin-bottom: var(--_spacing---space--4);
-  --_text-style---margin-top: var(--_spacing---space--7);
-  --_text-style---trim-top: var(--_typography---font--primary-trim-top);
-  --_text-style---trim-bottom: var(--_typography---font--primary-trim-bottom);
-  --_text-style---text-transform: var(--_typography---text-transform--none);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-large);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .card_primary_text:where(.w-variant-51efa20c-c7be-48fe-973a-11367f19d622) {
@@ -5797,7 +5986,6 @@ figure {
 }
 
 .button_main_wrap {
-  border-radius: var(--radius--round);
   display: inline-block;
   position: relative;
 }
@@ -6160,14 +6348,6 @@ figure {
   display: flex;
 }
 
-.trust_rating_element {
-  grid-column-gap: 1.25rem;
-  grid-row-gap: .75rem;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
 .trust_rating_mid {
   flex: none;
 }
@@ -6193,6 +6373,211 @@ figure {
   justify-content: flex-start;
   align-items: center;
   display: flex;
+}
+
+.u-text-eyebrow-large {
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-style: italic;
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-large);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+  text-transform: var(--_text-style-1---text-transform, none);
+}
+
+.u-text-eyebrow-base {
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-style: italic;
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-base);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+  text-transform: var(--_text-style-1---text-transform, none);
+}
+
+.u-text-eyebrow-small {
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-style: italic;
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-1---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-small);
+  --_text-style-1---line-height: var(--_typography---line-height--spacious);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+  text-transform: var(--_text-style-1---text-transform, none);
+}
+
+.u-text-link-large {
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---font-family: var(--_typography---font--primary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--link-large);
+  --_text-style-2---line-height: var(--_typography---line-height--normal);
+  --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+  display: flow-root;
+}
+
+.u-text-link-base {
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---font-family: var(--_typography---font--primary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--link-base);
+  --_text-style-2---line-height: var(--_typography---line-height--normal);
+  --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+}
+
+.u-text-link-small {
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---font-family: var(--_typography---font--primary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--link-small);
+  --_text-style-2---line-height: var(--_typography---line-height--normal);
+  --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--wider);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+}
+
+.u-text-h1-secondary {
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---font-family: var(--_typography---font--secondary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--h1-secondary);
+  --_text-style-2---line-height: var(--_typography---line-height--spacious);
+  --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+  text-wrap: var(--_text-style-1---text-wrap);
+  display: flow-root;
+}
+
+.u-text-h2-secondary, .u-text-h3-secondary {
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---font-family: var(--_typography---font--secondary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--h2-secondary);
+  --_text-style-2---line-height: var(--_typography---line-height--spacious);
+  --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+  text-wrap: var(--_text-style-1---text-wrap);
+  display: flow-root;
+}
+
+.u-weight-secondary-regular {
+  font-family: var(--_typography---font--secondary-family);
+  font-weight: var(--_typography---font--secondary-regular);
+}
+
+.u-line-height-relaxed {
+  line-height: var(--_typography---line-height--relaxed);
+}
+
+.u-line-height-spacious {
+  line-height: var(--_typography---line-height--spacious);
+}
+
+.u-line-height-airy {
+  line-height: var(--_typography---line-height--airy);
+}
+
+.u-letter-spacing-subtle {
+  letter-spacing: var(--_typography---letter-spacing--subtle);
+}
+
+.u-letter-spacing-slight {
+  letter-spacing: var(--_typography---letter-spacing--slight);
+}
+
+.u-letter-spacing-wide {
+  letter-spacing: var(--_typography---letter-spacing--wide);
+}
+
+.u-letter-spacing-wider {
+  letter-spacing: var(--_typography---letter-spacing--wider);
+}
+
+.u-letter-spacing-widest {
+  letter-spacing: var(--_typography---letter-spacing--widest);
 }
 
 @media screen and (max-width: 479px) {

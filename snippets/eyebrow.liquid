@@ -1,8 +1,8 @@
 {% assign eyebrow_text = eyebrow %}{% assign eyebrow_tag = tag | default: 'p' %}{% assign eyebrow_variant = variant | default: 'u-eyebrow-main' %}{% assign eyebrow_custom_class = custom_class %}{% assign eyebrow_classes = 'u-eyebrow-text' %}{% if eyebrow_variant != blank %}{% assign eyebrow_classes = eyebrow_classes | append: ' ' | append: eyebrow_variant %}{% endif %}{% if eyebrow_custom_class != blank %}{% assign eyebrow_classes = eyebrow_classes | append: ' ' | append: eyebrow_custom_class %}{% endif %}{% if eyebrow_text != blank %}<div class="u-eyebrow-wrapper"> <div class="u-eyebrow-layout">{% case eyebrow_tag %}{% when 'p' %}<p class="{{eyebrow_classes}}">{{eyebrow_text}}</p>{% when 'span' %}<span class="{{eyebrow_classes}}">{{eyebrow_text}}</span>{% when 'div' %}<div class="{{eyebrow_classes}}">{{eyebrow_text}}</div>{% when 'h1' %}<h1 class="{{eyebrow_classes}}">{{eyebrow_text}}</h1>{% when 'h2' %}<h2 class="{{eyebrow_classes}}">{{eyebrow_text}}</h2>{% when 'h3' %}<h3 class="{{eyebrow_classes}}">{{eyebrow_text}}</h3>{% when 'h4' %}<h4 class="{{eyebrow_classes}}">{{eyebrow_text}}</h4>{% when 'h5' %}<h5 class="{{eyebrow_classes}}">{{eyebrow_text}}</h5>{% when 'h6' %}<h6 class="{{eyebrow_classes}}">{{eyebrow_text}}</h6>{% else %}<p class="{{eyebrow_classes}}">{{eyebrow_text}}</p>{% endcase %}</div> </div>{% endif %}
-                        {% if false %}    <div class="u-eyebrow-wrapper" li-if="false">
+                        {% if false %}    <div data-wf--preview-eyebrow--preview-variant="base" class="u-eyebrow-wrapper" li-if="false">
     
                           <div class="u-eyebrow-layout">
-                            <div class="u-eyebrow-text u-text-style-main w-richtext">
+                            <div class="u-eyebrow-text w-richtext">
                               <p>Willkommen bei P. Jentschura</p>
                             </div>
                           </div>
