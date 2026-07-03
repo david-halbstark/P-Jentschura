@@ -1,128 +1,27 @@
-{% assign button_1_color = '' -%}
-{%- assign button_1_text_size = '' -%}
-{%- assign button_1_padding = '' -%}
-{%- if button_1_variant == 'solid' -%}
-  {%- assign button_1_color = button_1_solid_color -%}
-  {%- assign button_1_text_size = button_1_solid_text_size -%}
-  {%- assign button_1_padding = button_1_solid_padding -%}
-{%- elsif button_1_variant == 'transparent' -%}
-  {%- assign button_1_color = button_1_transparent_color -%}
-  {%- assign button_1_text_size = button_1_transparent_text_size -%}
-  {%- assign button_1_padding = button_1_transparent_padding -%}
-{%- elsif button_1_variant == 'text' -%}
-  {%- assign button_1_text_size = button_1_text_text_size -%}
-{%- elsif button_1_variant == 'pill' -%}
-  {%- assign button_1_color = button_1_pill_color -%}
-  {%- assign button_1_text_size = button_1_pill_text_size -%}
-{%- endif -%}
-{%- assign button_2_color = '' -%}
-{%- assign button_2_text_size = '' -%}
-{%- assign button_2_padding = '' -%}
-{%- if button_2_variant == 'solid' -%}
-  {%- assign button_2_color = button_2_solid_color -%}
-  {%- assign button_2_text_size = button_2_solid_text_size -%}
-  {%- assign button_2_padding = button_2_solid_padding -%}
-{%- elsif button_2_variant == 'transparent' -%}
-  {%- assign button_2_color = button_2_transparent_color -%}
-  {%- assign button_2_text_size = button_2_transparent_text_size -%}
-  {%- assign button_2_padding = button_2_transparent_padding -%}
-{%- elsif button_2_variant == 'text' -%}
-  {%- assign button_2_text_size = button_2_text_text_size -%}
-{%- elsif button_2_variant == 'pill' -%}
-  {%- assign button_2_color = button_2_pill_color -%}
-  {%- assign button_2_text_size = button_2_pill_text_size -%}
-{%- endif -%}
-{%- assign show_button_1 = false -%}
-{%- assign show_button_2 = false -%}
-{%- if button_1_label != blank -%}
-  {%- if button_1_mode == 'action' and button_1_action != blank -%}
-    {%- assign show_button_1 = true -%}
-  {%- elsif button_1_mode == 'link' and button_1_url != blank -%}
-    {%- assign show_button_1 = true -%}
-  {%- elsif button_1_mode == 'submit' -%}
-    {%- assign show_button_1 = true -%}
-  {%- endif -%}
-{%- endif -%}
-{%- if button_2_label != blank -%}
-  {%- if button_2_mode == 'action' and button_2_action != blank -%}
-    {%- assign show_button_2 = true -%}
-  {%- elsif button_2_mode == 'link' and button_2_url != blank -%}
-    {%- assign show_button_2 = true -%}
-  {%- elsif button_2_mode == 'submit' -%}
-    {%- assign show_button_2 = true -%}
-  {%- endif -%}
-{%- endif %}
-{% if show_button_1 or show_button_2 %}
-  <div li-if="show_button_1 or show_button_2" class="u-button-wrapper">
-    {% render 'button',
-      url: button_1_url,
-      icon_position: button_1_icon_position,
-      action: button_1_action,
-      padding: button_1_padding,
-      text_size: button_1_text_size,
-      icon: button_1_icon,
-      label: button_1_label,
-      icon_color: button_1_icon_color,
-      trigger: button_1_trigger,
-      icon_animation: button_1_icon_animation,
-      mode: button_1_mode,
-      color: button_1_color,
-      custom_class: button_1_custom_class,
-      pill_tag_inner: button_1_pill_tag_inner,
-      variant: button_1_variant,
-      underline: button_1_underline
-    %}
-    {% render 'button',
-      url: button_2_url,
-      icon_position: button_2_icon_position,
-      action: button_2_action,
-      padding: button_2_padding,
-      text_size: button_2_text_size,
-      icon: button_2_icon,
-      label: button_2_label,
-      icon_color: button_2_icon_color,
-      trigger: button_2_trigger,
-      icon_animation: button_2_icon_animation,
-      mode: button_2_mode,
-      color: button_2_color,
-      custom_class: button_2_custom_class,
-      pill_tag_inner: button_2_pill_tag_inner,
-      variant: button_2_variant,
-      underline: button_2_underline
-    %}
-  </div>
+{% assign button_1_color = '' %}{% assign button_1_text_size = '' %}{% assign button_1_padding = '' %}{% if button_1_variant == 'solid' %}{% assign button_1_color = button_1_solid_color %}{% assign button_1_text_size = button_1_solid_text_size %}{% assign button_1_padding = button_1_solid_padding %}{% elsif button_1_variant == 'transparent' %}{% assign button_1_color = button_1_transparent_color %}{% assign button_1_text_size = button_1_transparent_text_size %}{% assign button_1_padding = button_1_transparent_padding %}{% elsif button_1_variant == 'text' %}{% assign button_1_text_size = button_1_text_text_size %}{% elsif button_1_variant == 'pill' %}{% assign button_1_color = button_1_pill_color %}{% assign button_1_text_size = button_1_pill_text_size %}{% endif %}{% assign button_2_color = '' %}{% assign button_2_text_size = '' %}{% assign button_2_padding = '' %}{% if button_2_variant == 'solid' %}{% assign button_2_color = button_2_solid_color %}{% assign button_2_text_size = button_2_solid_text_size %}{% assign button_2_padding = button_2_solid_padding %}{% elsif button_2_variant == 'transparent' %}{% assign button_2_color = button_2_transparent_color %}{% assign button_2_text_size = button_2_transparent_text_size %}{% assign button_2_padding = button_2_transparent_padding %}{% elsif button_2_variant == 'text' %}{% assign button_2_text_size = button_2_text_text_size %}{% elsif button_2_variant == 'pill' %}{% assign button_2_color = button_2_pill_color %}{% assign button_2_text_size = button_2_pill_text_size %}{% endif %}{% assign show_button_1 = false %}{% assign show_button_2 = false %}{% if button_1_label != blank %}{% if button_1_mode == 'action' and button_1_action != blank %}{% assign show_button_1 = true %}{% elsif button_1_mode == 'link' and button_1_url != blank %}{% assign show_button_1 = true %}{% elsif button_1_mode == 'submit' %}{% assign show_button_1 = true %}{% endif %}{% endif %}{% if button_2_label != blank %}{% if button_2_mode == 'action' and button_2_action != blank %}{% assign show_button_2 = true %}{% elsif button_2_mode == 'link' and button_2_url != blank %}{% assign show_button_2 = true %}{% elsif button_2_mode == 'submit' %}{% assign show_button_2 = true %}{% endif %}{% endif %}
+                        {% if show_button_1 or show_button_2 %}    <div li-if="show_button_1 or show_button_2" class="u-button-wrapper">
+    
+                          {% render 'button', url: button_1_url, icon_position: button_1_icon_position, action: button_1_action, padding: button_1_padding, text_size: button_1_text_size, icon: button_1_icon, label: button_1_label, icon_color: button_1_icon_color, trigger: button_1_trigger, icon_animation: button_1_icon_animation, mode: button_1_mode, color: button_1_color, custom_class: button_1_custom_class, pill_tag_inner: button_1_pill_tag_inner, variant: button_1_variant, underline: button_1_underline %}
+                          {% render 'button', url: button_2_url, icon_position: button_2_icon_position, action: button_2_action, padding: button_2_padding, text_size: button_2_text_size, icon: button_2_icon, label: button_2_label, icon_color: button_2_icon_color, trigger: button_2_trigger, icon_animation: button_2_icon_animation, mode: button_2_mode, color: button_2_color, custom_class: button_2_custom_class, pill_tag_inner: button_2_pill_tag_inner, variant: button_2_variant, underline: button_2_underline %}
+                            </div>
 {% endif %}
-{% if false %}
-  <div li-if="false" class="u-button-wrapper">
-    <div class="u-display-contents">
-      <div
-        data-wf--preview-button-main--preview-variant="primary"
-        data-button=" "
-        data-trigger="hover focus"
-        class="button_main_wrap"
-      >
-        <div data-wf--clickable--variant="focus-ring-outside" class="clickable_wrap u-cover-absolute">
-          <button type="button" aria-label="Button Text" class="clickable_btn"></button>
-        </div>
-        <div class="button_main_element">
-          <div aria-hidden="true" class="button_main_text u-text-link-large">Button Text</div>
-          <div class="button_main_icon u-hide-if-empty"></div>
-        </div>
-      </div>
-      <div
-        data-wf--preview-button-main--preview-variant="primary"
-        data-button=" "
-        data-trigger="hover focus"
-        class="button_main_wrap"
-      >
-        <div data-wf--clickable--variant="focus-ring-outside" class="clickable_wrap u-cover-absolute">
-          <button type="button" aria-label="Button Text" class="clickable_btn"></button>
-        </div>
-        <div class="button_main_element">
-          <div aria-hidden="true" class="button_main_text u-text-link-large">Button Text</div>
-          <div class="button_main_icon u-hide-if-empty"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+                        {% if false %}    <div li-if="false" class="u-button-wrapper">
+    
+                          <div class="u-display-contents">
+                            <div data-wf--preview-button-main--preview-variant="primary" data-button=" " data-trigger="hover focus" class="button_main_wrap">
+                              <div data-wf--clickable--variant="focus-ring-outside" class="clickable_wrap u-cover-absolute"><button type="button" aria-label="Button Text" class="clickable_btn"></button></div>
+                              <div class="button_main_element">
+                                <div aria-hidden="true" class="button_main_text u-text-link-large">Button Text</div>
+                                <div class="button_main_icon u-hide-if-empty"></div>
+                              </div>
+                            </div>
+                            <div data-wf--preview-button-main--preview-variant="primary" data-button=" " data-trigger="hover focus" class="button_main_wrap">
+                              <div data-wf--clickable--variant="focus-ring-outside" class="clickable_wrap u-cover-absolute"><button type="button" aria-label="Button Text" class="clickable_btn"></button></div>
+                              <div class="button_main_element">
+                                <div aria-hidden="true" class="button_main_text u-text-link-large">Button Text</div>
+                                <div class="button_main_icon u-hide-if-empty"></div>
+                              </div>
+                            </div>
+                          </div>
+                            </div>
 {% endif %}
