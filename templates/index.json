@@ -64,8 +64,8 @@
       "name": "Hero Main",
       "settings": {
         "section_id": "",
-        "spacing_top": "none",
-        "spacing_bottom": "none"
+        "spacing_top": "small",
+        "spacing_bottom": "small"
       }
     },
     "trust_rating_pfUfjq": {
