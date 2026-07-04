@@ -36,7 +36,7 @@
             "button_1_pill_text_size": "eyebrow_base",
             "button_1_pill_tag_inner": "",
             "button_1_underline": false,
-            "button_1_icon": "chevron_right",
+            "button_1_icon": "none",
             "button_1_icon_position": "after",
             "button_1_icon_animation": "move_left",
             "button_1_icon_color": "inherit",
