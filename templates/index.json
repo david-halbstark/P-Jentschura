@@ -47,7 +47,7 @@
             "button_2_action": "newsletter_modal",
             "button_2_solid_color": "red",
             "button_2_solid_text_size": "u-text-link-large",
-            "button_2_solid_padding": "small",
+            "button_2_solid_padding": "base",
             "button_2_pill_color": "white",
             "button_2_pill_text_size": "eyebrow_base",
             "button_2_pill_tag_inner": "",
