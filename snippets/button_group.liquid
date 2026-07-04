@@ -127,40 +127,66 @@
   </div>
 {% endif %}
 <div class="u-display-none w-embed">
-  <style>
-      /* Button */
-      .button_wrap {
-        --button-bg-color: transparent;
-        --button-bg-color-hover: transparent;
-        --button-text-color: inherit;
-        --button-text-color-hover: inherit;
-        --button-border-color: transparent;
-        --button-border-color-hover: transparent;
-      }
-      .button_element {
-        font-size: var(--button-text-size);
-        color: color-mix(in srgb, var(--button-text-color) calc(100% * var(--_trigger---on)), var(--button-text-color-hover) calc(100% * var(--_trigger---off)));
-        background-color: color-mix(in srgb, var(--button-bg-color) calc(100% * var(--_trigger---on)), var(--button-bg-color-hover) calc(100% * var(--_trigger---off)));
-        border-color: color-mix(in srgb, var(--button-border-color) calc(100% * var(--_trigger---on)), var(--button-border-color-hover) calc(100% * var(--_trigger---off)));
-      }
-      /*  Button Variant Solid  */
-      /*  BG Red  */
-      .button_wrap.is-variant-solid.is-bg-red {
-        --button-bg-color: var(--swatch--crimson);
-        --button-bg-color-hover: var(--swatch--crimson-darker);
-        --button-text-color: var(--swatch--white);
-        --button-text-color-hover: var(--swatch--white);
-      }
-      /*  BG White  */
-      .button_wrap.is-variant-solid.is-bg-white {
-        --button-bg-color: var(--swatch--white);
-        --button-bg-color-hover: var(--swatch--snow);
-        --button-text-color: var(--swatch--charcoal);
-        --button-text-color-hover: var(--swatch--charcoal);
-      }
-      /* Padding Base */
-    .button_wrap.is-padding-base .button_element {
-      padding: 3.5rem 1.25rem;
-    }
+/* Button */
+.button_wrap {
+  --button-padding: 0rem;
+
+  --button-bg-color: transparent;
+  --button-bg-color-hover: transparent;
+
+  --button-text-color: inherit;
+  --button-text-color-hover: inherit;
+
+  --button-border-color: transparent;
+  --button-border-color-hover: transparent;
+}
+
+.button_element {
+  padding: var(--button-padding);
+  font-size: var(--button-text-size);
+  color: color-mix(
+    in srgb,
+    var(--button-text-color) calc(100% * var(--_trigger---on)),
+    var(--button-text-color-hover) calc(100% * var(--_trigger---off))
+  );
+  background-color: color-mix(
+    in srgb,
+    var(--button-bg-color) calc(100% * var(--_trigger---on)),
+    var(--button-bg-color-hover) calc(100% * var(--_trigger---off))
+  );
+  border-color: color-mix(
+    in srgb,
+    var(--button-border-color) calc(100% * var(--_trigger---on)),
+    var(--button-border-color-hover) calc(100% * var(--_trigger---off))
+  );
+}
+
+/*  Button Variant Solid  */
+/*  BG Red  */
+.button_wrap.is-variant-solid.is-bg-red {
+  --button-bg-color: var(--swatch--crimson);
+  --button-bg-color-hover: var(--swatch--crimson-darker);
+
+  --button-text-color: var(--swatch--white);
+  --button-text-color-hover: var(--swatch--white);
+}
+
+/*  BG White  */
+.button_wrap.is-variant-solid.is-bg-white {
+  --button-bg-color: var(--swatch--white);
+  --button-bg-color-hover: var(--swatch--snow);
+
+  --button-text-color: var(--swatch--charcoal);
+  --button-text-color-hover: var(--swatch--charcoal);
+}
+
+/* Padding Base */
+.button_wrap.is-padding-base .button_element {
+  --button-padding: 1.25rem 3.5rem;
+}
+/* Padding Small */
+.button_wrap.is-padding-small .button_element {
+}
+
   </style>
 </div>
