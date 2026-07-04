@@ -1,172 +1,35 @@
-{% assign button_label = label -%}
-{%- assign button_mode = mode | default: 'link' -%}
-{%- assign button_url = url -%}
-{%- assign button_action = action -%}
-{%- assign button_variant = variant | default: 'solid' -%}
-{%- assign button_color = color -%}
-{%- assign button_text_size = text_size -%}
-{%- assign button_padding = padding -%}
-{%- assign button_underline = underline | default: false -%}
-{%- assign button_pill_tag_inner = pill_tag_inner -%}
-{%- assign button_icon = icon | default: 'none' -%}
-{%- assign button_icon_position = icon_position | default: 'after' -%}
-{%- assign button_icon_animation = icon_animation | default: 'none' -%}
-{%- assign button_trigger = trigger -%}
-{%- assign button_custom_class = custom_class -%}
-{%- assign button_wrap_classes = 'button_wrap' -%}
-{%- if button_variant != blank -%}
-  {%- assign button_wrap_classes = button_wrap_classes | append: ' is-variant-' | append: button_variant -%}
-{%- endif -%}
-{%- if button_color != blank -%}
-  {%- assign button_color_class = button_color | replace: '_', '-' -%}
-  {%- assign button_wrap_classes = button_wrap_classes | append: ' is-color-' | append: button_color_class -%}
-{%- endif -%}
-{%- if button_text_size != blank -%}
-  {%- assign button_text_size_class = button_text_size | replace: '_', '-' -%}
-  {%- assign button_wrap_classes = button_wrap_classes | append: ' is-text-size-' | append: button_text_size_class -%}
-{%- endif -%}
-{%- if button_padding != blank -%}
-  {%- assign button_padding_class = button_padding | replace: '_', '-' -%}
-  {%- assign button_wrap_classes = button_wrap_classes | append: ' is-padding-' | append: button_padding_class -%}
-{%- endif -%}
-{%- if button_underline %}{% assign button_wrap_classes = button_wrap_classes | append: ' has-underline' %}{% endif -%}
-{%- if button_icon != blank and button_icon != 'none' -%}
-  {%- assign button_wrap_classes = button_wrap_classes | append: ' has-icon' -%}
-  {%- assign button_wrap_classes = button_wrap_classes | append: ' has-icon-' | append: button_icon_position -%}
-{%- endif -%}
-{%- if button_icon_animation != blank and button_icon_animation != 'none' -%}
-  {%- assign button_wrap_classes = button_wrap_classes
-    | append: ' has-icon-animation-'
-    | append: button_icon_animation
-  -%}
-{%- endif -%}
-{%- if button_custom_class != blank -%}
-  {%- assign button_wrap_classes = button_wrap_classes | append: ' ' | append: button_custom_class -%}
-{%- endif -%}
-{%- assign button_data_action = button_action -%}
-{%- if button_mode == 'action' -%}
-  {%- case button_action -%}
-    {%- when 'newsletter_modal' -%}
-      {%- assign button_data_action = 'open_newsletter_modal' -%}
-    {%- when 'contact_modal' -%}
-      {%- assign button_data_action = 'open_contact_modal' -%}
-    {%- when 'copy_link' -%}
-      {%- assign button_data_action = 'copy_link' -%}
-  {%- endcase -%}
-{%- endif -%}
-{%- assign show_button = false -%}
-{%- if button_label != blank -%}
-  {%- if button_mode == 'link' and button_url != blank -%}
-    {%- assign show_button = true -%}
-  {%- elsif button_mode == 'action' and button_data_action != blank -%}
-    {%- assign show_button = true -%}
-  {%- elsif button_mode == 'submit' -%}
-    {%- assign show_button = true -%}
-  {%- endif -%}
-{%- endif -%}
-{%- if show_button %}
-  <div data-trigger="{{button_trigger}}" class="{{button_wrap_classes}}">
-    <div class="clickable_wrap u-cover-absolute">
-      {% if button_mode == 'link' -%}
-        <a aria-label="{{button_label | strip_html | escape}}" href="{{button_url}}" class="clickable_link"></a>
-      {%- elsif button_mode == 'action' -%}
-        <button
-          type="button"
-          aria-label="{{button_label | strip_html | escape}}"
-          class="clickable_link"
-          data-action="{{button_data_action}}"
-        ></button>
-      {%- elsif button_mode == 'submit' -%}
-        <button type="submit" aria-label="{{button_label | strip_html | escape}}" class="clickable_link"></button>
-      {%- endif %}
-    </div>
-    <div class="button_element" aria-hidden="true">
-      {% if button_icon != blank and button_icon != 'none' and button_icon_position == 'before' -%}
-        {%- render 'icon', icon: button_icon, custom_class: 'button_icon' -%}
-      {%- endif %}
-      <div class="button_text">
-        {{ button_label -}}
-        {%- if button_variant == 'pill' and button_pill_tag_inner != blank -%}
-          <span class="button_tag_inner">{{ button_pill_tag_inner }}</span>
-        {%- endif %}
-      </div>
-      {% if button_icon != blank and button_icon != 'none' and button_icon_position == 'after' -%}
-        {%- render 'icon', icon: button_icon, custom_class: 'button_icon' -%}
-      {%- endif %}
-    </div>
-  </div>
+{% assign button_1_color = '' %}{% assign button_1_text_size = '' %}{% assign button_1_padding = '' %}{% if button_1_variant == 'solid' %}{% assign button_1_color = button_1_solid_color %}{% assign button_1_text_size = button_1_solid_text_size %}{% assign button_1_padding = button_1_solid_padding %}{% elsif button_1_variant == 'transparent' %}{% assign button_1_color = button_1_transparent_color %}{% assign button_1_text_size = button_1_transparent_text_size %}{% assign button_1_padding = button_1_transparent_padding %}{% elsif button_1_variant == 'text' %}{% assign button_1_text_size = button_1_text_text_size %}{% elsif button_1_variant == 'pill' %}{% assign button_1_color = button_1_pill_color %}{% assign button_1_text_size = button_1_pill_text_size %}{% endif %}{% assign button_2_color = '' %}{% assign button_2_text_size = '' %}{% assign button_2_padding = '' %}{% if button_2_variant == 'solid' %}{% assign button_2_color = button_2_solid_color %}{% assign button_2_text_size = button_2_solid_text_size %}{% assign button_2_padding = button_2_solid_padding %}{% elsif button_2_variant == 'transparent' %}{% assign button_2_color = button_2_transparent_color %}{% assign button_2_text_size = button_2_transparent_text_size %}{% assign button_2_padding = button_2_transparent_padding %}{% elsif button_2_variant == 'text' %}{% assign button_2_text_size = button_2_text_text_size %}{% elsif button_2_variant == 'pill' %}{% assign button_2_color = button_2_pill_color %}{% assign button_2_text_size = button_2_pill_text_size %}{% endif %}{% assign show_button_1 = false %}{% assign show_button_2 = false %}{% if button_1_label != blank %}{% if button_1_mode == 'action' and button_1_action != blank %}{% assign show_button_1 = true %}{% elsif button_1_mode == 'link' and button_1_url != blank %}{% assign show_button_1 = true %}{% elsif button_1_mode == 'submit' %}{% assign show_button_1 = true %}{% endif %}{% endif %}{% if button_2_label != blank %}{% if button_2_mode == 'action' and button_2_action != blank %}{% assign show_button_2 = true %}{% elsif button_2_mode == 'link' and button_2_url != blank %}{% assign show_button_2 = true %}{% elsif button_2_mode == 'submit' %}{% assign show_button_2 = true %}{% endif %}{% endif %}
+                        {% if show_button_1 or show_button_2 %}    <div li-if="show_button_1 or show_button_2" class="u-button-wrapper">
+    
+                          {% render 'button', url: button_1_url, icon_position: button_1_icon_position, action: button_1_action, padding: button_1_padding, text_size: button_1_text_size, icon: button_1_icon, label: button_1_label, icon_color: button_1_icon_color, trigger: button_1_trigger, icon_animation: button_1_icon_animation, mode: button_1_mode, color: button_1_color, custom_class: button_1_custom_class, pill_tag_inner: button_1_pill_tag_inner, variant: button_1_variant, underline: button_1_underline %}
+                          {% render 'button', url: button_2_url, icon_position: button_2_icon_position, action: button_2_action, padding: button_2_padding, text_size: button_2_text_size, icon: button_2_icon, label: button_2_label, icon_color: button_2_icon_color, trigger: button_2_trigger, icon_animation: button_2_icon_animation, mode: button_2_mode, color: button_2_color, custom_class: button_2_custom_class, pill_tag_inner: button_2_pill_tag_inner, variant: button_2_variant, underline: button_2_underline %}
+                            </div>
 {% endif %}
-{% if show_button_1 or show_button_2 %}
-  <div li-if="show_button_1 or show_button_2" class="u-button-wrapper">
-    {% render 'button',
-      url: button_1_url,
-      icon_position: button_1_icon_position,
-      action: button_1_action,
-      padding: button_1_padding,
-      text_size: button_1_text_size,
-      icon: button_1_icon,
-      label: button_1_label,
-      icon_color: button_1_icon_color,
-      trigger: button_1_trigger,
-      icon_animation: button_1_icon_animation,
-      mode: button_1_mode,
-      color: button_1_color,
-      custom_class: button_1_custom_class,
-      pill_tag_inner: button_1_pill_tag_inner,
-      variant: button_1_variant,
-      underline: button_1_underline
-    %}
-    {% render 'button',
-      url: button_2_url,
-      icon_position: button_2_icon_position,
-      action: button_2_action,
-      padding: button_2_padding,
-      text_size: button_2_text_size,
-      icon: button_2_icon,
-      label: button_2_label,
-      icon_color: button_2_icon_color,
-      trigger: button_2_trigger,
-      icon_animation: button_2_icon_animation,
-      mode: button_2_mode,
-      color: button_2_color,
-      custom_class: button_2_custom_class,
-      pill_tag_inner: button_2_pill_tag_inner,
-      variant: button_2_variant,
-      underline: button_2_underline
-    %}
-  </div>
-{% endif %}
-{% if false %}
-  <div li-if="false" class="u-button-wrapper">
-    <div class="u-display-contents">
-      <div data-button=" " data-trigger="hover focus" class="button_wrap">
-        <div data-wf--clickable--variant="focus-ring-outside" class="clickable_wrap u-cover-absolute">
-          <button type="button" aria-label="Button Text" class="clickable_btn"></button>
-        </div>
-        <div class="button_element">
-          <div aria-hidden="true" class="button_text u-text-link-large">Button Text</div>
-          <div class="button_icon u-hide-if-empty">
-            <div class="u-display-contents">
-              <div aria-hidden="true" data-wf--preview-icon--variant="full" class="u-icon w-embed">
-                <svg xmlns="http://www.w3.org/2000/svg" width="66" height="70" viewbox="0 0 66 70" fill="none">
-                  <path d="M17 2L50 34.9999L17 68" stroke="white" stroke-width="2"></path>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div data-wf--preview-button-variant--variant="solid" class="u-display-none"></div>
-      </div>
-      <div data-button=" " data-trigger="hover focus" class="button_wrap">
-        <div data-wf--clickable--variant="focus-ring-outside" class="clickable_wrap u-cover-absolute">
-          <button type="button" aria-label="Button Text" class="clickable_btn"></button>
-        </div>
-        <div class="button_element">
-          <div aria-hidden="true" class="button_text u-text-link-large">Button Text</div>
-          <div class="button_icon u-hide-if-empty"></div>
-        </div>
-        <div data-wf--preview-button-variant--variant="solid" class="u-display-none"></div>
-      </div>
-    </div>
-  </div>
+                        {% if false %}    <div li-if="false" class="u-button-wrapper">
+    
+                          <div class="u-display-contents">
+                            <div data-button=" " data-trigger="hover focus" class="button_wrap">
+                              <div data-wf--clickable--variant="focus-ring-outside" class="clickable_wrap u-cover-absolute"><button type="button" aria-label="Button Text" class="clickable_btn"></button></div>
+                              <div class="button_element">
+                                <div aria-hidden="true" class="button_text u-text-link-large">Button Text</div>
+                                <div class="button_icon u-hide-if-empty">
+                                  <div class="u-display-contents">
+                                    <div aria-hidden="true" data-wf--preview-icon--variant="full" class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="70" viewbox="0 0 66 70" fill="none">
+                                        <path d="M17 2L50 34.9999L17 68" stroke="white" stroke-width="2"></path>
+                                      </svg></div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div data-wf--preview-button-variant--variant="solid" class="u-display-none"></div>
+                            </div>
+                            <div data-button=" " data-trigger="hover focus" class="button_wrap">
+                              <div data-wf--clickable--variant="focus-ring-outside" class="clickable_wrap u-cover-absolute"><button type="button" aria-label="Button Text" class="clickable_btn"></button></div>
+                              <div class="button_element">
+                                <div aria-hidden="true" class="button_text u-text-link-large">Button Text</div>
+                                <div class="button_icon u-hide-if-empty"></div>
+                              </div>
+                              <div data-wf--preview-button-variant--variant="solid" class="u-display-none"></div>
+                            </div>
+                          </div>
+                            </div>
 {% endif %}
