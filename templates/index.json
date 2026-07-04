@@ -28,7 +28,7 @@
             "button_1_mode": "link",
             "button_1_url": "shopify://policies/privacy-policy",
             "button_1_action": "contact_modal",
-            "button_1_variant": "pill",
+            "button_1_variant": "solid",
             "button_1_solid_color": "red",
             "button_1_solid_text_size": "link_base",
             "button_1_solid_size": "base",
