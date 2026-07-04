@@ -31,7 +31,7 @@
             "button_1_variant": "solid",
             "button_1_solid_color": "red",
             "button_1_solid_text_size": "u-text-link-base",
-            "button_1_solid_size": "base",
+            "button_1_solid_size": "small",
             "button_1_pill_color": "white_transparent",
             "button_1_pill_text_size": "eyebrow_base",
             "button_1_pill_tag_inner": "",
