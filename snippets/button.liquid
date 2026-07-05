@@ -102,16 +102,20 @@
 {% endif %}
 
 <style>
-      /* Button Animation */
-  .button_wrap.has-icon-animation-move-left .button_icon {
-    transform: translateX(calc(-0.25rem * var(--_trigger---off)));
-  }
+        /* Button Animation */
+    .button_wrap.has-icon-animation-move-left .button_icon {
+      transform: translateX(calc(-0.25rem * var(--_trigger---off)));
+    }
 
-  .button_wrap.has-icon-animation-move-right .button_icon {
-    transform: translateX(calc(0.25rem * var(--_trigger---off)));
-  }
+    .button_wrap.has-icon-animation-move-right .button_icon {
+      transform: translateX(calc(0.25rem * var(--_trigger---off)));
+    }
 
-  .button_wrap.has-icon-animation-move-up-right .button_icon {
-    transform: translate(calc(0.25rem * var(--_trigger---off)), calc(-0.25rem * var(--_trigger---off)));
+    .button_wrap.has-icon-animation-move-up-right .button_icon {
+      transform: translate(calc(0.25rem * var(--_trigger---off)), calc(-0.25rem * var(--_trigger---off)));
+    }
+
+    .button_icon {
+    transition: transform 0.2s ease;
   }
 </style>
