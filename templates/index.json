@@ -85,7 +85,8 @@
         "heading_max_width": 20,
         "heading_tidy_text": true,
         "heading_visually_hidden": false,
-        "clickable_url": "https://www.provenexpert.com/de-de/jentschura-international-gmbh/"
+        "clickable_url": "https://www.provenexpert.com/de-de/jentschura-international-gmbh/",
+        "clickable_focus_ring": "inside"
       }
     },
     "category_cards_FxBKGM": {
@@ -95,8 +96,7 @@
         "section_id": "",
         "spacing_top": "main",
         "spacing_bottom": "main",
-        "heading": "Lorem ipsum dolor sit amet elit",
-        "heading_tag": "h2"
+        "heading": "Lorem ipsum dolor sit amet elit"
       }
     },
     "product_slider_NyaW7F": {
