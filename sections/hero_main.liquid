@@ -70,6 +70,10 @@
                     
                     
                     
+                    
+                    
+                    
+                    
                   </div>
                                     
                   
@@ -460,6 +464,40 @@
                 },
                 {
                     "type": "select",
+                    "id": "button_1_text_text_size",
+                    "label": "Textgr\u00f6\u00dfe",
+                    "options": [
+                        {
+                            "value": "u-text-link-large",
+                            "label": "Link gro\u00df"
+                        },
+                        {
+                            "value": "u-text-link-base",
+                            "label": "Link Standard"
+                        }
+                    ],
+                    "default": "u-text-link-large",
+                    "visible_if": "{{ block.settings.button_1_variant == 'text' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_text_color",
+                    "label": "Farbe",
+                    "options": [
+                        {
+                            "value": "green",
+                            "label": "Gr\u00fcm"
+                        },
+                        {
+                            "value": "white",
+                            "label": "Rot"
+                        }
+                    ],
+                    "default": "red",
+                    "visible_if": "{{ block.settings.button_1_variant == 'text' }}"
+                },
+                {
+                    "type": "select",
                     "id": "button_1_pill_color",
                     "label": "Farbe",
                     "options": [
@@ -731,6 +769,23 @@
                     ],
                     "default": "base",
                     "visible_if": "{{ block.settings.button_2_variant == 'solid' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_text_text_size",
+                    "label": "Textgr\u00f6\u00dfe",
+                    "options": [
+                        {
+                            "value": "u-text-link-large",
+                            "label": "Link gro\u00df"
+                        },
+                        {
+                            "value": "u-text-link-base",
+                            "label": "Link Standard"
+                        }
+                    ],
+                    "default": "u-text-link-large",
+                    "visible_if": "{{ block.settings.button_2_variant == 'text' }}"
                 },
                 {
                     "type": "select",
