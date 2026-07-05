@@ -1,9 +1,50 @@
-{% assign icon_name = icon | default: 'none' %}{% assign icon_custom_class = custom_class %}{% assign icon_classes = 'icon' %}{% if icon_custom_class != blank %}{% assign icon_classes = icon_classes | append: ' ' | append: icon_custom_class %}{% endif %}{% if icon_name != blank and icon_name != 'none' %}<div class="{{icon_classes}}" aria-hidden="true">{% case icon_name %}{% when 'chevron_left' %}<svg viewbox="0 0 24 24" fill="none" focusable="false"> <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg>{% when 'chevron_right' %}<svg viewbox="0 0 24 24" fill="none" focusable="false"> <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg>{% when 'arrow_top_right' %}<svg viewbox="0 0 24 24" fill="none" focusable="false"> <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M8 7H17V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg>{% when 'download' %}<svg viewbox="0 0 24 24" fill="none" focusable="false"> <path d="M12 3V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path> <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M5 21H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path> </svg>{% when 'copy' %}<svg viewbox="0 0 24 24" fill="none" focusable="false"> <rect x="8" y="8" width="11" height="11" rx="2" stroke="currentColor" stroke-width="2"></rect> <path d="M5 15H4C3.45 15 3 14.55 3 14V5C3 3.9 3.9 3 5 3H14C14.55 3 15 3.45 15 4V5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path> </svg>{% when 'external_page' %}<svg viewbox="0 0 24 24" fill="none" focusable="false"> <path d="M10 6H6C4.9 6 4 6.9 4 8V18C4 19.1 4.9 20 6 20H16C17.1 20 18 19.1 18 18V14" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path> <path d="M14 4H20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M11 13L20 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path> </svg>{% endcase %}</div>{% endif %}
-                      {% if false %}    <div li-if="false" class="u-display-contents">
-    
-                        <div aria-hidden="true" data-wf--preview-icon--variant="full" class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="70" viewbox="0 0 66 70" fill="none">
-                            <path d="M17 2L50 34.9999L17 68" stroke="white" stroke-width="2"></path>
-                          </svg></div>
-                          </div>
+{% assign icon_name = icon | default: 'none' %}
+{% assign icon_custom_class = custom_class %}
+
+{% assign icon_classes = 'u-icon' %}
+
+{% if icon_custom_class != blank %}
+  {% assign icon_classes = icon_classes | append: ' ' | append: icon_custom_class %}
 {% endif %}
-                      <div data-wf--preview-icon-variants--variant="cevron-left" class="u-display-none"></div>
+
+{% if icon_name != blank and icon_name != 'none' %}
+  <div class="{{ icon_classes }}" aria-hidden="true">
+    {% case icon_name %}
+      {% when 'chevron_left' %}
+        <svg viewBox="0 0 24 24" fill="none" focusable="false">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+      {% when 'chevron_right' %}
+        <svg viewBox="0 0 24 24" fill="none" focusable="false">
+          <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+      {% when 'arrow_top_right' %}
+        <svg viewBox="0 0 24 24" fill="none" focusable="false">
+          <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 7H17V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+
+      {% when 'download' %}
+        <svg viewBox="0 0 24 24" fill="none" focusable="false">
+          <path d="M12 3V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M5 21H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+
+      {% when 'copy' %}
+        <svg viewBox="0 0 24 24" fill="none" focusable="false">
+          <rect x="8" y="8" width="11" height="11" rx="2" stroke="currentColor" stroke-width="2"/>
+          <path d="M5 15H4C3.45 15 3 14.55 3 14V5C3 3.9 3.9 3 5 3H14C14.55 3 15 3.45 15 4V5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+
+      {% when 'external_page' %}
+        <svg viewBox="0 0 24 24" fill="none" focusable="false">
+          <path d="M10 6H6C4.9 6 4 6.9 4 8V18C4 19.1 4.9 20 6 20H16C17.1 20 18 19.1 18 18V14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M14 4H20V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 13L20 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+    {% endcase %}
+  </div>
+{% endif %}
