@@ -113,7 +113,7 @@
         "button_2_solid_padding": "base",
         "button_2_text_text_size": "u-text-link-large",
         "button_2_text_color": "green",
-        "button_2_pill_color": "white_transparent",
+        "button_2_pill_color": "white",
         "button_2_pill_text_size": "u-text-eyebrow-large",
         "button_2_pill_tag_inner": "",
         "button_2_underline": false,
