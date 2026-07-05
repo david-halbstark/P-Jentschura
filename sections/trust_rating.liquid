@@ -1,270 +1,276 @@
-<div class="u-display-none">
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          
-          
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-        </div>
-        <div class="trust_rating_contain u-container" id="{% if section.settings.section_id != blank %}{{ section_id }}{% endif %}">
-          {% render 'spacer', variant: section.settings.spacing_top %}
-          <div class="trust_rating_layout u-flex-horizontal-wrap">
-            {% render 'heading', tag: section.settings.heading_tag, visually_hidden: true, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
-            <div class="trust_rating_left u-margin-trim">
-              <div class="trust_rating_stars">
-                <div class="trust_rating_star">
-                  <div aria-hidden="true" class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 14 14" fill="none">
-                      <path d="M6.34963 0.920948C6.59025 0.359032 7.40978 0.359033 7.6504 0.920949L9.07054 4.23747C9.17204 4.47436 9.40141 4.63622 9.66469 4.65672L13.3509 4.94377C13.9755 4.99241 14.2287 5.74946 13.7529 6.14537L10.9444 8.48211C10.7438 8.64905 10.6561 8.91096 10.7174 9.16048L11.5755 12.6544C11.7208 13.2464 11.0578 13.7143 10.5231 13.3971L7.36719 11.5247C7.14177 11.391 6.85827 11.391 6.63285 11.5247L3.4769 13.3971C2.94219 13.7143 2.27917 13.2464 2.42455 12.6544L3.2826 9.16048C3.34389 8.91096 3.25628 8.64905 3.05569 8.48211L0.247144 6.14537C-0.228703 5.74946 0.0245476 4.99241 0.649105 4.94377L4.33536 4.65672C4.59866 4.63622 4.82802 4.47436 4.92946 4.23747L6.34963 0.920948Z" fill="currentColor"></path>
-                    </svg></div>
-                </div>
-                <div class="trust_rating_star">
-                  <div aria-hidden="true" class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 14 14" fill="none">
-                      <path d="M6.34963 0.920948C6.59025 0.359032 7.40978 0.359033 7.6504 0.920949L9.07054 4.23747C9.17204 4.47436 9.40141 4.63622 9.66469 4.65672L13.3509 4.94377C13.9755 4.99241 14.2287 5.74946 13.7529 6.14537L10.9444 8.48211C10.7438 8.64905 10.6561 8.91096 10.7174 9.16048L11.5755 12.6544C11.7208 13.2464 11.0578 13.7143 10.5231 13.3971L7.36719 11.5247C7.14177 11.391 6.85827 11.391 6.63285 11.5247L3.4769 13.3971C2.94219 13.7143 2.27917 13.2464 2.42455 12.6544L3.2826 9.16048C3.34389 8.91096 3.25628 8.64905 3.05569 8.48211L0.247144 6.14537C-0.228703 5.74946 0.0245476 4.99241 0.649105 4.94377L4.33536 4.65672C4.59866 4.63622 4.82802 4.47436 4.92946 4.23747L6.34963 0.920948Z" fill="currentColor"></path>
-                    </svg></div>
-                </div>
-                <div class="trust_rating_star">
-                  <div aria-hidden="true" class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 14 14" fill="none">
-                      <path d="M6.34963 0.920948C6.59025 0.359032 7.40978 0.359033 7.6504 0.920949L9.07054 4.23747C9.17204 4.47436 9.40141 4.63622 9.66469 4.65672L13.3509 4.94377C13.9755 4.99241 14.2287 5.74946 13.7529 6.14537L10.9444 8.48211C10.7438 8.64905 10.6561 8.91096 10.7174 9.16048L11.5755 12.6544C11.7208 13.2464 11.0578 13.7143 10.5231 13.3971L7.36719 11.5247C7.14177 11.391 6.85827 11.391 6.63285 11.5247L3.4769 13.3971C2.94219 13.7143 2.27917 13.2464 2.42455 12.6544L3.2826 9.16048C3.34389 8.91096 3.25628 8.64905 3.05569 8.48211L0.247144 6.14537C-0.228703 5.74946 0.0245476 4.99241 0.649105 4.94377L4.33536 4.65672C4.59866 4.63622 4.82802 4.47436 4.92946 4.23747L6.34963 0.920948Z" fill="currentColor"></path>
-                    </svg></div>
-                </div>
-                <div class="trust_rating_star">
-                  <div aria-hidden="true" class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 14 14" fill="none">
-                      <path d="M6.34963 0.920948C6.59025 0.359032 7.40978 0.359033 7.6504 0.920949L9.07054 4.23747C9.17204 4.47436 9.40141 4.63622 9.66469 4.65672L13.3509 4.94377C13.9755 4.99241 14.2287 5.74946 13.7529 6.14537L10.9444 8.48211C10.7438 8.64905 10.6561 8.91096 10.7174 9.16048L11.5755 12.6544C11.7208 13.2464 11.0578 13.7143 10.5231 13.3971L7.36719 11.5247C7.14177 11.391 6.85827 11.391 6.63285 11.5247L3.4769 13.3971C2.94219 13.7143 2.27917 13.2464 2.42455 12.6544L3.2826 9.16048C3.34389 8.91096 3.25628 8.64905 3.05569 8.48211L0.247144 6.14537C-0.228703 5.74946 0.0245476 4.99241 0.649105 4.94377L4.33536 4.65672C4.59866 4.63622 4.82802 4.47436 4.92946 4.23747L6.34963 0.920948Z" fill="currentColor"></path>
-                    </svg></div>
-                </div>
-                <div class="trust_rating_star">
-                  <div aria-hidden="true" class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 14 14" fill="none">
-                      <path d="M6.34963 0.920948C6.59025 0.359032 7.40978 0.359033 7.6504 0.920949L9.07054 4.23747C9.17204 4.47436 9.40141 4.63622 9.66469 4.65672L13.3509 4.94377C13.9755 4.99241 14.2287 5.74946 13.7529 6.14537L10.9444 8.48211C10.7438 8.64905 10.6561 8.91096 10.7174 9.16048L11.5755 12.6544C11.7208 13.2464 11.0578 13.7143 10.5231 13.3971L7.36719 11.5247C7.14177 11.391 6.85827 11.391 6.63285 11.5247L3.4769 13.3971C2.94219 13.7143 2.27917 13.2464 2.42455 12.6544L3.2826 9.16048C3.34389 8.91096 3.25628 8.64905 3.05569 8.48211L0.247144 6.14537C-0.228703 5.74946 0.0245476 4.99241 0.649105 4.94377L4.33536 4.65672C4.59866 4.63622 4.82802 4.47436 4.92946 4.23747L6.34963 0.920948Z" fill="currentColor"></path>
-                    </svg></div>
-                </div>
-              </div>
-              {% render 'typography', custom_class: , text: section.settings.text, tag: span, variant: u-text-link-base %}
-            </div>
-            <div class="trust_rating_mid">
-              {% render 'typography', custom_class: , text: section.settings.text, tag: span, variant: u-text-body-base %}
-            </div>
-            <div class="trust_rating_right">
-              <div li-snippet:image="" class="u-display-contents" image="">
-                
-                <div data-wf--preview-image--variant="cover" class="u-image-wrapper w-variant-4972adff-107c-1f37-d19c-526a2bf55c28"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="u-image"></div>
-              </div>
-            </div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div
+  class="trust_rating_contain u-container"
+  id="{% if section.settings.section_id != blank %}{{ section_id }}{% endif %}"
+>
+  {% render 'spacer', variant: section.settings.spacing_top %}
+  <div class="trust_rating_layout u-flex-horizontal-wrap">
+    {% render 'heading', tag: section.settings.heading_tag, visually_hidden: true, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+    <div class="trust_rating_left u-margin-trim">
+      <div class="trust_rating_stars">
+        <div class="trust_rating_star">
+          <div aria-hidden="true" class="u-icon w-embed">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 14 14" fill="none">
+              <path d="M6.34963 0.920948C6.59025 0.359032 7.40978 0.359033 7.6504 0.920949L9.07054 4.23747C9.17204 4.47436 9.40141 4.63622 9.66469 4.65672L13.3509 4.94377C13.9755 4.99241 14.2287 5.74946 13.7529 6.14537L10.9444 8.48211C10.7438 8.64905 10.6561 8.91096 10.7174 9.16048L11.5755 12.6544C11.7208 13.2464 11.0578 13.7143 10.5231 13.3971L7.36719 11.5247C7.14177 11.391 6.85827 11.391 6.63285 11.5247L3.4769 13.3971C2.94219 13.7143 2.27917 13.2464 2.42455 12.6544L3.2826 9.16048C3.34389 8.91096 3.25628 8.64905 3.05569 8.48211L0.247144 6.14537C-0.228703 5.74946 0.0245476 4.99241 0.649105 4.94377L4.33536 4.65672C4.59866 4.63622 4.82802 4.47436 4.92946 4.23747L6.34963 0.920948Z" fill="currentColor"></path>
+            </svg>
           </div>
-          {% render 'spacer', variant: section.settings.spacing_bottom %}
         </div>
-        {% render 'clickable', focus_ring: 'inside', label: section.settings.heading, mode: 'link', url: section.settings.clickable_url, target: '_blank', custom_class: %} {% schema %} {
-    "tag": "section",
-    "name": "Trust Rating",
-    "class": "trust_rating_wrap u-section",
-    "settings": [
+        <div class="trust_rating_star">
+          <div aria-hidden="true" class="u-icon w-embed">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 14 14" fill="none">
+              <path d="M6.34963 0.920948C6.59025 0.359032 7.40978 0.359033 7.6504 0.920949L9.07054 4.23747C9.17204 4.47436 9.40141 4.63622 9.66469 4.65672L13.3509 4.94377C13.9755 4.99241 14.2287 5.74946 13.7529 6.14537L10.9444 8.48211C10.7438 8.64905 10.6561 8.91096 10.7174 9.16048L11.5755 12.6544C11.7208 13.2464 11.0578 13.7143 10.5231 13.3971L7.36719 11.5247C7.14177 11.391 6.85827 11.391 6.63285 11.5247L3.4769 13.3971C2.94219 13.7143 2.27917 13.2464 2.42455 12.6544L3.2826 9.16048C3.34389 8.91096 3.25628 8.64905 3.05569 8.48211L0.247144 6.14537C-0.228703 5.74946 0.0245476 4.99241 0.649105 4.94377L4.33536 4.65672C4.59866 4.63622 4.82802 4.47436 4.92946 4.23747L6.34963 0.920948Z" fill="currentColor"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="trust_rating_star">
+          <div aria-hidden="true" class="u-icon w-embed">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 14 14" fill="none">
+              <path d="M6.34963 0.920948C6.59025 0.359032 7.40978 0.359033 7.6504 0.920949L9.07054 4.23747C9.17204 4.47436 9.40141 4.63622 9.66469 4.65672L13.3509 4.94377C13.9755 4.99241 14.2287 5.74946 13.7529 6.14537L10.9444 8.48211C10.7438 8.64905 10.6561 8.91096 10.7174 9.16048L11.5755 12.6544C11.7208 13.2464 11.0578 13.7143 10.5231 13.3971L7.36719 11.5247C7.14177 11.391 6.85827 11.391 6.63285 11.5247L3.4769 13.3971C2.94219 13.7143 2.27917 13.2464 2.42455 12.6544L3.2826 9.16048C3.34389 8.91096 3.25628 8.64905 3.05569 8.48211L0.247144 6.14537C-0.228703 5.74946 0.0245476 4.99241 0.649105 4.94377L4.33536 4.65672C4.59866 4.63622 4.82802 4.47436 4.92946 4.23747L6.34963 0.920948Z" fill="currentColor"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="trust_rating_star">
+          <div aria-hidden="true" class="u-icon w-embed">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 14 14" fill="none">
+              <path d="M6.34963 0.920948C6.59025 0.359032 7.40978 0.359033 7.6504 0.920949L9.07054 4.23747C9.17204 4.47436 9.40141 4.63622 9.66469 4.65672L13.3509 4.94377C13.9755 4.99241 14.2287 5.74946 13.7529 6.14537L10.9444 8.48211C10.7438 8.64905 10.6561 8.91096 10.7174 9.16048L11.5755 12.6544C11.7208 13.2464 11.0578 13.7143 10.5231 13.3971L7.36719 11.5247C7.14177 11.391 6.85827 11.391 6.63285 11.5247L3.4769 13.3971C2.94219 13.7143 2.27917 13.2464 2.42455 12.6544L3.2826 9.16048C3.34389 8.91096 3.25628 8.64905 3.05569 8.48211L0.247144 6.14537C-0.228703 5.74946 0.0245476 4.99241 0.649105 4.94377L4.33536 4.65672C4.59866 4.63622 4.82802 4.47436 4.92946 4.23747L6.34963 0.920948Z" fill="currentColor"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="trust_rating_star">
+          <div aria-hidden="true" class="u-icon w-embed">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 14 14" fill="none">
+              <path d="M6.34963 0.920948C6.59025 0.359032 7.40978 0.359033 7.6504 0.920949L9.07054 4.23747C9.17204 4.47436 9.40141 4.63622 9.66469 4.65672L13.3509 4.94377C13.9755 4.99241 14.2287 5.74946 13.7529 6.14537L10.9444 8.48211C10.7438 8.64905 10.6561 8.91096 10.7174 9.16048L11.5755 12.6544C11.7208 13.2464 11.0578 13.7143 10.5231 13.3971L7.36719 11.5247C7.14177 11.391 6.85827 11.391 6.63285 11.5247L3.4769 13.3971C2.94219 13.7143 2.27917 13.2464 2.42455 12.6544L3.2826 9.16048C3.34389 8.91096 3.25628 8.64905 3.05569 8.48211L0.247144 6.14537C-0.228703 5.74946 0.0245476 4.99241 0.649105 4.94377L4.33536 4.65672C4.59866 4.63622 4.82802 4.47436 4.92946 4.23747L6.34963 0.920948Z" fill="currentColor"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+      {% render 'typography', custom_class: , text: section.settings.text, tag: span, variant: u-text-link-base %}
+    </div>
+    <div class="trust_rating_mid">
+      {% render 'typography', custom_class: , text: section.settings.text, tag: span, variant: u-text-body-base %}
+    </div>
+    <div class="trust_rating_right">
+      <div li-snippet:image="" class="u-display-contents" image="">
+        <div
+          data-wf--preview-image--variant="cover"
+          class="u-image-wrapper w-variant-4972adff-107c-1f37-d19c-526a2bf55c28"
+        >
+          <img
+            src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
+            loading="lazy"
+            alt=""
+            class="u-image"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  {% render 'spacer', variant: section.settings.spacing_bottom %}
+</div>
+{% render 'clickable', focus_ring: 'inside', label: section.settings.heading, mode: 'link', url: section.settings.clickable_url, target: '_blank', custom_class: %}
+{% schema %}
+{
+  "tag": "section",
+  "name": "Trust Rating",
+  "class": "trust_rating_wrap u-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Sektion"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "ID"
+    },
+    {
+      "type": "header",
+      "content": "Abst\u00e4nde"
+    },
+    {
+      "type": "select",
+      "id": "spacing_top",
+      "label": "Oben",
+      "options": [
         {
-            "type": "header",
-            "content": "Sektion"
+          "value": "none",
+          "label": "Kein Abstand"
         },
         {
-            "type": "text",
-            "id": "section_id",
-            "label": "ID"
+          "value": "small",
+          "label": "Klein"
         },
         {
-            "type": "header",
-            "content": "Abst\u00e4nde"
+          "value": "main",
+          "label": "Standard"
         },
         {
-            "type": "select",
-            "id": "spacing_top",
-            "label": "Oben",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Abstand"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "main",
-                    "label": "Standard"
-                },
-                {
-                    "value": "large",
-                    "label": "Gro\u00df"
-                },
-                {
-                    "value": "page_top",
-                    "label": "Seitenanfang"
-                }
-            ],
-            "default": "main"
+          "value": "large",
+          "label": "Gro\u00df"
         },
         {
-            "type": "select",
-            "id": "spacing_bottom",
-            "label": "Unten",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Abstand"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "main",
-                    "label": "Standard"
-                },
-                {
-                    "value": "large",
-                    "label": "Gro\u00df"
-                },
-                {
-                    "value": "page_top",
-                    "label": "Seitenanfang"
-                }
-            ],
-            "default": "main"
-        },
-        {
-            "type": "header",
-            "content": "\u00dcberschrift"
-        },
-        {
-            "type": "inline_richtext",
-            "id": "heading",
-            "label": "Text",
-            "default": "Lorem ipsum dolor sit amet elit"
-        },
-        {
-            "type": "select",
-            "id": "heading_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "u-text-h1-primary",
-                    "label": "H1 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h1-secondary",
-                    "label": "H1 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h2-primary",
-                    "label": "H2 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h2-secondary",
-                    "label": "H2 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h3-primary",
-                    "label": "H3 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h3-secondary",
-                    "label": "H3 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h4-primary",
-                    "label": "H4 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h5-primary",
-                    "label": "H5 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h6-primary",
-                    "label": "H6 Prim\u00e4r"
-                }
-            ],
-            "default": "u-text-h2-primary"
-        },
-        {
-            "type": "select",
-            "id": "heading_tag",
-            "label": "HTML-Tag",
-            "options": [
-                {
-                    "value": "h1",
-                    "label": "H1"
-                },
-                {
-                    "value": "h2",
-                    "label": "H2"
-                },
-                {
-                    "value": "h3",
-                    "label": "H3"
-                },
-                {
-                    "value": "h4",
-                    "label": "H4"
-                },
-                {
-                    "value": "h5",
-                    "label": "H5"
-                },
-                {
-                    "value": "h6",
-                    "label": "H6"
-                },
-                {
-                    "value": "p",
-                    "label": "P"
-                }
-            ],
-            "default": "h2"
-        },
-        {
-            "type": "number",
-            "id": "heading_max_width",
-            "label": "Maximale Breite",
-            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-            "default": 20
-        },
-        {
-            "type": "checkbox",
-            "id": "heading_tidy_text",
-            "label": "Ausgewogener Zeilenumbruch",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "heading_visually_hidden",
-            "label": "Nur f\u00fcr Screenreader anzeigen",
-            "default": false
-        },
-        {
-            "type": "header",
-            "content": "Link"
-        },
-        {
-            "type": "url",
-            "id": "clickable_url",
-            "label": "Link"
+          "value": "page_top",
+          "label": "Seitenanfang"
         }
-    ],
-    "presets": [
+      ],
+      "default": "main"
+    },
+    {
+      "type": "select",
+      "id": "spacing_bottom",
+      "label": "Unten",
+      "options": [
         {
-            "name": "Trust Rating",
-            "category": "Liquify",
-            "blocks": []
+          "value": "none",
+          "label": "Kein Abstand"
+        },
+        {
+          "value": "small",
+          "label": "Klein"
+        },
+        {
+          "value": "main",
+          "label": "Standard"
+        },
+        {
+          "value": "large",
+          "label": "Gro\u00df"
+        },
+        {
+          "value": "page_top",
+          "label": "Seitenanfang"
         }
-    ]
-} {% endschema %}
+      ],
+      "default": "main"
+    },
+    {
+      "type": "header",
+      "content": "\u00dcberschrift"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Text",
+      "default": "Lorem ipsum dolor sit amet elit"
+    },
+    {
+      "type": "select",
+      "id": "heading_variant",
+      "label": "Stil",
+      "options": [
+        {
+          "value": "u-text-h1-primary",
+          "label": "H1 Prim\u00e4r"
+        },
+        {
+          "value": "u-text-h1-secondary",
+          "label": "H1 Sekund\u00e4r"
+        },
+        {
+          "value": "u-text-h2-primary",
+          "label": "H2 Prim\u00e4r"
+        },
+        {
+          "value": "u-text-h2-secondary",
+          "label": "H2 Sekund\u00e4r"
+        },
+        {
+          "value": "u-text-h3-primary",
+          "label": "H3 Prim\u00e4r"
+        },
+        {
+          "value": "u-text-h3-secondary",
+          "label": "H3 Sekund\u00e4r"
+        },
+        {
+          "value": "u-text-h4-primary",
+          "label": "H4 Prim\u00e4r"
+        },
+        {
+          "value": "u-text-h5-primary",
+          "label": "H5 Prim\u00e4r"
+        },
+        {
+          "value": "u-text-h6-primary",
+          "label": "H6 Prim\u00e4r"
+        }
+      ],
+      "default": "u-text-h2-primary"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "HTML-Tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "p",
+          "label": "P"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "number",
+      "id": "heading_max_width",
+      "label": "Maximale Breite",
+      "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+      "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_tidy_text",
+      "label": "Ausgewogener Zeilenumbruch",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_visually_hidden",
+      "label": "Nur f\u00fcr Screenreader anzeigen",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Link"
+    },
+    {
+      "type": "url",
+      "id": "clickable_url",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust Rating",
+      "category": "Liquify",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
