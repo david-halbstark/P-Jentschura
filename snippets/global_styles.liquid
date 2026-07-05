@@ -344,13 +344,25 @@ textarea:focus-visible {
     --button-border-color: transparent;
     --button-border-color-hover: transparent;
     --button-icon-size: 1rem;
+    --button-animation-offset: 0.125rem;
   }
+  /* Button */
   .button_element {
     padding: var(--button-padding);
     font-size: var(--button-text-size);
     color: color-mix(in srgb, var(--button-text-color) calc(100% * var(--_trigger---on)), var(--button-text-color-hover) calc(100% * var(--_trigger---off)));
     background-color: color-mix(in srgb, var(--button-bg-color) calc(100% * var(--_trigger---on)), var(--button-bg-color-hover) calc(100% * var(--_trigger---off)));
     border-color: color-mix(in srgb, var(--button-border-color) calc(100% * var(--_trigger---on)), var(--button-border-color-hover) calc(100% * var(--_trigger---off)));
+  }
+  /* Button Animation */
+  .button_wrap.has-icon-animation-move-left .button_icon {
+    transform: translateX(calc(-1 * var(--button-animation-offset) * var(--_trigger---off)));
+  }
+  .button_wrap.has-icon-animation-move-right .button_icon {
+    transform: translateX(calc(1 * var(--button-animation-offset) * var(--_trigger---off)));
+  }
+  .button_wrap.has-icon-animation-move-up-right .button_icon {
+    transform: translate(calc(1 * var(--button-animation-offset) * var(--_trigger---off)), calc(-1 * var(--button-animation-offset) * var(--_trigger---off)));
   }
   /*  Button Variant Solid  */
   /*  BG Red  */

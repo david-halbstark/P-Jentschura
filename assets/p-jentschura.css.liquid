@@ -74,7 +74,7 @@
   --_column-count---value: 1;
   --_theme---background-skeleton: color-mix(in lab, currentcolor 10%, transparent);
   --_spacing---space--3: clamp(.875 * 1rem, ((.875 - ((1 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1 * 1rem);
-  --border-width--main: .094rem;
+  --border-width--main: .0625rem;
   --_text-style-1---margin-bottom: var(--_spacing---space--4);
   --_spacing---space--2: clamp(.625 * 1rem, ((.625 - ((.75 - .625) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((.75 - .625) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), .75 * 1rem);
   --_spacing---section-space--none: 0px;
@@ -4005,8 +4005,6 @@ figure {
 }
 
 .button_element {
-  grid-column-gap: .5rem;
-  grid-row-gap: .5rem;
   border-top-style: solid;
   border-top-width: var(--border-width--main);
   border-right-style: solid;
@@ -4027,7 +4025,6 @@ figure {
   border-radius: inherit;
   justify-content: center;
   align-items: center;
-  padding: .9rem 1.5rem;
   line-height: 1;
   transition-property: all;
   transition-duration: .2s;
@@ -6006,6 +6003,7 @@ figure {
   width: 1rem;
   margin-top: -.5rem;
   margin-bottom: -.5rem;
+  transition: transform .2s;
   display: flex;
 }
 
