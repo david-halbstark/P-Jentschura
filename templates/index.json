@@ -114,10 +114,10 @@
         "button_2_pill_color": "white",
         "button_2_pill_text_size": "u-text-eyebrow-base",
         "button_2_pill_tag_inner": "",
-        "button_2_underline": true,
+        "button_2_underline": false,
         "button_2_icon": "copy",
-        "button_2_icon_position": "after",
-        "button_2_icon_animation": "none"
+        "button_2_icon_position": "before",
+        "button_2_icon_animation": "move_left"
       }
     },
     "category_cards_FxBKGM": {
