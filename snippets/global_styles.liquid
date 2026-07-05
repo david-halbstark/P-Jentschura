@@ -345,10 +345,12 @@ textarea:focus-visible {
     --button-border-color-hover: transparent;
     --button-icon-size: 1rem;
     --button-animation-offset: 0.125rem;
+    --button-gap: 0.5rem;
   }
-  /* Button */
+  /* Button Element */
   .button_element {
     padding: var(--button-padding);
+    column-gap: var(--button-gap);
     font-size: var(--button-text-size);
     color: color-mix(in srgb, var(--button-text-color) calc(100% * var(--_trigger---on)), var(--button-text-color-hover) calc(100% * var(--_trigger---off)));
     background-color: color-mix(in srgb, var(--button-bg-color) calc(100% * var(--_trigger---on)), var(--button-bg-color-hover) calc(100% * var(--_trigger---off)));
@@ -368,14 +370,14 @@ textarea:focus-visible {
   /*  BG Red  */
   .button_wrap.is-variant-solid.is-bg-red {
     --button-bg-color: var(--swatch--crimson);
-    --button-bg-color-hover: var(--swatch--crimson-darker);
+    --button-bg-color-hover: var(--swatch--crimson-dark);
     --button-text-color: var(--swatch--white);
     --button-text-color-hover: var(--swatch--white);
   }
   /*  BG White  */
   .button_wrap.is-variant-solid.is-bg-white {
     --button-bg-color: var(--swatch--white);
-    --button-bg-color-hover: var(--swatch--snow);
+    --button-bg-color-hover: var(--swatch--white-dark);
     --button-text-color: var(--swatch--charcoal);
     --button-text-color-hover: var(--swatch--charcoal);
   }
@@ -386,6 +388,51 @@ textarea:focus-visible {
   /* Padding Small */
   .button_wrap.is-padding-small .button_element {
     --button-padding: 0.75rem 1.25rem;
+    --button-gap: 0.375rem;
+  }
+  /* Button Variant Transparent */
+  .button_wrap.is-variant-transparent {
+    --button-padding: 1.25rem 3.5rem;
+    --button-border-color: rgba(101, 109, 99, 0.3);
+  }
+  .button_wrap.is-variant-transparent .button_element {
+    border: var(--border-width--main) solid var(--button-border-color);
+  }
+  /* Button Variant Text */
+  .button_wrap.is-variant-text {
+    --button-padding: 1rem 1rem;
+  }
+  .button_wrap.is-variant-text .button_element {
+    --margin: calc(var(--button-padding) * -1);
+  }
+  .button_wrap.is-variant-text.has-underline .button_text {
+    text-decoration: underline;
+  }
+  /* BG (Text) Green */
+  .button_wrap.is-variant-text.is-bg-green {
+    --button-text-color: var(--swatch--charcoal);
+    --button-text-color-hover: var(--swatch--charcoal-dark);
+  }
+  /* BG (Text) Red */
+  .button_wrap.is-variant-text.is-bg-red {
+    --button-text-color: var(--swatch--crimson);
+    --button-text-color-hover: var(--swatch--crimson-dark);
+  }
+  /* Button Variant Pill */
+  .button_wrap.is-variant-pill:has(.button_text .u-text-eyebrow-large) {
+    --button-padding: 1.125rem 1.5rem;
+  }
+  .button_wrap.is-variant-pill:has(.button_text .u-text-eyebrow-base) {
+    --button-padding: 0.875rem 1.125rem;
+  }
+  .button_wrap.is-variant-pill:has(.button_text .u-text-link-base) {
+    --button-padding: 0.875rem 1rem;
+  }
+  .button_wrap.is-variant-pill:has(.button_text .u-text-link-small) {
+    --button-padding: 0.875rem 0.875rem;
+  }
+  .button_wrap.is-variant-text .button_element {
+    --margin: calc(var(--button-padding) * -1);
   }
 </style>
       </div>
