@@ -76,6 +76,11 @@
   --_spacing---space--3: clamp(.875 * 1rem, ((.875 - ((1 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1 * 1rem);
   --border-width--main: .0625rem;
   --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---font-family: var(--_typography---font--primary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--link-base);
+  --_text-style-2---line-height: var(--_typography---line-height--normal);
+  --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--widest);
   --_spacing---space--2: clamp(.625 * 1rem, ((.625 - ((.75 - .625) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((.75 - .625) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), .75 * 1rem);
   --_spacing---section-space--none: 0px;
   --_spacing---section-space--small: clamp(3 * 1rem, ((3 - ((5 - 3) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((5 - 3) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 5 * 1rem);
@@ -137,11 +142,6 @@
   --nav--hamburger-gap: var(--_spacing---space--2);
   --nav--spacing-inner-horizontal: var(--_spacing---space--5);
   --focus--width: .125rem;
-  --_text-style-2---font-family: var(--_typography---font--primary-family);
-  --_text-style-2---font-size: var(--_typography---font-size--link-base);
-  --_text-style-2---line-height: var(--_typography---line-height--normal);
-  --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--widest);
   --_typography---font--secondary-family: "Ms Madi", Georgia, sans-serif;
   --_typography---font--secondary-regular: 400;
   --_typography---line-height--relaxed: 1.5;
@@ -948,7 +948,7 @@ figure {
   line-height: var(--_text-style-1---line-height);
   font-weight: var(--_text-style-1---font-weight);
   letter-spacing: var(--_text-style-1---letter-spacing);
-  text-transform: var(--_text-style---text-transform, none);
+  text-transform: var(--_text-style-1---text-transform, none);
   text-wrap: var(--_text-style-1---text-wrap);
   justify-content: center;
   align-items: inherit;
@@ -1321,7 +1321,32 @@ figure {
   --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
+.u-heading:where(.w-variant-953108e9-15e0-0458-137f-3862ae613a12) {
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---font-family: var(--_typography---font--secondary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--h1-secondary);
+  --_text-style-2---line-height: var(--_typography---line-height--spacious);
+  --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+}
+
 .u-heading:where(.w-variant-cc6a8c92-33ea-0c44-0708-19676fc12b9b) {
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
   --_text-style-2---font-family: var(--_typography---font--secondary-family);
   --_text-style-2---font-size: var(--_typography---font-size--h2-secondary);
   --_text-style-2---line-height: var(--_typography---line-height--spacious);
@@ -1333,9 +1358,15 @@ figure {
   --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
   --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
   --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
 }
 
 .u-heading:where(.w-variant-7c6c71bb-10fb-12c7-f4ff-35776c8bfcbc) {
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
   --_text-style-2---font-family: var(--_typography---font--secondary-family);
   --_text-style-2---font-size: var(--_typography---font-size--h3-secondary);
   --_text-style-2---line-height: var(--_typography---line-height--spacious);
@@ -1347,6 +1378,7 @@ figure {
   --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
   --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
   --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
 }
 
 .u-heading:where(.w-variant-2ddce81c-1a58-511b-bf37-bd3dc561049c) {
