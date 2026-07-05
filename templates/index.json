@@ -39,7 +39,7 @@
             "button_1_icon": "chevron_left",
             "button_1_icon_position": "after",
             "button_1_icon_animation": "move_up_right",
-            "button_1_icon_color": "inherit",
+            "button_1_icon_color": "red",
             "button_2_label": "Button 2 Text",
             "button_2_mode": "action",
             "button_2_url": "shopify://blogs/blog",
