@@ -32,7 +32,7 @@
             "button_1_solid_color": "red",
             "button_1_solid_text_size": "u-text-link-large",
             "button_1_solid_padding": "base",
-            "button_1_text_text_size": "u-text-link-large",
+            "button_1_text_text_size": "u-text-link-base",
             "button_1_text_color": "green",
             "button_1_pill_color": "white_transparent",
             "button_1_pill_text_size": "eyebrow_base",
