@@ -403,8 +403,9 @@ textarea:focus-visible {
     --button-padding: 1rem 1rem;
   }
   .button_wrap.is-variant-text .button_element {
-    --margin: calc(var(--button-padding) * -1);
+    margin: calc(var(--button-padding) * -1);
   }
+  /* Has Underline */
   .button_wrap.is-variant-text.has-underline .button_text {
     text-decoration: underline;
   }
@@ -419,20 +420,42 @@ textarea:focus-visible {
     --button-text-color-hover: var(--swatch--crimson-dark);
   }
   /* Button Variant Pill */
+  .button_wrap.is-variant-pill .button_element {
+    border-radius: var(--radius--round);
+  }
+  /* Padding Eyebrow Large */
   .button_wrap.is-variant-pill:has(.button_text .u-text-eyebrow-large) {
     --button-padding: 1.125rem 1.5rem;
   }
+  /* Padding Eyebrow Base */
   .button_wrap.is-variant-pill:has(.button_text .u-text-eyebrow-base) {
     --button-padding: 0.875rem 1.125rem;
   }
+  /* Padding Link Base */
   .button_wrap.is-variant-pill:has(.button_text .u-text-link-base) {
     --button-padding: 0.875rem 1rem;
   }
+  /* Padding Link Small */
   .button_wrap.is-variant-pill:has(.button_text .u-text-link-small) {
     --button-padding: 0.875rem 0.875rem;
   }
-  .button_wrap.is-variant-text .button_element {
-    --margin: calc(var(--button-padding) * -1);
+  /* BG White */
+  .button_wrap.is-variant-pill.is-bg-white {
+    --button-bg-color: var(--swatch--snow);
+    --button-bg-color-hover: var(--swatch--white-dark);
+    --button-text-color: var(--swatch--charcoal);
+    --button-text-color-hover: var(--swatch--charcoal-dark);
+  }
+  /* BG White Transparent */
+  .button_wrap.is-variant-pill.is-bg-white-transparent {
+    --button-bg-color: rgba(255, 255, 255, 0.24);
+    --button-bg-color-hover: rgba(255, 255, 255, 0.35);
+    --button-text-color: var(--swatch--white);
+    --button-text-color-hover: var(--swatch--white);
+  }
+  .button_wrap.is-variant-pill.is-bg-white .button_element {
+    box-shadow: 0 0 0.0625rem 0 rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(5px);
   }
 </style>
       </div>
