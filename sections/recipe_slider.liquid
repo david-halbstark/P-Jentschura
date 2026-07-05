@@ -396,7 +396,7 @@
             "type": "url",
             "id": "button_1_url",
             "label": "Link",
-            "visible_if": "{{ block.settings.button_1_mode == 'link' }}"
+            "visible_if": "{{ section.settings.button_1_mode == 'link' }}"
         },
         {
             "type": "select",
@@ -413,7 +413,7 @@
                 }
             ],
             "default": "newsletter_modal",
-            "visible_if": "{{ block.settings.button_1_mode == 'action' }}"
+            "visible_if": "{{ section.settings.button_1_mode == 'action' }}"
         },
         {
             "type": "select",
@@ -454,7 +454,7 @@
                 }
             ],
             "default": "red",
-            "visible_if": "{{ block.settings.button_1_variant == 'solid' }}"
+            "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
         },
         {
             "type": "select",
@@ -471,7 +471,7 @@
                 }
             ],
             "default": "u-text-link-large",
-            "visible_if": "{{ block.settings.button_1_variant == 'solid' }}"
+            "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
         },
         {
             "type": "select",
@@ -488,7 +488,7 @@
                 }
             ],
             "default": "base",
-            "visible_if": "{{ block.settings.button_1_variant == 'solid' }}"
+            "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
         },
         {
             "type": "select",
@@ -505,7 +505,7 @@
                 }
             ],
             "default": "white",
-            "visible_if": "{{ block.settings.button_1_variant == 'pill' }}"
+            "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
         },
         {
             "type": "select",
@@ -530,13 +530,13 @@
                 }
             ],
             "default": "u-text-eyebrow-base",
-            "visible_if": "{{ block.settings.button_1_variant == 'pill' }}"
+            "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
         },
         {
             "type": "text",
             "id": "button_1_pill_tag_inner",
             "label": "Innerer Tag",
-            "visible_if": "{{ block.settings.button_1_variant == 'pill' }}"
+            "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
         },
         {
             "type": "checkbox",
@@ -596,7 +596,7 @@
                 }
             ],
             "default": "after",
-            "visible_if": "{{ block.settings.button_1_icon != 'none' }}"
+            "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
         },
         {
             "type": "select",
@@ -621,7 +621,7 @@
                 }
             ],
             "default": "none",
-            "visible_if": "{{ block.settings.button_1_icon != 'none' }}"
+            "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
         },
         {
             "type": "select",
@@ -638,7 +638,7 @@
                 }
             ],
             "default": "inherit",
-            "visible_if": "{{ block.settings.button_1_icon != 'none' }}"
+            "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
         },
         {
             "type": "header",
@@ -670,7 +670,7 @@
             "type": "url",
             "id": "button_2_url",
             "label": "Link",
-            "visible_if": "{{ block.settings.button_2_mode == 'link' }}"
+            "visible_if": "{{ section.settings.button_2_mode == 'link' }}"
         },
         {
             "type": "select",
@@ -711,7 +711,7 @@
                 }
             ],
             "default": "newsletter_modal",
-            "visible_if": "{{ block.settings.button_2_mode == 'action' }}"
+            "visible_if": "{{ section.settings.button_2_mode == 'action' }}"
         },
         {
             "type": "select",
@@ -728,7 +728,7 @@
                 }
             ],
             "default": "red",
-            "visible_if": "{{ block.settings.button_2_variant == 'solid' }}"
+            "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
         },
         {
             "type": "select",
@@ -745,7 +745,7 @@
                 }
             ],
             "default": "u-text-link-large",
-            "visible_if": "{{ block.settings.button_2_variant == 'solid' }}"
+            "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
         },
         {
             "type": "select",
@@ -762,7 +762,7 @@
                 }
             ],
             "default": "base",
-            "visible_if": "{{ block.settings.button_2_variant == 'solid' }}"
+            "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
         },
         {
             "type": "select",
@@ -779,7 +779,7 @@
                 }
             ],
             "default": "white",
-            "visible_if": "{{ block.settings.button_2_variant == 'pill' }}"
+            "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
         },
         {
             "type": "select",
@@ -804,20 +804,20 @@
                 }
             ],
             "default": "u-text-eyebrow-base",
-            "visible_if": "{{ block.settings.button_2_variant == 'pill' }}"
+            "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
         },
         {
             "type": "text",
             "id": "button_2_pill_tag_inner",
             "label": "Innerer Tag",
-            "visible_if": "{{ block.settings.button_2_variant == 'pill' }}"
+            "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
         },
         {
             "type": "checkbox",
             "id": "button_2_underline",
             "label": "Unterstreichung anzeigen",
             "default": false,
-            "visible_if": "{{ block.settings.button_2_variant == 'text' }}"
+            "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
         },
         {
             "type": "select",
@@ -870,7 +870,7 @@
                 }
             ],
             "default": "after",
-            "visible_if": "{{ block.settings.button_2_icon != 'none' }}"
+            "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
         },
         {
             "type": "select",
@@ -895,7 +895,7 @@
                 }
             ],
             "default": "none",
-            "visible_if": "{{ block.settings.button_2_icon != 'none' }}"
+            "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
         }
     ],
     "presets": [
