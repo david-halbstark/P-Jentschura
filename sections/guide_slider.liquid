@@ -475,7 +475,7 @@
             "options": [
                 {
                     "value": "green",
-                    "label": "Gr\u00fcm"
+                    "label": "Gr\u00fcn"
                 },
                 {
                     "value": "red",
@@ -774,6 +774,23 @@
                 }
             ],
             "default": "u-text-link-large",
+            "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
+        },
+        {
+            "type": "select",
+            "id": "button_2_text_color",
+            "label": "Farbe",
+            "options": [
+                {
+                    "value": "green",
+                    "label": "Gr\u00fcn"
+                },
+                {
+                    "value": "red",
+                    "label": "Rot"
+                }
+            ],
+            "default": "green",
             "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
         },
         {
