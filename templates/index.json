@@ -112,7 +112,7 @@
         "button_2_solid_padding": "base",
         "button_2_text_text_size": "u-text-link-large",
         "button_2_pill_color": "white",
-        "button_2_pill_text_size": "u-text-link-base",
+        "button_2_pill_text_size": "u-text-link-small",
         "button_2_pill_tag_inner": "",
         "button_2_underline": false,
         "button_2_icon": "none",
