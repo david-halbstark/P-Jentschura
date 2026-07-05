@@ -20,6 +20,7 @@
           
           
           
+          
         </div>
         <div class="trust_rating_contain u-container" id="{% if section.settings.section_id != blank %}{{ section_id }}{% endif %}">
           {% render 'spacer', variant: section.settings.spacing_top %}
@@ -67,7 +68,7 @@
           </div>
           {% render 'spacer', variant: section.settings.spacing_bottom %}
         </div>
-        {% render 'clickable', custom_class: , label: section.settings.clickable_label, mode: link, url: section.settings.clickable_url, target: _blank %} {% schema %} {
+        {% render 'clickable', focus_ring: inside, label: section.settings.clickable_label, mode: link, url: section.settings.clickable_url, target: _blank, custom_class: %} {% schema %} {
     "tag": "section",
     "name": "Trust Rating",
     "class": "trust_rating_wrap u-section",
@@ -257,8 +258,23 @@
         {
             "type": "url",
             "id": "clickable_url",
-            "label": "Link",
-            "visible_if": "{{ section.settings.clickable_mode == 'link' }}"
+            "label": "Link"
+        },
+        {
+            "type": "select",
+            "id": "clickable_focus_ring",
+            "label": "Fokus-Rahmen",
+            "options": [
+                {
+                    "value": "outside",
+                    "label": "Au\u00dfen"
+                },
+                {
+                    "value": "inside",
+                    "label": "Innen"
+                }
+            ],
+            "default": "outside"
         }
     ],
     "presets": [

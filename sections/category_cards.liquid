@@ -15,8 +15,12 @@
           {% render 'spacer', variant: section.settings.spacing_top %}
           <div class="category_cards_layout">
             {% render 'heading', custom_class: , heading: section.settings.heading, tag: h2, visually_hidden: true %}
-            <div class="category_cards_card_wrap">
-              <div class="u-display-none">
+            {% for block in section.blocks %}
+    {% if block.type == "card" %}
+                    <div li-block="Card" class="category_cards_card_wrap">
+                                    
+              
+                                    <div class="u-display-none">
                 
                 
                 
@@ -25,19 +29,142 @@
                 
                 
               </div>
-              <div class="category_cards_card_element u-flex-vertical-nowrap">
+                                    
+              
+                                    <div class="category_cards_card_element u-flex-vertical-nowrap">
                 <div class="category_card_top">
                   {% render 'heading', custom_class: , heading: block.settings.heading, tag: h3, variant: u-text-h3-secondary, max_width: section.settings.heading_max_width %}
                 </div>
                 <div class="category_card_bot"></div>
               </div>
-            </div>
+                                    
+            
+                            </div>
+            {% endif %}
+{% endfor %}
           </div>
           {% render 'spacer', variant: section.settings.spacing_bottom %}
         </div> {% schema %} {
     "tag": "section",
     "name": "Category Cards",
     "class": "category_cards_wrap u-section",
+    "blocks": [
+        {
+            "name": "Card",
+            "type": "card",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "\u00dcberschrift"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "heading",
+                    "label": "Text",
+                    "default": "Lorem ipsum dolor sit amet elit"
+                },
+                {
+                    "type": "select",
+                    "id": "heading_variant",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "u-text-h1-primary",
+                            "label": "H1 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h1-secondary",
+                            "label": "H1 Sekund\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h2-primary",
+                            "label": "H2 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h2-secondary",
+                            "label": "H2 Sekund\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h3-primary",
+                            "label": "H3 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h3-secondary",
+                            "label": "H3 Sekund\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h4-primary",
+                            "label": "H4 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h5-primary",
+                            "label": "H5 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h6-primary",
+                            "label": "H6 Prim\u00e4r"
+                        }
+                    ],
+                    "default": "u-text-h2-primary"
+                },
+                {
+                    "type": "select",
+                    "id": "heading_tag",
+                    "label": "HTML-Tag",
+                    "options": [
+                        {
+                            "value": "h1",
+                            "label": "H1"
+                        },
+                        {
+                            "value": "h2",
+                            "label": "H2"
+                        },
+                        {
+                            "value": "h3",
+                            "label": "H3"
+                        },
+                        {
+                            "value": "h4",
+                            "label": "H4"
+                        },
+                        {
+                            "value": "h5",
+                            "label": "H5"
+                        },
+                        {
+                            "value": "h6",
+                            "label": "H6"
+                        },
+                        {
+                            "value": "p",
+                            "label": "P"
+                        }
+                    ],
+                    "default": "h2"
+                },
+                {
+                    "type": "number",
+                    "id": "heading_max_width",
+                    "label": "Maximale Breite",
+                    "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+                    "default": 20
+                },
+                {
+                    "type": "checkbox",
+                    "id": "heading_tidy_text",
+                    "label": "Ausgewogener Zeilenumbruch",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "heading_visually_hidden",
+                    "label": "Nur f\u00fcr Screenreader anzeigen",
+                    "default": false
+                }
+            ]
+        }
+    ],
     "settings": [
         {
             "type": "header",
@@ -117,116 +244,17 @@
             "id": "heading",
             "label": "Text",
             "default": "Lorem ipsum dolor sit amet elit"
-        },
-        {
-            "type": "header",
-            "content": "\u00dcberschrift"
-        },
-        {
-            "type": "select",
-            "id": "heading_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "u-text-h1-primary",
-                    "label": "H1 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h1-secondary",
-                    "label": "H1 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h2-primary",
-                    "label": "H2 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h2-secondary",
-                    "label": "H2 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h3-primary",
-                    "label": "H3 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h3-secondary",
-                    "label": "H3 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h4-primary",
-                    "label": "H4 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h5-primary",
-                    "label": "H5 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h6-primary",
-                    "label": "H6 Prim\u00e4r"
-                }
-            ],
-            "default": "u-text-h2-primary"
-        },
-        {
-            "type": "select",
-            "id": "heading_tag",
-            "label": "HTML-Tag",
-            "options": [
-                {
-                    "value": "h1",
-                    "label": "H1"
-                },
-                {
-                    "value": "h2",
-                    "label": "H2"
-                },
-                {
-                    "value": "h3",
-                    "label": "H3"
-                },
-                {
-                    "value": "h4",
-                    "label": "H4"
-                },
-                {
-                    "value": "h5",
-                    "label": "H5"
-                },
-                {
-                    "value": "h6",
-                    "label": "H6"
-                },
-                {
-                    "value": "p",
-                    "label": "P"
-                }
-            ],
-            "default": "h2"
-        },
-        {
-            "type": "number",
-            "id": "heading_max_width",
-            "label": "Maximale Breite",
-            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-            "default": 20
-        },
-        {
-            "type": "checkbox",
-            "id": "heading_tidy_text",
-            "label": "Ausgewogener Zeilenumbruch",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "heading_visually_hidden",
-            "label": "Nur f\u00fcr Screenreader anzeigen",
-            "default": false
         }
     ],
     "presets": [
         {
             "name": "Category Cards",
             "category": "Liquify",
-            "blocks": []
+            "blocks": [
+                {
+                    "type": "card"
+                }
+            ]
         }
     ]
 } {% endschema %}
