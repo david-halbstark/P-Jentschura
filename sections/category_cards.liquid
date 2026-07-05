@@ -10,15 +10,26 @@
         <div class="u-display-none">
           
           
-          
         </div>
         <div class="category_cards_contain u-container" id="{% if section.settings.section_id != blank %}{{ section_id }}{% endif %}">
           {% render 'spacer', variant: section.settings.spacing_top %}
           <div class="category_cards_layout">
-            {% render 'heading', tag: section.settings.heading_tag, visually_hidden: true, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+            {% render 'heading', custom_class: , heading: section.settings.heading, tag: h2, visually_hidden: true %}
             <div class="category_cards_card_wrap">
-              <div class="category_cards_card_element">
-                <div></div>
+              <div class="u-display-none">
+                
+                
+                
+                
+                
+                
+                
+              </div>
+              <div class="category_cards_card_element u-flex-vertical-nowrap">
+                <div class="category_card_top">
+                  {% render 'heading', custom_class: , heading: block.settings.heading, tag: h3, variant: u-text-h3-secondary, max_width: section.settings.heading_max_width %}
+                </div>
+                <div class="category_card_bot"></div>
               </div>
             </div>
           </div>
@@ -108,6 +119,54 @@
             "default": "Lorem ipsum dolor sit amet elit"
         },
         {
+            "type": "header",
+            "content": "\u00dcberschrift"
+        },
+        {
+            "type": "select",
+            "id": "heading_variant",
+            "label": "Stil",
+            "options": [
+                {
+                    "value": "u-text-h1-primary",
+                    "label": "H1 Prim\u00e4r"
+                },
+                {
+                    "value": "u-text-h1-secondary",
+                    "label": "H1 Sekund\u00e4r"
+                },
+                {
+                    "value": "u-text-h2-primary",
+                    "label": "H2 Prim\u00e4r"
+                },
+                {
+                    "value": "u-text-h2-secondary",
+                    "label": "H2 Sekund\u00e4r"
+                },
+                {
+                    "value": "u-text-h3-primary",
+                    "label": "H3 Prim\u00e4r"
+                },
+                {
+                    "value": "u-text-h3-secondary",
+                    "label": "H3 Sekund\u00e4r"
+                },
+                {
+                    "value": "u-text-h4-primary",
+                    "label": "H4 Prim\u00e4r"
+                },
+                {
+                    "value": "u-text-h5-primary",
+                    "label": "H5 Prim\u00e4r"
+                },
+                {
+                    "value": "u-text-h6-primary",
+                    "label": "H6 Prim\u00e4r"
+                }
+            ],
+            "default": "u-text-h2-primary"
+        },
+        {
             "type": "select",
             "id": "heading_tag",
             "label": "HTML-Tag",
@@ -142,6 +201,25 @@
                 }
             ],
             "default": "h2"
+        },
+        {
+            "type": "number",
+            "id": "heading_max_width",
+            "label": "Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 20
+        },
+        {
+            "type": "checkbox",
+            "id": "heading_tidy_text",
+            "label": "Ausgewogener Zeilenumbruch",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "heading_visually_hidden",
+            "label": "Nur f\u00fcr Screenreader anzeigen",
+            "default": false
         }
     ],
     "presets": [
