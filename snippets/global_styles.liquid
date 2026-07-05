@@ -420,24 +420,39 @@ textarea:focus-visible {
     --button-text-color-hover: var(--swatch--crimson-dark);
   }
   /* Button Variant Pill */
-  .button_wrap.is-variant-pill .button_element {
+  .button_wrap.is-variant-pill {
     border-radius: var(--radius--round);
+  }
+  .button_wrap.is-variant-pill .button_element {
+    border-radius: inherit;
   }
   /* Padding Eyebrow Large */
   .button_wrap.is-variant-pill:has(.button_text.u-text-eyebrow-large) {
     --button-padding: 1.125rem 1.5rem;
   }
+  .button_wrap.is-variant-pill:has(.button_text.u-text-eyebrow-large) .button_tag_inner {
+    padding: 0.4375rem 0.875rem;
+  }
   /* Padding Eyebrow Base */
   .button_wrap.is-variant-pill:has(.button_text.u-text-eyebrow-base) {
     --button-padding: 0.875rem 1.125rem;
+  }
+  .button_wrap.is-variant-pill:has(.button_text.u-text-eyebrow-base) .button_tag_inner {
+    padding: 0.375rem 0.875rem;
   }
   /* Padding Link Base */
   .button_wrap.is-variant-pill:has(.button_text.u-text-link-base) {
     --button-padding: 0.875rem 1rem;
   }
+  .button_wrap.is-variant-pill:has(.button_text.u-text-link-base) .button_tag_inner {
+    padding: 0.375rem 0.75rem;
+  }
   /* Padding Link Small */
   .button_wrap.is-variant-pill:has(.button_text.u-text-link-small) {
     --button-padding: 0.875rem 0.875rem;
+  }
+  .button_wrap.is-variant-pill:has(.button_text.u-text-link-small) .button_tag_inner {
+    padding: 0.3125rem 0.5rem;
   }
   /* BG White */
   .button_wrap.is-variant-pill.is-bg-white {
