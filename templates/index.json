@@ -28,7 +28,7 @@
             "button_1_mode": "link",
             "button_1_url": "shopify://policies/privacy-policy",
             "button_1_action": "contact_modal",
-            "button_1_variant": "text",
+            "button_1_variant": "transparent",
             "button_1_solid_color": "white",
             "button_1_solid_text_size": "u-text-link-large",
             "button_1_solid_padding": "small",
