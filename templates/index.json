@@ -38,7 +38,7 @@
             "button_1_underline": false,
             "button_1_icon": "chevron_left",
             "button_1_icon_position": "after",
-            "button_1_icon_animation": "move_left",
+            "button_1_icon_animation": "move_right",
             "button_1_icon_color": "inherit",
             "button_2_label": "Button 2 Text",
             "button_2_mode": "action",
