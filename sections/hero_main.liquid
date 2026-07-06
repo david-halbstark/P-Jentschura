@@ -1,986 +1,1005 @@
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div
-  class="hero_main_slider_wrap u-position-relative"
-  {% if section.settings.section_id != blank %}
-    {{- section_id -}}
-  {% endif %}
->
-  <div class="hero_main_slider_offset">
-    <div class="hero_main_slider_element swiper">
-      <div class="hero_main_slider_list swiper-wrapper">
-        {% for block in section.blocks %}
-          {% if block.type == 'slide' %}
-            <div li-block="Slide" class="hero_main_slide_wrap swiper-slide">
-              <div class="u-display-none"></div>
-
-              <div class="u-display-none"></div>
-
-              <div class="u-display-none"></div>
-
-              <div class="u-display-none"></div>
-
-              <div class="hero_main_slide_background u-cover-absolute">
-                <div li-snippet:image="" class="u-display-contents" image="">
-                  <div
-                    data-wf--preview-image--variant="cover"
-                    class="u-image-wrapper w-variant-4972adff-107c-1f37-d19c-526a2bf55c28"
-                  >
-                    <img
-                      src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
-                      loading="lazy"
-                      alt=""
-                      class="u-image"
-                    >
+<div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        <div class="hero_main_slider_wrap u-position-relative" {% if section.settings.section_id != blank %}{{ section_id }}{% endif %}>
+          <div class="hero_main_slider_offset">
+            <div class="hero_main_slider_element swiper">
+              <div class="hero_main_slider_list swiper-wrapper">
+                {% for block in section.blocks %}
+    {% if block.type == "slide" %}
+                    <div li-block="Slide" class="hero_main_slide_wrap swiper-slide">
+                                    
+                  
+                                    <div class="u-display-none">
+                    
+                    
+                    
+                    
                   </div>
-                </div>
-                <div class="hero_main_slide_overlay u-cover-absolute"></div>
-              </div>
-
-              <div class="hero_main_slide_contain u-container">
-                {% render 'spacer', variant: section.settings.spacing_top %}
-                <div class="hero_main_slide_content u-margin-trim">
-                  {% render 'eyebrow', variant: block.settings.eyebrow_variant, eyebrow: block.settings.eyebrow %}
-                  {% render 'heading',
-                    tag: block.settings.heading_tag,
-                    visually_hidden: block.settings.heading_visually_hidden,
-                    tidy_text: block.settings.heading_tidy_text,
-                    heading: block.settings.heading,
-                    custom_class: 'heading-meine-test',
-                    variant: block.settings.heading_variant,
-                    max_width: block.settings.heading_max_width
-                  %}
-                  {% render 'button_group', button_1_solid_color: block.settings.button_1_solid_color, button_1_icon_position: block.settings.button_1_icon_position, button_1_url: block.settings.button_1_url, button_2_url: block.settings.button_2_url, button_2_solid_color: block.settings.button_2_solid_color, button_2_icon_position: block.settings.button_2_icon_position, button_2_action: block.settings.button_2_action, button_1_action: block.settings.button_1_action, button_2_icon: block.settings.button_2_icon, button_1_label: block.settings.button_1_label, button_1_icon: block.settings.button_1_icon, button_2_label: block.settings.button_2_label, button_2_icon_color: block.settings.button_2_icon_color, button_1_trigger: 'hover focus', button_2_icon_animation: block.settings.button_2_icon_animation, button_2_trigger: 'hover focus', button_1_icon_color: block.settings.button_1_icon_color, button_1_icon_animation: block.settings.button_1_icon_animation, button_1_solid_padding: block.settings.button_1_solid_padding, button_2_mode: block.settings.button_2_mode, button_2_solid_padding: block.settings.button_2_solid_padding, button_1_solid_text_size: block.settings.button_1_solid_text_size, button_1_mode: block.settings.button_1_mode, button_2_solid_text_size: block.settings.button_2_solid_text_size, button_1_variant: block.settings.button_1_variant, button_2_custom_class: , button_1_Ω: , button_2_variant: block.settings.button_2_variant %}
-                </div>
-                {% render 'spacer', variant: section.settings.spacing_bottom %}
-              </div>
-
-              <div class="w-embed">
-                <style>
-                  /* Bestehende Trim-Logik */ /*
-                  :is(.u-margin-trim, .w-richtext, .u-content-wrapper, [class*='u-container'], [class*='u-layout-column'])
-                    > :not(:has(~ :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim))),
-                  :is(.u-margin-trim, .w-richtext, .u-content-wrapper, [class*='u-container'], [class*='u-layout-column'])
-                    > .u-display-contents
-                    > :not(:has(~ :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim))) {
-                    margin-bottom: 0;
-                  } */
-                  /* li-snippet: erstes echtes Element innen ohne padding-top */
-                  :is(.u-margin-trim, .w-richtext, .u-content-wrapper, [class*='u-container'], [class*='u-layout-column'])
-                    > [li-snippet].u-display-contents
-                    > :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim):first-child {
-                    padding-top: 0;
-                  }
-                  /* li-snippet: letztes echtes Element innen ohne padding-bottom */
-                  :is(.u-margin-trim, .w-richtext, .u-content-wrapper, [class*='u-container'], [class*='u-layout-column'])
-                    > [li-snippet].u-display-contents
-                    > :not(:has(~ :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim))) {
-                    padding-bottom: 0;
-                  }
-                  /* li-snippet: wenn das letzte echte Element selbst Richtext enth&auml;lt,
-                     dann auch dessen letztes Kind trimmen, z. B. p, h2 etc. */
-                  :is(.u-margin-trim, .w-richtext, .u-content-wrapper, [class*='u-container'], [class*='u-layout-column'])
-                    > [li-snippet].u-display-contents
-                    > :not(:has(~ :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim)))
-                    > :not(:has(~ :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim))) {
-                    margin-bottom: 0;
-                  }
-                </style>
-              </div>
-
-              <div class="u-display-none">
-                {% render 'icon', custom_class: , aria_hidden: true %}
+                                    
+                  
+                                    <div class="u-display-none">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                  </div>
+                                    
+                  
+                                    <div class="u-display-none">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                  </div>
+                                    
+                  
+                                    <div class="u-display-none">
+                    
+                    
+                  </div>
+                                    
+                  
+                                    <div class="hero_main_slide_background u-cover-absolute">
+                    <div li-snippet:image="" class="u-display-contents" image="">
+                      
+                      <div data-wf--preview-image--variant="cover" class="u-image-wrapper w-variant-4972adff-107c-1f37-d19c-526a2bf55c28"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="u-image"></div>
+                    </div>
+                    <div class="hero_main_slide_overlay u-cover-absolute"></div>
+                  </div>
+                                    
+                  
+                                    <div class="hero_main_slide_contain u-container">
+                    {% render 'spacer', variant: section.settings.spacing_top %}
+                    <div class="hero_main_slide_content u-margin-trim">
+                      {% render 'eyebrow', variant: block.settings.eyebrow_variant, eyebrow: block.settings.eyebrow %}
+                      {% render 'heading', tag: block.settings.heading_tag, visually_hidden: block.settings.heading_visually_hidden, tidy_text: block.settings.heading_tidy_text, heading: block.settings.heading, custom_class: 'heading-meine-test', variant: block.settings.heading_variant, max_width: block.settings.heading_max_width %}
+                      {% render 'button_group', button_1_solid_color: block.settings.button_1_solid_color, button_1_icon_position: block.settings.button_1_icon_position, button_1_url: block.settings.button_1_url, button_2_url: block.settings.button_2_url, button_2_solid_color: block.settings.button_2_solid_color, button_2_icon_position: block.settings.button_2_icon_position, button_2_action: block.settings.button_2_action, button_1_action: block.settings.button_1_action, button_2_icon: block.settings.button_2_icon, button_1_label: block.settings.button_1_label, button_1_icon: block.settings.button_1_icon, button_2_label: block.settings.button_2_label, button_2_icon_color: block.settings.button_2_icon_color, button_1_trigger: 'hover focus', button_2_icon_animation: block.settings.button_2_icon_animation, button_2_trigger: 'hover focus', button_1_icon_color: block.settings.button_1_icon_color, button_1_icon_animation: block.settings.button_1_icon_animation, button_1_solid_padding: block.settings.button_1_solid_padding, button_2_mode: block.settings.button_2_mode, button_2_solid_padding: block.settings.button_2_solid_padding, button_1_solid_text_size: block.settings.button_1_solid_text_size, button_1_mode: block.settings.button_1_mode, button_2_solid_text_size: block.settings.button_2_solid_text_size, button_1_variant: block.settings.button_1_variant, button_2_custom_class: , button_1_custom_class: , button_2_variant: block.settings.button_2_variant %}
+                    </div>
+                    {% render 'spacer', variant: section.settings.spacing_bottom %}
+                  </div>
+                                    
+                
+                            </div>
+            {% endif %}
+{% endfor %}
               </div>
             </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-  <div class="hero_main_slider_controls u-container">
-    <div class="hero_main_slider_bullet_list">
-      <div class="hero_main_slider_bullet_item"></div>
-      <div class="hero_main_slider_bullet_item is-active"></div>
-    </div>
-  </div>
-</div>
-{% schema %}
-{
-  "tag": "section",
-  "name": "Hero Main",
-  "class": "hero_main_wrap u-section",
-  "blocks": [
-    {
-      "name": "Slide",
-      "type": "slide",
-      "settings": [
+          </div>
+          <div class="hero_main_slider_controls u-container">
+            <div class="hero_main_slider_bullet_list">
+              <div class="hero_main_slider_bullet_item"></div>
+              <div class="hero_main_slider_bullet_item is-active"></div>
+            </div>
+          </div>
+        </div>
+        <div class="u-embed-js w-embed w-script">
+          <script>
+(function() {
+  const component = document.currentScript.parentElement.parentElement;
+  document.addEventListener("DOMContentLoaded", function () {
+    // run script here
+  });
+})();
+</script>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Hero Main",
+    "class": "hero_main_wrap u-section",
+    "blocks": [
         {
-          "type": "header",
-          "content": "\u00dcbertitel"
-        },
-        {
-          "type": "text",
-          "id": "eyebrow",
-          "label": "Text",
-          "default": "\u00dcbertitel Text"
-        },
-        {
-          "type": "select",
-          "id": "eyebrow_variant",
-          "label": "Stil",
-          "options": [
-            {
-              "value": "u-text-eyebrow-small",
-              "label": "Klein"
-            },
-            {
-              "value": "u-text-eyebrow-base",
-              "label": "Standard"
-            },
-            {
-              "value": "u-text-eyebrow-large",
-              "label": "Gro\u00df"
-            }
-          ],
-          "default": "u-text-eyebrow-large"
-        },
-        {
-          "type": "select",
-          "id": "eyebrow_tag",
-          "label": "HTML-Tag",
-          "options": [
-            {
-              "value": "h1",
-              "label": "H1"
-            },
-            {
-              "value": "h2",
-              "label": "H2"
-            },
-            {
-              "value": "h3",
-              "label": "H3"
-            },
-            {
-              "value": "h4",
-              "label": "H4"
-            },
-            {
-              "value": "h5",
-              "label": "H5"
-            },
-            {
-              "value": "h6",
-              "label": "H6"
-            },
-            {
-              "value": "p",
-              "label": "P"
-            }
-          ],
-          "default": "p"
-        },
-        {
-          "type": "header",
-          "content": "\u00dcberschrift"
-        },
-        {
-          "type": "inline_richtext",
-          "id": "heading",
-          "label": "Text",
-          "default": "Lorem ipsum dolor sit amet elit"
-        },
-        {
-          "type": "select",
-          "id": "heading_variant",
-          "label": "Stil",
-          "options": [
-            {
-              "value": "u-text-h1-primary",
-              "label": "H1 Prim\u00e4r"
-            },
-            {
-              "value": "u-text-h1-secondary",
-              "label": "H1 Sekund\u00e4r"
-            },
-            {
-              "value": "u-text-h2-primary",
-              "label": "H2 Prim\u00e4r"
-            },
-            {
-              "value": "u-text-h2-secondary",
-              "label": "H2 Sekund\u00e4r"
-            },
-            {
-              "value": "u-text-h3-primary",
-              "label": "H3 Prim\u00e4r"
-            },
-            {
-              "value": "u-text-h3-secondary",
-              "label": "H3 Sekund\u00e4r"
-            },
-            {
-              "value": "u-text-h4-primary",
-              "label": "H4 Prim\u00e4r"
-            },
-            {
-              "value": "u-text-h5-primary",
-              "label": "H5 Prim\u00e4r"
-            },
-            {
-              "value": "u-text-h6-primary",
-              "label": "H6 Prim\u00e4r"
-            }
-          ],
-          "default": "u-text-h2-primary"
-        },
-        {
-          "type": "select",
-          "id": "heading_tag",
-          "label": "HTML-Tag",
-          "options": [
-            {
-              "value": "h1",
-              "label": "H1"
-            },
-            {
-              "value": "h2",
-              "label": "H2"
-            },
-            {
-              "value": "h3",
-              "label": "H3"
-            },
-            {
-              "value": "h4",
-              "label": "H4"
-            },
-            {
-              "value": "h5",
-              "label": "H5"
-            },
-            {
-              "value": "h6",
-              "label": "H6"
-            },
-            {
-              "value": "p",
-              "label": "P"
-            }
-          ],
-          "default": "h2"
-        },
-        {
-          "type": "number",
-          "id": "heading_max_width",
-          "label": "Maximale Breite",
-          "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-          "default": 20
-        },
-        {
-          "type": "checkbox",
-          "id": "heading_tidy_text",
-          "label": "Ausgewogener Zeilenumbruch",
-          "default": true
-        },
-        {
-          "type": "checkbox",
-          "id": "heading_visually_hidden",
-          "label": "Nur f\u00fcr Screenreader anzeigen",
-          "default": false
-        },
-        {
-          "type": "header",
-          "content": "Button 1"
-        },
-        {
-          "type": "text",
-          "id": "button_1_label",
-          "label": "Text",
-          "default": "Button 1 Text"
-        },
-        {
-          "type": "select",
-          "id": "button_1_mode",
-          "label": "Funktion",
-          "options": [
-            {
-              "value": "link",
-              "label": "Link \u00f6ffnen"
-            },
-            {
-              "value": "action",
-              "label": "Aktion ausf\u00fchren"
-            }
-          ],
-          "default": "link"
-        },
-        {
-          "type": "url",
-          "id": "button_1_url",
-          "label": "Link",
-          "visible_if": "{{ block.settings.button_1_mode == 'link' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_1_action",
-          "label": "Aktion",
-          "options": [
-            {
-              "value": "newsletter_modal",
-              "label": "Newsletter-Modal \u00f6ffnen"
-            },
-            {
-              "value": "contact_modal",
-              "label": "Kontaktformular-Modal \u00f6ffnen"
-            }
-          ],
-          "default": "newsletter_modal",
-          "visible_if": "{{ block.settings.button_1_mode == 'action' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_1_variant",
-          "label": "Stil",
-          "options": [
-            {
-              "value": "solid",
-              "label": "Fl\u00e4che"
-            },
-            {
-              "value": "transparent",
-              "label": "Transparent"
-            },
-            {
-              "value": "text",
-              "label": "Textlink"
-            },
-            {
-              "value": "pill",
-              "label": "Kapsel"
-            }
-          ],
-          "default": "solid"
-        },
-        {
-          "type": "select",
-          "id": "button_1_solid_color",
-          "label": "Farbe",
-          "options": [
-            {
-              "value": "red",
-              "label": "Rot"
-            },
-            {
-              "value": "white",
-              "label": "Wei\u00df"
-            }
-          ],
-          "default": "red",
-          "visible_if": "{{ block.settings.button_1_variant == 'solid' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_1_solid_text_size",
-          "label": "Textgr\u00f6\u00dfe",
-          "options": [
-            {
-              "value": "u-text-link-large",
-              "label": "Link gro\u00df"
-            },
-            {
-              "value": "u-text-link-base",
-              "label": "Link Standard"
-            }
-          ],
-          "default": "u-text-link-large",
-          "visible_if": "{{ block.settings.button_1_variant == 'solid' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_1_solid_padding",
-          "label": "Stil",
-          "options": [
-            {
-              "value": "base",
-              "label": "Standard"
-            },
-            {
-              "value": "small",
-              "label": "Klein"
-            }
-          ],
-          "default": "base",
-          "visible_if": "{{ block.settings.button_1_variant == 'solid' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_1_text_text_size",
-          "label": "Textgr\u00f6\u00dfe",
-          "options": [
-            {
-              "value": "u-text-link-large",
-              "label": "Link gro\u00df"
-            },
-            {
-              "value": "u-text-link-base",
-              "label": "Link Standard"
-            }
-          ],
-          "default": "u-text-link-large",
-          "visible_if": "{{ block.settings.button_1_variant == 'text' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_1_text_color",
-          "label": "Farbe",
-          "options": [
-            {
-              "value": "green",
-              "label": "Gr\u00fcn"
-            },
-            {
-              "value": "red",
-              "label": "Rot"
-            }
-          ],
-          "default": "green",
-          "visible_if": "{{ block.settings.button_1_variant == 'text' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_1_pill_color",
-          "label": "Farbe",
-          "options": [
-            {
-              "value": "white",
-              "label": "Wei\u00df"
-            },
-            {
-              "value": "white_transparent",
-              "label": "Wei\u00df transparent"
-            }
-          ],
-          "default": "white",
-          "visible_if": "{{ block.settings.button_1_variant == 'pill' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_1_pill_text_size",
-          "label": "Textgr\u00f6\u00dfe",
-          "options": [
-            {
-              "value": "u-text-eyebrow-large",
-              "label": "\u00dcbertitel gro\u00df"
-            },
-            {
-              "value": "u-text-eyebrow-base",
-              "label": "\u00dcbertitel Standard"
-            },
-            {
-              "value": "u-text-link-base",
-              "label": "Link Standard"
-            },
-            {
-              "value": "u-text-link-small",
-              "label": "Link klein"
-            }
-          ],
-          "default": "u-text-eyebrow-base",
-          "visible_if": "{{ block.settings.button_1_variant == 'pill' }}"
-        },
-        {
-          "type": "text",
-          "id": "button_1_pill_tag_inner",
-          "label": "Innerer Tag",
-          "visible_if": "{{ block.settings.button_1_variant == 'pill' }}"
-        },
-        {
-          "type": "checkbox",
-          "id": "button_1_underline",
-          "label": "Unterstreichung anzeigen",
-          "default": false,
-          "visible_if": "{{ block.settings.button_1_variant == 'text' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_1_icon",
-          "label": "Icon",
-          "options": [
-            {
-              "value": "none",
-              "label": "Kein Icon"
-            },
-            {
-              "value": "chevron_left",
-              "label": "Chevron links"
-            },
-            {
-              "value": "chevron_right",
-              "label": "Chevron rechts"
-            },
-            {
-              "value": "arrow_top_right",
-              "label": "Pfeil oben rechts"
-            },
-            {
-              "value": "download",
-              "label": "Herunterladen"
-            },
-            {
-              "value": "copy",
-              "label": "Kopieren"
-            },
-            {
-              "value": "external_page",
-              "label": "Externe Seite"
-            }
-          ],
-          "default": "none"
-        },
-        {
-          "type": "select",
-          "id": "button_1_icon_position",
-          "label": "Icon-Position",
-          "options": [
-            {
-              "value": "before",
-              "label": "Vor dem Text"
-            },
-            {
-              "value": "after",
-              "label": "Nach dem Text"
-            }
-          ],
-          "default": "after",
-          "visible_if": "{{ block.settings.button_1_icon != 'none' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_1_icon_animation",
-          "label": "Icon-Animation",
-          "options": [
-            {
-              "value": "none",
-              "label": "Keine Animation"
-            },
-            {
-              "value": "move_left",
-              "label": "Nach links bewegen"
-            },
-            {
-              "value": "move_right",
-              "label": "Nach rechts bewegen"
-            },
-            {
-              "value": "move_up_right",
-              "label": "Nach oben rechts bewegen"
-            }
-          ],
-          "default": "none",
-          "visible_if": "{{ block.settings.button_1_icon != 'none' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_1_icon_color",
-          "label": "Stil",
-          "options": [
-            {
-              "value": "inherit",
-              "label": "Wie Text"
-            },
-            {
-              "value": "red",
-              "label": "Rot"
-            }
-          ],
-          "default": "inherit",
-          "visible_if": "{{ block.settings.button_1_icon != 'none' }}"
-        },
-        {
-          "type": "header",
-          "content": "Button 2"
-        },
-        {
-          "type": "text",
-          "id": "button_2_label",
-          "label": "Text",
-          "default": "Button 2 Text"
-        },
-        {
-          "type": "select",
-          "id": "button_2_mode",
-          "label": "Funktion",
-          "options": [
-            {
-              "value": "link",
-              "label": "Link \u00f6ffnen"
-            },
-            {
-              "value": "action",
-              "label": "Aktion ausf\u00fchren"
-            }
-          ],
-          "default": "link"
-        },
-        {
-          "type": "url",
-          "id": "button_2_url",
-          "label": "Link",
-          "visible_if": "{{ block.settings.button_2_mode == 'link' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_2_variant",
-          "label": "Stil",
-          "options": [
-            {
-              "value": "solid",
-              "label": "Fl\u00e4che"
-            },
-            {
-              "value": "transparent",
-              "label": "Transparent"
-            },
-            {
-              "value": "text",
-              "label": "Textlink"
-            },
-            {
-              "value": "pill",
-              "label": "Kapsel"
-            }
-          ],
-          "default": "solid"
-        },
-        {
-          "type": "select",
-          "id": "button_2_action",
-          "label": "Aktion",
-          "options": [
-            {
-              "value": "newsletter_modal",
-              "label": "Newsletter-Modal \u00f6ffnen"
-            },
-            {
-              "value": "contact_modal",
-              "label": "Kontaktformular-Modal \u00f6ffnen"
-            }
-          ],
-          "default": "newsletter_modal",
-          "visible_if": "{{ block.settings.button_2_mode == 'action' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_2_solid_color",
-          "label": "Farbe",
-          "options": [
-            {
-              "value": "red",
-              "label": "Rot"
-            },
-            {
-              "value": "white",
-              "label": "Wei\u00df"
-            }
-          ],
-          "default": "red",
-          "visible_if": "{{ block.settings.button_2_variant == 'solid' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_2_solid_text_size",
-          "label": "Textgr\u00f6\u00dfe",
-          "options": [
-            {
-              "value": "u-text-link-large",
-              "label": "Link gro\u00df"
-            },
-            {
-              "value": "u-text-link-base",
-              "label": "Link Standard"
-            }
-          ],
-          "default": "u-text-link-large",
-          "visible_if": "{{ block.settings.button_2_variant == 'solid' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_2_solid_padding",
-          "label": "Stil",
-          "options": [
-            {
-              "value": "base",
-              "label": "Standard"
-            },
-            {
-              "value": "small",
-              "label": "Klein"
-            }
-          ],
-          "default": "base",
-          "visible_if": "{{ block.settings.button_2_variant == 'solid' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_2_text_text_size",
-          "label": "Textgr\u00f6\u00dfe",
-          "options": [
-            {
-              "value": "u-text-link-large",
-              "label": "Link gro\u00df"
-            },
-            {
-              "value": "u-text-link-base",
-              "label": "Link Standard"
-            }
-          ],
-          "default": "u-text-link-large",
-          "visible_if": "{{ block.settings.button_2_variant == 'text' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_2_text_color",
-          "label": "Farbe",
-          "options": [
-            {
-              "value": "green",
-              "label": "Gr\u00fcn"
-            },
-            {
-              "value": "red",
-              "label": "Rot"
-            }
-          ],
-          "default": "green",
-          "visible_if": "{{ block.settings.button_2_variant == 'text' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_2_pill_color",
-          "label": "Farbe",
-          "options": [
-            {
-              "value": "white",
-              "label": "Wei\u00df"
-            },
-            {
-              "value": "white_transparent",
-              "label": "Wei\u00df transparent"
-            }
-          ],
-          "default": "white",
-          "visible_if": "{{ block.settings.button_2_variant == 'pill' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_2_pill_text_size",
-          "label": "Textgr\u00f6\u00dfe",
-          "options": [
-            {
-              "value": "u-text-eyebrow-large",
-              "label": "\u00dcbertitel gro\u00df"
-            },
-            {
-              "value": "u-text-eyebrow-base",
-              "label": "\u00dcbertitel Standard"
-            },
-            {
-              "value": "u-text-link-base",
-              "label": "Link Standard"
-            },
-            {
-              "value": "u-text-link-small",
-              "label": "Link klein"
-            }
-          ],
-          "default": "u-text-eyebrow-base",
-          "visible_if": "{{ block.settings.button_2_variant == 'pill' }}"
-        },
-        {
-          "type": "text",
-          "id": "button_2_pill_tag_inner",
-          "label": "Innerer Tag",
-          "visible_if": "{{ block.settings.button_2_variant == 'pill' }}"
-        },
-        {
-          "type": "checkbox",
-          "id": "button_2_underline",
-          "label": "Unterstreichung anzeigen",
-          "default": false,
-          "visible_if": "{{ block.settings.button_2_variant == 'text' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_2_icon",
-          "label": "Icon",
-          "options": [
-            {
-              "value": "none",
-              "label": "Kein Icon"
-            },
-            {
-              "value": "chevron_left",
-              "label": "Chevron links"
-            },
-            {
-              "value": "chevron_right",
-              "label": "Chevron rechts"
-            },
-            {
-              "value": "arrow_top_right",
-              "label": "Pfeil oben rechts"
-            },
-            {
-              "value": "download",
-              "label": "Herunterladen"
-            },
-            {
-              "value": "copy",
-              "label": "Kopieren"
-            },
-            {
-              "value": "external_page",
-              "label": "Externe Seite"
-            }
-          ],
-          "default": "none"
-        },
-        {
-          "type": "select",
-          "id": "button_2_icon_position",
-          "label": "Icon-Position",
-          "options": [
-            {
-              "value": "before",
-              "label": "Vor dem Text"
-            },
-            {
-              "value": "after",
-              "label": "Nach dem Text"
-            }
-          ],
-          "default": "after",
-          "visible_if": "{{ block.settings.button_2_icon != 'none' }}"
-        },
-        {
-          "type": "select",
-          "id": "button_2_icon_animation",
-          "label": "Icon-Animation",
-          "options": [
-            {
-              "value": "none",
-              "label": "Keine Animation"
-            },
-            {
-              "value": "move_left",
-              "label": "Nach links bewegen"
-            },
-            {
-              "value": "move_right",
-              "label": "Nach rechts bewegen"
-            },
-            {
-              "value": "move_up_right",
-              "label": "Nach oben rechts bewegen"
-            }
-          ],
-          "default": "none",
-          "visible_if": "{{ block.settings.button_2_icon != 'none' }}"
-        },
-        {
-          "type": "header",
-          "content": "Bild"
-        },
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Hintergrundbild"
+            "name": "Slide",
+            "type": "slide",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "\u00dcbertitel"
+                },
+                {
+                    "type": "text",
+                    "id": "eyebrow",
+                    "label": "Text",
+                    "default": "\u00dcbertitel Text"
+                },
+                {
+                    "type": "select",
+                    "id": "eyebrow_variant",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "u-text-eyebrow-small",
+                            "label": "Klein"
+                        },
+                        {
+                            "value": "u-text-eyebrow-base",
+                            "label": "Standard"
+                        },
+                        {
+                            "value": "u-text-eyebrow-large",
+                            "label": "Gro\u00df"
+                        }
+                    ],
+                    "default": "u-text-eyebrow-large"
+                },
+                {
+                    "type": "select",
+                    "id": "eyebrow_tag",
+                    "label": "HTML-Tag",
+                    "options": [
+                        {
+                            "value": "h1",
+                            "label": "H1"
+                        },
+                        {
+                            "value": "h2",
+                            "label": "H2"
+                        },
+                        {
+                            "value": "h3",
+                            "label": "H3"
+                        },
+                        {
+                            "value": "h4",
+                            "label": "H4"
+                        },
+                        {
+                            "value": "h5",
+                            "label": "H5"
+                        },
+                        {
+                            "value": "h6",
+                            "label": "H6"
+                        },
+                        {
+                            "value": "p",
+                            "label": "P"
+                        }
+                    ],
+                    "default": "p"
+                },
+                {
+                    "type": "header",
+                    "content": "\u00dcberschrift"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "heading",
+                    "label": "Text",
+                    "default": "Lorem ipsum dolor sit amet elit"
+                },
+                {
+                    "type": "select",
+                    "id": "heading_variant",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "u-text-h1-primary",
+                            "label": "H1 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h1-secondary",
+                            "label": "H1 Sekund\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h2-primary",
+                            "label": "H2 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h2-secondary",
+                            "label": "H2 Sekund\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h3-primary",
+                            "label": "H3 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h3-secondary",
+                            "label": "H3 Sekund\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h4-primary",
+                            "label": "H4 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h5-primary",
+                            "label": "H5 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h6-primary",
+                            "label": "H6 Prim\u00e4r"
+                        }
+                    ],
+                    "default": "u-text-h2-primary"
+                },
+                {
+                    "type": "select",
+                    "id": "heading_tag",
+                    "label": "HTML-Tag",
+                    "options": [
+                        {
+                            "value": "h1",
+                            "label": "H1"
+                        },
+                        {
+                            "value": "h2",
+                            "label": "H2"
+                        },
+                        {
+                            "value": "h3",
+                            "label": "H3"
+                        },
+                        {
+                            "value": "h4",
+                            "label": "H4"
+                        },
+                        {
+                            "value": "h5",
+                            "label": "H5"
+                        },
+                        {
+                            "value": "h6",
+                            "label": "H6"
+                        },
+                        {
+                            "value": "p",
+                            "label": "P"
+                        }
+                    ],
+                    "default": "h2"
+                },
+                {
+                    "type": "number",
+                    "id": "heading_max_width",
+                    "label": "Maximale Breite",
+                    "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+                    "default": 20
+                },
+                {
+                    "type": "checkbox",
+                    "id": "heading_tidy_text",
+                    "label": "Ausgewogener Zeilenumbruch",
+                    "default": true
+                },
+                {
+                    "type": "checkbox",
+                    "id": "heading_visually_hidden",
+                    "label": "Nur f\u00fcr Screenreader anzeigen",
+                    "default": false
+                },
+                {
+                    "type": "header",
+                    "content": "Button 1"
+                },
+                {
+                    "type": "text",
+                    "id": "button_1_label",
+                    "label": "Text",
+                    "default": "Button 1 Text"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_mode",
+                    "label": "Funktion",
+                    "options": [
+                        {
+                            "value": "link",
+                            "label": "Link \u00f6ffnen"
+                        },
+                        {
+                            "value": "action",
+                            "label": "Aktion ausf\u00fchren"
+                        }
+                    ],
+                    "default": "link"
+                },
+                {
+                    "type": "url",
+                    "id": "button_1_url",
+                    "label": "Link",
+                    "visible_if": "{{ block.settings.button_1_mode == 'link' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_action",
+                    "label": "Aktion",
+                    "options": [
+                        {
+                            "value": "newsletter_modal",
+                            "label": "Newsletter-Modal \u00f6ffnen"
+                        },
+                        {
+                            "value": "contact_modal",
+                            "label": "Kontaktformular-Modal \u00f6ffnen"
+                        }
+                    ],
+                    "default": "newsletter_modal",
+                    "visible_if": "{{ block.settings.button_1_mode == 'action' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_variant",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "solid",
+                            "label": "Fl\u00e4che"
+                        },
+                        {
+                            "value": "transparent",
+                            "label": "Transparent"
+                        },
+                        {
+                            "value": "text",
+                            "label": "Textlink"
+                        },
+                        {
+                            "value": "pill",
+                            "label": "Kapsel"
+                        }
+                    ],
+                    "default": "solid"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_solid_color",
+                    "label": "Farbe",
+                    "options": [
+                        {
+                            "value": "red",
+                            "label": "Rot"
+                        },
+                        {
+                            "value": "white",
+                            "label": "Wei\u00df"
+                        }
+                    ],
+                    "default": "red",
+                    "visible_if": "{{ block.settings.button_1_variant == 'solid' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_solid_text_size",
+                    "label": "Textgr\u00f6\u00dfe",
+                    "options": [
+                        {
+                            "value": "u-text-link-large",
+                            "label": "Link gro\u00df"
+                        },
+                        {
+                            "value": "u-text-link-base",
+                            "label": "Link Standard"
+                        }
+                    ],
+                    "default": "u-text-link-large",
+                    "visible_if": "{{ block.settings.button_1_variant == 'solid' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_solid_padding",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "base",
+                            "label": "Standard"
+                        },
+                        {
+                            "value": "small",
+                            "label": "Klein"
+                        }
+                    ],
+                    "default": "base",
+                    "visible_if": "{{ block.settings.button_1_variant == 'solid' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_text_text_size",
+                    "label": "Textgr\u00f6\u00dfe",
+                    "options": [
+                        {
+                            "value": "u-text-link-large",
+                            "label": "Link gro\u00df"
+                        },
+                        {
+                            "value": "u-text-link-base",
+                            "label": "Link Standard"
+                        }
+                    ],
+                    "default": "u-text-link-large",
+                    "visible_if": "{{ block.settings.button_1_variant == 'text' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_text_color",
+                    "label": "Farbe",
+                    "options": [
+                        {
+                            "value": "green",
+                            "label": "Gr\u00fcn"
+                        },
+                        {
+                            "value": "red",
+                            "label": "Rot"
+                        }
+                    ],
+                    "default": "green",
+                    "visible_if": "{{ block.settings.button_1_variant == 'text' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_pill_color",
+                    "label": "Farbe",
+                    "options": [
+                        {
+                            "value": "white",
+                            "label": "Wei\u00df"
+                        },
+                        {
+                            "value": "white_transparent",
+                            "label": "Wei\u00df transparent"
+                        }
+                    ],
+                    "default": "white",
+                    "visible_if": "{{ block.settings.button_1_variant == 'pill' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_pill_text_size",
+                    "label": "Textgr\u00f6\u00dfe",
+                    "options": [
+                        {
+                            "value": "u-text-eyebrow-large",
+                            "label": "\u00dcbertitel gro\u00df"
+                        },
+                        {
+                            "value": "u-text-eyebrow-base",
+                            "label": "\u00dcbertitel Standard"
+                        },
+                        {
+                            "value": "u-text-link-base",
+                            "label": "Link Standard"
+                        },
+                        {
+                            "value": "u-text-link-small",
+                            "label": "Link klein"
+                        }
+                    ],
+                    "default": "u-text-eyebrow-base",
+                    "visible_if": "{{ block.settings.button_1_variant == 'pill' }}"
+                },
+                {
+                    "type": "text",
+                    "id": "button_1_pill_tag_inner",
+                    "label": "Innerer Tag",
+                    "visible_if": "{{ block.settings.button_1_variant == 'pill' }}"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "button_1_underline",
+                    "label": "Unterstreichung anzeigen",
+                    "default": false,
+                    "visible_if": "{{ block.settings.button_1_variant == 'text' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_icon",
+                    "label": "Icon",
+                    "options": [
+                        {
+                            "value": "none",
+                            "label": "Kein Icon"
+                        },
+                        {
+                            "value": "chevron_left",
+                            "label": "Chevron links"
+                        },
+                        {
+                            "value": "chevron_right",
+                            "label": "Chevron rechts"
+                        },
+                        {
+                            "value": "arrow_top_right",
+                            "label": "Pfeil oben rechts"
+                        },
+                        {
+                            "value": "download",
+                            "label": "Herunterladen"
+                        },
+                        {
+                            "value": "copy",
+                            "label": "Kopieren"
+                        },
+                        {
+                            "value": "external_page",
+                            "label": "Externe Seite"
+                        }
+                    ],
+                    "default": "none"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_icon_position",
+                    "label": "Icon-Position",
+                    "options": [
+                        {
+                            "value": "before",
+                            "label": "Vor dem Text"
+                        },
+                        {
+                            "value": "after",
+                            "label": "Nach dem Text"
+                        }
+                    ],
+                    "default": "after",
+                    "visible_if": "{{ block.settings.button_1_icon != 'none' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_icon_animation",
+                    "label": "Icon-Animation",
+                    "options": [
+                        {
+                            "value": "none",
+                            "label": "Keine Animation"
+                        },
+                        {
+                            "value": "move_left",
+                            "label": "Nach links bewegen"
+                        },
+                        {
+                            "value": "move_right",
+                            "label": "Nach rechts bewegen"
+                        },
+                        {
+                            "value": "move_up_right",
+                            "label": "Nach oben rechts bewegen"
+                        }
+                    ],
+                    "default": "none",
+                    "visible_if": "{{ block.settings.button_1_icon != 'none' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_icon_color",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "inherit",
+                            "label": "Wie Text"
+                        },
+                        {
+                            "value": "red",
+                            "label": "Rot"
+                        }
+                    ],
+                    "default": "inherit",
+                    "visible_if": "{{ block.settings.button_1_icon != 'none' }}"
+                },
+                {
+                    "type": "header",
+                    "content": "Button 2"
+                },
+                {
+                    "type": "text",
+                    "id": "button_2_label",
+                    "label": "Text",
+                    "default": "Button 2 Text"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_mode",
+                    "label": "Funktion",
+                    "options": [
+                        {
+                            "value": "link",
+                            "label": "Link \u00f6ffnen"
+                        },
+                        {
+                            "value": "action",
+                            "label": "Aktion ausf\u00fchren"
+                        }
+                    ],
+                    "default": "link"
+                },
+                {
+                    "type": "url",
+                    "id": "button_2_url",
+                    "label": "Link",
+                    "visible_if": "{{ block.settings.button_2_mode == 'link' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_variant",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "solid",
+                            "label": "Fl\u00e4che"
+                        },
+                        {
+                            "value": "transparent",
+                            "label": "Transparent"
+                        },
+                        {
+                            "value": "text",
+                            "label": "Textlink"
+                        },
+                        {
+                            "value": "pill",
+                            "label": "Kapsel"
+                        }
+                    ],
+                    "default": "solid"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_action",
+                    "label": "Aktion",
+                    "options": [
+                        {
+                            "value": "newsletter_modal",
+                            "label": "Newsletter-Modal \u00f6ffnen"
+                        },
+                        {
+                            "value": "contact_modal",
+                            "label": "Kontaktformular-Modal \u00f6ffnen"
+                        }
+                    ],
+                    "default": "newsletter_modal",
+                    "visible_if": "{{ block.settings.button_2_mode == 'action' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_solid_color",
+                    "label": "Farbe",
+                    "options": [
+                        {
+                            "value": "red",
+                            "label": "Rot"
+                        },
+                        {
+                            "value": "white",
+                            "label": "Wei\u00df"
+                        }
+                    ],
+                    "default": "red",
+                    "visible_if": "{{ block.settings.button_2_variant == 'solid' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_solid_text_size",
+                    "label": "Textgr\u00f6\u00dfe",
+                    "options": [
+                        {
+                            "value": "u-text-link-large",
+                            "label": "Link gro\u00df"
+                        },
+                        {
+                            "value": "u-text-link-base",
+                            "label": "Link Standard"
+                        }
+                    ],
+                    "default": "u-text-link-large",
+                    "visible_if": "{{ block.settings.button_2_variant == 'solid' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_solid_padding",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "base",
+                            "label": "Standard"
+                        },
+                        {
+                            "value": "small",
+                            "label": "Klein"
+                        }
+                    ],
+                    "default": "base",
+                    "visible_if": "{{ block.settings.button_2_variant == 'solid' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_text_text_size",
+                    "label": "Textgr\u00f6\u00dfe",
+                    "options": [
+                        {
+                            "value": "u-text-link-large",
+                            "label": "Link gro\u00df"
+                        },
+                        {
+                            "value": "u-text-link-base",
+                            "label": "Link Standard"
+                        }
+                    ],
+                    "default": "u-text-link-large",
+                    "visible_if": "{{ block.settings.button_2_variant == 'text' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_text_color",
+                    "label": "Farbe",
+                    "options": [
+                        {
+                            "value": "green",
+                            "label": "Gr\u00fcn"
+                        },
+                        {
+                            "value": "red",
+                            "label": "Rot"
+                        }
+                    ],
+                    "default": "green",
+                    "visible_if": "{{ block.settings.button_2_variant == 'text' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_pill_color",
+                    "label": "Farbe",
+                    "options": [
+                        {
+                            "value": "white",
+                            "label": "Wei\u00df"
+                        },
+                        {
+                            "value": "white_transparent",
+                            "label": "Wei\u00df transparent"
+                        }
+                    ],
+                    "default": "white",
+                    "visible_if": "{{ block.settings.button_2_variant == 'pill' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_pill_text_size",
+                    "label": "Textgr\u00f6\u00dfe",
+                    "options": [
+                        {
+                            "value": "u-text-eyebrow-large",
+                            "label": "\u00dcbertitel gro\u00df"
+                        },
+                        {
+                            "value": "u-text-eyebrow-base",
+                            "label": "\u00dcbertitel Standard"
+                        },
+                        {
+                            "value": "u-text-link-base",
+                            "label": "Link Standard"
+                        },
+                        {
+                            "value": "u-text-link-small",
+                            "label": "Link klein"
+                        }
+                    ],
+                    "default": "u-text-eyebrow-base",
+                    "visible_if": "{{ block.settings.button_2_variant == 'pill' }}"
+                },
+                {
+                    "type": "text",
+                    "id": "button_2_pill_tag_inner",
+                    "label": "Innerer Tag",
+                    "visible_if": "{{ block.settings.button_2_variant == 'pill' }}"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "button_2_underline",
+                    "label": "Unterstreichung anzeigen",
+                    "default": false,
+                    "visible_if": "{{ block.settings.button_2_variant == 'text' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_icon",
+                    "label": "Icon",
+                    "options": [
+                        {
+                            "value": "none",
+                            "label": "Kein Icon"
+                        },
+                        {
+                            "value": "chevron_left",
+                            "label": "Chevron links"
+                        },
+                        {
+                            "value": "chevron_right",
+                            "label": "Chevron rechts"
+                        },
+                        {
+                            "value": "arrow_top_right",
+                            "label": "Pfeil oben rechts"
+                        },
+                        {
+                            "value": "download",
+                            "label": "Herunterladen"
+                        },
+                        {
+                            "value": "copy",
+                            "label": "Kopieren"
+                        },
+                        {
+                            "value": "external_page",
+                            "label": "Externe Seite"
+                        }
+                    ],
+                    "default": "none"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_icon_position",
+                    "label": "Icon-Position",
+                    "options": [
+                        {
+                            "value": "before",
+                            "label": "Vor dem Text"
+                        },
+                        {
+                            "value": "after",
+                            "label": "Nach dem Text"
+                        }
+                    ],
+                    "default": "after",
+                    "visible_if": "{{ block.settings.button_2_icon != 'none' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_icon_animation",
+                    "label": "Icon-Animation",
+                    "options": [
+                        {
+                            "value": "none",
+                            "label": "Keine Animation"
+                        },
+                        {
+                            "value": "move_left",
+                            "label": "Nach links bewegen"
+                        },
+                        {
+                            "value": "move_right",
+                            "label": "Nach rechts bewegen"
+                        },
+                        {
+                            "value": "move_up_right",
+                            "label": "Nach oben rechts bewegen"
+                        }
+                    ],
+                    "default": "none",
+                    "visible_if": "{{ block.settings.button_2_icon != 'none' }}"
+                },
+                {
+                    "type": "header",
+                    "content": "Bild"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Hintergrundbild"
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "settings": [
-    {
-      "type": "header",
-      "content": "Sektion"
-    },
-    {
-      "type": "text",
-      "id": "section_id",
-      "label": "ID"
-    },
-    {
-      "type": "header",
-      "content": "Abst\u00e4nde"
-    },
-    {
-      "type": "select",
-      "id": "spacing_top",
-      "label": "Oben",
-      "options": [
+    ],
+    "settings": [
         {
-          "value": "none",
-          "label": "Kein Abstand"
+            "type": "header",
+            "content": "Sektion"
         },
         {
-          "value": "small",
-          "label": "Klein"
+            "type": "text",
+            "id": "section_id",
+            "label": "ID"
         },
         {
-          "value": "main",
-          "label": "Standard"
+            "type": "header",
+            "content": "Abst\u00e4nde"
         },
         {
-          "value": "large",
-          "label": "Gro\u00df"
+            "type": "select",
+            "id": "spacing_top",
+            "label": "Oben",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "main",
+                    "label": "Standard"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "main"
         },
         {
-          "value": "page_top",
-          "label": "Seitenanfang"
+            "type": "select",
+            "id": "spacing_bottom",
+            "label": "Unten",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "main",
+                    "label": "Standard"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "main"
         }
-      ],
-      "default": "main"
-    },
-    {
-      "type": "select",
-      "id": "spacing_bottom",
-      "label": "Unten",
-      "options": [
+    ],
+    "presets": [
         {
-          "value": "none",
-          "label": "Kein Abstand"
-        },
-        {
-          "value": "small",
-          "label": "Klein"
-        },
-        {
-          "value": "main",
-          "label": "Standard"
-        },
-        {
-          "value": "large",
-          "label": "Gro\u00df"
-        },
-        {
-          "value": "page_top",
-          "label": "Seitenanfang"
+            "name": "Hero Main",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "slide"
+                }
+            ]
         }
-      ],
-      "default": "main"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Hero Main",
-      "category": "Liquify",
-      "blocks": [
-        {
-          "type": "slide"
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}
+    ]
+} {% endschema %}
