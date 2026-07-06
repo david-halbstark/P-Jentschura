@@ -1,3 +1,56 @@
-{% assign video_object = video %}{% assign video_poster = poster %}{% assign video_autoplay = autoplay | default: false %}{% assign video_loop = loop | default: true %}{% assign video_muted = muted | default: true %}{% assign video_controls = controls | default: false %}{% assign video_playsinline = playsinline | default: true %}{% assign video_preload = preload | default: 'metadata' %}{% assign video_play_behavior = play_behavior | default: 'none' %}{% assign video_custom_class = custom_class %}{% assign video_classes = 'u-video' %}{% if video_custom_class != blank %}{% assign video_classes = video_classes | append: ' ' | append: video_custom_class %}{% endif %}{% if video_object != blank %}<div class="{{video_classes}}" data-video-behavior="{{video_play_behavior}}">{% if video_poster != blank %}{{video_object | video_tag: image_size: '2000x', autoplay: video_autoplay, loop: video_loop, muted: video_muted, controls: video_controls, playsinline: video_playsinline, preload: video_preload, poster: video_poster}}{% else %}{{video_object | video_tag: image_size: '2000x', autoplay: video_autoplay, loop: video_loop, muted: video_muted, controls: video_controls, playsinline: video_playsinline, preload: video_preload}}{% endif %}</div>{% endif %}{% if false %}    <video data-wf--preview-video--variant="wide-16-9" src="https://timothyricks.us.getafile.online/background-video" autoplay=" " loop="" muted="" playsinline=" " li-if="false" class="u-video w-variant-0b00a75a-35ba-66c2-fce0-21c117d62ce0">
-        </video>
+{% assign video_object = video -%}
+{%- assign video_poster = poster -%}
+{%- assign video_autoplay = autoplay | default: false -%}
+{%- assign video_loop = loop | default: true -%}
+{%- assign video_muted = muted | default: true -%}
+{%- assign video_controls = controls | default: false -%}
+{%- assign video_playsinline = playsinline | default: true -%}
+{%- assign video_preload = preload | default: 'metadata' -%}
+{%- assign video_play_behavior = play_behavior | default: 'none' -%}
+{%- assign video_custom_class = custom_class -%}
+{%- assign video_classes = 'u-video' -%}
+{%- if video_custom_class != blank -%}
+  {%- assign video_classes = video_classes | append: ' ' | append: video_custom_class -%}
+{%- endif -%}
+{%- if video_object != blank %}
+  <div class="{{video_classes}}" data-video-behavior="{{video_play_behavior}}">
+    {% if video_poster != blank -%}
+      {{-
+        video_object
+        | video_tag:
+          image_size: '2000x',
+          autoplay: video_autoplay,
+          loop: video_loop,
+          muted: video_muted,
+          controls: video_controls,
+          playsinline: video_playsinline,
+          preload: video_preload,
+          poster: video_poster
+      -}}
+    {%- else -%}
+      {{-
+        video_object
+        | video_tag:
+          image_size: '2000x',
+          autoplay: video_autoplay,
+          loop: video_loop,
+          muted: video_muted,
+          controls: video_controls,
+          playsinline: video_playsinline,
+          preload: video_preload
+      -}}
+    {%- endif %}
+  </div>
+{% endif -%}
+{%- if false %}
+  <video
+    data-wf--preview-video--variant="wide-16-9"
+    src="https://timothyricks.us.getafile.online/background-video"
+    autoplay=" "
+    loop=""
+    muted=""
+    playsinline=" "
+    li-if="false"
+    class="u-video w-variant-0b00a75a-35ba-66c2-fce0-21c117d62ce0"
+  ></video>
 {% endif %}
