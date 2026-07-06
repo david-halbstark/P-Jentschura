@@ -1,4 +1,48 @@
-{% assign image_object = image %}{% assign image_width = width | default: 2000 %}{% assign image_loading = loading | default: 'lazy' %}{% assign image_fetchpriority = fetchpriority | default: 'auto' %}{% assign image_alt = alt %}{% assign image_object_fit = object_fit | default: 'cover' %}{% assign image_custom_class = custom_class %}{% assign image_wrap_classes = 'u-image-wrap' %}{% assign image_classes = 'u-image' %}{% if image_object_fit == 'contain' %}{% assign image_wrap_classes = image_wrap_classes | append: ' u-background-transparent u-object-fit-contain' %}{% elsif image_object_fit == 'cover' %}{% assign image_wrap_classes = image_wrap_classes | append: ' u-object-fit-cover' %}{% endif %}{% if image_custom_class != blank %}{% assign image_wrap_classes = image_wrap_classes | append: ' ' | append: image_custom_class %}{% endif %}{% if image_object != blank %}<div class="{{image_wrap_classes}}">{% if image_fetchpriority != blank and image_fetchpriority != 'auto' %}{{image_object | image_url: width: image_width | image_tag: class: image_classes, loading: image_loading, fetchpriority: image_fetchpriority, alt: image_alt}}{% else %}{{image_object | image_url: width: image_width | image_tag: class: image_classes, loading: image_loading, alt: image_alt}}{% endif %}</div>{% endif %}
-                {% if false %}    <div data-wf--preview-image--variant="cover" li-if="false" class="u-image-wrapper w-variant-4972adff-107c-1f37-d19c-526a2bf55c28">
-    <img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="u-image">    </div>
+{% assign image_object = image -%}
+{%- assign image_width = width | default: 2000 -%}
+{%- assign image_loading = loading | default: 'lazy' -%}
+{%- assign image_fetchpriority = fetchpriority | default: 'auto' -%}
+{%- assign image_alt = alt -%}
+{%- assign image_object_fit = object_fit | default: 'cover' -%}
+{%- assign image_custom_class = custom_class -%}
+{%- assign image_wrap_classes = 'u-image-wrap' -%}
+{%- assign image_classes = 'u-image' -%}
+{%- if image_object_fit == 'contain' -%}
+  {%- assign image_wrap_classes = image_wrap_classes | append: ' u-background-transparent u-object-fit-contain' -%}
+{%- elsif image_object_fit == 'cover' -%}
+  {%- assign image_wrap_classes = image_wrap_classes | append: ' u-object-fit-cover' -%}
+{%- endif -%}
+{%- if image_custom_class != blank -%}
+  {%- assign image_wrap_classes = image_wrap_classes | append: ' ' | append: image_custom_class -%}
+{%- endif -%}
+{%- if image_object != blank %}
+  <div class="{{image_wrap_classes}}">
+    {% if image_fetchpriority != blank and image_fetchpriority != 'auto' -%}
+      {{-
+        image_object
+        | image_url: width: image_width
+        | image_tag: class: image_classes, loading: image_loading, fetchpriority: image_fetchpriority, alt: image_alt
+      -}}
+    {%- else -%}
+      {{-
+        image_object
+        | image_url: width: image_width
+        | image_tag: class: image_classes, loading: image_loading, alt: image_alt
+      -}}
+    {%- endif %}
+  </div>
+{% endif %}
+{% if false %}
+  <div
+    data-wf--preview-image--variant="cover"
+    li-if="false"
+    class="u-image-wrapper w-variant-4972adff-107c-1f37-d19c-526a2bf55c28"
+  >
+    <img
+      src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
+      loading="lazy"
+      alt=""
+      class="u-image"
+    >
+  </div>
 {% endif %}
