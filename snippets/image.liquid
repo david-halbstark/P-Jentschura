@@ -15,6 +15,7 @@
 {%- if image_custom_class != blank -%}
   {%- assign image_wrap_classes = image_wrap_classes | append: ' ' | append: image_custom_class -%}
 {%- endif -%}
+
 {%- if image_object != blank %}
   <div class="{{image_wrap_classes}}">
     {% if image_fetchpriority != blank and image_fetchpriority != 'auto' -%}
