@@ -105,7 +105,7 @@
         "button_1_pill_text_size": "u-text-link-small",
         "button_1_pill_tag_inner": "",
         "button_1_underline": false,
-        "button_1_icon": "none",
+        "button_1_icon": "chevron_left",
         "button_1_icon_position": "after",
         "button_1_icon_animation": "none",
         "button_1_icon_color": "inherit",
@@ -123,7 +123,7 @@
         "button_2_pill_text_size": "u-text-link-small",
         "button_2_pill_tag_inner": "Inner Tag",
         "button_2_underline": false,
-        "button_2_icon": "none",
+        "button_2_icon": "chevron_left",
         "button_2_icon_position": "after",
         "button_2_icon_animation": "none"
       }
