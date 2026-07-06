@@ -62,7 +62,7 @@
             "image": "shopify://shop_images/Rectangle_22008.png",
             "image_object_fit": "contain",
             "image_width": 100,
-            "image_loading": "lazy",
+            "image_loading": "eager",
             "image_fetchpriority": "auto"
           }
         }
