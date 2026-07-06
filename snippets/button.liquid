@@ -120,6 +120,7 @@
   <div
     data-trigger="{{ button_trigger }}"
     class="{{ button_wrap_classes }}"
+    {{ button_custom_attribute }}
   >
     {% if show_clickable %}
       <div class="clickable_wrap u-cover-absolute">
@@ -146,11 +147,7 @@
       </div>
     {% endif %}
 
-    <div
-      aria-hidden="true"
-      class="button_element"
-      {{ button_custom_attribute }}
-    >
+    <div aria-hidden="true" class="button_element">
       {% if button_icon != blank and button_icon != 'none' and button_icon_position == 'before' %}
         <div class="button_icon">
           {% render 'icon', icon: button_icon %}
