@@ -61,7 +61,7 @@
             "button_2_icon_animation": "none",
             "image": "shopify://shop_images/Rectangle_22008.png",
             "image_object_fit": "contain",
-            "image_width": 1001,
+            "image_width": 4000,
             "image_loading": "eager",
             "image_fetchpriority": "auto"
           }
