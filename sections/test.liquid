@@ -1,0 +1,732 @@
+{% comment %}
+  Section: Active & Vital Tabs
+  Usage:
+  1) Datei nach /sections/active-vital-tabs.liquid kopieren.
+  2) JS-Datei nach /assets/active-vital-tabs.js kopieren.
+  3) Im Theme Editor Section hinzufügen und Blöcke anlegen.
+
+  Accessibility:
+  - echte Tabs mit role="tablist", role="tab", role="tabpanel"
+  - aria-selected, aria-controls, aria-labelledby
+  - Tastatursteuerung über JS: Pfeile, Home, End, Enter/Space
+{% endcomment %}
+
+{{ 'active-vital-tabs.js' | asset_url | script_tag }}
+
+{% liquid
+  assign section_anchor = 'active-vital-tabs-' | append: section.id
+  assign seen_tabs = ''
+%}
+
+<section
+  id="{{ section_anchor }}"
+  class="av-tabs color-{{ section.settings.color_scheme }}"
+  data-av-tabs-section
+>
+  <div class="av-tabs__inner page-width">
+    <div class="av-tabs__header">
+      <div class="av-tabs__headline-wrap">
+        {% if section.settings.kicker != blank %}
+          <p class="av-tabs__kicker">{{ section.settings.kicker | escape }}</p>
+        {% endif %}
+
+        {% if section.settings.heading != blank %}
+          <h2 class="av-tabs__heading">{{ section.settings.heading | escape }}</h2>
+        {% endif %}
+      </div>
+
+      <div class="av-tabs__tabs" role="tablist" aria-label="{{ section.settings.tabs_label | escape }}">
+        {% for block in section.blocks %}
+          {% liquid
+            assign tab_title = block.settings.tab_title | default: 'Tab'
+            assign tab_key = tab_title | handleize
+            assign tab_marker = '|' | append: tab_key | append: '|'
+          %}
+
+          {% unless seen_tabs contains tab_marker %}
+            {% assign seen_tabs = seen_tabs | append: tab_marker %}
+            <button
+              class="av-tabs__tab"
+              id="{{ section_anchor }}-tab-{{ tab_key }}"
+              type="button"
+              role="tab"
+              aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+              aria-controls="{{ section_anchor }}-panel-{{ tab_key }}"
+              tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+              data-av-tab="{{ tab_key }}"
+            >
+              {{ tab_title | escape }}
+            </button>
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+
+    {% if section.blocks.size > 0 %}
+      <div class="av-tabs__panels">
+        {% assign rendered_tabs = '' %}
+
+        {% for tab_block in section.blocks %}
+          {% liquid
+            assign current_tab_title = tab_block.settings.tab_title | default: 'Tab'
+            assign current_tab_key = current_tab_title | handleize
+            assign current_tab_marker = '|' | append: current_tab_key | append: '|'
+          %}
+
+          {% unless rendered_tabs contains current_tab_marker %}
+            {% assign rendered_tabs = rendered_tabs | append: current_tab_marker %}
+
+            <div
+              class="av-tabs__panel"
+              id="{{ section_anchor }}-panel-{{ current_tab_key }}"
+              role="tabpanel"
+              aria-labelledby="{{ section_anchor }}-tab-{{ current_tab_key }}"
+              data-av-panel="{{ current_tab_key }}"
+              {% unless forloop.first %}
+                hidden
+              {% endunless %}
+            >
+              <div class="av-tabs__slider" data-av-slider>
+                <div
+                  class="av-tabs__track"
+                  data-av-track
+                  tabindex="0"
+                  aria-label="{{ current_tab_title | escape }} Produkte"
+                >
+                  {% for block in section.blocks %}
+                    {% liquid
+                      assign block_tab_title = block.settings.tab_title | default: 'Tab'
+                      assign block_tab_key = block_tab_title | handleize
+                    %}
+
+                    {% if block_tab_key == current_tab_key %}
+                      {% case block.type %}
+                        {% when 'intro_card' %}
+                          <article class="av-card av-card--intro" {{ block.shopify_attributes }}>
+                            {% if block.settings.intro_badge != blank %}
+                              <div class="av-card__intro-badge" aria-hidden="true">
+                                {{ block.settings.intro_badge | escape }}
+                              </div>
+                            {% endif %}
+
+                            <div class="av-card__intro-content">
+                              {% if block.settings.intro_heading != blank %}
+                                <h3 class="av-card__intro-heading">{{ block.settings.intro_heading | escape }}</h3>
+                              {% endif %}
+
+                              {% if block.settings.intro_text != blank %}
+                                <div class="av-card__intro-text rte">{{ block.settings.intro_text }}</div>
+                              {% endif %}
+                            </div>
+                          </article>
+
+                        {% when 'product_card' %}
+                          {% liquid
+                            assign product = block.settings.product
+                            assign card_title = block.settings.title
+                            assign card_image = block.settings.image
+                            assign card_url = block.settings.link
+
+                            if product != blank
+                              if card_title == blank
+                                assign card_title = product.title
+                              endif
+                              if card_image == blank and product.featured_image != blank
+                                assign card_image = product.featured_image
+                              endif
+                              if card_url == blank
+                                assign card_url = product.url
+                              endif
+                            endif
+                          %}
+
+                          <article class="av-card av-card--product" {{ block.shopify_attributes }}>
+                            {% if block.settings.badge != blank %}
+                              <p class="av-card__badge">{{ block.settings.badge | escape }}</p>
+                            {% endif %}
+
+                            {% if block.settings.show_favorite %}
+                              <button
+                                class="av-card__favorite"
+                                type="button"
+                                aria-label="{{ card_title | default: 'Produkt' | escape }} merken"
+                              >
+                                <span aria-hidden="true">♥</span>
+                              </button>
+                            {% endif %}
+
+                            {% if card_url != blank -%}
+                              <a
+                                class="av-card__link"
+                                href="{{ card_url }}"
+                                aria-label="{{ card_title | escape }} ansehen"
+                              >
+                            {%- endif %}
+                            <div class="av-card__media av-card__media--product">
+                              {% if card_image != blank %}
+                                {{
+                                  card_image
+                                  | image_url: width: 720
+                                  | image_tag:
+                                    loading: 'lazy',
+                                    sizes: '(min-width: 990px) 22vw, 78vw',
+                                    widths: '240, 360, 540, 720',
+                                    alt: card_title
+                                }}
+                              {% else %}
+                                {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                              {% endif %}
+                            </div>
+
+                            <div class="av-card__body">
+                              {% if block.settings.rating_value != blank %}
+                                <div
+                                  class="av-card__rating"
+                                  aria-label="Bewertung {{ block.settings.rating_value | escape }} von 5"
+                                >
+                                  <span class="av-card__stars" aria-hidden="true">★★★★★</span>
+                                  <span class="av-card__rating-value">{{ block.settings.rating_value | escape }}</span>
+                                </div>
+                              {% endif %}
+
+                              {% if card_title != blank %}
+                                <h3 class="av-card__title">{{ card_title | escape }}</h3>
+                              {% endif %}
+
+                              {% if block.settings.text != blank %}
+                                <div class="av-card__text rte">{{ block.settings.text }}</div>
+                              {% endif %}
+                            </div>
+                            {% if card_url != blank %}</a>{% endif %}
+                          </article>
+
+                        {% when 'image_card' %}
+                          <article class="av-card av-card--image" {{ block.shopify_attributes }}>
+                            {% if block.settings.image_link != blank -%}
+                              <a class="av-card__image-link" href="{{ block.settings.image_link }}">
+                            {%- endif %}
+                            <div class="av-card__media av-card__media--cover">
+                              {% if block.settings.image != blank %}
+                                {{
+                                  block.settings.image
+                                  | image_url: width: 900
+                                  | image_tag:
+                                    loading: 'lazy',
+                                    sizes: '(min-width: 990px) 25vw, 78vw',
+                                    widths: '360, 540, 720, 900',
+                                    alt: block.settings.image_alt
+                                }}
+                              {% else %}
+                                {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                              {% endif %}
+                            </div>
+
+                            {% if block.settings.button_label != blank %}
+                              <span class="av-card__cta">{{ block.settings.button_label | escape }}</span>
+                            {% endif %}
+                            {% if block.settings.image_link != blank %}</a>{% endif %}
+                          </article>
+                      {% endcase %}
+                    {% endif %}
+                  {% endfor %}
+                </div>
+
+                {% if section.settings.show_arrows %}
+                  <div class="av-tabs__controls" aria-label="Slider Navigation">
+                    <button class="av-tabs__arrow" type="button" data-av-prev aria-label="Zurück">
+                      <span aria-hidden="true">←</span>
+                    </button>
+                    <button class="av-tabs__arrow" type="button" data-av-next aria-label="Weiter">
+                      <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endunless %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="av-tabs__empty">Füge Blöcke hinzu, um Tabs und Panels automatisch zu erstellen.</p>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  #{{ section_anchor }} {
+    --av-green: {{ section.settings.green }};
+    --av-dark: {{ section.settings.text_color }};
+    --av-muted: {{ section.settings.muted_color }};
+    --av-accent: {{ section.settings.accent_color }};
+    --av-card-radius: {{ section.settings.card_radius }}px;
+    --av-gap: {{ section.settings.card_gap }}px;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    overflow: hidden;
+  }
+
+  #{{ section_anchor }} .av-tabs__inner {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+    padding-inline: 5vw;
+  }
+
+  #{{ section_anchor }} .av-tabs__header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2.8rem;
+  }
+
+  #{{ section_anchor }} .av-tabs__kicker {
+    margin: 0 0 .65rem;
+    color: var(--av-muted);
+    font-size: .95rem;
+    font-weight: 700;
+    font-style: italic;
+  }
+
+  #{{ section_anchor }} .av-tabs__heading {
+    margin: 0;
+    color: var(--av-dark);
+    font-size: clamp(2rem, 3vw, 3.25rem);
+    line-height: 1.05;
+    font-weight: 800;
+    font-style: italic;
+  }
+
+  #{{ section_anchor }} .av-tabs__tabs {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  #{{ section_anchor }} .av-tabs__tabs::-webkit-scrollbar { display: none; }
+
+  #{{ section_anchor }} .av-tabs__tab {
+    appearance: none;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    padding: .5rem 0;
+    color: var(--av-muted);
+    font: inherit;
+    font-size: .88rem;
+    font-weight: 800;
+    letter-spacing: .04em;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  #{{ section_anchor }} .av-tabs__tab[aria-selected="true"] {
+    color: var(--av-dark);
+    border-color: var(--av-dark);
+  }
+
+  #{{ section_anchor }} .av-tabs__tab:focus-visible,
+  #{{ section_anchor }} .av-tabs__track:focus-visible,
+  #{{ section_anchor }} .av-tabs__arrow:focus-visible,
+  #{{ section_anchor }} .av-card__favorite:focus-visible,
+  #{{ section_anchor }} .av-card__link:focus-visible,
+  #{{ section_anchor }} .av-card__image-link:focus-visible {
+    outline: 3px solid var(--av-accent);
+    outline-offset: 4px;
+  }
+
+  #{{ section_anchor }} .av-tabs__slider { position: relative; }
+
+  #{{ section_anchor }} .av-tabs__track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(260px, {{ section.settings.card_width }}px);
+    gap: var(--av-gap);
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 2px;
+    padding-bottom: 3.8rem;
+    scrollbar-width: none;
+  }
+
+  #{{ section_anchor }} .av-tabs__track::-webkit-scrollbar { display: none; }
+
+  #{{ section_anchor }} .av-card {
+    position: relative;
+    min-height: {{ section.settings.card_height }}px;
+    border-radius: var(--av-card-radius);
+    overflow: hidden;
+    scroll-snap-align: start;
+    background: #fff;
+    box-shadow: 0 24px 60px rgba(34, 45, 33, .08);
+  }
+
+  #{{ section_anchor }} .av-card--intro {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding: 3rem 2.6rem;
+    text-align: center;
+    color: #fff;
+    background: var(--av-green);
+  }
+
+  #{{ section_anchor }} .av-card__intro-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 38%;
+    height: 20.5%;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, .18);
+    font-size: clamp(1.5rem, 2vw, 2.4rem);
+    font-family: cursive;
+    font-weight: 400;
+  }
+
+  #{{ section_anchor }} .av-card__intro-heading {
+    margin: 0 0 1.45rem;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    line-height: 1.05;
+    font-weight: 800;
+    font-style: italic;
+  }
+
+  #{{ section_anchor }} .av-card__intro-text {
+    max-width: 23ch;
+    margin: 0 auto;
+    font-size: .98rem;
+    line-height: 1.55;
+  }
+
+  #{{ section_anchor }} .av-card__badge {
+    position: absolute;
+    z-index: 2;
+    top: 1rem;
+    left: 1rem;
+    margin: 0;
+    padding: .55rem .95rem;
+    color: #fff;
+    background: var(--av-green);
+    font-size: .78rem;
+    font-weight: 800;
+  }
+
+  #{{ section_anchor }} .av-card__favorite {
+    position: absolute;
+    z-index: 2;
+    top: 1.1rem;
+    right: 1rem;
+    border: 0;
+    background: transparent;
+    color: #cf1d24;
+    font-size: 1.35rem;
+    cursor: pointer;
+  }
+
+  #{{ section_anchor }} .av-card__link,
+  #{{ section_anchor }} .av-card__image-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  #{{ section_anchor }} .av-card__media--product {
+    display: grid;
+    place-items: center;
+    min-height: 55%;
+    padding: 4.3rem 2.2rem 1rem;
+  }
+
+  #{{ section_anchor }} .av-card__media img,
+  #{{ section_anchor }} .av-card__media svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  #{{ section_anchor }} .av-card__media--product img {
+    max-height: 235px;
+    object-fit: contain;
+  }
+
+  #{{ section_anchor }} .av-card__body {
+    padding: .8rem 2rem 2.3rem;
+    text-align: center;
+  }
+
+  #{{ section_anchor }} .av-card__rating {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    margin-bottom: .7rem;
+    color: var(--av-muted);
+    font-size: .86rem;
+  }
+
+  #{{ section_anchor }} .av-card__stars {
+    color: #ff9b22;
+    letter-spacing: .06em;
+  }
+
+  #{{ section_anchor }} .av-card__title {
+    margin: 0 0 .7rem;
+    color: var(--av-dark);
+    font-size: 1.4rem;
+    line-height: 1.1;
+    font-weight: 800;
+    font-style: italic;
+  }
+
+  #{{ section_anchor }} .av-card__text {
+    color: var(--av-muted);
+    line-height: 1.5;
+  }
+
+  #{{ section_anchor }} .av-card__media--cover {
+    position: absolute;
+    inset: 0;
+  }
+
+  #{{ section_anchor }} .av-card__media--cover img,
+  #{{ section_anchor }} .av-card__media--cover svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #{{ section_anchor }} .av-card__cta {
+    position: absolute;
+    left: 1.4rem;
+    right: 1.4rem;
+    bottom: 1rem;
+    display: block;
+    padding: 1rem;
+    color: #fff;
+    background: var(--av-accent);
+    text-align: center;
+    font-weight: 800;
+  }
+
+  #{{ section_anchor }} .av-tabs__controls {
+    position: absolute;
+    right: 1rem;
+    bottom: 0;
+    display: flex;
+    gap: .8rem;
+  }
+
+  #{{ section_anchor }} .av-tabs__arrow {
+    width: 3rem;
+    height: 3rem;
+    border: 0;
+    border-radius: 999px;
+    background: #f5f5f2;
+    color: var(--av-dark);
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  #{{ section_anchor }} .av-tabs__arrow[disabled] {
+    opacity: .4;
+    cursor: not-allowed;
+  }
+
+  #{{ section_anchor }} .av-tabs__empty {
+    color: var(--av-muted);
+  }
+
+  @media screen and (max-width: 749px) {
+    #{{ section_anchor }} .av-tabs__header {
+      display: block;
+      margin-bottom: 1.8rem;
+    }
+
+    #{{ section_anchor }} .av-tabs__tabs {
+      margin-top: 1.5rem;
+      gap: 1.2rem;
+    }
+
+    #{{ section_anchor }} .av-tabs__track {
+      grid-auto-columns: minmax(78vw, 1fr);
+      padding-bottom: 4rem;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Active & Vital Tabs",
+  "tag": "section",
+  "class": "section-active-vital-tabs",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Kicker", "default": "Unsere Produkte" },
+    { "type": "text", "id": "heading", "label": "Überschrift", "default": "Aktiv & Vital — Für Körper in Bewegung" },
+    { "type": "text", "id": "tabs_label", "label": "ARIA Label für Tabs", "default": "Produktkategorien" },
+    { "type": "checkbox", "id": "show_arrows", "label": "Slider-Pfeile anzeigen", "default": true },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 980,
+      "max": 1800,
+      "step": 20,
+      "unit": "px",
+      "label": "Maximale Breite",
+      "default": 1440
+    },
+    {
+      "type": "range",
+      "id": "card_width",
+      "min": 240,
+      "max": 420,
+      "step": 10,
+      "unit": "px",
+      "label": "Kartenbreite Desktop",
+      "default": 320
+    },
+    {
+      "type": "range",
+      "id": "card_height",
+      "min": 360,
+      "max": 620,
+      "step": 10,
+      "unit": "px",
+      "label": "Kartenhöhe",
+      "default": 490
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "min": 12,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Kartenabstand",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Kartenradius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand oben",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 140,
+      "step": 4,
+      "unit": "px",
+      "label": "Abstand unten",
+      "default": 72
+    },
+    { "type": "color", "id": "green", "label": "Grün", "default": "#5c8352" },
+    { "type": "color", "id": "text_color", "label": "Textfarbe", "default": "#233021" },
+    { "type": "color", "id": "muted_color", "label": "Sekundärfarbe", "default": "#7b8177" },
+    { "type": "color", "id": "accent_color", "label": "Akzentfarbe / CTA", "default": "#c93a3a" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Farbschema", "default": "background-1" }
+  ],
+  "blocks": [
+    {
+      "type": "intro_card",
+      "name": "Intro-Karte",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_title",
+          "label": "Tab / Panel",
+          "default": "Lebensmittel",
+          "info": "Blöcke mit gleichem Tab-Namen werden automatisch in ein Panel gruppiert."
+        },
+        { "type": "text", "id": "intro_badge", "label": "Dekotext oben", "default": "Energie, die bleibt" },
+        {
+          "type": "text",
+          "id": "intro_heading",
+          "label": "Headline",
+          "default": "Deine Basis jetzt für mehr Bewegung"
+        },
+        {
+          "type": "richtext",
+          "id": "intro_text",
+          "label": "Text",
+          "default": "<p>Unsere Produkte unterstützen dich natürlich und basisch: für mehr Energie im Alltag und ein Leben voller Vitalität.</p>"
+        }
+      ]
+    },
+    {
+      "type": "product_card",
+      "name": "Produktkarte",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_title",
+          "label": "Tab / Panel",
+          "default": "Lebensmittel",
+          "info": "Blöcke mit gleichem Tab-Namen werden automatisch in ein Panel gruppiert."
+        },
+        { "type": "product", "id": "product", "label": "Produkt" },
+        { "type": "image_picker", "id": "image", "label": "Bild überschreiben" },
+        { "type": "text", "id": "title", "label": "Titel überschreiben" },
+        { "type": "url", "id": "link", "label": "Link überschreiben" },
+        { "type": "text", "id": "badge", "label": "Badge", "default": "Für die ganze Familie" },
+        { "type": "checkbox", "id": "show_favorite", "label": "Herz anzeigen", "default": true },
+        { "type": "text", "id": "rating_value", "label": "Bewertung", "default": "4,9" },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Porem ipsum dolor sit amet, consectetur adipiscing.</p>"
+        }
+      ]
+    },
+    {
+      "type": "image_card",
+      "name": "Bild-/CTA-Karte",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tab_title",
+          "label": "Tab / Panel",
+          "default": "Lebensmittel",
+          "info": "Blöcke mit gleichem Tab-Namen werden automatisch in ein Panel gruppiert."
+        },
+        { "type": "image_picker", "id": "image", "label": "Bild" },
+        { "type": "text", "id": "image_alt", "label": "Alt-Text", "default": "Menschen beim Kochen" },
+        { "type": "text", "id": "button_label", "label": "Button-Text", "default": "Händler in der Nähe" },
+        { "type": "url", "id": "image_link", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Active & Vital Tabs",
+      "blocks": [
+        { "type": "intro_card" },
+        { "type": "product_card" },
+        { "type": "image_card" },
+        { "type": "product_card", "settings": { "badge": "Für Aktivmenschen", "title": "WurzelKraft" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
