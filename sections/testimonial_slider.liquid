@@ -16,7 +16,7 @@
           
           
         </div>
-        <div class="newsletter_contain u-container" id="{% if section.settings.section_id != blank %}{{ section_id }}{% endif %}">
+        <div class="newsletter_contain u-container" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}">
           {% render 'spacer', variant: section.settings.spacing_top %}
           <div class="section_layout u-grid-autofit">
             {% render 'eyebrow', custom_class: , eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant %}

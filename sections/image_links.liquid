@@ -7,7 +7,7 @@
           
           
         </div>
-        <div class="image_links_contain u-container" id="{% if section.settings.section_id != blank %}{{ section_id }}{% endif %}">
+        <div class="image_links_contain u-container" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}">
           {% render 'spacer', variant: section.settings.spacing_top %}
           <div class="image_links_layout u-grid-autofit"></div>
           {% render 'spacer', variant: section.settings.spacing_bottom %}

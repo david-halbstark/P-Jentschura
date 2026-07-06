@@ -62,7 +62,7 @@
           
           
         </div>
-        <div class="guide_slider_contain u-container" id="{% if section.settings.section_id != blank %}{{ section_id }}{% endif %}">
+        <div class="guide_slider_contain u-container" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}">
           {% render 'spacer', variant: section.settings.spacing_top %}
           <div class="guide_slider_layout u-grid-autofit">
             {% if false %}    <div data-wf--preview-eyebrow--preview-variant="base" class="u-eyebrow-wrapper" li-if="false">
