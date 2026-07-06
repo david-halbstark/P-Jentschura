@@ -1,900 +1,844 @@
-<div class="u-display-none">
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-        </div>
-        <div class="category_cards_contain u-container" id="{% if section.settings.section_id != blank %}{{ section_id }}{% endif %}">
-          {% render 'spacer', variant: section.settings.spacing_top %}
-          <div class="category_cards_layout">
-            {% render 'heading', custom_class: , heading: section.settings.heading, tag: h2, visually_hidden: true %}
-            {% for block in section.blocks %}
-    {% if block.type == "card" %}
-                    <div li-block="Card" class="category_cards_card_wrap">
-                                    
-              
-                                    <div class="u-display-none">
-                
-                
-                
-                
-                
-                
-                
-              </div>
-                                    
-              
-                                    <div class="category_cards_card_element u-flex-vertical-nowrap">
-                <div class="category_card_top">
-                  {% render 'heading', custom_class: , heading: block.settings.heading, tag: h3, variant: u-text-h3-secondary, max_width: section.settings.heading_max_width %}
-                </div>
-                <div class="category_card_bot"></div>
-              </div>
-                                    
-            
-                            </div>
-            {% endif %}
-{% endfor %}
-            {% render 'button_group', button_1_solid_color: section.settings.button_1_solid_color, button_1_icon_position: section.settings.button_1_icon_position, button_1_url: section.settings.button_1_url, button_2_url: section.settings.button_2_url, button_2_solid_color: section.settings.button_2_solid_color, button_2_icon_position: section.settings.button_2_icon_position, button_2_action: section.settings.button_2_action, button_1_action: section.settings.button_1_action, button_2_icon: section.settings.button_2_icon, button_1_label: section.settings.button_1_label, button_1_icon: section.settings.button_1_icon, button_2_label: section.settings.button_2_label, button_2_icon_color: section.settings.button_2_icon_color, button_2_pill_color: section.settings.button_2_pill_color, button_1_trigger: 'hover focus', button_2_icon_animation: section.settings.button_2_icon_animation, button_2_trigger: 'hover focus', button_1_icon_color: section.settings.button_1_icon_color, button_1_pill_color: section.settings.button_1_pill_color, button_1_icon_animation: section.settings.button_1_icon_animation, button_2_custom_attribute_value: sdadsadasd22, button_2_text_text_size: section.settings.button_2_text_text_size, button_1_custom_attribute_name: sdadasdad1, button_1_custom_attribute_value: dasdsada111, button_1_solid_padding: section.settings.button_1_solid_padding, button_2_custom_attribute_name: sdadasdas2, button_1_text_text_size: section.settings.button_1_text_text_size, button_2_mode: section.settings.button_2_mode, button_2_solid_padding: section.settings.button_2_solid_padding, button_1_solid_text_size: section.settings.button_1_solid_text_size, button_1_mode: section.settings.button_1_mode, button_2_solid_text_size: section.settings.button_2_solid_text_size, button_1_variant: section.settings.button_1_variant, button_2_custom_class: , button_1_custom_class: , button_2_pill_tag_inner: section.settings.button_2_pill_tag_inner, button_2_variant: section.settings.button_2_variant, button_1_pill_tag_inner: section.settings.button_1_pill_tag_inner, button_2_pill_text_size: section.settings.button_2_pill_text_size, button_1_pill_text_size: section.settings.button_1_pill_text_size, button_2_text_color: section.settings.button_2_text_color, button_1_underline: section.settings.button_1_underline, button_1_text_color: section.settings.button_1_text_color, button_2_underline: section.settings.button_2_underline %}
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div
+  class="category_cards_contain u-container"
+  id="{% if section.settings.section_id != blank %}{{ section_id }}{% endif %}"
+>
+  {% render 'spacer', variant: section.settings.spacing_top %}
+  <div class="category_cards_layout">
+    {% render 'heading', custom_class: , heading: section.settings.heading, tag: h2, visually_hidden: true %}
+    {% for block in section.blocks %}
+      {% if block.type == 'card' %}
+        <div li-block="Card" class="category_cards_card_wrap">
+          <div class="u-display-none"></div>
+
+          <div class="category_cards_card_element u-flex-vertical-nowrap">
+            <div class="category_card_top">
+              {% render 'heading', custom_class: , heading: block.settings.heading, tag: h3, variant: u-text-h3-secondary, max_width: section.settings.heading_max_width %}
+            </div>
+            <div class="category_card_bot"></div>
           </div>
-          {% render 'spacer', variant: section.settings.spacing_bottom %}
-        </div> {% schema %} {
-    "tag": "section",
-    "name": "Category Cards",
-    "class": "category_cards_wrap u-section",
-    "blocks": [
+        </div>
+      {% endif %}
+    {% endfor %}
+    {% render 'button_group', button_1_solid_color: section.settings.button_1_solid_color, button_1_icon_position: section.settings.button_1_icon_position, button_1_url: section.settings.button_1_url, button_2_url: section.settings.button_2_url, button_2_solid_color: section.settings.button_2_solid_color, button_2_icon_position: section.settings.button_2_icon_position, button_2_action: section.settings.button_2_action, button_1_action: section.settings.button_1_action, button_2_icon: section.settings.button_2_icon, button_1_label: section.settings.button_1_label, button_1_icon: section.settings.button_1_icon, button_2_label: section.settings.button_2_label, button_2_icon_color: section.settings.button_2_icon_color, button_2_pill_color: section.settings.button_2_pill_color, button_1_trigger: 'hover focus', button_2_icon_animation: section.settings.button_2_icon_animation, button_2_trigger: 'hover focus', button_1_icon_color: section.settings.button_1_icon_color, button_1_pill_color: section.settings.button_1_pill_color, button_1_icon_animation: section.settings.button_1_icon_animation, button_2_custom_attribute_value: sdadsadasd22, button_2_text_text_size: section.settings.button_2_text_text_size, button_1_custom_attribute_name: sdadasdad1, button_1_custom_attribute_value: dasdsada111, button_1_solid_padding: section.settings.button_1_solid_padding, button_2_custom_attribute_name: sdadasdas2, button_1_text_text_size: section.settings.button_1_text_text_size, button_2_mode: section.settings.button_2_mode, button_2_solid_padding: section.settings.button_2_solid_padding, button_1_solid_text_size: section.settings.button_1_solid_text_size, button_1_mode: section.settings.button_1_mode, button_2_solid_text_size: section.settings.button_2_solid_text_size, button_1_variant: section.settings.button_1_variant, button_2_custom_class: , button_1_custom_class: , button_2_pill_tag_inner: section.settings.button_2_pill_tag_inner, button_2_variant: section.settings.button_2_variant, button_1_pill_tag_inner: section.settings.button_1_pill_tag_inner, button_2_pill_text_size: section.settings.button_2_pill_text_size, button_1_pill_text_size: section.settings.button_1_pill_text_size, button_2_text_color: section.settings.button_2_text_color, button_1_underline: section.settings.button_1_underline, button_1_text_color: section.settings.button_1_text_color, button_2_underline: section.settings.button_2_underline %}
+  </div>
+  {% render 'spacer', variant: section.settings.spacing_bottom %}
+</div>
+{% schema %}
+{
+  "tag": "section",
+  "name": "Category Cards",
+  "class": "category_cards_wrap u-section",
+  "blocks": [
+    {
+      "name": "Card",
+      "type": "card",
+      "settings": [
         {
-            "name": "Card",
-            "type": "card",
-            "settings": [
-                {
-                    "type": "header",
-                    "content": "\u00dcberschrift"
-                },
-                {
-                    "type": "inline_richtext",
-                    "id": "heading",
-                    "label": "Text",
-                    "default": "Lorem ipsum dolor sit amet elit"
-                },
-                {
-                    "type": "select",
-                    "id": "heading_variant",
-                    "label": "Stil",
-                    "options": [
-                        {
-                            "value": "u-text-h1-primary",
-                            "label": "H1 Prim\u00e4r"
-                        },
-                        {
-                            "value": "u-text-h1-secondary",
-                            "label": "H1 Sekund\u00e4r"
-                        },
-                        {
-                            "value": "u-text-h2-primary",
-                            "label": "H2 Prim\u00e4r"
-                        },
-                        {
-                            "value": "u-text-h2-secondary",
-                            "label": "H2 Sekund\u00e4r"
-                        },
-                        {
-                            "value": "u-text-h3-primary",
-                            "label": "H3 Prim\u00e4r"
-                        },
-                        {
-                            "value": "u-text-h3-secondary",
-                            "label": "H3 Sekund\u00e4r"
-                        },
-                        {
-                            "value": "u-text-h4-primary",
-                            "label": "H4 Prim\u00e4r"
-                        },
-                        {
-                            "value": "u-text-h5-primary",
-                            "label": "H5 Prim\u00e4r"
-                        },
-                        {
-                            "value": "u-text-h6-primary",
-                            "label": "H6 Prim\u00e4r"
-                        }
-                    ],
-                    "default": "u-text-h2-primary"
-                },
-                {
-                    "type": "select",
-                    "id": "heading_tag",
-                    "label": "HTML-Tag",
-                    "options": [
-                        {
-                            "value": "h1",
-                            "label": "H1"
-                        },
-                        {
-                            "value": "h2",
-                            "label": "H2"
-                        },
-                        {
-                            "value": "h3",
-                            "label": "H3"
-                        },
-                        {
-                            "value": "h4",
-                            "label": "H4"
-                        },
-                        {
-                            "value": "h5",
-                            "label": "H5"
-                        },
-                        {
-                            "value": "h6",
-                            "label": "H6"
-                        },
-                        {
-                            "value": "p",
-                            "label": "P"
-                        }
-                    ],
-                    "default": "h2"
-                },
-                {
-                    "type": "number",
-                    "id": "heading_max_width",
-                    "label": "Maximale Breite",
-                    "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-                    "default": 20
-                },
-                {
-                    "type": "checkbox",
-                    "id": "heading_tidy_text",
-                    "label": "Ausgewogener Zeilenumbruch",
-                    "default": true
-                },
-                {
-                    "type": "checkbox",
-                    "id": "heading_visually_hidden",
-                    "label": "Nur f\u00fcr Screenreader anzeigen",
-                    "default": false
-                }
-            ]
+          "type": "header",
+          "content": "\u00dcberschrift"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Text",
+          "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+          "type": "select",
+          "id": "heading_variant",
+          "label": "Stil",
+          "options": [
+            {
+              "value": "u-text-h1-primary",
+              "label": "H1 Prim\u00e4r"
+            },
+            {
+              "value": "u-text-h1-secondary",
+              "label": "H1 Sekund\u00e4r"
+            },
+            {
+              "value": "u-text-h2-primary",
+              "label": "H2 Prim\u00e4r"
+            },
+            {
+              "value": "u-text-h2-secondary",
+              "label": "H2 Sekund\u00e4r"
+            },
+            {
+              "value": "u-text-h3-primary",
+              "label": "H3 Prim\u00e4r"
+            },
+            {
+              "value": "u-text-h3-secondary",
+              "label": "H3 Sekund\u00e4r"
+            },
+            {
+              "value": "u-text-h4-primary",
+              "label": "H4 Prim\u00e4r"
+            },
+            {
+              "value": "u-text-h5-primary",
+              "label": "H5 Prim\u00e4r"
+            },
+            {
+              "value": "u-text-h6-primary",
+              "label": "H6 Prim\u00e4r"
+            }
+          ],
+          "default": "u-text-h2-primary"
+        },
+        {
+          "type": "select",
+          "id": "heading_tag",
+          "label": "HTML-Tag",
+          "options": [
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            },
+            {
+              "value": "h6",
+              "label": "H6"
+            },
+            {
+              "value": "p",
+              "label": "P"
+            }
+          ],
+          "default": "h2"
+        },
+        {
+          "type": "number",
+          "id": "heading_max_width",
+          "label": "Maximale Breite",
+          "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+          "default": 20
+        },
+        {
+          "type": "checkbox",
+          "id": "heading_tidy_text",
+          "label": "Ausgewogener Zeilenumbruch",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "heading_visually_hidden",
+          "label": "Nur f\u00fcr Screenreader anzeigen",
+          "default": false
         }
-    ],
-    "settings": [
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Sektion"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "ID"
+    },
+    {
+      "type": "header",
+      "content": "Abst\u00e4nde"
+    },
+    {
+      "type": "select",
+      "id": "spacing_top",
+      "label": "Oben",
+      "options": [
         {
-            "type": "header",
-            "content": "Sektion"
+          "value": "none",
+          "label": "Kein Abstand"
         },
         {
-            "type": "text",
-            "id": "section_id",
-            "label": "ID"
+          "value": "small",
+          "label": "Klein"
         },
         {
-            "type": "header",
-            "content": "Abst\u00e4nde"
+          "value": "main",
+          "label": "Standard"
         },
         {
-            "type": "select",
-            "id": "spacing_top",
-            "label": "Oben",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Abstand"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "main",
-                    "label": "Standard"
-                },
-                {
-                    "value": "large",
-                    "label": "Gro\u00df"
-                },
-                {
-                    "value": "page_top",
-                    "label": "Seitenanfang"
-                }
-            ],
-            "default": "main"
+          "value": "large",
+          "label": "Gro\u00df"
         },
         {
-            "type": "select",
-            "id": "spacing_bottom",
-            "label": "Unten",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Abstand"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "main",
-                    "label": "Standard"
-                },
-                {
-                    "value": "large",
-                    "label": "Gro\u00df"
-                },
-                {
-                    "value": "page_top",
-                    "label": "Seitenanfang"
-                }
-            ],
-            "default": "main"
-        },
-        {
-            "type": "header",
-            "content": "\u00dcberschrift"
-        },
-        {
-            "type": "inline_richtext",
-            "id": "heading",
-            "label": "Text",
-            "default": "Lorem ipsum dolor sit amet elit"
-        },
-        {
-            "type": "header",
-            "content": "Button 1"
-        },
-        {
-            "type": "text",
-            "id": "button_1_label",
-            "label": "Text",
-            "default": "Button 1 Text"
-        },
-        {
-            "type": "select",
-            "id": "button_1_mode",
-            "label": "Funktion",
-            "options": [
-                {
-                    "value": "link",
-                    "label": "Link \u00f6ffnen"
-                },
-                {
-                    "value": "action",
-                    "label": "Aktion ausf\u00fchren"
-                }
-            ],
-            "default": "link"
-        },
-        {
-            "type": "url",
-            "id": "button_1_url",
-            "label": "Link",
-            "visible_if": "{{ section.settings.button_1_mode == 'link' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_action",
-            "label": "Aktion",
-            "options": [
-                {
-                    "value": "newsletter_modal",
-                    "label": "Newsletter-Modal \u00f6ffnen"
-                },
-                {
-                    "value": "contact_modal",
-                    "label": "Kontaktformular-Modal \u00f6ffnen"
-                }
-            ],
-            "default": "newsletter_modal",
-            "visible_if": "{{ section.settings.button_1_mode == 'action' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "solid",
-                    "label": "Fl\u00e4che"
-                },
-                {
-                    "value": "transparent",
-                    "label": "Transparent"
-                },
-                {
-                    "value": "text",
-                    "label": "Textlink"
-                },
-                {
-                    "value": "pill",
-                    "label": "Kapsel"
-                }
-            ],
-            "default": "solid"
-        },
-        {
-            "type": "select",
-            "id": "button_1_solid_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "red",
-                    "label": "Rot"
-                },
-                {
-                    "value": "white",
-                    "label": "Wei\u00df"
-                }
-            ],
-            "default": "red",
-            "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_solid_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_solid_padding",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "base",
-                    "label": "Standard"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                }
-            ],
-            "default": "base",
-            "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_text_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_text_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "green",
-                    "label": "Gr\u00fcn"
-                },
-                {
-                    "value": "red",
-                    "label": "Rot"
-                }
-            ],
-            "default": "green",
-            "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_pill_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "white",
-                    "label": "Wei\u00df"
-                },
-                {
-                    "value": "white_transparent",
-                    "label": "Wei\u00df transparent"
-                }
-            ],
-            "default": "white",
-            "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_pill_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-eyebrow-large",
-                    "label": "\u00dcbertitel gro\u00df"
-                },
-                {
-                    "value": "u-text-eyebrow-base",
-                    "label": "\u00dcbertitel Standard"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                },
-                {
-                    "value": "u-text-link-small",
-                    "label": "Link klein"
-                }
-            ],
-            "default": "u-text-eyebrow-base",
-            "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
-        },
-        {
-            "type": "text",
-            "id": "button_1_pill_tag_inner",
-            "label": "Innerer Tag",
-            "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
-        },
-        {
-            "type": "checkbox",
-            "id": "button_1_underline",
-            "label": "Unterstreichung anzeigen",
-            "default": false,
-            "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_icon",
-            "label": "Icon",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Icon"
-                },
-                {
-                    "value": "chevron_left",
-                    "label": "Chevron links"
-                },
-                {
-                    "value": "chevron_right",
-                    "label": "Chevron rechts"
-                },
-                {
-                    "value": "arrow_top_right",
-                    "label": "Pfeil oben rechts"
-                },
-                {
-                    "value": "download",
-                    "label": "Herunterladen"
-                },
-                {
-                    "value": "copy",
-                    "label": "Kopieren"
-                },
-                {
-                    "value": "external_page",
-                    "label": "Externe Seite"
-                }
-            ],
-            "default": "none"
-        },
-        {
-            "type": "select",
-            "id": "button_1_icon_position",
-            "label": "Icon-Position",
-            "options": [
-                {
-                    "value": "before",
-                    "label": "Vor dem Text"
-                },
-                {
-                    "value": "after",
-                    "label": "Nach dem Text"
-                }
-            ],
-            "default": "after",
-            "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_icon_animation",
-            "label": "Icon-Animation",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Keine Animation"
-                },
-                {
-                    "value": "move_left",
-                    "label": "Nach links bewegen"
-                },
-                {
-                    "value": "move_right",
-                    "label": "Nach rechts bewegen"
-                },
-                {
-                    "value": "move_up_right",
-                    "label": "Nach oben rechts bewegen"
-                }
-            ],
-            "default": "none",
-            "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_icon_color",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "inherit",
-                    "label": "Wie Text"
-                },
-                {
-                    "value": "red",
-                    "label": "Rot"
-                }
-            ],
-            "default": "inherit",
-            "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
-        },
-        {
-            "type": "header",
-            "content": "Button 2"
-        },
-        {
-            "type": "text",
-            "id": "button_2_label",
-            "label": "Text",
-            "default": "Button 2 Text"
-        },
-        {
-            "type": "select",
-            "id": "button_2_mode",
-            "label": "Funktion",
-            "options": [
-                {
-                    "value": "link",
-                    "label": "Link \u00f6ffnen"
-                },
-                {
-                    "value": "action",
-                    "label": "Aktion ausf\u00fchren"
-                }
-            ],
-            "default": "link"
-        },
-        {
-            "type": "url",
-            "id": "button_2_url",
-            "label": "Link",
-            "visible_if": "{{ section.settings.button_2_mode == 'link' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "solid",
-                    "label": "Fl\u00e4che"
-                },
-                {
-                    "value": "transparent",
-                    "label": "Transparent"
-                },
-                {
-                    "value": "text",
-                    "label": "Textlink"
-                },
-                {
-                    "value": "pill",
-                    "label": "Kapsel"
-                }
-            ],
-            "default": "solid"
-        },
-        {
-            "type": "select",
-            "id": "button_2_action",
-            "label": "Aktion",
-            "options": [
-                {
-                    "value": "newsletter_modal",
-                    "label": "Newsletter-Modal \u00f6ffnen"
-                },
-                {
-                    "value": "contact_modal",
-                    "label": "Kontaktformular-Modal \u00f6ffnen"
-                }
-            ],
-            "default": "newsletter_modal",
-            "visible_if": "{{ section.settings.button_2_mode == 'action' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_solid_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "red",
-                    "label": "Rot"
-                },
-                {
-                    "value": "white",
-                    "label": "Wei\u00df"
-                }
-            ],
-            "default": "red",
-            "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_solid_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_solid_padding",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "base",
-                    "label": "Standard"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                }
-            ],
-            "default": "base",
-            "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_text_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_text_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "green",
-                    "label": "Gr\u00fcn"
-                },
-                {
-                    "value": "red",
-                    "label": "Rot"
-                }
-            ],
-            "default": "green",
-            "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_pill_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "white",
-                    "label": "Wei\u00df"
-                },
-                {
-                    "value": "white_transparent",
-                    "label": "Wei\u00df transparent"
-                }
-            ],
-            "default": "white",
-            "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_pill_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-eyebrow-large",
-                    "label": "\u00dcbertitel gro\u00df"
-                },
-                {
-                    "value": "u-text-eyebrow-base",
-                    "label": "\u00dcbertitel Standard"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                },
-                {
-                    "value": "u-text-link-small",
-                    "label": "Link klein"
-                }
-            ],
-            "default": "u-text-eyebrow-base",
-            "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
-        },
-        {
-            "type": "text",
-            "id": "button_2_pill_tag_inner",
-            "label": "Innerer Tag",
-            "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
-        },
-        {
-            "type": "checkbox",
-            "id": "button_2_underline",
-            "label": "Unterstreichung anzeigen",
-            "default": false,
-            "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_icon",
-            "label": "Icon",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Icon"
-                },
-                {
-                    "value": "chevron_left",
-                    "label": "Chevron links"
-                },
-                {
-                    "value": "chevron_right",
-                    "label": "Chevron rechts"
-                },
-                {
-                    "value": "arrow_top_right",
-                    "label": "Pfeil oben rechts"
-                },
-                {
-                    "value": "download",
-                    "label": "Herunterladen"
-                },
-                {
-                    "value": "copy",
-                    "label": "Kopieren"
-                },
-                {
-                    "value": "external_page",
-                    "label": "Externe Seite"
-                }
-            ],
-            "default": "none"
-        },
-        {
-            "type": "select",
-            "id": "button_2_icon_position",
-            "label": "Icon-Position",
-            "options": [
-                {
-                    "value": "before",
-                    "label": "Vor dem Text"
-                },
-                {
-                    "value": "after",
-                    "label": "Nach dem Text"
-                }
-            ],
-            "default": "after",
-            "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_icon_animation",
-            "label": "Icon-Animation",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Keine Animation"
-                },
-                {
-                    "value": "move_left",
-                    "label": "Nach links bewegen"
-                },
-                {
-                    "value": "move_right",
-                    "label": "Nach rechts bewegen"
-                },
-                {
-                    "value": "move_up_right",
-                    "label": "Nach oben rechts bewegen"
-                }
-            ],
-            "default": "none",
-            "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
+          "value": "page_top",
+          "label": "Seitenanfang"
         }
-    ],
-    "presets": [
+      ],
+      "default": "main"
+    },
+    {
+      "type": "select",
+      "id": "spacing_bottom",
+      "label": "Unten",
+      "options": [
         {
-            "name": "Category Cards",
-            "category": "Liquify",
-            "blocks": [
-                {
-                    "type": "card"
-                }
-            ]
+          "value": "none",
+          "label": "Kein Abstand"
+        },
+        {
+          "value": "small",
+          "label": "Klein"
+        },
+        {
+          "value": "main",
+          "label": "Standard"
+        },
+        {
+          "value": "large",
+          "label": "Gro\u00df"
+        },
+        {
+          "value": "page_top",
+          "label": "Seitenanfang"
         }
-    ]
-} {% endschema %}
+      ],
+      "default": "main"
+    },
+    {
+      "type": "header",
+      "content": "\u00dcberschrift"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Text",
+      "default": "Lorem ipsum dolor sit amet elit"
+    },
+    {
+      "type": "header",
+      "content": "Button 1"
+    },
+    {
+      "type": "text",
+      "id": "button_1_label",
+      "label": "Text",
+      "default": "Button 1 Text"
+    },
+    {
+      "type": "select",
+      "id": "button_1_mode",
+      "label": "Funktion",
+      "options": [
+        {
+          "value": "link",
+          "label": "Link \u00f6ffnen"
+        },
+        {
+          "value": "action",
+          "label": "Aktion ausf\u00fchren"
+        }
+      ],
+      "default": "link"
+    },
+    {
+      "type": "url",
+      "id": "button_1_url",
+      "label": "Link",
+      "visible_if": "{{ section.settings.button_1_mode == 'link' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_action",
+      "label": "Aktion",
+      "options": [
+        {
+          "value": "newsletter_modal",
+          "label": "Newsletter-Modal \u00f6ffnen"
+        },
+        {
+          "value": "contact_modal",
+          "label": "Kontaktformular-Modal \u00f6ffnen"
+        }
+      ],
+      "default": "newsletter_modal",
+      "visible_if": "{{ section.settings.button_1_mode == 'action' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_variant",
+      "label": "Stil",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Fl\u00e4che"
+        },
+        {
+          "value": "transparent",
+          "label": "Transparent"
+        },
+        {
+          "value": "text",
+          "label": "Textlink"
+        },
+        {
+          "value": "pill",
+          "label": "Kapsel"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "select",
+      "id": "button_1_solid_color",
+      "label": "Farbe",
+      "options": [
+        {
+          "value": "red",
+          "label": "Rot"
+        },
+        {
+          "value": "white",
+          "label": "Wei\u00df"
+        }
+      ],
+      "default": "red",
+      "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_solid_text_size",
+      "label": "Textgr\u00f6\u00dfe",
+      "options": [
+        {
+          "value": "u-text-link-large",
+          "label": "Link gro\u00df"
+        },
+        {
+          "value": "u-text-link-base",
+          "label": "Link Standard"
+        }
+      ],
+      "default": "u-text-link-large",
+      "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_solid_padding",
+      "label": "Stil",
+      "options": [
+        {
+          "value": "base",
+          "label": "Standard"
+        },
+        {
+          "value": "small",
+          "label": "Klein"
+        }
+      ],
+      "default": "base",
+      "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_text_text_size",
+      "label": "Textgr\u00f6\u00dfe",
+      "options": [
+        {
+          "value": "u-text-link-large",
+          "label": "Link gro\u00df"
+        },
+        {
+          "value": "u-text-link-base",
+          "label": "Link Standard"
+        }
+      ],
+      "default": "u-text-link-large",
+      "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_text_color",
+      "label": "Farbe",
+      "options": [
+        {
+          "value": "green",
+          "label": "Gr\u00fcn"
+        },
+        {
+          "value": "red",
+          "label": "Rot"
+        }
+      ],
+      "default": "green",
+      "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_pill_color",
+      "label": "Farbe",
+      "options": [
+        {
+          "value": "white",
+          "label": "Wei\u00df"
+        },
+        {
+          "value": "white_transparent",
+          "label": "Wei\u00df transparent"
+        }
+      ],
+      "default": "white",
+      "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_pill_text_size",
+      "label": "Textgr\u00f6\u00dfe",
+      "options": [
+        {
+          "value": "u-text-eyebrow-large",
+          "label": "\u00dcbertitel gro\u00df"
+        },
+        {
+          "value": "u-text-eyebrow-base",
+          "label": "\u00dcbertitel Standard"
+        },
+        {
+          "value": "u-text-link-base",
+          "label": "Link Standard"
+        },
+        {
+          "value": "u-text-link-small",
+          "label": "Link klein"
+        }
+      ],
+      "default": "u-text-eyebrow-base",
+      "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
+    },
+    {
+      "type": "text",
+      "id": "button_1_pill_tag_inner",
+      "label": "Innerer Tag",
+      "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_1_underline",
+      "label": "Unterstreichung anzeigen",
+      "default": false,
+      "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_icon",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "none",
+          "label": "Kein Icon"
+        },
+        {
+          "value": "chevron_left",
+          "label": "Chevron links"
+        },
+        {
+          "value": "chevron_right",
+          "label": "Chevron rechts"
+        },
+        {
+          "value": "arrow_top_right",
+          "label": "Pfeil oben rechts"
+        },
+        {
+          "value": "download",
+          "label": "Herunterladen"
+        },
+        {
+          "value": "copy",
+          "label": "Kopieren"
+        },
+        {
+          "value": "external_page",
+          "label": "Externe Seite"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "select",
+      "id": "button_1_icon_position",
+      "label": "Icon-Position",
+      "options": [
+        {
+          "value": "before",
+          "label": "Vor dem Text"
+        },
+        {
+          "value": "after",
+          "label": "Nach dem Text"
+        }
+      ],
+      "default": "after",
+      "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_icon_animation",
+      "label": "Icon-Animation",
+      "options": [
+        {
+          "value": "none",
+          "label": "Keine Animation"
+        },
+        {
+          "value": "move_left",
+          "label": "Nach links bewegen"
+        },
+        {
+          "value": "move_right",
+          "label": "Nach rechts bewegen"
+        },
+        {
+          "value": "move_up_right",
+          "label": "Nach oben rechts bewegen"
+        }
+      ],
+      "default": "none",
+      "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_icon_color",
+      "label": "Stil",
+      "options": [
+        {
+          "value": "inherit",
+          "label": "Wie Text"
+        },
+        {
+          "value": "red",
+          "label": "Rot"
+        }
+      ],
+      "default": "inherit",
+      "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
+    },
+    {
+      "type": "header",
+      "content": "Button 2"
+    },
+    {
+      "type": "text",
+      "id": "button_2_label",
+      "label": "Text",
+      "default": "Button 2 Text"
+    },
+    {
+      "type": "select",
+      "id": "button_2_mode",
+      "label": "Funktion",
+      "options": [
+        {
+          "value": "link",
+          "label": "Link \u00f6ffnen"
+        },
+        {
+          "value": "action",
+          "label": "Aktion ausf\u00fchren"
+        }
+      ],
+      "default": "link"
+    },
+    {
+      "type": "url",
+      "id": "button_2_url",
+      "label": "Link",
+      "visible_if": "{{ section.settings.button_2_mode == 'link' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_variant",
+      "label": "Stil",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Fl\u00e4che"
+        },
+        {
+          "value": "transparent",
+          "label": "Transparent"
+        },
+        {
+          "value": "text",
+          "label": "Textlink"
+        },
+        {
+          "value": "pill",
+          "label": "Kapsel"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "select",
+      "id": "button_2_action",
+      "label": "Aktion",
+      "options": [
+        {
+          "value": "newsletter_modal",
+          "label": "Newsletter-Modal \u00f6ffnen"
+        },
+        {
+          "value": "contact_modal",
+          "label": "Kontaktformular-Modal \u00f6ffnen"
+        }
+      ],
+      "default": "newsletter_modal",
+      "visible_if": "{{ section.settings.button_2_mode == 'action' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_solid_color",
+      "label": "Farbe",
+      "options": [
+        {
+          "value": "red",
+          "label": "Rot"
+        },
+        {
+          "value": "white",
+          "label": "Wei\u00df"
+        }
+      ],
+      "default": "red",
+      "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_solid_text_size",
+      "label": "Textgr\u00f6\u00dfe",
+      "options": [
+        {
+          "value": "u-text-link-large",
+          "label": "Link gro\u00df"
+        },
+        {
+          "value": "u-text-link-base",
+          "label": "Link Standard"
+        }
+      ],
+      "default": "u-text-link-large",
+      "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_solid_padding",
+      "label": "Stil",
+      "options": [
+        {
+          "value": "base",
+          "label": "Standard"
+        },
+        {
+          "value": "small",
+          "label": "Klein"
+        }
+      ],
+      "default": "base",
+      "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_text_text_size",
+      "label": "Textgr\u00f6\u00dfe",
+      "options": [
+        {
+          "value": "u-text-link-large",
+          "label": "Link gro\u00df"
+        },
+        {
+          "value": "u-text-link-base",
+          "label": "Link Standard"
+        }
+      ],
+      "default": "u-text-link-large",
+      "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_text_color",
+      "label": "Farbe",
+      "options": [
+        {
+          "value": "green",
+          "label": "Gr\u00fcn"
+        },
+        {
+          "value": "red",
+          "label": "Rot"
+        }
+      ],
+      "default": "green",
+      "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_pill_color",
+      "label": "Farbe",
+      "options": [
+        {
+          "value": "white",
+          "label": "Wei\u00df"
+        },
+        {
+          "value": "white_transparent",
+          "label": "Wei\u00df transparent"
+        }
+      ],
+      "default": "white",
+      "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_pill_text_size",
+      "label": "Textgr\u00f6\u00dfe",
+      "options": [
+        {
+          "value": "u-text-eyebrow-large",
+          "label": "\u00dcbertitel gro\u00df"
+        },
+        {
+          "value": "u-text-eyebrow-base",
+          "label": "\u00dcbertitel Standard"
+        },
+        {
+          "value": "u-text-link-base",
+          "label": "Link Standard"
+        },
+        {
+          "value": "u-text-link-small",
+          "label": "Link klein"
+        }
+      ],
+      "default": "u-text-eyebrow-base",
+      "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
+    },
+    {
+      "type": "text",
+      "id": "button_2_pill_tag_inner",
+      "label": "Innerer Tag",
+      "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_2_underline",
+      "label": "Unterstreichung anzeigen",
+      "default": false,
+      "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_icon",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "none",
+          "label": "Kein Icon"
+        },
+        {
+          "value": "chevron_left",
+          "label": "Chevron links"
+        },
+        {
+          "value": "chevron_right",
+          "label": "Chevron rechts"
+        },
+        {
+          "value": "arrow_top_right",
+          "label": "Pfeil oben rechts"
+        },
+        {
+          "value": "download",
+          "label": "Herunterladen"
+        },
+        {
+          "value": "copy",
+          "label": "Kopieren"
+        },
+        {
+          "value": "external_page",
+          "label": "Externe Seite"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "select",
+      "id": "button_2_icon_position",
+      "label": "Icon-Position",
+      "options": [
+        {
+          "value": "before",
+          "label": "Vor dem Text"
+        },
+        {
+          "value": "after",
+          "label": "Nach dem Text"
+        }
+      ],
+      "default": "after",
+      "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_icon_animation",
+      "label": "Icon-Animation",
+      "options": [
+        {
+          "value": "none",
+          "label": "Keine Animation"
+        },
+        {
+          "value": "move_left",
+          "label": "Nach links bewegen"
+        },
+        {
+          "value": "move_right",
+          "label": "Nach rechts bewegen"
+        },
+        {
+          "value": "move_up_right",
+          "label": "Nach oben rechts bewegen"
+        }
+      ],
+      "default": "none",
+      "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Category Cards",
+      "category": "Liquify",
+      "blocks": [
+        {
+          "type": "card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
