@@ -142,6 +142,7 @@
   --nav--hamburger-gap: var(--_spacing---space--2);
   --nav--spacing-inner-horizontal: var(--_spacing---space--5);
   --focus--width: .125rem;
+  --swatch--orange: #f09628;
   --_typography---font--secondary-family: "Ms Madi", Georgia, sans-serif;
   --_typography---font--secondary-regular: 400;
   --_typography---line-height--relaxed: 1.5;
@@ -168,7 +169,6 @@
   --swatch--charcoal-dark: #131911;
   --swatch--gray: #656d63;
   --swatch--snow: #f6f6f6;
-  --swatch--orange: #f09628;
   --swatch--green: #5c7f53;
   --swatch--blue: #4f78a7;
   --swatch--purple: #9a5970;
@@ -6232,11 +6232,11 @@ figure {
 }
 
 .trust_rating_star {
-  color: #ffa941;
-  justify-content: center;
-  align-items: center;
   width: .875rem;
   height: .875rem;
+  color: var(--swatch--orange);
+  justify-content: center;
+  align-items: center;
   display: flex;
 }
 
@@ -6246,10 +6246,6 @@ figure {
   justify-content: center;
   align-items: center;
   display: flex;
-}
-
-.category_cards_wrap {
-  background-color: #5f5f5f;
 }
 
 .category_cards_layout {
@@ -6268,6 +6264,14 @@ figure {
   grid-row-gap: 2.5rem;
   text-align: center;
   background-image: linear-gradient(#fafafa, #fffcfc 60%, #ebebeb);
+}
+
+.product_slider_top {
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  flex-flow: wrap;
+  justify-content: space-between;
+  display: flex;
 }
 
 .u-text-eyebrow-large {

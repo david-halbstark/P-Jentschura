@@ -16,7 +16,7 @@
           
           
         </div>
-        <div class="text_carousel_contain u-container" id="{% if section.settings.section_id != blank %}{{ section_id }}{% endif %}">
+        <div class="text_carousel_contain u-container" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}">
           {% render 'spacer', variant: section.settings.spacing_top %}
           <div class="text_carousel_layout u-grid-autofit">
             {% render 'heading', tag: section.settings.heading_tag, visually_hidden: true, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
