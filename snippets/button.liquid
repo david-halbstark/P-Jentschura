@@ -27,6 +27,8 @@
     | append: button_custom_attribute_value
     | append: '"'
   %}
+{% elsif button_custom_attribute_name != blank %}
+  {% assign button_custom_attribute = button_custom_attribute_name %}
 {% endif %}
 
 {% assign button_wrap_classes = 'button_wrap' %}
