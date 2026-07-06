@@ -85,6 +85,58 @@
     },
     "category_cards_FxBKGM": {
       "type": "category_cards",
+      "blocks": {
+        "card_YfqbMc": {
+          "type": "card",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet elit",
+            "heading_variant": "u-text-h2-primary",
+            "heading_tag": "h2",
+            "heading_max_width": 20,
+            "heading_tidy_text": true,
+            "heading_visually_hidden": false
+          }
+        },
+        "card_g7PVrG": {
+          "type": "card",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet elit",
+            "heading_variant": "u-text-h2-primary",
+            "heading_tag": "h2",
+            "heading_max_width": 20,
+            "heading_tidy_text": true,
+            "heading_visually_hidden": false
+          }
+        },
+        "card_yHETRJ": {
+          "type": "card",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet elit",
+            "heading_variant": "u-text-h2-primary",
+            "heading_tag": "h2",
+            "heading_max_width": 20,
+            "heading_tidy_text": true,
+            "heading_visually_hidden": false
+          }
+        },
+        "card_mbbzwi": {
+          "type": "card",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet elit",
+            "heading_variant": "u-text-h2-primary",
+            "heading_tag": "h2",
+            "heading_max_width": 20,
+            "heading_tidy_text": true,
+            "heading_visually_hidden": false
+          }
+        }
+      },
+      "block_order": [
+        "card_YfqbMc",
+        "card_g7PVrG",
+        "card_yHETRJ",
+        "card_mbbzwi"
+      ],
       "name": "Category Cards",
       "settings": {
         "section_id": "",
