@@ -486,3 +486,35 @@ textarea:focus-visible {
         <style>
 </style>
       </div>
+      <div class="w-embed">
+        <style>
+/* Bestehende Trim-Logik */ /*
+:is(.u-margin-trim, .w-richtext, .u-content-wrapper, [class*='u-container'], [class*='u-layout-column'])
+  > :not(:has(~ :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim))),
+:is(.u-margin-trim, .w-richtext, .u-content-wrapper, [class*='u-container'], [class*='u-layout-column'])
+  > .u-display-contents
+  > :not(:has(~ :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim))) {
+  margin-bottom: 0;
+} */
+/* li-snippet: erstes echtes Element innen ohne padding-top */
+:is(.u-margin-trim, .w-richtext, .u-content-wrapper, [class*='u-container'], [class*='u-layout-column'])
+  > [li-snippet].u-display-contents
+  > :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim):first-child {
+  padding-top: 0;
+}
+/* li-snippet: letztes echtes Element innen ohne padding-bottom */
+:is(.u-margin-trim, .w-richtext, .u-content-wrapper, [class*='u-container'], [class*='u-layout-column'])
+  > [li-snippet].u-display-contents
+  > :not(:has(~ :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim))) {
+  padding-bottom: 0;
+}
+/* li-snippet: wenn das letzte echte Element selbst Richtext enth&auml;lt,
+   dann auch dessen letztes Kind trimmen, z. B. p, h2 etc. */
+:is(.u-margin-trim, .w-richtext, .u-content-wrapper, [class*='u-container'], [class*='u-layout-column'])
+  > [li-snippet].u-display-contents
+  > :not(:has(~ :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim)))
+  > :not(:has(~ :not(.w-condition-invisible, .u-cover-absolute, .u-ignore-trim))) {
+  margin-bottom: 0;
+}
+</style>
+      </div>
