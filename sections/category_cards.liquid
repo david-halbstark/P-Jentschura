@@ -4,7 +4,7 @@
 <div class="u-display-none"></div>
 <div
   class="category_cards_contain u-container"
-  id="{% if section.settings.section_id != blank %}{{ section_id }}{% endif %}"
+  id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}"
 >
   {% render 'spacer', variant: section.settings.spacing_top %}
   <div class="category_cards_layout">
