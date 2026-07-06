@@ -17,6 +17,18 @@
 {% assign button_trigger = trigger %}
 {% assign button_custom_class = custom_class %}
 
+{% assign button_custom_attribute_name = custom_attribute_name %}
+{% assign button_custom_attribute_value = custom_attribute_value %}
+{% assign button_custom_attribute = '' %}
+
+{% if button_custom_attribute_name != blank and button_custom_attribute_value != blank %}
+  {% assign button_custom_attribute = button_custom_attribute_name
+    | append: '="'
+    | append: button_custom_attribute_value
+    | append: '"'
+  %}
+{% endif %}
+
 {% assign button_wrap_classes = 'button_wrap' %}
 {% assign button_text_classes = 'button_text' %}
 {% assign button_tag_classes = 'button_tag' %}
@@ -132,7 +144,11 @@
       </div>
     {% endif %}
 
-    <div aria-hidden="true" class="button_element">
+    <div
+      aria-hidden="true"
+      class="button_element"
+      {{ button_custom_attribute }}
+    >
       {% if button_icon != blank and button_icon != 'none' and button_icon_position == 'before' %}
         <div class="button_icon">
           {% render 'icon', icon: button_icon %}
