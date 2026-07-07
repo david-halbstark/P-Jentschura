@@ -35,7 +35,7 @@
       playsinline
     {% endif %}
     {% if video_poster != blank %}
-      poster="{{ video_poster | image_url: width: 2000 }}"
+      poster="{{ video_poster }}"
     {% endif %}
   >
     {%- for source in video_object.sources -%}
@@ -59,6 +59,7 @@
     playsinline=" "
     li-if="false"
     class="u-video w-variant-0b00a75a-35ba-66c2-fce0-21c117d62ce0"
+    poster="https://cdn.shopify.com/s/files/..."
   >
     <source
       src="https://timothyricks.us.getafile.online/background-video"
