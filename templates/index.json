@@ -103,7 +103,8 @@
             "heading": "Basische Ernährung",
             "heading_variant": "u-text-h2-primary",
             "text_1": "Natürlich & gesund",
-            "text_2": "Von innen heraus"
+            "text_2": "Von innen heraus",
+            "clickable_url": "shopify://blogs/blog"
           }
         },
         "card_g7PVrG": {
@@ -112,7 +113,8 @@
             "heading": "Basische Körperpflege",
             "heading_variant": "u-text-h2-primary",
             "text_1": "Zart. Natürlich",
-            "text_2": "Pflege von innen"
+            "text_2": "Pflege von innen",
+            "clickable_url": ""
           }
         },
         "card_yHETRJ": {
@@ -121,7 +123,8 @@
             "heading": "Basische Accessoires",
             "heading_variant": "u-text-h2-primary",
             "text_1": "Sanft. Nachhaltig.",
-            "text_2": "Nah an der Haut"
+            "text_2": "Nah an der Haut",
+            "clickable_url": ""
           }
         },
         "card_mbbzwi": {
@@ -130,7 +133,8 @@
             "heading": "P. Jentschura Konzept",
             "heading_variant": "u-text-h2-primary",
             "text_1": "Natürlich & gesund",
-            "text_2": "Von innen heraus"
+            "text_2": "Von innen heraus",
+            "clickable_url": ""
           }
         }
       },
