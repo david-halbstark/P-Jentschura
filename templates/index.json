@@ -59,7 +59,7 @@
             "button_2_icon": "chevron_left",
             "button_2_icon_position": "after",
             "button_2_icon_animation": "none",
-            "media_type": "image",
+            "media_type": "video",
             "image": "shopify://shop_images/family-lies-on-the-grass-with-a-soccer-ball-VEsFPNBozM0.png",
             "image_loading": "eager",
             "image_fetchpriority": "auto",
