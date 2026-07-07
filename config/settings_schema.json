@@ -38,6 +38,11 @@
                 "type": "url",
                 "id": "proven_expert_link",
                 "label": "ProvenExpert Link"
+            },
+            {
+                "type": "image_picker",
+                "id": "proven_expert_logo",
+                "label": "ProvenExpert Logo"
             }
         ]
     }
