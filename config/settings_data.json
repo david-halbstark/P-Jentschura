@@ -9,6 +9,8 @@
  */
 {
   "current": {
+    "proven_expert_link": "https://www.provenexpert.com/de-de/jentschura-international-gmbh/",
+    "proven_expert_logo": "shopify://shop_images/proven-expert-logo.avif",
     "color_schemes": {
       "scheme-1": {
         "settings": {
@@ -16,6 +18,7 @@
           "text": "#000000"
         }
       }
-    }
+    },
+    "content_for_index": []
   }
 }
