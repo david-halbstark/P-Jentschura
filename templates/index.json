@@ -61,7 +61,7 @@
             "button_2_icon_animation": "none",
             "image": "shopify://shop_images/Rectangle_22008.png",
             "image_mobile": "shopify://shop_images/family-lies-on-the-grass-with-a-soccer-ball-VEsFPNBozM0.png",
-            "image_object_fit": "contain",
+            "image_object_fit": "cover",
             "image_width": 4000,
             "image_width_mobile": 900,
             "image_loading": "eager",
