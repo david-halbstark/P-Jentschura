@@ -15,6 +15,14 @@
           
           
           
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
         </div>
         <div class="trust_rating_contain u-container" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}">
           {% render 'spacer', variant: section.settings.spacing_top %}
@@ -142,6 +150,74 @@
             "id": "heading",
             "label": "Text",
             "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+            "type": "header",
+            "content": "Bild"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Bild"
+        },
+        {
+            "type": "select",
+            "id": "image_object_fit",
+            "label": "Bild-Anpassung",
+            "options": [
+                {
+                    "value": "cover",
+                    "label": "Cover"
+                },
+                {
+                    "value": "contain",
+                    "label": "Contain"
+                }
+            ],
+            "default": "cover"
+        },
+        {
+            "type": "number",
+            "id": "image_width",
+            "label": "Bildbreite",
+            "info": "Maximale Bildbreite in Pixeln.",
+            "default": 2000
+        },
+        {
+            "type": "select",
+            "id": "image_loading",
+            "label": "Ladeverhalten",
+            "options": [
+                {
+                    "value": "lazy",
+                    "label": "Lazy"
+                },
+                {
+                    "value": "eager",
+                    "label": "Eager"
+                }
+            ],
+            "default": "lazy"
+        },
+        {
+            "type": "select",
+            "id": "image_fetchpriority",
+            "label": "Fetch Priority",
+            "options": [
+                {
+                    "value": "auto",
+                    "label": "Automatisch"
+                },
+                {
+                    "value": "high",
+                    "label": "Hoch"
+                },
+                {
+                    "value": "low",
+                    "label": "Niedrig"
+                }
+            ],
+            "default": "auto"
         },
         {
             "type": "header",
