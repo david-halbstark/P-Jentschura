@@ -16,7 +16,7 @@
 {%- if video_object != blank -%}
   <video
     class="{{ video_classes }}"
-    data-video-behavior="{{ video_play_behavior }}"
+    data-video-behavior="{{ video_play_behavior | replace: '_', '-' }}"
     preload="{{ video_preload }}"
     {%- if video_autoplay %}
       autoplay
