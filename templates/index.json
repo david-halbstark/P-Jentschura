@@ -65,11 +65,12 @@
             "image_loading": "lazy",
             "image_fetchpriority": "high",
             "video": "shopify://files/videos/background-video.mp4",
-            "video_autoplay": false,
+            "video_autoplay": true,
             "video_loop": true,
-            "video_muted": true,
+            "video_controls": true,
             "video_playsinline": true,
-            "video_play_behavior": "none"
+            "video_preload": "auto",
+            "video_play_behavior": "active_slide"
           }
         }
       },
