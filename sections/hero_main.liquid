@@ -873,7 +873,7 @@
           "type": "image_picker",
           "id": "image",
           "label": "Bild",
-          "visible_if": "{{ section.settings.media_type == 'image' }}"
+          "visible_if": "{{ block.settings.media_type == 'image' }}"
         },
         {
           "type": "select",
@@ -890,7 +890,7 @@
             }
           ],
           "default": "lazy",
-          "visible_if": "{{ section.settings.media_type == 'image' }}"
+          "visible_if": "{{ block.settings.media_type == 'image' }}"
         },
         {
           "type": "select",
@@ -911,7 +911,7 @@
             }
           ],
           "default": "auto",
-          "visible_if": "{{ section.settings.media_type == 'image' }}"
+          "visible_if": "{{ block.settings.media_type == 'image' }}"
         },
         {
           "type": "select",
