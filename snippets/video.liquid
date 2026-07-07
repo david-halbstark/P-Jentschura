@@ -14,40 +14,43 @@
   {%- assign video_classes = video_classes | append: ' ' | append: video_custom_class -%}
 {%- endif -%}
 
-{%- if video_object != blank %}
-  <div class="{{ video_classes }}" data-video-behavior="{{ video_play_behavior }}">
-    {% if video_poster != blank -%}
-      {{-
-        video_object
-        | video_tag:
-          image_size: '2000x',
-          autoplay: video_autoplay,
-          loop: video_loop,
-          muted: video_muted,
-          controls: video_controls,
-          playsinline: video_playsinline,
-          preload: video_preload,
-          poster: video_poster
-      -}}
-    {%- else -%}
-      {{-
-        video_object
-        | video_tag:
-          image_size: '2000x',
-          autoplay: video_autoplay,
-          loop: video_loop,
-          muted: video_muted,
-          controls: video_controls,
-          playsinline: video_playsinline,
-          preload: video_preload
-      -}}
-    {%- endif %}
-  </div>
-{% endif -%}
+{%- if video_object != blank -%}
+  {% if video_poster != blank -%}
+    {{-
+      video_object
+      | video_tag:
+        image_size: '2000x',
+        autoplay: video_autoplay,
+        loop: video_loop,
+        muted: video_muted,
+        controls: video_controls,
+        playsinline: video_playsinline,
+        preload: video_preload,
+        poster: video_poster,
+        class: video_classes,
+        data-video-behavior: video_play_behavior
+    -}}
+  {%- else -%}
+    {{-
+      video_object
+      | video_tag:
+        image_size: '2000x',
+        autoplay: video_autoplay,
+        loop: video_loop,
+        muted: video_muted,
+        controls: video_controls,
+        playsinline: video_playsinline,
+        preload: video_preload,
+        class: video_classes,
+        data-video-behavior: video_play_behavior
+    -}}
+  {%- endif %}
+{%- endif -%}
 
 {%- if false %}
   <video
     data-wf--preview-video--variant="wide-16-9"
+    data-video-behavior="none"
     autoplay=" "
     loop=""
     muted=""
