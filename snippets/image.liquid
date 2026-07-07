@@ -1,4 +1,63 @@
-{% assign image_object = image %}{% assign image_object_mobile = image_mobile %}{% assign image_width = width | default: 2000 %}{% assign image_width_mobile = width_mobile | default: 900 %}{% assign image_breakpoint = breakpoint | default: '767px' %}{% assign image_loading = loading | default: 'lazy' %}{% assign image_fetchpriority = fetchpriority %}{% assign image_alt = alt %}{% assign image_sizes = sizes | default: '100vw' %}{% assign image_fit = object_fit | default: 'cover' %}{% assign image_wrapper_custom_class = wrapper_class %}{% assign image_class = 'u-image' %}{% assign image_wrapper_class = 'u-image-wrapper u-cover-absolute' %}{% if image_fit == 'contain' %}{% assign image_wrapper_class = image_wrapper_class | append: ' u-object-fit-contain u-background-transparent' %}{% else %}{% assign image_wrapper_class = image_wrapper_class | append: ' u-object-fit-cover' %}{% endif %}{% if image_wrapper_custom_class != blank %}{% assign image_wrapper_class = image_wrapper_class | append: ' ' | append: image_wrapper_custom_class %}{% endif %}{% if image_object != blank %}<picture class="{{image_wrapper_class}}">{% if image_object_mobile != blank %}<source media="(max-width:{{image_breakpoint}})" srcset="{{image_object_mobile | image_url: width: image_width_mobile}}">{% endif %}{% if image_fetchpriority != blank and image_fetchpriority != 'auto' %}{{image_object | image_url: width: image_width | image_tag: class: image_class, loading: image_loading, fetchpriority: image_fetchpriority, alt: image_alt, sizes: image_sizes}}{% else %}{{image_object | image_url: width: image_width | image_tag: class: image_class, loading: image_loading, alt: image_alt, sizes: image_sizes}}{% endif %}</picture>{% endif %}
-                  {% if false %}    <div data-wf--preview-image--variant="cover" li-if="false" class="u-image-wrapper w-variant-4972adff-107c-1f37-d19c-526a2bf55c28">
-    <img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="u-image">    </div>
+{% assign image_object = image -%}
+{%- assign image_object_mobile = image_mobile -%}
+{%- assign image_width = width | default: 2000 -%}
+{%- assign image_width_mobile = width_mobile | default: 900 -%}
+{%- assign image_breakpoint = breakpoint | default: '767px' -%}
+{%- assign image_loading = loading | default: 'lazy' -%}
+{%- assign image_fetchpriority = fetchpriority -%}
+{%- assign image_alt = alt -%}
+{%- assign image_sizes = sizes | default: '100vw' -%}
+{%- assign image_fit = object_fit | default: 'cover' -%}
+{%- assign image_wrapper_custom_class = wrapper_class -%}
+{%- assign image_class = 'u-image' -%}
+{%- assign image_wrapper_class = 'u-image-wrapper u-cover-absolute' -%}
+{%- if image_fit == 'contain' -%}
+  {%- assign image_wrapper_class = image_wrapper_class | append: ' u-object-fit-contain u-background-transparent' -%}
+{%- else -%}
+  {%- assign image_wrapper_class = image_wrapper_class | append: ' u-object-fit-cover' -%}
+{%- endif -%}
+{%- if image_wrapper_custom_class != blank -%}
+  {%- assign image_wrapper_class = image_wrapper_class | append: ' ' | append: image_wrapper_custom_class -%}
+{%- endif -%}
+{%- if image_object != blank -%}
+  <picture class="{{image_wrapper_class}}">
+    {%- if image_object_mobile != blank %}
+      <source
+        media="(max-width:{{image_breakpoint}})"
+        srcset="{{image_object_mobile | image_url: width: image_width_mobile}}"
+      >
+    {% endif -%}
+    {%- if image_fetchpriority != blank and image_fetchpriority != 'auto' -%}
+      {{-
+        image_object
+        | image_url: width: image_width
+        | image_tag:
+          class: image_class,
+          loading: image_loading,
+          fetchpriority: image_fetchpriority,
+          alt: image_alt,
+          sizes: image_sizes
+      -}}
+    {%- else -%}
+      {{-
+        image_object
+        | image_url: width: image_width
+        | image_tag: class: image_class, loading: image_loading, alt: image_alt, sizes: image_sizes
+      -}}
+    {%- endif -%}
+  </picture>
+{%- endif %}
+{% if false %}
+  <div
+    data-wf--preview-image--variant="cover"
+    li-if="false"
+    class="u-image-wrapper w-variant-4972adff-107c-1f37-d19c-526a2bf55c28"
+  >
+    <img
+      src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
+      loading="lazy"
+      alt=""
+      class="u-image"
+    >
+  </div>
 {% endif %}
