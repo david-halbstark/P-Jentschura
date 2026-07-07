@@ -1,66 +1,36 @@
-{% assign video_object = video -%}
-{%- assign video_autoplay = autoplay | default: false -%}
-{%- assign video_loop = loop | default: true -%}
-{%- assign video_muted = muted | default: true -%}
-{%- assign video_controls = controls | default: false -%}
-{%- assign video_playsinline = playsinline | default: true -%}
-{%- assign video_preload = preload | default: 'metadata' -%}
-{%- assign video_play_behavior = play_behavior | default: 'none' -%}
-{%- assign video_custom_class = custom_class -%}
-{%- assign video_classes = 'u-video' -%}
-{%- if video_custom_class != blank -%}
-  {%- assign video_classes = video_classes | append: ' ' | append: video_custom_class -%}
-{%- endif -%}
-{%- assign video_behavior_attribute = '' -%}
-{%- assign video_behavior_value = video_play_behavior | replace: '_', '-' -%}
-{%- if video_behavior_value != blank -%}
-  {%- assign video_behavior_attribute = 'data-video-behavior="' | append: video_behavior_value | append: '"' -%}
-{%- endif -%}
-{%- assign video_preload_attribute = '' -%}
-{%- if video_preload != blank -%}
-  {%- assign video_preload_attribute = 'preload="' | append: video_preload | append: '"' -%}
-{%- endif -%}
-{%- assign video_poster_attribute = '' -%}
-{%- if video_object.preview_image != blank -%}
-  {%- assign video_poster_url = video_object.preview_image | image_url: width: 2000 -%}
-  {%- assign video_poster_attribute = 'poster="' | append: video_poster_url | append: '"' -%}
-{%- endif -%}
-{%- assign video_autoplay_attribute = '' -%}
-{%- assign video_loop_attribute = '' -%}
-{%- assign video_muted_attribute = '' -%}
-{%- assign video_controls_attribute = '' -%}
-{%- assign video_playsinline_attribute = '' -%}
-{%- if video_autoplay %}{% assign video_autoplay_attribute = 'autoplay' %}{% endif -%}
-{%- if video_loop %}{% assign video_loop_attribute = 'loop' %}{% endif -%}
-{%- if video_muted %}{% assign video_muted_attribute = 'muted' %}{% endif -%}
-{%- if video_controls %}{% assign video_controls_attribute = 'controls' %}{% endif -%}
-{%- if video_playsinline %}{% assign video_playsinline_attribute = 'playsinline' %}{% endif -%}
-{%- if video_object != blank -%}
-  <video
-    class="{{video_classes}}"
-    video_behavior_attribute=""
-    video_preload_attribute=""
-    video_poster_attribute=""
-    video_autoplay_attribute=""
-    video_loop_attribute=""
-    video_muted_attribute=""
-    video_controls_attribute=""
-    video_playsinline_attribute=""
+{% assign video_object = video %}
+
+{% assign video_autoplay = autoplay | default: false %}
+{% assign video_loop = loop | default: true %}
+{% assign video_muted = muted | default: true %}
+{% assign video_controls = controls | default: false %}
+{% assign video_preload = preload | default: 'metadata' %}
+{% assign video_play_behavior = play_behavior | default: 'none' %}
+
+{% assign video_custom_class = custom_class %}
+{% assign video_classes = 'u-video' %}
+
+{% if video_custom_class != blank %}
+  {% assign video_classes = video_classes | append: ' ' | append: video_custom_class %}
+{% endif %}
+
+{% assign video_behavior_value = video_play_behavior | replace: '_', '-' %}
+
+{% if video_object != blank %}
+  <div
+    class="u-video_wrap"
+    data-video-behavior="{{ video_behavior_value }}"
   >
-    {% for source in video_object.sources -%}
-      {%- if source.mime_type == 'video/mp4' %}<source src="{{source.url}}" type="{{source.mime_type}}">{% endif -%}
-    {%- endfor %}
-  </video>
-{%- endif -%}
-{%- if false %}
-  <video
-    data-wf--preview-video--variant="wide-16-9"
-    src="https://timothyricks.us.getafile.online/background-video"
-    autoplay=" "
-    loop=""
-    muted=""
-    playsinline=" "
-    li-if="false"
-    class="u-video w-variant-0b00a75a-35ba-66c2-fce0-21c117d62ce0"
-  ></video>
+    {{
+      video_object
+      | video_tag:
+        class: video_classes,
+        image_size: '2000x',
+        autoplay: video_autoplay,
+        loop: video_loop,
+        muted: video_muted,
+        controls: video_controls,
+        preload: video_preload
+    }}
+  </div>
 {% endif %}
