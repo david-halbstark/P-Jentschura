@@ -1,2 +1,11 @@
-{% render 'image', image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, custom_class: , width: section.settings.image_width, object_fit: section.settings.image_object_fit %}
-{% render 'video', controls: section.settings.video_controls, playsinline: section.settings.video_playsinline, video: section.settings.video, autoplay: section.settings.video_autoplay, loop: section.settings.video_loop, custom_class: , poster: section.settings.video_poster, preload: section.settings.video_preload, muted: section.settings.video_muted, play_behaviour: section.settings.video_play_behaviour %}
+{% assign media_type_value = media_type | default: 'image' %}
+                      {% if media_type_value == 'image' %}    <div li-if="media_type_value == 'image'" class="u-display-contents">
+    
+                        {% render 'image', image_width_mobile: image_width_mobile, image: image, loading: image_loading, fetchpriority: image_fetchpriority, image_mobile: image_mobile, custom_class: image_custom_class, width: image_width, breakpoint: image_breakpoint, object_fit: image_object_fit %}
+                          </div>
+{% endif %}
+                      {% if media_type_value == 'video' %}    <div li-if="media_type_value == 'video'" class="u-display-contents">
+    
+                        {% render 'video', controls: video_controls, playsinline: video_playsinline, video: video, autoplay: video_autoplay, loop: video_loop, custom_class: video_custom_class, poster: video_poster, preload: video_preload, muted: video_muted, play_behaviour: video_play_behaviour %}
+                          </div>
+{% endif %}

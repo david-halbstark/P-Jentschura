@@ -84,6 +84,8 @@
                     
                     
                     
+                    
+                    
                   </div>
                                     
                   
@@ -101,7 +103,8 @@
                                     
                   
                                     <div class="hero_main_slide_background u-cover-absolute">
-                    {% render 'image', custom_class: , image: block.settings.image, object_fit: block.settings.image_object_fit, width: block.settings.image_width, loading: block.settings.image_loading, fetchpriority: block.settings.image_fetchpriority %}
+                    {% render 'image', width_mobile: block.settings.image_width_mobile, image: block.settings.image, loading: block.settings.image_loading, fetchpriority: block.settings.image_fetchpriority, image_mobile: block.settings.image_width_mobile, custom_class: , width: block.settings.image_width, breakpoint: , object_fit: block.settings.image_object_fit %}
+                    {% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.image, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: , video_poster: section.settings.video_poster %}
                     {% render 'video', controls: section.settings.video_controls, playsinline: section.settings.video_playsinline, video: section.settings.video, autoplay: section.settings.video_autoplay, loop: section.settings.video_loop, custom_class: , poster: section.settings.video_poster, preload: section.settings.video_preload, muted: section.settings.video_muted, play_behaviour: section.settings.video_play_behaviour %}
                     <div class="hero_main_slide_overlay u-cover-absolute"></div>
                   </div>
@@ -933,6 +936,11 @@
                     "label": "Hintergrundbild"
                 },
                 {
+                    "type": "image_picker",
+                    "id": "image_mobile",
+                    "label": "Bild mobil"
+                },
+                {
                     "type": "select",
                     "id": "image_object_fit",
                     "label": "Bild-Anpassung",
@@ -954,6 +962,12 @@
                     "label": "Bildbreite",
                     "info": "Maximale Bildbreite in Pixeln.",
                     "default": 2000
+                },
+                {
+                    "type": "number",
+                    "id": "image_width_mobile",
+                    "label": "Bildbreite Mobil",
+                    "default": 900
                 },
                 {
                     "type": "select",
@@ -994,7 +1008,7 @@
                 {
                     "type": "video",
                     "id": "video",
-                    "label": "Bild"
+                    "label": "Video"
                 },
                 {
                     "type": "image_picker",
