@@ -1,242 +1,225 @@
-<div class="u-display-none">
-          
-          
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div
+  class="trust_rating_contain u-container"
+  id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}"
+>
+  {% render 'spacer', variant: section.settings.spacing_top %}
+  <div class="trust_rating_layout u-flex-horizontal-wrap">
+    {% render 'heading', tag: section.settings.heading_tag, visually_hidden: true, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+    <div class="trust_rating_left u-margin-trim">
+      <div class="trust_rating_stars">
+        <div class="trust_rating_star">
+          {% render 'icon', custom_class: , icon: star, aria-hidden: true %}
         </div>
-        <div class="u-display-none">
-          
-          
-          
+        <div class="trust_rating_star">
+          {% render 'icon', custom_class: , icon: star, aria-hidden: true %}
         </div>
-        <div class="u-display-none">
-          
-          
+        <div class="trust_rating_star">
+          {% render 'icon', custom_class: , icon: star, aria-hidden: true %}
         </div>
-        <div class="u-display-none">
-          
-          
-          
-          
-          
-          
-          
-          
+        <div class="trust_rating_star">
+          {% render 'icon', custom_class: , icon: star, aria-hidden: true %}
         </div>
-        <div class="u-display-none">
-          
-          
-          
+        <div class="trust_rating_star">
+          {% render 'icon', custom_class: , icon: star, aria-hidden: true %}
         </div>
-        <div class="trust_rating_contain u-container" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}">
-          {% render 'spacer', variant: section.settings.spacing_top %}
-          <div class="trust_rating_layout u-flex-horizontal-wrap">
-            {% render 'heading', tag: section.settings.heading_tag, visually_hidden: true, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
-            <div class="trust_rating_left u-margin-trim">
-              <div class="trust_rating_stars">
-                <div class="trust_rating_star">
-                  {% render 'icon', custom_class: , icon: star, aria-hidden: true %}
-                </div>
-                <div class="trust_rating_star">
-                  {% render 'icon', custom_class: , icon: star, aria-hidden: true %}
-                </div>
-                <div class="trust_rating_star">
-                  {% render 'icon', custom_class: , icon: star, aria-hidden: true %}
-                </div>
-                <div class="trust_rating_star">
-                  {% render 'icon', custom_class: , icon: star, aria-hidden: true %}
-                </div>
-                <div class="trust_rating_star">
-                  {% render 'icon', custom_class: , icon: star, aria-hidden: true %}
-                </div>
-              </div>
-              {% render 'typography', custom_class: , text: settings.proven_expert_rating, tag: span, variant: u-text-link-base %}
-            </div>
-            <div class="trust_rating_mid">
-              {% render 'typography', custom_class: , text: settings.proven_expert_reviews_count, tag: span, variant: u-text-body-base %}
-            </div>
-            <div class="trust_rating_right">
-              {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
-            </div>
-          </div>
-          {% render 'spacer', variant: section.settings.spacing_bottom %}
-        </div>
-        {% render 'clickable', focus_ring: 'inside', label: section.settings.heading, mode: 'link', url: section.settings.clickable_url, target: '_blank', custom_class: %} {% schema %} {
-    "tag": "section",
-    "name": "Trust Rating",
-    "class": "trust_rating_wrap u-section",
-    "settings": [
+      </div>
+      {% render 'typography', custom_class: , text: settings.proven_expert_rating, tag: span, variant: u-text-link-base %}
+    </div>
+    <div class="trust_rating_mid">
+      {% render 'typography', custom_class: , text: settings.proven_expert_reviews_count, tag: span, variant: u-text-body-base %}
+    </div>
+    <div class="trust_rating_right">
+      {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+    </div>
+  </div>
+  {% render 'spacer', variant: section.settings.spacing_bottom %}
+</div>
+{% render 'clickable', focus_ring: 'inside', label: section.settings.heading, mode: 'link', url: section.settings.clickable_url, target: '_blank', custom_class: %}
+{% schema %}
+{
+  "tag": "section",
+  "name": "Trust Rating",
+  "class": "trust_rating_wrap u-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Sektion"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "ID"
+    },
+    {
+      "type": "header",
+      "content": "Abst\u00e4nde"
+    },
+    {
+      "type": "select",
+      "id": "spacing_top",
+      "label": "Oben",
+      "options": [
         {
-            "type": "header",
-            "content": "Sektion"
+          "value": "none",
+          "label": "Kein Abstand"
         },
         {
-            "type": "text",
-            "id": "section_id",
-            "label": "ID"
+          "value": "small",
+          "label": "Klein"
         },
         {
-            "type": "header",
-            "content": "Abst\u00e4nde"
+          "value": "main",
+          "label": "Standard"
         },
         {
-            "type": "select",
-            "id": "spacing_top",
-            "label": "Oben",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Abstand"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "main",
-                    "label": "Standard"
-                },
-                {
-                    "value": "large",
-                    "label": "Gro\u00df"
-                },
-                {
-                    "value": "page_top",
-                    "label": "Seitenanfang"
-                }
-            ],
-            "default": "main"
+          "value": "large",
+          "label": "Gro\u00df"
         },
         {
-            "type": "select",
-            "id": "spacing_bottom",
-            "label": "Unten",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Abstand"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "main",
-                    "label": "Standard"
-                },
-                {
-                    "value": "large",
-                    "label": "Gro\u00df"
-                },
-                {
-                    "value": "page_top",
-                    "label": "Seitenanfang"
-                }
-            ],
-            "default": "main"
-        },
-        {
-            "type": "header",
-            "content": "\u00dcberschrift"
-        },
-        {
-            "type": "inline_richtext",
-            "id": "heading",
-            "label": "Text",
-            "default": "Lorem ipsum dolor sit amet elit"
-        },
-        {
-            "type": "header",
-            "content": "Bild"
-        },
-        {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Bild"
-        },
-        {
-            "type": "image_picker",
-            "id": "image_mobile",
-            "label": "Bild mobil"
-        },
-        {
-            "type": "select",
-            "id": "image_object_fit",
-            "label": "Bild-Anpassung",
-            "options": [
-                {
-                    "value": "cover",
-                    "label": "Cover"
-                },
-                {
-                    "value": "contain",
-                    "label": "Contain"
-                }
-            ],
-            "default": "cover"
-        },
-        {
-            "type": "number",
-            "id": "image_width",
-            "label": "Bildbreite",
-            "info": "Maximale Bildbreite in Pixeln.",
-            "default": 2000
-        },
-        {
-            "type": "number",
-            "id": "image_width_mobile",
-            "label": "Bildbreite Mobil",
-            "default": 900
-        },
-        {
-            "type": "select",
-            "id": "image_loading",
-            "label": "Ladeverhalten",
-            "options": [
-                {
-                    "value": "lazy",
-                    "label": "Lazy"
-                },
-                {
-                    "value": "eager",
-                    "label": "Eager"
-                }
-            ],
-            "default": "lazy"
-        },
-        {
-            "type": "select",
-            "id": "image_fetchpriority",
-            "label": "Fetch Priority",
-            "options": [
-                {
-                    "value": "auto",
-                    "label": "Automatisch"
-                },
-                {
-                    "value": "high",
-                    "label": "Hoch"
-                },
-                {
-                    "value": "low",
-                    "label": "Niedrig"
-                }
-            ],
-            "default": "auto"
-        },
-        {
-            "type": "header",
-            "content": "Link"
-        },
-        {
-            "type": "url",
-            "id": "clickable_url",
-            "label": "Link"
+          "value": "page_top",
+          "label": "Seitenanfang"
         }
-    ],
-    "presets": [
+      ],
+      "default": "main"
+    },
+    {
+      "type": "select",
+      "id": "spacing_bottom",
+      "label": "Unten",
+      "options": [
         {
-            "name": "Trust Rating",
-            "category": "Liquify",
-            "blocks": []
+          "value": "none",
+          "label": "Kein Abstand"
+        },
+        {
+          "value": "small",
+          "label": "Klein"
+        },
+        {
+          "value": "main",
+          "label": "Standard"
+        },
+        {
+          "value": "large",
+          "label": "Gro\u00df"
+        },
+        {
+          "value": "page_top",
+          "label": "Seitenanfang"
         }
-    ]
-} {% endschema %}
+      ],
+      "default": "main"
+    },
+    {
+      "type": "header",
+      "content": "\u00dcberschrift"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Text",
+      "default": "Lorem ipsum dolor sit amet elit"
+    },
+    {
+      "type": "header",
+      "content": "Bild"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Bild"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Bild mobil"
+    },
+    {
+      "type": "select",
+      "id": "image_object_fit",
+      "label": "Bild-Anpassung",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover"
+        },
+        {
+          "value": "contain",
+          "label": "Contain"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "number",
+      "id": "image_width",
+      "label": "Bildbreite",
+      "info": "Maximale Bildbreite in Pixeln.",
+      "default": 2000
+    },
+    {
+      "type": "number",
+      "id": "image_width_mobile",
+      "label": "Bildbreite Mobil",
+      "default": 900
+    },
+    {
+      "type": "select",
+      "id": "image_loading",
+      "label": "Ladeverhalten",
+      "options": [
+        {
+          "value": "lazy",
+          "label": "Lazy"
+        },
+        {
+          "value": "eager",
+          "label": "Eager"
+        }
+      ],
+      "default": "lazy"
+    },
+    {
+      "type": "select",
+      "id": "image_fetchpriority",
+      "label": "Fetch Priority",
+      "options": [
+        {
+          "value": "auto",
+          "label": "Automatisch"
+        },
+        {
+          "value": "high",
+          "label": "Hoch"
+        },
+        {
+          "value": "low",
+          "label": "Niedrig"
+        }
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "header",
+      "content": "Link"
+    },
+    {
+      "type": "url",
+      "id": "clickable_url",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust Rating",
+      "category": "Liquify",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
