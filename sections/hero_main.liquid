@@ -101,26 +101,26 @@
                       {% render 'eyebrow', variant: block.settings.eyebrow_variant, eyebrow: block.settings.eyebrow %}
                       {% render 'heading', tag: block.settings.heading_tag, visually_hidden: block.settings.heading_visually_hidden, tidy_text: block.settings.heading_tidy_text, heading: block.settings.heading, custom_class: 'heading-meine-test', variant: block.settings.heading_variant, max_width: block.settings.heading_max_width %}
                       {% render 'button_group', button_1_solid_color: block.settings.button_1_solid_color, button_1_icon_position: block.settings.button_1_icon_position, button_1_url: block.settings.button_1_url, button_2_url: block.settings.button_2_url, button_2_solid_color: block.settings.button_2_solid_color, button_2_icon_position: block.settings.button_2_icon_position, button_2_action: block.settings.button_2_action, button_1_action: block.settings.button_1_action, button_2_icon: block.settings.button_2_icon, button_1_label: block.settings.button_1_label, button_1_icon: block.settings.button_1_icon, button_2_label: block.settings.button_2_label, button_2_icon_color: block.settings.button_2_icon_color, button_1_trigger: 'hover focus', button_2_icon_animation: block.settings.button_2_icon_animation, button_2_trigger: 'hover focus', button_1_icon_color: block.settings.button_1_icon_color, button_1_icon_animation: block.settings.button_1_icon_animation, button_1_solid_padding: block.settings.button_1_solid_padding, button_2_mode: block.settings.button_2_mode, button_2_solid_padding: block.settings.button_2_solid_padding, button_1_solid_text_size: block.settings.button_1_solid_text_size, button_1_mode: block.settings.button_1_mode, button_2_solid_text_size: block.settings.button_2_solid_text_size, button_1_variant: block.settings.button_1_variant, button_2_custom_class: , button_1_custom_class: , button_2_variant: block.settings.button_2_variant %}
-                </div>
-                {% render 'spacer', variant: section.settings.spacing_bottom %}
-              </div>
+                    </div>
+                    {% render 'spacer', variant: section.settings.spacing_bottom %}
+                  </div>
                                     
-            
+                
                             </div>
             {% endif %}
 {% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="hero_main_slider_controls u-container">
+            <div class="hero_main_slider_bullet_list">
+              <div class="hero_main_slider_bullet_item"></div>
+              <div class="hero_main_slider_bullet_item is-active"></div>
+            </div>
           </div>
         </div>
-  </div>
-  <div class="hero_main_slider_controls u-container">
-    <div class="hero_main_slider_bullet_list">
-      <div class="hero_main_slider_bullet_item"></div>
-      <div class="hero_main_slider_bullet_item is-active"></div>
-    </div>
-  </div>
-  </div>
-  <div class="u-embed-js w-embed w-script">
-    <script>
+        <div class="u-embed-js w-embed w-script">
+          <script>
 (function() {
   const component = document.currentScript.parentElement.parentElement;
   document.addEventListener("DOMContentLoaded", function () {
@@ -128,7 +128,7 @@
   });
 })();
 </script>
-  </div> {% schema %} {
+        </div> {% schema %} {
     "tag": "section",
     "name": "Hero Main",
     "class": "hero_main_wrap u-section",
