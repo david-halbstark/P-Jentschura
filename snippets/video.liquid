@@ -85,7 +85,7 @@
 {% assign video_close_tag = video_close_tag | append: char_gt %}
 
 {% if video_object != blank %}
-  {{ video_open_tag | replace: '&lt;', '<' | replace: '&gt;', '>' | replace: '&quot;', '"' }}
+  {{ video_open_tag | raw }}
   {% for source in video_object.sources %}
     {% if source.mime_type == 'video/mp4' %}
       {% assign source_open_tag = char_lt %}
@@ -102,8 +102,8 @@
       {% assign source_open_tag = source_open_tag | append: char_quote %}
       {% assign source_open_tag = source_open_tag | append: char_gt %}
 
-      {{ source_open_tag | replace: '&lt;', '<' | replace: '&gt;', '>' | replace: '&quot;', '"' }}
+      {{ source_open_tag | raw }}
     {% endif %}
   {% endfor %}
-  {{ video_close_tag | replace: '&lt;', '<' | replace: '&gt;', '>' }}
+  {{ video_close_tag | raw }}
 {% endif %}
