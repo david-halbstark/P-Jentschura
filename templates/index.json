@@ -91,14 +91,61 @@
         "section_id": "",
         "spacing_top": "main",
         "spacing_bottom": "main",
-        "heading": "Bewertungen",
-        "image": "shopify://shop_images/proven-expert-logo.avif",
-        "image_object_fit": "cover",
-        "image_width": 2000,
-        "image_width_mobile": 900,
-        "image_loading": "lazy",
-        "image_fetchpriority": "auto",
-        "clickable_url": ""
+        "heading": "Bewertungen"
+      }
+    },
+    "category_cards_FxBKGM": {
+      "type": "category_cards",
+      "blocks": {
+        "card_YfqbMc": {
+          "type": "card",
+          "settings": {
+            "heading": "Basische Ernährung",
+            "heading_variant": "u-text-h2-primary",
+            "text_1": "Natürlich & gesund",
+            "text_2": "Von innen heraus"
+          }
+        },
+        "card_g7PVrG": {
+          "type": "card",
+          "settings": {
+            "heading": "Basische Körperpflege",
+            "heading_variant": "u-text-h2-primary",
+            "text_1": "Zart. Natürlich",
+            "text_2": "Pflege von innen"
+          }
+        },
+        "card_yHETRJ": {
+          "type": "card",
+          "settings": {
+            "heading": "Basische Accessoires",
+            "heading_variant": "u-text-h2-primary",
+            "text_1": "Sanft. Nachhaltig.",
+            "text_2": "Nah an der Haut"
+          }
+        },
+        "card_mbbzwi": {
+          "type": "card",
+          "settings": {
+            "heading": "P. Jentschura Konzept",
+            "heading_variant": "u-text-h2-primary",
+            "text_1": "Natürlich & gesund",
+            "text_2": "Von innen heraus"
+          }
+        }
+      },
+      "block_order": [
+        "card_YfqbMc",
+        "card_g7PVrG",
+        "card_yHETRJ",
+        "card_mbbzwi"
+      ],
+      "name": "Category Cards",
+      "settings": {
+        "section_id": "",
+        "spacing_top": "main",
+        "spacing_bottom": "main",
+        "heading": "Lorem ipsum dolor sit amet elit"
       }
     },
     "test_KPX63W": {
@@ -173,102 +220,6 @@
         "muted_color": "#7b8177",
         "accent_color": "#c93a3a",
         "color_scheme": ""
-      }
-    },
-    "category_cards_FxBKGM": {
-      "type": "category_cards",
-      "blocks": {
-        "card_YfqbMc": {
-          "type": "card",
-          "settings": {
-            "heading": "Lorem ipsum dolor sit amet elit",
-            "heading_variant": "u-text-h2-primary",
-            "heading_tag": "h2",
-            "heading_max_width": 20,
-            "heading_tidy_text": true,
-            "heading_visually_hidden": false
-          }
-        },
-        "card_g7PVrG": {
-          "type": "card",
-          "settings": {
-            "heading": "Lorem ipsum dolor sit amet elit",
-            "heading_variant": "u-text-h2-primary",
-            "heading_tag": "h2",
-            "heading_max_width": 20,
-            "heading_tidy_text": true,
-            "heading_visually_hidden": false
-          }
-        },
-        "card_yHETRJ": {
-          "type": "card",
-          "settings": {
-            "heading": "Lorem ipsum dolor sit amet elit",
-            "heading_variant": "u-text-h2-primary",
-            "heading_tag": "h2",
-            "heading_max_width": 20,
-            "heading_tidy_text": true,
-            "heading_visually_hidden": false
-          }
-        },
-        "card_mbbzwi": {
-          "type": "card",
-          "settings": {
-            "heading": "Lorem ipsum dolor sit amet elit",
-            "heading_variant": "u-text-h2-primary",
-            "heading_tag": "h2",
-            "heading_max_width": 20,
-            "heading_tidy_text": true,
-            "heading_visually_hidden": false
-          }
-        }
-      },
-      "block_order": [
-        "card_YfqbMc",
-        "card_g7PVrG",
-        "card_yHETRJ",
-        "card_mbbzwi"
-      ],
-      "name": "Category Cards",
-      "settings": {
-        "section_id": "",
-        "spacing_top": "main",
-        "spacing_bottom": "main",
-        "heading": "Lorem ipsum dolor sit amet elit",
-        "button_1_label": "Button 1 Text",
-        "button_1_mode": "action",
-        "button_1_url": "",
-        "button_1_action": "newsletter_modal",
-        "button_1_variant": "pill",
-        "button_1_solid_color": "red",
-        "button_1_solid_text_size": "u-text-link-large",
-        "button_1_solid_padding": "base",
-        "button_1_text_text_size": "u-text-link-large",
-        "button_1_text_color": "green",
-        "button_1_pill_color": "white",
-        "button_1_pill_text_size": "u-text-link-small",
-        "button_1_pill_tag_inner": "",
-        "button_1_underline": false,
-        "button_2_icon": "chevron_left",
-        "button_1_icon_position": "after",
-        "button_1_icon_animation": "none",
-        "button_1_icon_color": "inherit",
-        "button_2_label": "Button 2 Text",
-        "button_2_mode": "link",
-        "button_2_url": "shopify://blogs/blog",
-        "button_2_variant": "pill",
-        "button_2_action": "newsletter_modal",
-        "button_2_solid_color": "red",
-        "button_2_solid_text_size": "u-text-link-large",
-        "button_2_solid_padding": "base",
-        "button_2_text_text_size": "u-text-link-large",
-        "button_2_text_color": "green",
-        "button_2_pill_color": "white",
-        "button_2_pill_text_size": "u-text-link-small",
-        "button_2_pill_tag_inner": "Inner Tag",
-        "button_2_underline": false,
-        "button_2_icon_position": "after",
-        "button_2_icon_animation": "none"
       }
     },
     "product_slider_NyaW7F": {
@@ -632,8 +583,8 @@
   "order": [
     "hero_main_Wx4xLA",
     "trust_rating_pfUfjq",
-    "test_KPX63W",
     "category_cards_FxBKGM",
+    "test_KPX63W",
     "product_slider_NyaW7F",
     "guide_slider_FBaGd6",
     "text_carousel_K4NQ6g",
