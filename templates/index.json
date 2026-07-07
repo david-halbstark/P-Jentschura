@@ -145,7 +145,8 @@
         "section_id": "",
         "spacing_top": "main",
         "spacing_bottom": "main",
-        "heading": "Lorem ipsum dolor sit amet elit"
+        "heading": "Lorem ipsum dolor sit amet elit",
+        "image": "shopify://shop_images/coldpress-icon.avif"
       }
     },
     "test_KPX63W": {
