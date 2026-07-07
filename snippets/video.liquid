@@ -39,10 +39,12 @@
     {% endif %}
   >
     {%- for source in video_object.sources -%}
-      <source
-        src="{{ source.url }}"
-        type="{{ source.mime_type }}"
-      >
+      {%- if source.mime_type == 'video/mp4' -%}
+        <source
+          src="{{ source.url }}"
+          type="{{ source.mime_type }}"
+        >
+      {%- endif -%}
     {%- endfor -%}
   </video>
 {%- endif -%}
