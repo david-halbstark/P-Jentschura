@@ -15,36 +15,36 @@
 {%- endif -%}
 
 {%- if video_object != blank -%}
-  {% if video_poster != blank -%}
-    {{-
-      video_object
-      | video_tag:
-        image_size: '2000x',
-        autoplay: video_autoplay,
-        loop: video_loop,
-        muted: video_muted,
-        controls: video_controls,
-        playsinline: video_playsinline,
-        preload: video_preload,
-        poster: video_poster,
-        class: video_classes,
-        data-video-behavior: video_play_behavior
-    -}}
-  {%- else -%}
-    {{-
-      video_object
-      | video_tag:
-        image_size: '2000x',
-        autoplay: video_autoplay,
-        loop: video_loop,
-        muted: video_muted,
-        controls: video_controls,
-        playsinline: video_playsinline,
-        preload: video_preload,
-        class: video_classes,
-        data-video-behavior: video_play_behavior
-    -}}
-  {%- endif %}
+  <video
+    class="{{ video_classes }}"
+    data-video-behavior="{{ video_play_behavior }}"
+    preload="{{ video_preload }}"
+    {% if video_autoplay %}
+      autoplay
+    {% endif %}
+    {% if video_loop %}
+      loop
+    {% endif %}
+    {% if video_muted %}
+      muted
+    {% endif %}
+    {% if video_controls %}
+      controls
+    {% endif %}
+    {% if video_playsinline %}
+      playsinline
+    {% endif %}
+    {% if video_poster != blank %}
+      poster="{{ video_poster | image_url: width: 2000 }}"
+    {% endif %}
+  >
+    {%- for source in video_object.sources -%}
+      <source
+        src="{{ source.url }}"
+        type="{{ source.mime_type }}"
+      >
+    {%- endfor -%}
+  </video>
 {%- endif -%}
 
 {%- if false %}
