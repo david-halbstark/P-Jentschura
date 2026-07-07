@@ -19,7 +19,7 @@
   {% endif %}
 
   {% capture desktop_image %}
-    {% if image_fetchpriority != blank %}
+    {% if image_fetchpriority != blank and image_fetchpriority != 'auto' %}
       {{
         image_object
         | image_url: width: image_width
