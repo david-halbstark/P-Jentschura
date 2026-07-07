@@ -13,17 +13,17 @@
 {%- assign image_wrapper_custom_class = wrapper_class -%}
 
 {%- assign image_class = 'u-image' -%}
-{%- if image_fit == 'contain' -%}
-  {%- assign image_class = image_class | append: ' u-object-fit-contain u-background-transparent' -%}
-{%- else -%}
-  {%- assign image_class = image_class | append: ' u-object-fit-cover' -%}
-{%- endif -%}
-
 {%- if image_custom_class != blank -%}
   {%- assign image_class = image_class | append: ' ' | append: image_custom_class -%}
 {%- endif -%}
 
 {%- assign image_wrapper_class = 'u-image-wrapper u-cover-absolute' -%}
+{%- if image_fit == 'contain' -%}
+  {%- assign image_wrapper_class = image_wrapper_class | append: ' u-object-fit-contain u-background-transparent' -%}
+{%- else -%}
+  {%- assign image_wrapper_class = image_wrapper_class | append: ' u-object-fit-cover' -%}
+{%- endif -%}
+
 {%- if image_wrapper_custom_class != blank -%}
   {%- assign image_wrapper_class = image_wrapper_class | append: ' ' | append: image_wrapper_custom_class -%}
 {%- endif -%}
