@@ -65,7 +65,6 @@
             "image_loading": "lazy",
             "image_fetchpriority": "high",
             "video": "shopify://files/videos/background-video.mp4",
-            "video_poster": "shopify://shop_images/Rectangle_22008.png",
             "video_autoplay": true,
             "video_loop": true,
             "video_controls": true,
