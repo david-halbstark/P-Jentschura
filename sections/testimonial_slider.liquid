@@ -1,28 +1,28 @@
 <div class="u-display-none">
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          
-          
-          
-          
-        </div>
-        <div class="newsletter_contain u-container" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}">
-          {% render 'spacer', variant: section.settings.spacing_top %}
-          <div class="section_layout u-grid-autofit">
-            {% render 'eyebrow', custom_class: , eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant %}
-          </div>
-          {% render 'spacer', variant: section.settings.spacing_bottom %}
-        </div> {% schema %} {
+      
+      
+    </div>
+    <div class="u-display-none">
+      
+      
+      
+    </div>
+    <div class="u-display-none">
+      
+      
+      
+      
+      
+      
+      
+    </div>
+    <div class="newsletter_contain u-container" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}">
+      {% render 'spacer', variant: section.settings.spacing_top %}
+      <div class="section_layout u-grid-autofit">
+        {% render 'eyebrow', custom_class: , eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant %}
+      </div>
+      {% render 'spacer', variant: section.settings.spacing_bottom %}
+    </div> {% schema %} {
     "tag": "section",
     "name": "Testimonial Slider",
     "class": "section_wrap u-section",
