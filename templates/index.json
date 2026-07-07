@@ -60,8 +60,10 @@
             "button_2_icon_position": "after",
             "button_2_icon_animation": "none",
             "image": "shopify://shop_images/Rectangle_22008.png",
+            "image_mobile": "shopify://shop_images/family-lies-on-the-grass-with-a-soccer-ball-VEsFPNBozM0.png",
             "image_object_fit": "contain",
             "image_width": 4000,
+            "image_width_mobile": 900,
             "image_loading": "eager",
             "image_fetchpriority": "auto",
             "video_autoplay": false,
@@ -93,6 +95,7 @@
         "image": "shopify://shop_images/proven-expert-logo.avif",
         "image_object_fit": "cover",
         "image_width": 2000,
+        "image_width_mobile": 900,
         "image_loading": "lazy",
         "image_fetchpriority": "auto",
         "clickable_url": "https://www.provenexpert.com/de-de/jentschura-international-gmbh/"
