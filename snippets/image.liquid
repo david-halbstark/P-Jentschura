@@ -10,21 +10,42 @@
 {% assign image_alt = alt %}
 {% assign image_sizes = sizes | default: '100vw' %}
 
+{% assign image_fit = fit | default: 'cover' %}
 {% assign image_custom_class = custom_class %}
-{% assign image_wrapper_class = wrapper_class %}
+{% assign image_wrapper_custom_class = wrapper_class %}
+
+{% assign image_class = 'u-image' %}
+{% if image_custom_class != blank %}
+  {% assign image_class = image_class | append: ' ' | append: image_custom_class %}
+{% endif %}
+
+{% assign image_wrapper_class = 'u-image-wrapper' %}
+
+{% if image_fit == 'contain' %}
+  {% assign image_wrapper_class = image_wrapper_class | append: ' u-object-fit-contain u-background-transparent' %}
+{% else %}
+  {% assign image_wrapper_class = image_wrapper_class | append: ' u-object-fit-cover' %}
+{% endif %}
+
+{% if image_wrapper_custom_class != blank %}
+  {% assign image_wrapper_class = image_wrapper_class | append: ' ' | append: image_wrapper_custom_class %}
+{% endif %}
 
 {% if image_object != blank %}
-  {% if image_wrapper_class != blank %}
-    <div class="{{ image_wrapper_class }}">
-  {% endif %}
+  <picture class="{{ image_wrapper_class }}">
+    {% if image_object_mobile != blank %}
+      <source
+        media="(max-width: {{ image_breakpoint }})"
+        srcset="{{ image_object_mobile | image_url: width: image_width_mobile }}"
+      >
+    {% endif %}
 
-  {% capture desktop_image %}
     {% if image_fetchpriority != blank and image_fetchpriority != 'auto' %}
       {{
         image_object
         | image_url: width: image_width
         | image_tag:
-          class: image_custom_class,
+          class: image_class,
           loading: image_loading,
           fetchpriority: image_fetchpriority,
           alt: image_alt,
@@ -34,29 +55,8 @@
       {{
         image_object
         | image_url: width: image_width
-        | image_tag:
-          class: image_custom_class,
-          loading: image_loading,
-          alt: image_alt,
-          sizes: image_sizes
+        | image_tag: class: image_class, loading: image_loading, alt: image_alt, sizes: image_sizes
       }}
     {% endif %}
-  {% endcapture %}
-
-  {% if image_object_mobile != blank %}
-    <picture>
-      <source
-        media="(max-width: {{ image_breakpoint }})"
-        srcset="{{ image_object_mobile | image_url: width: image_width_mobile }}"
-      >
-
-      {{ desktop_image }}
-    </picture>
-  {% else %}
-    {{ desktop_image }}
-  {% endif %}
-
-  {% if image_wrapper_class != blank %}
-    </div>
-  {% endif %}
+  </picture>
 {% endif %}
