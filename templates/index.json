@@ -63,7 +63,12 @@
             "image_object_fit": "contain",
             "image_width": 4000,
             "image_loading": "eager",
-            "image_fetchpriority": "auto"
+            "image_fetchpriority": "auto",
+            "video_autoplay": false,
+            "video_loop": true,
+            "video_muted": true,
+            "video_playsinline": true,
+            "video_play_behavior": "none"
           }
         }
       },
@@ -85,6 +90,11 @@
         "spacing_top": "main",
         "spacing_bottom": "main",
         "heading": "Bewertungen",
+        "image": "shopify://shop_images/proven-expert-logo.avif",
+        "image_object_fit": "cover",
+        "image_width": 2000,
+        "image_loading": "lazy",
+        "image_fetchpriority": "auto",
         "clickable_url": "https://www.provenexpert.com/de-de/jentschura-international-gmbh/"
       }
     },
