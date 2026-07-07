@@ -1,3 +1,53 @@
-{% assign video_object = video %}{% assign video_autoplay = autoplay | default: false %}{% assign video_loop = loop | default: true %}{% assign video_muted = muted | default: true %}{% assign video_controls = controls | default: false %}{% assign video_playsinline = playsinline | default: true %}{% assign video_preload = preload | default: 'metadata' %}{% assign video_play_behavior = play_behavior | default: 'none' %}{% assign video_custom_class = custom_class %}{% assign video_classes = 'u-video' %}{% if video_custom_class != blank %}{% assign video_classes = video_classes | append: ' ' | append: video_custom_class %}{% endif %}{% assign video_behavior_value = video_play_behavior | replace: '_', '-' %}{% assign video_poster_url = '' %}{% if video_object.preview_image != blank %}{% assign video_poster_url = video_object.preview_image | image_url: width: 2000 %}{% endif %}{% assign video_open_tag = '<video class="' %}{% assign video_open_tag = video_open_tag | append: video_classes %}{% assign video_open_tag = video_open_tag | append: '" if="" video_behavior_value="" assign="" video_open_tag="video_open_tag" append:="" data-video-behavior="' %}{% assign video_open_tag = video_open_tag | append: video_behavior_value %}{% assign video_open_tag = video_open_tag | append: '" endif="" video_preload="" preload="' %}{% assign video_open_tag = video_open_tag | append: video_preload %}{% assign video_open_tag = video_open_tag | append: '" video_poster_url="" poster="' %}{% assign video_open_tag = video_open_tag | append: video_poster_url %}{% assign video_open_tag = video_open_tag | append: '" video_autoplay="" video_loop="" video_muted="" video_controls="" video_playsinline="">' %}{% if video_object != blank %}{{video_open_tag}}{% for source in video_object.sources %}{% if source.mime_type == 'video/mp4' %}<source src="{{source.url}}" type="{{source.mime_type}}">{% endif %}{% endfor %}</video>{% endif %}{% if false %}    <video data-wf--preview-video--variant="wide-16-9" src="https://timothyricks.us.getafile.online/background-video" autoplay=" " loop="" muted="" playsinline=" " li-if="false" class="u-video w-variant-0b00a75a-35ba-66c2-fce0-21c117d62ce0">
-        </video>
+{% assign video_object = video %}
+{% assign video_custom_class = custom_class %}
+{% assign video_classes = 'u-video' %}
+{% assign video_play_behavior = play_behavior | default: 'none' %}
+{% assign video_behavior_value = video_play_behavior | replace: '_', '-' %}
+{% assign video_preload = preload | default: 'metadata' %}
+
+{% if video_custom_class != blank %}
+  {% assign video_classes = video_classes | append: ' ' | append: video_custom_class %}
+{% endif %}
+
+{% assign video_poster_url = '' %}
+
+{% if video_object.preview_image != blank %}
+  {% assign video_poster_url = video_object.preview_image | image_url: width: 2000 %}
+{% endif %}
+
+{% if video_object != blank %}
+  {% if video_poster_url != blank %}
+    <video
+      class="{{ video_classes }}"
+      data-video-behavior="{{ video_behavior_value }}"
+      preload="{{ video_preload }}"
+      poster="{{ video_poster_url }}"
+      autoplay
+      loop
+      muted
+      playsinline
+    >
+      {% for source in video_object.sources %}
+        {% if source.mime_type == 'video/mp4' %}
+          <source src="{{ source.url }}" type="{{ source.mime_type }}">
+        {% endif %}
+      {% endfor %}
+    </video>
+  {% else %}
+    <video
+      class="{{ video_classes }}"
+      data-video-behavior="{{ video_behavior_value }}"
+      preload="{{ video_preload }}"
+      autoplay
+      loop
+      muted
+      playsinline
+    >
+      {% for source in video_object.sources %}
+        {% if source.mime_type == 'video/mp4' %}
+          <source src="{{ source.url }}" type="{{ source.mime_type }}">
+        {% endif %}
+      {% endfor %}
+    </video>
+  {% endif %}
 {% endif %}
