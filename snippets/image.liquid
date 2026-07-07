@@ -1,3 +1,4 @@
+```liquid
 {% assign image_object = image -%}
 {%- assign image_object_mobile = image_mobile -%}
 {%- assign image_width = width | default: 2000 -%}
@@ -10,27 +11,32 @@
 {%- assign image_fit = object_fit | default: 'cover' -%}
 {%- assign image_custom_class = custom_class -%}
 {%- assign image_wrapper_custom_class = wrapper_class -%}
+
 {%- assign image_class = 'u-image' -%}
+{%- if image_fit == 'contain' -%}
+  {%- assign image_class = image_class | append: ' u-object-fit-contain u-background-transparent' -%}
+{%- else -%}
+  {%- assign image_class = image_class | append: ' u-object-fit-cover' -%}
+{%- endif -%}
+
 {%- if image_custom_class != blank -%}
   {%- assign image_class = image_class | append: ' ' | append: image_custom_class -%}
 {%- endif -%}
+
 {%- assign image_wrapper_class = 'u-image-wrapper u-cover-absolute' -%}
-{%- if image_fit == 'contain' -%}
-  {%- assign image_wrapper_class = image_wrapper_class | append: ' u-object-fit-contain u-background-transparent' -%}
-{%- else -%}
-  {%- assign image_wrapper_class = image_wrapper_class | append: ' u-object-fit-cover' -%}
-{%- endif -%}
 {%- if image_wrapper_custom_class != blank -%}
   {%- assign image_wrapper_class = image_wrapper_class | append: ' ' | append: image_wrapper_custom_class -%}
 {%- endif -%}
+
 {%- if image_object != blank -%}
-  <picture class="{{image_wrapper_class}}">
+  <picture class="{{ image_wrapper_class }}">
     {%- if image_object_mobile != blank %}
       <source
-        media="(max-width:{{image_breakpoint}})"
-        srcset="{{image_object_mobile | image_url: width: image_width_mobile}}"
+        media="(max-width:{{ image_breakpoint }})"
+        srcset="{{ image_object_mobile | image_url: width: image_width_mobile }}"
       >
     {% endif -%}
+
     {%- if image_fetchpriority != blank and image_fetchpriority != 'auto' -%}
       {{-
         image_object
@@ -51,6 +57,7 @@
     {%- endif -%}
   </picture>
 {%- endif %}
+
 {% if false %}
   <div
     data-wf--preview-image--variant="cover"
@@ -65,3 +72,4 @@
     >
   </div>
 {% endif %}
+```
