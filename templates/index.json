@@ -59,12 +59,15 @@
             "button_2_icon": "chevron_left",
             "button_2_icon_position": "after",
             "button_2_icon_animation": "none",
+            "media_type": "video",
+            "image_loading": "lazy",
+            "image_fetchpriority": "auto",
+            "image_object_fit": "cover",
             "video": "shopify://files/videos/background-video.mp4",
             "video_autoplay": true,
             "video_loop": true,
+            "video_muted": true,
             "video_controls": false,
-            "video_playsinline": true,
-            "video_preload": "auto",
             "video_play_behavior": "active_slide"
           }
         }
