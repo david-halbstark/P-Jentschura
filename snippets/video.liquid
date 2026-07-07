@@ -36,6 +36,8 @@
     {% endif %}
     {% if video_poster != blank %}
       poster="{{ video_poster }}"
+    {% elsif video_object.preview_image != blank %}
+      poster="{{ video_object.preview_image | image_url: width: 2000 }}"
     {% endif %}
   >
     {%- for source in video_object.sources -%}
