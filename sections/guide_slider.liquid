@@ -542,12 +542,24 @@
         },
         {
             "type": "select",
-            "id": "button_1_icon",
+            "id": "button_2_icon",
             "label": "Icon",
             "options": [
                 {
                     "value": "none",
                     "label": "Kein Icon"
+                },
+                {
+                    "value": "arrow_left",
+                    "label": "Pfeil links"
+                },
+                {
+                    "value": "arrow_right",
+                    "label": "Pfeil rechts"
+                },
+                {
+                    "value": "arrow_up_right",
+                    "label": "Pfeil hoch rechts"
                 },
                 {
                     "value": "chevron_left",
@@ -558,10 +570,6 @@
                     "label": "Chevron rechts"
                 },
                 {
-                    "value": "arrow_top_right",
-                    "label": "Pfeil oben rechts"
-                },
-                {
                     "value": "download",
                     "label": "Herunterladen"
                 },
@@ -570,7 +578,7 @@
                     "label": "Kopieren"
                 },
                 {
-                    "value": "external_page",
+                    "value": "external",
                     "label": "Externe Seite"
                 }
             ],
@@ -847,42 +855,6 @@
             "label": "Unterstreichung anzeigen",
             "default": false,
             "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_icon",
-            "label": "Icon",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Icon"
-                },
-                {
-                    "value": "chevron_left",
-                    "label": "Chevron links"
-                },
-                {
-                    "value": "chevron_right",
-                    "label": "Chevron rechts"
-                },
-                {
-                    "value": "arrow_top_right",
-                    "label": "Pfeil oben rechts"
-                },
-                {
-                    "value": "download",
-                    "label": "Herunterladen"
-                },
-                {
-                    "value": "copy",
-                    "label": "Kopieren"
-                },
-                {
-                    "value": "external_page",
-                    "label": "Externe Seite"
-                }
-            ],
-            "default": "none"
         },
         {
             "type": "select",
