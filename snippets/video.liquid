@@ -1,10 +1,14 @@
-{% assign char_lt = '&lt;' %}
-{% assign char_gt = '&gt;' %}
-{% assign char_quote = '&quot;' %}
+{% assign char_lt = '%3C' | url_decode %}
+{% assign char_gt = '%3E' | url_decode %}
+{% assign char_quote = '%22' | url_decode %}
 {% assign char_space = ' ' %}
-{% assign tag_name = 'video' %}
+{% assign char_slash = '%2F' | url_decode %}
+
+{% assign tag_video = 'video' %}
+{% assign tag_source = 'source' %}
 
 {% assign video_object = video %}
+
 {% assign video_autoplay = autoplay | default: false %}
 {% assign video_loop = loop | default: true %}
 {% assign video_muted = muted | default: true %}
@@ -41,6 +45,7 @@
 
 {% if video_object.preview_image != blank %}
   {% assign video_poster_url = video_object.preview_image | image_url: width: 2000 %}
+
   {% assign video_attributes = video_attributes | append: char_space %}
   {% assign video_attributes = video_attributes | append: 'poster=' %}
   {% assign video_attributes = video_attributes | append: char_quote %}
@@ -74,36 +79,41 @@
 {% endif %}
 
 {% assign video_open_tag = char_lt %}
-{% assign video_open_tag = video_open_tag | append: tag_name %}
+{% assign video_open_tag = video_open_tag | append: tag_video %}
 {% assign video_open_tag = video_open_tag | append: char_space %}
 {% assign video_open_tag = video_open_tag | append: video_attributes %}
 {% assign video_open_tag = video_open_tag | append: char_gt %}
 
 {% assign video_close_tag = char_lt %}
-{% assign video_close_tag = video_close_tag | append: '/' %}
-{% assign video_close_tag = video_close_tag | append: tag_name %}
+{% assign video_close_tag = video_close_tag | append: char_slash %}
+{% assign video_close_tag = video_close_tag | append: tag_video %}
 {% assign video_close_tag = video_close_tag | append: char_gt %}
 
 {% if video_object != blank %}
-  {{ video_open_tag | raw }}
+  {{ video_open_tag }}
+
   {% for source in video_object.sources %}
     {% if source.mime_type == 'video/mp4' %}
-      {% assign source_open_tag = char_lt %}
-      {% assign source_open_tag = source_open_tag | append: 'source' %}
-      {% assign source_open_tag = source_open_tag | append: char_space %}
-      {% assign source_open_tag = source_open_tag | append: 'src=' %}
-      {% assign source_open_tag = source_open_tag | append: char_quote %}
-      {% assign source_open_tag = source_open_tag | append: source.url %}
-      {% assign source_open_tag = source_open_tag | append: char_quote %}
-      {% assign source_open_tag = source_open_tag | append: char_space %}
-      {% assign source_open_tag = source_open_tag | append: 'type=' %}
-      {% assign source_open_tag = source_open_tag | append: char_quote %}
-      {% assign source_open_tag = source_open_tag | append: source.mime_type %}
-      {% assign source_open_tag = source_open_tag | append: char_quote %}
-      {% assign source_open_tag = source_open_tag | append: char_gt %}
+      {% assign source_tag = char_lt %}
+      {% assign source_tag = source_tag | append: tag_source %}
 
-      {{ source_open_tag | raw }}
+      {% assign source_tag = source_tag | append: char_space %}
+      {% assign source_tag = source_tag | append: 'src=' %}
+      {% assign source_tag = source_tag | append: char_quote %}
+      {% assign source_tag = source_tag | append: source.url %}
+      {% assign source_tag = source_tag | append: char_quote %}
+
+      {% assign source_tag = source_tag | append: char_space %}
+      {% assign source_tag = source_tag | append: 'type=' %}
+      {% assign source_tag = source_tag | append: char_quote %}
+      {% assign source_tag = source_tag | append: source.mime_type %}
+      {% assign source_tag = source_tag | append: char_quote %}
+
+      {% assign source_tag = source_tag | append: char_gt %}
+
+      {{ source_tag }}
     {% endif %}
   {% endfor %}
-  {{ video_close_tag | raw }}
+
+  {{ video_close_tag }}
 {% endif %}
