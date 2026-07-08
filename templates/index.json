@@ -189,7 +189,7 @@
         "eyebrow_variant": "u-text-eyebrow-small",
         "eyebrow_tag": "p",
         "heading": "Lorem ipsum dolor sit amet elit",
-        "heading_variant": "u-text-style-h2",
+        "heading_variant": "u-text-h1-primary",
         "heading_tag": "h2",
         "heading_max_width": 20,
         "heading_tidy_text": true,
