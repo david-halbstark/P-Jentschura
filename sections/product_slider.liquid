@@ -1,352 +1,335 @@
 <div class="u-embed-css w-embed">
-          <style>
-</style>
-        </div>
-        <div class="u-display-none">
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          
-          
-          
-          
-        </div>
-        <div class="product_slider_contain u-container" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}">
-          {% render 'spacer', variant: section.settings.spacing_top %}
-          <div class="product_slider_layout">
-            <div class="product_slider_top">
-              <div class="product_slider_top_left u-margin-trim">
-                {% render 'eyebrow', custom_class: , eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant %}
-                {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
-              </div>
-              <div class="product_slider_tabs">{% for block in section.blocks %}
-    {% if block.type == "tab-panel" %}
-                    <button li-block="Tab + Panel" class="product_slider_tab">
-                                    
-                  
-                                    <div class="u-display-none">
-                    
-                    
-                  </div>
-                                    
-                  
-                                    {% render 'typography', custom_class: 'u-margin-bottom-0', text: block.settings.tab_text, tag: 'span', variant: 'u-text-link-base' %}
-                                    
-                
-                            </button>
-            {% endif %}
-{% endfor %}</div>
-            </div>
-            <div class="product_slider_bot">
-              {% for block in section.blocks %}    <div li-for="block in section.blocks">
-                                    
-                        </div>
-{% endfor %}
-            </div>
-          </div>
-          {% render 'spacer', variant: section.settings.spacing_bottom %}
-        </div>
-        <div class="u-embed-js w-embed w-script">
-          <script>
-(function() {
-  const component = document.currentScript.parentElement.parentElement;
-  document.addEventListener("DOMContentLoaded", function () {
-    // run script here
-  });
-})();
-</script>
-        </div> {% schema %} {
-    "tag": "section",
-    "name": "Product Slider",
-    "class": "product_slider_wrap u-section",
-    "blocks": [
+  <style></style>
+</div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div
+  class="product_slider_contain u-container"
+  id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}"
+>
+  {% render 'spacer', variant: section.settings.spacing_top %}
+  <div class="product_slider_layout">
+    <div class="product_slider_top">
+      <div class="product_slider_top_left u-margin-trim">
+        {% render 'eyebrow', custom_class: , eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant %}
+        {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+      </div>
+      <div class="product_slider_tabs">
+        {% for block in section.blocks %}
+          {% if block.type == 'tab-panel' %}
+            <button li-block="Tab + Panel" class="product_slider_tab">
+              <div class="u-display-none"></div>
+
+              {% render 'typography',
+                custom_class: 'u-margin-bottom-0',
+                text: block.settings.tab_text,
+                tag: 'span',
+                variant: 'u-text-link-base'
+              %}
+            </button>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="product_slider_bot">
+      {% for block in section.blocks %}
+        <div li-for="block in section.blocks"></div>
+      {% endfor %}
+    </div>
+  </div>
+  {% render 'spacer', variant: section.settings.spacing_bottom %}
+</div>
+<div class="u-embed-js w-embed w-script">
+  <script>
+    (function () {
+      const component = document.currentScript.parentElement.parentElement;
+      document.addEventListener('DOMContentLoaded', function () {
+        // run script here
+      });
+    })();
+  </script>
+</div>
+{% schema %}
+{
+  "tag": "section",
+  "name": "Product Slider",
+  "class": "product_slider_wrap u-section",
+  "blocks": [
+    {
+      "name": "Tab + Panel",
+      "type": "tab-panel",
+      "settings": [
         {
-            "name": "Tab + Panel",
-            "type": "tab-panel",
-            "settings": [
-                {
-                    "type": "header",
-                    "content": "Tab"
-                },
-                {
-                    "type": "text",
-                    "id": "tab_text",
-                    "label": "Text",
-                    "default": "Lorem ipsum dolor sit amet"
-                }
-            ]
+          "type": "header",
+          "content": "Tab"
+        },
+        {
+          "type": "text",
+          "id": "tab_text",
+          "label": "Text",
+          "default": "Lorem ipsum dolor sit amet"
         }
-    ],
-    "settings": [
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Sektion"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "ID"
+    },
+    {
+      "type": "header",
+      "content": "Abst\u00e4nde"
+    },
+    {
+      "type": "select",
+      "id": "spacing_top",
+      "label": "Oben",
+      "options": [
         {
-            "type": "header",
-            "content": "Sektion"
+          "value": "none",
+          "label": "Kein Abstand"
         },
         {
-            "type": "text",
-            "id": "section_id",
-            "label": "ID"
+          "value": "small",
+          "label": "Klein"
         },
         {
-            "type": "header",
-            "content": "Abst\u00e4nde"
+          "value": "main",
+          "label": "Standard"
         },
         {
-            "type": "select",
-            "id": "spacing_top",
-            "label": "Oben",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Abstand"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "main",
-                    "label": "Standard"
-                },
-                {
-                    "value": "large",
-                    "label": "Gro\u00df"
-                },
-                {
-                    "value": "page_top",
-                    "label": "Seitenanfang"
-                }
-            ],
-            "default": "main"
+          "value": "large",
+          "label": "Gro\u00df"
         },
         {
-            "type": "select",
-            "id": "spacing_bottom",
-            "label": "Unten",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Abstand"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "main",
-                    "label": "Standard"
-                },
-                {
-                    "value": "large",
-                    "label": "Gro\u00df"
-                },
-                {
-                    "value": "page_top",
-                    "label": "Seitenanfang"
-                }
-            ],
-            "default": "main"
-        },
-        {
-            "type": "header",
-            "content": "\u00dcbertitel"
-        },
-        {
-            "type": "text",
-            "id": "eyebrow",
-            "label": "Text",
-            "default": "\u00dcbertitel Text"
-        },
-        {
-            "type": "select",
-            "id": "eyebrow_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "u-text-eyebrow-small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "u-text-eyebrow-base",
-                    "label": "Standard"
-                },
-                {
-                    "value": "u-text-eyebrow-large",
-                    "label": "Gro\u00df"
-                }
-            ],
-            "default": "u-text-eyebrow-large"
-        },
-        {
-            "type": "select",
-            "id": "eyebrow_tag",
-            "label": "HTML-Tag",
-            "options": [
-                {
-                    "value": "h1",
-                    "label": "H1"
-                },
-                {
-                    "value": "h2",
-                    "label": "H2"
-                },
-                {
-                    "value": "h3",
-                    "label": "H3"
-                },
-                {
-                    "value": "h4",
-                    "label": "H4"
-                },
-                {
-                    "value": "h5",
-                    "label": "H5"
-                },
-                {
-                    "value": "h6",
-                    "label": "H6"
-                },
-                {
-                    "value": "p",
-                    "label": "P"
-                }
-            ],
-            "default": "p"
-        },
-        {
-            "type": "header",
-            "content": "\u00dcberschrift"
-        },
-        {
-            "type": "inline_richtext",
-            "id": "heading",
-            "label": "Text",
-            "default": "Lorem ipsum dolor sit amet elit"
-        },
-        {
-            "type": "select",
-            "id": "heading_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "u-text-h1-primary",
-                    "label": "H1 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h1-secondary",
-                    "label": "H1 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h2-primary",
-                    "label": "H2 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h2-secondary",
-                    "label": "H2 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h3-primary",
-                    "label": "H3 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h3-secondary",
-                    "label": "H3 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h4-primary",
-                    "label": "H4 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h5-primary",
-                    "label": "H5 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h6-primary",
-                    "label": "H6 Prim\u00e4r"
-                }
-            ],
-            "default": "u-text-h2-primary"
-        },
-        {
-            "type": "select",
-            "id": "heading_tag",
-            "label": "HTML-Tag",
-            "options": [
-                {
-                    "value": "h1",
-                    "label": "H1"
-                },
-                {
-                    "value": "h2",
-                    "label": "H2"
-                },
-                {
-                    "value": "h3",
-                    "label": "H3"
-                },
-                {
-                    "value": "h4",
-                    "label": "H4"
-                },
-                {
-                    "value": "h5",
-                    "label": "H5"
-                },
-                {
-                    "value": "h6",
-                    "label": "H6"
-                },
-                {
-                    "value": "p",
-                    "label": "P"
-                }
-            ],
-            "default": "h2"
-        },
-        {
-            "type": "number",
-            "id": "heading_max_width",
-            "label": "Maximale Breite",
-            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-            "default": 20
-        },
-        {
-            "type": "checkbox",
-            "id": "heading_tidy_text",
-            "label": "Ausgewogener Zeilenumbruch",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "heading_visually_hidden",
-            "label": "Nur f\u00fcr Screenreader anzeigen",
-            "default": false
+          "value": "page_top",
+          "label": "Seitenanfang"
         }
-    ],
-    "presets": [
+      ],
+      "default": "main"
+    },
+    {
+      "type": "select",
+      "id": "spacing_bottom",
+      "label": "Unten",
+      "options": [
         {
-            "name": "Product Slider",
-            "category": "Liquify",
-            "blocks": [
-                {
-                    "type": "tab-panel"
-                }
-            ]
+          "value": "none",
+          "label": "Kein Abstand"
+        },
+        {
+          "value": "small",
+          "label": "Klein"
+        },
+        {
+          "value": "main",
+          "label": "Standard"
+        },
+        {
+          "value": "large",
+          "label": "Gro\u00df"
+        },
+        {
+          "value": "page_top",
+          "label": "Seitenanfang"
         }
-    ]
-} {% endschema %}
+      ],
+      "default": "main"
+    },
+    {
+      "type": "header",
+      "content": "\u00dcbertitel"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Text",
+      "default": "\u00dcbertitel Text"
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_variant",
+      "label": "Stil",
+      "options": [
+        {
+          "value": "u-text-eyebrow-small",
+          "label": "Klein"
+        },
+        {
+          "value": "u-text-eyebrow-base",
+          "label": "Standard"
+        },
+        {
+          "value": "u-text-eyebrow-large",
+          "label": "Gro\u00df"
+        }
+      ],
+      "default": "u-text-eyebrow-large"
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_tag",
+      "label": "HTML-Tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "p",
+          "label": "P"
+        }
+      ],
+      "default": "p"
+    },
+    {
+      "type": "header",
+      "content": "\u00dcberschrift"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Text",
+      "default": "Lorem ipsum dolor sit amet elit"
+    },
+    {
+      "type": "select",
+      "id": "heading_variant",
+      "label": "Stil",
+      "options": [
+        {
+          "value": "u-text-h1-primary",
+          "label": "H1 Prim\u00e4r"
+        },
+        {
+          "value": "u-text-h1-secondary",
+          "label": "H1 Sekund\u00e4r"
+        },
+        {
+          "value": "u-text-h2-primary",
+          "label": "H2 Prim\u00e4r"
+        },
+        {
+          "value": "u-text-h2-secondary",
+          "label": "H2 Sekund\u00e4r"
+        },
+        {
+          "value": "u-text-h3-primary",
+          "label": "H3 Prim\u00e4r"
+        },
+        {
+          "value": "u-text-h3-secondary",
+          "label": "H3 Sekund\u00e4r"
+        },
+        {
+          "value": "u-text-h4-primary",
+          "label": "H4 Prim\u00e4r"
+        },
+        {
+          "value": "u-text-h5-primary",
+          "label": "H5 Prim\u00e4r"
+        },
+        {
+          "value": "u-text-h6-primary",
+          "label": "H6 Prim\u00e4r"
+        }
+      ],
+      "default": "u-text-h2-primary"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "HTML-Tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "p",
+          "label": "P"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "number",
+      "id": "heading_max_width",
+      "label": "Maximale Breite",
+      "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+      "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_tidy_text",
+      "label": "Ausgewogener Zeilenumbruch",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_visually_hidden",
+      "label": "Nur f\u00fcr Screenreader anzeigen",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Slider",
+      "category": "Liquify",
+      "blocks": [
+        {
+          "type": "tab-panel"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
