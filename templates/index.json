@@ -153,80 +153,6 @@
         "image": "shopify://shop_images/coldpress-icon.avif"
       }
     },
-    "test_KPX63W": {
-      "type": "test",
-      "blocks": {
-        "intro_card_ediAyh": {
-          "type": "intro_card",
-          "settings": {
-            "tab_title": "Lebensmittel",
-            "intro_badge": "Energie, die bleibt",
-            "intro_heading": "Deine Basis jetzt für mehr Bewegung",
-            "intro_text": "<p>Unsere Produkte unterstützen dich natürlich und basisch: für mehr Energie im Alltag und ein Leben voller Vitalität.</p>"
-          }
-        },
-        "product_card_wtAap7": {
-          "type": "product_card",
-          "settings": {
-            "tab_title": "Lebensmittel",
-            "product": "",
-            "title": "",
-            "link": "",
-            "badge": "Für die ganze Familie",
-            "show_favorite": true,
-            "rating_value": "4,9",
-            "text": "<p>Porem ipsum dolor sit amet, consectetur adipiscing.</p>"
-          }
-        },
-        "image_card_fphxLx": {
-          "type": "image_card",
-          "settings": {
-            "tab_title": "Lebensmittel",
-            "image_alt": "Menschen beim Kochen",
-            "button_label": "Händler in der Nähe",
-            "image_link": ""
-          }
-        },
-        "product_card_BkPkGP": {
-          "type": "product_card",
-          "settings": {
-            "tab_title": "Lebensmittel",
-            "product": "",
-            "title": "WurzelKraft",
-            "link": "",
-            "badge": "Für Aktivmenschen",
-            "show_favorite": true,
-            "rating_value": "4,9",
-            "text": "<p>Porem ipsum dolor sit amet, consectetur adipiscing.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "intro_card_ediAyh",
-        "product_card_wtAap7",
-        "image_card_fphxLx",
-        "product_card_BkPkGP"
-      ],
-      "name": "Active & Vital Tabs",
-      "settings": {
-        "kicker": "Unsere Produkte",
-        "heading": "Aktiv & Vital — Für Körper in Bewegung",
-        "tabs_label": "Produktkategorien",
-        "show_arrows": true,
-        "max_width": 1440,
-        "card_width": 320,
-        "card_height": 490,
-        "card_gap": 16,
-        "card_radius": 8,
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "green": "#5c8352",
-        "text_color": "#233021",
-        "muted_color": "#7b8177",
-        "accent_color": "#c93a3a",
-        "color_scheme": ""
-      }
-    },
     "product_slider_NyaW7F": {
       "type": "product_slider",
       "name": "Product Slider",
@@ -589,7 +515,6 @@
     "hero_main_Wx4xLA",
     "trust_rating_pfUfjq",
     "category_cards_FxBKGM",
-    "test_KPX63W",
     "product_slider_NyaW7F",
     "guide_slider_FBaGd6",
     "text_carousel_K4NQ6g",
