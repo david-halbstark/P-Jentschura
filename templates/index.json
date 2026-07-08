@@ -159,19 +159,22 @@
         "tab_panel_BkRE7h": {
           "type": "tab-panel",
           "settings": {
-            "tab_text": "Lebensmittel"
+            "tab_text": "Lebensmittel",
+            "collection": "basische-ernaehrung"
           }
         },
         "tab_panel_JUiNNe": {
           "type": "tab-panel",
           "settings": {
-            "tab_text": "Körperpflege"
+            "tab_text": "Körperpflege",
+            "collection": "basische-koerperpflege"
           }
         },
         "tab_panel_fYGgTM": {
           "type": "tab-panel",
           "settings": {
-            "tab_text": "Accessoires"
+            "tab_text": "Accessoires",
+            "collection": ""
           }
         }
       },
