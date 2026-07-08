@@ -73,14 +73,15 @@
   --_gap---size: var(--site--gutter);
   --_column-count---value: 1;
   --_theme---background-skeleton: color-mix(in lab, currentcolor 10%, transparent);
-  --_spacing---space--3: clamp(.875 * 1rem, ((.875 - ((1 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1 * 1rem);
-  --border-width--main: .0625rem;
   --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---font-family: var(--_typography---font--primary-family);
   --_text-style-2---font-size: var(--_typography---font-size--link-base);
   --_text-style-2---line-height: var(--_typography---line-height--normal);
   --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_spacing---space--3: clamp(.875 * 1rem, ((.875 - ((1 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((1 - .875) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 1 * 1rem);
+  --border-width--main: .0625rem;
   --_spacing---space--2: clamp(.625 * 1rem, ((.625 - ((.75 - .625) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((.75 - .625) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), .75 * 1rem);
   --_spacing---section-space--none: 0px;
   --_spacing---section-space--small: clamp(3 * 1rem, ((3 - ((5 - 3) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((5 - 3) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 5 * 1rem);
@@ -153,9 +154,11 @@
   --_typography---letter-spacing--wide: .02em;
   --_typography---letter-spacing--wider: .03em;
   --_typography---letter-spacing--widest: .04em;
+  --_theme---text-2: var(--swatch--white);
+  --_theme---text-3: var(--swatch--gray);
+  --_theme---text-4: var(--swatch--crimson);
   --_text-style-1---text-transform: var(--_typography---text-transform--none);
   --site--viewport-max: 80;
-  --_theme---text-2: var(--swatch--crimson);
   --site--viewport-min: 20;
   --_theme---selection--background: var(--swatch--crimson-dark);
   --_theme---selection--text: var(--swatch--charcoal-dark);
@@ -199,7 +202,6 @@
   --_typography---text-transform--lowercase: lowercase;
   --_text-style-2---text-transform: var(--_typography---text-transform--none);
   --_text-style-2---margin-top: var(--_spacing---space--4);
-  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
   --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
   --_text-style-2---text-wrap: pretty;
@@ -462,6 +464,8 @@ figure {
   --_theme---button-secondary--border-hover\<deleted\|variable-5acd6b7f-458c-af4a-0909-7f9ba1d3b968\>: var(--_theme---button-secondary--background-hover\<deleted\|variable-99187924-7846-b6b9-3ac1-47d4859ffcd1\>);
   --_theme---nav--background\<deleted\|variable-87603663-15a8-0c04-f698-42da35f05e80\>: var(--_theme---background-2);
   --_theme---text-2: var(--swatch--white);
+  --_theme---text-3: var(--swatch--white);
+  --_theme---text-4: var(--swatch--white);
   --_theme---selection--background: var(--swatch--crimson-dark);
   --_theme---selection--text: var(--swatch--charcoal-dark);
   overflow: clip;
@@ -884,9 +888,316 @@ figure {
 }
 
 .u-eyebrow-wrapper {
-  margin-bottom: var(--_spacing---space--5);
+  margin-bottom: var(--_text-style-1---margin-bottom);
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-weight: var(--_text-style-1---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
   justify-content: inherit;
+  text-transform: var(--_text-style-1---text-transform, none);
   display: flex;
+}
+
+.u-eyebrow-wrapper:where(.w-variant-4ff0784d-4083-9c70-e55b-761adee56c36) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--wider);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---font-family: var(--_typography---font--primary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--link-small);
+  --_text-style-2---line-height: var(--_typography---line-height--normal);
+  --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+}
+
+.u-eyebrow-wrapper:where(.w-variant-2d5663a6-e93c-fdde-2e18-532fd1afea80) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---font-family: var(--_typography---font--primary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--link-base);
+  --_text-style-2---line-height: var(--_typography---line-height--normal);
+  --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+}
+
+.u-eyebrow-wrapper:where(.w-variant-5deca5b9-df44-c46f-cf22-1d07043ef4ff) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---font-family: var(--_typography---font--primary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--link-large);
+  --_text-style-2---line-height: var(--_typography---line-height--normal);
+  --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+}
+
+.u-eyebrow-wrapper:where(.w-variant-c5c2b62e-f6d1-587b-d6f4-624509c01759) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-small);
+  --_text-style-1---line-height: var(--_typography---line-height--relaxed);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-eyebrow-wrapper:where(.w-variant-ec3c941a-1fa6-c34a-9f16-b2fa68e63e30) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-base);
+  --_text-style-1---line-height: var(--_typography---line-height--relaxed);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-eyebrow-wrapper:where(.w-variant-c17e0d1d-9a24-6bd5-e391-881e1fbf9dec) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-large);
+  --_text-style-1---line-height: var(--_typography---line-height--airy);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-eyebrow-wrapper:where(.w-variant-365e9b2a-77fc-f2ae-631a-dff02ceac74c) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-small);
+  --_text-style-1---line-height: var(--_typography---line-height--spacious);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+  text-transform: var(--_text-style-2---text-transform, none);
+}
+
+.u-eyebrow-wrapper:where(.w-variant-bbbffc5e-8818-c205-948b-aebd839147ae) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-base);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-eyebrow-wrapper:where(.w-variant-2467d01b-3d12-5b33-92b3-d2add68dc9b6) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-large);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-eyebrow-wrapper:where(.w-variant-27caff86-2c21-57ff-74df-57c03f3d8af8) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h1-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--compact);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-eyebrow-wrapper:where(.w-variant-e0bd6e8f-a5f4-e145-c05c-7e1b1ab3f426) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---font-family: var(--_typography---font--secondary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--h1-secondary);
+  --_text-style-2---line-height: var(--_typography---line-height--tight);
+  --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+}
+
+.u-eyebrow-wrapper:where(.w-variant-eb548d7b-8f81-ac73-576d-add406df0223) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h2-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-eyebrow-wrapper:where(.w-variant-b9f3fd9d-9dae-d8ee-199a-655442884ed5) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---font-family: var(--_typography---font--secondary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--h2-secondary);
+  --_text-style-2---line-height: var(--_typography---line-height--tight);
+  --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+}
+
+.u-eyebrow-wrapper:where(.w-variant-fc9c1434-663c-76ad-767a-5bccfc695f29) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h3-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-eyebrow-wrapper:where(.w-variant-55b42678-6820-9142-242a-6c598df617bb) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---font-family: var(--_typography---font--secondary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--h3-secondary);
+  --_text-style-2---line-height: var(--_typography---line-height--tight);
+  --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+}
+
+.u-eyebrow-wrapper:where(.w-variant-6470abbd-7496-5524-a11e-b234592f4cce) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h4-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--tight);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--slight);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-eyebrow-wrapper:where(.w-variant-3db9ec31-39ab-9729-5226-2b0597c8ccfd) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-large);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-eyebrow-wrapper:where(.w-variant-bee1fca3-9b39-f8a1-3fcc-8f1e25d4421e) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-base);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
 .u-eyebrow-layout {
@@ -904,9 +1215,9 @@ figure {
   padding-right: 0;
 }
 
-.u-eyebrow-text {
-  margin-top: 0;
-  margin-bottom: 0;
+.u-eyebrow-text:where(.w-variant-365e9b2a-77fc-f2ae-631a-dff02ceac74c) {
+  font-family: var(--_text-style-1---font-family);
+  font-size: var(--_text-style-1---font-size);
 }
 
 .u-heading {
@@ -1291,19 +1602,20 @@ figure {
 }
 
 .u-heading:where(.w-variant-953108e9-15e0-0458-137f-3862ae613a12) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
   font-family: var(--_text-style-2---font-family);
   font-size: var(--_text-style-2---font-size);
   line-height: var(--_text-style-2---line-height);
   font-weight: var(--_text-style-2---font-weight);
   letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---font-family: var(--_typography---font--secondary-family);
   --_text-style-2---font-size: var(--_typography---font-size--h1-secondary);
   --_text-style-2---line-height: var(--_typography---line-height--tight);
   --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
-  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
   --_text-style-2---text-transform: var(--_typography---text-transform--none);
   --_text-style-2---margin-top: var(--_spacing---space--4);
-  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
   --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
   --_text-style-2---text-wrap: pretty;
@@ -1311,19 +1623,20 @@ figure {
 }
 
 .u-heading:where(.w-variant-cc6a8c92-33ea-0c44-0708-19676fc12b9b) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
   font-family: var(--_text-style-2---font-family);
   font-size: var(--_text-style-2---font-size);
   line-height: var(--_text-style-2---line-height);
   font-weight: var(--_text-style-2---font-weight);
   letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---font-family: var(--_typography---font--secondary-family);
   --_text-style-2---font-size: var(--_typography---font-size--h2-secondary);
   --_text-style-2---line-height: var(--_typography---line-height--tight);
   --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
-  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
   --_text-style-2---text-transform: var(--_typography---text-transform--none);
   --_text-style-2---margin-top: var(--_spacing---space--4);
-  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
   --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
   --_text-style-2---text-wrap: pretty;
@@ -1331,19 +1644,20 @@ figure {
 }
 
 .u-heading:where(.w-variant-7c6c71bb-10fb-12c7-f4ff-35776c8bfcbc) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
   font-family: var(--_text-style-2---font-family);
   font-size: var(--_text-style-2---font-size);
   line-height: var(--_text-style-2---line-height);
   font-weight: var(--_text-style-2---font-weight);
   letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---font-family: var(--_typography---font--secondary-family);
   --_text-style-2---font-size: var(--_typography---font-size--h3-secondary);
   --_text-style-2---line-height: var(--_typography---line-height--tight);
   --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
-  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
   --_text-style-2---text-transform: var(--_typography---text-transform--none);
   --_text-style-2---margin-top: var(--_spacing---space--4);
-  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
   --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
   --_text-style-2---text-wrap: pretty;
@@ -1434,6 +1748,167 @@ figure {
   --_text-style-1---text-transform: var(--_typography---text-transform--none);
 }
 
+.u-heading:where(.w-variant-1c9bdbc5-3534-07bf-5409-06bc0ea32459) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-large);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-heading:where(.w-variant-8047ffbd-351e-426d-b869-acfd4072b1ea) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-base);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-heading:where(.w-variant-63744ba5-e201-32e5-6e5f-e667d737d513) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-small);
+  --_text-style-1---line-height: var(--_typography---line-height--spacious);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-heading:where(.w-variant-4698951c-07f4-33fe-87c4-1fb1c7d72a87) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---font-family: var(--_typography---font--primary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--link-large);
+  --_text-style-2---line-height: var(--_typography---line-height--normal);
+  --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+}
+
+.u-heading:where(.w-variant-0de2b337-bac9-26b4-930b-b25bb6568390) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---font-family: var(--_typography---font--primary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--link-base);
+  --_text-style-2---line-height: var(--_typography---line-height--normal);
+  --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+}
+
+.u-heading:where(.w-variant-95fd86bc-93e6-1a31-06a4-d5d43ef8780c) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--wider);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---font-family: var(--_typography---font--primary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--link-small);
+  --_text-style-2---line-height: var(--_typography---line-height--normal);
+  --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+}
+
+.u-heading:where(.w-variant-666c09d4-01a8-a23e-6da5-1068f3dbed41), .u-heading:where(.w-variant-94591e62-a415-eb89-d89c-efca576b2f18), .u-heading:where(.w-variant-5561bba6-2700-274c-e449-548ca27c99a8) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-large);
+  --_text-style-1---line-height: var(--_typography---line-height--airy);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-heading:where(.w-variant-6e14d0d5-5358-6cd0-f15f-779427245dcf), .u-heading:where(.w-variant-05baee8e-16f7-7420-f6e2-90c2773eb010), .u-heading:where(.w-variant-75d0fa5b-8492-0698-67e0-4ca23714fa5b) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h3-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-heading:where(.w-variant-52df31b3-9700-38d0-3886-88993f7057e0), .u-heading:where(.w-variant-3fb5fcdd-17f1-47d1-49e7-c27cb39cbd39), .u-heading:where(.w-variant-995a2e9c-7fc1-14d1-4977-9767b7c99a80) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-large);
+  --_text-style-1---line-height: var(--_typography---line-height--airy);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-heading:where(.w-variant-dc4b94bc-95d5-0c59-c318-dbc2a0f0a413), .u-heading:where(.w-variant-5beefd20-0d46-5bdf-dc9c-6ddb43d4276b), .u-heading:where(.w-variant-cfe39ef0-96b9-199d-6833-3511d88f45c7) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h1-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--compact);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
 .u-heading h1, .u-heading h2, .u-heading h3, .u-heading h4, .u-heading h5, .u-heading h6 {
   font-family: inherit;
   font-size: inherit;
@@ -1454,7 +1929,7 @@ figure {
   line-height: var(--_text-style-1---line-height);
   font-weight: var(--_text-style-1---font-weight);
   letter-spacing: var(--_text-style-1---letter-spacing);
-  text-transform: var(--_text-style---text-transform, none);
+  text-transform: var(--_text-style-1---text-transform, none);
   text-wrap: var(--_text-style-1---text-wrap);
   justify-content: center;
   align-items: inherit;
@@ -1842,87 +2317,337 @@ figure {
 }
 
 .u-text:where(.w-variant-2ddce81c-1a58-511b-bf37-bd3dc561049c) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---font-family: var(--_typography---font--secondary-family);
   --_text-style-2---font-size: var(--_typography---font-size--h1-secondary);
   --_text-style-2---line-height: var(--_typography---line-height--tight);
   --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
-  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
   --_text-style-2---text-transform: var(--_typography---text-transform--none);
   --_text-style-2---margin-top: var(--_spacing---space--4);
-  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
   --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
   --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
 }
 
 .u-text:where(.w-variant-b6ab13e9-e13e-d10f-84bf-95d83c772698) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---font-family: var(--_typography---font--secondary-family);
   --_text-style-2---font-size: var(--_typography---font-size--h2-secondary);
   --_text-style-2---line-height: var(--_typography---line-height--tight);
   --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
-  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
   --_text-style-2---text-transform: var(--_typography---text-transform--none);
   --_text-style-2---margin-top: var(--_spacing---space--4);
-  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
   --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
   --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
 }
 
 .u-text:where(.w-variant-49d1351c-8bdf-ea16-fbc1-dcb960a98783) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---font-family: var(--_typography---font--secondary-family);
   --_text-style-2---font-size: var(--_typography---font-size--h3-secondary);
   --_text-style-2---line-height: var(--_typography---line-height--tight);
   --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
-  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
   --_text-style-2---text-transform: var(--_typography---text-transform--none);
   --_text-style-2---margin-top: var(--_spacing---space--4);
-  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
   --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
   --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
 }
 
 .u-text:where(.w-variant-c3e70cb6-b79f-d2dc-9a6d-d29196b46efa) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---font-family: var(--_typography---font--secondary-family);
   --_text-style-2---font-size: var(--_typography---font-size--h1-secondary);
   --_text-style-2---line-height: var(--_typography---line-height--tight);
   --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
-  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
   --_text-style-2---text-transform: var(--_typography---text-transform--none);
   --_text-style-2---margin-top: var(--_spacing---space--4);
-  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
   --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
   --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
 }
 
 .u-text:where(.w-variant-e7c9956e-0606-e568-f12d-9286052a429a) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-1---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---font-family: var(--_typography---font--secondary-family);
   --_text-style-2---font-size: var(--_typography---font-size--h2-secondary);
   --_text-style-2---line-height: var(--_typography---line-height--tight);
   --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
-  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
   --_text-style-2---text-transform: var(--_typography---text-transform--none);
   --_text-style-2---margin-top: var(--_spacing---space--4);
-  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
   --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
   --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
 }
 
 .u-text:where(.w-variant-4b12b989-cc2f-c253-8ef8-d943568fa39e) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---font-family: var(--_typography---font--secondary-family);
   --_text-style-2---font-size: var(--_typography---font-size--h3-secondary);
   --_text-style-2---line-height: var(--_typography---line-height--tight);
   --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
-  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
   --_text-style-2---text-transform: var(--_typography---text-transform--none);
   --_text-style-2---margin-top: var(--_spacing---space--4);
-  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
   --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
   --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+}
+
+.u-text:where(.w-variant-1c9bdbc5-3534-07bf-5409-06bc0ea32459), .u-text:where(.w-variant-8047ffbd-351e-426d-b869-acfd4072b1ea), .u-text:where(.w-variant-63744ba5-e201-32e5-6e5f-e667d737d513) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-small);
+  --_text-style-1---line-height: var(--_typography---line-height--relaxed);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-text:where(.w-variant-4698951c-07f4-33fe-87c4-1fb1c7d72a87), .u-text:where(.w-variant-0de2b337-bac9-26b4-930b-b25bb6568390), .u-text:where(.w-variant-95fd86bc-93e6-1a31-06a4-d5d43ef8780c) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--h1-primary);
+  --_text-style-1---line-height: var(--_typography---line-height--compact);
+  --_text-style-1---font-weight: var(--_typography---font--primary-bold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--condensed);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--5);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-text:where(.w-variant-666c09d4-01a8-a23e-6da5-1068f3dbed41) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-large);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-text:where(.w-variant-94591e62-a415-eb89-d89c-efca576b2f18) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-small);
+  --_text-style-1---line-height: var(--_typography---line-height--spacious);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+  --_text-style-1---text-wrap: balance;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-text:where(.w-variant-5561bba6-2700-274c-e449-548ca27c99a8) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--eyebrow-base);
+  --_text-style-1---line-height: var(--_typography---line-height--snug);
+  --_text-style-1---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--7);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-text:where(.w-variant-6e14d0d5-5358-6cd0-f15f-779427245dcf) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---font-family: var(--_typography---font--primary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--link-large);
+  --_text-style-2---line-height: var(--_typography---line-height--normal);
+  --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+}
+
+.u-text:where(.w-variant-05baee8e-16f7-7420-f6e2-90c2773eb010) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---font-family: var(--_typography---font--primary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--link-base);
+  --_text-style-2---line-height: var(--_typography---line-height--normal);
+  --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+}
+
+.u-text:where(.w-variant-75d0fa5b-8492-0698-67e0-4ca23714fa5b) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--wider);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---font-family: var(--_typography---font--primary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--link-small);
+  --_text-style-2---line-height: var(--_typography---line-height--normal);
+  --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+}
+
+.u-text:where(.w-variant-52df31b3-9700-38d0-3886-88993f7057e0), .u-text:where(.w-variant-3fb5fcdd-17f1-47d1-49e7-c27cb39cbd39), .u-text:where(.w-variant-995a2e9c-7fc1-14d1-4977-9767b7c99a80) {
+  --_text-style-1---font-family: var(--_typography---font--primary-family);
+  --_text-style-1---font-size: var(--_typography---font-size--body-large);
+  --_text-style-1---line-height: var(--_typography---line-height--airy);
+  --_text-style-1---font-weight: var(--_typography---font--primary-regular);
+  --_text-style-1---letter-spacing: var(--_typography---letter-spacing--normal);
+  --_text-style-1---text-wrap: pretty;
+  --_text-style-1---margin-bottom: var(--_spacing---space--4);
+  --_text-style-1---margin-top: var(--_spacing---space--4);
+  --_text-style-1---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-1---text-transform: var(--_typography---text-transform--none);
+}
+
+.u-text:where(.w-variant-dc4b94bc-95d5-0c59-c318-dbc2a0f0a413) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---font-family: var(--_typography---font--primary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--link-large);
+  --_text-style-2---line-height: var(--_typography---line-height--normal);
+  --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+}
+
+.u-text:where(.w-variant-5beefd20-0d46-5bdf-dc9c-6ddb43d4276b) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---font-family: var(--_typography---font--primary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--link-base);
+  --_text-style-2---line-height: var(--_typography---line-height--normal);
+  --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
+}
+
+.u-text:where(.w-variant-cfe39ef0-96b9-199d-6833-3511d88f45c7) {
+  margin-bottom: var(--_text-style-2---margin-bottom);
+  font-family: var(--_text-style-2---font-family);
+  font-size: var(--_text-style-2---font-size);
+  line-height: var(--_text-style-2---line-height);
+  font-weight: var(--_text-style-2---font-weight);
+  letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--wider);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
+  --_text-style-2---font-family: var(--_typography---font--primary-family);
+  --_text-style-2---font-size: var(--_typography---font-size--link-small);
+  --_text-style-2---line-height: var(--_typography---line-height--normal);
+  --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
+  --_text-style-2---text-transform: var(--_typography---text-transform--none);
+  --_text-style-2---margin-top: var(--_spacing---space--4);
+  --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
+  --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
+  --_text-style-2---text-wrap: pretty;
+  text-transform: var(--_text-style-2---text-transform, none);
 }
 
 .u-button-wrapper {
@@ -1968,7 +2693,9 @@ figure {
   --_theme---button-secondary--border\<deleted\|variable-24eeb61d-8000-59f0-dc21-bbdd3a969bbd\>: var(--_theme---border);
   --_theme---button-secondary--border-hover\<deleted\|variable-5acd6b7f-458c-af4a-0909-7f9ba1d3b968\>: var(--_theme---button-secondary--background-hover\<deleted\|variable-99187924-7846-b6b9-3ac1-47d4859ffcd1\>);
   --_theme---nav--background\<deleted\|variable-87603663-15a8-0c04-f698-42da35f05e80\>: var(--_theme---background-2);
-  --_theme---text-2: var(--swatch--crimson);
+  --_theme---text-2: var(--swatch--white);
+  --_theme---text-3: var(--swatch--gray);
+  --_theme---text-4: var(--swatch--crimson);
   --_theme---selection--background: var(--swatch--crimson-dark);
   --_theme---selection--text: var(--swatch--charcoal-dark);
 }
@@ -1994,6 +2721,8 @@ figure {
   --_theme---button-secondary--border-hover\<deleted\|variable-5acd6b7f-458c-af4a-0909-7f9ba1d3b968\>: var(--_theme---button-secondary--background-hover\<deleted\|variable-99187924-7846-b6b9-3ac1-47d4859ffcd1\>);
   --_theme---nav--background\<deleted\|variable-87603663-15a8-0c04-f698-42da35f05e80\>: var(--_theme---background-2);
   --_theme---text-2: var(--swatch--white);
+  --_theme---text-3: var(--swatch--white);
+  --_theme---text-4: var(--swatch--white);
   --_theme---selection--background: var(--swatch--crimson-dark);
   --_theme---selection--text: var(--swatch--charcoal-dark);
 }
@@ -2018,7 +2747,9 @@ figure {
   --_theme---button-secondary--border\<deleted\|variable-24eeb61d-8000-59f0-dc21-bbdd3a969bbd\>: var(--_theme---border);
   --_theme---button-secondary--border-hover\<deleted\|variable-5acd6b7f-458c-af4a-0909-7f9ba1d3b968\>: var(--_theme---button-secondary--background-hover\<deleted\|variable-99187924-7846-b6b9-3ac1-47d4859ffcd1\>);
   --_theme---nav--background\<deleted\|variable-87603663-15a8-0c04-f698-42da35f05e80\>: var(--_theme---background);
-  --_theme---text-2: var(--swatch--crimson);
+  --_theme---text-2: var(--swatch--white);
+  --_theme---text-3: var(--swatch--gray);
+  --_theme---text-4: var(--swatch--crimson);
   --_theme---selection--background: var(--swatch--crimson-dark);
   --_theme---selection--text: var(--swatch--charcoal-dark);
 }
@@ -2166,7 +2897,9 @@ figure {
   --_theme---button-secondary--border\<deleted\|variable-24eeb61d-8000-59f0-dc21-bbdd3a969bbd\>: var(--_theme---border);
   --_theme---button-secondary--border-hover\<deleted\|variable-5acd6b7f-458c-af4a-0909-7f9ba1d3b968\>: var(--_theme---button-secondary--background-hover\<deleted\|variable-99187924-7846-b6b9-3ac1-47d4859ffcd1\>);
   --_theme---nav--background\<deleted\|variable-87603663-15a8-0c04-f698-42da35f05e80\>: var(--_theme---background-2);
-  --_theme---text-2: var(--swatch--crimson);
+  --_theme---text-2: var(--swatch--white);
+  --_theme---text-3: var(--swatch--gray);
+  --_theme---text-4: var(--swatch--crimson);
   --_theme---selection--background: var(--swatch--crimson-dark);
   --_theme---selection--text: var(--swatch--charcoal-dark);
 }
@@ -2194,6 +2927,8 @@ figure {
   --_theme---button-secondary--border-hover\<deleted\|variable-5acd6b7f-458c-af4a-0909-7f9ba1d3b968\>: var(--_theme---button-secondary--background-hover\<deleted\|variable-99187924-7846-b6b9-3ac1-47d4859ffcd1\>);
   --_theme---nav--background\<deleted\|variable-87603663-15a8-0c04-f698-42da35f05e80\>: var(--_theme---background-2);
   --_theme---text-2: var(--swatch--white);
+  --_theme---text-3: var(--swatch--white);
+  --_theme---text-4: var(--swatch--white);
   --_theme---selection--background: var(--swatch--crimson-dark);
   --_theme---selection--text: var(--swatch--charcoal-dark);
 }
@@ -2220,7 +2955,9 @@ figure {
   --_theme---button-secondary--border\<deleted\|variable-24eeb61d-8000-59f0-dc21-bbdd3a969bbd\>: var(--_theme---border);
   --_theme---button-secondary--border-hover\<deleted\|variable-5acd6b7f-458c-af4a-0909-7f9ba1d3b968\>: var(--_theme---button-secondary--background-hover\<deleted\|variable-99187924-7846-b6b9-3ac1-47d4859ffcd1\>);
   --_theme---nav--background\<deleted\|variable-87603663-15a8-0c04-f698-42da35f05e80\>: var(--_theme---background);
-  --_theme---text-2: var(--swatch--crimson);
+  --_theme---text-2: var(--swatch--white);
+  --_theme---text-3: var(--swatch--gray);
+  --_theme---text-4: var(--swatch--crimson);
   --_theme---selection--background: var(--swatch--crimson-dark);
   --_theme---selection--text: var(--swatch--charcoal-dark);
 }
@@ -3136,6 +3873,10 @@ figure {
   display: contents;
 }
 
+.u-display-contents.is-clicka {
+  border-radius: var(--radius--main);
+}
+
 .u-display-none {
   display: none;
 }
@@ -3213,6 +3954,10 @@ figure {
   height: 100%;
   position: absolute;
   inset: 0%;
+}
+
+.u-cover-absolute.is-clickable {
+  border-radius: inherit;
 }
 
 .u-width-auto {
@@ -4645,6 +5390,8 @@ figure {
   --_theme---button-secondary--border-hover\<deleted\|variable-5acd6b7f-458c-af4a-0909-7f9ba1d3b968\>: var(--_theme---button-secondary--background-hover\<deleted\|variable-99187924-7846-b6b9-3ac1-47d4859ffcd1\>);
   --_theme---nav--background\<deleted\|variable-87603663-15a8-0c04-f698-42da35f05e80\>: var(--_theme---background-2);
   --_theme---text-2: var(--swatch--white);
+  --_theme---text-3: var(--swatch--white);
+  --_theme---text-4: var(--swatch--white);
   --_theme---selection--background: var(--swatch--crimson-dark);
   --_theme---selection--text: var(--swatch--charcoal-dark);
   border-style: none;
@@ -4887,7 +5634,9 @@ figure {
   --_theme---button-secondary--border\<deleted\|variable-24eeb61d-8000-59f0-dc21-bbdd3a969bbd\>: var(--_theme---border);
   --_theme---button-secondary--border-hover\<deleted\|variable-5acd6b7f-458c-af4a-0909-7f9ba1d3b968\>: var(--_theme---button-secondary--background-hover\<deleted\|variable-99187924-7846-b6b9-3ac1-47d4859ffcd1\>);
   --_theme---nav--background\<deleted\|variable-87603663-15a8-0c04-f698-42da35f05e80\>: var(--_theme---background-2);
-  --_theme---text-2: var(--swatch--crimson);
+  --_theme---text-2: var(--swatch--white);
+  --_theme---text-3: var(--swatch--gray);
+  --_theme---text-4: var(--swatch--crimson);
   --_theme---selection--background: var(--swatch--crimson-dark);
   --_theme---selection--text: var(--swatch--charcoal-dark);
   background-color: #0000;
@@ -5413,7 +6162,9 @@ figure {
   --_theme---button-secondary--border\<deleted\|variable-24eeb61d-8000-59f0-dc21-bbdd3a969bbd\>: var(--_theme---border);
   --_theme---button-secondary--border-hover\<deleted\|variable-5acd6b7f-458c-af4a-0909-7f9ba1d3b968\>: var(--_theme---button-secondary--background-hover\<deleted\|variable-99187924-7846-b6b9-3ac1-47d4859ffcd1\>);
   --_theme---nav--background\<deleted\|variable-87603663-15a8-0c04-f698-42da35f05e80\>: var(--_theme---background-2);
-  --_theme---text-2: var(--swatch--crimson);
+  --_theme---text-2: var(--swatch--white);
+  --_theme---text-3: var(--swatch--gray);
+  --_theme---text-4: var(--swatch--crimson);
   --_theme---selection--background: var(--swatch--crimson-dark);
   --_theme---selection--text: var(--swatch--charcoal-dark);
   width: 100%;
@@ -6375,14 +7126,14 @@ figure {
   line-height: var(--_text-style-2---line-height);
   font-weight: var(--_text-style-2---font-weight);
   letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---font-family: var(--_typography---font--primary-family);
   --_text-style-2---font-size: var(--_typography---font-size--link-large);
   --_text-style-2---line-height: var(--_typography---line-height--normal);
   --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--widest);
   --_text-style-2---text-transform: var(--_typography---text-transform--none);
   --_text-style-2---margin-top: var(--_spacing---space--4);
-  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
   --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
   --_text-style-2---text-wrap: pretty;
@@ -6396,14 +7147,14 @@ figure {
   line-height: var(--_text-style-2---line-height);
   font-weight: var(--_text-style-2---font-weight);
   letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--widest);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---font-family: var(--_typography---font--primary-family);
   --_text-style-2---font-size: var(--_typography---font-size--link-base);
   --_text-style-2---line-height: var(--_typography---line-height--normal);
   --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--widest);
   --_text-style-2---text-transform: var(--_typography---text-transform--none);
   --_text-style-2---margin-top: var(--_spacing---space--4);
-  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
   --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
   --_text-style-2---text-wrap: pretty;
@@ -6416,14 +7167,14 @@ figure {
   line-height: var(--_text-style-2---line-height);
   font-weight: var(--_text-style-2---font-weight);
   letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--wider);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---font-family: var(--_typography---font--primary-family);
   --_text-style-2---font-size: var(--_typography---font-size--link-small);
   --_text-style-2---line-height: var(--_typography---line-height--normal);
   --_text-style-2---font-weight: var(--_typography---font--primary-semibold);
-  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--wider);
   --_text-style-2---text-transform: var(--_typography---text-transform--none);
   --_text-style-2---margin-top: var(--_spacing---space--4);
-  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---trim-top: var(--_typography---font--primary-trim-top);
   --_text-style-2---trim-bottom: var(--_typography---font--primary-trim-bottom);
   --_text-style-2---text-wrap: pretty;
@@ -6436,14 +7187,14 @@ figure {
   line-height: var(--_text-style-2---line-height);
   font-weight: var(--_text-style-2---font-weight);
   letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---font-family: var(--_typography---font--secondary-family);
   --_text-style-2---font-size: var(--_typography---font-size--h1-secondary);
   --_text-style-2---line-height: var(--_typography---line-height--tight);
   --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
-  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
   --_text-style-2---text-transform: var(--_typography---text-transform--none);
   --_text-style-2---margin-top: var(--_spacing---space--4);
-  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
   --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
   --_text-style-2---text-wrap: pretty;
@@ -6458,14 +7209,14 @@ figure {
   line-height: var(--_text-style-2---line-height);
   font-weight: var(--_text-style-2---font-weight);
   letter-spacing: var(--_text-style-2---letter-spacing);
+  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
+  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---font-family: var(--_typography---font--secondary-family);
   --_text-style-2---font-size: var(--_typography---font-size--h2-secondary);
   --_text-style-2---line-height: var(--_typography---line-height--tight);
   --_text-style-2---font-weight: var(--_typography---font--secondary-regular);
-  --_text-style-2---letter-spacing: var(--_typography---letter-spacing--subtle);
   --_text-style-2---text-transform: var(--_typography---text-transform--none);
   --_text-style-2---margin-top: var(--_spacing---space--4);
-  --_text-style-2---margin-bottom: var(--_spacing---space--4);
   --_text-style-2---trim-top: var(--_typography---font--secondary-trim-top);
   --_text-style-2---trim-bottom: var(--_typography---font--secondary-trim-bottom);
   --_text-style-2---text-wrap: pretty;
@@ -6563,6 +7314,152 @@ figure {
   border-radius: var(--radius--main);
   height: 100%;
   position: relative;
+}
+
+.product_slider_slider_element.swiper {
+  width: 100%;
+}
+
+.product_slider_slider_slide {
+  height: 100%;
+}
+
+.product_slider_first_card {
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  border-radius: var(--radius--main);
+  height: 100%;
+  color: var(--_theme---text-2);
+  text-align: center;
+  background-color: gray;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  display: flex;
+  overflow: hidden;
+}
+
+.product_slider_first_card_top {
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+  position: relative;
+}
+
+.product_slider_slider_inner {
+  border-radius: var(--radius--main);
+  height: 100%;
+  position: relative;
+}
+
+.u-color-1 {
+  color: var(--_theme---text);
+}
+
+.u-color-2 {
+  color: var(--_theme---text-2);
+}
+
+.u-color-3 {
+  color: var(--_theme---text-3);
+}
+
+.u-color-4 {
+  color: var(--_theme---text-4);
+}
+
+.product_slider_product_slide {
+  height: 100%;
+}
+
+.product_card_wrap {
+  border-radius: var(--radius--main);
+  height: 100%;
+}
+
+.product_card_element {
+  border-radius: var(--radius--main);
+  background-color: var(--_theme---background);
+  flex-flow: column;
+  height: 100%;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 .25rem 3.75rem #000;
+}
+
+.product_card_top {
+  aspect-ratio: 1;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 1rem;
+  padding-left: .75rem;
+  padding-right: .75rem;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.product_card_bot {
+  text-align: center;
+  flex-flow: column;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1.875rem 1.875rem 2.625rem;
+  display: flex;
+}
+
+.product_card_tag {
+  margin-left: -.75rem;
+  position: relative;
+}
+
+.product_card_wishlist {
+  position: relative;
+}
+
+.product_card_image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0% auto auto 0%;
+}
+
+.product_card_inner {
+  flex-flow: column;
+  display: flex;
+}
+
+.product_card_hover {
+  width: 100%;
+  height: 100%;
+  transform: translateY(calc(calc(100% * var(--_trigger---on))  + calc(0% * var(--_trigger---off))));
+  border-radius: inherit;
+  transition-property: transform;
+  transition-duration: .3s;
+  transition-timing-function: ease;
+  position: absolute;
+  inset: 0%;
+}
+
+.product_card_hover_inner {
+  padding-bottom: 1rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  position: relative;
+}
+
+.product_card_hover_image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0%;
 }
 
 @media screen and (max-width: 479px) {
