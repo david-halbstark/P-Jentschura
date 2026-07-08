@@ -1,403 +1,422 @@
 <div class="u-embed-css w-embed">
-  <style>
-    @container (width < 70em) {
-      .category_cards_layout {
-        --_column-count---value: 2;
-      }
+          <style>
+  @container (width < 70em) {
+    .category_cards_layout {
+      --_column-count---value: 2;
     }
-    @container (width < 40em) {
-      .category_cards_layout {
-        --_column-count---value: 1;
-      }
-      .category_cards_card_element {
-        flex-flow: row wrap;
-        padding: 1.25rem;
-        gap: 1rem;
-      }
-      .category_card_icon {
-        width: 2.75rem;
-      }
-      .category_card_bot {
-        gap: 0.625rem;
-      }
-      .category_card_bot {
-        flex: 1 1 12rem;
-        align-items: flex-start;
-        text-align: start;
-      }
+  }
+  @container (width < 40em) {
+    .category_cards_layout {
+      --_column-count---value: 1;
     }
-    .category_cards_card_element:before {
-      content: '';
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      inset: 0;
-      background-image: linear-gradient(#f2f1f1 0%, #ededed 100%);
-      opacity: calc(100% * var(--_trigger---off));
-      transition: opacity 0.2s ease;
+    .category_cards_card_element {
+      flex-flow: row wrap;
+      padding: 1.25rem;
+      gap: 1rem;
     }
-    .category_card_bot_text:has(> :nth-child(2)) > :first-child:after {
-      content: ' \2022  ';
-      color: var(--_theme---text-5);
+    .category_card_icon {
+      width: 2.75rem;
     }
-    .category_card_bot_text span {
-      display: inline-block;
+    .category_card_bot {
+      gap: 0.625rem;
     }
-  </style>
-</div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div
-  class="category_cards_contain u-container"
-  id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}"
->
-  {% render 'spacer', variant: section.settings.spacing_top %}
-  <div class="category_cards_layout u-grid-custom">
-    {% render 'heading', custom_class: , heading: section.settings.heading, tag: h2, visually_hidden: true %}
-    {% for block in section.blocks %}
-      {% if block.type == 'card' %}
-        <div li-block="Card" class="category_cards_card_wrap">
-          <div class="u-display-none"></div>
-
-          <div class="u-display-none"></div>
-
-          <div class="u-display-none"></div>
-
-          <div class="u-display-none"></div>
-
-          <div data-trigger="hover focus" class="category_cards_card_component">
-            <div class="category_cards_card_element">
-              <div class="category_card_top">
-                <div class="category_card_icon">
-                  {% render 'image', width: 132, image: section.settings.image, object_fit: 'contain' %}
-                </div>
-              </div>
-              <div class="category_card_bot">
-                {% render 'heading',
-                  custom_class: 'u-margin-bottom-0',
-                  heading: block.settings.heading,
-                  tag: 'h3',
-                  variant: 'u-text-h3-secondary'
-                %}
-                <div class="category_card_bot_text">
-                  <div class="u-display-contents">
-                    {% render 'typography',
-                      custom_class: 'u-margin-bottom-0 u-min-width-auto',
-                      text: block.settings.text_1,
-                      tag: 'span',
-                      variant: 'u-text-body-small'
-                    %}
-                  </div>
-                  <div class="u-display-contents">
-                    {% render 'typography',
-                      custom_class: 'u-margin-bottom-0 u-min-width-auto',
-                      text: block.settings.text_2,
-                      tag: 'span',
-                      variant: 'u-text-body-small'
-                    %}
-                  </div>
-                </div>
-              </div>
-            </div>
-            {% render 'clickable', url: block.settings.clickable_url, label: section.settings.heading, mode: 'link' %}
-          </div>
+    .category_card_bot {
+      flex: 1 1 12rem;
+      align-items: flex-start;
+      text-align: start;
+    }
+  }
+  .category_cards_card_element:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(#f2f1f1 0%, #ededed 100%);
+    opacity: calc(100% * var(--_trigger---off));
+    transition: opacity 0.2s ease;
+  }
+  .category_card_bot_text:has(> :nth-child(2)) > :first-child:after {
+    content: ' \2022  ';
+    color: var(--_theme---text-5);
+  }
+  .category_card_bot_text span {
+    display: inline-block;
+  }
+</style>
         </div>
-      {% endif %}
-    {% endfor %}
-    <div>
-      {% render 'tag', custom_class: , tag: section.settings.tag, variant: section.settings.tag_variant, solid_text_size: section.settings.tag_solid_text_size, solid_color: section.settings.tag_solid_color, pill_text_size: section.settings.tag_pill_text_size %}
-    </div>
-  </div>
-  {% render 'spacer', variant: section.settings.spacing_bottom %}
-</div>
-{% schema %}
-{
-  "tag": "section",
-  "name": "Category Cards",
-  "class": "category_cards_wrap u-section",
-  "blocks": [
-    {
-      "name": "Card",
-      "type": "card",
-      "settings": [
+        <div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+          
+          
+        </div>
+        <div class="category_cards_contain u-container" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}">
+          {% render 'spacer', variant: section.settings.spacing_top %}
+          <div class="category_cards_layout u-grid-custom">
+            {% render 'heading', custom_class: , heading: section.settings.heading, tag: h2, visually_hidden: true %}
+            {% for block in section.blocks %}
+    {% if block.type == "card" %}
+                    <div li-block="Card" class="category_cards_card_wrap">
+                                    
+              
+                                    <div class="u-display-none">
+                
+                
+                
+              </div>
+                                    
+              
+                                    <div class="u-display-none">
+                
+                
+              </div>
+                                    
+              
+                                    <div class="u-display-none">
+                
+              </div>
+                                    
+              
+                                    <div class="u-display-none">
+                
+                
+              </div>
+                                    
+              
+                                    <div data-trigger="hover focus" class="category_cards_card_component">
+                <div class="category_cards_card_element">
+                  <div class="category_card_top">
+                    <div class="category_card_icon">
+                      {% render 'image', width: 132, image: section.settings.image, object_fit: 'contain' %}
+                    </div>
+                  </div>
+                  <div class="category_card_bot">
+                    {% render 'heading', custom_class: 'u-margin-bottom-0', heading: block.settings.heading, tag: 'h3', variant: 'u-text-h3-secondary' %}
+                    <div class="category_card_bot_text">
+                      <div class="u-display-contents">
+                        {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: block.settings.text_1, tag: 'span', variant: 'u-text-body-small' %}
+                      </div>
+                      <div class="u-display-contents">
+                        {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: block.settings.text_2, tag: 'span', variant: 'u-text-body-small' %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% render 'clickable', url: block.settings.clickable_url, label: section.settings.heading, mode: 'link' %}
+              </div>
+                                    
+            
+                            </div>
+            {% endif %}
+{% endfor %}
+            <div>
+              {% render 'tag', custom_class: , tag: section.settings.tag, variant: section.settings.tag_variant, solid_text_size: section.settings.tag_solid_text_size, solid_color: section.settings.tag_solid_color, pill_text_size: section.settings.tag_pill_text_size %}
+            </div>
+          </div>
+          {% render 'spacer', variant: section.settings.spacing_bottom %}
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Category Cards",
+    "class": "category_cards_wrap u-section",
+    "blocks": [
         {
-          "type": "header",
-          "content": "\u00dcberschrift"
-        },
-        {
-          "type": "inline_richtext",
-          "id": "heading",
-          "label": "Text",
-          "default": "Lorem ipsum dolor sit amet elit"
-        },
-        {
-          "type": "select",
-          "id": "heading_variant",
-          "label": "Stil",
-          "options": [
-            {
-              "value": "u-text-h1-primary",
-              "label": "H1 Prim\u00e4r"
-            },
-            {
-              "value": "u-text-h1-secondary",
-              "label": "H1 Sekund\u00e4r"
-            },
-            {
-              "value": "u-text-h2-primary",
-              "label": "H2 Prim\u00e4r"
-            },
-            {
-              "value": "u-text-h2-secondary",
-              "label": "H2 Sekund\u00e4r"
-            },
-            {
-              "value": "u-text-h3-primary",
-              "label": "H3 Prim\u00e4r"
-            },
-            {
-              "value": "u-text-h3-secondary",
-              "label": "H3 Sekund\u00e4r"
-            },
-            {
-              "value": "u-text-h4-primary",
-              "label": "H4 Prim\u00e4r"
-            },
-            {
-              "value": "u-text-h5-primary",
-              "label": "H5 Prim\u00e4r"
-            },
-            {
-              "value": "u-text-h6-primary",
-              "label": "H6 Prim\u00e4r"
-            }
-          ],
-          "default": "u-text-h2-primary"
-        },
-        {
-          "type": "header",
-          "content": "Text"
-        },
-        {
-          "type": "text",
-          "id": "text_1",
-          "label": "Text 1",
-          "default": "Lorem ipsum dolor sit amet"
-        },
-        {
-          "type": "text",
-          "id": "text_2",
-          "label": "Text 2",
-          "default": "Lorem ipsum dolor sit amet"
-        },
-        {
-          "type": "header",
-          "content": "Link"
-        },
-        {
-          "type": "url",
-          "id": "clickable_url",
-          "label": "Link"
+            "name": "Card",
+            "type": "card",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "\u00dcberschrift"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "heading",
+                    "label": "Text",
+                    "default": "Lorem ipsum dolor sit amet elit"
+                },
+                {
+                    "type": "select",
+                    "id": "heading_variant",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "u-text-h1-primary",
+                            "label": "H1 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h1-secondary",
+                            "label": "H1 Sekund\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h2-primary",
+                            "label": "H2 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h2-secondary",
+                            "label": "H2 Sekund\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h3-primary",
+                            "label": "H3 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h3-secondary",
+                            "label": "H3 Sekund\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h4-primary",
+                            "label": "H4 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h5-primary",
+                            "label": "H5 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h6-primary",
+                            "label": "H6 Prim\u00e4r"
+                        }
+                    ],
+                    "default": "u-text-h2-primary"
+                },
+                {
+                    "type": "header",
+                    "content": "Text"
+                },
+                {
+                    "type": "text",
+                    "id": "text_1",
+                    "label": "Text 1",
+                    "default": "Lorem ipsum dolor sit amet"
+                },
+                {
+                    "type": "text",
+                    "id": "text_2",
+                    "label": "Text 2",
+                    "default": "Lorem ipsum dolor sit amet"
+                },
+                {
+                    "type": "header",
+                    "content": "Link"
+                },
+                {
+                    "type": "url",
+                    "id": "clickable_url",
+                    "label": "Link"
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "settings": [
-    {
-      "type": "header",
-      "content": "Sektion"
-    },
-    {
-      "type": "text",
-      "id": "section_id",
-      "label": "ID"
-    },
-    {
-      "type": "header",
-      "content": "Abst\u00e4nde"
-    },
-    {
-      "type": "select",
-      "id": "spacing_top",
-      "label": "Oben",
-      "options": [
+    ],
+    "settings": [
         {
-          "value": "none",
-          "label": "Kein Abstand"
+            "type": "header",
+            "content": "Sektion"
         },
         {
-          "value": "small",
-          "label": "Klein"
+            "type": "text",
+            "id": "section_id",
+            "label": "ID"
         },
         {
-          "value": "main",
-          "label": "Standard"
+            "type": "header",
+            "content": "Abst\u00e4nde"
         },
         {
-          "value": "large",
-          "label": "Gro\u00df"
+            "type": "select",
+            "id": "spacing_top",
+            "label": "Oben",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "main",
+                    "label": "Standard"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "main"
         },
         {
-          "value": "page_top",
-          "label": "Seitenanfang"
+            "type": "select",
+            "id": "spacing_bottom",
+            "label": "Unten",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "main",
+                    "label": "Standard"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "main"
+        },
+        {
+            "type": "header",
+            "content": "\u00dcberschrift"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "heading",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+            "type": "header",
+            "content": "Icon"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Bild"
+        },
+        {
+            "type": "header",
+            "content": "Tag"
+        },
+        {
+            "type": "text",
+            "id": "tag",
+            "label": "Text",
+            "default": "Lorem ipsum"
+        },
+        {
+            "type": "select",
+            "id": "tag_variant",
+            "label": "Stil",
+            "options": [
+                {
+                    "value": "solid",
+                    "label": "Fl\u00e4che"
+                },
+                {
+                    "value": "pill",
+                    "label": "Kapsel"
+                }
+            ],
+            "default": "solid"
+        },
+        {
+            "type": "select",
+            "id": "tag_solid_color",
+            "label": "Farbe",
+            "options": [
+                {
+                    "value": "red",
+                    "label": "Rot"
+                },
+                {
+                    "value": "green",
+                    "label": "Gr\u00fcn"
+                },
+                {
+                    "value": "white",
+                    "label": "Wei\u00df"
+                },
+                {
+                    "value": "inherit",
+                    "label": "Erben"
+                }
+            ],
+            "default": "red",
+            "visible_if": "{{ section.settings.tag_variant == 'solid' }}"
+        },
+        {
+            "type": "select",
+            "id": "tag_solid_text_size",
+            "label": "Textgr\u00f6\u00dfe",
+            "options": [
+                {
+                    "value": "u-text-link-base",
+                    "label": "Link Standard"
+                },
+                {
+                    "value": "u-text-link-small",
+                    "label": "Link klein"
+                },
+                {
+                    "value": "u-text-body-small",
+                    "label": "Body klein"
+                },
+                {
+                    "value": "u-text-eyebrow-small",
+                    "label": "\u00dcbertitel klein"
+                }
+            ],
+            "default": "u-text-link-base",
+            "visible_if": "{{ section.settings.tag_variant == 'solid' }}"
+        },
+        {
+            "type": "select",
+            "id": "tag_pill_text_size",
+            "label": "Textgr\u00f6\u00dfe",
+            "options": [
+                {
+                    "value": "u-text-eyebrow-large",
+                    "label": "\u00dcbertitel gro\u00df"
+                },
+                {
+                    "value": "u-text-eyebrow-base",
+                    "label": "\u00dcbertitel Standard"
+                }
+            ],
+            "default": "u-text-eyebrow-base",
+            "visible_if": "{{ section.settings.tag_variant == 'pill' }}"
         }
-      ],
-      "default": "main"
-    },
-    {
-      "type": "select",
-      "id": "spacing_bottom",
-      "label": "Unten",
-      "options": [
+    ],
+    "presets": [
         {
-          "value": "none",
-          "label": "Kein Abstand"
-        },
-        {
-          "value": "small",
-          "label": "Klein"
-        },
-        {
-          "value": "main",
-          "label": "Standard"
-        },
-        {
-          "value": "large",
-          "label": "Gro\u00df"
-        },
-        {
-          "value": "page_top",
-          "label": "Seitenanfang"
+            "name": "Category Cards",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "card"
+                }
+            ]
         }
-      ],
-      "default": "main"
-    },
-    {
-      "type": "header",
-      "content": "\u00dcberschrift"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "heading",
-      "label": "Text",
-      "default": "Lorem ipsum dolor sit amet elit"
-    },
-    {
-      "type": "header",
-      "content": "Icon"
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Bild"
-    },
-    {
-      "type": "header",
-      "content": "Tag"
-    },
-    {
-      "type": "text",
-      "id": "tag",
-      "label": "Text",
-      "default": "Lorem ipsum"
-    },
-    {
-      "type": "select",
-      "id": "tag_variant",
-      "label": "Stil",
-      "options": [
-        {
-          "value": "solid",
-          "label": "Fl\u00e4che"
-        },
-        {
-          "value": "pill",
-          "label": "Kapsel"
-        }
-      ],
-      "default": "solid"
-    },
-    {
-      "type": "select",
-      "id": "tag_solid_color",
-      "label": "Farbe",
-      "options": [
-        {
-          "value": "red",
-          "label": "Rot"
-        },
-        {
-          "value": "green",
-          "label": "Gr\u00fcn"
-        },
-        {
-          "value": "white",
-          "label": "Wei\u00df"
-        },
-        {
-          "value": "inherit",
-          "label": "Erben"
-        }
-      ],
-      "default": "red",
-      "visible_if": "{{ section.settings.tag_variant == 'solid' }}"
-    },
-    {
-      "type": "select",
-      "id": "tag_solid_text_size",
-      "label": "Textgr\u00f6\u00dfe",
-      "options": [
-        {
-          "value": "u-text-link-base",
-          "label": "Link Standard"
-        },
-        {
-          "value": "u-text-link-small",
-          "label": "Link klein"
-        },
-        {
-          "value": "u-text-body-small",
-          "label": "Body klein"
-        },
-        {
-          "value": "u-text-eyebrow-small",
-          "label": "\u00dcbertitel klein"
-        }
-      ],
-      "default": "u-text-link-base",
-      "visible_if": "{{ section.settings.tag_variant == 'solid' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_1_text_text_size",
-      "label": "Textgr\u00f6\u00dfe",
-      "options": [
-        {
-          "value": "u-text-eyebrow-large",
-          "label": "\u00dcbertitel gro\u00df"
-        },
-        {
-          "value": "u-text-eyebrow-base",
-          "label": "\u00dcbertitel Standard"
-        }
-      ],
-      "default": "u-text-eyebrow-base",
-      "visible_if": "{{ section.settings.tag_variant == 'text' }}"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Category Cards",
-      "category": "Liquify",
-      "blocks": [
-        {
-          "type": "card"
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}
+    ]
+} {% endschema %}
