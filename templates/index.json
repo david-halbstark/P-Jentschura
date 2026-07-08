@@ -167,14 +167,14 @@
           "type": "tab-panel",
           "settings": {
             "tab_text": "Körperpflege",
-            "collection": "basische-koerperpflege"
+            "collection": ""
           }
         },
         "tab_panel_fYGgTM": {
           "type": "tab-panel",
           "settings": {
             "tab_text": "Accessoires",
-            "collection": ""
+            "collection": "basische-accessoires"
           }
         }
       },
