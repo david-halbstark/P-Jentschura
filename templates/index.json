@@ -154,7 +154,7 @@
         "tag": "Lorem ipsum",
         "tag_variant": "solid",
         "tag_solid_color": "red",
-        "tag_solid_text_size": "u-text-body-small",
+        "tag_solid_text_size": "u-text-eyebrow-small",
         "button_1_text_text_size": "u-text-eyebrow-base"
       }
     },
