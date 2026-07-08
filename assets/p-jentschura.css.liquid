@@ -6282,11 +6282,19 @@ figure {
   flex-flow: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 3.125rem 1.75rem 1.875rem;
+  height: 100%;
+  padding: 3.125rem 1.25rem 1.875rem;
   transition: all .2s;
   display: flex;
   position: relative;
   overflow: hidden;
+}
+
+.product_slider_layout {
+  grid-column-gap: 2.5rem;
+  grid-row-gap: 2.5rem;
+  flex-flow: column;
+  display: flex;
 }
 
 .product_slider_top {
@@ -6294,6 +6302,7 @@ figure {
   grid-row-gap: 2rem;
   flex-flow: wrap;
   justify-content: space-between;
+  align-items: flex-end;
   display: flex;
 }
 
@@ -6510,7 +6519,8 @@ figure {
   grid-column-gap: 1.5rem;
   grid-row-gap: 1.5rem;
   flex-flow: column;
-  justify-content: flex-start;
+  flex: 1;
+  justify-content: flex-end;
   align-items: center;
   display: flex;
   position: relative;
@@ -6518,6 +6528,18 @@ figure {
 
 .u-focus-ring-inside {
   outline-offset: var(--focus--offset-inner);
+}
+
+.product_slider_tabs {
+  flex: none;
+  margin-top: -.75rem;
+  margin-left: -.75rem;
+  margin-right: -.75rem;
+}
+
+.product_slider_tab {
+  padding: .75rem;
+  display: block;
 }
 
 .iconss {
@@ -6539,6 +6561,7 @@ figure {
 
 .category_cards_card_component {
   border-radius: var(--radius--main);
+  height: 100%;
   position: relative;
 }
 

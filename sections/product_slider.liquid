@@ -28,17 +28,36 @@
         </div>
         <div class="product_slider_contain u-container" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}">
           {% render 'spacer', variant: section.settings.spacing_top %}
-          <div class="product_slider_layout u-flex-vertical-nowrap">
+          <div class="product_slider_layout">
             <div class="product_slider_top">
-              <div class="product_slider_top_left">
+              <div class="product_slider_top_left u-margin-trim">
                 {% render 'eyebrow', custom_class: , eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant %}
                 {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
               </div>
-              <div class="product_slider_top_right">
-                <div class="product_slider_tab-panel"></div>
-              </div>
+              <div class="product_slider_tabs">{% for block in section.blocks %}
+    {% if block.type == "tab-panel" %}
+                    <button li-block="Tab + Panel" class="product_slider_tab">
+                                    
+                  
+                                    <div class="u-display-none">
+                    
+                    
+                  </div>
+                                    
+                  
+                                    {% render 'typography', custom_class: 'u-margin-bottom-0', text: block.settings.tab_text, tag: 'span', variant: 'u-text-link-base' %}
+                                    
+                
+                            </button>
+            {% endif %}
+{% endfor %}</div>
             </div>
-            <div class="product_slider_bot"></div>
+            <div class="product_slider_bot">
+              {% for block in section.blocks %}    <div li-for="block in section.blocks">
+                                    
+                        </div>
+{% endfor %}
+            </div>
           </div>
           {% render 'spacer', variant: section.settings.spacing_bottom %}
         </div>
@@ -55,6 +74,24 @@
     "tag": "section",
     "name": "Product Slider",
     "class": "product_slider_wrap u-section",
+    "blocks": [
+        {
+            "name": "Tab + Panel",
+            "type": "tab-panel",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Tab"
+                },
+                {
+                    "type": "text",
+                    "id": "tab_text",
+                    "label": "Text",
+                    "default": "Lorem ipsum dolor sit amet"
+                }
+            ]
+        }
+    ],
     "settings": [
         {
             "type": "header",
@@ -305,7 +342,11 @@
         {
             "name": "Product Slider",
             "category": "Liquify",
-            "blocks": []
+            "blocks": [
+                {
+                    "type": "tab-panel"
+                }
+            ]
         }
     ]
 } {% endschema %}
