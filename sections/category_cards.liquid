@@ -10,7 +10,20 @@
       --_column-count---value: 1;
     }
     .category_cards_card_element {
-      flex-flow: row;
+      flex-flow: row wrap;
+      padding: 1.25rem;
+      gap: 1rem;
+    }
+    .category_card_icon {
+      width: 2.75rem;
+    }
+    .category_card_bot {
+      gap: 0.5rem;
+    }
+    .category_card_bot {
+      flex: 1 1 12rem;
+      align-items: flex-start;
+      text-align: start;
     }
   }
   .category_cards_card_element:before {
@@ -22,6 +35,13 @@
     background-image: linear-gradient(#f2f1f1 0%, #ededed 100%);
     opacity: calc(100% * var(--_trigger---off));
     transition: opacity 0.2s ease;
+  }
+  .category_card_bot_text:has(> :nth-child(2)) > :first-child:after {
+    content: ' &bull; ';
+    color: var(--_theme---text-2);
+  }
+  .category_card_bot_text span {
+    display: inline-block;
   }
 </style>
         </div>
@@ -75,17 +95,172 @@
               </div>
                                     
               
-                                    <div data-trigger="hover focus" class="category_cards_card_element">
-                <div class="category_card_top">
-                  <div class="category_card_icon">
-                    {% render 'image', width: 132, image: section.settings.image, object_fit: 'contain' %}
+                                    <div data-trigger="hover focus" class="category_cards_card_component">
+                <div class="category_cards_card_element">
+                  <div class="category_card_top">
+                    <div class="category_card_icon">
+                      {% render 'image', width: 132, image: section.settings.image, object_fit: 'contain' %}
+                    </div>
+                  </div>
+                  <div class="category_card_bot">
+                    {% render 'heading', custom_class: 'u-margin-bottom-0', heading: block.settings.heading, tag: 'h3', variant: 'u-text-h3-secondary' %}
+                    <div class="category_card_bot_text">
+                      {% render 'typography', custom_class: 'u-margin-bottom-0', text: block.settings.text_1, tag: 'span', variant: 'u-text-body-small' %}
+                      {% render 'typography', custom_class: 'u-margin-bottom-0', text: block.settings.text_2, tag: 'span', variant: 'u-text-body-small' %}
+                    </div>
                   </div>
                 </div>
-                <div class="category_card_bot">
-                  {% render 'heading', variant: 'u-text-h3-secondary', heading: block.settings.heading, tag: 'h3' %}
-                  <div class="category_card_bot_text">
-                    {% render 'typography', variant: 'u-text-body-small', text: block.settings.text_1, tag: 'span' %}
-                    {% render 'typography', variant: 'u-text-body-small', text: block.settings.text_2, tag: 'span' %}
+                {% render 'clickable', url: block.settings.clickable_url, label: section.settings.heading, mode: 'link' %}
+              </div>
+                                    
+            
+                            </div>
+            {% endif %}
+{% endfor %}
+            {% for block in section.blocks %}
+    {% if block.type == "card" %}
+                    <div li-block="Card" class="category_cards_card_wrap">
+                                    
+              
+                                    <div class="u-display-none">
+                
+                
+                
+              </div>
+                                    
+              
+                                    <div class="u-display-none">
+                
+                
+              </div>
+                                    
+              
+                                    <div class="u-display-none">
+                
+              </div>
+                                    
+              
+                                    <div class="u-display-none">
+                
+                
+              </div>
+                                    
+              
+                                    <div data-trigger="hover focus" class="category_cards_card_component">
+                <div class="category_cards_card_element">
+                  <div class="category_card_top">
+                    <div class="category_card_icon">
+                      {% render 'image', width: 132, image: section.settings.image, object_fit: 'contain' %}
+                    </div>
+                  </div>
+                  <div class="category_card_bot">
+                    {% render 'heading', custom_class: 'u-margin-bottom-0', heading: block.settings.heading, tag: 'h3', variant: 'u-text-h3-secondary' %}
+                    <div class="category_card_bot_text">
+                      {% render 'typography', custom_class: 'u-margin-bottom-0', text: block.settings.text_1, tag: 'span', variant: 'u-text-body-small' %}
+                      {% render 'typography', custom_class: 'u-margin-bottom-0', text: block.settings.text_2, tag: 'span', variant: 'u-text-body-small' %}
+                    </div>
+                  </div>
+                </div>
+                {% render 'clickable', url: block.settings.clickable_url, label: section.settings.heading, mode: 'link' %}
+              </div>
+                                    
+            
+                            </div>
+            {% endif %}
+{% endfor %}
+            {% for block in section.blocks %}
+    {% if block.type == "card" %}
+                    <div li-block="Card" class="category_cards_card_wrap">
+                                    
+              
+                                    <div class="u-display-none">
+                
+                
+                
+              </div>
+                                    
+              
+                                    <div class="u-display-none">
+                
+                
+              </div>
+                                    
+              
+                                    <div class="u-display-none">
+                
+              </div>
+                                    
+              
+                                    <div class="u-display-none">
+                
+                
+              </div>
+                                    
+              
+                                    <div data-trigger="hover focus" class="category_cards_card_component">
+                <div class="category_cards_card_element">
+                  <div class="category_card_top">
+                    <div class="category_card_icon">
+                      {% render 'image', width: 132, image: section.settings.image, object_fit: 'contain' %}
+                    </div>
+                  </div>
+                  <div class="category_card_bot">
+                    {% render 'heading', custom_class: 'u-margin-bottom-0', heading: block.settings.heading, tag: 'h3', variant: 'u-text-h3-secondary' %}
+                    <div class="category_card_bot_text">
+                      {% render 'typography', custom_class: 'u-margin-bottom-0', text: block.settings.text_1, tag: 'span', variant: 'u-text-body-small' %}
+                      {% render 'typography', custom_class: 'u-margin-bottom-0', text: block.settings.text_2, tag: 'span', variant: 'u-text-body-small' %}
+                    </div>
+                  </div>
+                </div>
+                {% render 'clickable', url: block.settings.clickable_url, label: section.settings.heading, mode: 'link' %}
+              </div>
+                                    
+            
+                            </div>
+            {% endif %}
+{% endfor %}
+            {% for block in section.blocks %}
+    {% if block.type == "card" %}
+                    <div li-block="Card" class="category_cards_card_wrap">
+                                    
+              
+                                    <div class="u-display-none">
+                
+                
+                
+              </div>
+                                    
+              
+                                    <div class="u-display-none">
+                
+                
+              </div>
+                                    
+              
+                                    <div class="u-display-none">
+                
+              </div>
+                                    
+              
+                                    <div class="u-display-none">
+                
+                
+              </div>
+                                    
+              
+                                    <div data-trigger="hover focus" class="category_cards_card_component">
+                <div class="category_cards_card_element">
+                  <div class="category_card_top">
+                    <div class="category_card_icon">
+                      {% render 'image', width: 132, image: section.settings.image, object_fit: 'contain' %}
+                    </div>
+                  </div>
+                  <div class="category_card_bot">
+                    {% render 'heading', custom_class: 'u-margin-bottom-0', heading: block.settings.heading, tag: 'h3', variant: 'u-text-h3-secondary' %}
+                    <div class="category_card_bot_text">
+                      {% render 'typography', custom_class: 'u-margin-bottom-0', text: block.settings.text_1, tag: 'span', variant: 'u-text-body-small' %}
+                      {% render 'typography', custom_class: 'u-margin-bottom-0', text: block.settings.text_2, tag: 'span', variant: 'u-text-body-small' %}
+                    </div>
                   </div>
                 </div>
                 {% render 'clickable', url: block.settings.clickable_url, label: section.settings.heading, mode: 'link' %}
@@ -283,6 +458,15 @@
             "name": "Category Cards",
             "category": "Liquify",
             "blocks": [
+                {
+                    "type": "card"
+                },
+                {
+                    "type": "card"
+                },
+                {
+                    "type": "card"
+                },
                 {
                     "type": "card"
                 }
