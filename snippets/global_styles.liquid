@@ -528,16 +528,17 @@ textarea:focus-visible {
         <style>
   /* Tag Solid */
   /* Background Color */
-  .tag_wrap.is-variant-solid.is-red {
-    background-color: var(--_theme---background-2);
+  .tag_wrap.is-variant-solid.is-bg-red {
+    background-color: var(--_theme---background-3);
   }
-  .tag_wrap.is-variant-solid.is-green {
+  .tag_wrap.is-variant-solid.is-bg-green {
     background-color: var(--_theme---background-4);
   }
-  .tag_wrap.is-variant-solid.is-white {
+  .tag_wrap.is-variant-solid.is-bg-white {
+    color: var(--_theme---text);
     background-color: var(--_theme---background-2);
   }
-  .tag_wrap.is-variant-solid.is-inherit {
+  .tag_wrap.is-variant-solid.is-bg-inherit {
     background-color: var(--tag-background);
   }
   /* Padding */
@@ -554,9 +555,9 @@ textarea:focus-visible {
     padding: 0.5rem 0.75rem;
   }
   /* Tag Pill */
-  /* Background Color */
   .tag_wrap.is-variant-pill {
     background-color: var(--_theme---background-2);
+    border-radius: var(--radius--round);
   }
   /* Padding */
   .tag_wrap.is-variant-pill.u-text-eyebrow-large {
