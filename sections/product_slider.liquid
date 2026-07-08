@@ -59,9 +59,10 @@
 {% endfor %}</div>
             </div>
             <div class="product_slider_bot">
-              {% if block in section.blocks %}    <div li-if="block.type == 'tab-panel'" li-for="block in section.blocks" class="product_slider_panel">
-    
-                <div class="product_slider_slider_wrap">
+              {% for block in section.blocks %}    <div li-for="block in section.blocks" class="product_slider_panel">
+                                    
+                
+                            <div class="product_slider_slider_wrap">
                   <div class="product_slider_slider_offset">
                     <div class="product_slider_slider_list"></div>
                   </div>
@@ -209,8 +210,10 @@ html .slider_list > :not(.u-display-contents, .w-dyn-list),
                     </div>
                   </div>
                 </div>
-                  </div>
-{% endif %}
+                            
+              
+                        </div>
+{% endfor %}
             </div>
           </div>
           {% render 'spacer', variant: section.settings.spacing_bottom %}
