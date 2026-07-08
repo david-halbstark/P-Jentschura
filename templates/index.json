@@ -152,7 +152,7 @@
         "heading": "Lorem ipsum dolor sit amet elit",
         "image": "shopify://shop_images/coldpress-icon.avif",
         "tag": "Lorem ipsum",
-        "tag_variant": "solid",
+        "tag_variant": "pill",
         "tag_solid_color": "red",
         "tag_solid_text_size": "u-text-link-base",
         "tag_pill_text_size": "u-text-eyebrow-large"
