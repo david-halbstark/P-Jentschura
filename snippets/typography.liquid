@@ -1,1 +1,46 @@
-{% assign typography_text = text %}{% assign typography_tag = tag | default: 'div' %}{% assign typography_variant = variant | default: 'u-text-style-main' %}{% assign typography_custom_class = custom_class %}{% assign typography_max_width = max_width | default: 0 %}{% assign typography_tidy_text = tidy_text %}{% assign typography_visually_hidden = visually_hidden | default: false %}{% if typography_max_width < 1 %}{% assign typography_max_width = '-1' %}{% endif %}{% if typography_tidy_text == nil %}{% assign typography_tidy_text = true %}{% endif %}{% assign typography_classes = 'u-text' %}{% if typography_variant != blank %}{% assign typography_classes = typography_classes | append: ' ' | append: typography_variant %}{% endif %}{% if typography_tidy_text == false %}{% assign typography_classes = typography_classes | append: ' u-text-wrap-default' %}{% endif %}{% if typography_visually_hidden %}{% assign typography_classes = typography_classes | append: ' u-sr-only' %}{% endif %}{% if typography_custom_class != blank %}{% assign typography_classes = typography_classes | append: ' ' | append: typography_custom_class %}{% endif %}{% if typography_text != blank %}{% case typography_tag %}{% when 'span' %}<span class="{{typography_classes}}" data-number="{{typography_max_width}}">{{typography_text}}</span>{% when 'p' %}<p class="{{typography_classes}}" data-number="{{typography_max_width}}">{{typography_text}}</p>{% when 'div' %}<div class="{{typography_classes}}" data-number="{{typography_max_width}}">{{typography_text}}</div>{% when 'h1' %}<h1 class="{{typography_classes}}" data-number="{{typography_max_width}}">{{typography_text}}</h1>{% when 'h2' %}<h2 class="{{typography_classes}}" data-number="{{typography_max_width}}">{{typography_text}}</h2>{% when 'h3' %}<h3 class="{{typography_classes}}" data-number="{{typography_max_width}}">{{typography_text}}</h3>{% when 'h4' %}<h4 class="{{typography_classes}}" data-number="{{typography_max_width}}">{{typography_text}}</h4>{% when 'h5' %}<h5 class="{{typography_classes}}" data-number="{{typography_max_width}}">{{typography_text}}</h5>{% when 'h6' %}<h6 class="{{typography_classes}}" data-number="{{typography_max_width}}">{{typography_text}}</h6>{% else %}<div class="{{typography_classes}}" data-number="{{typography_max_width}}">{{typography_text}}</div>{% endcase %}{% endif %}
+{% assign typography_text = text -%}
+{%- assign typography_tag = tag | default: 'div' -%}
+{%- assign typography_variant = variant | default: 'u-text-style-main' -%}
+{%- assign typography_custom_class = custom_class -%}
+{%- assign typography_max_width = max_width | default: 0 -%}
+{%- assign typography_tidy_text = tidy_text -%}
+{%- assign typography_visually_hidden = visually_hidden | default: false -%}
+{%- if typography_max_width < 1 %}{% assign typography_max_width = '-1' %}{% endif -%}
+{%- if typography_tidy_text == null %}{% assign typography_tidy_text = true %}{% endif -%}
+{%- assign typography_classes = 'u-text' -%}
+{%- if typography_variant != blank -%}
+  {%- assign typography_classes = typography_classes | append: ' ' | append: typography_variant -%}
+{%- endif -%}
+{%- if typography_tidy_text == false -%}
+  {%- assign typography_classes = typography_classes | append: ' u-text-wrap-default' -%}
+{%- endif -%}
+{%- if typography_visually_hidden -%}
+  {%- assign typography_classes = typography_classes | append: ' u-sr-only' -%}
+{%- endif -%}
+{%- if typography_custom_class != blank -%}
+  {%- assign typography_classes = typography_classes | append: ' ' | append: typography_custom_class -%}
+{%- endif -%}
+{%- if typography_text != blank -%}
+  {%- case typography_tag -%}
+    {%- when 'span' -%}
+      <span class="{{typography_classes}}" data-number="{{typography_max_width}}">{{ typography_text }}</span>
+    {%- when 'p' %}
+      <p class="{{typography_classes}}" data-number="{{typography_max_width}}">{{ typography_text }}</p>
+    {% when 'div' %}
+      <div class="{{typography_classes}}" data-number="{{typography_max_width}}">{{ typography_text }}</div>
+    {% when 'h1' %}
+      <h1 class="{{typography_classes}}" data-number="{{typography_max_width}}">{{ typography_text }}</h1>
+    {% when 'h2' %}
+      <h2 class="{{typography_classes}}" data-number="{{typography_max_width}}">{{ typography_text }}</h2>
+    {% when 'h3' %}
+      <h3 class="{{typography_classes}}" data-number="{{typography_max_width}}">{{ typography_text }}</h3>
+    {% when 'h4' %}
+      <h4 class="{{typography_classes}}" data-number="{{typography_max_width}}">{{ typography_text }}</h4>
+    {% when 'h5' %}
+      <h5 class="{{typography_classes}}" data-number="{{typography_max_width}}">{{ typography_text }}</h5>
+    {% when 'h6' %}
+      <h6 class="{{typography_classes}}" data-number="{{typography_max_width}}">{{ typography_text }}</h6>
+    {% else %}
+      <div class="{{typography_classes}}" data-number="{{typography_max_width}}">{{ typography_text }}</div>
+  {% endcase -%}
+{%- endif %}
