@@ -1,0 +1,30 @@
+<div data-trigger="hover focus" class="product_card_element">
+                                  <div class="product_card_inner">
+                                    <div class="product_card_top">
+                                      <div class="product_card_image">
+                                        {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                                      </div>
+                                      <div class="product_card_tag"></div>
+                                    </div>
+                                    <div class="product_card_bot">
+                                      {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+                                      
+                                    </div>
+                                  </div>
+                                  <div class="product_card_hover">
+                                    <div class="product_card_hover_image"></div>
+                                    {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                                    <div class="product_card_hover_inner">
+                                      {% render 'button', icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, ur: section.settings.button_1_url, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
+                                      <div data-button=" " data-trigger="hover focus" class="button_wrap">
+                                        <div class="clickable_wrap u-cover-absolute"></div>
+                                        <div class="button_element">
+                                          <div aria-hidden="true" class="button_text u-text-link-large">Button Text</div>
+                                          <div class="button_icon u-hide-if-empty"></div>
+                                        </div>
+                                        <div data-wf--preview-button-variant--variant="solid" class="u-display-none"></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  {% render 'clickable', url: section.settings.clickable_url, action: section.settings.clickable_action, focus_ring: section.settings.clickable_focus_ring, label: section.settings.clickable_label, mode: section.settings.clickable_mode, custom_class: , target: section.settings.clickable_target %}
+                                </div>

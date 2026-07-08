@@ -38,7 +38,7 @@
   }
   .category_card_bot_text:has(> :nth-child(2)) > :first-child:after {
     content: ' \2022  ';
-    color: var(--_theme---text-2);
+    color: var(--_theme---text-5);
   }
   .category_card_bot_text span {
     display: inline-block;
@@ -59,6 +59,14 @@
           
         </div>
         <div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
           
           
         </div>
@@ -121,6 +129,9 @@
                             </div>
             {% endif %}
 {% endfor %}
+            <div>
+              {% render 'tag', custom_class: , tag: secton.settings.tag, variant: section.settings.tag_variant, solid_text_size: section.settings.tag_solid_text_size, solid_color: section.settings.tag_solid_color, pill_text_size: section.settings.tag_pill_text_size %}
+            </div>
           </div>
           {% render 'spacer', variant: section.settings.spacing_bottom %}
         </div> {% schema %} {
@@ -302,6 +313,99 @@
             "type": "image_picker",
             "id": "image",
             "label": "Bild"
+        },
+        {
+            "type": "header",
+            "content": "Tag"
+        },
+        {
+            "type": "text",
+            "id": "tag",
+            "label": "Text",
+            "default": "Lorem ipsum"
+        },
+        {
+            "type": "select",
+            "id": "tag_variant",
+            "label": "Stil",
+            "options": [
+                {
+                    "value": "solid",
+                    "label": "Fl\u00e4che"
+                },
+                {
+                    "value": "pill",
+                    "label": "Kapsel"
+                }
+            ],
+            "default": "solid"
+        },
+        {
+            "type": "select",
+            "id": "tag_solid_color",
+            "label": "Farbe",
+            "options": [
+                {
+                    "value": "red",
+                    "label": "Rot"
+                },
+                {
+                    "value": "green",
+                    "label": "Gr\u00fcn"
+                },
+                {
+                    "value": "white",
+                    "label": "Wei\u00df"
+                },
+                {
+                    "value": "inherit",
+                    "label": "Erben"
+                }
+            ],
+            "default": "red",
+            "visible_if": "{{ section.settings.tag_variant == 'solid' }}"
+        },
+        {
+            "type": "select",
+            "id": "tag_solid_text_size",
+            "label": "Textgr\u00f6\u00dfe",
+            "options": [
+                {
+                    "value": "u-text-link-base",
+                    "label": "Link Standard"
+                },
+                {
+                    "value": "u-text-link-small",
+                    "label": "Link klein"
+                },
+                {
+                    "value": "u-text-body-small",
+                    "label": "Body klein"
+                },
+                {
+                    "value": "u-text-eyebrow-small",
+                    "label": "\u00dcbertitel klein"
+                }
+            ],
+            "default": "u-text-link-base",
+            "visible_if": "{{ section.settings.tag_variant == 'solid' }}"
+        },
+        {
+            "type": "select",
+            "id": "button_1_text_text_size",
+            "label": "Textgr\u00f6\u00dfe",
+            "options": [
+                {
+                    "value": "u-text-eyebrow-large",
+                    "label": "\u00dcbertitel gro\u00df"
+                },
+                {
+                    "value": "u-text-eyebrow-base",
+                    "label": "\u00dcbertitel Standard"
+                }
+            ],
+            "default": "u-text-eyebrow-base",
+            "visible_if": "{{ section.settings.tag_variant == 'text' }}"
         }
     ],
     "presets": [
