@@ -1,1 +1,59 @@
-{% assign char_lt = '%3C' | url_decode %}{% assign char_gt = '%3E' | url_decode %}{% assign char_slash = '%2F' | url_decode %}{% assign tag_text = tag %}{% assign tag_variant = variant | default: 'solid' %}{% assign tag_solid_color = solid_color %}{% assign tag_solid_text_size = solid_text_size %}{% assign tag_pill_text_size = pill_text_size %}{% assign tag_custom_class = custom_class %}{% assign tag_classes = 'tag_wrap' %}{% if tag_variant != blank %}{% assign tag_variant_class = tag_variant | replace: '_', '-' %}{% assign tag_classes = tag_classes | append: ' is-variant-' | append: tag_variant_class %}{% endif %}{% if tag_variant == 'solid' %}{% if tag_solid_color != blank %}{% assign tag_color_class = tag_solid_color | replace: '_', '-' %}{% assign tag_classes = tag_classes | append: ' is-' | append: tag_color_class %}{% endif %}{% if tag_solid_text_size != blank %}{% assign tag_classes = tag_classes | append: ' ' | append: tag_solid_text_size %}{% endif %}{% elsif tag_variant == 'pill' %}{% if tag_pill_text_size != blank %}{% assign tag_classes = tag_classes | append: ' ' | append: tag_pill_text_size %}{% endif %}{% endif %}{% if tag_custom_class != blank %}{% assign tag_custom_class_clean = tag_custom_class | replace: '_', '-' %}{% assign tag_classes = tag_classes | append: ' ' | append: tag_custom_class_clean %}{% endif %}{% assign tag_open_tag = char_lt %}{% assign tag_open_tag = tag_open_tag | append: 'div class="' %}{% assign tag_open_tag = tag_open_tag | append: tag_classes %}{% assign tag_open_tag = tag_open_tag | append: '"' %}{% assign tag_open_tag = tag_open_tag | append: char_gt %}{% assign tag_close_tag = char_lt %}{% assign tag_close_tag = tag_close_tag | append: char_slash %}{% assign tag_close_tag = tag_close_tag | append: 'div' %}{% assign tag_close_tag = tag_close_tag | append: char_gt %}{% if tag_text != blank %}{{tag_open_tag}}{{tag_text}}{{tag_close_tag}}{% endif %}
+{% assign char_lt = '%3C' | url_decode %}
+{% assign char_gt = '%3E' | url_decode %}
+{% assign char_slash = '%2F' | url_decode %}
+
+{% assign tag_text = text %}
+{% assign tag_variant = variant | default: 'solid' %}
+
+{% assign tag_solid_color = solid_color %}
+{% assign tag_solid_text_size = solid_text_size %}
+{% assign tag_pill_text_size = pill_text_size %}
+
+{% assign tag_custom_class = custom_class %}
+
+{% assign tag_wrap_classes = 'tag_wrap' %}
+{% assign tag_text_classes = 'tag_text' %}
+
+{% if tag_variant != blank %}
+  {% assign tag_variant_class = tag_variant | replace: '_', '-' %}
+  {% assign tag_wrap_classes = tag_wrap_classes | append: ' is-variant-' | append: tag_variant_class %}
+{% endif %}
+
+{% if tag_variant == 'solid' %}
+  {% if tag_solid_color != blank %}
+    {% assign tag_color_class = tag_solid_color | replace: '_', '-' %}
+    {% assign tag_wrap_classes = tag_wrap_classes | append: ' is-bg-' | append: tag_color_class %}
+  {% endif %}
+
+  {% if tag_solid_text_size != blank %}
+    {% assign tag_text_classes = tag_text_classes | append: ' ' | append: tag_solid_text_size %}
+  {% endif %}
+{% elsif tag_variant == 'pill' %}
+  {% if tag_pill_text_size != blank %}
+    {% assign tag_text_classes = tag_text_classes | append: ' ' | append: tag_pill_text_size %}
+  {% endif %}
+{% endif %}
+
+{% if tag_custom_class != blank %}
+  {% assign tag_custom_class_clean = tag_custom_class | replace: '_', '-' %}
+  {% assign tag_wrap_classes = tag_wrap_classes | append: ' ' | append: tag_custom_class_clean %}
+{% endif %}
+
+{% assign tag_open_tag = char_lt %}
+{% assign tag_open_tag = tag_open_tag | append: 'div class="' %}
+{% assign tag_open_tag = tag_open_tag | append: tag_wrap_classes %}
+{% assign tag_open_tag = tag_open_tag | append: '"' %}
+{% assign tag_open_tag = tag_open_tag | append: char_gt %}
+
+{% assign tag_close_tag = char_lt %}
+{% assign tag_close_tag = tag_close_tag | append: char_slash %}
+{% assign tag_close_tag = tag_close_tag | append: 'div' %}
+{% assign tag_close_tag = tag_close_tag | append: char_gt %}
+
+{% if tag_text != blank %}
+  {{ tag_open_tag }}
+  <div class="{{ tag_text_classes }}">
+    {{ tag_text }}
+  </div>
+  {{ tag_close_tag }}
+{% endif %}
