@@ -155,6 +155,31 @@
     },
     "product_slider_NyaW7F": {
       "type": "product_slider",
+      "blocks": {
+        "tab_panel_BkRE7h": {
+          "type": "tab-panel",
+          "settings": {
+            "tab_text": "Lebensmittel"
+          }
+        },
+        "tab_panel_JUiNNe": {
+          "type": "tab-panel",
+          "settings": {
+            "tab_text": "Körperpflege"
+          }
+        },
+        "tab_panel_fYGgTM": {
+          "type": "tab-panel",
+          "settings": {
+            "tab_text": "Accessoires"
+          }
+        }
+      },
+      "block_order": [
+        "tab_panel_BkRE7h",
+        "tab_panel_JUiNNe",
+        "tab_panel_fYGgTM"
+      ],
       "name": "Product Slider",
       "settings": {
         "section_id": "",
