@@ -1,1 +1,42 @@
-{"type":"footer","name":"Footer Group","sections":{"footer":{"type":"footer","settings":{}}},"order":["footer"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer Group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "group_eCfaXQ": {
+          "type": "group",
+          "settings": {
+            "menu": "footer-products",
+            "heading": "Produkte"
+          }
+        }
+      },
+      "block_order": [
+        "group_eCfaXQ"
+      ],
+      "settings": {
+        "heading": "Lorem ipsum dolor sit amet elit",
+        "text": "Lorem ipsum dolor sit amet",
+        "text_variant": "u-text-body-base",
+        "text_tag": "h2",
+        "text_max_width": 60,
+        "text_tidy_text": true,
+        "text_visually_hidden": false
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}
