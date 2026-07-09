@@ -1,5 +1,6 @@
 <div class="u-embed-css w-embed">
-  <style>
+          <style>
+  @container (width >= 70em) {
     .footer_bot_right:has(.footer_lang_wrap) .footer_bot_list::after {
       content: '';
       display: block;
@@ -8,332 +9,353 @@
       width: 0.0625rem;
       background-color: var(--_theme---background);
     }
-  </style>
-</div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-
-{% render 'heading', visually_hidden: true, heading: section.settings.heading, tag: 'h2' %}
-<div class="footer_top_wrap">
-  <div class="footer_top_contain u-container">
-    <div class="footer_top_layout">
-      <div class="footer_top_text">
-        {% render 'typography',
-          custom_class: 'u-margin-bottom-0',
-          text: section.settings.socials_text,
-          tag: 'div',
-          variant: 'u-text-eyebrow-large'
-        %}
-      </div>
-      <div role="list" class="footer_social_wrap">
-        {% for block in section.blocks %}
-          {% if block.type == 'socials-item' %}
-            <div role="listitem" li-block="Socials Item" class="footer_social_item_wrap">
-              <div class="u-display-none"></div>
-
-              <div data-trigger="hover focus" class="footer_socials_item_element">
-                <div class="footer_socials_item_inner">
-                  <div class="footer_socials_item_icon">
-                    {% render 'icon', aria-hidden: true, icon: block.settings.icon %}
-                  </div>
-                </div>
-                {% render 'clickable',
-                  target: '_blank',
-                  label: block.settings.clickable_label,
-                  mode: 'link',
-                  url: block.settings.clickable_url
-                %}
-              </div>
-            </div>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</div>
-<div class="footer_mid_wrap">
-  <div class="footer_mid_contain u-container">
-    <div class="footer_mid_layout">
-      {% for block in section.blocks %}
-        {% if block.type == 'group' %}
-          <section li-block="Group" data-trigger="group" class="footer_group_wrap">
-            <div class="u-display-none"></div>
-
-            <div class="footer_group_element">
-              <div class="footer_group_top">
-                {% render 'heading',
-                  custom_class: 'u-margin-bottom-0',
-                  heading: block.settings.heading,
-                  tag: 'h3',
-                  variant: 'u-text-eyebrow-base'
-                %}
-              </div>
-              <div class="footer_group_bot_wrap">
-                <div class="footer_group_bot_element">
-                  <div class="footer_group_bot">
-                    {% if block.settings.menu != blank %}
-                      <div li-if="block.settings.menu != blank" role="list" class="footer_group_list">
-                        {% for link in block.settings.menu.links %}
-                          <div
-                            li-for="link in block.settings.menu.links"
-                            data-trigger="hover-other focus-other"
-                            role="listitem"
-                            class="footer_group_item_wrap"
-                          >
-                            {% assign link_title = link.title -%}
-                            {%- assign is_external = false -%}
-                            {%- assign tag_text = blank -%}
-                            {%- assign clickable_target = blank -%}
-                            {%- if link_title contains '[external]' -%}
-                              {%- assign is_external = true -%}
-                              {%- assign clickable_target = '_blank' -%}
-                              {%- assign link_title = link_title | replace: '[external]', '' | strip -%}
-                            {%- endif -%}
-                            {%- if link_title contains '[tag:' -%}
-                              {%- assign tag_text = link_title | split: '[tag:' | last | split: ']' | first | strip -%}
-                              {%- assign tag_marker = '[tag:' | append: tag_text | append: ']' -%}
-                              {%- assign link_title = link_title | replace: tag_marker, '' | strip -%}
-                            {%- endif %}
-
-                            <div class="footer_group_item_element">
-                              {% render 'typography',
-                                variant: 'u-text-link-large u-min-width-auto',
-                                text: link_title,
-                                tag: 'span'
-                              %}
-                              {% if tag_text != blank %}
-                                <div li-if="tag_text != blank" class="footer_group_item_tag">
-                                  {% render 'tag', custom_class: , tag: tag_text, variant: 'solid', solid_text_size: 'u-text-body-small', solid_color: 'red' %}
-                                </div>
-                              {% endif %}
-                              {% if is_external %}
-                                <div li-if="is_external" class="footer_group_item_icon">
-                                  {% render 'icon', icon: 'arrow-up-right', aria-hidden: true %}
-                                </div>
-                              {% endif %}
-                              {% render 'clickable',
-                                target: clickable_target,
-                                label: link.title,
-                                mode: 'link',
-                                url: link.url
-                              %}
-                            </div>
-                          </div>
-                        {% endfor %}
-                      </div>
-                    {% endif %}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-</div>
-<div class="footer_bot_wrap">
-  <div class="footer_bot_contain u-container">
-    <div class="footer_bot_layout">
-      <div class="footer_bot_left">
-        {% render 'typography',
-          custom_class: 'u-margin-bottom-0',
-          text: section.settings.legal_text,
-          tag: 'div',
-          variant: 'u-text-body-small'
-        %}
-      </div>
-      <div role="list" data-trigger="group" class="footer_bot_right">
-        <div role="list" data-trigger="group" class="footer_bot_list">
-          {% for link in block.settings.menu.links %}
-            <div
-              li-for="link in block.settings.menu.links"
-              data-trigger="hover-other focus-other"
-              role="listitem"
-              class="footer_bottom_item"
-            >
-              <div aria-hidden="true" class="footer_bottom_item_text">
-                {% render 'typography',
-                  custom_class: 'u-margin-bottom',
-                  text: link.title,
-                  tag: 'div',
-                  variant: 'u-text-link-small'
-                %}
-              </div>
-
-              {% render 'clickable', target: '_self', label: link.title, mode: 'link', url: link.url %}
-            </div>
-          {% endfor %}
-        </div>
-        {% if localization.available_languages.size > 1 %}
-          <localization-form li-if="localization.available_languages.size > 1" class="footer_lang_wrap">
-            {% form 'localization', class: 'footer_lang_form' %}
-              <div class="footer_lang_dd">
-                <button type="button" class="footer_lang_dd_button">
-                  <img
-                    src="{{ localization.country | image_url: width: 32 }}"
-                    loading="lazy"
-                    li-object:src="localization.country | image_url: width: 32"
-                    alt=""
-                    class="footer_lang_dd_button_flag"
-                  >
-                  {% render 'typography',
-                    custom_class: 'u-magin-bottom-0 u-min-width-auto',
-                    text: section.settings.text,
-                    tag: 'span',
-                    variant: 'u-text-link-small'
-                  %}
-                  <div class="footer_lang_dd_icon">
-                    {% render 'icon', custom_class: , icon: arrow-left, aria-hidden: true %}
-                  </div>
-                </button>
-              </div>
-            {% endform %}
-          </localization-form>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-</div>
-{% schema %}
-{
-  "tag": "footer",
-  "name": "Footer",
-  "class": "footer_wrap",
-  "blocks": [
-    {
-      "name": "Socials Item",
-      "type": "socials-item",
-      "settings": [
-        {
-          "type": "header",
-          "content": "Icon"
-        },
-        {
-          "type": "select",
-          "id": "icon",
-          "label": "Icon",
-          "options": [
-            {
-              "value": "tiktok",
-              "label": "TikTok"
-            },
-            {
-              "value": "instagram",
-              "label": "Instagram"
-            },
-            {
-              "value": "facebook",
-              "label": "Facebook"
-            },
-            {
-              "value": "linkedin",
-              "label": "LinkedIn"
-            }
-          ],
-          "default": "tiktok"
-        },
-        {
-          "type": "header",
-          "content": "Link"
-        },
-        {
-          "type": "text",
-          "id": "clickable_label",
-          "label": "Beschriftung",
-          "default": "Mehr erfahren"
-        },
-        {
-          "type": "url",
-          "id": "clickable_url",
-          "label": "Link"
-        }
-      ]
-    },
-    {
-      "name": "Group",
-      "type": "group",
-      "settings": [
-        {
-          "type": "header",
-          "content": "\u00dcberschrift"
-        },
-        {
-          "type": "inline_richtext",
-          "id": "heading",
-          "label": "Text",
-          "default": "Lorem ipsum dolor sit amet elit"
-        },
-        {
-          "type": "header",
-          "content": "Men\u00fc"
-        },
-        {
-          "type": "link_list",
-          "id": "menu",
-          "label": "Men\u00fc ausw\u00e4hlen"
-        }
-      ]
-    }
-  ],
-  "settings": [
-    {
-      "type": "header",
-      "content": "\u00dcberschrift"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "heading",
-      "label": "Text",
-      "default": "Lorem ipsum dolor sit amet elit"
-    },
-    {
-      "type": "header",
-      "content": "Soziale Netzwerke"
-    },
-    {
-      "type": "text",
-      "id": "socials_text",
-      "label": "Text",
-      "default": "Lorem ipsum dolor sit amet"
-    },
-    {
-      "type": "header",
-      "content": "Rechtliches"
-    },
-    {
-      "type": "text",
-      "id": "legal_text",
-      "label": "Text",
-      "default": "Lorem ipsum dolor sit amet"
-    },
-    {
-      "type": "header",
-      "content": "Rechtliches"
-    },
-    {
-      "type": "link_list",
-      "id": "menu",
-      "label": "Men\u00fc ausw\u00e4hlen"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Footer",
-      "category": "Liquify",
-      "blocks": [
-        {
-          "type": "socials-item"
-        },
-        {
-          "type": "group"
-        }
-      ]
-    }
-  ],
-  "enabled_on": {
-    "groups": ["*"]
   }
-}
-{% endschema %}
+  @container (width < 70em) {
+    .footer_bot_right {
+      order: -999;
+    }
+    .footer_bot_layout {
+      padding-top: 2.5rem;
+      padding-bottom: 3.75rem;
+    }
+    .footer_bot_right {
+      row-gap: 2rem;
+      margin: 0rem;
+    }
+    .footer_bot_layout,
+    .footer_bot_right {
+      flex-flow: column;
+      align-items: start;
+    }
+    .footer_bot_list, .footer_lang_dd_button {
+      margin: calc(calc(-0.5rem * var(--_responsive---large)) + calc(-0.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+    }
+  }
+</style>
+        </div>
+        <div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+        </div>
+        
+        {% render 'heading', visually_hidden: true, heading: section.settings.heading, tag: 'h2' %}
+        <div class="footer_top_wrap">
+          <div class="footer_top_contain u-container">
+            <div class="footer_top_layout">
+              <div class="footer_top_text">
+                {% render 'typography', custom_class: 'u-margin-bottom-0', text: section.settings.socials_text, tag: 'div', variant: 'u-text-eyebrow-large' %}
+              </div>
+              <div role="list" class="footer_social_wrap">
+                {% for block in section.blocks %}
+    {% if block.type == "socials-item" %}
+                    <div role="listitem" li-block="Socials Item" class="footer_social_item_wrap">
+                                    
+                  
+                                    
+                                    
+                  
+                                    <div class="u-display-none">
+                    
+                    
+                    
+                  </div>
+                                    
+                  
+                                    <div data-trigger="hover focus" class="footer_socials_item_element">
+                    <div class="footer_socials_item_inner">
+                      <div class="footer_socials_item_icon">
+                        {% render 'icon', aria-hidden: true, icon: block.settings.icon %}
+                      </div>
+                    </div>
+                    {% render 'clickable', target: '_blank', label: block.settings.clickable_label, mode: 'link', url: block.settings.clickable_url %}
+                  </div>
+                                    
+                
+                            </div>
+            {% endif %}
+{% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer_mid_wrap">
+          <div class="footer_mid_contain u-container">
+            <div class="footer_mid_layout">
+              {% assign footer_columns = '1,2,3,4' | split: ',' %}
+              {% for column_number in footer_columns %}    <div li-for="column_number in footer_columns" class="footer_column">
+                                    
+                
+                            {% for block in section.blocks %}
+    {% if block.type == "group" %}
+                    <section li-block="Group" data-trigger="group" class="footer_group_wrap">
+                                    
+                  
+                                    {% if  %}    <div li-if="">
+    
+                    <div class="u-display-none">
+                      
+                      
+                    </div>
+                    
+                    <div class="footer_group_element">
+                      <div class="footer_group_top">
+                        {% render 'heading', custom_class: 'u-margin-bottom-0', heading: block.settings.heading, tag: 'h3', variant: 'u-text-eyebrow-base' %}
+                      </div>
+                      <div class="footer_group_bot_wrap">
+                        <div class="footer_group_bot_element">
+                          <div class="footer_group_bot">
+                            {% if block.settings.menu != blank %}    <div li-if="block.settings.menu != blank" role="list" class="footer_group_list">
+    
+                              {% for link in block.settings.menu.links %}    <div li-for="link in block.settings.menu.links" data-trigger="hover-other focus-other" role="listitem" class="footer_group_item_wrap">
+                                    
+                                
+                            {% assign link_title = link.title %}{% assign is_external = false %}{% assign tag_text = blank %}{% assign clickable_target = blank %}{% if link_title contains '[external]' %}{% assign is_external = true %}{% assign clickable_target = '_blank' %}{% assign link_title = link_title | replace: '[external]', '' | strip %}{% endif %}{% if link_title contains '[tag:' %}{% assign tag_text = link_title | split: '[tag:' | last | split: ']' | first | strip %}{% assign tag_marker = '[tag:' | append: tag_text | append: ']' %}{% assign link_title = link_title | replace: tag_marker, '' | strip %}{% endif %}
+                            
+                                
+                            <div class="footer_group_item_element">
+                                  {% render 'typography', variant: 'u-text-link-large u-min-width-auto u-margin-bottom-0', text: link.title, tag: 'span' %}
+                                  {% if tag_text != blank %}    <div li-if="tag_text != blank" class="footer_group_item_tag">
+    
+                                    {% render 'tag', custom_class: , tag: tag_text, variant: 'solid', solid_text_size: 'u-text-body-small', solid_color: 'red' %}
+                                      </div>
+{% endif %}
+                                  {% if is_external %}    <div li-if="is_external" class="footer_group_item_icon">
+    
+                                    {% render 'icon', custom_class: , icon: 'arrow-up-right', aria-hidden: true %}
+                                      </div>
+{% endif %}
+                                  {% render 'clickable', target: clickable_target, label: link.title, mode: 'link', url: link.url %}
+                                </div>
+                            
+                              
+                        </div>
+{% endfor %}
+                                </div>
+{% endif %}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                      </div>
+{% endif %}
+                                    
+                
+                            </section>
+            {% endif %}
+{% endfor %}
+                            
+              
+                        </div>
+{% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="footer_bot_wrap">
+          <div class="footer_bot_contain u-container">
+            <div class="footer_bot_layout">
+              <div class="footer_bot_left">
+                {% render 'typography', custom_class: 'u-margin-bottom-0', text: section.settings.legal_text, tag: 'div', variant: 'u-text-body-small' %}
+              </div>
+              <div role="list" data-trigger="group" class="footer_bot_right">
+                <div role="list" data-trigger="group" class="footer_bot_list">
+                  {% for link in section.settings.menu.links %}    <div li-for="link in section.settings.menu.links" data-trigger="hover-other focus-other" role="listitem" class="footer_bottom_item">
+                                    
+                    
+                            <div aria-hidden="true" class="footer_bottom_item_text">
+                      {% render 'typography', custom_class: 'u-margin-bottom', text: link.title, tag: 'div', variant: 'u-text-link-small' %}
+                    </div>
+                            
+                    
+                            {% render 'clickable', target: '_self', label: link.title, mode: 'link', url: link.url %}
+                            
+                  
+                        </div>
+{% endfor %}
+                </div>{% if localization.available_languages.size > 1 %}    <localization-form li-if="localization.available_languages.size > 1" class="footer_lang_wrap">
+    
+                  {% form 'localization', class: 'footer_lang_form' %}
+<div class="footer_lang_dd"><button type="button" class="footer_lang_dd_button"><img src="{{ localization.country | image_url: width: 32 }}" loading="lazy" li-object:src="localization.country | image_url: width: 32" alt="" class="footer_lang_dd_button_flag">
+                        {% render 'typography', custom_class: 'u-magin-bottom-0 u-min-width-auto', text: section.settings.text, tag: 'span', variant: 'u-text-link-small' %}
+                        <div class="footer_lang_dd_icon">
+                          {% render 'icon', aria-hidden: true, icon: arrow-left %}
+                        </div>
+                      </button></div>
+                  {% endform %}
+                    </localization-form>
+{% endif %}
+              </div>
+            </div>
+          </div>
+        </div> {% schema %} {
+    "tag": "footer",
+    "name": "Footer",
+    "class": "footer_wrap",
+    "blocks": [
+        {
+            "name": "Socials Item",
+            "type": "socials-item",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Icon"
+                },
+                {
+                    "type": "select",
+                    "id": "icon",
+                    "label": "Icon",
+                    "options": [
+                        {
+                            "value": "tiktok",
+                            "label": "TikTok"
+                        },
+                        {
+                            "value": "instagram",
+                            "label": "Instagram"
+                        },
+                        {
+                            "value": "facebook",
+                            "label": "Facebook"
+                        },
+                        {
+                            "value": "linkedin",
+                            "label": "LinkedIn"
+                        }
+                    ],
+                    "default": "tiktok"
+                },
+                {
+                    "type": "header",
+                    "content": "Link"
+                },
+                {
+                    "type": "text",
+                    "id": "clickable_label",
+                    "label": "Beschriftung",
+                    "default": "Mehr erfahren"
+                },
+                {
+                    "type": "url",
+                    "id": "clickable_url",
+                    "label": "Link"
+                }
+            ]
+        },
+        {
+            "name": "Group",
+            "type": "group",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "\u00dcberschrift"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "heading",
+                    "label": "Text",
+                    "default": "Lorem ipsum dolor sit amet elit"
+                },
+                {
+                    "type": "header",
+                    "content": "Men\u00fc-Gruppe"
+                },
+                {
+                    "type": "link_list",
+                    "id": "menu",
+                    "label": "Men\u00fc"
+                },
+                {
+                    "type": "select",
+                    "id": "desktop_column",
+                    "label": "Desktop-Spalte",
+                    "options": [
+                        {
+                            "value": "1",
+                            "label": "Spalte 1"
+                        },
+                        {
+                            "value": "2",
+                            "label": "Spalte 2"
+                        },
+                        {
+                            "value": "3",
+                            "label": "Spalte 3"
+                        },
+                        {
+                            "value": "4",
+                            "label": "Spalte 4"
+                        }
+                    ],
+                    "default": "1"
+                }
+            ]
+        }
+    ],
+    "settings": [
+        {
+            "type": "header",
+            "content": "\u00dcberschrift"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "heading",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+            "type": "header",
+            "content": "Soziale Netzwerke"
+        },
+        {
+            "type": "text",
+            "id": "socials_text",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet"
+        },
+        {
+            "type": "header",
+            "content": "Rechtliches"
+        },
+        {
+            "type": "text",
+            "id": "legal_text",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet"
+        },
+        {
+            "type": "header",
+            "content": "Rechtliches"
+        },
+        {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Men\u00fc ausw\u00e4hlen"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Footer",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "socials-item"
+                },
+                {
+                    "type": "group"
+                }
+            ]
+        }
+    ],
+    "enabled_on": {
+        "groups": [
+            "*"
+        ]
+    }
+} {% endschema %}

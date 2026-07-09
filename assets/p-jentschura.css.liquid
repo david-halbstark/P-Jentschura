@@ -6441,6 +6441,13 @@ figure {
   display: flex;
 }
 
+.footer_group_item_wrap {
+  opacity: calc(1 - .5 * var(--_trigger---off));
+  transition-property: opacity;
+  transition-duration: .2s;
+  transition-timing-function: ease;
+}
+
 .footer_group_list {
   grid-column-gap: 1.25rem;
   grid-row-gap: 1.25rem;
@@ -6455,6 +6462,10 @@ figure {
   padding-top: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
   padding-bottom: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
   padding-right: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  opacity: calc(1 - .5 * var(--_trigger---off));
+  transition-property: opacity;
+  transition-duration: .2s;
+  transition-timing-function: ease;
   position: relative;
 }
 
@@ -7568,8 +7579,14 @@ figure {
 }
 
 .footer_mid_layout {
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
   padding-top: 4.875rem;
   padding-bottom: 6.25rem;
+  display: grid;
 }
 
 .footer_bot_layout {
