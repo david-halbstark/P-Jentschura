@@ -61,6 +61,7 @@
             "button_2_icon_animation": "none",
             "media_type": "image",
             "image": "shopify://shop_images/Rectangle_22008.png",
+            "image_mobile": "shopify://shop_images/Rectangle_42806.png",
             "image_width": 2000,
             "image_width_mobile": 900,
             "image_loading": "eager",
