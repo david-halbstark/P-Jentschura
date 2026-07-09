@@ -54,13 +54,21 @@
         <div class="footer_mid_wrap">
           <div class="footer_mid_contain u-container">
             <div class="footer_mid_layout">
-              <section data-trigger="group" class="footer_group_wrap">
+              {% for block in section.blocks %}
+    {% if block.type == "group" %}
+                    <section li-block="Group" data-trigger="group" class="footer_group_wrap">
+                                    
                 
-                <div class="u-display-none">
+                                    
+                                    
+                
+                                    <div class="u-display-none">
                   
                   
                 </div>
-                <div class="footer_group_element">
+                                    
+                
+                                    <div class="footer_group_element">
                   <div class="footer_group_top">
                     {% render 'heading', custom_class: 'u-margin-bottom-0', heading: block.settings.heading, tag: 'h3', variant: 'u-text-eyebrow-base' %}
                   </div>
@@ -99,7 +107,11 @@
                     </div>
                   </div>
                 </div>
-              </section>
+                                    
+              
+                            </section>
+            {% endif %}
+{% endfor %}
             </div>
           </div>
         </div>
@@ -182,6 +194,31 @@
                     "type": "url",
                     "id": "clickable_url",
                     "label": "Link"
+                }
+            ]
+        },
+        {
+            "name": "Group",
+            "type": "group",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Men\u00fc"
+                },
+                {
+                    "type": "link_list",
+                    "id": "menu",
+                    "label": "Men\u00fc ausw\u00e4hlen"
+                },
+                {
+                    "type": "header",
+                    "content": "\u00dcberschrift"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "heading",
+                    "label": "Text",
+                    "default": "Lorem ipsum dolor sit amet elit"
                 }
             ]
         }
@@ -277,19 +314,6 @@
             "id": "text_visually_hidden",
             "label": "Nur f\u00fcr Screenreader anzeigen",
             "default": false
-        },
-        {
-            "type": "header",
-            "content": "Men\u00fc"
-        },
-        {
-            "type": "link_list",
-            "id": "menu",
-            "label": "Men\u00fc ausw\u00e4hlen"
-        },
-        {
-            "type": "header",
-            "content": "\u00dcberschrift"
         }
     ],
     "presets": [
@@ -299,6 +323,9 @@
             "blocks": [
                 {
                     "type": "socials-item"
+                },
+                {
+                    "type": "group"
                 }
             ]
         }
