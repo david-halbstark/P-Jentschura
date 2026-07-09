@@ -1,62 +1,41 @@
-<div class="footer_group_element">
-  <div class="footer_group_top">
-    {% render 'heading',
-      custom_class: 'u-margin-bottom-0',
-      heading: footer_group.settings.heading,
-      tag: 'h3',
-      variant: 'u-text-eyebrow-base'
-    %}
-  </div>
-  <div class="footer_group_bot_wrap">
-    <div class="footer_group_bot_element">
-      <div class="footer_group_bot">
-        {% if footer_group.settings.menu != blank %}
-          <div li-if="footer_group.settings.menu != blank" role="list" class="footer_group_list">
-            {% for link in footer_group.settings.menu.links %}
-              <div
-                li-for="link in footer_group.settings.menu.links"
-                data-trigger="hover-other focus-other"
-                role="listitem"
-                class="footer_group_item_wrap"
-              >
-                {% assign link_title = link.title -%}
-                {%- assign is_external = false -%}
-                {%- assign tag_text = blank -%}
-                {%- assign clickable_target = blank -%}
-                {%- if link_title contains '[external]' -%}
-                  {%- assign is_external = true -%}
-                  {%- assign clickable_target = '_blank' -%}
-                  {%- assign link_title = link_title | replace: '[external]', '' | strip -%}
-                {%- endif -%}
-                {%- if link_title contains '[tag:' -%}
-                  {%- assign tag_text = link_title | split: '[tag:' | last | split: ']' | first | strip -%}
-                  {%- assign tag_marker = '[tag:' | append: tag_text | append: ']' -%}
-                  {%- assign link_title = link_title | replace: tag_marker, '' | strip -%}
-                {%- endif %}
-
-                <div class="footer_group_item_element">
-                  {% render 'typography',
-                    variant: 'u-text-link-large u-min-width-auto u-margin-bottom-0',
-                    text: link_title,
-                    tag: 'span'
-                  %}
-                  {% if tag_text != blank %}
-                    <div li-if="tag_text != blank" class="footer_group_item_tag">
-                      {% render 'tag', custom_class: , tag: tag_text, variant: 'solid', solid_text_size: 'u-text-body-small', solid_color: 'red' %}
+<div data-trigger="group" class="footer_group_wrap">
+                      <div class="footer_group_element">
+                        <div class="footer_group_top">
+                          {% render 'heading', custom_class: 'u-margin-bottom-0', heading: footer_group.settings.heading, tag: 'h3', variant: 'u-text-eyebrow-base' %}
+                        </div>
+                        <div class="footer_group_bot_wrap">
+                          <div class="footer_group_bot_element">
+                            <div class="footer_group_bot">
+                              {% if footer_group.settings.menu != blank %}    <div li-if="footer_group.settings.menu != blank" role="list" class="footer_group_list">
+    
+                                {% for link in footer_group.settings.menu.links %}    <div li-for="link in footer_group.settings.menu.links" data-trigger="hover-other focus-other" role="listitem" class="footer_group_item_wrap">
+                                    
+                                  
+                            {% assign link_title = link.title %}{% assign is_external = false %}{% assign tag_text = blank %}{% assign clickable_target = blank %}{% if link_title contains '[external]' %}{% assign is_external = true %}{% assign clickable_target = '_blank' %}{% assign link_title = link_title | replace: '[external]', '' | strip %}{% endif %}{% if link_title contains '[tag:' %}{% assign tag_text = link_title | split: '[tag:' | last | split: ']' | first | strip %}{% assign tag_marker = '[tag:' | append: tag_text | append: ']' %}{% assign link_title = link_title | replace: tag_marker, '' | strip %}{% endif %}
+                            
+                                  
+                            <div class="footer_group_item_element">
+                                    {% render 'typography', variant: 'u-text-link-large u-min-width-auto u-margin-bottom-0', text: link_title, tag: 'span' %}
+                                    {% if tag_text != blank %}    <div li-if="tag_text != blank" class="footer_group_item_tag">
+    
+                                      {% render 'tag', custom_class: , tag: tag_text, variant: 'solid', solid_text_size: 'u-text-body-small', solid_color: 'red' %}
+                                        </div>
+{% endif %}
+                                    {% if is_external %}    <div li-if="is_external" class="footer_group_item_icon">
+    
+                                      {% render 'icon', custom_class: , icon: 'arrow-up-right', aria-hidden: true %}
+                                        </div>
+{% endif %}
+                                    {% render 'clickable', target: clickable_target, label: link_title, mode: 'link', url: link.url %}
+                                  </div>
+                            
+                                
+                        </div>
+{% endfor %}
+                                  </div>
+{% endif %}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  {% endif %}
-                  {% if is_external %}
-                    <div li-if="is_external" class="footer_group_item_icon">
-                      {% render 'icon', custom_class: , icon: 'arrow-up-right', aria-hidden: true %}
-                    </div>
-                  {% endif %}
-                  {% render 'clickable', target: clickable_target, label: link_title, mode: 'link', url: link.url %}
-                </div>
-              </div>
-            {% endfor %}
-          </div>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-</div>
