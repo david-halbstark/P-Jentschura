@@ -15,6 +15,7 @@
         "slide_qqXnTn": {
           "type": "slide",
           "settings": {
+            "text_color": "u-color-2",
             "eyebrow": "Willkommen bei P. Jentschura",
             "eyebrow_variant": "u-text-eyebrow-large",
             "eyebrow_tag": "p",
@@ -59,7 +60,7 @@
             "button_2_icon_position": "after",
             "button_2_icon_animation": "none",
             "media_type": "image",
-            "image": "shopify://shop_images/family-lies-on-the-grass-with-a-soccer-ball-VEsFPNBozM0.png",
+            "image": "shopify://shop_images/Rectangle_22008.png",
             "image_width": 2000,
             "image_width_mobile": 900,
             "image_loading": "eager",
@@ -70,7 +71,9 @@
             "video_loop": true,
             "video_muted": true,
             "video_controls": false,
-            "video_play_behavior": "active_slide"
+            "video_play_behavior": "active_slide",
+            "gradient_color": "#182804",
+            "gradient_opacity": 80
           }
         }
       },
