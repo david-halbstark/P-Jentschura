@@ -44,19 +44,59 @@
             "heading": "Produkte",
             "menu": "footer-products"
           }
+        },
+        "group_qAyxDb": {
+          "type": "group",
+          "settings": {
+            "heading": "Unternehmen",
+            "menu": "footer-company"
+          }
+        },
+        "group_pbEY4g": {
+          "type": "group",
+          "settings": {
+            "heading": "Händler",
+            "menu": "footer-dealers"
+          }
+        },
+        "group_9A6cgY": {
+          "type": "group",
+          "settings": {
+            "heading": "Wissen",
+            "menu": "footer-knowledge"
+          }
+        },
+        "group_LXAVCF": {
+          "type": "group",
+          "settings": {
+            "heading": "Hilfe & Support",
+            "menu": "footer-support"
+          }
+        },
+        "group_3Hr4VY": {
+          "type": "group",
+          "settings": {
+            "heading": "Rezepte",
+            "menu": "footer-recipes"
+          }
         }
       },
       "block_order": [
         "socials_item_iyirt6",
         "socials_item_we3NYg",
         "socials_item_HGLBFT",
-        "group_eCfaXQ"
+        "group_eCfaXQ",
+        "group_qAyxDb",
+        "group_pbEY4g",
+        "group_9A6cgY",
+        "group_LXAVCF",
+        "group_3Hr4VY"
       ],
       "settings": {
         "heading": "Footer-Navigation",
         "socials_text": "Werde Teil der P. Jentschura Welt",
         "legal_text": "© Jentschura International GmbH",
-        "menu": "footer-legal"
+        "menu": ""
       }
     }
   },
