@@ -98,17 +98,13 @@
                     <section li-block="Group" class="u-display-contents">
                                     
                   
-                                    <div class="u-display-none">
-                    
-                    
-                  </div>
-                                    
-                  
-                                    
-                                    
-                  
                                     {% if block.settings.desktop_column == column_number %}    <div data-trigger="group" li-if="block.settings.desktop_column == column_number" class="footer_group_wrap">
     
+                    <div class="u-display-none">
+                      
+                      
+                    </div>
+                    
                     <div class="footer_group_element">
                       <div class="footer_group_top">
                         {% render 'heading', custom_class: 'u-margin-bottom-0', heading: block.settings.heading, tag: 'h3', variant: 'u-text-eyebrow-base' %}
@@ -147,6 +143,9 @@
                           </div>
                         </div>
                       </div>
+                    </div>
+                    <div>
+                      <div></div>
                     </div>
                       </div>
 {% endif %}
@@ -340,7 +339,7 @@
         {
             "type": "link_list",
             "id": "menu",
-            "label": "Men\u00fc ausw\u00e4hlen"
+            "label": "Men\u00fc"
         }
     ],
     "presets": [
