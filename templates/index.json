@@ -136,7 +136,7 @@
             "video_muted": true,
             "video_controls": false,
             "video_play_behavior": "active_slide",
-            "gradient_color": "#182804",
+            "gradient_color": "#280404",
             "gradient_opacity": 80
           }
         }
