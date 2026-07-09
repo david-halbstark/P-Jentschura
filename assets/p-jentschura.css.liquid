@@ -6397,11 +6397,10 @@ figure {
   width: 8rem;
 }
 
-.footer_bottom_list {
+.footer_bot_list {
   flex-flow: wrap;
   place-content: center flex-start;
   align-items: center;
-  margin: -.5rem;
   display: flex;
 }
 
@@ -6431,14 +6430,14 @@ figure {
 }
 
 .footer_bottom_layout {
-  grid-column-gap: var(--_spacing---space--4);
-  grid-row-gap: var(--_spacing---space--4);
+  grid-column-gap: 2.75rem;
+  grid-row-gap: 2.75rem;
   border-top: var(--border-width--main) solid var(--_theme---border);
   flex-flow: wrap;
   place-content: center space-between;
   align-items: center;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding-top: 3.625rem;
+  padding-bottom: 3.625rem;
   display: flex;
 }
 
@@ -6452,7 +6451,11 @@ figure {
 }
 
 .footer_bottom_item {
-  display: flex;
+  padding-left: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  padding-top: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  padding-bottom: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  padding-right: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  position: relative;
 }
 
 .footer_link_wrap {
@@ -7570,8 +7573,14 @@ figure {
 }
 
 .footer_bot_layout {
+  grid-column-gap: 2.75rem;
+  grid-row-gap: 2.75rem;
+  flex-flow: wrap;
+  place-content: center space-between;
+  align-items: center;
   padding-top: 3.625rem;
   padding-bottom: 3.625rem;
+  display: flex;
 }
 
 .footer_socials_item_element {
@@ -7636,6 +7645,51 @@ figure {
 .footer_group_item_icon {
   aspect-ratio: 1;
   width: 1rem;
+  color: var(--_theme---background-3);
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.footer_bot_right {
+  margin-left: calc(calc(-.5rem * var(--_responsive---large))  + calc(-.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  margin-top: calc(calc(-.5rem * var(--_responsive---large))  + calc(-.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  margin-right: calc(calc(-.5rem * var(--_responsive---large))  + calc(-.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  margin-bottom: calc(calc(-.5rem * var(--_responsive---large))  + calc(-.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  flex-flow: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.footer_lang_form {
+  background-color: #0000;
+}
+
+.footer_lang_dd_button {
+  grid-column-gap: .25rem;
+  grid-row-gap: .25rem;
+  padding-left: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  padding-top: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  padding-bottom: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  padding-right: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.footer_lang_dd_button_flag {
+  border-radius: var(--radius--round);
+  object-fit: contain;
+  flex: none;
+  width: .875rem;
+  margin-right: .125rem;
+}
+
+.footer_lang_dd_icon {
+  aspect-ratio: 1;
+  width: .75rem;
   color: var(--_theme---background-3);
   flex: none;
   justify-content: center;
