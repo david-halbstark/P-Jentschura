@@ -42,42 +42,48 @@
           "type": "group",
           "settings": {
             "heading": "Produkte",
-            "menu": "footer-products"
+            "menu": "footer-products",
+            "desktop_column": "1"
           }
         },
         "group_qAyxDb": {
           "type": "group",
           "settings": {
             "heading": "Unternehmen",
-            "menu": "footer-company"
+            "menu": "footer-company",
+            "desktop_column": "2"
           }
         },
         "group_pbEY4g": {
           "type": "group",
           "settings": {
             "heading": "Händler",
-            "menu": "footer-dealers"
+            "menu": "footer-dealers",
+            "desktop_column": "2"
           }
         },
         "group_9A6cgY": {
           "type": "group",
           "settings": {
             "heading": "Wissen",
-            "menu": "footer-knowledge"
+            "menu": "footer-knowledge",
+            "desktop_column": "3"
           }
         },
         "group_LXAVCF": {
           "type": "group",
           "settings": {
             "heading": "Hilfe & Support",
-            "menu": "footer-support"
+            "menu": "footer-support",
+            "desktop_column": "3"
           }
         },
         "group_3Hr4VY": {
           "type": "group",
           "settings": {
             "heading": "Rezepte",
-            "menu": "footer-recipes"
+            "menu": "footer-recipes",
+            "desktop_column": "4"
           }
         }
       },
