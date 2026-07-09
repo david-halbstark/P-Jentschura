@@ -41,8 +41,8 @@
         "group_eCfaXQ": {
           "type": "group",
           "settings": {
-            "menu": "footer-products",
-            "heading": "Produkte"
+            "heading": "Produkte",
+            "menu": "footer-products"
           }
         }
       },
@@ -54,12 +54,9 @@
       ],
       "settings": {
         "heading": "Footer-Navigation",
-        "text": "Werde Teil der P. Jentschura Welt",
-        "text_variant": "u-text-body-base",
-        "text_tag": "h2",
-        "text_max_width": 60,
-        "text_tidy_text": true,
-        "text_visually_hidden": false
+        "socials_text": "Werde Teil der P. Jentschura Welt",
+        "legal_text": "© Jentschura International GmbH",
+        "menu": "footer-legal"
       }
     }
   },
