@@ -139,6 +139,17 @@
               
                         </div>
 {% endfor %}
+              <div data-hover="false" data-delay="0" class="w-dropdown">
+                <div class="w-dropdown-toggle">
+                  <div class="w-icon-dropdown-toggle"></div>
+                  <div>Dropdown</div>
+                </div>
+                <nav class="w-dropdown-list">
+                  <a href="#" class="w-dropdown-link">Link 1</a>
+                  <a href="#" class="w-dropdown-link">Link 2</a>
+                  <a href="#" class="w-dropdown-link">Link 3</a>
+                </nav>
+              </div>
             </div>
           </div>
         </div>
@@ -166,18 +177,165 @@
                 </div>{% if localization.available_languages.size > 1 %}    <localization-form li-if="localization.available_languages.size > 1" class="footer_lang_wrap">
     
                   {% form 'localization', class: 'footer_lang_form' %}
-<div class="footer_lang_dd"><button type="button" class="footer_lang_dd_button"><img src="{{ localization.country | image_url: width: 32 }}" loading="lazy" li-object:src="localization.country | image_url: width: 32" alt="" class="footer_lang_dd_button_flag">
-                        {% render 'typography', custom_class: 'u-magin-bottom-0 u-min-width-auto', text: section.settings.text, tag: 'span', variant: 'u-text-link-small' %}
+<div data-dropdown="" class="footer_lang_dd"><button type="button" data-dropdown-trigger="" aria-expanded="false" lang="{{ localization.language.iso_code }}" data-trigger="hover focus" class="footer_lang_dd_button"><img src="{{ localization.country | image_url: width: 32 }}" loading="lazy" li-object:src="localization.country | image_url: width: 32" alt="" class="footer_lang_dd_button_flag">
+                        {% render 'typography', custom_class: 'u-magin-bottom-0 u-min-width-auto', text: localization.country.iso_code | capitalize, tag: 'span', variant: 'u-text-link-small' %}
                         <div class="footer_lang_dd_icon">
                           {% render 'icon', aria-hidden: true, icon: arrow-left %}
                         </div>
-                      </button></div>
+                      </button>
+                      <div hidden="" data-dropdown-menu="" class="footer_lang_dd_list_wrap">
+                        <ul li-for:inside="country in localization.available_countries" class="footer_lang_dd_list">
+        {% for country in localization.available_countries %}                            
+                          
+                            {% unless localization.country.iso_code == country.iso_code %}    <li li-unless="localization.country.iso_code == country.iso_code" class="footer_lang_dd_item">
+    
+                            <a data-trigger="hover focus" lang="{{ localization.language.iso_code }}" hreflang="{{ language.iso_code }}" data-value="{{ language.iso_code }}" href="#" class="footer_lang_dd_link w-inline-block"><img src="{{ localization.country | image_url: width: 32 }}" loading="lazy" li-object:src="localization.country | image_url: width: 32" alt="" class="footer_lang_dd_button_flag">
+                              {% render 'typography', custom_class: 'u-magin-bottom-0 u-min-width-auto', text: country.iso_code | capitalize, tag: 'span', variant: 'u-text-link-small' %}
+                            </a>
+                              </li>
+{% endunless %}
+                            
+                        
+                    {% endfor %}    </ul>
+                      </div>
+                    </div>
                   {% endform %}
                     </localization-form>
 {% endif %}
               </div>
             </div>
           </div>
+        </div>
+        <div class="u-embed-js w-embed w-script">
+          <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    let dropdownId = 0;
+    document.querySelectorAll('[data-dropdown]').forEach((component) => {
+      if (component.dataset.scriptInitialized === 'true') return;
+      const trigger = component.querySelector('[data-dropdown-trigger]');
+      const menu = component.querySelector('[data-dropdown-menu]');
+      if (!trigger || !menu) return;
+      component.dataset.scriptInitialized = 'true';
+      dropdownId += 1;
+      /*
+       * Vorhandene IDs werden beibehalten.
+       * Fehlende IDs werden automatisch erzeugt.
+       */
+      const triggerId = trigger.id || `dropdown-trigger-${dropdownId}`;
+      const menuId = menu.id || `dropdown-menu-${dropdownId}`;
+      trigger.id = triggerId;
+      menu.id = menuId;
+      /*
+       * Accessibility
+       */
+      trigger.setAttribute('aria-controls', menuId);
+      trigger.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-labelledby', triggerId);
+      /*
+       * Das Dropdown startet geschlossen.
+       */
+      menu.hidden = true;
+      function isOpen() {
+        return trigger.getAttribute('aria-expanded') === 'true';
+      }
+      function setDropdownPosition() {
+        const triggerRect = trigger.getBoundingClientRect();
+        const viewportPadding = 16;
+        const dropdownGap = 8;
+        const spaceBelow = window.innerHeight - triggerRect.bottom - dropdownGap - viewportPadding;
+        const spaceAbove = triggerRect.top - dropdownGap - viewportPadding;
+        /*
+         * Das Men&uuml; muss bereits sichtbar sein,
+         * damit scrollHeight korrekt gemessen wird.
+         */
+        const menuHeight = menu.scrollHeight;
+        /*
+         * Standardm&auml;&szlig;ig nach unten &ouml;ffnen.
+         * Nach oben nur dann, wenn unten nicht genug Platz
+         * und oben mehr Platz vorhanden ist.
+         */
+        const openAbove = menuHeight > spaceBelow && spaceAbove > spaceBelow;
+        const availableSpace = openAbove ? spaceAbove : spaceBelow;
+        menu.dataset.position = openAbove ? 'top' : 'bottom';
+        /*
+         * Das Men&uuml; wird maximal so hoch wie der
+         * vorhandene Platz im Viewport.
+         */
+        menu.style.maxHeight = `${Math.max(100, availableSpace)}px`;
+      }
+      function openDropdown() {
+        menu.hidden = false;
+        setDropdownPosition();
+        component.classList.add('is-active');
+        trigger.setAttribute('aria-expanded', 'true');
+        /*
+         * Der Fokus bleibt auf dem Button.
+         * Mit Tab gelangt man zum ersten Sprachlink.
+         */
+      }
+      function closeDropdown(options = {}) {
+        const { returnFocus = false } = options;
+        if (!isOpen()) return;
+        menu.hidden = true;
+        component.classList.remove('is-active');
+        trigger.setAttribute('aria-expanded', 'false');
+        menu.removeAttribute('data-position');
+        menu.style.removeProperty('max-height');
+        if (returnFocus) {
+          trigger.focus();
+        }
+      }
+      function toggleDropdown() {
+        if (isOpen()) {
+          closeDropdown();
+        } else {
+          openDropdown();
+        }
+      }
+      /*
+       * Ein echter Button unterst&uuml;tzt Enter und Leertaste
+       * bereits automatisch &uuml;ber das Click-Event.
+       */
+      trigger.addEventListener('click', function () {
+        toggleDropdown();
+      });
+      /*
+       * Klick au&szlig;erhalb schlie&szlig;t das Dropdown.
+       * Der Fokus wird dabei nicht zur&uuml;ckgesetzt.
+       */
+      document.addEventListener('click', function (event) {
+        if (!isOpen()) return;
+        if (component.contains(event.target)) return;
+        closeDropdown();
+      });
+      /*
+       * Escape schlie&szlig;t das Dropdown und setzt
+       * den Fokus zur&uuml;ck auf den Toggle-Button.
+       */
+      document.addEventListener('keydown', function (event) {
+        if (event.key !== 'Escape') return;
+        if (!isOpen()) return;
+        closeDropdown({ returnFocus: true });
+      });
+      /*
+       * Beim Scrollen oder &Auml;ndern der Fenstergr&ouml;&szlig;e
+       * wird die Position neu berechnet.
+       */
+      window.addEventListener('resize', function () {
+        if (!isOpen()) return;
+        setDropdownPosition();
+      });
+      window.addEventListener(
+        'scroll',
+        function () {
+          if (!isOpen()) return;
+          setDropdownPosition();
+        },
+        true,
+      );
+    });
+  });
+</script>
         </div> {% schema %} {
     "tag": "footer",
     "name": "Footer",
@@ -197,10 +355,6 @@
                     "label": "Icon",
                     "options": [
                         {
-                            "value": "tiktok",
-                            "label": "TikTok"
-                        },
-                        {
                             "value": "instagram",
                             "label": "Instagram"
                         },
@@ -211,6 +365,14 @@
                         {
                             "value": "linkedin",
                             "label": "LinkedIn"
+                        },
+                        {
+                            "value": "youtube",
+                            "label": "YouTube"
+                        },
+                        {
+                            "value": "pinterest",
+                            "label": "Pinterest"
                         }
                     ],
                     "default": "tiktok"
