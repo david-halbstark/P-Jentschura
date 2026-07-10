@@ -61,6 +61,22 @@
             "menu": "footer-products",
             "desktop_column": "1"
           }
+        },
+        "group_ztjDQ6": {
+          "type": "group",
+          "settings": {
+            "heading": "Unternehmen",
+            "menu": "footer-company",
+            "desktop_column": "2"
+          }
+        },
+        "group_HCpLie": {
+          "type": "group",
+          "settings": {
+            "heading": "Produkte",
+            "menu": "footer-products",
+            "desktop_column": "2"
+          }
         }
       },
       "block_order": [
@@ -69,7 +85,9 @@
         "socials_item_pTVezr",
         "socials_item_3W9nVh",
         "socials_item_Pfq3L7",
-        "group_kNw4fy"
+        "group_kNw4fy",
+        "group_ztjDQ6",
+        "group_HCpLie"
       ],
       "settings": {
         "heading": "Footer-Navigation",
