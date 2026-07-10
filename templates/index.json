@@ -525,6 +525,8 @@
         "button_2_underline": false,
         "button_2_icon_position": "after",
         "button_2_icon_animation": "none",
+        "image": "shopify://shop_images/p-jentschura-newsletter-background-desktop.avif",
+        "image_mobile": "shopify://shop_images/p-jentschura-newsletter-background-mobile.avif",
         "image_object_fit": "cover",
         "image_width": 2000,
         "image_width_mobile": 900,
