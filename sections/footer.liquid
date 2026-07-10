@@ -27,9 +27,19 @@
       flex-flow: column;
       align-items: start;
     }
-    .footer_bot_list, .footer_lang_dd_button {
+    .footer_bot_list,
+    .footer_lang_dd_button {
       margin: calc(calc(-0.5rem * var(--_responsive---large)) + calc(-0.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
     }
+    .footer_mid_layout {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+  }
+  .footer_group_item_element > .u-text,
+  .footer_bottom_item_text > .u-text {
+    text-decoration-line: underline;
+    text-decoration-color: color-mix(in srgb, var(--swatch--transparent) calc(100% * var(--_trigger---on)), currentColor calc(100% * var(--_trigger---off)));
+    text-underline-offset: 0.125em;
   }
 </style>
         </div>
@@ -94,7 +104,7 @@
     
                 {% for block in section.blocks %}
     {% if block.type == "group" %}
-                    <section data-trigger="group" li-block="Group" class="u-display-none">
+                    <div data-trigger="group" li-block="Group" class="u-display-none">
                                     
                   
                                     <div class="u-display-none">
@@ -109,7 +119,7 @@
                                     {% render 'footer_group', footer_group: block %}
                                     
                 
-                            </section>
+                            </div>
             {% endif %}
 {% endfor %}
                   </div>
@@ -131,13 +141,13 @@
               <div class="footer_bot_left">
                 {% render 'typography', custom_class: 'u-margin-bottom-0', text: section.settings.legal_text, tag: 'div', variant: 'u-text-body-small' %}
               </div>
-              <div role="list" data-trigger="group" class="footer_bot_right">
+              <div role="list" class="footer_bot_right">
                 <div role="list" data-trigger="group" class="footer_bot_list">
-                  {% for link in section.settings.menu.links %}    <div li-for="link in section.settings.menu.links" data-trigger="hover-other focus-other" role="listitem" class="footer_bottom_item">
+                  {% for link in section.settings.menu.links %}    <div li-for="link in section.settings.menu.links" data-trigger="hover focus" role="listitem" class="footer_bottom_item">
                                     
                     
                             <div aria-hidden="true" class="footer_bottom_item_text">
-                      {% render 'typography', custom_class: 'u-margin-bottom', text: link.title, tag: 'div', variant: 'u-text-link-small' %}
+                      {% render 'typography', custom_class: 'u-margin-bottom-0', text: link.title, tag: 'div', variant: 'u-text-link-small' %}
                     </div>
                             
                     

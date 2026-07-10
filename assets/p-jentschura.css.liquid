@@ -6441,19 +6441,11 @@ figure {
   display: flex;
 }
 
-.footer_group_item_wrap {
-  opacity: calc(1 - .5 * var(--_trigger---off));
-  transition-property: opacity;
-  transition-duration: .2s;
-  transition-timing-function: ease;
-}
-
 .footer_group_list {
-  grid-column-gap: 1.25rem;
-  grid-row-gap: 1.25rem;
   flex-flow: column;
   justify-content: flex-start;
   align-items: flex-start;
+  margin: -.5rem;
   display: flex;
 }
 
@@ -6462,10 +6454,6 @@ figure {
   padding-top: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
   padding-bottom: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
   padding-right: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
-  opacity: calc(1 - .5 * var(--_trigger---off));
-  transition-property: opacity;
-  transition-duration: .2s;
-  transition-timing-function: ease;
   position: relative;
 }
 
@@ -7582,7 +7570,7 @@ figure {
   grid-column-gap: 1.5rem;
   grid-row-gap: 1.5rem;
   grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   grid-auto-columns: 1fr;
   padding-top: 4.875rem;
   padding-bottom: 6.25rem;
@@ -7650,22 +7638,35 @@ figure {
   display: flex;
 }
 
+.footer_group_top {
+  color: color-mix(in srgb, var(--_theme---text) 50%, var(--swatch--transparent) 50%);
+}
+
 .footer_group_item_element {
   grid-column-gap: .25rem;
   grid-row-gap: .25rem;
   justify-content: flex-start;
   align-items: center;
+  padding: .5rem;
   display: flex;
   position: relative;
+}
+
+.footer_group_item_tag {
+  flex: none;
 }
 
 .footer_group_item_icon {
   aspect-ratio: 1;
   width: 1rem;
   color: var(--_theme---background-3);
+  transform: translate(calc(.25rem * var(--_trigger---off)), calc(.25rem * var(--_trigger---on)));
   flex: none;
   justify-content: center;
   align-items: center;
+  transition-property: transform;
+  transition-duration: .2s;
+  transition-timing-function: ease;
   display: flex;
 }
 
