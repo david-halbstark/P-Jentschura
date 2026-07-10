@@ -1,4 +1,16 @@
-<div class="u-display-none">
+<div class="u-embed-css w-embed">
+          <style>
+.newsletter_bot_paragraph a {
+  font-weight: var(--_typography---font--primary-semibold);
+}
+</style>
+        </div>
+        <div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
           
           
         </div>
@@ -7,18 +19,9 @@
           
           
           
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          
-          
-          
           
         </div>
         <div class="u-display-none">
-          
           
           
           
@@ -81,16 +84,16 @@
           <div class="newsletter_layout">
             <div class="newsletter_form_block w-form">
               <form id="email-form" name="email-form" data-name="Email Form" method="get" class="newsletter_form" data-wf-page-id="6a25c9e5780546a1d70f2758" data-wf-element-id="df392e1f-adb4-56c5-1565-3028b85261b3">
-                <div class="newsletter_top u-margin-trim">
-                  {% render 'eyebrow', custom_class: , eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant %}
-                  {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+                <div class="newsletter_top">
+                  {% render 'eyebrow', custom_class: 'u-margin-bottom-0', eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-base' %}
+                  {% render 'heading', custom_class: 'u-margin-bottom-0', heading: section.settings.heading, tag: section.settings.heading_tag, variant: 'u-text-h2-primary', max_width: section.settings.heading_max_width, tidy_text: section.settings.heading_tidy_text %}
                 </div>
                 <div class="newsletter_bot">
                   <div class="newsletter_bot_inner"><label class="newsletter_label_wrap"><span for="newsletter-email" class="newsletter_label u-sr-only"></span><input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="" class="newsletter_input"></label>
                     {% render 'button', icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, ur: section.settings.button_1_url, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
                   </div>
                   <div class="newsletter_bot_paragraph">
-                    {% render 'paragraph', tidy_text: section.settings.paragraph_tidy_text, custom_class: , paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant, max_width: section.settings.paragraph_max_width %}
+                    {% render 'paragraph', tidy_text: section.settings.paragraph_tidy_text, custom_class: 'u-margin-bottom-0', paragraph: section.settings.paragraph, variant: 'u-text-body-small', max_width: section.settings.paragraph_max_width %}
                   </div>
                 </div>
               </form>
@@ -125,26 +128,6 @@
             "id": "eyebrow",
             "label": "Text",
             "default": "\u00dcbertitel Text"
-        },
-        {
-            "type": "select",
-            "id": "eyebrow_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "u-text-eyebrow-small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "u-text-eyebrow-base",
-                    "label": "Standard"
-                },
-                {
-                    "value": "u-text-eyebrow-large",
-                    "label": "Gro\u00df"
-                }
-            ],
-            "default": "u-text-eyebrow-large"
         },
         {
             "type": "select",
@@ -191,50 +174,6 @@
             "id": "heading",
             "label": "Text",
             "default": "Lorem ipsum dolor sit amet elit"
-        },
-        {
-            "type": "select",
-            "id": "heading_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "u-text-h1-primary",
-                    "label": "H1 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h1-secondary",
-                    "label": "H1 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h2-primary",
-                    "label": "H2 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h2-secondary",
-                    "label": "H2 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h3-primary",
-                    "label": "H3 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h3-secondary",
-                    "label": "H3 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h4-primary",
-                    "label": "H4 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h5-primary",
-                    "label": "H5 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h6-primary",
-                    "label": "H6 Prim\u00e4r"
-                }
-            ],
-            "default": "u-text-h2-primary"
         },
         {
             "type": "select",
@@ -286,12 +225,6 @@
             "default": true
         },
         {
-            "type": "checkbox",
-            "id": "heading_visually_hidden",
-            "label": "Nur f\u00fcr Screenreader anzeigen",
-            "default": false
-        },
-        {
             "type": "header",
             "content": "Text"
         },
@@ -300,26 +233,6 @@
             "id": "paragraph",
             "label": "Text",
             "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
-        },
-        {
-            "type": "select",
-            "id": "paragraph_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "u-text-body-small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "u-text-body-base",
-                    "label": "Standard"
-                },
-                {
-                    "value": "u-text-body-large",
-                    "label": "Gro\u00df"
-                }
-            ],
-            "default": "u-text-body-base"
         },
         {
             "type": "number",
