@@ -13,7 +13,12 @@
   "sections": {
     "footer": {
       "type": "footer",
-      "settings": {}
+      "settings": {
+        "heading": "Lorem ipsum dolor sit amet elit",
+        "socials_text": "Lorem ipsum dolor sit amet",
+        "legal_text": "Lorem ipsum dolor sit amet",
+        "menu": "footer-legal"
+      }
     }
   },
   "order": [
