@@ -7643,10 +7643,10 @@ figure {
 }
 
 .footer_socials_item_icon {
+  aspect-ratio: 1;
   justify-content: center;
   align-items: center;
   width: 1.125rem;
-  height: 1.125rem;
   display: flex;
 }
 
@@ -7718,13 +7718,10 @@ figure {
   border-top-right-radius: var(--radius--xsmall);
   border-bottom-left-radius: var(--radius--xsmall);
   border-bottom-right-radius: var(--radius--xsmall);
-  padding-left: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
-  padding-top: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
-  padding-bottom: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
-  padding-right: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
   background-color: color-mix(in srgb, var(--swatch--transparent), color-mix(in hsl, var(--_theme---background-2) 95%, black) calc(var(--mix-state) * 100%));
   justify-content: center;
   align-items: center;
+  padding: .75rem;
   transition-property: background-color;
   transition-duration: .2s;
   transition-timing-function: ease;
@@ -7751,6 +7748,8 @@ figure {
   flex: none;
   justify-content: center;
   align-items: center;
+  margin-top: -.5rem;
+  margin-bottom: -.5rem;
   transition-property: transform;
   transition-duration: .2s;
   transition-timing-function: ease;
@@ -7839,13 +7838,10 @@ figure {
 .footer_lang_dd_link {
   grid-column-gap: .25rem;
   grid-row-gap: .25rem;
-  padding-top: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
-  padding-left: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
-  padding-bottom: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
-  padding-right: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
   background-color: color-mix(in srgb, var(--swatch--transparent), color-mix(in hsl, var(--_theme---background-2) 95%, black) calc(100% * var(--_trigger---off)));
   justify-content: flex-start;
   align-items: center;
+  padding: .75rem;
   transition-property: background-color;
   transition-duration: .2s;
   transition-timing-function: ease;
@@ -7856,9 +7852,9 @@ figure {
   z-index: 1;
   width: auto;
   min-width: 100%;
-  padding-top: calc(calc(.5rem * var(--_responsive---large))  + calc(.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
-  position: absolute;
   right: 0%;
+  top: calc(100% + calc(calc(.5rem * var(--_responsive---large))  + calc(.25rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall)))));
+  position: absolute;
 }
 
 @media screen and (max-width: 479px) {
