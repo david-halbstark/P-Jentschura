@@ -34,16 +34,16 @@
           "type": "socials-item",
           "settings": {
             "icon": "youtube",
-            "clickable_label": "Mehr erfahren",
-            "clickable_url": ""
+            "clickable_label": "YouTube",
+            "clickable_url": "https://www.youtube.com/user/pjentschura"
           }
         },
         "socials_item_3W9nVh": {
           "type": "socials-item",
           "settings": {
             "icon": "pinterest",
-            "clickable_label": "Mehr erfahren",
-            "clickable_url": ""
+            "clickable_label": "Pinterest",
+            "clickable_url": "https://de.pinterest.com/pjentschura/"
           }
         },
         "socials_item_Pfq3L7": {
