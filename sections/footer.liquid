@@ -199,7 +199,13 @@
                             href="#"
                             class="footer_lang_dd_link w-inline-block"
                           >
-                            {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: language.name | capitalize, tag: 'span', variant: 'u-text-link-small' %}
+                            {%
+                              render 'typography',
+                              custom_class: 'u-margin-bottom-0 u-min-width-auto',
+                              text: language.name | capitalize,
+                              tag: 'span',
+                              variant: 'u-text-link-small'
+                            %}
                           </a>
                         </li>
                       {% endunless %}
