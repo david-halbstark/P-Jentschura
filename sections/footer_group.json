@@ -19,15 +19,15 @@
           "settings": {
             "icon": "instagram",
             "clickable_label": "Instagram",
-            "clickable_url": ""
+            "clickable_url": "https://www.instagram.com/p.jentschura"
           }
         },
         "socials_item_heWP6F": {
           "type": "socials-item",
           "settings": {
             "icon": "facebook",
-            "clickable_label": "Mehr erfahren",
-            "clickable_url": ""
+            "clickable_label": "Facebook",
+            "clickable_url": "https://www.facebook.com/jentschuraINT"
           }
         },
         "socials_item_pTVezr": {
