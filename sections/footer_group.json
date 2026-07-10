@@ -18,7 +18,7 @@
           "type": "socials-item",
           "settings": {
             "icon": "instagram",
-            "clickable_label": "Mehr erfahren",
+            "clickable_label": "Instagram",
             "clickable_url": ""
           }
         },
@@ -50,8 +50,8 @@
           "type": "socials-item",
           "settings": {
             "icon": "linkedin",
-            "clickable_label": "Mehr erfahren",
-            "clickable_url": ""
+            "clickable_label": "LinkedIn",
+            "clickable_url": "https://de.linkedin.com/company/jentschura-international-gmbh"
           }
         }
       },
