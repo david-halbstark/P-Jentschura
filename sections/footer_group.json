@@ -73,8 +73,8 @@
         "group_HCpLie": {
           "type": "group",
           "settings": {
-            "heading": "Produkte",
-            "menu": "footer-products",
+            "heading": "Händler",
+            "menu": "footer-dealers",
             "desktop_column": "2"
           }
         }
