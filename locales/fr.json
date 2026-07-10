@@ -9,8 +9,9 @@
  */
 {
     "languages": {
-        "de": "Duits",
-        "en": "Engels",
-        "nl": "Nederlands"
+        "de": "Allemand",
+        "en": "Anglais",
+        "nl": "Néerlandais",
+        "fr": "Français"
     }
 }
