@@ -85,6 +85,22 @@
             "menu": "footer-knowledge",
             "desktop_column": "3"
           }
+        },
+        "group_cq6CCB": {
+          "type": "group",
+          "settings": {
+            "heading": "Hilfe & Support",
+            "menu": "footer-support",
+            "desktop_column": "3"
+          }
+        },
+        "group_me6f7t": {
+          "type": "group",
+          "settings": {
+            "heading": "Rezepte",
+            "menu": "footer-recipes",
+            "desktop_column": "4"
+          }
         }
       },
       "block_order": [
@@ -96,7 +112,9 @@
         "group_kNw4fy",
         "group_ztjDQ6",
         "group_HCpLie",
-        "group_hAiGBG"
+        "group_hAiGBG",
+        "group_cq6CCB",
+        "group_me6f7t"
       ],
       "settings": {
         "heading": "Footer-Navigation",
