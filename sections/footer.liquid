@@ -182,7 +182,7 @@
     
                   {% form 'localization', class: 'footer_lang_form' %}
 <div data-dropdown="" class="footer_lang_dd"><button type="button" data-dropdown-trigger="" aria-expanded="false" lang="{{ localization.language.iso_code }}" data-trigger="hover focus" class="footer_lang_dd_button">
-                        {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: localization.language.name, tag: 'span', variant: 'u-text-link-small' %}
+                        {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: localization.language.name | capitalize, tag: 'span', variant: 'u-text-link-small' %}
                         <div class="footer_lang_dd_icon">
                           {% render 'icon', aria-hidden: true, icon: 'chevron_down' %}
                         </div>
@@ -194,7 +194,7 @@
                             {% unless localization.language.iso_code == language.iso_code %}    <li li-unless="localization.language.iso_code == language.iso_code" class="footer_lang_dd_item">
     
                             <a data-trigger="hover focus" lang="{{ language.iso_code }}" hreflang="{{ language.iso_code }}" data-value="{{ language.iso_code }}" href="#" class="footer_lang_dd_link w-inline-block">
-                              {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: language.name, tag: 'span', variant: 'u-text-link-small' %}
+                              {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: language.name | capitalize, tag: 'span', variant: 'u-text-link-small' %}
                             </a>
                               </li>
 {% endunless %}
@@ -202,7 +202,7 @@
                         
                     {% endfor %}    </ul>
                       </div>
-                    </div>
+                    </div><input type="hidden" name="language_code" class="footer_lang_hidden_input" value="{{ localization.language.iso_code }}">
                   {% endform %}
                     </localization-form>
 {% endif %}
