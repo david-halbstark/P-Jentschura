@@ -13,6 +13,55 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "socials_item_7EgWNM": {
+          "type": "socials-item",
+          "settings": {
+            "icon": "instagram",
+            "clickable_label": "Mehr erfahren",
+            "clickable_url": ""
+          }
+        },
+        "socials_item_heWP6F": {
+          "type": "socials-item",
+          "settings": {
+            "icon": "facebook",
+            "clickable_label": "Mehr erfahren",
+            "clickable_url": ""
+          }
+        },
+        "socials_item_pTVezr": {
+          "type": "socials-item",
+          "settings": {
+            "icon": "youtube",
+            "clickable_label": "Mehr erfahren",
+            "clickable_url": ""
+          }
+        },
+        "socials_item_3W9nVh": {
+          "type": "socials-item",
+          "settings": {
+            "icon": "pinterest",
+            "clickable_label": "Mehr erfahren",
+            "clickable_url": ""
+          }
+        },
+        "socials_item_Pfq3L7": {
+          "type": "socials-item",
+          "settings": {
+            "icon": "linkedin",
+            "clickable_label": "Mehr erfahren",
+            "clickable_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "socials_item_7EgWNM",
+        "socials_item_heWP6F",
+        "socials_item_pTVezr",
+        "socials_item_3W9nVh",
+        "socials_item_Pfq3L7"
+      ],
       "settings": {
         "heading": "Lorem ipsum dolor sit amet elit",
         "socials_text": "Lorem ipsum dolor sit amet",
