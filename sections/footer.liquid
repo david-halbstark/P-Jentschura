@@ -191,7 +191,7 @@
                 </button>
                 <div hidden="" data-dropdown-menu="" class="footer_lang_dd_list_wrap">
                   <ul li-for:inside="language in localization.available_languages" class="footer_lang_dd_list">
-                    {% for language in localization.available_language %}
+                    {% for language in localization.available_languages %}
                       {% unless localization.country.iso_code == country.iso_code %}
                         <li li-unless="localization.country.iso_code == country.iso_code" class="footer_lang_dd_item">
                           <a
