@@ -53,6 +53,14 @@
             "clickable_label": "LinkedIn",
             "clickable_url": "https://de.linkedin.com/company/jentschura-international-gmbh"
           }
+        },
+        "group_kNw4fy": {
+          "type": "group",
+          "settings": {
+            "heading": "Produkte",
+            "menu": "footer-products",
+            "desktop_column": "1"
+          }
         }
       },
       "block_order": [
@@ -60,7 +68,8 @@
         "socials_item_heWP6F",
         "socials_item_pTVezr",
         "socials_item_3W9nVh",
-        "socials_item_Pfq3L7"
+        "socials_item_Pfq3L7",
+        "group_kNw4fy"
       ],
       "settings": {
         "heading": "Footer-Navigation",
