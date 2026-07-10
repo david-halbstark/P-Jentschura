@@ -166,50 +166,73 @@
           {% endfor %}
         </div>
         {% if localization.available_languages.size > 1 %}
-          <localization-form li-if="localization.available_languages.size > 1" class="footer_lang_wrap">
+          <localization-form class="footer_lang_wrap">
             {% form 'localization', class: 'footer_lang_form' %}
-              <div data-dropdown="" class="footer_lang_dd">
+              <input
+                type="hidden"
+                name="language_code"
+                value="{{ localization.language.iso_code }}"
+                data-language-input
+              >
+
+              {% assign current_language_code = localization.language.iso_code | split: '-' | first %}
+              {% assign current_language_key = 'languages.' | append: current_language_code %}
+
+              <div data-dropdown class="footer_lang_dd">
                 <button
                   type="button"
-                  data-dropdown-trigger=""
+                  data-dropdown-trigger
                   aria-expanded="false"
+                  aria-haspopup="listbox"
                   lang="{{ localization.language.iso_code }}"
-                  data-trigger="hover focus"
                   class="footer_lang_dd_button"
                 >
-                  <img
-                    src="{{ localization.country | image_url: width: 32 }}"
-                    loading="lazy"
-                    li-object:src="localization.country | image_url: width: 32"
-                    alt=""
-                    class="footer_lang_dd_button_flag"
-                  >
-                  {% render 'typography', custom_class: 'u-magin-bottom-0 u-min-width-auto', text: localization.country.iso_code | capitalize, tag: 'span', variant: 'u-text-link-small' %}
+                  {%
+                    render 'typography',
+                    custom_class: 'u-magin-bottom-0 u-min-width-auto',
+                    text: current_language_key | t,
+                    tag: 'span',
+                    variant: 'u-text-link-small'
+                  %}
+
                   <div class="footer_lang_dd_icon">
                     {% render 'icon', aria-hidden: true, icon: arrow-left %}
                   </div>
                 </button>
-                <div hidden="" data-dropdown-menu="" class="footer_lang_dd_list_wrap">
-                  <ul li-for:inside="language in localization.available_languages" class="footer_lang_dd_list">
+
+                <div
+                  hidden
+                  data-dropdown-menu
+                  class="footer_lang_dd_list_wrap"
+                >
+                  <ul
+                    class="footer_lang_dd_list"
+                    role="listbox"
+                    aria-label="{{ 'languages.label' | t }}"
+                  >
                     {% for language in localization.available_languages %}
-                      {% unless localization.country.iso_code == country.iso_code %}
-                        <li li-unless="localization.country.iso_code == country.iso_code" class="footer_lang_dd_item">
-                          <a
-                            data-trigger="hover focus"
-                            lang="{{ localization.language.iso_code }}"
+                      {% unless localization.language.iso_code == language.iso_code %}
+                        {% assign language_code = language.iso_code | split: '-' | first %}
+                        {% assign language_key = 'languages.' | append: language_code %}
+
+                        <li class="footer_lang_dd_item">
+                          <button
+                            type="submit"
+                            name="language_code"
+                            value="{{ language.iso_code }}"
+                            lang="{{ language.iso_code }}"
                             hreflang="{{ language.iso_code }}"
-                            data-value="{{ language.iso_code }}"
-                            href="#"
-                            class="footer_lang_dd_link w-inline-block"
-                            ><img
-                              src="{{ localization.country | image_url: width: 32 }}"
-                              loading="lazy"
-                              li-object:src="localization.country | image_url: width: 32"
-                              alt=""
-                              class="footer_lang_dd_button_flag"
-                            >
-                            {% render 'typography', custom_class: 'u-magin-bottom-0 u-min-width-auto', text: country.iso_code | capitalize, tag: 'span', variant: 'u-text-link-small' %}
-                          </a>
+                            class="footer_lang_dd_link"
+                            role="option"
+                          >
+                            {%
+                              render 'typography',
+                              custom_class: 'u-magin-bottom-0 u-min-width-auto',
+                              text: language_key | t,
+                              tag: 'span',
+                              variant: 'u-text-link-small'
+                            %}
+                          </button>
                         </li>
                       {% endunless %}
                     {% endfor %}
