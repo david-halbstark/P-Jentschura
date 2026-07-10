@@ -77,6 +77,14 @@
             "menu": "footer-dealers",
             "desktop_column": "2"
           }
+        },
+        "group_hAiGBG": {
+          "type": "group",
+          "settings": {
+            "heading": "Wissen",
+            "menu": "footer-knowledge",
+            "desktop_column": "3"
+          }
         }
       },
       "block_order": [
@@ -87,7 +95,8 @@
         "socials_item_Pfq3L7",
         "group_kNw4fy",
         "group_ztjDQ6",
-        "group_HCpLie"
+        "group_HCpLie",
+        "group_hAiGBG"
       ],
       "settings": {
         "heading": "Footer-Navigation",
