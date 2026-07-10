@@ -7,11 +7,4 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-{
-    "languages": {
-        "de": "Deutsch",
-        "en": "Englisch",
-        "nl": "Niederländisch",
-        "fr": "Französisch"
-    }
-}
+{}
