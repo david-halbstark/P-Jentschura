@@ -1,507 +1,525 @@
 <div class="u-embed-css w-embed">
-          <style>
-  @container (width >= 70em) {
-    .footer_bot_right:has(.footer_lang_wrap) .footer_bot_list::after {
-      content: '';
-      display: block;
-      margin-inline: 0.5rem;
-      height: 1.75rem;
-      width: 0.0625rem;
-      background-color: var(--_theme---background);
+  <style>
+    @container (width >= 70em) {
+      .footer_bot_right:has(.footer_lang_wrap) .footer_bot_list::after {
+        content: '';
+        display: block;
+        margin-inline: 0.5rem;
+        height: 1.75rem;
+        width: 0.0625rem;
+        background-color: var(--_theme---background);
+      }
     }
-  }
-  @container (width < 70em) {
-    .footer_bot_right {
-      order: -999;
+    @container (width < 70em) {
+      .footer_bot_right {
+        order: -999;
+      }
+      .footer_bot_layout {
+        padding-top: 2.5rem;
+        padding-bottom: 3.75rem;
+      }
+      .footer_bot_right {
+        row-gap: 2rem;
+        margin: 0rem;
+      }
+      .footer_bot_layout,
+      .footer_bot_right {
+        flex-flow: column;
+        align-items: start;
+      }
+      .footer_bot_list,
+      .footer_lang_dd_button {
+        margin: calc(calc(-0.5rem * var(--_responsive---large)) + calc(-0.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+      }
+      .footer_mid_layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      }
     }
-    .footer_bot_layout {
-      padding-top: 2.5rem;
-      padding-bottom: 3.75rem;
+    .footer_group_item_element > .u-text,
+    .footer_bottom_item_text > .u-text {
+      text-decoration-line: underline;
+      text-decoration-color: color-mix(in srgb, var(--swatch--transparent) calc(100% * var(--_trigger---on)), currentColor calc(100% * var(--_trigger---off)));
+      text-underline-offset: 0.125em;
     }
-    .footer_bot_right {
-      row-gap: 2rem;
-      margin: 0rem;
+    .footer_group_item_tag .tag_wrap {
+      padding: 0.3125rem 0.5rem;
     }
-    .footer_bot_layout,
-    .footer_bot_right {
-      flex-flow: column;
-      align-items: start;
+    .footer_group_item_tag .tag_text {
+      font-weight: var(--_typography---font--primary-semibold);
+      font-size: 0.625rem;
     }
-    .footer_bot_list,
-    .footer_lang_dd_button {
-      margin: calc(calc(-0.5rem * var(--_responsive---large)) + calc(-0.625rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
-    }
-    .footer_mid_layout {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    }
-  }
-  .footer_group_item_element > .u-text,
-  .footer_bottom_item_text > .u-text {
-    text-decoration-line: underline;
-    text-decoration-color: color-mix(in srgb, var(--swatch--transparent) calc(100% * var(--_trigger---on)), currentColor calc(100% * var(--_trigger---off)));
-    text-underline-offset: 0.125em;
-  }
-  .footer_group_item_tag .tag_wrap {
-    padding: 0.3125rem 0.5rem;
-  }
-  .footer_group_item_tag .tag_text {
-    font-weight: var(--_typography---font--primary-semibold);
-    font-size: 0.625rem;
-  }
-</style>
-        </div>
-        <div class="u-display-none">
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-        </div>
-        
-        {% render 'heading', visually_hidden: true, heading: section.settings.heading, tag: 'h2' %}
-        <div class="footer_top_wrap">
-          <div class="footer_top_contain u-container">
-            <div class="footer_top_layout">
-              <div class="footer_top_text">
-                {% render 'typography', custom_class: 'u-margin-bottom-0', text: section.settings.socials_text, tag: 'div', variant: 'u-text-eyebrow-large' %}
-              </div>
-              <div role="list" class="footer_social_wrap">
-                {% for block in section.blocks %}
-    {% if block.type == "socials-item" %}
-                    <div role="listitem" li-block="Socials Item" class="footer_social_item_wrap">
-                                    
-                  
-                                    
-                                    
-                  
-                                    <div class="u-display-none">
-                    
-                    
-                    
+  </style>
+</div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+
+{% render 'heading', visually_hidden: true, heading: section.settings.heading, tag: 'h2' %}
+<div class="footer_top_wrap">
+  <div class="footer_top_contain u-container">
+    <div class="footer_top_layout">
+      <div class="footer_top_text">
+        {% render 'typography',
+          custom_class: 'u-margin-bottom-0',
+          text: section.settings.socials_text,
+          tag: 'div',
+          variant: 'u-text-eyebrow-large'
+        %}
+      </div>
+      <div role="list" class="footer_social_wrap">
+        {% for block in section.blocks %}
+          {% if block.type == 'socials-item' %}
+            <div role="listitem" li-block="Socials Item" class="footer_social_item_wrap">
+              <div class="u-display-none"></div>
+
+              <div data-trigger="hover focus" class="footer_socials_item_element">
+                <div class="footer_socials_item_inner">
+                  <div class="footer_socials_item_icon">
+                    {% render 'icon', aria-hidden: true, icon: block.settings.icon %}
                   </div>
-                                    
-                  
-                                    <div data-trigger="hover focus" class="footer_socials_item_element">
-                    <div class="footer_socials_item_inner">
-                      <div class="footer_socials_item_icon">
-                        {% render 'icon', aria-hidden: true, icon: block.settings.icon %}
-                      </div>
-                    </div>
-                    {% render 'clickable', target: '_blank', label: block.settings.clickable_label, mode: 'link', url: block.settings.clickable_url %}
-                  </div>
-                                    
-                
-                            </div>
-            {% endif %}
-{% endfor %}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="footer_mid_wrap">
-          <div class="footer_mid_contain u-container">
-            <div class="footer_mid_layout">
-              {% assign footer_columns = '1,2,3,4' | split: ',' %}
-              {% if false %}    <div li-if="false" class="u-display-none">
-    
-                {% for block in section.blocks %}
-    {% if block.type == "group" %}
-                    <div data-trigger="group" li-block="Group" class="u-display-none">
-                                    
-                  
-                                    <div class="u-display-none">
-                    
-                    
-                  </div>
-                                    
-                  
-                                    
-                                    
-                  
-                                    {% render 'footer_group', footer_group: block %}
-                                    
-                
-                            </div>
-            {% endif %}
-{% endfor %}
-                  </div>
-{% endif %}
-              {% for column_number in footer_columns %}    <div li-for="column_number in footer_columns" class="footer_column">
-                                    
-                
-                            {% for block in section.blocks %}{% if block.type != 'group' %}{% continue %}{% endif %}{% if block.settings.desktop_column != column_number %}{% continue %}{% endif %}{% render 'footer_group', footer_group: block %}{% endfor %}
-                            
-              
-                        </div>
-{% endfor %}
-              <div data-hover="false" data-delay="0" class="w-dropdown">
-                <div class="w-dropdown-toggle">
-                  <div class="w-icon-dropdown-toggle"></div>
-                  <div>Dropdown</div>
                 </div>
-                <nav class="w-dropdown-list">
-                  <a href="#" class="w-dropdown-link">Link 1</a>
-                  <a href="#" class="w-dropdown-link">Link 2</a>
-                  <a href="#" class="w-dropdown-link">Link 3</a>
-                </nav>
+                {% render 'clickable',
+                  target: '_blank',
+                  label: block.settings.clickable_label,
+                  mode: 'link',
+                  url: block.settings.clickable_url
+                %}
               </div>
             </div>
-          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer_mid_wrap">
+  <div class="footer_mid_contain u-container">
+    <div class="footer_mid_layout">
+      {% assign footer_columns = '1,2,3,4' | split: ',' %}
+      {% if false %}
+        <div li-if="false" class="u-display-none">
+          {% for block in section.blocks %}
+            {% if block.type == 'group' %}
+              <div data-trigger="group" li-block="Group" class="u-display-none">
+                <div class="u-display-none"></div>
+
+                {% render 'footer_group', footer_group: block %}
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
-        <div class="footer_bot_wrap">
-          <div class="footer_bot_contain u-container">
-            <div class="footer_bot_layout">
-              <div class="footer_bot_left">
-                {% render 'typography', custom_class: 'u-margin-bottom-0', text: section.settings.legal_text, tag: 'div', variant: 'u-text-body-small' %}
+      {% endif %}
+      {% for column_number in footer_columns %}
+        <div li-for="column_number in footer_columns" class="footer_column">
+          {% for block in section.blocks -%}
+            {%- if block.type != 'group' %}{% continue %}{% endif -%}
+            {%- if block.settings.desktop_column != column_number %}{% continue %}{% endif -%}
+            {%- render 'footer_group', footer_group: block -%}
+          {%- endfor %}
+        </div>
+      {% endfor %}
+      <div data-hover="false" data-delay="0" class="w-dropdown">
+        <div class="w-dropdown-toggle">
+          <div class="w-icon-dropdown-toggle"></div>
+          <div>Dropdown</div>
+        </div>
+        <nav class="w-dropdown-list">
+          <a href="#" class="w-dropdown-link">Link 1</a>
+          <a href="#" class="w-dropdown-link">Link 2</a>
+          <a href="#" class="w-dropdown-link">Link 3</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer_bot_wrap">
+  <div class="footer_bot_contain u-container">
+    <div class="footer_bot_layout">
+      <div class="footer_bot_left">
+        {% render 'typography',
+          custom_class: 'u-margin-bottom-0',
+          text: section.settings.legal_text,
+          tag: 'div',
+          variant: 'u-text-body-small'
+        %}
+      </div>
+      <div role="list" class="footer_bot_right">
+        <div role="list" data-trigger="group" class="footer_bot_list">
+          {% for link in section.settings.menu.links %}
+            <div
+              li-for="link in section.settings.menu.links"
+              data-trigger="hover focus"
+              role="listitem"
+              class="footer_bottom_item"
+            >
+              <div aria-hidden="true" class="footer_bottom_item_text">
+                {% render 'typography',
+                  custom_class: 'u-margin-bottom-0',
+                  text: link.title,
+                  tag: 'div',
+                  variant: 'u-text-link-small'
+                %}
               </div>
-              <div role="list" class="footer_bot_right">
-                <div role="list" data-trigger="group" class="footer_bot_list">
-                  {% for link in section.settings.menu.links %}    <div li-for="link in section.settings.menu.links" data-trigger="hover focus" role="listitem" class="footer_bottom_item">
-                                    
-                    
-                            <div aria-hidden="true" class="footer_bottom_item_text">
-                      {% render 'typography', custom_class: 'u-margin-bottom-0', text: link.title, tag: 'div', variant: 'u-text-link-small' %}
-                    </div>
-                            
-                    
-                            {% render 'clickable', target: '_self', label: link.title, mode: 'link', url: link.url %}
-                            
-                  
-                        </div>
-{% endfor %}
-                </div>{% if localization.available_languages.size > 1 %}    <localization-form li-if="localization.available_languages.size > 1" class="footer_lang_wrap">
-    
-                  {% form 'localization', class: 'footer_lang_form' %}
-<div data-dropdown="" class="footer_lang_dd"><button type="button" data-dropdown-trigger="" aria-expanded="false" lang="{{ localization.language.iso_code }}" data-trigger="hover focus" class="footer_lang_dd_button"><img src="{{ localization.country | image_url: width: 32 }}" loading="lazy" li-object:src="localization.country | image_url: width: 32" alt="" class="footer_lang_dd_button_flag">
-                        {% render 'typography', custom_class: 'u-magin-bottom-0 u-min-width-auto', text: localization.country.iso_code | capitalize, tag: 'span', variant: 'u-text-link-small' %}
-                        <div class="footer_lang_dd_icon">
-                          {% render 'icon', aria-hidden: true, icon: arrow-left %}
-                        </div>
-                      </button>
-                      <div hidden="" data-dropdown-menu="" class="footer_lang_dd_list_wrap">
-                        <ul li-for:inside="country in localization.available_countries" class="footer_lang_dd_list">
-        {% for country in localization.available_countries %}                            
-                          
-                            {% unless localization.country.iso_code == country.iso_code %}    <li li-unless="localization.country.iso_code == country.iso_code" class="footer_lang_dd_item">
-    
-                            <a data-trigger="hover focus" lang="{{ localization.language.iso_code }}" hreflang="{{ language.iso_code }}" data-value="{{ language.iso_code }}" href="#" class="footer_lang_dd_link w-inline-block"><img src="{{ localization.country | image_url: width: 32 }}" loading="lazy" li-object:src="localization.country | image_url: width: 32" alt="" class="footer_lang_dd_button_flag">
-                              {% render 'typography', custom_class: 'u-magin-bottom-0 u-min-width-auto', text: country.iso_code | capitalize, tag: 'span', variant: 'u-text-link-small' %}
-                            </a>
-                              </li>
-{% endunless %}
-                            
-                        
-                    {% endfor %}    </ul>
-                      </div>
-                    </div>
-                  {% endform %}
-                    </localization-form>
-{% endif %}
-              </div>
+
+              {% render 'clickable', target: '_self', label: link.title, mode: 'link', url: link.url %}
             </div>
-          </div>
+          {% endfor %}
         </div>
-        <div class="u-embed-js w-embed w-script">
-          <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    let dropdownId = 0;
-    document.querySelectorAll('[data-dropdown]').forEach((component) => {
-      if (component.dataset.scriptInitialized === 'true') return;
-      const trigger = component.querySelector('[data-dropdown-trigger]');
-      const menu = component.querySelector('[data-dropdown-menu]');
-      if (!trigger || !menu) return;
-      component.dataset.scriptInitialized = 'true';
-      dropdownId += 1;
-      /*
-       * Vorhandene IDs werden beibehalten.
-       * Fehlende IDs werden automatisch erzeugt.
-       */
-      const triggerId = trigger.id || `dropdown-trigger-${dropdownId}`;
-      const menuId = menu.id || `dropdown-menu-${dropdownId}`;
-      trigger.id = triggerId;
-      menu.id = menuId;
-      /*
-       * Accessibility
-       */
-      trigger.setAttribute('aria-controls', menuId);
-      trigger.setAttribute('aria-expanded', 'false');
-      menu.setAttribute('aria-labelledby', triggerId);
-      /*
-       * Das Dropdown startet geschlossen.
-       */
-      menu.hidden = true;
-      function isOpen() {
-        return trigger.getAttribute('aria-expanded') === 'true';
-      }
-      function setDropdownPosition() {
-        const triggerRect = trigger.getBoundingClientRect();
-        const viewportPadding = 16;
-        const dropdownGap = 8;
-        const spaceBelow = window.innerHeight - triggerRect.bottom - dropdownGap - viewportPadding;
-        const spaceAbove = triggerRect.top - dropdownGap - viewportPadding;
+        {% if localization.available_languages.size > 1 %}
+          <localization-form li-if="localization.available_languages.size > 1" class="footer_lang_wrap">
+            {% form 'localization', class: 'footer_lang_form' %}
+              <div data-dropdown="" class="footer_lang_dd">
+                <button
+                  type="button"
+                  data-dropdown-trigger=""
+                  aria-expanded="false"
+                  lang="{{ localization.language.iso_code }}"
+                  data-trigger="hover focus"
+                  class="footer_lang_dd_button"
+                >
+                  <img
+                    src="{{ localization.country | image_url: width: 32 }}"
+                    loading="lazy"
+                    li-object:src="localization.country | image_url: width: 32"
+                    alt=""
+                    class="footer_lang_dd_button_flag"
+                  >
+                  {% render 'typography', custom_class: 'u-magin-bottom-0 u-min-width-auto', text: localization.country.iso_code | capitalize, tag: 'span', variant: 'u-text-link-small' %}
+                  <div class="footer_lang_dd_icon">
+                    {% render 'icon', aria-hidden: true, icon: arrow-left %}
+                  </div>
+                </button>
+                <div hidden="" data-dropdown-menu="" class="footer_lang_dd_list_wrap">
+                  <ul li-for:inside="country in localization.available_countries" class="footer_lang_dd_list">
+                    {% for country in localization.available_countries %}
+                      {% unless localization.country.iso_code == country.iso_code %}
+                        <li li-unless="localization.country.iso_code == country.iso_code" class="footer_lang_dd_item">
+                          <a
+                            data-trigger="hover focus"
+                            lang="{{ localization.language.iso_code }}"
+                            hreflang="{{ language.iso_code }}"
+                            data-value="{{ language.iso_code }}"
+                            href="#"
+                            class="footer_lang_dd_link w-inline-block"
+                            ><img
+                              src="{{ localization.country | image_url: width: 32 }}"
+                              loading="lazy"
+                              li-object:src="localization.country | image_url: width: 32"
+                              alt=""
+                              class="footer_lang_dd_button_flag"
+                            >
+                            {% render 'typography', custom_class: 'u-magin-bottom-0 u-min-width-auto', text: country.iso_code | capitalize, tag: 'span', variant: 'u-text-link-small' %}
+                          </a>
+                        </li>
+                      {% endunless %}
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            {% endform %}
+          </localization-form>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="u-embed-js w-embed w-script">
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let dropdownId = 0;
+      document.querySelectorAll('[data-dropdown]').forEach((component) => {
+        if (component.dataset.scriptInitialized === 'true') return;
+        const trigger = component.querySelector('[data-dropdown-trigger]');
+        const menu = component.querySelector('[data-dropdown-menu]');
+        if (!trigger || !menu) return;
+        component.dataset.scriptInitialized = 'true';
+        dropdownId += 1;
         /*
-         * Das Men&uuml; muss bereits sichtbar sein,
-         * damit scrollHeight korrekt gemessen wird.
+         * Vorhandene IDs werden beibehalten.
+         * Fehlende IDs werden automatisch erzeugt.
          */
-        const menuHeight = menu.scrollHeight;
+        const triggerId = trigger.id || `dropdown-trigger-${dropdownId}`;
+        const menuId = menu.id || `dropdown-menu-${dropdownId}`;
+        trigger.id = triggerId;
+        menu.id = menuId;
         /*
-         * Standardm&auml;&szlig;ig nach unten &ouml;ffnen.
-         * Nach oben nur dann, wenn unten nicht genug Platz
-         * und oben mehr Platz vorhanden ist.
+         * Accessibility
          */
-        const openAbove = menuHeight > spaceBelow && spaceAbove > spaceBelow;
-        const availableSpace = openAbove ? spaceAbove : spaceBelow;
-        menu.dataset.position = openAbove ? 'top' : 'bottom';
-        /*
-         * Das Men&uuml; wird maximal so hoch wie der
-         * vorhandene Platz im Viewport.
-         */
-        menu.style.maxHeight = `${Math.max(100, availableSpace)}px`;
-      }
-      function openDropdown() {
-        menu.hidden = false;
-        setDropdownPosition();
-        component.classList.add('is-active');
-        trigger.setAttribute('aria-expanded', 'true');
-        /*
-         * Der Fokus bleibt auf dem Button.
-         * Mit Tab gelangt man zum ersten Sprachlink.
-         */
-      }
-      function closeDropdown(options = {}) {
-        const { returnFocus = false } = options;
-        if (!isOpen()) return;
-        menu.hidden = true;
-        component.classList.remove('is-active');
+        trigger.setAttribute('aria-controls', menuId);
         trigger.setAttribute('aria-expanded', 'false');
-        menu.removeAttribute('data-position');
-        menu.style.removeProperty('max-height');
-        if (returnFocus) {
-          trigger.focus();
+        menu.setAttribute('aria-labelledby', triggerId);
+        /*
+         * Das Dropdown startet geschlossen.
+         */
+        menu.hidden = true;
+        function isOpen() {
+          return trigger.getAttribute('aria-expanded') === 'true';
         }
-      }
-      function toggleDropdown() {
-        if (isOpen()) {
+        function setDropdownPosition() {
+          const triggerRect = trigger.getBoundingClientRect();
+          const viewportPadding = 16;
+          const dropdownGap = 8;
+          const spaceBelow = window.innerHeight - triggerRect.bottom - dropdownGap - viewportPadding;
+          const spaceAbove = triggerRect.top - dropdownGap - viewportPadding;
+          /*
+           * Das Men&uuml; muss bereits sichtbar sein,
+           * damit scrollHeight korrekt gemessen wird.
+           */
+          const menuHeight = menu.scrollHeight;
+          /*
+           * Standardm&auml;&szlig;ig nach unten &ouml;ffnen.
+           * Nach oben nur dann, wenn unten nicht genug Platz
+           * und oben mehr Platz vorhanden ist.
+           */
+          const openAbove = menuHeight > spaceBelow && spaceAbove > spaceBelow;
+          const availableSpace = openAbove ? spaceAbove : spaceBelow;
+          menu.dataset.position = openAbove ? 'top' : 'bottom';
+          /*
+           * Das Men&uuml; wird maximal so hoch wie der
+           * vorhandene Platz im Viewport.
+           */
+          menu.style.maxHeight = `${Math.max(100, availableSpace)}px`;
+        }
+        function openDropdown() {
+          menu.hidden = false;
+          setDropdownPosition();
+          component.classList.add('is-active');
+          trigger.setAttribute('aria-expanded', 'true');
+          /*
+           * Der Fokus bleibt auf dem Button.
+           * Mit Tab gelangt man zum ersten Sprachlink.
+           */
+        }
+        function closeDropdown(options = {}) {
+          const { returnFocus = false } = options;
+          if (!isOpen()) return;
+          menu.hidden = true;
+          component.classList.remove('is-active');
+          trigger.setAttribute('aria-expanded', 'false');
+          menu.removeAttribute('data-position');
+          menu.style.removeProperty('max-height');
+          if (returnFocus) {
+            trigger.focus();
+          }
+        }
+        function toggleDropdown() {
+          if (isOpen()) {
+            closeDropdown();
+          } else {
+            openDropdown();
+          }
+        }
+        /*
+         * Ein echter Button unterst&uuml;tzt Enter und Leertaste
+         * bereits automatisch &uuml;ber das Click-Event.
+         */
+        trigger.addEventListener('click', function () {
+          toggleDropdown();
+        });
+        /*
+         * Klick au&szlig;erhalb schlie&szlig;t das Dropdown.
+         * Der Fokus wird dabei nicht zur&uuml;ckgesetzt.
+         */
+        document.addEventListener('click', function (event) {
+          if (!isOpen()) return;
+          if (component.contains(event.target)) return;
           closeDropdown();
-        } else {
-          openDropdown();
-        }
-      }
-      /*
-       * Ein echter Button unterst&uuml;tzt Enter und Leertaste
-       * bereits automatisch &uuml;ber das Click-Event.
-       */
-      trigger.addEventListener('click', function () {
-        toggleDropdown();
-      });
-      /*
-       * Klick au&szlig;erhalb schlie&szlig;t das Dropdown.
-       * Der Fokus wird dabei nicht zur&uuml;ckgesetzt.
-       */
-      document.addEventListener('click', function (event) {
-        if (!isOpen()) return;
-        if (component.contains(event.target)) return;
-        closeDropdown();
-      });
-      /*
-       * Escape schlie&szlig;t das Dropdown und setzt
-       * den Fokus zur&uuml;ck auf den Toggle-Button.
-       */
-      document.addEventListener('keydown', function (event) {
-        if (event.key !== 'Escape') return;
-        if (!isOpen()) return;
-        closeDropdown({ returnFocus: true });
-      });
-      /*
-       * Beim Scrollen oder &Auml;ndern der Fenstergr&ouml;&szlig;e
-       * wird die Position neu berechnet.
-       */
-      window.addEventListener('resize', function () {
-        if (!isOpen()) return;
-        setDropdownPosition();
-      });
-      window.addEventListener(
-        'scroll',
-        function () {
+        });
+        /*
+         * Escape schlie&szlig;t das Dropdown und setzt
+         * den Fokus zur&uuml;ck auf den Toggle-Button.
+         */
+        document.addEventListener('keydown', function (event) {
+          if (event.key !== 'Escape') return;
+          if (!isOpen()) return;
+          closeDropdown({ returnFocus: true });
+        });
+        /*
+         * Beim Scrollen oder &Auml;ndern der Fenstergr&ouml;&szlig;e
+         * wird die Position neu berechnet.
+         */
+        window.addEventListener('resize', function () {
           if (!isOpen()) return;
           setDropdownPosition();
-        },
-        true,
-      );
+        });
+        window.addEventListener(
+          'scroll',
+          function () {
+            if (!isOpen()) return;
+            setDropdownPosition();
+          },
+          true
+        );
+      });
     });
-  });
-</script>
-        </div> {% schema %} {
-    "tag": "footer",
-    "name": "Footer",
-    "class": "footer_wrap",
-    "blocks": [
+  </script>
+</div>
+{% schema %}
+{
+  "tag": "footer",
+  "name": "Footer",
+  "class": "footer_wrap",
+  "blocks": [
+    {
+      "name": "Socials Item",
+      "type": "socials-item",
+      "settings": [
         {
-            "name": "Socials Item",
-            "type": "socials-item",
-            "settings": [
-                {
-                    "type": "header",
-                    "content": "Icon"
-                },
-                {
-                    "type": "select",
-                    "id": "icon",
-                    "label": "Icon",
-                    "options": [
-                        {
-                            "value": "instagram",
-                            "label": "Instagram"
-                        },
-                        {
-                            "value": "facebook",
-                            "label": "Facebook"
-                        },
-                        {
-                            "value": "linkedin",
-                            "label": "LinkedIn"
-                        },
-                        {
-                            "value": "youtube",
-                            "label": "YouTube"
-                        },
-                        {
-                            "value": "pinterest",
-                            "label": "Pinterest"
-                        }
-                    ],
-                    "default": "instagram"
-                },
-                {
-                    "type": "header",
-                    "content": "Link"
-                },
-                {
-                    "type": "text",
-                    "id": "clickable_label",
-                    "label": "Beschriftung",
-                    "default": "Mehr erfahren"
-                },
-                {
-                    "type": "url",
-                    "id": "clickable_url",
-                    "label": "Link"
-                }
-            ]
+          "type": "header",
+          "content": "Icon"
         },
         {
-            "name": "Group",
-            "type": "group",
-            "settings": [
-                {
-                    "type": "header",
-                    "content": "\u00dcberschrift"
-                },
-                {
-                    "type": "inline_richtext",
-                    "id": "heading",
-                    "label": "Text",
-                    "default": "Lorem ipsum dolor sit amet elit"
-                },
-                {
-                    "type": "header",
-                    "content": "Men\u00fc-Gruppe"
-                },
-                {
-                    "type": "link_list",
-                    "id": "menu",
-                    "label": "Men\u00fc"
-                },
-                {
-                    "type": "select",
-                    "id": "desktop_column",
-                    "label": "Desktop-Spalte",
-                    "options": [
-                        {
-                            "value": "1",
-                            "label": "Spalte 1"
-                        },
-                        {
-                            "value": "2",
-                            "label": "Spalte 2"
-                        },
-                        {
-                            "value": "3",
-                            "label": "Spalte 3"
-                        },
-                        {
-                            "value": "4",
-                            "label": "Spalte 4"
-                        }
-                    ],
-                    "default": "1"
-                }
-            ]
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "instagram",
+              "label": "Instagram"
+            },
+            {
+              "value": "facebook",
+              "label": "Facebook"
+            },
+            {
+              "value": "linkedin",
+              "label": "LinkedIn"
+            },
+            {
+              "value": "youtube",
+              "label": "YouTube"
+            },
+            {
+              "value": "pinterest",
+              "label": "Pinterest"
+            }
+          ],
+          "default": "instagram"
+        },
+        {
+          "type": "header",
+          "content": "Link"
+        },
+        {
+          "type": "text",
+          "id": "clickable_label",
+          "label": "Beschriftung",
+          "default": "Mehr erfahren"
+        },
+        {
+          "type": "url",
+          "id": "clickable_url",
+          "label": "Link"
         }
-    ],
-    "settings": [
+      ]
+    },
+    {
+      "name": "Group",
+      "type": "group",
+      "settings": [
         {
-            "type": "header",
-            "content": "\u00dcberschrift"
+          "type": "header",
+          "content": "\u00dcberschrift"
         },
         {
-            "type": "inline_richtext",
-            "id": "heading",
-            "label": "Text",
-            "default": "Lorem ipsum dolor sit amet elit"
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Text",
+          "default": "Lorem ipsum dolor sit amet elit"
         },
         {
-            "type": "header",
-            "content": "Soziale Netzwerke"
+          "type": "header",
+          "content": "Men\u00fc-Gruppe"
         },
         {
-            "type": "text",
-            "id": "socials_text",
-            "label": "Text",
-            "default": "Lorem ipsum dolor sit amet"
+          "type": "link_list",
+          "id": "menu",
+          "label": "Men\u00fc"
         },
         {
-            "type": "header",
-            "content": "Rechtliches"
-        },
-        {
-            "type": "text",
-            "id": "legal_text",
-            "label": "Text",
-            "default": "Lorem ipsum dolor sit amet"
-        },
-        {
-            "type": "header",
-            "content": "Rechtliches"
-        },
-        {
-            "type": "link_list",
-            "id": "menu",
-            "label": "Men\u00fc"
+          "type": "select",
+          "id": "desktop_column",
+          "label": "Desktop-Spalte",
+          "options": [
+            {
+              "value": "1",
+              "label": "Spalte 1"
+            },
+            {
+              "value": "2",
+              "label": "Spalte 2"
+            },
+            {
+              "value": "3",
+              "label": "Spalte 3"
+            },
+            {
+              "value": "4",
+              "label": "Spalte 4"
+            }
+          ],
+          "default": "1"
         }
-    ],
-    "presets": [
-        {
-            "name": "Footer",
-            "category": "Liquify",
-            "blocks": [
-                {
-                    "type": "socials-item"
-                },
-                {
-                    "type": "group"
-                }
-            ]
-        }
-    ],
-    "enabled_on": {
-        "groups": [
-            "*"
-        ]
+      ]
     }
-} {% endschema %}
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "\u00dcberschrift"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Text",
+      "default": "Lorem ipsum dolor sit amet elit"
+    },
+    {
+      "type": "header",
+      "content": "Soziale Netzwerke"
+    },
+    {
+      "type": "text",
+      "id": "socials_text",
+      "label": "Text",
+      "default": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "type": "header",
+      "content": "Rechtliches"
+    },
+    {
+      "type": "text",
+      "id": "legal_text",
+      "label": "Text",
+      "default": "Lorem ipsum dolor sit amet"
+    },
+    {
+      "type": "header",
+      "content": "Rechtliches"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Men\u00fc"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer",
+      "category": "Liquify",
+      "blocks": [
+        {
+          "type": "socials-item"
+        },
+        {
+          "type": "group"
+        }
+      ]
+    }
+  ],
+  "enabled_on": {
+    "groups": ["*"]
+  }
+}
+{% endschema %}
