@@ -7002,6 +7002,7 @@ figure {
   grid-column-gap: 1.25rem;
   grid-row-gap: 1.25rem;
   text-align: center;
+  width: 100%;
   padding-top: calc(calc(3.375rem * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(2.25rem * max(var(--_responsive---small), var(--_responsive---xsmall))));
   padding-bottom: calc(calc(3.375rem * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(2.25rem * max(var(--_responsive---small), var(--_responsive---xsmall))));
   flex-flow: wrap;
@@ -7021,9 +7022,10 @@ figure {
 }
 
 .trust_rating_right {
-  grid-column-gap: 1.25rem;
-  grid-row-gap: 1.25rem;
+  grid-column-gap: var(--_spacing---space--6);
+  grid-row-gap: var(--_spacing---space--6);
   flex-flow: wrap;
+  flex: 0 auto;
   place-content: center;
   align-items: center;
   display: flex;
@@ -7043,6 +7045,7 @@ figure {
   grid-column-gap: .625rem;
   grid-row-gap: .625rem;
   flex-flow: wrap;
+  flex: 0 auto;
   place-content: center;
   align-items: center;
   display: flex;
