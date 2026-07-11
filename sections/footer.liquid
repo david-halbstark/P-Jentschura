@@ -171,126 +171,6 @@
         <div class="footer_mid_wrap">
           <div class="footer_mid_contain u-container">
             <nav data-element="footer-container" class="footer_mid_layout">
-              {% for column_number in footer_columns %}    <div li-for="column_number in footer_columns" class="footer_column">
-                                    
-                
-                            {% for block in section.blocks %}{% if block.type != 'group' %}{% continue %}{% endif %}{% if block.settings.desktop_column != column_number %}{% continue %}{% endif %}{% render 'footer_group', footer_group: block %}{% endfor %}
-                            
-                
-                            {% for block in section.blocks %}
-    {% if block.type == "group" %}
-                    <div data-trigger="group" li-block="Group" class="u-display-contents">
-                                    
-                  
-                                    <div class="u-display-none">
-                    
-                    
-                  </div>
-                                    
-                  
-                                    
-                                    
-                  
-                                    {% render 'footer_group', footer_group: block %}
-                                    
-                
-                            </div>
-            {% endif %}
-{% endfor %}
-                            
-              
-                        </div>
-{% endfor %}
-              {% for column_number in footer_columns %}    <div li-for="column_number in footer_columns" class="footer_column">
-                                    
-                
-                            {% for block in section.blocks %}{% if block.type != 'group' %}{% continue %}{% endif %}{% if block.settings.desktop_column != column_number %}{% continue %}{% endif %}{% render 'footer_group', footer_group: block %}{% endfor %}
-                            
-                
-                            {% for block in section.blocks %}
-    {% if block.type == "group" %}
-                    <div data-trigger="group" li-block="Group" class="u-display-contents">
-                                    
-                  
-                                    <div class="u-display-none">
-                    
-                    
-                  </div>
-                                    
-                  
-                                    
-                                    
-                  
-                                    {% render 'footer_group', footer_group: block %}
-                                    
-                
-                            </div>
-            {% endif %}
-{% endfor %}
-                            
-              
-                        </div>
-{% endfor %}
-              {% for column_number in footer_columns %}    <div li-for="column_number in footer_columns" class="footer_column">
-                                    
-                
-                            {% for block in section.blocks %}{% if block.type != 'group' %}{% continue %}{% endif %}{% if block.settings.desktop_column != column_number %}{% continue %}{% endif %}{% render 'footer_group', footer_group: block %}{% endfor %}
-                            
-                
-                            {% for block in section.blocks %}
-    {% if block.type == "group" %}
-                    <div data-trigger="group" li-block="Group" class="u-display-contents">
-                                    
-                  
-                                    <div class="u-display-none">
-                    
-                    
-                  </div>
-                                    
-                  
-                                    
-                                    
-                  
-                                    {% render 'footer_group', footer_group: block %}
-                                    
-                
-                            </div>
-            {% endif %}
-{% endfor %}
-                            
-              
-                        </div>
-{% endfor %}
-              {% for column_number in footer_columns %}    <div li-for="column_number in footer_columns" class="footer_column">
-                                    
-                
-                            {% for block in section.blocks %}{% if block.type != 'group' %}{% continue %}{% endif %}{% if block.settings.desktop_column != column_number %}{% continue %}{% endif %}{% render 'footer_group', footer_group: block %}{% endfor %}
-                            
-                
-                            {% for block in section.blocks %}
-    {% if block.type == "group" %}
-                    <div data-trigger="group" li-block="Group" class="u-display-contents">
-                                    
-                  
-                                    <div class="u-display-none">
-                    
-                    
-                  </div>
-                                    
-                  
-                                    
-                                    
-                  
-                                    {% render 'footer_group', footer_group: block %}
-                                    
-                
-                            </div>
-            {% endif %}
-{% endfor %}
-                            
-              
-                        </div>
-{% endfor %}
               {% if false %}    <div li-if="false" class="u-display-none">
     
                 {% for block in section.blocks %}
@@ -315,6 +195,14 @@
 {% endfor %}
                   </div>
 {% endif %}
+              {% for column_number in footer_columns %}    <div li-for="column_number in footer_columns" class="footer_column">
+                                    
+                
+                            {% for block in section.blocks %}{% if block.type != 'group' %}{% continue %}{% endif %}{% if block.settings.desktop_column != column_number %}{% continue %}{% endif %}{% render 'footer_group', footer_group: block %}{% endfor %}
+                            
+              
+                        </div>
+{% endfor %}
             </nav>
           </div>
         </div>
@@ -769,18 +657,6 @@
             "blocks": [
                 {
                     "type": "socials-item"
-                },
-                {
-                    "type": "group"
-                },
-                {
-                    "type": "group"
-                },
-                {
-                    "type": "group"
-                },
-                {
-                    "type": "group"
                 },
                 {
                     "type": "group"
