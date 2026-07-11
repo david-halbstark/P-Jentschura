@@ -99,7 +99,7 @@
           },
           keyboard: {
             enabled: true,
-            onlyInViewport: false,
+            onlyInViewport: true,
           },
           pagination: pagination
             ? {
@@ -122,6 +122,9 @@
         });
       });
     });
+
+    console.log(swiper.keyboard);
+    console.log(swiper.keyboard?.enabled);
   </script>
 </div>
 {% schema %}
