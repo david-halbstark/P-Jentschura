@@ -43,7 +43,8 @@
             "video_controls": false,
             "video_play_behavior": "active_slide",
             "gradient_color_top": "#182804",
-            "gradient_opacity_top": 80
+            "gradient_opacity_top": 80,
+            "gradient_color_bottom": "#000000"
           }
         },
         "slide_DY7T49": {
@@ -78,7 +79,8 @@
             "video_controls": false,
             "video_play_behavior": "active_slide",
             "gradient_color_top": "#182804",
-            "gradient_opacity_top": 80
+            "gradient_opacity_top": 80,
+            "gradient_color_bottom": "#182804"
           }
         }
       },
