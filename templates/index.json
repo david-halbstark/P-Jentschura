@@ -15,7 +15,7 @@
         "slide_FqViYR": {
           "type": "slide",
           "settings": {
-            "text_color": "u-color-2",
+            "text_color": "u-color-1",
             "eyebrow": "Willkommen bei P. Jentschura",
             "eyebrow_variant": "u-text-eyebrow-large",
             "eyebrow_tag": "p",
@@ -29,7 +29,7 @@
             "button_1_mode": "link",
             "button_1_url": "shopify://policies/privacy-policy",
             "button_1_action": "contact_modal",
-            "button_1_variant": "text",
+            "button_1_variant": "transparent",
             "button_1_solid_color": "red",
             "button_1_solid_text_size": "u-text-link-large",
             "button_1_solid_padding": "base",
@@ -138,7 +138,7 @@
             "video_muted": true,
             "video_controls": false,
             "video_play_behavior": "active_slide",
-            "gradient_color": "#FF0000",
+            "gradient_color": "#ff0000",
             "gradient_opacity": 100
           }
         }
