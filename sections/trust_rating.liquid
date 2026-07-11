@@ -47,6 +47,9 @@
         --section-spacing-top: {{ spacing_top }};
         --section-spacing-bottom: {{ spacing_bottom }};
       }
+
+      .u-container {
+      --_spacing---section-space--large-medium-off: calc(var(--_spacing---section-space--large) * var(--_responsive---large));}
     </style>
     {% render 'heading', tag: section.settings.heading_tag, visually_hidden: true, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
     <div class="trust_rating_left">
