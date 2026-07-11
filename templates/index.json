@@ -30,7 +30,7 @@
             "button_2_solid_color": "red",
             "media_type": "image",
             "image": "shopify://shop_images/Rectangle_22008.png",
-            "image_mobile": "shopify://shop_images/Rectangle_42806.png",
+            "image_mobile": "shopify://shop_images/family-lies-on-the-grass-with-a-soccer-ball-VEsFPNBozM0.png",
             "image_width": 2000,
             "image_width_mobile": 900,
             "image_loading": "eager",
@@ -44,8 +44,7 @@
             "video_play_behavior": "active_slide",
             "gradient_color_top": "#182804",
             "gradient_opacity_top": 80,
-            "gradient_color_bottom": "#182804",
-            "gradient_opacity_bottom": 0
+            "gradient_color_bottom": "#182804"
           }
         },
         "slide_DY7T49": {
@@ -81,8 +80,7 @@
             "video_play_behavior": "active_slide",
             "gradient_color_top": "#182804",
             "gradient_opacity_top": 80,
-            "gradient_color_bottom": "#182804",
-            "gradient_opacity_bottom": 80
+            "gradient_color_bottom": "#182804"
           }
         }
       },
