@@ -61,7 +61,7 @@
       "name": "Trust Rating",
       "settings": {
         "section_id": "",
-        "spacing_top": "large_medium_off",
+        "spacing_top": "large",
         "spacing_bottom": "xsmall",
         "heading": "Bewertungen"
       }
