@@ -171,11 +171,12 @@
         <div class="footer_mid_wrap">
           <div class="footer_mid_contain u-container">
             <nav data-element="footer-container" class="footer_mid_layout">
+              {% assign footer_columns = '1,2,3,4' | split: ',' %}
               {% if false %}    <div li-if="false" class="u-display-none">
     
                 {% for block in section.blocks %}
     {% if block.type == "group" %}
-                    <div data-trigger="group" li-block="Group" class="u-display-contents">
+                    <div data-trigger="group" li-block="Group" class="u-display-none">
                                     
                   
                                     <div class="u-display-none">
