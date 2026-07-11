@@ -97,7 +97,10 @@
       column-gap: 1rem;
       color: var(--_theme---text);
     }
-    .footer_group_top.u-text-eyebrow-base {
+    .footer_group_top > .u-heading {
+      width: 100%;
+    }
+    .footer_group_top > .u-text-eyebrow-base {
       --_text-style-1---font-size: var(--_typography---font-size--eyebrow-large);
       --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
     }
@@ -110,7 +113,10 @@
     }
     .footer_mid_layout:not(:has([data-footer-accordions-initialized='true'])) .footer_column:first-child .footer_group_top_icon,
     .footer_group_wrap.is-open .footer_group_top_icon {
-      grid-template-rows: 1fr;
+      transform: rotate(180deg);
+    }
+    .footer_group_list {
+      padding-bottom: 2rem;
     }
   }
 </style>
