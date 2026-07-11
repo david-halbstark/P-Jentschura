@@ -82,48 +82,62 @@
 </div>
 <div class="u-embed-js w-embed w-script">
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.hero_main_slider_wrap').forEach((component) => {
-        if (component.dataset.scriptInitialized) return;
-        component.dataset.scriptInitialized = 'true';
-        const slider = component.querySelector('.hero_main_slider_element');
-        const pagination = component.querySelector('.hero_main_slider_bullet_list');
-        const slides = component.querySelectorAll('.hero_main_slide_wrap');
-        if (!slider || typeof Swiper === 'undefined') return;
-        new Swiper(slider, {
-          slidesPerView: 'auto',
-          loop: slides.length > 1,
-          loopedSlides: slides.length,
-          watchSlidesProgress: true,
-          autoplay: {
-            delay: 4500,
-            disableOnInteraction: false,
-          },
-          keyboard: {
-            enabled: true,
-            onlyInViewport: true,
-          },
-          pagination: pagination
-            ? {
-                el: pagination,
-                bulletClass: 'hero_main_slider_bullet_item',
-                bulletActiveClass: 'is-active',
-                clickable: true,
+   document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".hero_main_slider_wrap").forEach((component) => {
+    if (component.dataset.scriptInitialized) return;
+    component.dataset.scriptInitialized = "true";
+    const slider = component.querySelector(".hero_main_slider_element");
+    const pagination = component.querySelector(".hero_main_slider_bullet_list");
+    const slides = component.querySelectorAll(".hero_main_slide_wrap");
+    if (!slider || typeof Swiper === "undefined") return;
+    new Swiper(slider, {
+      slidesPerView: "auto",
+      loop: slides.length > 1,
+      autoplay: {
+        delay: 4500,
+        disableOnInteraction: false,
+      },
+      keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+      },
+      pagination: pagination
+        ? {
+            el: pagination,
+            bulletClass: "hero_main_slider_bullet_item",
+            bulletActiveClass: "is-active",
+            clickable: true,
 
-                renderBullet(index, className) {
-                  return `
+            renderBullet(index, className) {
+              return `
         <button
           class="${className}"
           type="button"
           aria-label="Zu Slide ${index + 1}"
         ></button>
       `;
-                },
-              }
-            : false,
-        });
-      });
+            },
+          }
+        : false,
     });
+  });
+});
+
+
+pagination: {
+  el: ".hero_main_slider_bullet_list",
+  clickable: true,
+
+  renderBullet(index, className) {
+    return `
+      <button
+        type="button"
+        class="${className} hero_main_slider_bullet_item"
+        aria-label="Zu Slide ${index + 1}"
+      ></button>
+    `;
+  }
+}
   </script>
 </div>
 {% schema %}
