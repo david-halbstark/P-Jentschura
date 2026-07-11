@@ -69,7 +69,6 @@
           <style>
   @container (width < 50em) {
     .footer_mid_layout {
-      background: green;
       display: flex;
       flex-flow: column;
       gap: 0rem;
@@ -82,13 +81,12 @@
     }
     .footer_group_element {
       gap: 0rem;
-      padding-top: 1.5rem;
-      padding-bottom: 1.25rem;
       border-bottom: solid 0.0625rem color-mix(in srgb, var(--_theme---background-7) 10%, transparent 90%);
     }
     .footer_group_bot_wrap {
       display: grid;
       grid-template-rows: 0fr;
+      transition: grid-template-rows 0.2s ease;
     }
     .footer_group_bot_element {
       overflow: hidden;
@@ -106,11 +104,13 @@
     .footer_group_top_icon_wrap {
       display: flex;
     }
-    .footer_mid_layout:not([data-script-initialized='true']) .footer_column:first-child .footer_group_bot_wrap {
+    .footer_mid_layout:not(:has([data-footer-accordions-initialized='true'])) .footer_column:first-child .footer_group_bot_wrap,
+    .footer_group_wrap.is-open .footer_group_bot_wrap {
       grid-template-rows: 1fr;
     }
-    .footer_mid_layout:not([data-script-initialized='true']) .footer_column:first-child .footer_group_top_icon {
-      transform: rotate(180deg);
+    .footer_mid_layout:not(:has([data-footer-accordions-initialized='true'])) .footer_column:first-child .footer_group_top_icon,
+    .footer_group_wrap.is-open .footer_group_top_icon {
+      grid-template-rows: 1fr;
     }
   }
 </style>

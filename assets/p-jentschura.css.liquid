@@ -7575,8 +7575,8 @@ figure {
 .footer_top_layout {
   flex-flow: wrap;
   flex-flow: var(--column-medium, row);
-  grid-column-gap: calc(calc(2.5rem * var(--_responsive---large))  + calc(1.5rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
-  grid-row-gap: calc(calc(2.5rem * var(--_responsive---large))  + calc(1.5rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  grid-column-gap: calc(calc(2.5rem * var(--_responsive---large))  + calc(1.25rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  grid-row-gap: calc(calc(2.5rem * var(--_responsive---large))  + calc(1.25rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
   place-content: center space-between;
   align-items: center;
   padding-top: 2.375rem;
@@ -7889,11 +7889,15 @@ figure {
   display: flex;
 }
 
-@media screen and (max-width: 991px) {
-  .footer_group_wrap {
-    background-color: red;
-  }
+.footer_accordion_button {
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.25rem;
+  display: flex;
+}
 
+@media screen and (max-width: 991px) {
   .footer_mid_layout {
     grid-column-gap: 1.5rem;
     grid-row-gap: 2.5rem;
