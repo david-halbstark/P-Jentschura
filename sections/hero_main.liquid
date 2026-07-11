@@ -138,16 +138,24 @@
           ([entry]) => {
             if (entry.isIntersecting) {
               swiper.keyboard.enable();
-              swiper.autoplay?.resume();
+
+              if (!swiper.autoplay.running) {
+                swiper.autoplay.start();
+              }
             } else {
               swiper.keyboard.disable();
-              swiper.autoplay?.pause();
+
+              if (swiper.autoplay.running) {
+                swiper.autoplay.stop();
+              }
             }
           },
           {
             threshold: 0.25,
           }
         );
+
+        observer.observe(component);
 
         observer.observe(component);
       });
