@@ -119,8 +119,8 @@
       "name": "Category Cards",
       "settings": {
         "section_id": "",
-        "spacing_top": "medium",
-        "spacing_bottom": "medium",
+        "spacing_top": "large",
+        "spacing_bottom": "large",
         "heading": "Lorem ipsum dolor sit amet elit",
         "image": "shopify://shop_images/coldpress-icon.avif"
       }
