@@ -49,7 +49,7 @@
         "slide_DY7T49": {
           "type": "slide",
           "settings": {
-            "text_color": "u-color-2",
+            "text_color": "u-color-1",
             "eyebrow": "Willkommen bei P. Jentschura",
             "eyebrow_tag": "p",
             "heading": "Für alle, die das Leben in vollen Zügen genießen",
@@ -63,7 +63,7 @@
             "button_2_url": "shopify://blogs/blog",
             "button_2_solid_color": "white",
             "media_type": "image",
-            "image": "shopify://shop_images/Rectangle_22008.png",
+            "image": "shopify://shop_images/family-lies-on-the-grass-with-a-soccer-ball-VEsFPNBozM0.png",
             "image_mobile": "shopify://shop_images/Rectangle_42806.png",
             "image_width": 2000,
             "image_width_mobile": 900,
@@ -87,9 +87,7 @@
       ],
       "name": "Hero Main",
       "settings": {
-        "section_id": "",
-        "spacing_top": "small",
-        "spacing_bottom": "small"
+        "section_id": ""
       }
     },
     "trust_rating_pfUfjq": {
