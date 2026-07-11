@@ -6978,18 +6978,24 @@ figure {
   position: relative;
 }
 
-.hero_main_slider_controls {
-  pointer-events: none;
-  height: 100%;
-  display: block;
-  position: absolute;
-  top: 0%;
+.hero_main_slider_wrap {
+  width: 100vw;
+  position: relative;
   left: 50%;
   transform: translate(-50%);
 }
 
-.hero_main_slider_controls.u-container {
+.hero_main_slider_controls {
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
   display: none;
+  position: absolute;
+  inset: 0%;
+}
+
+.hero_main_slider_controls.u-container {
+  container-type: normal;
 }
 
 .hero_main_slide_content {
@@ -7956,6 +7962,7 @@ figure {
 
 .hero_main_slide_background_inner {
   width: 100vw;
+  height: 100%;
   position: absolute;
   inset: 0% 0% 0% 50%;
   transform: translate(-50%);
