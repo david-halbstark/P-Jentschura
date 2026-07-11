@@ -18,7 +18,7 @@
               {%- assign gradient_color_top = block.settings.gradient_color_top | color_modify: 'alpha', opacity_top -%}
               {%- assign opacity_bottom = block.settings.gradient_opacity_bottom | divided_by: 100.0 -%}
               {%- assign gradient_color_bottom = block.settings.gradient_color_bottom
-                | color_modify: 'alpha', opacity
+                | color_modify: 'alpha', opacity_bottom
               %}
 
               <div class="u-display-none"></div>
