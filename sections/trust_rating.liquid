@@ -34,14 +34,7 @@
     {%- else -%}
       {%- assign spacing_bottom = '0' -%}
   {%- endcase %}
-  <div class="u-embed-css w-embed">
-    <style>
-      #shopify-section-{{ section.id }} [data-section-spacing] {
-        --section-spacing-top: {{ spacing_top }};
-        --section-spacing-bottom: {{ spacing_bottom }};
-      }
-    </style>
-  </div>
+  <div class="u-embed-css w-embed"></div>
 </div>
 <div class="u-display-none"></div>
 <div
@@ -49,6 +42,12 @@
   id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}"
 >
   <div data-section-spacing="" class="trust_rating_layout">
+    <style>
+      #shopify-section-{{ section.id }} [data-section-spacing] {
+        --section-spacing-top: {{ spacing_top }};
+        --section-spacing-bottom: {{ spacing_bottom }};
+      }
+    </style>
     {% render 'heading', tag: section.settings.heading_tag, visually_hidden: true, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
     <div class="trust_rating_left">
       <div class="trust_rating_stars">
