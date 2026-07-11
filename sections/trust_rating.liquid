@@ -1,210 +1,164 @@
-<div class="u-display-none"></div>
 <div class="u-display-none">
-  {% case section.settings.spacing_top -%}
-    {%- when 'xxsmall' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--xxsmall)' -%}
-    {%- when 'xsmall' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--xsmall)' -%}
-    {%- when 'small' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--small)' -%}
-    {%- when 'medium' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--medium)' -%}
-    {%- when 'large_medium_off' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--medium)' -%}
-    {%- when 'large' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' -%}
-    {%- when 'page_top' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--page-top)' -%}
-    {%- else -%}
-      {%- assign spacing_top = '0' -%}
-  {%- endcase -%}
-  {%- case section.settings.spacing_bottom -%}
-    {%- when 'xxsmall' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' -%}
-    {%- when 'xsmall' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' -%}
-    {%- when 'small' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--small)' -%}
-    {%- when 'medium' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--medium)' -%}
-    {%- when 'large' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--large)' -%}
-    {%- when 'page_top' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--page-top)' -%}
-    {%- else -%}
-      {%- assign spacing_bottom = '0' -%}
-  {%- endcase %}
-  <div class="u-embed-css w-embed"></div>
-</div>
-<div class="u-display-none"></div>
-<div
-  class="trust_rating_contain u-container"
-  id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}"
->
-  <div data-section-spacing="" class="trust_rating_layout">
-    <style>
-      #shopify-section-{{ section.id }} [data-section-spacing] {
-        --section-spacing-top: {{ spacing_top }};
-        --section-spacing-bottom: {{ spacing_bottom }};
-      }
-
-      [data-section-spacing] {
-      --_spacing---section-space--large-medium-off: calc(var(--_spacing---section-space--large) * var(--_responsive---large));}
-    </style>
-    {% render 'heading', tag: section.settings.heading_tag, visually_hidden: true, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
-    <div class="trust_rating_left">
-      <div class="trust_rating_stars">
-        <div class="trust_rating_star">
-          {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
+          
+          
         </div>
-        <div class="trust_rating_star">
-          {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
+        <div class="u-display-none">
+          
+          
+          
+          {% case section.settings.spacing_top %}{% when 'xxsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_top = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_top = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_top = 'var(--_spacing---section-space--large)' %}{% when 'large_medium_off' %}{% assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' %}{% when 'page_top' %}{% assign spacing_top = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_top = '0' %}{% endcase %}{% case section.settings.spacing_bottom %}{% when 'xxsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_bottom = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_bottom = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_bottom = 'var(--_spacing---section-space--large)' %}{% when 'page_top' %}{% assign spacing_bottom = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_bottom = '0' %}{% endcase %}
+          <div class="u-embed-css w-embed">
+            <style>
+  #shopify-section-{{ section.id }} [data-section-spacing] {
+    --section-spacing-top: {{ spacing_top }};
+    --section-spacing-bottom: {{ spacing_bottom }};
+  }
+</style>
+          </div>
         </div>
-        <div class="trust_rating_star">
-          {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
+        <div class="u-display-none">
+          
+          
         </div>
-        <div class="trust_rating_star">
-          {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
+        <div class="trust_rating_contain u-container" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}">
+          
+          <div data-section-spacing="" class="trust_rating_layout">
+            {% render 'heading', tag: section.settings.heading_tag, visually_hidden: true, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+            <div class="trust_rating_left">
+              <div class="trust_rating_stars">
+                <div class="trust_rating_star">
+                  {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
+                </div>
+                <div class="trust_rating_star">
+                  {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
+                </div>
+                <div class="trust_rating_star">
+                  {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
+                </div>
+                <div class="trust_rating_star">
+                  {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
+                </div>
+                <div class="trust_rating_star">
+                  {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
+                </div>
+              </div>
+              {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: settings.proven_expert_rating, tag: 'div', variant: 'u-text-link-base' %}
+            </div>
+            <div class="trust_rating_right">
+              {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: settings.proven_expert_reviews_count, tag: 'div', variant: 'u-text-body-base' %}
+              <div class="trust_rating_logo">
+                {% render 'image', width: 248, image: settings.proven_expert_logo, object_fit: 'contain' %}
+              </div>
+            </div>
+          </div>
+          
         </div>
-        <div class="trust_rating_star">
-          {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
-        </div>
-      </div>
-      {% render 'typography',
-        custom_class: 'u-margin-bottom-0 u-min-width-auto',
-        text: settings.proven_expert_rating,
-        tag: 'div',
-        variant: 'u-text-link-base'
-      %}
-    </div>
-    <div class="trust_rating_right">
-      {% render 'typography',
-        custom_class: 'u-margin-bottom-0 u-min-width-auto',
-        text: settings.proven_expert_reviews_count,
-        tag: 'div',
-        variant: 'u-text-body-base'
-      %}
-      <div class="trust_rating_logo">
-        {% render 'image', width: 248, image: settings.proven_expert_logo, object_fit: 'contain' %}
-      </div>
-    </div>
-  </div>
-</div>
-{% render 'clickable',
-  focus_ring: 'inside',
-  label: section.settings.heading,
-  mode: 'link',
-  url: settings.proven_expert_link,
-  target: '_blank'
-%}
-{% schema %}
-{
-  "tag": "section",
-  "name": "Trust Rating",
-  "class": "trust_rating_wrap u-section",
-  "settings": [
-    {
-      "type": "header",
-      "content": "Sektion"
-    },
-    {
-      "type": "text",
-      "id": "section_id",
-      "label": "ID"
-    },
-    {
-      "type": "header",
-      "content": "Abst\u00e4nde"
-    },
-    {
-      "type": "select",
-      "id": "spacing_top",
-      "label": "Oben",
-      "options": [
+        {% render 'clickable', focus_ring: 'inside', label: section.settings.heading, mode: 'link', url: settings.proven_expert_link, target: '_blank' %} {% schema %} {
+    "tag": "section",
+    "name": "Trust Rating",
+    "class": "trust_rating_wrap u-section",
+    "settings": [
         {
-          "value": "none",
-          "label": "Kein Abstand"
+            "type": "header",
+            "content": "Sektion"
         },
         {
-          "value": "xxsmal",
-          "label": "Extra extra klein"
+            "type": "text",
+            "id": "section_id",
+            "label": "ID"
         },
         {
-          "value": "xsmall",
-          "label": "Extra klein"
+            "type": "header",
+            "content": "Abst\u00e4nde"
         },
         {
-          "value": "small",
-          "label": "Klein"
+            "type": "select",
+            "id": "spacing_top",
+            "label": "Oben",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmal",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "large_medium_off",
+                    "label": "Gro\u00df | Medium kein Abstand"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "xsmall"
         },
         {
-          "value": "medium",
-          "label": "Mittel"
+            "type": "select",
+            "id": "spacing_bottom",
+            "label": "Unten",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmal",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                }
+            ],
+            "default": "xsmall"
         },
         {
-          "value": "large",
-          "label": "Gro\u00df"
+            "type": "header",
+            "content": "\u00dcberschrift"
         },
         {
-          "value": "large_medium_off",
-          "label": "Gro\u00df | Medium kein Abstand"
-        },
-        {
-          "value": "page_top",
-          "label": "Seitenanfang"
+            "type": "inline_richtext",
+            "id": "heading",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet elit"
         }
-      ],
-      "default": "large"
-    },
-    {
-      "type": "select",
-      "id": "spacing_bottom",
-      "label": "Unten",
-      "options": [
+    ],
+    "presets": [
         {
-          "value": "none",
-          "label": "Kein Abstand"
-        },
-        {
-          "value": "xxsmal",
-          "label": "Extra extra klein"
-        },
-        {
-          "value": "xsmall",
-          "label": "Extra klein"
-        },
-        {
-          "value": "small",
-          "label": "Klein"
-        },
-        {
-          "value": "medium",
-          "label": "Mittel"
-        },
-        {
-          "value": "large",
-          "label": "Gro\u00df"
+            "name": "Trust Rating",
+            "category": "Liquify",
+            "blocks": []
         }
-      ],
-      "default": "large"
-    },
-    {
-      "type": "header",
-      "content": "\u00dcberschrift"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "heading",
-      "label": "Text",
-      "default": "Lorem ipsum dolor sit amet elit"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Trust Rating",
-      "category": "Liquify",
-      "blocks": []
-    }
-  ]
-}
-{% endschema %}
+    ]
+} {% endschema %}
