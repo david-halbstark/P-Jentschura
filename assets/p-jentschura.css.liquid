@@ -148,6 +148,8 @@
   --focus--width: .125rem;
   --_theme---text-2: var(--swatch--white);
   --swatch--orange: #f09628;
+  --_spacing---space--9: clamp(1.25 * 1rem, ((1.25 - ((2 - 1.25) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2 - 1.25) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2 * 1rem);
+  --_spacing---space--11: clamp(1.75 * 1rem, ((1.75 - ((2.5 - 1.75) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2.5 - 1.75) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2.5 * 1rem);
   --_typography---font--secondary-family: "Ms Madi", Georgia, sans-serif;
   --_typography---font--secondary-regular: 400;
   --_typography---line-height--relaxed: 1.5;
@@ -158,6 +160,7 @@
   --_typography---letter-spacing--wide: .02em;
   --_typography---letter-spacing--wider: .03em;
   --_typography---letter-spacing--widest: .04em;
+  --misc--category-card-image: clamp(2.75 * 1rem, ((2.75 - ((4.125 - 2.75) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((4.125 - 2.75) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 4.125 * 1rem);
   --_theme---text-3: var(--swatch--gray);
   --_theme---text-4: var(--swatch--crimson);
   --_theme---background-7: var(--swatch--charcoal);
@@ -183,9 +186,6 @@
   --swatch--charcoal-dark: #131911;
   --swatch--gray: #656d63;
   --swatch--snow: #f6f6f6;
-  --_spacing---section-space--large-medium-off: calc(var(--_spacing---section-space--large) * var(--_responsive---large));
-  --_spacing---space--9: clamp(1.25 * 1rem, ((1.25 - ((2 - 1.25) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2 - 1.25) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2 * 1rem);
-  --_spacing---space--11: clamp(1.75 * 1rem, ((1.75 - ((2.5 - 1.75) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2.5 - 1.75) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2.5 * 1rem);
   --_spacing---space--12: clamp(2.5 * 1rem, ((2.5 - ((3.75 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((3.75 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 3.75 * 1rem);
   --_spacing---space--13: clamp(3.75 * 1rem, ((3.75 - ((6.25 - 3.75) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((6.25 - 3.75) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 6.25 * 1rem);
   --swatch--green: #5c7f53;
@@ -2793,6 +2793,7 @@ figure {
 
 .u-section-spacer {
   height: var(--_spacing---section-space--none);
+  pointer-events: none;
   padding: 0;
   position: relative;
 }
@@ -7057,24 +7058,32 @@ figure {
 }
 
 .category_cards_layout {
-  grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
   --_column-count---value: 4;
+  grid-column-gap: calc(calc(var(--_spacing---space--5) * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(var(--_spacing---space--3) * max(var(--_responsive---small), var(--_responsive---xsmall))));
+  grid-row-gap: calc(calc(var(--_spacing---space--5) * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(var(--_spacing---space--3) * max(var(--_responsive---small), var(--_responsive---xsmall))));
   grid-auto-columns: 1fr;
 }
 
 .category_cards_card_element {
-  grid-column-gap: 2.5rem;
-  grid-row-gap: 2.5rem;
-  border-radius: var(--radius--main);
+  height: 100%;
+  padding-bottom: var(--_spacing---space--9);
+  border-top-left-radius: var(--radius--main);
+  border-top-right-radius: var(--radius--main);
+  border-bottom-left-radius: var(--radius--main);
+  border-bottom-right-radius: var(--radius--main);
   text-align: center;
+  padding-top: calc(calc(3.125rem * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(var(--_spacing---space--9) * max(var(--_responsive---small), var(--_responsive---xsmall))));
+  padding-left: calc(calc(var(--_spacing---space--6) * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(var(--_spacing---space--9) * max(var(--_responsive---small), var(--_responsive---xsmall))));
+  padding-right: calc(calc(var(--_spacing---space--6) * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(var(--_spacing---space--9) * max(var(--_responsive---small), var(--_responsive---xsmall))));
+  grid-column-gap: calc(calc(var(--_spacing---space--11) * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(var(--_spacing---space--7) * max(var(--_responsive---small), var(--_responsive---xsmall))));
+  grid-row-gap: calc(calc(var(--_spacing---space--11) * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(var(--_spacing---space--7) * max(var(--_responsive---small), var(--_responsive---xsmall))));
   background-image: linear-gradient(#fbfbfb, #f2f1f1);
   flex-flow: column;
   justify-content: flex-start;
   align-items: center;
-  height: 100%;
-  padding: 3.125rem 1.25rem 1.875rem;
-  transition: all .2s;
+  transition-property: all;
+  transition-duration: .2s;
+  transition-timing-function: ease;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -7324,8 +7333,8 @@ figure {
 }
 
 .category_card_bot {
-  grid-column-gap: 1.5rem;
-  grid-row-gap: 1.5rem;
+  grid-column-gap: calc(calc(var(--_spacing---space--7) * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(var(--_spacing---space--4) * max(var(--_responsive---small), var(--_responsive---xsmall))));
+  grid-row-gap: calc(calc(var(--_spacing---space--7) * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(var(--_spacing---space--4) * max(var(--_responsive---small), var(--_responsive---xsmall))));
   flex-flow: column;
   flex: 1;
   justify-content: flex-end;
@@ -7357,8 +7366,8 @@ figure {
 }
 
 .category_card_icon {
+  width: var(--misc--category-card-image);
   aspect-ratio: 8 / 11;
-  width: 4.125rem;
   position: relative;
 }
 
