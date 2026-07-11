@@ -36,7 +36,6 @@
             "image_loading": "eager",
             "image_fetchpriority": "auto",
             "image_object_fit": "cover",
-            "video": "shopify://files/videos/background-video.mp4",
             "video_autoplay": true,
             "video_loop": true,
             "video_muted": true,
@@ -62,6 +61,8 @@
       "name": "Trust Rating",
       "settings": {
         "section_id": "",
+        "spacing_top": "large",
+        "spacing_bottom": "large",
         "heading": "Bewertungen"
       }
     },
@@ -118,8 +119,8 @@
       "name": "Category Cards",
       "settings": {
         "section_id": "",
-        "spacing_top": "main",
-        "spacing_bottom": "main",
+        "spacing_top": "medium",
+        "spacing_bottom": "medium",
         "heading": "Lorem ipsum dolor sit amet elit",
         "image": "shopify://shop_images/coldpress-icon.avif"
       }
