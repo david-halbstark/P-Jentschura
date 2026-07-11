@@ -65,6 +65,56 @@
   }
 </style>
         </div>
+        <div class="u-embed-css w-embed">
+          <style>
+  @container (width < 50em) {
+    .footer_mid_layout {
+      background: green;
+      display: flex;
+      flex-flow: column;
+      gap: 0rem;
+      padding-top: calc(var(--_spacing---section-space--main) - 1.5rem);
+      padding-bottom: var(--_spacing---section-space--main);
+    }
+    .footer_column {
+      align-items: stretch;
+      display: contents;
+    }
+    .footer_group_element {
+      gap: 0rem;
+      padding-top: 1.5rem;
+      padding-bottom: 1.25rem;
+      border-bottom: solid 0.0625rem color-mix(in srgb, var(--_theme---background-7) 10%, transparent 90%);
+    }
+    .footer_group_bot_wrap {
+      display: grid;
+      grid-template-rows: 0fr;
+    }
+    .footer_group_bot_element {
+      overflow: hidden;
+    }
+    .footer_group_top {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 1rem;
+      color: var(--_theme---text);
+    }
+    .footer_group_top.u-text-eyebrow-base {
+      --_text-style-1---font-size: var(--_typography---font-size--eyebrow-large);
+      --_text-style-1---letter-spacing: var(--_typography---letter-spacing--wide);
+    }
+    .footer_group_top_icon_wrap {
+      display: flex;
+    }
+    .footer_mid_layout:not([data-script-initialized='true']) .footer_column:first-child .footer_group_bot_wrap {
+      grid-template-rows: 1fr;
+    }
+    .footer_mid_layout:not([data-script-initialized='true']) .footer_column:first-child .footer_group_top_icon {
+      transform: rotate(180deg);
+    }
+  }
+</style>
+        </div>
         <div class="u-display-none">
           
           
@@ -120,13 +170,132 @@
         </div>
         <div class="footer_mid_wrap">
           <div class="footer_mid_contain u-container">
-            <div class="footer_mid_layout">
-              {% assign footer_columns = '1,2,3,4' | split: ',' %}
+            <nav data-element="footer-container" class="footer_mid_layout">
+              {% for column_number in footer_columns %}    <div li-for="column_number in footer_columns" class="footer_column">
+                                    
+                
+                            {% for block in section.blocks %}{% if block.type != 'group' %}{% continue %}{% endif %}{% if block.settings.desktop_column != column_number %}{% continue %}{% endif %}{% render 'footer_group', footer_group: block %}{% endfor %}
+                            
+                
+                            {% for block in section.blocks %}
+    {% if block.type == "group" %}
+                    <div data-trigger="group" li-block="Group" class="u-display-contents">
+                                    
+                  
+                                    <div class="u-display-none">
+                    
+                    
+                  </div>
+                                    
+                  
+                                    
+                                    
+                  
+                                    {% render 'footer_group', footer_group: block %}
+                                    
+                
+                            </div>
+            {% endif %}
+{% endfor %}
+                            
+              
+                        </div>
+{% endfor %}
+              {% for column_number in footer_columns %}    <div li-for="column_number in footer_columns" class="footer_column">
+                                    
+                
+                            {% for block in section.blocks %}{% if block.type != 'group' %}{% continue %}{% endif %}{% if block.settings.desktop_column != column_number %}{% continue %}{% endif %}{% render 'footer_group', footer_group: block %}{% endfor %}
+                            
+                
+                            {% for block in section.blocks %}
+    {% if block.type == "group" %}
+                    <div data-trigger="group" li-block="Group" class="u-display-contents">
+                                    
+                  
+                                    <div class="u-display-none">
+                    
+                    
+                  </div>
+                                    
+                  
+                                    
+                                    
+                  
+                                    {% render 'footer_group', footer_group: block %}
+                                    
+                
+                            </div>
+            {% endif %}
+{% endfor %}
+                            
+              
+                        </div>
+{% endfor %}
+              {% for column_number in footer_columns %}    <div li-for="column_number in footer_columns" class="footer_column">
+                                    
+                
+                            {% for block in section.blocks %}{% if block.type != 'group' %}{% continue %}{% endif %}{% if block.settings.desktop_column != column_number %}{% continue %}{% endif %}{% render 'footer_group', footer_group: block %}{% endfor %}
+                            
+                
+                            {% for block in section.blocks %}
+    {% if block.type == "group" %}
+                    <div data-trigger="group" li-block="Group" class="u-display-contents">
+                                    
+                  
+                                    <div class="u-display-none">
+                    
+                    
+                  </div>
+                                    
+                  
+                                    
+                                    
+                  
+                                    {% render 'footer_group', footer_group: block %}
+                                    
+                
+                            </div>
+            {% endif %}
+{% endfor %}
+                            
+              
+                        </div>
+{% endfor %}
+              {% for column_number in footer_columns %}    <div li-for="column_number in footer_columns" class="footer_column">
+                                    
+                
+                            {% for block in section.blocks %}{% if block.type != 'group' %}{% continue %}{% endif %}{% if block.settings.desktop_column != column_number %}{% continue %}{% endif %}{% render 'footer_group', footer_group: block %}{% endfor %}
+                            
+                
+                            {% for block in section.blocks %}
+    {% if block.type == "group" %}
+                    <div data-trigger="group" li-block="Group" class="u-display-contents">
+                                    
+                  
+                                    <div class="u-display-none">
+                    
+                    
+                  </div>
+                                    
+                  
+                                    
+                                    
+                  
+                                    {% render 'footer_group', footer_group: block %}
+                                    
+                
+                            </div>
+            {% endif %}
+{% endfor %}
+                            
+              
+                        </div>
+{% endfor %}
               {% if false %}    <div li-if="false" class="u-display-none">
     
                 {% for block in section.blocks %}
     {% if block.type == "group" %}
-                    <div data-trigger="group" li-block="Group" class="u-display-none">
+                    <div data-trigger="group" li-block="Group" class="u-display-contents">
                                     
                   
                                     <div class="u-display-none">
@@ -146,15 +315,7 @@
 {% endfor %}
                   </div>
 {% endif %}
-              {% for column_number in footer_columns %}    <div li-for="column_number in footer_columns" class="footer_column">
-                                    
-                
-                            {% for block in section.blocks %}{% if block.type != 'group' %}{% continue %}{% endif %}{% if block.settings.desktop_column != column_number %}{% continue %}{% endif %}{% render 'footer_group', footer_group: block %}{% endfor %}
-                            
-              
-                        </div>
-{% endfor %}
-            </div>
+            </nav>
           </div>
         </div>
         <div class="footer_bot_wrap">
@@ -329,6 +490,129 @@
     customElements.define('localization-form', LocalizationForm);
   })();
 </script>
+        </div>
+        <div class="u-embed-js w-embed w-script">
+          <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('[data-element="footer-container"]');
+    if (!container || typeof container.observeContainer !== 'function') {
+      return;
+    }
+    const BUILD_ATTR = 'data-footer-accordion-built';
+    function openAccordion(group, button, panel) {
+      window.clearTimeout(group.openedClassTimeoutId);
+      button.setAttribute('aria-expanded', 'true');
+      group.classList.add('is-open');
+      panel.inert = false;
+      panel.removeAttribute('inert');
+      group.openedClassTimeoutId = window.setTimeout(() => {
+        group.classList.add('is-opened');
+      }, 200);
+    }
+    function closeAccordion(group, button, panel) {
+      window.clearTimeout(group.openedClassTimeoutId);
+      button.setAttribute('aria-expanded', 'false');
+      group.classList.remove('is-open');
+      group.classList.remove('is-opened');
+      panel.inert = true;
+      panel.setAttribute('inert', '');
+    }
+    function toggleAccordion(group, button, panel) {
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+      if (isOpen) {
+        closeAccordion(group, button, panel);
+      } else {
+        openAccordion(group, button, panel);
+      }
+    }
+    function buildAccordions() {
+      if (container.hasAttribute(BUILD_ATTR)) return;
+      const groups = container.querySelectorAll('[data-element="footer-accordion-group"]');
+      groups.forEach((group, groupIndex) => {
+        const isInitialized = group.getAttribute('data-footer-accordions-initialized') === 'true';
+        if (isInitialized) return;
+        const top = group.querySelector('.footer_group_top');
+        const title = top?.querySelector('h3');
+        const panel = group.querySelector('[data-element="footer-accordion-panel"]');
+        const icon = group.querySelector('[data-element="footer-accordion-icon"]');
+        if (!top || !title || !panel) return;
+        const accordionIndex = groupIndex + 1;
+        const buttonId = `footer-accordion-${accordionIndex}-button`;
+        const panelId = `footer-accordion-${accordionIndex}-panel`;
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'footer_accordion_button';
+        button.setAttribute('data-element', 'footer-accordion-button');
+        button.id = buttonId;
+        button.setAttribute('aria-controls', panelId);
+        button.setAttribute('aria-expanded', accordionIndex === 1 ? 'true' : 'false');
+        while (title.firstChild) {
+          button.appendChild(title.firstChild);
+        }
+        if (icon && !button.contains(icon)) {
+          button.appendChild(icon);
+        }
+        title.appendChild(button);
+        panel.id = panelId;
+        panel.setAttribute('role', 'region');
+        panel.setAttribute('aria-labelledby', buttonId);
+        const interactiveElements = panel.querySelectorAll('a, button, input, select, textarea, [tabindex]');
+        interactiveElements.forEach((element, elementIndex) => {
+          if (!element.id) {
+            element.id = `footer-accordion-${accordionIndex}` + `-item-${elementIndex + 1}`;
+          }
+        });
+        button.addEventListener('click', () => {
+          toggleAccordion(group, button, panel);
+        });
+        if (accordionIndex === 1) {
+          openAccordion(group, button, panel);
+        } else {
+          closeAccordion(group, button, panel);
+        }
+        group.setAttribute('data-footer-accordions-initialized', 'true');
+      });
+      container.setAttribute(BUILD_ATTR, 'true');
+    }
+    function destroyAccordions() {
+      if (!container.hasAttribute(BUILD_ATTR)) return;
+      const groups = container.querySelectorAll('[data-element="footer-accordion-group"]');
+      groups.forEach((group) => {
+        const top = group.querySelector('.footer_group_top');
+        const title = top?.querySelector('h3');
+        const button = group.querySelector('[data-element="footer-accordion-button"]');
+        const panel = group.querySelector('[data-element="footer-accordion-panel"]');
+        if (!top || !title || !button || !panel) return;
+        const icon = button.querySelector('[data-element="footer-accordion-icon"]');
+        Array.from(button.childNodes).forEach((child) => {
+          if (child !== icon) {
+            title.insertBefore(child, button);
+          }
+        });
+        if (icon) {
+          top.appendChild(icon);
+        }
+        button.remove();
+        panel.inert = false;
+        panel.removeAttribute('inert');
+        panel.removeAttribute('role');
+        panel.removeAttribute('aria-labelledby');
+        panel.removeAttribute('id');
+        group.classList.remove('is-open', 'is-opened');
+        window.clearTimeout(group.openedClassTimeoutId);
+        group.removeAttribute('data-footer-accordions-initialized');
+      });
+      container.removeAttribute(BUILD_ATTR);
+    }
+    container.observeContainer('(width < 35em)', (match) => {
+      if (match) {
+        buildAccordions();
+      } else {
+        destroyAccordions();
+      }
+    });
+  });
+</script>
         </div> {% schema %} {
     "tag": "footer",
     "name": "Footer",
@@ -485,6 +769,18 @@
             "blocks": [
                 {
                     "type": "socials-item"
+                },
+                {
+                    "type": "group"
+                },
+                {
+                    "type": "group"
+                },
+                {
+                    "type": "group"
+                },
+                {
+                    "type": "group"
                 },
                 {
                     "type": "group"
