@@ -42,52 +42,15 @@
             "video_muted": true,
             "video_controls": false,
             "video_play_behavior": "active_slide",
-            "gradient_color_top": "#2200FF",
+            "gradient_color_top": "#2200ff",
             "gradient_opacity_top": 100,
-            "gradient_color_bottom": "#FF0000",
+            "gradient_color_bottom": "#ff0000",
             "gradient_opacity_bottom": 0
-          }
-        },
-        "slide_DY7T49": {
-          "type": "slide",
-          "settings": {
-            "text_color": "u-color-1",
-            "eyebrow": "Willkommen bei P. Jentschura",
-            "eyebrow_tag": "p",
-            "heading": "Für alle, die das Leben in vollen Zügen genießen",
-            "heading_tag": "h1",
-            "heading_max_width": 20,
-            "heading_tidy_text": true,
-            "button_1_label": "Jetzt entdecken",
-            "button_1_url": "shopify://policies/privacy-policy",
-            "button_1_solid_color": "red",
-            "button_2_label": "Button 2 Textdsada",
-            "button_2_url": "shopify://blogs/blog",
-            "button_2_solid_color": "white",
-            "media_type": "image",
-            "image": "shopify://shop_images/family-lies-on-the-grass-with-a-soccer-ball-VEsFPNBozM0.png",
-            "image_mobile": "shopify://shop_images/Rectangle_42806.png",
-            "image_width": 2000,
-            "image_width_mobile": 900,
-            "image_loading": "eager",
-            "image_fetchpriority": "auto",
-            "image_object_fit": "cover",
-            "video": "shopify://files/videos/background-video.mp4",
-            "video_autoplay": true,
-            "video_loop": true,
-            "video_muted": true,
-            "video_controls": false,
-            "video_play_behavior": "active_slide",
-            "gradient_color_top": "#182804",
-            "gradient_opacity_top": 80,
-            "gradient_color_bottom": "#182804",
-            "gradient_opacity_bottom": 80
           }
         }
       },
       "block_order": [
-        "slide_FqViYR",
-        "slide_DY7T49"
+        "slide_FqViYR"
       ],
       "name": "Hero Main",
       "settings": {
