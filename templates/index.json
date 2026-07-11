@@ -29,8 +29,8 @@
             "button_2_url": "shopify://blogs/blog",
             "button_2_solid_color": "red",
             "media_type": "image",
-            "image": "shopify://shop_images/Rectangle_22008.png",
-            "image_mobile": "shopify://shop_images/Rectangle_42806.png",
+            "image": "shopify://shop_images/p-jentschura-home-hero-desktop.avif",
+            "image_mobile": "shopify://shop_images/p-jentschura-home-hero-mobile.avif",
             "image_width": 2000,
             "image_width_mobile": 900,
             "image_loading": "eager",
@@ -42,9 +42,9 @@
             "video_muted": true,
             "video_controls": false,
             "video_play_behavior": "active_slide",
-            "gradient_color_top": "#232E20",
-            "gradient_opacity_top": 80,
-            "gradient_color_bottom": "#232E20",
+            "gradient_color_top": "#232e20",
+            "gradient_opacity_top": 40,
+            "gradient_color_bottom": "#232e20",
             "gradient_opacity_bottom": 60
           }
         }
