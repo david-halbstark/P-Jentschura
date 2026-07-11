@@ -110,14 +110,15 @@
                 bulletActiveClass: 'is-active',
                 clickable: true,
 
-                 renderBullet(index, className) {
-      return `
+                renderBullet(index, className) {
+                  return `
         <button
           class="${className}"
           type="button"
           aria-label="Zu Slide ${index + 1}"
         ></button>
       `;
+                },
               }
             : false,
         });
