@@ -44,8 +44,8 @@
             "video_play_behavior": "active_slide",
             "gradient_color_top": "#182804",
             "gradient_opacity_top": 80,
-            "gradient_color_bottom": "#182804",
-            "gradient_opacity_bottom": 80
+            "gradient_color_bottom": "#FF0000",
+            "gradient_opacity_bottom": 0
           }
         },
         "slide_DY7T49": {
