@@ -6964,13 +6964,15 @@ figure {
 }
 
 .hero_main_slider_bullet_list {
+  z-index: 1;
   grid-column-gap: calc(calc(.5rem * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(.375rem * (max(var(--_responsive---small), var(--_responsive---xsmall)))));
   grid-row-gap: calc(calc(.5rem * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(.375rem * (max(var(--_responsive---small), var(--_responsive---xsmall)))));
   align-items: center;
   justify-content: var(--center-small, flex-end);
+  width: 100%;
   padding-bottom: calc(calc(5rem * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(2.25rem * max(var(--_responsive---small), var(--_responsive---xsmall))));
   display: flex;
-  width: auto !important;
+  position: relative;
 }
 
 .hero_main_slider_bullet_item {
