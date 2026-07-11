@@ -42,12 +42,13 @@
             "video_muted": true,
             "video_controls": false,
             "video_play_behavior": "active_slide",
-            "gradient_color": "#182804",
-            "gradient_opacity": 100
+            "gradient_color_top": "#182804",
+            "gradient_opacity_top": 80
           }
         },
         "slide_DY7T49": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "text_color": "u-color-1",
             "eyebrow": "Willkommen bei P. Jentschura",
@@ -76,8 +77,8 @@
             "video_muted": true,
             "video_controls": false,
             "video_play_behavior": "active_slide",
-            "gradient_color": "#ff0000",
-            "gradient_opacity": 100
+            "gradient_color_top": "#182804",
+            "gradient_opacity_top": 80
           }
         }
       },
