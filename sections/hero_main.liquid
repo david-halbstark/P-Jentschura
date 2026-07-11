@@ -23,7 +23,7 @@
           {% if block.type == 'slide' %}
             <div li-block="Slide" class="hero_main_slide_wrap swiper-slide">
               {% assign opacity = block.settings.gradient_opacity | divided_by: 100.0 -%}
-              {%- assign gradient_color = section.settings.gradient_color | color_modify: 'alpha', opacity %}
+              {%- assign gradient_color = block.settings.gradient_color | color_modify: 'alpha', opacity %}
 
               <div class="u-display-none"></div>
 
