@@ -88,7 +88,7 @@
                         {% render 'eyebrow', variant: 'u-text-eyebrow-large', eyebrow: block.settings.eyebrow %}
                         {% render 'heading', tidy_text: block.settings.heading_tidy_text, heading: block.settings.heading, tag: block.settings.heading_tag, variant: 'u-text-h1-primary', max_width: block.settings.heading_max_width %}
                       </div>
-                      {% render 'button_group', button_1_solid_color: block.settings.button_1_solid_color, button_1_url: block.settings.button_1_url, button_2_url: block.settings.button_2_url, button_2_solid_color: block.settings.button_2_solid_color, button_1_label: block.settings.button_1_label, button_2_label: block.settings.button_2_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_2_mode: 'link', button_1_solid_text_size: 'u-text-link-large', button_1_mode: 'link', button_2_solid_text_size: 'u-text-link-large', button_1_variant: 'solid', button_2_variant: 'solid' %}
+                      {% render 'button_group', button_1_solid_color: block.settings.button_1_solid_color, button_1_url: block.settings.button_1_url, button_2_url: block.settings.button_2_url, button_2_solid_color: block.settings.button_2_solid_color, button_1_label: block.settings.button_1_label, button_2_label: block.settings.button_2_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_2_mode: 'link', button_2_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: 'link', button_2_solid_text_size: 'u-text-link-large', button_1_variant: 'solid', button_2_variant: 'solid' %}
                     </div>
                     {% render 'spacer', variant: section.settings.spacing_bottom %}
                   </div>
@@ -289,8 +289,7 @@
                 {
                     "type": "url",
                     "id": "button_1_url",
-                    "label": "Link",
-                    "visible_if": "{{ block.settings.button_1_mode == 'link' }}"
+                    "label": "Link"
                 },
                 {
                     "type": "select",
@@ -306,8 +305,7 @@
                             "label": "Wei\u00df"
                         }
                     ],
-                    "default": "red",
-                    "visible_if": "{{ block.settings.button_1_variant == 'solid' }}"
+                    "default": "red"
                 },
                 {
                     "type": "header",
@@ -322,8 +320,7 @@
                 {
                     "type": "url",
                     "id": "button_2_url",
-                    "label": "Link",
-                    "visible_if": "{{ block.settings.button_2_mode == 'link' }}"
+                    "label": "Link"
                 },
                 {
                     "type": "select",
@@ -339,8 +336,7 @@
                             "label": "Wei\u00df"
                         }
                     ],
-                    "default": "red",
-                    "visible_if": "{{ block.settings.button_2_variant == 'solid' }}"
+                    "default": "red"
                 },
                 {
                     "type": "header",
