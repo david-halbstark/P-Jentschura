@@ -172,7 +172,7 @@
   --focus--offset-outer: .1875rem;
   --swatch--red: #d91920;
   --swatch--crimson: #c5393c;
-  --swatch--crimson-dark: #772224;
+  --swatch--crimson-dark: #8a282a;
   --swatch--white: white;
   --swatch--white-o20: #fff3;
   --swatch--white-dark: #ccc;
@@ -7896,6 +7896,13 @@ figure {
   width: 100%;
   padding-top: 1.5rem;
   padding-bottom: 1.25rem;
+  display: flex;
+}
+
+.hero_main_slide_top {
+  grid-column-gap: calc(calc(1.5rem * var(--_responsive---large))  + calc(1.25rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  grid-row-gap: calc(calc(1.5rem * var(--_responsive---large))  + calc(1.25rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  flex-flow: column;
   display: flex;
 }
 
