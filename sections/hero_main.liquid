@@ -85,6 +85,7 @@
     document.addEventListener('DOMContentLoaded', function () {
       document.querySelectorAll('.hero_main_slider_wrap').forEach((component) => {
         if (component.dataset.scriptInitialized) return;
+
         component.dataset.scriptInitialized = 'true';
 
         const slider = component.querySelector('.hero_main_slider_element');
@@ -93,17 +94,21 @@
 
         if (!slider || typeof Swiper === 'undefined') return;
 
+        const hasMultipleSlides = slides.length > 1;
+
         const swiper = new Swiper(slider, {
           slidesPerView: 'auto',
-          loop: slides.length > 1,
+          loop: hasMultipleSlides,
 
-          autoplay: {
-            delay: 4500,
-            disableOnInteraction: true,
-          },
+          autoplay: hasMultipleSlides
+            ? {
+                delay: 4500,
+                disableOnInteraction: true,
+              }
+            : false,
 
           keyboard: {
-            enabled: true,
+            enabled: false,
             onlyInViewport: false,
           },
 
@@ -127,9 +132,24 @@
             : false,
         });
 
-        console.log('Swiper-Instanz:', swiper);
-        console.log('Keyboard-Modul:', swiper.keyboard);
-        console.log('Keyboard aktiviert:', swiper.keyboard?.enabled);
+        if (!hasMultipleSlides) return;
+
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              swiper.keyboard.enable();
+              swiper.autoplay?.resume();
+            } else {
+              swiper.keyboard.disable();
+              swiper.autoplay?.pause();
+            }
+          },
+          {
+            threshold: 0.25,
+          }
+        );
+
+        observer.observe(component);
       });
     });
   </script>
