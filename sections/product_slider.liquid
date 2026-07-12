@@ -117,7 +117,7 @@
           {% for block in section.blocks %}
             {% assign selected_collection = block.settings.collection %}
 
-            {% assign theme_metaobject = selected_collection.metafields.custom.theme_color.value %}
+            {% assign theme_metaobject = selected_collection.metafields.custom.theme_color.hex %}
             {% assign hex_color = theme_metaobject.theme_color.value %}
 
             <div li-for="block in section.blocks" class="product_slider_panel">
