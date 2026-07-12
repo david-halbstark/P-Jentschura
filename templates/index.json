@@ -221,13 +221,13 @@
         "heading_tidy_text": true,
         "clickable_label": "Mehr erfahren",
         "clickable_url": "",
-        "teaser_card_eyebrow": "Übertitel Text",
+        "teaser_card_eyebrow": "Übertitel Textdas",
         "teaser_card_eyebrow_tag": "p",
-        "teaser_card_heading": "Überschrift Text",
+        "teaser_card_heading": "Überschrift Textasdsadsada",
         "teaser_card_heading_tag": "h3",
-        "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>",
-        "teaser_card_button_label": "Button Text",
-        "teaser_card_button_url": "",
+        "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.sdadasdada</p>",
+        "teaser_card_button_label": "Button Textdsadas",
+        "teaser_card_button_url": "shopify://products/basischer-hals-und-stirnwickel®",
         "product_card_button_text": "Mehr erfahren"
       }
     },
