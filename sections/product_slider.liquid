@@ -133,146 +133,6 @@
                     
                             </button>
             {% endif %}
-{% endfor %}{% for block in section.blocks %}
-    {% if block.type == "tab-panel" %}
-                    <button li-block="Tab + Panel" data-trigger="hover focus" class="product_slider_tab">
-                                    
-                      
-                                    <div class="u-display-none">
-                        
-                        
-                      </div>
-                                    
-                      
-                                    
-                                    
-                      
-                                    
-                                    
-                      
-                                    
-                                    
-                      
-                                    
-                                    
-                      
-                                    {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: block.settings.tab_text, tag: 'span', variant: 'u-text-link-base' %}
-                                    
-                    
-                            </button>
-            {% endif %}
-{% endfor %}{% for block in section.blocks %}
-    {% if block.type == "tab-panel" %}
-                    <button li-block="Tab + Panel" data-trigger="hover focus" class="product_slider_tab">
-                                    
-                      
-                                    <div class="u-display-none">
-                        
-                        
-                      </div>
-                                    
-                      
-                                    
-                                    
-                      
-                                    
-                                    
-                      
-                                    
-                                    
-                      
-                                    
-                                    
-                      
-                                    {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: block.settings.tab_text, tag: 'span', variant: 'u-text-link-base' %}
-                                    
-                    
-                            </button>
-            {% endif %}
-{% endfor %}{% for block in section.blocks %}
-    {% if block.type == "tab-panel" %}
-                    <button li-block="Tab + Panel" data-trigger="hover focus" class="product_slider_tab">
-                                    
-                      
-                                    <div class="u-display-none">
-                        
-                        
-                      </div>
-                                    
-                      
-                                    
-                                    
-                      
-                                    
-                                    
-                      
-                                    
-                                    
-                      
-                                    
-                                    
-                      
-                                    {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: block.settings.tab_text, tag: 'span', variant: 'u-text-link-base' %}
-                                    
-                    
-                            </button>
-            {% endif %}
-{% endfor %}{% for block in section.blocks %}
-    {% if block.type == "tab-panel" %}
-                    <button li-block="Tab + Panel" data-trigger="hover focus" class="product_slider_tab">
-                                    
-                      
-                                    <div class="u-display-none">
-                        
-                        
-                      </div>
-                                    
-                      
-                                    
-                                    
-                      
-                                    
-                                    
-                      
-                                    
-                                    
-                      
-                                    
-                                    
-                      
-                                    {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: block.settings.tab_text, tag: 'span', variant: 'u-text-link-base' %}
-                                    
-                    
-                            </button>
-            {% endif %}
-{% endfor %}{% for block in section.blocks %}
-    {% if block.type == "tab-panel" %}
-                    <button li-block="Tab + Panel" data-trigger="hover focus" class="product_slider_tab">
-                                    
-                      
-                                    <div class="u-display-none">
-                        
-                        
-                      </div>
-                                    
-                      
-                                    
-                                    
-                      
-                                    
-                                    
-                      
-                                    
-                                    
-                      
-                                    
-                                    
-                      
-                                    {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: block.settings.tab_text, tag: 'span', variant: 'u-text-link-base' %}
-                                    
-                    
-                            </button>
-            {% endif %}
 {% endfor %}</div>
                 </div>
                 <div class="product_slider_link">
@@ -322,13 +182,13 @@
                         <div class="slider_bullet_item is-active"></div>
                         <div class="slider_bullet_item"></div>
                       </div>
-                      <div class="slider_button_layout"><button data-trigger="hover focus" class="slider_button_wrap">
+                      <div class="slider_button_layout"><button data-trigger="hover focus" class="slider_button_wrap is-prev">
                           <div class="slider_button_element">
                             <div class="slider_button_icon">
                               {% render 'icon', aria-hidden: true, icon: 'arrow_left' %}
                             </div>
                           </div>
-                        </button><button data-trigger="hover focus" class="slider_button_wrap">
+                        </button><button data-trigger="hover focus" class="slider_button_wrap is-next">
                           <div class="slider_button_element">
                             <div class="slider_button_icon">
                               {% render 'icon', aria-hidden: true, icon: 'arrow_right' %}
@@ -376,13 +236,13 @@
                       <div class="slider_bullet_item is-active"></div>
                       <div class="slider_bullet_item"></div>
                     </div>
-                    <div class="slider_button_layout"><button data-trigger="hover focus" class="slider_button_wrap">
+                    <div class="slider_button_layout"><button data-trigger="hover focus" class="slider_button_wrap is-prev">
                         <div class="slider_button_element">
                           <div class="slider_button_icon">
                             {% render 'icon', aria-hidden: true, icon: 'arrow_left' %}
                           </div>
                         </div>
-                      </button><button data-trigger="hover focus" class="slider_button_wrap">
+                      </button><button data-trigger="hover focus" class="slider_button_wrap is-next">
                         <div class="slider_button_element">
                           <div class="slider_button_icon">
                             {% render 'icon', aria-hidden: true, icon: 'arrow_right' %}
@@ -411,9 +271,15 @@
         if (!swiperElement || swiperElement.swiper) return;
         const sliderWrap = swiperElement.closest(".product_slider_slider_wrap");
         if (!sliderWrap) return;
-        const previousButton = sliderWrap.querySelector(".slider_button_wrap.is-prev");
-        const nextButton = sliderWrap.querySelector(".slider_button_wrap.is-next");
-        const pagination = sliderWrap.querySelector(".slider_bullet_list");
+        const previousButton = sliderWrap.querySelector(
+          ".slider_button_wrap.is-prev"
+        );
+        const nextButton = sliderWrap.querySelector(
+          ".slider_button_wrap.is-next"
+        );
+        const pagination = sliderWrap.querySelector(
+          ".slider_bullet_list"
+        );
         new Swiper(swiperElement, {
           slidesPerView: "auto",
           navigation: {
@@ -426,6 +292,15 @@
             clickable: true,
             bulletClass: "slider_bullet_item",
             bulletActiveClass: "is-active",
+            renderBullet(index, className) {
+              return `
+                <button
+                  type="button"
+                  class="${className}"
+                  aria-label="Slide ${index + 1}"
+                ></button>
+              `;
+            },
           },
         });
       }
@@ -459,7 +334,10 @@
           });
         }
         requestAnimationFrame(() => {
-          activePanel.querySelector(".product_slider_slider_element.swiper")?.swiper?.update();
+          activePanel
+            .querySelector(".product_slider_slider_element.swiper")
+            ?.swiper
+            ?.update();
         });
       }
       if (tabs.length && panels.length) {
@@ -489,14 +367,26 @@
             };
             if (!(event.key in nextIndexByKey)) return;
             event.preventDefault();
-            activateTab(nextIndexByKey[event.key], true, true);
+            activateTab(
+              nextIndexByKey[event.key],
+              true,
+              true
+            );
           });
-          initSwiper(panel.querySelector(".product_slider_slider_element.swiper"));
+          initSwiper(
+            panel.querySelector(
+              ".product_slider_slider_element.swiper"
+            )
+          );
         });
         activateTab(0);
         return;
       }
-      initSwiper(component.querySelector(".product_slider_collection .product_slider_slider_element.swiper"));
+      initSwiper(
+        component.querySelector(
+          ".product_slider_collection .product_slider_slider_element.swiper"
+        )
+      );
     });
   });
 </script>
@@ -1008,21 +898,6 @@
             "name": "Product Slider",
             "category": "Liquify",
             "blocks": [
-                {
-                    "type": "tab-panel"
-                },
-                {
-                    "type": "tab-panel"
-                },
-                {
-                    "type": "tab-panel"
-                },
-                {
-                    "type": "tab-panel"
-                },
-                {
-                    "type": "tab-panel"
-                },
                 {
                     "type": "tab-panel"
                 }
