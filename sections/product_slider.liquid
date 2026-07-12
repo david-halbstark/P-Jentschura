@@ -16,13 +16,24 @@
     transform: translateX(-50%);
   }
   .product_teaser_card_bot .u-button-wrapper {
-    margin-top: var(--_spacing---space--7);
+    margin-top: 0rem;
   }
   .product_teaser_card_element {
     background-color: var(--collection-theme-color, grey);
   }
   .product_card_tag .tag_wrap {
     background-color: var(--collection-theme-color, grey);
+  }
+  .product_teaser_card_button_wrap {
+    transition: grid-template-rows 0.2s ease;
+  }
+  .product_teaser_card_wrap:has(:hover, :focus-visible) .product_teaser_card_button_wrap {
+    grid-template-rows: 1fr;
+  }
+  @media (hover: none) {
+    .product_teaser_card_button_wrap {
+      grid-template-rows: 1fr;
+    }
   }
 </style>
         </div>
@@ -136,19 +147,17 @@
                           <div class="product_slider_slider_slide swiper-slide">
                             {% render 'product_teaser_card', paragraph: block.settings.teaser_card_paragraph, button_url: block.settings.teaser_card_button_url, heading_tag: block.settings.teaser_card_heading_tag, button_label: block.settings.teaser_card_button_label, heading: block.settings.teaser_card_heading, eyebrow_tag: block.settings.teaser_card_eyebrow_tag, eyebrow: block.settings.teaser_card_eyebrow %}
                           </div>
-                          <div class="product_slider_slider_slide swiper-slide">
-                            {% for product in selected_collection.products %}    <div li-for="product in selected_collection.products" class="product_slider_product_card">
+                          {% for product in selected_collection.products %}    <div li-for="product in selected_collection.products" class="product_slider_slider_slide swiper-slide">
                                     
-                              
-                            {% assign product_story = product.metafields.custom.product_story.value %}{% assign top_image = product_story.top_image.value %}
                             
-                              
-                            {% render 'product_card', url: product.url, tag: product.hero_eyebrow, product_image: product.images.first, title: product.title, description: product.description, hover_image: top_image %}
+                            <div class="product_slider_product_card">
+                              {% assign product_story = product.metafields.custom.product_story.value %}{% assign top_image = product_story.top_image.value %}
+                              {% render 'product_card', url: product.url, tag: product.hero_eyebrow, product_image: product.images.first, title: product.title, description: product.description, hover_image: top_image %}
+                            </div>
                             
-                            
+                          
                         </div>
 {% endfor %}
-                          </div>
                         </div>
                       </div>
                     </div>
