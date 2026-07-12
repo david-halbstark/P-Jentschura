@@ -173,7 +173,7 @@
                             {%- assign top_image = product_story.top_image.value %}
                             {% render 'product_card',
                               product_url: product.url,
-                              product_tag: product.metafields.custom.hero_eyebrow,
+                              product_tag: product.metafields.custom.hero_eyebrow.value,
                               product_image: product.images.first,
                               product_title: product.title,
                               product_description: product.description,
