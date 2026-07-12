@@ -220,14 +220,14 @@
         "heading_max_width": 0,
         "heading_tidy_text": true,
         "clickable_label": "Mehr erfahren",
-        "clickable_url": "",
+        "clickable_url": "shopify://blogs/blog",
         "teaser_card_eyebrow": "Übertitel Text",
         "teaser_card_eyebrow_tag": "p",
         "teaser_card_heading": "Überschrift Text",
         "teaser_card_heading_tag": "h3",
         "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>",
         "teaser_card_button_label": "Button Text",
-        "teaser_card_button_url": "",
+        "teaser_card_button_url": "shopify://policies/privacy-policy",
         "product_card_button_text": "Mehr erfahren"
       }
     },
