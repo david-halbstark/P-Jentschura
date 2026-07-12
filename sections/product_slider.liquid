@@ -157,20 +157,16 @@
 
               <div class="u-embed-css w-embed">
                 <style>
-                                                                            #product-slider-block-{{ block.id }} {
-                                                                              --collection-theme-color: {{ theme_color }};
-                                                                            }
+                                                                                              #product-slider-block-{{ block.id }} {
+                                                                                                --collection-theme-color: {{ theme_color }};
+                                                                                              }
 
-                                                        .product_teaser_card_button_inner .button_wrap.is-variant-solid.is-bg-red {
-                    --button-bg-color-hover: var(--button-bg-color);
-                  }
-
-                  .product_teaser_card_button_inner .button_wrap.is-variant-solid.is-bg-red {
-                    --button-bg-color-hover: var(--button-bg-color);
+                    .product_teaser_card_button_inner .button_wrap.is-variant-solid.is-bg-red {
+                    --button-bg-color-hover: unset;
                   }
 
                   .product_teaser_card_button_inner .button_wrap:hover {
-                    background-color: blue ! important;
+                    background-color: blue;
                   }
                 </style>
               </div>
