@@ -104,7 +104,8 @@
                 {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: 'u-margin-bottom-0', variant: 'u-text-h2-primary', max_width: section.settings.heading_max_width %}
               </div>
               <div class="product_slider_top_right">
-                <div class="product_slider_tabs">
+                {% if section.settings.display_type == 'tabs' %}    <div li-if="section.settings.display_type == 'tabs'" class="product_slider_tabs">
+    
                   <div class="product_slider_tabs_inner">{% for block in section.blocks %}
     {% if block.type == "tab-panel" %}
                     <button li-block="Tab + Panel" data-trigger="hover focus" class="product_slider_tab">
@@ -134,11 +135,14 @@
                             </button>
             {% endif %}
 {% endfor %}</div>
-                </div>
-                <div class="product_slider_link">
+                    </div>
+{% endif %}
+                {% if section.settings.display_type == 'collection' %}    <div li-if="section.settings.display_type == 'collection'" class="product_slider_link">
+    
                   {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: section.settings.link_text, tag: 'span', variant: 'u-link-base' %}
                   {% render 'clickable', url: section.settings.clickable_url, label: section.settings.clickable_label %}
-                </div>
+                    </div>
+{% endif %}
               </div>
             </div>
             <div class="product_slider_bot">
@@ -870,7 +874,7 @@
         {
             "type": "text",
             "id": "teaser_card_button_label",
-            "label": "Text",
+            "label": "Button Text",
             "default": "Button Text",
             "visible_if": "{{ section.settings.display_type == 'collection' }}"
         },
