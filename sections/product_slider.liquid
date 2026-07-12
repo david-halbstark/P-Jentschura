@@ -244,7 +244,7 @@
           {%- assign theme_color = theme_metaobject.color.value | color_to_hex %}
           <div class="u-embed-css w-embed">
             <style>
-              #shopify-section-{{ section.id }} .product_slider_wrap {
+              #shopify-section-{{ section.id }}.product_slider_wrap {
                 --collection-theme-color: {{ theme_color }};
               }
             </style>
