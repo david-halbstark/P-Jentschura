@@ -185,7 +185,7 @@
         "spacing_bottom": "xxsmall",
         "heading": "Aktiv & Vital — Für Körper in Bewegung",
         "heading_tag": "h2",
-        "heading_max_width": 20,
+        "heading_max_width": 0,
         "heading_tidy_text": true,
         "eyebrow": "Unsere Produkte",
         "eyebrow_tag": "p",
