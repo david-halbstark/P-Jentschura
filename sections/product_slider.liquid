@@ -136,7 +136,10 @@
                           eyebrow: block.settings.teaser_card_eyebrow
                         %}
                       </div>
-                      <div class="product_slider_slider_slide swiper-slide" style="{{  hex_color }}">
+                      <div
+                        class="product_slider_slider_slide swiper-slide"
+                        style="background-color: {{ theme_metaobject }}"
+                      >
                         {% for product in selected_collection.products %}
                           <div li-for="product in collection.products" class="product_slider_product_card">
                             {% render 'product_card',
