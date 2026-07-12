@@ -62,6 +62,41 @@
                 {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: 'u-text-h2-primary', max_width: section.settings.heading_max_width %}
               </div>
               <div class="product_slider_top_right">
+                <div class="product_slider_tabs">{% for block in section.blocks %}
+    {% if block.type == "tab-panel" %}
+                    <button li-block="Tab + Panel" class="product_slider_tab">
+                                    
+                    
+                                    <div class="u-display-none">
+                      
+                      
+                    </div>
+                                    
+                    
+                                    
+                                    
+                    
+                                    
+                                    
+                    
+                                    
+                                    
+                    
+                                    
+                                    
+                    
+                                    
+                                    
+                    
+                                    
+                                    
+                    
+                                    {% render 'typography', custom_class: 'u-margin-bottom-0', text: block.settings.tab_text, tag: 'span', variant: 'u-text-link-base' %}
+                                    
+                  
+                            </button>
+            {% endif %}
+{% endfor %}</div>
                 <div class="product_slider_link">
                   {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: section.settings.link_text, tag: 'span', variant: 'u-link-base' %}
                   {% render 'clickable', url: section.settings.clickable_url, label: section.settings.clickable_label %}
@@ -142,6 +177,138 @@
     "tag": "section",
     "name": "Product Slider",
     "class": "product_slider_wrap u-section",
+    "blocks": [
+        {
+            "name": "Tab + Panel",
+            "type": "tab-panel",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Tab"
+                },
+                {
+                    "type": "text",
+                    "id": "tab_text",
+                    "label": "Text",
+                    "default": "Lorem ipsum dolor sit amet"
+                },
+                {
+                    "type": "header",
+                    "content": "Panel"
+                },
+                {
+                    "type": "header",
+                    "content": "Teaser Card"
+                },
+                {
+                    "type": "text",
+                    "id": "teaser_card_eyebrow",
+                    "label": "\u00dcbertitel Text",
+                    "default": "\u00dcbertitel Text"
+                },
+                {
+                    "type": "select",
+                    "id": "teaser_card_eyebrow_tag",
+                    "label": "\u00dcbertitel HTML-Tag",
+                    "options": [
+                        {
+                            "value": "h1",
+                            "label": "H1"
+                        },
+                        {
+                            "value": "h2",
+                            "label": "H2"
+                        },
+                        {
+                            "value": "h3",
+                            "label": "H3"
+                        },
+                        {
+                            "value": "h4",
+                            "label": "H4"
+                        },
+                        {
+                            "value": "h5",
+                            "label": "H5"
+                        },
+                        {
+                            "value": "h6",
+                            "label": "H6"
+                        },
+                        {
+                            "value": "p",
+                            "label": "P"
+                        }
+                    ],
+                    "default": "p"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "teaser_card_heading",
+                    "label": "\u00dcberschrift Text",
+                    "default": "\u00dcberschrift Text"
+                },
+                {
+                    "type": "select",
+                    "id": "teaser_card_heading_tag",
+                    "label": "\u00dcberschrift HTML-Tag",
+                    "options": [
+                        {
+                            "value": "h1",
+                            "label": "H1"
+                        },
+                        {
+                            "value": "h2",
+                            "label": "H2"
+                        },
+                        {
+                            "value": "h3",
+                            "label": "H3"
+                        },
+                        {
+                            "value": "h4",
+                            "label": "H4"
+                        },
+                        {
+                            "value": "h5",
+                            "label": "H5"
+                        },
+                        {
+                            "value": "h6",
+                            "label": "H6"
+                        },
+                        {
+                            "value": "p",
+                            "label": "P"
+                        }
+                    ],
+                    "default": "h3"
+                },
+                {
+                    "type": "richtext",
+                    "id": "teaser_card_paragraph",
+                    "label": "Paragraph Text",
+                    "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.<\/p>"
+                },
+                {
+                    "type": "text",
+                    "id": "teaser_card_button_label",
+                    "label": "Text",
+                    "default": "Button Text"
+                },
+                {
+                    "type": "url",
+                    "id": "teaser_card_button_url",
+                    "label": "Button Link"
+                },
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Kollektion"
+                }
+            ]
+        }
+    ],
     "settings": [
         {
             "type": "header",
@@ -171,7 +338,8 @@
         {
             "type": "collection",
             "id": "collection",
-            "label": "Kollektion"        },
+            "label": "Kollektion"
+        },
         {
             "type": "header",
             "content": "Abst\u00e4nde"
@@ -376,7 +544,11 @@
         {
             "name": "Product Slider",
             "category": "Liquify",
-            "blocks": []
+            "blocks": [
+                {
+                    "type": "tab-panel"
+                }
+            ]
         }
     ]
 } {% endschema %}
