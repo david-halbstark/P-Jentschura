@@ -3,7 +3,7 @@
   .product_slider_slider_wrap {
     --_gap---size: 0.75rem;
   }
-  .product_slider_first_card_top::before {
+  .product_teaser_card_top::before {
     content: '';
     width: 50%;
     height: 100%;
@@ -15,12 +15,17 @@
     background-color: var(--swatch--white-o20);
     transform: translateX(-50%);
   }
+  .product_teaser_card_bot .u-button-wrapper {
+    margin-top: var(--_spacing---space--7);
+  }
 </style>
         </div>
         <div class="u-display-none">
           
           
         </div>
+        
+        
         <div class="u-display-none">
           
           
@@ -40,126 +45,89 @@
           
           
           
+          
         </div>
         <div class="u-display-none">
           
           
           
-          
-          
-          
-          
         </div>
+        
         <div class="product_slider_contain u-container" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}">
-          <div class="product_slider_layout">
+          
+          <div data-section-spacing="" class="product_slider_layout">
             <div class="product_slider_top">
               <div class="product_slider_top_left u-margin-trim">
                 {% render 'eyebrow', custom_class: 'u-color-3', eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-base' %}
                 {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: 'u-text-h2-primary', max_width: section.settings.heading_max_width %}
               </div>
-              <div class="product_slider_tabs">{% for block in section.blocks %}
-    {% if block.type == "tab-panel" %}
-                    <button li-block="Tab + Panel" class="product_slider_tab">
-                                    
-                  
-                                    <div class="u-display-none">
-                    
-                    
-                  </div>
-                                    
-                  
-                                    
-                                    
-                  
-                                    
-                                    
-                  
-                                    {% render 'typography', custom_class: 'u-margin-bottom-0', text: block.settings.tab_text, tag: 'span', variant: 'u-text-link-base' %}
-                                    
-                
-                            </button>
-            {% endif %}
-{% endfor %}</div>
+              <div class="product_slider_top_right">
+                <div class="product_slider_link">
+                  {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: section.settings.link_text, tag: 'span', variant: 'u-link-base' %}
+                  {% render 'clickable', url: section.settings.clickable_url, label: section.settings.clickable_label %}
+                </div>
+              </div>
             </div>
-            <div class="product_slider_bot">
-              {% for block in section.blocks %}    <div li-for="block in section.blocks" class="product_slider_panel">
+            <div class="product_slider_mid">
+              {% if section.settings.display_type == 'tabs' %}    <div li-if="section.settings.display_type == 'tabs'" class="product_slider_panels">
+    
+                {% for block in section.blocks %}    <div li-for="block in section.blocks" class="product_slider_panel">
                                     
-                
+                  
                             <div class="product_slider_slider_wrap">
-                  <div style="--lg: 4; --md: 2; --sm: 1.1; --xs: 1.1;" class="product_slider_slider_offset slider_offset">
-                    <div class="product_slider_slider_element swiper">
-                      <div class="product_slider_slider_list swiper-wrapper">
-                        <div class="product_slider_slider_slide swiper-slide">
-                          <div data-trigger="hover focus" class="product_slider_slider_inner">
-                            <div class="product_slider_first_card">
-                              <div class="product_slider_first_card_top">
-                                {% render 'typography', custom_class: 'u-margin-bottom-0', text: block.settings.eyebrow, tag: 'p', variant: 'u-text-h3-secondary' %}
-                              </div>
-                              <div class="product_slider_first_card_bot u-margin-trim">
-                                {% render 'heading', variant: 'u-text-h4-primary', heading: section.settings.heading, tag: 'h3' %}
-                                <div class="u-display-none">
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                  
-                                </div>
-                                {% render 'paragraph', variant: 'u-text-body-small', paragraph: section.settings.paragraph %}
-                              </div>
-                            </div>
-                            {% render 'clickable', url: section.settings.clickable_url, action: section.settings.clickable_action, focus_ring: section.settings.clickable_focus_ring, label: section.settings.clickable_label, mode: section.settings.clickable_mode, custom_class: , target: section.settings.clickable_target %}
+                    <div style="--lg: 4; --md: 2; --sm: 1.1; --xs: 1.1;" class="product_slider_slider_offset slider_offset">
+                      <div class="product_slider_slider_element swiper">
+                        <div class="product_slider_slider_list swiper-wrapper">
+                          <div class="product_slider_slider_slide swiper-slide">
+                            {% render 'product_teaser_card', paragraph: block.settings.teaser_card_paragraph, button_url: block.settings.teaser_card_button_url, heading_tag: block.settings.teaser_card_heading_tag, button_label: block.settings.teaser_card_button_label, heading: block.settings.teaser_card_heading, eyebrow_tag: block.settings.teaser_card_eyebrow_tag, eyebrow: block.settings.teaser_card_eyebrow %}
                           </div>
+                          <div class="product_slider_slider_slide swiper-slide">
+                            {% for product in collection.products %}    <div li-for="product in collection.products" class="product_slider_product_card">
+                                    
+                              
+                            {% render 'product_card', url: product.url, hover_image: product.metafields.custom.product_story.value.top_image.value, title: product.title, tag: product.hero_eyebrow, image: product.images.first, description: product.description %}
+                            
+                            
                         </div>
-                        <div class="product_slider_slider_slide swiper-slide">
-                          <div class="product_slider_slider_inner">
-                            <div class="product_slider_product_slide">
-                              {% render 'product_card' %}
-                            </div>
+{% endfor %}
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
                             
-              
+                
                         </div>
 {% endfor %}
+                  </div>
+{% endif %}
+              {% if section.settings.display_type == 'collection' %}    <div li-if="section.settings.display_type == 'collection'" class="product_slider_collection">
+        </div>
+{% endif %}
+            </div>
+            <div class="product_slider_bot">
+              <div class="slider_controls">
+                <div class="slider_bullet_list">
+                  <div class="slider_bullet_item is-active"></div>
+                  <div class="slider_bullet_item"></div>
+                </div>
+                <div class="slider_button_layout"><button data-trigger="hover focus" class="slider_button_wrap">
+                    <div class="slider_button_element">
+                      <div class="slider_button_icon">
+                        {% render 'icon', aria-hidden: true, icon: 'arrow_left' %}
+                      </div>
+                    </div>
+                  </button><button data-trigger="hover focus" class="slider_button_wrap">
+                    <div class="slider_button_element">
+                      <div class="slider_button_icon">
+                        {% render 'icon', aria-hidden: true, icon: 'arrow_right' %}
+                      </div>
+                    </div>
+                  </button></div>
+              </div>
             </div>
           </div>
+          
         </div>
         <div class="u-embed-js w-embed w-script">
           <script>
@@ -174,33 +142,6 @@
     "tag": "section",
     "name": "Product Slider",
     "class": "product_slider_wrap u-section",
-    "blocks": [
-        {
-            "name": "Tab + Panel",
-            "type": "tab-panel",
-            "settings": [
-                {
-                    "type": "header",
-                    "content": "Tab"
-                },
-                {
-                    "type": "text",
-                    "id": "tab_text",
-                    "label": "Text",
-                    "default": "Lorem ipsum dolor sit amet"
-                },
-                {
-                    "type": "header",
-                    "content": "Panel"
-                },
-                {
-                    "type": "collection",
-                    "id": "collection",
-                    "label": "Kollektion"
-                }
-            ]
-        }
-    ],
     "settings": [
         {
             "type": "header",
@@ -210,6 +151,28 @@
             "type": "text",
             "id": "section_id",
             "label": "ID"
+        },
+        {
+            "type": "select",
+            "id": "display_type",
+            "label": "Darstellungsart",
+            "options": [
+                {
+                    "value": "collection",
+                    "label": "Einzelne Kollektion"
+                },
+                {
+                    "value": "tabs",
+                    "label": "Kollektionen als Tabs"
+                }
+            ],
+            "default": "tabs"
+        },
+        {
+            "type": "collection",
+            "id": "collection",
+            "label": "Kollektion",
+            "visible_if": "{{ section.settings.display_type == 'collection' }}"
         },
         {
             "type": "header",
@@ -285,73 +248,7 @@
                     "label": "Gro\u00df"
                 }
             ],
-            "default": "large"
-        },
-        {
-            "type": "header",
-            "content": "\u00dcbertitel"
-        },
-        {
-            "type": "text",
-            "id": "eyebrow",
-            "label": "Text",
-            "default": "\u00dcbertitel Text"
-        },
-        {
-            "type": "select",
-            "id": "eyebrow_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "u-text-eyebrow-small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "u-text-eyebrow-base",
-                    "label": "Standard"
-                },
-                {
-                    "value": "u-text-eyebrow-large",
-                    "label": "Gro\u00df"
-                }
-            ],
-            "default": "u-text-eyebrow-large"
-        },
-        {
-            "type": "select",
-            "id": "eyebrow_tag",
-            "label": "HTML-Tag",
-            "options": [
-                {
-                    "value": "h1",
-                    "label": "H1"
-                },
-                {
-                    "value": "h2",
-                    "label": "H2"
-                },
-                {
-                    "value": "h3",
-                    "label": "H3"
-                },
-                {
-                    "value": "h4",
-                    "label": "H4"
-                },
-                {
-                    "value": "h5",
-                    "label": "H5"
-                },
-                {
-                    "value": "h6",
-                    "label": "H6"
-                },
-                {
-                    "value": "p",
-                    "label": "P"
-                }
-            ],
-            "default": "p"
+            "default": "xxsmall"
         },
         {
             "type": "header",
@@ -362,50 +259,6 @@
             "id": "heading",
             "label": "Text",
             "default": "Lorem ipsum dolor sit amet elit"
-        },
-        {
-            "type": "select",
-            "id": "heading_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "u-text-h1-primary",
-                    "label": "H1 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h1-secondary",
-                    "label": "H1 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h2-primary",
-                    "label": "H2 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h2-secondary",
-                    "label": "H2 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h3-primary",
-                    "label": "H3 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h3-secondary",
-                    "label": "H3 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h4-primary",
-                    "label": "H4 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h5-primary",
-                    "label": "H5 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h6-primary",
-                    "label": "H6 Prim\u00e4r"
-                }
-            ],
-            "default": "u-text-h2-primary"
         },
         {
             "type": "select",
@@ -457,592 +310,75 @@
             "default": true
         },
         {
-            "type": "checkbox",
-            "id": "heading_visually_hidden",
-            "label": "Nur f\u00fcr Screenreader anzeigen",
-            "default": false
+            "type": "header",
+            "content": "\u00dcbertitel"
+        },
+        {
+            "type": "text",
+            "id": "eyebrow",
+            "label": "Text",
+            "default": "\u00dcbertitel Text"
+        },
+        {
+            "type": "select",
+            "id": "eyebrow_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "p"
         },
         {
             "type": "header",
-            "content": "Button 1"
+            "content": "Link",
+            "visible_if": "{{ section.settings.display_type == 'collection' }}"
         },
         {
             "type": "text",
-            "id": "button_1_label",
-            "label": "Text",
-            "default": "Button 1 Text"
-        },
-        {
-            "type": "select",
-            "id": "button_1_mode",
-            "label": "Funktion",
-            "options": [
-                {
-                    "value": "link",
-                    "label": "Link \u00f6ffnen"
-                },
-                {
-                    "value": "action",
-                    "label": "Aktion ausf\u00fchren"
-                }
-            ],
-            "default": "link"
+            "id": "clickable_label",
+            "label": "Beschriftung",
+            "default": "Mehr erfahren",
+            "visible_if": "{{ section.settings.display_type == 'collection' }}"
         },
         {
             "type": "url",
-            "id": "button_1_url",
+            "id": "clickable_url",
             "label": "Link",
-            "visible_if": "{{ section.settings.button_1_mode == 'link' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_action",
-            "label": "Aktion",
-            "options": [
-                {
-                    "value": "newsletter_modal",
-                    "label": "Newsletter-Modal \u00f6ffnen"
-                },
-                {
-                    "value": "contact_modal",
-                    "label": "Kontaktformular-Modal \u00f6ffnen"
-                }
-            ],
-            "default": "newsletter_modal",
-            "visible_if": "{{ section.settings.button_1_mode == 'action' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "solid",
-                    "label": "Fl\u00e4che"
-                },
-                {
-                    "value": "transparent",
-                    "label": "Transparent"
-                },
-                {
-                    "value": "text",
-                    "label": "Textlink"
-                },
-                {
-                    "value": "pill",
-                    "label": "Kapsel"
-                }
-            ],
-            "default": "solid"
-        },
-        {
-            "type": "select",
-            "id": "button_1_solid_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "red",
-                    "label": "Rot"
-                },
-                {
-                    "value": "white",
-                    "label": "Wei\u00df"
-                }
-            ],
-            "default": "red",
-            "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_solid_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_solid_padding",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "base",
-                    "label": "Standard"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                }
-            ],
-            "default": "base",
-            "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_text_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_text_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "green",
-                    "label": "Gr\u00fcn"
-                },
-                {
-                    "value": "red",
-                    "label": "Rot"
-                }
-            ],
-            "default": "green",
-            "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_pill_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "white",
-                    "label": "Wei\u00df"
-                },
-                {
-                    "value": "white_transparent",
-                    "label": "Wei\u00df transparent"
-                }
-            ],
-            "default": "white",
-            "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_pill_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-eyebrow-large",
-                    "label": "\u00dcbertitel gro\u00df"
-                },
-                {
-                    "value": "u-text-eyebrow-base",
-                    "label": "\u00dcbertitel Standard"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                },
-                {
-                    "value": "u-text-link-small",
-                    "label": "Link klein"
-                }
-            ],
-            "default": "u-text-eyebrow-base",
-            "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
-        },
-        {
-            "type": "text",
-            "id": "button_1_pill_tag_inner",
-            "label": "Innerer Tag",
-            "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
-        },
-        {
-            "type": "checkbox",
-            "id": "button_1_underline",
-            "label": "Unterstreichung anzeigen",
-            "default": false,
-            "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_icon",
-            "label": "Icon",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Icon"
-                },
-                {
-                    "value": "arrow_left",
-                    "label": "Pfeil links"
-                },
-                {
-                    "value": "arrow_right",
-                    "label": "Pfeil rechts"
-                },
-                {
-                    "value": "arrow_up_right",
-                    "label": "Pfeil hoch rechts"
-                },
-                {
-                    "value": "chevron_left",
-                    "label": "Chevron links"
-                },
-                {
-                    "value": "chevron_right",
-                    "label": "Chevron rechts"
-                },
-                {
-                    "value": "download",
-                    "label": "Herunterladen"
-                },
-                {
-                    "value": "copy",
-                    "label": "Kopieren"
-                },
-                {
-                    "value": "external",
-                    "label": "Externe Seite"
-                }
-            ],
-            "default": "none"
-        },
-        {
-            "type": "select",
-            "id": "button_1_icon_position",
-            "label": "Icon-Position",
-            "options": [
-                {
-                    "value": "before",
-                    "label": "Vor dem Text"
-                },
-                {
-                    "value": "after",
-                    "label": "Nach dem Text"
-                }
-            ],
-            "default": "after",
-            "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_icon_animation",
-            "label": "Icon-Animation",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Keine Animation"
-                },
-                {
-                    "value": "move_left",
-                    "label": "Nach links bewegen"
-                },
-                {
-                    "value": "move_right",
-                    "label": "Nach rechts bewegen"
-                },
-                {
-                    "value": "move_up_right",
-                    "label": "Nach oben rechts bewegen"
-                }
-            ],
-            "default": "none",
-            "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_icon_color",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "inherit",
-                    "label": "Wie Text"
-                },
-                {
-                    "value": "red",
-                    "label": "Rot"
-                }
-            ],
-            "default": "inherit",
-            "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
-        },
-        {
-            "type": "header",
-            "content": "Button 2"
-        },
-        {
-            "type": "text",
-            "id": "button_2_label",
-            "label": "Text",
-            "default": "Button 2 Text"
-        },
-        {
-            "type": "select",
-            "id": "button_2_mode",
-            "label": "Funktion",
-            "options": [
-                {
-                    "value": "link",
-                    "label": "Link \u00f6ffnen"
-                },
-                {
-                    "value": "action",
-                    "label": "Aktion ausf\u00fchren"
-                }
-            ],
-            "default": "link"
-        },
-        {
-            "type": "url",
-            "id": "button_2_url",
-            "label": "Link",
-            "visible_if": "{{ section.settings.button_2_mode == 'link' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "solid",
-                    "label": "Fl\u00e4che"
-                },
-                {
-                    "value": "transparent",
-                    "label": "Transparent"
-                },
-                {
-                    "value": "text",
-                    "label": "Textlink"
-                },
-                {
-                    "value": "pill",
-                    "label": "Kapsel"
-                }
-            ],
-            "default": "solid"
-        },
-        {
-            "type": "select",
-            "id": "button_2_action",
-            "label": "Aktion",
-            "options": [
-                {
-                    "value": "newsletter_modal",
-                    "label": "Newsletter-Modal \u00f6ffnen"
-                },
-                {
-                    "value": "contact_modal",
-                    "label": "Kontaktformular-Modal \u00f6ffnen"
-                }
-            ],
-            "default": "newsletter_modal",
-            "visible_if": "{{ section.settings.button_2_mode == 'action' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_solid_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "red",
-                    "label": "Rot"
-                },
-                {
-                    "value": "white",
-                    "label": "Wei\u00df"
-                }
-            ],
-            "default": "red",
-            "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_solid_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_solid_padding",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "base",
-                    "label": "Standard"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                }
-            ],
-            "default": "base",
-            "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_text_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_text_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "green",
-                    "label": "Gr\u00fcn"
-                },
-                {
-                    "value": "red",
-                    "label": "Rot"
-                }
-            ],
-            "default": "green",
-            "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_pill_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "white",
-                    "label": "Wei\u00df"
-                },
-                {
-                    "value": "white_transparent",
-                    "label": "Wei\u00df transparent"
-                }
-            ],
-            "default": "white",
-            "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_pill_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-eyebrow-large",
-                    "label": "\u00dcbertitel gro\u00df"
-                },
-                {
-                    "value": "u-text-eyebrow-base",
-                    "label": "\u00dcbertitel Standard"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                },
-                {
-                    "value": "u-text-link-small",
-                    "label": "Link klein"
-                }
-            ],
-            "default": "u-text-eyebrow-base",
-            "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
-        },
-        {
-            "type": "text",
-            "id": "button_2_pill_tag_inner",
-            "label": "Innerer Tag",
-            "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
-        },
-        {
-            "type": "checkbox",
-            "id": "button_2_underline",
-            "label": "Unterstreichung anzeigen",
-            "default": false,
-            "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_icon_position",
-            "label": "Icon-Position",
-            "options": [
-                {
-                    "value": "before",
-                    "label": "Vor dem Text"
-                },
-                {
-                    "value": "after",
-                    "label": "Nach dem Text"
-                }
-            ],
-            "default": "after",
-            "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_icon_animation",
-            "label": "Icon-Animation",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Keine Animation"
-                },
-                {
-                    "value": "move_left",
-                    "label": "Nach links bewegen"
-                },
-                {
-                    "value": "move_right",
-                    "label": "Nach rechts bewegen"
-                },
-                {
-                    "value": "move_up_right",
-                    "label": "Nach oben rechts bewegen"
-                }
-            ],
-            "default": "none",
-            "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
+            "visible_if": "{{ section.settings.display_type == 'collection' }}"
         }
     ],
     "presets": [
         {
             "name": "Product Slider",
             "category": "Liquify",
-            "blocks": [
-                {
-                    "type": "tab-panel"
-                }
-            ]
+            "blocks": []
         }
     ]
 } {% endschema %}
