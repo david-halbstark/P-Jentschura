@@ -314,7 +314,110 @@
     </div>
   </div>
 </div>
-<div class="u-embed-js w-embed w-script"></div>
+<div class="u-embed-js w-embed w-script">
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.product_slider_layout').forEach((component, componentIndex) => {
+        if (component.dataset.scriptInitialized) return;
+        component.dataset.scriptInitialized = 'true';
+        const componentId = `product-slider-${componentIndex + 1}`;
+        const tabsContainer = component.querySelector('.product_slider_tabs');
+        const tabs = [...component.querySelectorAll('.product_slider_tab')];
+        const panels = [...component.querySelectorAll('.product_slider_panel')];
+        function initSwiper(swiperElement) {
+          if (!swiperElement || swiperElement.swiper) return;
+          const sliderWrap = swiperElement.closest('.product_slider_slider_wrap');
+          if (!sliderWrap) return;
+          const previousButton = sliderWrap.querySelector('.slider_button_wrap.is-prev');
+          const nextButton = sliderWrap.querySelector('.slider_button_wrap.is-next');
+          const pagination = sliderWrap.querySelector('.slider_bullet_list');
+          new Swiper(swiperElement, {
+            slidesPerView: 'auto',
+            navigation: {
+              prevEl: previousButton,
+              nextEl: nextButton,
+              disabledClass: 'is-disabled',
+            },
+            pagination: {
+              el: pagination,
+              clickable: true,
+              bulletClass: 'slider_bullet_item',
+              bulletActiveClass: 'is-active',
+            },
+          });
+        }
+        function activateTab(activeIndex, focus = false, scroll = false) {
+          tabs.forEach((tab, index) => {
+            const isActive = index === activeIndex;
+            tab.classList.toggle('is-active', isActive);
+            tab.setAttribute('aria-selected', String(isActive));
+            tab.tabIndex = isActive ? 0 : -1;
+          });
+          panels.forEach((panel, index) => {
+            const isActive = index === activeIndex;
+            panel.classList.toggle('is-active', isActive);
+            panel.hidden = !isActive;
+            panel.setAttribute('aria-hidden', String(!isActive));
+            panel.toggleAttribute('inert', !isActive);
+          });
+          const activeTab = tabs[activeIndex];
+          const activePanel = panels[activeIndex];
+          if (!activeTab || !activePanel) return;
+          if (focus) {
+            activeTab.focus({
+              preventScroll: true,
+            });
+          }
+          if (scroll) {
+            activeTab.scrollIntoView({
+              behavior: 'smooth',
+              block: 'nearest',
+              inline: 'start',
+            });
+          }
+          requestAnimationFrame(() => {
+            activePanel.querySelector('.product_slider_slider_element.swiper')?.swiper?.update();
+          });
+        }
+        if (tabs.length && panels.length) {
+          tabsContainer?.setAttribute('role', 'tablist');
+          tabs.forEach((tab, index) => {
+            const panel = panels[index];
+            if (!panel) return;
+            const tabId = `${componentId}-tab-${index + 1}`;
+            const panelId = `${componentId}-panel-${index + 1}`;
+            tab.type = 'button';
+            tab.id = tabId;
+            tab.setAttribute('role', 'tab');
+            tab.setAttribute('aria-controls', panelId);
+            panel.id = panelId;
+            panel.setAttribute('role', 'tabpanel');
+            panel.setAttribute('aria-labelledby', tabId);
+            panel.removeAttribute('tabindex');
+            tab.addEventListener('click', function () {
+              activateTab(index, false, true);
+            });
+            tab.addEventListener('keydown', function (event) {
+              const nextIndexByKey = {
+                ArrowRight: (index + 1) % tabs.length,
+                ArrowLeft: (index - 1 + tabs.length) % tabs.length,
+                Home: 0,
+                End: tabs.length - 1,
+              };
+              if (!(event.key in nextIndexByKey)) return;
+              event.preventDefault();
+              activateTab(nextIndexByKey[event.key], true, true);
+            });
+            initSwiper(panel.querySelector('.product_slider_slider_element.swiper'));
+          });
+          activateTab(0);
+          return;
+        }
+        initSwiper(component.querySelector('.product_slider_collection .product_slider_slider_element.swiper'));
+      });
+    });
+  </script>
+</div>
 {% schema %}
 {
   "tag": "section",
