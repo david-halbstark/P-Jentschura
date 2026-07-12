@@ -172,11 +172,11 @@
                             {% assign product_story = product.metafields.custom.product_story.value -%}
                             {%- assign top_image = product_story.top_image.value %}
                             {% render 'product_card',
-                              url: product.url,
-                              tag: product.metafields.custom.hero_eyebrow,
+                              product_url: product.url,
+                              product_tag: product.metafields.custom.hero_eyebrow,
                               product_image: product.images.first,
-                              title: product.title,
-                              description: product.description,
+                              product_title: product.title,
+                              product_description: product.description,
                               hover_image: top_image
                             %}
                           </div>
