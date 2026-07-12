@@ -132,12 +132,12 @@
           "type": "tab-panel",
           "settings": {
             "tab_text": "Lebensmittel",
-            "teaser_card_eyebrow": "Übertitel Text",
+            "teaser_card_eyebrow": "Energie, die bleibt",
             "teaser_card_eyebrow_tag": "p",
-            "teaser_card_heading": "Überschrift Text",
+            "teaser_card_heading": "Deine Basis jetzt für mehr Bewegung",
             "teaser_card_heading_tag": "h3",
-            "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>",
-            "teaser_card_button_label": "Button Text",
+            "teaser_card_paragraph": "<p>Unsere Produkte unterstützen dich natürlich und basisch: für mehr Energie im Alltag und ein Leben voller Vitalität.</p>",
+            "teaser_card_button_label": "Mehr erfahren",
             "teaser_card_button_url": "shopify://collections/basische-ernaehrung",
             "collection": "basische-ernaehrung"
           }
@@ -183,12 +183,12 @@
         "collection": "",
         "spacing_top": "large",
         "spacing_bottom": "xxsmall",
+        "eyebrow": "Unsere Produkte",
+        "eyebrow_tag": "p",
         "heading": "Aktiv & Vital — Für Körper in Bewegung",
         "heading_tag": "h2",
         "heading_max_width": 0,
         "heading_tidy_text": true,
-        "eyebrow": "Unsere Produkte",
-        "eyebrow_tag": "p",
         "clickable_label": "Mehr erfahren",
         "clickable_url": ""
       }
