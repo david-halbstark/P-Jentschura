@@ -119,7 +119,7 @@
             {% assign theme_metaobject = selected_collection.metafields.custom.theme_color.value %}
             {% assign hex_color = theme_metaobject.theme_color.value %}
 
-            <div style="background-color: {{ theme_metaobject.custom.theme_color.value }};">Test</div>
+            <div style="background-color: {{ theme_metaobject.custom.theme_color.hex }};">Test</div>
             <div li-for="block in section.blocks" class="product_slider_panel">
               <div class="product_slider_slider_wrap">
                 <div style="--lg: 4; --md: 2; --sm: 1.1; --xs: 1.1;" class="product_slider_slider_offset slider_offset">
