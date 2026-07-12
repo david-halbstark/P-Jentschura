@@ -109,6 +109,9 @@
                                     
                                     
                       
+                                    
+                                    
+                      
                                     {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: block.settings.tab_text, tag: 'span', variant: 'u-text-link-base' %}
                                     
                     
@@ -152,7 +155,7 @@
                             
                             <div class="product_slider_product_card">
                               {% assign product_story = product.metafields.custom.product_story.value %}{% assign top_image = product_story.top_image.value %}
-                              {% render 'product_card', url: product.url, tag: product.hero_eyebrow, product_image: product.images.first, title: product.title, description: product.description, hover_image: top_image %}
+                              {% render 'product_card', url: product.url, tag: product.metafields.custom.hero_eyebrow, product_image: product.images.first, title: product.title, description: product.description, hover_image: top_image %}
                             </div>
                             
                           
@@ -332,6 +335,16 @@
                     "type": "url",
                     "id": "teaser_card_button_url",
                     "label": "Button Link"
+                },
+                {
+                    "type": "header",
+                    "content": "Produkt Card"
+                },
+                {
+                    "type": "text",
+                    "id": "product_card_button_label",
+                    "label": "Text",
+                    "default": "Button Text"
                 },
                 {
                     "type": "collection",
