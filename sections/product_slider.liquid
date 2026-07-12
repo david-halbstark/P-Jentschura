@@ -216,12 +216,12 @@
           {%- assign theme_color = theme_metaobject.color.value | color_to_hex %}
           <div class="u-embed-css w-embed">
             <style>
-                            #shopify-section-{{ section.id }} .product_slider_wrap
-                              --collection-theme-color: {{ theme_color }};
-                            }
+                                          #shopify-section-{{ section.id }} .product_slider_wrap
+                                            --collection-theme-color: {{ theme_color }};
+                                          }
 
-                            .product_teaser_card_button_inner .button_wrap.is-variant-solid.is-bg-red {
-                --button-bg-color-hover: var(--button-bg-color);
+                    .product_teaser_card_button_inner .button_wrap.is-variant-solid.is-bg-red {
+                --button-bg-color-hover: green !important;
               }
             </style>
           </div>
