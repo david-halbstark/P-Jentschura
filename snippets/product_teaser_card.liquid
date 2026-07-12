@@ -1,32 +1,19 @@
 <div data-trigger="hover focus" class="product_teaser_card_wrap">
-  <div class="product_teaser_card_element">
-    <div class="product_teaser_card_top">
-      {% render 'typography',
-        custom_class: 'u-margin-bottom-0 u-min-width-auto',
-        text: eyebrow,
-        tag: eyebrow_tag,
-        variant: 'u-text-h3-secondary'
-      %}
-    </div>
-    <div class="product_teaser_card_bot u-margin-trim">
-      {% render 'heading', variant: 'u-text-h4-primary', heading: heading, tag: heading_tag %}
-      {% render 'paragraph', variant: 'u-text-body-small', paragraph: paragraph %}
-      <div class="product_teaser_card_button_wrap">
-        <div class="product_teaser_card_button_element">
-          <div class="product_teaser_card_button_inner">
-            {% render 'button_group',
-              button_1_solid_color: 'red',
-              button_1_label: button_label,
-              button_1_solid_padding: 'base',
-              button_1_solid_text_size: 'u-text-link-large',
-              button_1_mode: 'visual',
-              button_1_variant: 'solid',
-              button_1_custom_class: 'u-width-full'
-            %}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  {% render 'clickable', url: 'button_url', label: button_label, mode: 'link' %}
-</div>
+                                <div class="product_teaser_card_element">
+                                  <div class="product_teaser_card_top">
+                                    {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: eyebrow, tag: eyebrow_tag, variant: 'u-text-h3-secondary' %}
+                                  </div>
+                                  <div class="product_teaser_card_bot u-margin-trim">
+                                    {% render 'heading', variant: 'u-text-h4-primary', heading: heading, tag: heading_tag %}
+                                    {% render 'paragraph', variant: 'u-text-body-small', paragraph: paragraph %}
+                                    <div class="product_teaser_card_button_wrap">
+                                      <div class="product_teaser_card_button_element">
+                                        <div class="product_teaser_card_button_inner">
+                                          {% render 'button_group', button_1_solid_color: 'red', button_1_label: button_label, button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: 'visual', button_1_variant: 'solid', button_1_custom_class: 'u-width-full' %}
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                {% render 'clickable', url: button_url, label: button_label, mode: 'link' %}
+                              </div>
