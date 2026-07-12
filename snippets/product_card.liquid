@@ -18,10 +18,10 @@
         %}
       </div>
     </div>
-    {% if hover_image != blank %}
+    {% if product_hover_image != blank %}
       <div li-if="hover_image != blank" class="product_card_hover">
         <div class="product_card_hover_image"></div>
-        {% render 'image', loading: 'auto', image: hover_image, object_fit: 'cover', width: 400 %}
+        {% render 'image', loading: 'auto', image: product_hover_image, object_fit: 'cover', width: 400 %}
         <div class="product_card_hover_inner">
           {% render 'button_group',
             button_1_solid_padding: 'base',
