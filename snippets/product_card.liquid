@@ -4,7 +4,9 @@
                                       <div class="product_card_image">
                                         {% render 'image', loading: 'auto', image: image, object_fit: 'contain', width: 400 %}
                                       </div>
-                                      <div class="product_card_tag"></div>
+                                      <div class="product_card_tag">
+                                        {% render 'tag', solid_text_size: 'u-link-small', tag: tag, variant: 'solid' %}
+                                      </div>
                                     </div>
                                     <div class="product_card_bot">
                                       {% render 'heading', variant: 'u-text-eyebrow-large', heading: title, tag: 'h3' %}
