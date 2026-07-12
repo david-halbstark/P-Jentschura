@@ -1,26 +1,28 @@
-<div class="product_card_element">
-  <div class="product_card_inner">
-    <div class="product_card_top">
-      <div class="product_card_image">
-        {% render 'image', loading: 'auto', image: image, object_fit: 'contain', width: 400 %}
-      </div>
-      <div class="product_card_tag">
-        {% render 'tag', solid_text_size: 'u-link-small', tag: tag, variant: 'solid' %}
-      </div>
-    </div>
-    <div class="product_card_bot">
-      {% render 'heading', variant: 'u-text-eyebrow-large', heading: title, tag: 'h3' %}
-      {% render 'paragraph', custom_class: 'u-margin-bottom-0', paragraph: description, variant: 'u-text-link-base' %}
-    </div>
-  </div>
-  {% if hover_image != blank %}
-    <div li-if="hover_image != blank" class="product_card_hover">
-      <div class="product_card_hover_image"></div>
-      {% render 'image', loading: 'auto', image: hover_image, object_fit: 'cover', width: 400 %}
-      <div class="product_card_hover_inner">
-        {% render 'button_group', button_1_solid_color: section.settings.button_1_solid_color, button_1_icon_position: section.settings.button_1_icon_position, button_1_url: section.settings.button_1_url, button_2_url: section.settings.button_2_url, button_2_solid_color: section.settings.button_2_solid_color, button_2_icon_position: section.settings.button_2_icon_position, button_2_action: section.settings.button_2_action, button_1_action: section.settings.button_1_action, button_2_icon: section.settings.button_2_icon, button_1_label: section.settings.button_1_label, button_1_icon: section.settings.button_1_icon, button_2_label: section.settings.button_2_label, button_2_icon_color: section.settings.button_2_icon_color, button_2_pill_color: section.settings.button_2_pill_color, button_1_trigger: 'hover focus', button_2_icon_animation: section.settings.button_2_icon_animation, button_2_trigger: 'hover focus', button_1_icon_color: section.settings.button_1_icon_color, button_1_pill_color: section.settings.button_1_pill_color, button_1_icon_animation: section.settings.button_1_icon_animation, button_2_custom_attribute_value: , button_2_text_text_size: section.settings.button_2_text_text_size, button_1_custom_attribute_name: , button_1_custom_attribute_value: , button_1_solid_padding: section.settings.button_1_solid_padding, button_2_custom_attribute_name: , button_1_text_text_size: section.settings.button_1_text_text_size, button_2_mode: section.settings.button_2_mode, button_2_solid_padding: section.settings.button_2_solid_padding, button_1_solid_text_size: section.settings.button_1_solid_text_size, button_1_mode: section.settings.button_1_mode, button_2_solid_text_size: section.settings.button_2_solid_text_size, button_1_variant: section.settings.button_1_variant, button_2_custom_class: , button_1_custom_class: , button_2_pill_tag_inner: section.settings.button_2_pill_tag_inner, button_2_variant: section.settings.button_2_variant, button_1_pill_tag_inner: section.settings.button_1_pill_tag_inner, button_2_pill_text_size: section.settings.button_2_pill_text_size, button_1_pill_text_size: section.settings.button_1_pill_text_size, button_2_text_color: section.settings.button_2_text_color, button_1_underline: section.settings.button_1_underline, button_1_text_color: section.settings.button_1_text_color, button_2_underline: section.settings.button_2_underline %}
-      </div>
-    </div>
-  {% endif %}
-</div>
-{% render 'clickable', url: section.settings.clickable_url, action: section.settings.clickable_action, focus_ring: section.settings.clickable_focus_ring, label: section.settings.clickable_label, mode: section.settings.clickable_mode, custom_class: , target: section.settings.clickable_target %}
+<div data-trigger="hover focus" class="product_card_wrap">
+                                  <div class="product_card_element">
+                                    <div class="product_card_inner">
+                                      <div class="product_card_top">
+                                        <div class="product_card_image">
+                                          {% render 'image', loading: 'auto', image: product_image, object_fit: 'contain', width: 400 %}
+                                        </div>
+                                        <div class="product_card_tag">
+                                          {% render 'tag', solid_text_size: 'u-link-small', tag: tag, variant: 'solid' %}
+                                        </div>
+                                      </div>
+                                      <div class="product_card_bot">
+                                        {% render 'heading', variant: 'u-text-eyebrow-large', heading: title, tag: 'h3' %}
+                                        {% render 'paragraph', custom_class: 'u-margin-bottom-0', paragraph: description, variant: 'u-text-link-base' %}
+                                      </div>
+                                    </div>
+                                    {% if hover_image != blank %}    <div li-if="hover_image != blank" class="product_card_hover">
+    
+                                      <div class="product_card_hover_image"></div>
+                                      {% render 'image', loading: 'auto', image: hover_image, object_fit: 'cover', width: 400 %}
+                                      <div class="product_card_hover_inner">
+                                        {% render 'button_group', button_1_solid_color: section.settings.button_1_solid_color, button_1_icon_position: section.settings.button_1_icon_position, button_1_url: section.settings.button_1_url, button_2_url: section.settings.button_2_url, button_2_solid_color: section.settings.button_2_solid_color, button_2_icon_position: section.settings.button_2_icon_position, button_2_action: section.settings.button_2_action, button_1_action: section.settings.button_1_action, button_2_icon: section.settings.button_2_icon, button_1_label: section.settings.button_1_label, button_1_icon: section.settings.button_1_icon, button_2_label: section.settings.button_2_label, button_2_icon_color: section.settings.button_2_icon_color, button_2_pill_color: section.settings.button_2_pill_color, button_1_trigger: 'hover focus', button_2_icon_animation: section.settings.button_2_icon_animation, button_2_trigger: 'hover focus', button_1_icon_color: section.settings.button_1_icon_color, button_1_pill_color: section.settings.button_1_pill_color, button_1_icon_animation: section.settings.button_1_icon_animation, button_2_custom_attribute_value: , button_2_text_text_size: section.settings.button_2_text_text_size, button_1_custom_attribute_name: , button_1_custom_attribute_value: , button_1_solid_padding: section.settings.button_1_solid_padding, button_2_custom_attribute_name: , button_1_text_text_size: section.settings.button_1_text_text_size, button_2_mode: section.settings.button_2_mode, button_2_solid_padding: section.settings.button_2_solid_padding, button_1_solid_text_size: section.settings.button_1_solid_text_size, button_1_mode: section.settings.button_1_mode, button_2_solid_text_size: section.settings.button_2_solid_text_size, button_1_variant: section.settings.button_1_variant, button_2_custom_class: , button_1_custom_class: , button_2_pill_tag_inner: section.settings.button_2_pill_tag_inner, button_2_variant: section.settings.button_2_variant, button_1_pill_tag_inner: section.settings.button_1_pill_tag_inner, button_2_pill_text_size: section.settings.button_2_pill_text_size, button_1_pill_text_size: section.settings.button_1_pill_text_size, button_2_text_color: section.settings.button_2_text_color, button_1_underline: section.settings.button_1_underline, button_1_text_color: section.settings.button_1_text_color, button_2_underline: section.settings.button_2_underline %}
+                                      </div>
+                                        </div>
+{% endif %}
+                                  </div>
+                                </div>
+                                {% render 'clickable', url: section.settings.clickable_url, action: section.settings.clickable_action, focus_ring: section.settings.clickable_focus_ring, label: section.settings.clickable_label, mode: section.settings.clickable_mode, custom_class: , target: section.settings.clickable_target %}
