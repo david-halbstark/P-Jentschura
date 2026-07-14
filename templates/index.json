@@ -189,14 +189,14 @@
           "settings": {
             "tab_text": "Lorem ipsum dolor sit amet",
             "collection": "basische-accessoires",
-            "teaser_card_eyebrow": "Übertitel Text",
+            "teaser_card_eyebrow": "Übertitel Textdasa",
             "teaser_card_eyebrow_tag": "p",
-            "teaser_card_heading": "Überschrift Text",
+            "teaser_card_heading": "Überschrift Textdasdas",
             "teaser_card_heading_tag": "h3",
-            "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>",
-            "teaser_card_button_label": "Button Text",
-            "teaser_card_button_url": "",
-            "product_card_button_label": "Button Text"
+            "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.dasdasda</p>",
+            "teaser_card_button_label": "Button Textdasdas",
+            "teaser_card_button_url": "shopify://blogs/blog",
+            "product_card_button_label": "Button Textdsadas"
           }
         }
       },
