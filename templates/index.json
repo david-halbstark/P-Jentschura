@@ -157,7 +157,7 @@
         "tab_panel_Lqi6P6": {
           "type": "tab-panel",
           "settings": {
-            "tab_text": "Lorem ipsum dolor sit amet",
+            "tab_text": "Basische Ernährung",
             "collection": "basische-ernaehrung",
             "teaser_card_eyebrow": "Übertitel Text",
             "teaser_card_eyebrow_tag": "p",
@@ -172,7 +172,7 @@
         "tab_panel_qAqPTU": {
           "type": "tab-panel",
           "settings": {
-            "tab_text": "Lorem ipsum dolor sit amet",
+            "tab_text": "Basische Körperpflege",
             "collection": "basische-koerperpflege",
             "teaser_card_eyebrow": "Übertitel Text",
             "teaser_card_eyebrow_tag": "p",
@@ -187,7 +187,7 @@
         "tab_panel_JEjDnP": {
           "type": "tab-panel",
           "settings": {
-            "tab_text": "Lorem ipsum dolor sit amet",
+            "tab_text": "Basische Accessoires",
             "collection": "basische-accessoires",
             "teaser_card_eyebrow": "Übertitel Textdasa",
             "teaser_card_eyebrow_tag": "p",
