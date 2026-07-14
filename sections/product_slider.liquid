@@ -77,7 +77,7 @@
         
         
         
-        <div li-attribute-liquid:id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}" class="product_slider_contain u-container">
+        <div class="product_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
           
           <div data-section-spacing="" class="product_slider_layout">
             <div class="product_slider_top">
