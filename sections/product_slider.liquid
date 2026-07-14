@@ -91,9 +91,6 @@
 <div class="u-display-none"></div>
 <div class="u-display-none"></div>
 
-{% assign selected_collection = section.settings.collection -%}
-{%- assign theme_metaobject = selected_collection.metafields.custom.theme_color.value -%}
-{%- assign theme_color = theme_metaobject.color.value | color_to_hex %}
 <div
   class="product_slider_contain u-container"
   id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}"
@@ -145,6 +142,10 @@
                   eyebrow: section.settings.teaser_card_eyebrow
                 %}
               </div>
+
+              {% assign selected_collection = section.settings.collection -%}
+              {%- assign theme_metaobject = selected_collection.metafields.custom.theme_color.value -%}
+              {%- assign theme_color = theme_metaobject.color.value | color_to_hex %}
               {% for product in selected_collection.products %}
                 <div li-for="product in selected_collection.products" class="product_slider_slider_slide swiper-slide">
                   {% assign product_story = product.metafields.custom.product_story.value -%}
