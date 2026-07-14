@@ -1,0 +1,663 @@
+<div class="u-embed-css w-embed">
+          <style>
+  .product_tabs_layout:not([data-script-initialized='true']) .product_tabs_tab:first-child {
+    --_state---true: 0;
+    --_state---false: 1;
+  }
+  .product_tabs_layout:not([data-script-initialized='true']) .product_tabs_panel:not(:first-child) {
+    display: none;
+  }
+  .product_tabs_slider_wrap {
+    --_gap---size: 1rem;
+  }
+  .product_tabs_card_top::before {
+    content: '';
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    right: auto;
+    bottom: 0%;
+    background-color: var(--swatch--white-o20);
+    transform: translateX(-50%);
+  }
+  @container (width < 75em) {
+    .product_tabs_bot .slider_offset {
+      --slide-count: var(--md);
+    }
+  }
+  @container (width < 60em) {
+    .product_tabs_bot .slider_offset {
+      --slide-count: var(--sm);
+    }
+  }
+  @container (width < 40em) {
+    .product_tabs_bot .slider_offset {
+      --slide-count: var(--xs);
+    }
+  }
+</style>
+        </div>
+        <div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          {% case section.settings.spacing_top %}{% when 'xxsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_top = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_top = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_top = 'var(--_spacing---section-space--large)' %}{% when 'large_medium_off' %}{% assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' %}{% when 'page_top' %}{% assign spacing_top = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_top = '0' %}{% endcase %}{% case section.settings.spacing_bottom %}{% when 'xxsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_bottom = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_bottom = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_bottom = 'var(--_spacing---section-space--large)' %}{% when 'page_top' %}{% assign spacing_bottom = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_bottom = '0' %}{% endcase %}
+          <div class="u-embed-css w-embed">
+            <style>
+  #shopify-section-{{ section.id }} [data-section-spacing] {
+    --section-spacing-top: {{ spacing_top }};
+    --section-spacing-bottom: {{ spacing_bottom }};
+  }
+</style>
+          </div>
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+          
+        </div>
+        <div class="product_tabs_contain u-container" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}">
+          
+          <div data-section-spacing="" class="product_tabs_layout">
+            <div class="product_tabs_top">
+              <div class="product_tabs_top_left u-margin-trim">
+                {% render 'eyebrow', wrapper_class: 'is-eyebrow-base', eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-base', custom_class: 'u-color-3' %}
+                {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: 'u-margin-bottom-0', variant: 'u-text-h2-primary', max_width: section.settings.heading_max_width %}
+              </div>
+              <div class="product_tabs_top_right">
+                <div class="product_tabs_tabs">
+                  <div class="product_tabs_tabs_inner">{% for block in section.blocks %}
+    {% if block.type == "tab-panel" %}
+                    <button li-block="Tab + Panel" data-trigger="hover focus" class="product_tabs_tab">
+                                    
+                      
+                                    <div class="u-display-none">
+                        
+                        
+                      </div>
+                                    
+                      
+                                    
+                                    
+                      
+                                    
+                                    
+                      
+                                    
+                                    
+                      
+                                    
+                                    
+                      
+                                    {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: block.settings.tab_text, tag: 'span', variant: 'u-text-link-base' %}
+                                    
+                    
+                            </button>
+            {% endif %}
+{% endfor %}</div>
+                </div>
+              </div>
+            </div>
+            <div class="product_tabs_bot">
+              {% for block in section.blocks %}    <div li-for="block in section.blocks" class="product_tabs_panel">
+                                    
+                
+                            {% assign selected_collection = block.settings.collection %}{% assign theme_metaobject = selected_collection.metafields.custom.theme_color.value %}{% assign theme_color = theme_metaobject.color.value | color_to_hex %}
+                            
+                
+                            <style> #product-slider-block-{{block.id}}{--collection-theme-color:{{theme_color}};}</style>
+                            
+                
+                            <div id="product-slider-block-{{ block.id }}" class="product_tabs_slider_wrap">
+                  <div style="--lg: 4; --md: 2.5; --sm: 1.9; --xs: 1.1;" class="product_tabs_slider_offset slider_offset">
+                    <div class="product_tabs_slider_element swiper">
+                      <div class="product_tabs_slider_list swiper-wrapper">
+                        <div class="product_tabs_slider_slide is-first swiper-slide">
+                          {% render 'product_teaser_card', paragraph: block.settings.teaser_card_paragraph, button_url: block.settings.teaser_card_button_url, heading_tag: block.settings.teaser_card_heading_tag, button_label: block.settings.teaser_card_button_label, heading: block.settings.teaser_card_heading, eyebrow_tag: block.settings.teaser_card_eyebrow_tag, eyebrow: block.settings.teaser_card_eyebrow %}
+                        </div>
+                        {% for product in selected_collection.products %}    <div li-for="product in selected_collection.products" class="product_tabs_slider_slide swiper-slide">
+                                    
+                          
+                            {% assign product_story = product.metafields.custom.product_story.value %}{% assign top_image = product_story.top_image.value %}
+                            
+                          
+                            {% render 'product_card', product_hover_button_label: block.settings.product_card_button_label, product_url: product.url, product_hover_image: top_image, product_title: product.title, product_tag: product.metafields.custom.hero_eyebrow, product_image: product.images.first, product_description: product.description %}
+                            
+                        
+                        </div>
+{% endfor %}
+                        
+                        
+                        
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slider_controls">
+                    <div class="slider_bullet_list">
+                      <div class="slider_bullet_item is-active"></div>
+                      <div class="slider_bullet_item"></div>
+                    </div>
+                    <div class="slider_button_layout"><button data-trigger="hover focus" class="slider_button_wrap is-prev">
+                        <div class="slider_button_element">
+                          <div class="slider_button_icon">
+                            {% render 'icon', aria-hidden: true, icon: 'arrow_left' %}
+                          </div>
+                        </div>
+                      </button><button data-trigger="hover focus" class="slider_button_wrap is-next">
+                        <div class="slider_button_element">
+                          <div class="slider_button_icon">
+                            {% render 'icon', aria-hidden: true, icon: 'arrow_right' %}
+                          </div>
+                        </div>
+                      </button></div>
+                  </div>
+                </div>
+                            
+              
+                        </div>
+{% endfor %}
+            </div>
+          </div>
+          
+        </div>
+        <div class="u-embed-js w-embed w-script">
+          <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document
+      .querySelectorAll(".product_tabs_layout")
+      .forEach((component, componentIndex) => {
+        if (component.dataset.scriptInitialized === "true") return;
+        component.dataset.scriptInitialized = "true";
+        const componentId = `product-tabs-${componentIndex + 1}`;
+        const tabsContainer = component.querySelector(".product_tabs_tabs");
+        const tabs = [
+          ...component.querySelectorAll(".product_tabs_tab"),
+        ];
+        const panels = [
+          ...component.querySelectorAll(".product_tabs_panel"),
+        ];
+        function initSwiper(swiperElement) {
+          if (!swiperElement || swiperElement.swiper) return;
+          const sliderWrap = swiperElement.closest(
+            ".product_tabs_slider_wrap"
+          );
+          if (!sliderWrap) return;
+          const previousButton = sliderWrap.querySelector(
+            ".slider_button_wrap.is-prev"
+          );
+          const nextButton = sliderWrap.querySelector(
+            ".slider_button_wrap.is-next"
+          );
+          const pagination = sliderWrap.querySelector(
+            ".slider_bullet_list"
+          );
+          new Swiper(swiperElement, {
+            slidesPerView: "auto",
+            navigation: {
+              prevEl: previousButton,
+              nextEl: nextButton,
+              disabledClass: "is-disabled",
+            },
+            pagination: {
+              el: pagination,
+              clickable: true,
+              bulletClass: "slider_bullet_item",
+              bulletActiveClass: "is-active",
+              renderBullet(index, className) {
+                return `
+                  <button
+                    type="button"
+                    class="${className}"
+                    aria-label="Slide ${index + 1}"
+                  ></button>
+                `;
+              },
+            },
+          });
+        }
+        function activateTab(
+          activeIndex,
+          shouldFocus = false,
+          shouldScroll = false
+        ) {
+          tabs.forEach((tab, index) => {
+            const isActive = index === activeIndex;
+            tab.classList.toggle("is-active", isActive);
+            tab.setAttribute("aria-selected", String(isActive));
+            tab.tabIndex = isActive ? 0 : -1;
+          });
+          panels.forEach((panel, index) => {
+            const isActive = index === activeIndex;
+            panel.classList.toggle("is-active", isActive);
+            panel.hidden = !isActive;
+            panel.setAttribute("aria-hidden", String(!isActive));
+            panel.toggleAttribute("inert", !isActive);
+          });
+          const activeTab = tabs[activeIndex];
+          const activePanel = panels[activeIndex];
+          if (!activeTab || !activePanel) return;
+          if (shouldFocus) {
+            activeTab.focus({
+              preventScroll: true,
+            });
+          }
+          if (shouldScroll) {
+            activeTab.scrollIntoView({
+              behavior: "smooth",
+              block: "nearest",
+              inline: "start",
+            });
+          }
+          requestAnimationFrame(() => {
+            const activeSwiper = activePanel.querySelector(
+              ".product_tabs_slider_element.swiper"
+            )?.swiper;
+            activeSwiper?.update();
+          });
+        }
+        if (!tabs.length || !panels.length) return;
+        tabsContainer?.setAttribute("role", "tablist");
+        tabs.forEach((tab, index) => {
+          const panel = panels[index];
+          if (!panel) return;
+          const tabId = `${componentId}-tab-${index + 1}`;
+          const panelId = `${componentId}-panel-${index + 1}`;
+          tab.type = "button";
+          tab.id = tabId;
+          tab.setAttribute("role", "tab");
+          tab.setAttribute("aria-controls", panelId);
+          panel.id = panelId;
+          panel.setAttribute("role", "tabpanel");
+          panel.setAttribute("aria-labelledby", tabId);
+          panel.removeAttribute("tabindex");
+          tab.addEventListener("click", function () {
+            activateTab(index, false, true);
+          });
+          tab.addEventListener("keydown", function (event) {
+            const nextIndexByKey = {
+              ArrowRight: (index + 1) % tabs.length,
+              ArrowLeft: (index - 1 + tabs.length) % tabs.length,
+              Home: 0,
+              End: tabs.length - 1,
+            };
+            if (!(event.key in nextIndexByKey)) return;
+            event.preventDefault();
+            activateTab(
+              nextIndexByKey[event.key],
+              true,
+              true
+            );
+          });
+          initSwiper(
+            panel.querySelector(
+              ".product_tabs_slider_element.swiper"
+            )
+          );
+        });
+        activateTab(0);
+      });
+  });
+</script>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Product Tabs",
+    "class": "product_tabs_wrap u-section",
+    "blocks": [
+        {
+            "name": "Tab + Panel",
+            "type": "tab-panel",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Tab"
+                },
+                {
+                    "type": "text",
+                    "id": "tab_text",
+                    "label": "Text",
+                    "default": "Lorem ipsum dolor sit amet"
+                },
+                {
+                    "type": "header",
+                    "content": "Panel"
+                },
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Kollektion"
+                },
+                {
+                    "type": "header",
+                    "content": "Teaser-Kachel"
+                },
+                {
+                    "type": "text",
+                    "id": "teaser_card_eyebrow",
+                    "label": "\u00dcbertitel Text",
+                    "default": "\u00dcbertitel Text"
+                },
+                {
+                    "type": "select",
+                    "id": "teaser_card_eyebrow_tag",
+                    "label": "\u00dcbertitel HTML-Tag",
+                    "options": [
+                        {
+                            "value": "h1",
+                            "label": "H1"
+                        },
+                        {
+                            "value": "h2",
+                            "label": "H2"
+                        },
+                        {
+                            "value": "h3",
+                            "label": "H3"
+                        },
+                        {
+                            "value": "h4",
+                            "label": "H4"
+                        },
+                        {
+                            "value": "h5",
+                            "label": "H5"
+                        },
+                        {
+                            "value": "h6",
+                            "label": "H6"
+                        },
+                        {
+                            "value": "p",
+                            "label": "P"
+                        }
+                    ],
+                    "default": "p"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "teaser_card_heading",
+                    "label": "\u00dcberschrift Text",
+                    "default": "\u00dcberschrift Text"
+                },
+                {
+                    "type": "select",
+                    "id": "teaser_card_heading_tag",
+                    "label": "\u00dcberschrift HTML-Tag",
+                    "options": [
+                        {
+                            "value": "h1",
+                            "label": "H1"
+                        },
+                        {
+                            "value": "h2",
+                            "label": "H2"
+                        },
+                        {
+                            "value": "h3",
+                            "label": "H3"
+                        },
+                        {
+                            "value": "h4",
+                            "label": "H4"
+                        },
+                        {
+                            "value": "h5",
+                            "label": "H5"
+                        },
+                        {
+                            "value": "h6",
+                            "label": "H6"
+                        },
+                        {
+                            "value": "p",
+                            "label": "P"
+                        }
+                    ],
+                    "default": "h3"
+                },
+                {
+                    "type": "richtext",
+                    "id": "teaser_card_paragraph",
+                    "label": "Paragraph Text",
+                    "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.<\/p>"
+                },
+                {
+                    "type": "text",
+                    "id": "teaser_card_button_label",
+                    "label": "Button Text",
+                    "default": "Button Text"
+                },
+                {
+                    "type": "url",
+                    "id": "teaser_card_button_url",
+                    "label": "Button Link"
+                },
+                {
+                    "type": "header",
+                    "content": "Produkt-Kacheln"
+                },
+                {
+                    "type": "text",
+                    "id": "product_card_button_label",
+                    "label": "Button Text",
+                    "default": "Button Text"
+                }
+            ]
+        }
+    ],
+    "settings": [
+        {
+            "type": "header",
+            "content": "Sektion"
+        },
+        {
+            "type": "text",
+            "id": "section_id",
+            "label": "ID"
+        },
+        {
+            "type": "header",
+            "content": "Abst\u00e4nde"
+        },
+        {
+            "type": "select",
+            "id": "spacing_top",
+            "label": "Oben",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "large_medium_off",
+                    "label": "Gro\u00df | Medium kein Abstand"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "large"
+        },
+        {
+            "type": "select",
+            "id": "spacing_bottom",
+            "label": "Unten",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                }
+            ],
+            "default": "xxsmall"
+        },
+        {
+            "type": "header",
+            "content": "\u00dcbertitel"
+        },
+        {
+            "type": "text",
+            "id": "eyebrow",
+            "label": "Text",
+            "default": "\u00dcbertitel Text"
+        },
+        {
+            "type": "select",
+            "id": "eyebrow_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "p"
+        },
+        {
+            "type": "header",
+            "content": "\u00dcberschrift"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "heading",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+            "type": "select",
+            "id": "heading_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "number",
+            "id": "heading_max_width",
+            "label": "Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 20
+        },
+        {
+            "type": "checkbox",
+            "id": "heading_tidy_text",
+            "label": "Ausgewogener Zeilenumbruch",
+            "default": true
+        }
+    ],
+    "presets": [
+        {
+            "name": "Product Tabs",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "tab-panel"
+                }
+            ]
+        }
+    ]
+} {% endschema %}
