@@ -298,7 +298,8 @@
       "settings": {
         "section_id": "",
         "spacing_top": "main",
-        "spacing_bottom": "main"
+        "spacing_bottom": "main",
+        "icon": "shopify://shop_images/coldpress-icon.avif"
       }
     },
     "recipe_slider_QekpTM": {
