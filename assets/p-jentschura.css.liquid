@@ -6933,11 +6933,13 @@ figure {
 }
 
 .hero_main_slide_content {
+  height: 100%;
   color: var(--_theme---text-2);
   padding-bottom: calc(calc(5rem * var(--_responsive---large))  + calc(4.375rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
   padding-top: calc(calc(5rem * var(--_responsive---large))  + calc(4.375rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
   min-height: calc(calc(43.75rem * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(95svh * max(var(--_responsive---small), var(--_responsive---xsmall))));
   flex-flow: column;
+  flex: none;
   justify-content: flex-end;
   display: flex;
   position: relative;
@@ -6974,6 +6976,7 @@ figure {
 
 .hero_main_slide_contain {
   justify-content: flex-end;
+  height: 100%;
 }
 
 .hero_main_slider_bullet_list {
@@ -7423,7 +7426,8 @@ figure {
 }
 
 .product_slider_slider_wrap {
-  grid-row-gap: 0rem;
+  grid-column-gap: var(--_spacing---space--12);
+  grid-row-gap: var(--_spacing---space--12);
 }
 
 .product_slider_slider_element {
@@ -8154,7 +8158,8 @@ figure {
 }
 
 .product_tabs_slider_wrap {
-  grid-row-gap: 0rem;
+  grid-column-gap: var(--_spacing---space--12);
+  grid-row-gap: var(--_spacing---space--12);
 }
 
 .product_tabs_slider_element {
