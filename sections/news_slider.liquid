@@ -16,7 +16,7 @@
 </style>
           </div>
         </div>
-        <div class="news_slider_contain u-container" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}">
+        <div class="news_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
           
           <div class="news_slider_layout u-grid-autofit"></div>
           

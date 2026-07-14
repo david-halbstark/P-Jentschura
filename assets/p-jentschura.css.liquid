@@ -6904,6 +6904,12 @@ figure {
 
 .hero_main_slider_element {
   width: 100%;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.hero_main_slider_list {
+  height: 100%;
 }
 
 .hero_main_slide_wrap {
@@ -6914,10 +6920,7 @@ figure {
 }
 
 .hero_main_slider_wrap {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
+  grid-row-gap: 0rem;
 }
 
 .hero_main_slider_controls {
@@ -7109,7 +7112,7 @@ figure {
   display: flex;
 }
 
-.product_slider_bot, .guide_slider_layout {
+.guide_slider_layout {
   grid-column-gap: var(--_spacing---space--12);
   grid-row-gap: var(--_spacing---space--12);
   flex-flow: column;
@@ -7420,14 +7423,13 @@ figure {
 }
 
 .product_slider_slider_wrap {
-  grid-column-gap: var(--_spacing---space--12);
-  grid-row-gap: var(--_spacing---space--12);
-  flex-flow: column;
-  display: flex;
+  grid-row-gap: 0rem;
 }
 
-.product_slider_slider_element.swiper {
+.product_slider_slider_element {
   width: 100%;
+  max-width: 100%;
+  overflow: visible;
 }
 
 .product_slider_slider_slide {
@@ -7457,6 +7459,10 @@ figure {
   flex: 1;
   justify-content: flex-end;
   display: flex;
+}
+
+.product_slider_slider_list {
+  height: 100%;
 }
 
 .u-color-1 {
@@ -8133,13 +8139,6 @@ figure {
   display: flex;
 }
 
-.product_tabs_bot {
-  grid-column-gap: var(--_spacing---space--12);
-  grid-row-gap: var(--_spacing---space--12);
-  flex-flow: column;
-  display: flex;
-}
-
 .product_tabs_tab {
   text-underline-offset: .4375em;
   color: color-mix(in srgb, color-mix(in srgb, var(--_theme---text) 50%, var(--swatch--transparent) 50%), var(--_theme---text) calc(var(--_state---false) * 100%));
@@ -8155,17 +8154,16 @@ figure {
 }
 
 .product_tabs_slider_wrap {
-  grid-column-gap: var(--_spacing---space--12);
-  grid-row-gap: var(--_spacing---space--12);
-  flex-flow: column;
-  display: flex;
+  grid-row-gap: 0rem;
 }
 
-.product_tabs_slider_element.swiper {
+.product_tabs_slider_element {
   width: 100%;
+  max-width: 100%;
+  overflow: visible;
 }
 
-.product_tabs_slider_slide {
+.product_tabs_slider_list, .product_tabs_slider_slide {
   height: 100%;
 }
 
@@ -8175,6 +8173,13 @@ figure {
 
 .product_slider_product_card-copy {
   height: 100%;
+}
+
+.hero_main_layout {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 @media screen and (max-width: 991px) {
