@@ -269,6 +269,17 @@
     },
     "text_carousel_K4NQ6g": {
       "type": "text_carousel",
+      "blocks": {
+        "item_qbGn3Y": {
+          "type": "item",
+          "settings": {
+            "text": "Aus der Natur, für den Menschen"
+          }
+        }
+      },
+      "block_order": [
+        "item_qbGn3Y"
+      ],
       "name": "Text Carousel",
       "settings": {
         "section_id": "",
