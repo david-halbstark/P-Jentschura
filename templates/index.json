@@ -129,7 +129,7 @@
       "type": "product_slider",
       "name": "Product Slider",
       "settings": {
-        "section_id": "dsada",
+        "section_id": "",
         "collection": "basische-ernaehrung",
         "spacing_top": "large",
         "spacing_bottom": "xxsmall",
