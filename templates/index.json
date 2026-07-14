@@ -154,11 +154,41 @@
     "product_tabs_8F6RVB": {
       "type": "product_tabs",
       "blocks": {
+        "tab_panel_Lqi6P6": {
+          "type": "tab-panel",
+          "settings": {
+            "tab_text": "Lorem ipsum dolor sit amet",
+            "collection": "basische-ernaehrung",
+            "teaser_card_eyebrow": "Übertitel Text",
+            "teaser_card_eyebrow_tag": "p",
+            "teaser_card_heading": "Überschrift Text",
+            "teaser_card_heading_tag": "h3",
+            "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>",
+            "teaser_card_button_label": "Button Text",
+            "teaser_card_button_url": "",
+            "product_card_button_label": "Button Text"
+          }
+        },
+        "tab_panel_qAqPTU": {
+          "type": "tab-panel",
+          "settings": {
+            "tab_text": "Lorem ipsum dolor sit amet",
+            "collection": "basische-koerperpflege",
+            "teaser_card_eyebrow": "Übertitel Text",
+            "teaser_card_eyebrow_tag": "p",
+            "teaser_card_heading": "Überschrift Text",
+            "teaser_card_heading_tag": "h3",
+            "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>",
+            "teaser_card_button_label": "Button Text",
+            "teaser_card_button_url": "",
+            "product_card_button_label": "Button Text"
+          }
+        },
         "tab_panel_JEjDnP": {
           "type": "tab-panel",
           "settings": {
             "tab_text": "Lorem ipsum dolor sit amet",
-            "collection": "",
+            "collection": "basische-accessoires",
             "teaser_card_eyebrow": "Übertitel Text",
             "teaser_card_eyebrow_tag": "p",
             "teaser_card_heading": "Überschrift Text",
@@ -171,6 +201,8 @@
         }
       },
       "block_order": [
+        "tab_panel_Lqi6P6",
+        "tab_panel_qAqPTU",
         "tab_panel_JEjDnP"
       ],
       "name": "Product Tabs",
