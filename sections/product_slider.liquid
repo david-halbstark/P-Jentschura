@@ -132,6 +132,10 @@
           <div class="product_slider_slider_element swiper">
             <div class="product_slider_slider_list swiper-wrapper">
               <div class="product_slider_slider_slide is-first swiper-slide">
+                {% assign selected_collection = section.settings.collection -%}
+                {%- assign theme_metaobject = selected_collection.metafields.custom.theme_color.value -%}
+                {%- assign theme_color = theme_metaobject.color.value | color_to_hex %}
+
                 {% render 'product_teaser_card',
                   paragraph: section.settings.teaser_card_paragraph,
                   button_url: section.settings.teaser_card_button_url,
@@ -143,9 +147,6 @@
                 %}
               </div>
 
-              {% assign selected_collection = section.settings.collection -%}
-              {%- assign theme_metaobject = selected_collection.metafields.custom.theme_color.value -%}
-              {%- assign theme_color = theme_metaobject.color.value | color_to_hex %}
               {% for product in selected_collection.products %}
                 <div li-for="product in selected_collection.products" class="product_slider_slider_slide swiper-slide">
                   {% assign product_story = product.metafields.custom.product_story.value -%}
