@@ -7122,6 +7122,10 @@ figure {
   display: flex;
 }
 
+.text_carousel_wrap {
+  background-image: linear-gradient(#f8f8f8, #f9f9f9);
+}
+
 .text_carousel_layout {
   width: 100vw;
   position: relative;
@@ -7448,6 +7452,8 @@ figure {
   border-radius: var(--radius--main);
   height: 100%;
   color: var(--_theme---text-2);
+  flex-flow: row;
+  display: flex;
   position: relative;
 }
 
@@ -7981,12 +7987,11 @@ figure {
 .product_teaser_card_element {
   z-index: 1;
   width: 100%;
-  height: 100%;
   padding-right: var(--_spacing---space--11);
   padding-bottom: var(--_spacing---space--11);
   padding-left: var(--_spacing---space--11);
-  grid-column-gap: 2rem;
-  grid-row-gap: 2rem;
+  grid-column-gap: var(--_spacing---space--11);
+  grid-row-gap: var(--_spacing---space--11);
   border-top-left-radius: var(--radius--main);
   border-top-right-radius: var(--radius--main);
   border-bottom-left-radius: var(--radius--main);
@@ -8125,10 +8130,15 @@ figure {
 }
 
 .product_tabs_tabs {
+  max-width: 100vw;
+  padding-right: var(--site--margin);
+  padding-left: var(--site--margin);
+  margin-bottom: -1.25rem;
+  margin-left: calc(var(--site--margin) * -1);
+  margin-right: calc(var(--site--margin) * -1);
   flex: 1;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: -1.25rem;
   display: flex;
   overflow-x: auto;
 }
@@ -8136,7 +8146,7 @@ figure {
 .product_tabs_tabs_inner {
   margin-left: calc(-1.25rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall)));
   margin-right: calc(-1.25rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall)));
-  flex: none;
+  flex: 1;
   justify-content: flex-start;
   align-items: center;
   padding: .5rem;
@@ -8206,13 +8216,6 @@ figure {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
     grid-auto-columns: 1fr;
     display: grid;
-  }
-
-  .product_tabs_tabs {
-    margin-right: calc(var(--site--margin) * -1);
-    margin-left: calc(var(--site--margin) * -1);
-    padding-left: var(--site--margin);
-    padding-right: var(--site--margin);
   }
 }
 
