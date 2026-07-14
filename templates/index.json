@@ -125,112 +125,6 @@
         "image": "shopify://shop_images/coldpress-icon.avif"
       }
     },
-    "product_slider_NyaW7F": {
-      "type": "product_slider",
-      "blocks": {
-        "tab_panel_BkRE7h": {
-          "type": "tab-panel",
-          "settings": {
-            "tab_text": "Lebensmittel",
-            "collection": "basische-ernaehrung",
-            "teaser_card_eyebrow": "Energie, die bleibt",
-            "teaser_card_eyebrow_tag": "p",
-            "teaser_card_heading": "Deine Basis jetzt für mehr Bewegung",
-            "teaser_card_heading_tag": "h3",
-            "teaser_card_paragraph": "<p>Unsere Produkte unterstützen dich natürlich und basisch: für mehr Energie im Alltag und ein Leben voller Vitalität.</p>",
-            "teaser_card_button_label": "Mehr erfahren",
-            "teaser_card_button_url": "shopify://collections/basische-ernaehrung",
-            "product_card_button_label": "sdas"
-          }
-        },
-        "tab_panel_JUiNNe": {
-          "type": "tab-panel",
-          "settings": {
-            "tab_text": "Körperpflege",
-            "collection": "basische-koerperpflege",
-            "teaser_card_eyebrow": "Übertitel Text",
-            "teaser_card_eyebrow_tag": "p",
-            "teaser_card_heading": "Überschrift Text",
-            "teaser_card_heading_tag": "h3",
-            "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>",
-            "teaser_card_button_label": "Button Text",
-            "teaser_card_button_url": "",
-            "product_card_button_label": "Button Text"
-          }
-        },
-        "tab_panel_fYGgTM": {
-          "type": "tab-panel",
-          "settings": {
-            "tab_text": "Accessoires",
-            "collection": "basische-accessoires",
-            "teaser_card_eyebrow": "Übertitel Text",
-            "teaser_card_eyebrow_tag": "p",
-            "teaser_card_heading": "Überschrift Text",
-            "teaser_card_heading_tag": "h3",
-            "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>",
-            "teaser_card_button_label": "Button Text",
-            "teaser_card_button_url": "",
-            "product_card_button_label": "Button Text"
-          }
-        }
-      },
-      "block_order": [
-        "tab_panel_BkRE7h",
-        "tab_panel_JUiNNe",
-        "tab_panel_fYGgTM"
-      ],
-      "name": "Product Slider",
-      "settings": {
-        "section_id": "",
-        "display_type": "tabs",
-        "collection": "",
-        "spacing_top": "large",
-        "spacing_bottom": "xxsmall",
-        "eyebrow": "Unsere Produkte",
-        "eyebrow_tag": "p",
-        "heading": "Aktiv & Vital — Für Körper in Bewegung",
-        "heading_tag": "h2",
-        "heading_max_width": 0,
-        "heading_tidy_text": true,
-        "clickable_label": "Mehr erfahren",
-        "clickable_url": "",
-        "teaser_card_eyebrow": "Übertitel Text",
-        "teaser_card_eyebrow_tag": "p",
-        "teaser_card_heading": "Überschrift Text",
-        "teaser_card_heading_tag": "h3",
-        "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>",
-        "teaser_card_button_label": "Button Text",
-        "teaser_card_button_url": "",
-        "product_card_button_text": "Mehr erfahren"
-      }
-    },
-    "product_slider_TAyQ6J": {
-      "type": "product_slider",
-      "name": "Product Slider",
-      "settings": {
-        "section_id": "",
-        "display_type": "collection",
-        "collection": "basische-accessoires",
-        "spacing_top": "large",
-        "spacing_bottom": "xxsmall",
-        "eyebrow": "Unsere Produkte",
-        "eyebrow_tag": "p",
-        "heading": "Aktiv & Vital — Für Körper in Bewegung",
-        "heading_tag": "h2",
-        "heading_max_width": 0,
-        "heading_tidy_text": true,
-        "clickable_label": "Mehr erfahren",
-        "clickable_url": "shopify://blogs/blog",
-        "teaser_card_eyebrow": "Übertitel Text",
-        "teaser_card_eyebrow_tag": "p",
-        "teaser_card_heading": "Überschrift Text",
-        "teaser_card_heading_tag": "h3",
-        "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>",
-        "teaser_card_button_label": "Button Text",
-        "teaser_card_button_url": "shopify://policies/privacy-policy",
-        "product_card_button_text": "Mehr erfahren"
-      }
-    },
     "guide_slider_FBaGd6": {
       "type": "guide_slider",
       "name": "Guide Slider",
@@ -239,14 +133,11 @@
         "spacing_top": "main",
         "spacing_bottom": "main",
         "eyebrow": "Übertitel Text",
-        "eyebrow_variant": "u-text-style-h2",
         "eyebrow_tag": "p",
         "heading": "Lorem ipsum dolor sit amet elit",
-        "heading_variant": "u-text-style-h2",
         "heading_tag": "h2",
         "heading_max_width": 20,
         "heading_tidy_text": true,
-        "heading_visually_hidden": false,
         "button_1_label": "Button 1 Text",
         "button_1_mode": "link",
         "button_1_url": "",
@@ -289,13 +180,7 @@
       "settings": {
         "section_id": "",
         "spacing_top": "main",
-        "spacing_bottom": "main",
-        "heading": "Lorem ipsum dolor sit amet elit",
-        "heading_variant": "u-text-style-h2",
-        "heading_tag": "h2",
-        "heading_max_width": 20,
-        "heading_tidy_text": true,
-        "heading_visually_hidden": false
+        "spacing_bottom": "main"
       }
     },
     "recipe_slider_QekpTM": {
@@ -306,52 +191,17 @@
         "spacing_top": "main",
         "spacing_bottom": "main",
         "eyebrow": "Übertitel Text",
-        "eyebrow_variant": "u-text-style-h2",
         "eyebrow_tag": "p",
         "heading": "Lorem ipsum dolor sit amet elit",
-        "heading_variant": "u-text-style-h2",
         "heading_tag": "h2",
         "heading_max_width": 20,
         "heading_tidy_text": true,
-        "heading_visually_hidden": false,
         "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
         "paragraph_variant": "u-text-style-main",
         "paragraph_max_width": 60,
         "paragraph_tidy_text": true,
         "button_1_label": "Button 1 Text",
-        "button_1_mode": "link",
-        "button_1_url": "",
-        "button_1_action": "newsletter_modal",
-        "button_1_variant": "primary",
-        "button_1_solid_color": "red",
-        "button_1_solid_text_size": "link_base",
-        "button_1_solid_padding": "base",
-        "button_1_text_text_size": "u-text-link-large",
-        "button_1_text_color": "green",
-        "button_1_pill_color": "white",
-        "button_1_pill_text_size": "eyebrow_base",
-        "button_1_pill_tag_inner": "",
-        "button_1_underline": false,
-        "button_2_icon": "none",
-        "button_1_icon_position": "after",
-        "button_1_icon_animation": "none",
-        "button_1_icon_color": "inherit",
-        "button_2_label": "Button 2 Text",
-        "button_2_mode": "link",
-        "button_2_url": "",
-        "button_2_variant": "primary",
-        "button_2_action": "newsletter_modal",
-        "button_2_solid_color": "red",
-        "button_2_solid_text_size": "link_base",
-        "button_2_solid_padding": "base",
-        "button_2_text_text_size": "u-text-link-large",
-        "button_2_text_color": "green",
-        "button_2_pill_color": "white",
-        "button_2_pill_text_size": "eyebrow_base",
-        "button_2_pill_tag_inner": "",
-        "button_2_underline": false,
-        "button_2_icon_position": "after",
-        "button_2_icon_animation": "none"
+        "button_1_url": ""
       }
     },
     "review_slider_b9FWPH": {
@@ -527,6 +377,41 @@
     "modals": {
       "type": "modals",
       "settings": {}
+    },
+    "product_slider_p6jeKx": {
+      "type": "product_slider",
+      "blocks": {
+        "tab_panel_NLD8yF": {
+          "type": "tab-panel",
+          "settings": {
+            "tab_text": "Lorem ipsum dolor sit amet",
+            "collection": "",
+            "teaser_card_eyebrow": "Übertitel Text",
+            "teaser_card_eyebrow_tag": "p",
+            "teaser_card_heading": "Überschrift Text",
+            "teaser_card_heading_tag": "h3",
+            "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>",
+            "teaser_card_button_label": "Button Text",
+            "teaser_card_button_url": "",
+            "product_card_button_label": "Button Text"
+          }
+        }
+      },
+      "block_order": [
+        "tab_panel_NLD8yF"
+      ],
+      "name": "Product Slider",
+      "settings": {
+        "section_id": "",
+        "spacing_top": "large",
+        "spacing_bottom": "xxsmall",
+        "eyebrow": "Übertitel Text",
+        "eyebrow_tag": "p",
+        "heading": "Lorem ipsum dolor sit amet elit",
+        "heading_tag": "h2",
+        "heading_max_width": 20,
+        "heading_tidy_text": true
+      }
     }
   },
   "layout": "theme",
@@ -535,8 +420,7 @@
     "hero_main_Wx4xLA",
     "trust_rating_pfUfjq",
     "category_cards_FxBKGM",
-    "product_slider_NyaW7F",
-    "product_slider_TAyQ6J",
+    "product_slider_p6jeKx",
     "guide_slider_FBaGd6",
     "text_carousel_K4NQ6g",
     "recipe_slider_QekpTM",
