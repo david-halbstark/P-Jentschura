@@ -140,7 +140,7 @@
         "heading_max_width": 20,
         "heading_tidy_text": true,
         "clickable_label": "Mehr erfahrendsadas",
-        "clickable_url": "shopify://pages/rubriken",
+        "clickable_url": "shopify://collections/basische-ernaehrung",
         "teaser_card_eyebrow": "Übertitel Text",
         "teaser_card_eyebrow_tag": "p",
         "teaser_card_heading": "Überschrift Text",
