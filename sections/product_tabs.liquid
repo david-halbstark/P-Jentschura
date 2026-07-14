@@ -69,7 +69,7 @@
           
           
         </div>
-        <div class="product_tabs_contain u-container" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}">
+        <div class="product_tabs_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
           
           <div data-section-spacing="" class="product_tabs_layout">
             <div class="product_tabs_top">
@@ -121,7 +121,7 @@
                             <style> #product-slider-block-{{block.id}}{--collection-theme-color:{{theme_color}};}</style>
                             
                 
-                            <div id="product-slider-block-{{ block.id }}" class="product_tabs_slider_wrap">
+                            <div id="product-slider-block-{{ block.id }}" class="product_tabs_slider_wrap slider_wrap">
                   <div style="--lg: 4; --md: 2.5; --sm: 1.9; --xs: 1.1;" class="product_tabs_slider_offset slider_offset">
                     <div class="product_tabs_slider_element swiper">
                       <div class="product_tabs_slider_list swiper-wrapper">

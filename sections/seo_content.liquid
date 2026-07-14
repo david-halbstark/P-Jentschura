@@ -28,7 +28,7 @@
           
           
         </div>
-        <div class="seo_content_contain u-container" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}">
+        <div class="seo_content_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
           
           <div class="seo_content_layout">
             {% render 'heading', tag: 'h2', visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: 'u-margin-bottom-0', variant: 'u-text-h4-primary', max_width: section.settings.heading_max_width %}
