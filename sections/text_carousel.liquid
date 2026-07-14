@@ -1,4 +1,19 @@
-<div class="u-display-none">
+<div class="u-embed-css w-embed">
+          <style>
+  .text_carousel_track {
+    animation: text-carousel 15s linear infinite;
+  }
+  @keyframes text-carousel {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+</style>
+        </div>
+        <div class="u-display-none">
           
           
         </div>
@@ -19,22 +34,65 @@
         <div class="u-display-none">
           
           
-          
-          
-          
-          
-          
         </div>
         <div class="text_carousel_contain u-container" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}">
           
-          <div class="text_carousel_layout u-grid-autofit">
-            {% render 'heading', tag: section.settings.heading_tag, visually_hidden: true, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+          <div class="text_carousel_layout">
+            <div class="text_carousel_track">
+              {% for repeat in (1..3) %}    <div li-for="repeat in (1..3)" class="text_carousel_group">
+                                    
+                
+                            {% for block in section.blocks %}
+    {% if block.type == "item" %}
+                    <div li-block="Item" class="text_carousel_item">
+                                    
+                  
+                                    <div class="u-display-none">
+                    
+                    
+                  </div>
+                                    
+                  
+                                    {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: section.settings.text, tag: 'div', variant: 'u-text-h1-secondary', max_width: section.settings.text_max_width %}
+                                    
+                  
+                                    <div class="text_carousel_icon">
+                    {% render 'image', width_mobile: 60, image: section.settings.image, object_fit: 'contain' %}
+                  </div>
+                                    
+                
+                            </div>
+            {% endif %}
+{% endfor %}
+                            
+              
+                        </div>
+{% endfor %}
+            </div>
           </div>
           
         </div> {% schema %} {
     "tag": "section",
     "name": "Text Carousel",
     "class": "text_carousel_wrap u-section",
+    "blocks": [
+        {
+            "name": "Item",
+            "type": "item",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Text"
+                },
+                {
+                    "type": "text",
+                    "id": "text",
+                    "label": "Text",
+                    "default": "Lorem ipsum dolor sit amet"
+                }
+            ]
+        }
+    ],
     "settings": [
         {
             "type": "header",
@@ -87,7 +145,7 @@
                     "label": "Seitenanfang"
                 }
             ],
-            "default": "large"
+            "default": "xxsmall"
         },
         {
             "type": "select",
@@ -119,123 +177,27 @@
                     "label": "Gro\u00df"
                 }
             ],
-            "default": "large"
+            "default": "xxsmall"
         },
         {
             "type": "header",
-            "content": "\u00dcberschrift"
+            "content": "Icon"
         },
         {
-            "type": "inline_richtext",
-            "id": "heading",
-            "label": "Text",
-            "default": "Lorem ipsum dolor sit amet elit"
-        },
-        {
-            "type": "select",
-            "id": "heading_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "u-text-h1-primary",
-                    "label": "H1 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h1-secondary",
-                    "label": "H1 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h2-primary",
-                    "label": "H2 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h2-secondary",
-                    "label": "H2 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h3-primary",
-                    "label": "H3 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h3-secondary",
-                    "label": "H3 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h4-primary",
-                    "label": "H4 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h5-primary",
-                    "label": "H5 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h6-primary",
-                    "label": "H6 Prim\u00e4r"
-                }
-            ],
-            "default": "u-text-h2-primary"
-        },
-        {
-            "type": "select",
-            "id": "heading_tag",
-            "label": "HTML-Tag",
-            "options": [
-                {
-                    "value": "h1",
-                    "label": "H1"
-                },
-                {
-                    "value": "h2",
-                    "label": "H2"
-                },
-                {
-                    "value": "h3",
-                    "label": "H3"
-                },
-                {
-                    "value": "h4",
-                    "label": "H4"
-                },
-                {
-                    "value": "h5",
-                    "label": "H5"
-                },
-                {
-                    "value": "h6",
-                    "label": "H6"
-                },
-                {
-                    "value": "p",
-                    "label": "P"
-                }
-            ],
-            "default": "h2"
-        },
-        {
-            "type": "number",
-            "id": "heading_max_width",
-            "label": "Maximale Breite",
-            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-            "default": 20
-        },
-        {
-            "type": "checkbox",
-            "id": "heading_tidy_text",
-            "label": "Ausgewogener Zeilenumbruch",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "heading_visually_hidden",
-            "label": "Nur f\u00fcr Screenreader anzeigen",
-            "default": false
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
         }
     ],
     "presets": [
         {
             "name": "Text Carousel",
             "category": "Liquify",
-            "blocks": []
+            "blocks": [
+                {
+                    "type": "item"
+                }
+            ]
         }
     ]
 } {% endschema %}
