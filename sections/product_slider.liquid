@@ -133,6 +133,12 @@
                 {%- assign theme_metaobject = selected_collection.metafields.custom.theme_color.value -%}
                 {%- assign theme_color = theme_metaobject.color.value | color_to_hex %}
 
+                <style>
+                                    #shopify-section-{{ section.id }}.product_slider_wrap {
+                    --collection-theme-color: {{ theme_color }};
+                  }
+                </style>
+
                 {% render 'product_teaser_card',
                   paragraph: section.settings.teaser_card_paragraph,
                   button_url: section.settings.teaser_card_button_url,
