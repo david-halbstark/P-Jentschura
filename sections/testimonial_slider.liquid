@@ -28,7 +28,7 @@
         <div class="newsletter_contain u-container" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}">
           
           <div class="section_layout u-grid-autofit">
-            {% render 'eyebrow', wrapper_class: , eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant, custom_class: %}
+            {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant, custom_class: , wrapper_class: %}
           </div>
           
         </div> {% schema %} {
