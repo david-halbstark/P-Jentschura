@@ -174,14 +174,14 @@
           "settings": {
             "tab_text": "Basische Körperpflege",
             "collection": "basische-koerperpflege",
-            "teaser_card_eyebrow": "Übertitel Text",
+            "teaser_card_eyebrow": "Energie, die bleibt",
             "teaser_card_eyebrow_tag": "p",
-            "teaser_card_heading": "Überschrift Text",
+            "teaser_card_heading": "Deine Basis jetzt für mehr Bewegung",
             "teaser_card_heading_tag": "h3",
-            "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>",
-            "teaser_card_button_label": "Button Text",
-            "teaser_card_button_url": "",
-            "product_card_button_label": "Button Text"
+            "teaser_card_paragraph": "<p>Unsere Produkte unterstützen dich natürlich und basisch: für mehr Energie im Alltag und ein Leben voller Vitalität.</p>",
+            "teaser_card_button_label": "Mehr erfahren",
+            "teaser_card_button_url": "shopify://collections/basische-koerperpflege",
+            "product_card_button_label": "Mehr erfahren"
           }
         },
         "tab_panel_JEjDnP": {
@@ -189,14 +189,14 @@
           "settings": {
             "tab_text": "Basische Accessoires",
             "collection": "basische-accessoires",
-            "teaser_card_eyebrow": "Übertitel Textdasa",
+            "teaser_card_eyebrow": "Energie, die bleibt",
             "teaser_card_eyebrow_tag": "p",
-            "teaser_card_heading": "Überschrift Textdasdas",
+            "teaser_card_heading": "Deine Basis jetzt für mehr Bewegung",
             "teaser_card_heading_tag": "h3",
-            "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.dasdasda</p>",
-            "teaser_card_button_label": "Button Textdasdas",
-            "teaser_card_button_url": "shopify://blogs/blog",
-            "product_card_button_label": "Button Textdsadas"
+            "teaser_card_paragraph": "<p>Unsere Produkte unterstützen dich natürlich und basisch: für mehr Energie im Alltag und ein Leben voller Vitalität.</p>",
+            "teaser_card_button_label": "Mehr erfahren",
+            "teaser_card_button_url": "shopify://collections/basische-accessoires",
+            "product_card_button_label": "Mehr erfahren"
           }
         }
       },
