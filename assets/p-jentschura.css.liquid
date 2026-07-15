@@ -153,7 +153,6 @@
   --_spacing---space--9: clamp(1.25 * 1rem, ((1.25 - ((2 - 1.25) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2 - 1.25) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2 * 1rem);
   --_spacing---space--11: clamp(1.75 * 1rem, ((1.75 - ((2.5 - 1.75) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2.5 - 1.75) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2.5 * 1rem);
   --_spacing---space--12: clamp(2 * 1rem, ((2 - ((3 - 2) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((3 - 2) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 3 * 1rem);
-  --_spacing---space--13: clamp(2.5 * 1rem, ((2.5 - ((3.75 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((3.75 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 3.75 * 1rem);
   --_typography---font--secondary-family: "Ms Madi", Georgia, sans-serif;
   --_typography---font--secondary-regular: 400;
   --_typography---line-height--relaxed: 1.5;
@@ -168,7 +167,8 @@
   --_theme---text-3: var(--swatch--gray);
   --_theme---text-4: var(--swatch--crimson);
   --_theme---background-7: var(--swatch--charcoal);
-  --radius--xsmall: .25rem;
+  --radius--xsmall: .375rem;
+  --_spacing---space--13: clamp(2.5 * 1rem, ((2.5 - ((3.75 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((3.75 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 3.75 * 1rem);
   --misc--text-carousel-gap: clamp(1.375 * 1rem, ((1.375 - ((4.375 - 1.375) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((4.375 - 1.375) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 4.375 * 1rem);
   --misc--text-carousel-icon: clamp(2.75 * 1rem, ((2.75 - ((3.5 - 2.75) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((3.5 - 2.75) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 3.5 * 1rem);
   --_spacing---space--14: clamp(3.75 * 1rem, ((3.75 - ((6.25 - 3.75) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((6.25 - 3.75) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 6.25 * 1rem);
@@ -7098,8 +7098,8 @@ figure {
 }
 
 .product_slider_layout {
-  grid-column-gap: calc(calc(var(--_spacing---space--12) * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(calc(var(--_spacing---space--13)  - .5rem) * max(var(--_responsive---small), var(--_responsive---xsmall))));
-  grid-row-gap: calc(calc(var(--_spacing---space--12) * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(calc(var(--_spacing---space--13)  - .5rem) * max(var(--_responsive---small), var(--_responsive---xsmall))));
+  grid-column-gap: var(--_spacing---space--12);
+  grid-row-gap: var(--_spacing---space--12);
   flex-flow: column;
   display: flex;
 }
@@ -8056,7 +8056,7 @@ figure {
   display: flex;
 }
 
-.guide_slider_slider_element.swiper {
+.guide_slider_slider_element {
   width: 100%;
 }
 
@@ -8234,13 +8234,13 @@ figure {
 }
 
 .guide_slider_card_content {
-  width: 100%;
-  padding-right: var(--_spacing---space--13);
-  padding-bottom: var(--_spacing---space--13);
-  padding-left: var(--_spacing---space--13);
   grid-column-gap: var(--_spacing---space--14);
   grid-row-gap: var(--_spacing---space--14);
+  width: 100%;
   aspect-ratio: calc(calc(10.35 * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(3.2 * max(var(--_responsive---small), var(--_responsive---xsmall)))) / calc(calc(5.4 * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(5.1 * max(var(--_responsive---small), var(--_responsive---xsmall))));
+  padding-left: calc(calc(var(--_spacing---space--13) * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(var(--_spacing---space--11) * max(var(--_responsive---small), var(--_responsive---xsmall))));
+  padding-bottom: calc(calc(var(--_spacing---space--13) * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(var(--_spacing---space--11) * max(var(--_responsive---small), var(--_responsive---xsmall))));
+  padding-right: calc(calc(var(--_spacing---space--13) * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(var(--_spacing---space--11) * max(var(--_responsive---small), var(--_responsive---xsmall))));
   flex-flow: column;
   flex: 1;
   justify-content: space-between;
@@ -8257,6 +8257,62 @@ figure {
   padding: .75rem;
   text-decoration: underline;
   position: relative;
+}
+
+.recipe_slider_slider_element {
+  clip-path: polygon(0 0, calc(100% + 100vw) 0, calc(100% + 100vw) 100%, 0% 100%);
+  width: 100%;
+}
+
+.recipe_slider_card_element {
+  grid-column-gap: var(--_spacing---space--11);
+  grid-row-gap: var(--_spacing---space--11);
+  border-top-left-radius: var(--radius--main);
+  border-top-right-radius: var(--radius--main);
+  border-bottom-left-radius: var(--radius--main);
+  border-bottom-right-radius: var(--radius--main);
+  padding-left: calc(calc(var(--_spacing---space--5) * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(var(--_spacing---space--3) * max(var(--_responsive---small), var(--_responsive---xsmall))));
+  padding-top: calc(calc(var(--_spacing---space--5) * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(var(--_spacing---space--3) * max(var(--_responsive---small), var(--_responsive---xsmall))));
+  padding-right: calc(calc(var(--_spacing---space--5) * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(var(--_spacing---space--3) * max(var(--_responsive---small), var(--_responsive---xsmall))));
+  padding-bottom: calc(calc(var(--_spacing---space--5) * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(var(--_spacing---space--3) * max(var(--_responsive---small), var(--_responsive---xsmall))));
+  flex-flow: column;
+  display: flex;
+  box-shadow: 0 .25rem .5rem #0000000a;
+}
+
+.recipe_slider_card_top {
+  border-radius: var(--radius--xsmall);
+  position: relative;
+  overflow: hidden;
+}
+
+.recipe_slider_tag {
+  position: absolute;
+  inset: .75rem auto auto 0%;
+}
+
+.recipe_slider_card_meta {
+  flex-flow: wrap;
+  place-content: center;
+  align-items: flex-start;
+  display: flex;
+}
+
+.recipe_slider_card_text {
+  grid-column-gap: var(--_spacing---space--5);
+  grid-row-gap: var(--_spacing---space--5);
+  text-align: center;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.recipe_slider_card_bot_top {
+  grid-column-gap: var(--_spacing---space--8);
+  grid-row-gap: var(--_spacing---space--8);
+  flex-flow: column;
+  display: flex;
 }
 
 @media screen and (max-width: 991px) {
