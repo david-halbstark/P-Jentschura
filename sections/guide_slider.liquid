@@ -108,6 +108,9 @@
         </div>
       </div>
     </div>
+
+    {% assign sorted_guides = metaobjects.guide_main_topic.values | sort_natural: 'sort_order' %}
+
     <div class="guide_slider_bot">
       <div class="guide_slider_slider_wrap slider_wrap">
         <div style="--lg: 1.2; --md: 1.05; --sm: 1.05; --xs: 1.05;" class="guide_slider_slider_offset slider_offset">
