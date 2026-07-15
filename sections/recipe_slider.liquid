@@ -1,4 +1,11 @@
-<div class="u-display-none">
+<div class="u-embed-css w-embed">
+          <style>
+  .recipe_slider_slider_wrap {
+    --_gap---size: calc(calc(var(--_spacing---space--5) * var(--_responsive---large)) + calc(var(--_spacing---space--3) * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  }
+</style>
+        </div>
+        <div class="u-display-none">
           
           
         </div>
@@ -33,7 +40,6 @@
           
           
           
-          
         </div>
         <div class="u-display-none">
           
@@ -42,7 +48,7 @@
         </div>
         <div class="recipe_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
           
-          <div class="recipe_slider_layout">
+          <div data-section-spacing="" class="recipe_slider_layout">
             <div class="recipe_slider_left">
               <div class="recipe_slider_left_top">
                 {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-base', wrapper_class: 'is-eyebrow-base u-color-3' %}
@@ -72,7 +78,54 @@
                 </div>
               </div>
             </div>
-            <div class="recipe_slider_right"></div>
+            <div class="recipe_slider_right">
+              <div class="u-embed-liquid w-embed">{% assign sorted_recipes = metaobject.recipe.values
+  | sort: 'date'
+  | reverse
+%}</div>
+              <div class="recipe_slider_slider_wrap slider_wrap">
+                <div style="--lg: 1.8; --md: 1.6; --sm: 1.15; --xs: 1.15;" class="recipe_slider_slider_offset slider_offset">
+                  <div class="recipe_slider_slider_element swiper">
+                    <div li-for:inside="recipe in " class="recipe_slider_slider_list swiper-wrapper">
+        {% for recipe in  %}                            
+                      
+                            {% for recipe in sorted_recipes %}    <div li-for="recipe in sorted_recipes" class="recipe_slider_slider_slide swiper-slide">
+                                    
+                        
+                            <div class="recipe_slider_card_wrap">
+                          <div class="recipe_slider_card_element">
+                            <div class="recipe_slider_card_top">
+                              {% render 'image', loading: 'lazy', image: recipe.image.value, image_mobile: section.settings.image_mobile, object_fit: 'cover', width: 900 %}
+                              <div class="recipe_slider_tag">
+                                {% render 'tag', solid_color: 'green', tag: recipe.metafields.custom.tag.value.title.value, variant: 'solid', solid_text_size: 'u-text-eyebrow-small' %}
+                              </div>
+                            </div>
+                            <div class="recipe_slider_card_bot">
+                              <div class="recipe_slider_card_bot_top">
+                                <div class="recipe_slider_card_text">
+                                  {% render 'heading', custom_class: 'u-margin-bottom-0', heading: recipe.title.value, tag: 'h3', variant: 'u-text-h4-primary' %}
+                                  {% render 'paragraph', variant: 'u-text-body-base', custom_class: 'u-margin-bottom-0 u-color-3', paragraph: section.settings.paragraph %}
+                                </div>
+                              </div>
+                              <div class="recipe_slider_card_meta">
+                                {% render 'typography', variant: 'u-text-body-small', text: section.settings.text, tag: 'div' %}
+                                {% render 'typography', variant: 'u-text-body-small', text: section.settings.text, tag: 'div' %}
+                                {% render 'typography', variant: 'u-text-body-small', text: section.settings.text, tag: 'div' %}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                            
+                      
+                        </div>
+{% endfor %}
+                            
+                    
+                    {% endfor %}    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           
         </div> {% schema %} {
@@ -279,26 +332,6 @@
             "id": "paragraph",
             "label": "Text",
             "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
-        },
-        {
-            "type": "select",
-            "id": "paragraph_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "u-text-body-small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "u-text-body-base",
-                    "label": "Standard"
-                },
-                {
-                    "value": "u-text-body-large",
-                    "label": "Gro\u00df"
-                }
-            ],
-            "default": "u-text-body-base"
         },
         {
             "type": "number",
