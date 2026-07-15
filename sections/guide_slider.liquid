@@ -47,18 +47,21 @@
         <div class="u-display-none">
           
           
+          
+        </div>
+        
+        <div class="u-display-none">
+          
         </div>
         <div class="u-display-none">
           
-          
         </div>
         <div class="u-display-none">
-          
           
         </div>
         <div class="guide_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
           
-          <div class="guide_slider_layout">
+          <div data-layout="data-section-spacing" class="guide_slider_layout">
             <div class="guide_slider_top">
               <div class="guide_slider_top_left">
                 {% render 'eyebrow', wrapper_class: 'is-eyebrow-base', eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-base', custom_class: 'u-color-3' %}
@@ -66,8 +69,8 @@
               </div>
               <div class="guide_slider_top_right">
                 <div class="guide_slider_link">
-                  {% render 'typography', custom_attribute_value: 'true', text: section.settings.clickable_label, tag: 'span', variant: 'u-text-link-base', custom_class: 'u-margin-bottom-0 u-min-width-auto', custom_attribute_name: 'aria-hidden' %}
-                  {% render 'clickable', url: section.settings.clickable_url, action: section.settings.clickable_action, focus_ring: section.settings.clickable_focus_ring, label: section.settings.clickable_label, mode: 'link', custom_class: , target: section.settings.clickable_target %}
+                  {% render 'typography', custom_attribute_value: 'true', text: section.settings.button_1_label, tag: 'span', variant: 'u-text-link-base', custom_class: 'u-margin-bottom-0 u-min-width-auto', custom_attribute_name: 'aria-hidden' %}
+                  {% render 'clickable', url: section.settings.button_1_url, label: section.settings.button_1_label, mode: 'link' %}
                 </div>
               </div>
             </div>
@@ -82,7 +85,7 @@
                         <div class="guide_slider_card_wrap">
                           <div class="guide_slider_card_element">
                             <div class="guide_slider_card_background u-cover-absolute">
-                              {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                              {% render 'image', loading: 'lazy', image: guide.image.value, object_fit: 'cover', width: 1400 %}
                             </div>
                             <div class="guide_slider_card_content">
                               <div class="guide_slider_card_top">
@@ -91,7 +94,7 @@
                               <div class="guide_slider_card_bot">
                                 {% render 'heading', max_width: section.settings.card_heading_max_width, heading: guide.title.value, tag: 'h3', variant: 'u-text-h3-primary' %}
                                 {% render 'paragraph', max_width: section.settings.card_paragraph_max_width, paragraph: guide.text | metafield tag, variant: 'u-text-body-base' %}
-                                {% render 'button_group', button_1_solid_color: 'red', button_1_url: guide.system.url, button_1_label: section.settings.button_1_label, button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: 'link', button_1_variant: 'solid' %}
+                                {% render 'button_group', button_1_solid_color: 'red', button_1_url: guide.system.url, button_1_label: section.settings.card_button_1_label, button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: 'link', button_1_variant: 'solid' %}
                               </div>
                             </div>
                           </div>
@@ -131,6 +134,46 @@
             </div>
           </div>
           
+        </div>
+        <div class="u-embed-js w-embed w-script">
+          <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.guide_slider_layout').forEach((component) => {
+      if (component.dataset.scriptInitialized === 'true') return;
+      component.dataset.scriptInitialized = 'true';
+      const swiperElement = component.querySelector('.guide_slider_slider_element.swiper');
+      if (!swiperElement || swiperElement.swiper) return;
+      const sliderWrap = swiperElement.closest('.guide_slider_slider_wrap');
+      if (!sliderWrap) return;
+      const previousButton = sliderWrap.querySelector('.slider_button_wrap.is-prev');
+      const nextButton = sliderWrap.querySelector('.slider_button_wrap.is-next');
+      const pagination = sliderWrap.querySelector('.slider_bullet_list');
+      new Swiper(swiperElement, {
+        slidesPerView: 'auto',
+        navigation: {
+          prevEl: previousButton,
+          nextEl: nextButton,
+          disabledClass: 'is-disabled',
+        },
+        pagination: {
+          el: pagination,
+          clickable: true,
+          bulletClass: 'slider_bullet_item',
+          bulletActiveClass: 'is-active',
+          renderBullet(index, className) {
+            return `
+                <button
+                  type="button"
+                  class="${className}"
+                  aria-label="Slide ${index + 1}"
+                ></button>
+              `;
+          },
+        },
+      });
+    });
+  });
+</script>
         </div> {% schema %} {
     "tag": "section",
     "name": "Guide Slider",
@@ -328,7 +371,7 @@
         },
         {
             "type": "header",
-            "content": "Button 1"
+            "content": "Button"
         },
         {
             "type": "text",
@@ -337,26 +380,34 @@
             "default": "Button 1 Text"
         },
         {
+            "type": "url",
+            "id": "button_1_url",
+            "label": "Link",
+            "visible_if": "{{ section.settings.button_1_mode == 'link' }}"
+        },
+        {
             "type": "header",
-            "content": "Card \u00dcberschrift"
+            "content": "Kacheln"
         },
         {
             "type": "number",
             "id": "card_heading_max_width",
-            "label": "Maximale Breite",
+            "label": "\u00dcberschrift Maximale Breite",
             "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
             "default": 20
         },
         {
-            "type": "header",
-            "content": "Card Text"
-        },
-        {
             "type": "number",
-            "id": "paragraph_max_width",
-            "label": "Maximale Breite",
+            "id": "card_paragraph_max_width",
+            "label": "Text Maximale Breite",
             "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
             "default": 60
+        },
+        {
+            "type": "text",
+            "id": "card_button_1_label",
+            "label": "Text",
+            "default": "Button Text"
         }
     ],
     "presets": [
