@@ -223,8 +223,8 @@
       "name": "Guide Slider",
       "settings": {
         "section_id": "",
-        "spacing_top": "main",
-        "spacing_bottom": "main",
+        "spacing_top": "large",
+        "spacing_bottom": "large",
         "eyebrow": "Rubriken",
         "eyebrow_tag": "p",
         "heading": "Dein Balance — Entdecke, was zu dir passt",
@@ -232,8 +232,10 @@
         "heading_max_width": 40,
         "heading_tidy_text": true,
         "button_1_label": "Jetzt entdecken",
+        "button_1_url": "",
         "card_heading_max_width": 20,
-        "paragraph_max_width": 60
+        "card_paragraph_max_width": 60,
+        "card_button_1_label": "Button Text"
       }
     },
     "text_carousel_K4NQ6g": {
