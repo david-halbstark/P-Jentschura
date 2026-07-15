@@ -116,7 +116,7 @@
               li-for:inside="guide in metaobjects.guide_main_topic.values"
               class="guide_slider_slider_list swiper-wrapper"
             >
-              {% for guide in metaobjects.guide_main_topic.values %}
+              {% for guide in sorted_guides %}
                 <div class="guide_slider_slider_slide swiper-slide">
                   <div class="guide_slider_card_wrap">
                     <div class="guide_slider_card_element">
