@@ -8049,10 +8049,6 @@ figure {
   position: relative;
 }
 
-.guide_slider_bot {
-  color: var(--_theme---text-2);
-}
-
 .guide_slider_slider_wrap {
   grid-column-gap: var(--_spacing---space--12);
   grid-row-gap: var(--_spacing---space--12);
@@ -8060,8 +8056,13 @@ figure {
   display: flex;
 }
 
-.guide_slider_slider_element.swiper, .guide_slider_slider_slide {
+.guide_slider_slider_element.swiper {
   width: 100%;
+}
+
+.guide_slider_slider_slide {
+  width: 100%;
+  color: var(--_theme---text-2);
 }
 
 .guide_slider_slider_slide.swiper-slide {
