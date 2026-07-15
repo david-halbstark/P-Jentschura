@@ -61,7 +61,7 @@
         </div>
         <div class="guide_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
           
-          <div data-layout="data-section-spacing" class="guide_slider_layout">
+          <div data-section-spacing="" class="guide_slider_layout">
             <div class="guide_slider_top">
               <div class="guide_slider_top_left">
                 {% render 'eyebrow', wrapper_class: 'is-eyebrow-base', eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-base', custom_class: 'u-color-3' %}
@@ -382,8 +382,7 @@
         {
             "type": "url",
             "id": "button_1_url",
-            "label": "Link",
-            "visible_if": "{{ section.settings.button_1_mode == 'link' }}"
+            "label": "Link"
         },
         {
             "type": "header",
@@ -406,7 +405,7 @@
         {
             "type": "text",
             "id": "card_button_1_label",
-            "label": "Text",
+            "label": "Button Text",
             "default": "Button Text"
         }
     ],
