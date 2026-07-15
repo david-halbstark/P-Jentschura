@@ -139,7 +139,11 @@
                             tag: 'h3',
                             variant: 'u-text-h3-primary'
                           %}
-                          {% render 'paragraph', max_width: section.settings.card_paragraph_max_width, paragraph: guide.text | metafield_tag, variant: 'u-text-body-base' %}
+                          {% render 'paragraph',
+                            max_width: section.settings.card_paragraph_max_width,
+                            paragraph: 'guide.text | metafield_tag',
+                            variant: 'u-text-body-base'
+                          %}
                           {% render 'button_group',
                             button_1_solid_color: 'red',
                             button_1_url: guide.system.url,
