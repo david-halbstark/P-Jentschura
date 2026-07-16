@@ -223,7 +223,6 @@
 </div>
 
 <style>
-
   .u-heading a em {
     --heading-arrow-url: url("{{ 'arrow-up-right.svg' | asset_url }}");
   }
@@ -257,7 +256,10 @@
     -webkit-mask-size: contain;
     mask-size: contain;
     transition: transform 0.2s ease;
-    transform: translate(calc(var(--_trigger---on, 0) * -0.25em), calc(var(--_trigger---on, 0) * -0.25em));
+    transform: translate(
+      calc(calc(var(--_trigger---on) * 0rem + calc(var(--_trigger---off) * 0.125em))),
+      calc(calc(var(--_trigger---on) * 0rem + calc(var(--_trigger---off) * -0.125em)))
+    );
   }
 
   .u-heading a:focus-visible {
