@@ -231,17 +231,17 @@
   color: red;    }
 
       h2 a em::after {
-        content: "";
-        display: inline-block;
-        width: 0.8em;
-        height: 0.8em;
-        margin-left: 0.2em;
-        vertical-align: 0.05em;
+  content: "";
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  margin-inline-start: 0.2em;
+  vertical-align: -0.05em;
 
         background-image: url("{{ 'arrow-up-right.svg' | asset_url }}");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
       }
 </style>
 {% schema %}
