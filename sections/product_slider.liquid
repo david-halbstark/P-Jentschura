@@ -223,34 +223,24 @@
 </div>
 
 <style>
-    .u-heading a em {
+     .u-heading a em {
     display: inline-block;
     white-space: nowrap;
     font-style: inherit;
   }
 
   .u-heading a em::after {
-    content: "";
+    content: "\00a0";
     display: inline-block;
-
     width: 0.8em;
     height: 0.8em;
-    margin-inline-start: 0.25em;
+    margin-inline-start: 0.2em;
     vertical-align: -0.05em;
 
-    background-color: currentColor;
-
-    -webkit-mask-image: url("{{ 'arrow-up-right.svg' | asset_url }}");
-    mask-image: url("{{ 'arrow-up-right.svg' | asset_url }}");
-
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-
-    -webkit-mask-position: center;
-    mask-position: center;
-
-    -webkit-mask-size: contain;
-    mask-size: contain;
+    background-image: url("{{ 'arrow-up-right.svg' | asset_url }}");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
 </style>
 {% schema %}
