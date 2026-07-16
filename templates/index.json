@@ -74,7 +74,8 @@
           "settings": {
             "heading": "Basische Ernährung",
             "heading_variant": "u-text-h2-primary",
-            "text": "Lorem ipsum dolor sit amet",
+            "text_1": "Natürlich & gesund",
+            "text_2": "Von innen heraus",
             "clickable_url": "shopify://collections/basische-ernaehrung"
           }
         },
@@ -83,7 +84,8 @@
           "settings": {
             "heading": "Basische Körperpflege",
             "heading_variant": "u-text-h2-primary",
-            "text": "Lorem ipsum dolor sit amet",
+            "text_1": "Zart. Natürlich",
+            "text_2": "Pflege von innen",
             "clickable_url": "shopify://collections/basische-koerperpflege"
           }
         },
@@ -92,7 +94,8 @@
           "settings": {
             "heading": "Basische Accessoires",
             "heading_variant": "u-text-h2-primary",
-            "text": "Lorem ipsum dolor sit amet",
+            "text_1": "Sanft. Nachhaltig.",
+            "text_2": "Nah an der Haut",
             "clickable_url": "shopify://collections/basische-accessoires"
           }
         },
@@ -101,7 +104,8 @@
           "settings": {
             "heading": "P. Jentschura Konzept",
             "heading_variant": "u-text-h2-primary",
-            "text": "Lorem ipsum dolor sit amet",
+            "text_1": "Natürlich & gesund",
+            "text_2": "Von innen heraus",
             "clickable_url": "shopify://metaobjects/guide_main_topic/jentschura-konzepte"
           }
         }
@@ -153,7 +157,7 @@
         "tab_panel_Lqi6P6": {
           "type": "tab-panel",
           "settings": {
-            "text": "Lorem ipsum dolor sit amet",
+            "tab_text": "Lorem ipsum dolor sit amet",
             "collection": "basische-ernaehrung",
             "teaser_card_eyebrow": "Energie, die bleibt",
             "teaser_card_eyebrow_tag": "p",
@@ -168,7 +172,7 @@
         "tab_panel_qAqPTU": {
           "type": "tab-panel",
           "settings": {
-            "text": "Lorem ipsum dolor sit amet",
+            "tab_text": "Lorem ipsum dolor sit amet",
             "collection": "basische-koerperpflege",
             "teaser_card_eyebrow": "Energie, die bleibt",
             "teaser_card_eyebrow_tag": "p",
@@ -183,7 +187,7 @@
         "tab_panel_JEjDnP": {
           "type": "tab-panel",
           "settings": {
-            "text": "Lorem ipsum dolor sit amet",
+            "tab_text": "Lorem ipsum dolor sit amet",
             "collection": "basische-accessoires",
             "teaser_card_eyebrow": "Energie, die bleibt",
             "teaser_card_eyebrow_tag": "p",
