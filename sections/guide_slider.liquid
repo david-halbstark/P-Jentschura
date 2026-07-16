@@ -1,474 +1,422 @@
 <div class="u-embed-css w-embed">
-  <style>
-    .guide_slider_slider_wrap {
-      --_gap---size: calc(calc(var(--_spacing---space--5) * var(--_responsive---large)) + calc(var(--_spacing---space--3) * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
-    }
-    .guide_slider_card_top::before {
-      content: '';
-      width: calc(10rem * var(--_responsive---large) + calc(7.5rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
-      height: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-      background-color: var(--swatch--white-o20);
-    }
-  </style>
-</div>
-<div class="u-display-none"></div>
-<div class="u-display-none">
-  {% case section.settings.spacing_top -%}
-    {%- when 'xxsmall' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--xxsmall)' -%}
-    {%- when 'xsmall' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--xsmall)' -%}
-    {%- when 'small' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--small)' -%}
-    {%- when 'medium' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--medium)' -%}
-    {%- when 'large' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--large)' -%}
-    {%- when 'large_medium_off' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' -%}
-    {%- when 'page_top' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--page-top)' -%}
-    {%- else -%}
-      {%- assign spacing_top = '0' -%}
-  {%- endcase -%}
-  {%- case section.settings.spacing_bottom -%}
-    {%- when 'xxsmall' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' -%}
-    {%- when 'xsmall' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' -%}
-    {%- when 'small' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--small)' -%}
-    {%- when 'medium' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--medium)' -%}
-    {%- when 'large' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--large)' -%}
-    {%- when 'page_top' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--page-top)' -%}
-    {%- else -%}
-      {%- assign spacing_bottom = '0' -%}
-  {%- endcase %}
-  <div class="u-embed-css w-embed">
-    <style>
-      #shopify-section-{{ section.id }} [data-section-spacing] {
-        --section-spacing-top: {{ spacing_top }};
-        --section-spacing-bottom: {{ spacing_bottom }};
-      }
-    </style>
-  </div>
-</div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div
-  class="guide_slider_contain u-container"
-  {% if section.settings.section_id != blank %}
-    id="{{ section.settings.section_id }}"
-  {% endif %}
->
-  <div data-section-spacing="" class="guide_slider_layout">
-    <div class="guide_slider_top">
-      <div class="guide_slider_top_left">
-        {% render 'eyebrow',
-          wrapper_class: 'is-eyebrow-base',
-          eyebrow: section.settings.eyebrow,
-          variant: 'u-text-eyebrow-base',
-          custom_class: 'u-color-3'
-        %}
-        {% render 'heading',
-          custom_class: 'u-margin-bottom-0 u-min-width-auto',
-          heading: section.settings.heading,
-          tag: section.settings.heading_tag,
-          variant: section.settings.heading_variant,
-          max_width: section.settings.heading_max_width,
-          tidy_text: section.settings.heading_tidy_text
-        %}
-      </div>
-      <div class="guide_slider_top_right">
-        <div class="guide_slider_link">
-          {% render 'typography',
-            custom_attribute_value: 'true',
-            text: section.settings.button_1_label,
-            tag: 'span',
-            variant: 'u-text-link-base',
-            custom_class: 'u-margin-bottom-0 u-min-width-auto',
-            custom_attribute_name: 'aria-hidden'
-          %}
-          {% render 'clickable',
-            url: section.settings.button_1_url,
-            label: section.settings.button_1_label,
-            mode: 'link'
-          %}
+          <style>
+  .guide_slider_slider_wrap {
+    --_gap---size: calc(calc(var(--_spacing---space--5) * var(--_responsive---large)) + calc(var(--_spacing---space--3) * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  }
+  .guide_slider_card_top::before {
+    content: '';
+    width: calc(10rem * var(--_responsive---large) + calc(7.5rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--swatch--white-o20);
+  }
+</style>
         </div>
-      </div>
-    </div>
-    <div class="guide_slider_bot">
-      <div class="u-embed-liquid w-embed">
-        {% assign sorted_guides = metaobjects.guide_main_topic.values | sort: 'sort_order' %}
-        {% for guide in sorted_guides %}
-          {{ guide.title.value }}
-        {% endfor %}
-      </div>
-      <div class="guide_slider_slider_wrap slider_wrap">
-        <div style="--lg: 1.2; --md: 1.05; --sm: 1.05; --xs: 1.05;" class="guide_slider_slider_offset slider_offset">
-          <div class="guide_slider_slider_element swiper">
-            <div li-for:inside="guide in sorted_guides" class="guide_slider_slider_list swiper-wrapper">
-              {% for guide in sorted_guides %}
-                <div class="guide_slider_slider_slide swiper-slide">
-                  <div class="guide_slider_card_wrap">
-                    <div class="guide_slider_card_element">
-                      <div class="guide_slider_card_background u-cover-absolute">
-                        {% render 'image',
-                          loading: 'lazy',
-                          image: guide.image.value,
-                          object_fit: 'cover',
-                          width: 1400
-                        %}
-                      </div>
-                      <div class="guide_slider_card_content">
-                        <div class="guide_slider_card_top">
-                          {% render 'typography', variant: 'u-text-h2-secondary', text: guide.title.value, tag: 'p' %}
-                        </div>
-                        <div class="guide_slider_card_bot">
-                          {% render 'heading',
-                            max_width: section.settings.card_heading_max_width,
-                            heading: guide.heading.value,
-                            tag: 'h3',
-                            variant: 'u-text-h3-primary'
-                          %}
-                          {% render 'paragraph', max_width: section.settings.card_paragraph_max_width, paragraph: guide.text | metafield tag, variant: 'u-text-body-base' %}
-                          {% render 'button_group',
-                            button_1_solid_color: 'red',
-                            button_1_url: guide.system.url,
-                            button_1_label: section.settings.card_button_1_label,
-                            button_1_trigger: 'hover focus',
-                            button_1_solid_padding: 'base',
-                            button_1_solid_text_size: 'u-text-link-large',
-                            button_1_mode: 'link',
-                            button_1_variant: 'solid'
-                          %}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              {% endfor %}
-            </div>
+        <div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          {% case section.settings.spacing_top %}{% when 'xxsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_top = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_top = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_top = 'var(--_spacing---section-space--large)' %}{% when 'large_medium_off' %}{% assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' %}{% when 'page_top' %}{% assign spacing_top = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_top = '0' %}{% endcase %}{% case section.settings.spacing_bottom %}{% when 'xxsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_bottom = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_bottom = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_bottom = 'var(--_spacing---section-space--large)' %}{% when 'page_top' %}{% assign spacing_bottom = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_bottom = '0' %}{% endcase %}
+          <div class="u-embed-css w-embed">
+            <style>
+  #shopify-section-{{ section.id }} [data-section-spacing] {
+    --section-spacing-top: {{ spacing_top }};
+    --section-spacing-bottom: {{ spacing_bottom }};
+  }
+</style>
           </div>
         </div>
-        <div class="slider_controls">
-          <div class="slider_bullet_list">
-            <div class="slider_bullet_item is-active"></div>
-            <div class="slider_bullet_item"></div>
-          </div>
-          <div class="slider_button_layout">
-            <button data-trigger="hover focus" class="slider_button_wrap is-prev">
-              <div class="slider_button_element">
-                <div class="slider_button_icon">
-                  {% render 'icon', aria-hidden: true, icon: 'arrow_left' %}
-                </div>
-              </div></button
-            ><button data-trigger="hover focus" class="slider_button_wrap is-next">
-              <div class="slider_button_element">
-                <div class="slider_button_icon">
-                  {% render 'icon', aria-hidden: true, icon: 'arrow_right' %}
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        
+        <div class="u-display-none">
+          
+        </div>
+        <div class="u-display-none">
+          
+        </div>
+        <div class="u-display-none">
+          
+        </div>
+        <div class="guide_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
+          
+          <div data-section-spacing="" class="guide_slider_layout">
+            <div class="guide_slider_top">
+              <div class="guide_slider_top_left">
+                {% render 'eyebrow', wrapper_class: 'is-eyebrow-base', eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-base', custom_class: 'u-color-3' %}
+                {% render 'heading', custom_class: 'u-margin-bottom-0 u-min-width-auto', heading: section.settings.heading, tag: section.settings.heading_tag, variant: section.settings.heading_variant, max_width: section.settings.heading_max_width, tidy_text: section.settings.heading_tidy_text %}
+              </div>
+              <div class="guide_slider_top_right">
+                <div class="guide_slider_link">
+                  {% render 'typography', custom_attribute_value: 'true', text: section.settings.button_1_label, tag: 'span', variant: 'u-text-link-base', custom_class: 'u-margin-bottom-0 u-min-width-auto', custom_attribute_name: 'aria-hidden' %}
+                  {% render 'clickable', url: section.settings.button_1_url, label: section.settings.button_1_label, mode: 'link' %}
                 </div>
               </div>
-            </button>
+            </div>
+            <div class="guide_slider_bot">
+              <div class="u-embed-liquid w-embed">{% assign sorted_guides = metaobjects.guide_main_topic.values
+  | sort: 'sort_order'
+%}</div>
+              <div class="guide_slider_slider_wrap slider_wrap">
+                <div style="--lg: 1.2; --md: 1.05; --sm: 1.05; --xs: 1.05;" class="guide_slider_slider_offset slider_offset">
+                  <div class="guide_slider_slider_element swiper">
+                    <div li-for:inside="guide in sorted_guides" class="guide_slider_slider_list swiper-wrapper">
+        {% for guide in sorted_guides %}                            
+                      
+                            <div class="guide_slider_slider_slide swiper-slide">
+                        <div class="guide_slider_card_wrap">
+                          <div class="guide_slider_card_element">
+                            <div class="guide_slider_card_background u-cover-absolute">
+                              {% render 'image', loading: 'lazy', image: guide.image.value, object_fit: 'cover', width: 1400 %}
+                            </div>
+                            <div class="guide_slider_card_content">
+                              <div class="guide_slider_card_top">
+                                {% render 'typography', variant: 'u-text-h2-secondary', text: guide.title.value, tag: 'p' %}
+                              </div>
+                              <div class="guide_slider_card_bot">
+                                {% render 'heading', max_width: section.settings.card_heading_max_width, heading: guide.heading.value, tag: 'h3', variant: 'u-text-h3-primary' %}
+                                {% render 'paragraph', max_width: section.settings.card_paragraph_max_width, paragraph: guide.text | metafield tag, variant: 'u-text-body-base' %}
+                                {% render 'button_group', button_1_solid_color: 'red', button_1_url: guide.system.url, button_1_label: section.settings.card_button_1_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: 'link', button_1_variant: 'solid' %}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                            
+                      
+                            
+                            
+                      
+                            
+                            
+                    
+                    {% endfor %}    </div>
+                  </div>
+                </div>
+                <div class="slider_controls">
+                  <div class="slider_bullet_list">
+                    <div class="slider_bullet_item is-active"></div>
+                    <div class="slider_bullet_item"></div>
+                  </div>
+                  <div class="slider_button_layout"><button data-trigger="hover focus" class="slider_button_wrap is-prev">
+                      <div class="slider_button_element">
+                        <div class="slider_button_icon">
+                          {% render 'icon', aria-hidden: true, icon: 'arrow_left' %}
+                        </div>
+                      </div>
+                    </button><button data-trigger="hover focus" class="slider_button_wrap is-next">
+                      <div class="slider_button_element">
+                        <div class="slider_button_icon">
+                          {% render 'icon', aria-hidden: true, icon: 'arrow_right' %}
+                        </div>
+                      </div>
+                    </button></div>
+                </div>
+              </div>
+            </div>
           </div>
+          
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="u-embed-js w-embed w-script">
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.guide_slider_layout').forEach((component) => {
-        if (component.dataset.scriptInitialized === 'true') return;
-        component.dataset.scriptInitialized = 'true';
-        const swiperElement = component.querySelector('.guide_slider_slider_element.swiper');
-        if (!swiperElement || swiperElement.swiper) return;
-        const sliderWrap = swiperElement.closest('.guide_slider_slider_wrap');
-        if (!sliderWrap) return;
-        const previousButton = sliderWrap.querySelector('.slider_button_wrap.is-prev');
-        const nextButton = sliderWrap.querySelector('.slider_button_wrap.is-next');
-        const pagination = sliderWrap.querySelector('.slider_bullet_list');
-        new Swiper(swiperElement, {
-          slidesPerView: 'auto',
-          navigation: {
-            prevEl: previousButton,
-            nextEl: nextButton,
-            disabledClass: 'is-disabled',
-          },
-          pagination: {
-            el: pagination,
-            clickable: true,
-            bulletClass: 'slider_bullet_item',
-            bulletActiveClass: 'is-active',
-            renderBullet(index, className) {
-              return `
+        <div class="u-embed-js w-embed w-script">
+          <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.guide_slider_layout').forEach((component) => {
+      if (component.dataset.scriptInitialized === 'true') return;
+      component.dataset.scriptInitialized = 'true';
+      const swiperElement = component.querySelector('.guide_slider_slider_element.swiper');
+      if (!swiperElement || swiperElement.swiper) return;
+      const sliderWrap = swiperElement.closest('.guide_slider_slider_wrap');
+      if (!sliderWrap) return;
+      const previousButton = sliderWrap.querySelector('.slider_button_wrap.is-prev');
+      const nextButton = sliderWrap.querySelector('.slider_button_wrap.is-next');
+      const pagination = sliderWrap.querySelector('.slider_bullet_list');
+      new Swiper(swiperElement, {
+        slidesPerView: 'auto',
+        navigation: {
+          prevEl: previousButton,
+          nextEl: nextButton,
+          disabledClass: 'is-disabled',
+        },
+        pagination: {
+          el: pagination,
+          clickable: true,
+          bulletClass: 'slider_bullet_item',
+          bulletActiveClass: 'is-active',
+          renderBullet(index, className) {
+            return `
                 <button
                   type="button"
                   class="${className}"
                   aria-label="Slide ${index + 1}"
                 ></button>
               `;
-            },
           },
-        });
+        },
       });
     });
-  </script>
-</div>
-{% schema %}
-{
-  "tag": "section",
-  "name": "Guide Slider",
-  "class": "guide_slider_wrap u-section",
-  "settings": [
-    {
-      "type": "header",
-      "content": "Sektion"
-    },
-    {
-      "type": "text",
-      "id": "section_id",
-      "label": "ID"
-    },
-    {
-      "type": "header",
-      "content": "Abst\u00e4nde"
-    },
-    {
-      "type": "select",
-      "id": "spacing_top",
-      "label": "Oben",
-      "options": [
+  });
+</script>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Guide Slider",
+    "class": "guide_slider_wrap u-section",
+    "settings": [
         {
-          "value": "none",
-          "label": "Kein Abstand"
+            "type": "header",
+            "content": "Sektion"
         },
         {
-          "value": "xxsmall",
-          "label": "Extra extra klein"
+            "type": "text",
+            "id": "section_id",
+            "label": "ID"
         },
         {
-          "value": "xsmall",
-          "label": "Extra klein"
+            "type": "header",
+            "content": "Abst\u00e4nde"
         },
         {
-          "value": "small",
-          "label": "Klein"
+            "type": "select",
+            "id": "spacing_top",
+            "label": "Oben",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "large_medium_off",
+                    "label": "Gro\u00df | Medium kein Abstand"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "large"
         },
         {
-          "value": "medium",
-          "label": "Mittel"
+            "type": "select",
+            "id": "spacing_bottom",
+            "label": "Unten",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                }
+            ],
+            "default": "large"
         },
         {
-          "value": "large",
-          "label": "Gro\u00df"
+            "type": "header",
+            "content": "\u00dcbertitel"
         },
         {
-          "value": "large_medium_off",
-          "label": "Gro\u00df | Medium kein Abstand"
+            "type": "text",
+            "id": "eyebrow",
+            "label": "Text",
+            "default": "\u00dcbertitel Text"
         },
         {
-          "value": "page_top",
-          "label": "Seitenanfang"
+            "type": "select",
+            "id": "eyebrow_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "p"
+        },
+        {
+            "type": "header",
+            "content": "\u00dcberschrift"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "heading",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+            "type": "select",
+            "id": "heading_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "number",
+            "id": "heading_max_width",
+            "label": "Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 20
+        },
+        {
+            "type": "checkbox",
+            "id": "heading_tidy_text",
+            "label": "Ausgewogener Zeilenumbruch",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Button"
+        },
+        {
+            "type": "text",
+            "id": "button_1_label",
+            "label": "Text",
+            "default": "Button 1 Text"
+        },
+        {
+            "type": "url",
+            "id": "button_1_url",
+            "label": "Link"
+        },
+        {
+            "type": "header",
+            "content": "Kacheln"
+        },
+        {
+            "type": "number",
+            "id": "card_heading_max_width",
+            "label": "\u00dcberschrift Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 20
+        },
+        {
+            "type": "number",
+            "id": "card_paragraph_max_width",
+            "label": "Text Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 60
+        },
+        {
+            "type": "text",
+            "id": "card_button_1_label",
+            "label": "Button Text",
+            "default": "Button Text"
         }
-      ],
-      "default": "large"
-    },
-    {
-      "type": "select",
-      "id": "spacing_bottom",
-      "label": "Unten",
-      "options": [
+    ],
+    "presets": [
         {
-          "value": "none",
-          "label": "Kein Abstand"
-        },
-        {
-          "value": "xxsmall",
-          "label": "Extra extra klein"
-        },
-        {
-          "value": "xsmall",
-          "label": "Extra klein"
-        },
-        {
-          "value": "small",
-          "label": "Klein"
-        },
-        {
-          "value": "medium",
-          "label": "Mittel"
-        },
-        {
-          "value": "large",
-          "label": "Gro\u00df"
+            "name": "Guide Slider",
+            "category": "Liquify",
+            "blocks": []
         }
-      ],
-      "default": "large"
-    },
-    {
-      "type": "header",
-      "content": "\u00dcbertitel"
-    },
-    {
-      "type": "text",
-      "id": "eyebrow",
-      "label": "Text",
-      "default": "\u00dcbertitel Text"
-    },
-    {
-      "type": "select",
-      "id": "eyebrow_tag",
-      "label": "HTML-Tag",
-      "options": [
-        {
-          "value": "h1",
-          "label": "H1"
-        },
-        {
-          "value": "h2",
-          "label": "H2"
-        },
-        {
-          "value": "h3",
-          "label": "H3"
-        },
-        {
-          "value": "h4",
-          "label": "H4"
-        },
-        {
-          "value": "h5",
-          "label": "H5"
-        },
-        {
-          "value": "h6",
-          "label": "H6"
-        },
-        {
-          "value": "p",
-          "label": "P"
-        }
-      ],
-      "default": "p"
-    },
-    {
-      "type": "header",
-      "content": "\u00dcberschrift"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "heading",
-      "label": "Text",
-      "default": "Lorem ipsum dolor sit amet elit"
-    },
-    {
-      "type": "select",
-      "id": "heading_tag",
-      "label": "HTML-Tag",
-      "options": [
-        {
-          "value": "h1",
-          "label": "H1"
-        },
-        {
-          "value": "h2",
-          "label": "H2"
-        },
-        {
-          "value": "h3",
-          "label": "H3"
-        },
-        {
-          "value": "h4",
-          "label": "H4"
-        },
-        {
-          "value": "h5",
-          "label": "H5"
-        },
-        {
-          "value": "h6",
-          "label": "H6"
-        },
-        {
-          "value": "p",
-          "label": "P"
-        }
-      ],
-      "default": "h2"
-    },
-    {
-      "type": "number",
-      "id": "heading_max_width",
-      "label": "Maximale Breite",
-      "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-      "default": 20
-    },
-    {
-      "type": "checkbox",
-      "id": "heading_tidy_text",
-      "label": "Ausgewogener Zeilenumbruch",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Button"
-    },
-    {
-      "type": "text",
-      "id": "button_1_label",
-      "label": "Text",
-      "default": "Button 1 Text"
-    },
-    {
-      "type": "url",
-      "id": "button_1_url",
-      "label": "Link"
-    },
-    {
-      "type": "header",
-      "content": "Kacheln"
-    },
-    {
-      "type": "number",
-      "id": "card_heading_max_width",
-      "label": "\u00dcberschrift Maximale Breite",
-      "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-      "default": 20
-    },
-    {
-      "type": "number",
-      "id": "card_paragraph_max_width",
-      "label": "Text Maximale Breite",
-      "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-      "default": 60
-    },
-    {
-      "type": "text",
-      "id": "card_button_1_label",
-      "label": "Button Text",
-      "default": "Button Text"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Guide Slider",
-      "category": "Liquify",
-      "blocks": []
-    }
-  ]
-}
-{% endschema %}
+    ]
+} {% endschema %}

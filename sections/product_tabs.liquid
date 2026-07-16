@@ -69,6 +69,7 @@
           
           
         </div>
+        
         <div class="product_tabs_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
           
           <div data-section-spacing="" class="product_tabs_layout">
@@ -88,9 +89,6 @@
                         
                         
                       </div>
-                                    
-                      
-                                    
                                     
                       
                                     
@@ -443,16 +441,6 @@
                     "type": "url",
                     "id": "teaser_card_button_url",
                     "label": "Button Link"
-                },
-                {
-                    "type": "header",
-                    "content": "Produkt-Kacheln"
-                },
-                {
-                    "type": "text",
-                    "id": "product_card_button_label",
-                    "label": "Button Text",
-                    "default": "Button Text"
                 }
             ]
         }
@@ -647,6 +635,16 @@
             "id": "heading_tidy_text",
             "label": "Ausgewogener Zeilenumbruch",
             "default": true
+        },
+        {
+            "type": "header",
+            "content": "Produkt-Karten"
+        },
+        {
+            "type": "text",
+            "id": "product_card_button_label",
+            "label": "Button Text",
+            "default": "Button Text"
         }
     ],
     "presets": [
