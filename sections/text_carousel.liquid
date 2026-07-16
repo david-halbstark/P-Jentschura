@@ -40,7 +40,7 @@
         </div>
         <div class="text_carousel_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
           
-          <div class="text_carousel_layout">
+          <div data-section-spacing="" class="text_carousel_layout">
             <div class="text_carousel_track">
               {% for repeat in (1..4) %}    <div li-for="repeat in (1..4)" class="text_carousel_group">
                                     

@@ -79,10 +79,7 @@
               </div>
             </div>
             <div class="recipe_slider_right">
-              <div class="u-embed-liquid w-embed">{% assign sorted_recipes = metaobject.recipe.values
-  | sort: 'date'
-  | reverse
-%}</div>
+              {% assign sorted_recipes = metaobject.recipe.values | sort: 'date' | reverse %}
               <div class="recipe_slider_slider_wrap slider_wrap">
                 <div style="--lg: 1.8; --md: 1.6; --sm: 1.15; --xs: 1.15;" class="recipe_slider_slider_offset slider_offset">
                   <div class="recipe_slider_slider_element swiper">
