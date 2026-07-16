@@ -221,11 +221,10 @@
     });
   </script>
 </div>
-
-<style>
-  .u-heading a em {
-    --heading-arrow-url: url("{{ 'arrow-up-right.svg' | asset_url }}");
-  }
+{% style %}
+    #shopify-section-{{ section.id }} .u-heading a em{
+      --heading-arrow-url: url('{{ "arrow-up-right.svg" | asset_url }}');
+    }
 
   .u-heading a em {
     display: inline-block;
@@ -234,7 +233,7 @@
   }
 
   .u-heading a em::after {
-    content: "";
+    content: "\00a0";
     display: inline-block;
 
     width: 0.8em;
@@ -273,7 +272,8 @@
       --_trigger---off: 1;
     }
   }
-</style>
+{% endstyle %}
+
 {% schema %}
 {
   "tag": "section",
