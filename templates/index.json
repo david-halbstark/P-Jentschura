@@ -74,8 +74,7 @@
           "settings": {
             "heading": "Basische Ernährung",
             "heading_variant": "u-text-h2-primary",
-            "text_1": "Natürlich & gesund",
-            "text_2": "Von innen heraus",
+            "text": "Lorem ipsum dolor sit amet",
             "clickable_url": "shopify://collections/basische-ernaehrung"
           }
         },
@@ -84,8 +83,7 @@
           "settings": {
             "heading": "Basische Körperpflege",
             "heading_variant": "u-text-h2-primary",
-            "text_1": "Zart. Natürlich",
-            "text_2": "Pflege von innen",
+            "text": "Lorem ipsum dolor sit amet",
             "clickable_url": "shopify://collections/basische-koerperpflege"
           }
         },
@@ -94,8 +92,7 @@
           "settings": {
             "heading": "Basische Accessoires",
             "heading_variant": "u-text-h2-primary",
-            "text_1": "Sanft. Nachhaltig.",
-            "text_2": "Nah an der Haut",
+            "text": "Lorem ipsum dolor sit amet",
             "clickable_url": "shopify://collections/basische-accessoires"
           }
         },
@@ -104,8 +101,7 @@
           "settings": {
             "heading": "P. Jentschura Konzept",
             "heading_variant": "u-text-h2-primary",
-            "text_1": "Natürlich & gesund",
-            "text_2": "Von innen heraus",
+            "text": "Lorem ipsum dolor sit amet",
             "clickable_url": "shopify://metaobjects/guide_main_topic/jentschura-konzepte"
           }
         }
@@ -135,7 +131,7 @@
         "spacing_bottom": "xxsmall",
         "eyebrow": "Übertitel Textdasda",
         "eyebrow_tag": "p",
-        "heading": "Lorem ipsum dolor sit amet elitdsada",
+        "heading": "Lorem ipsum dolor sit amet <a href=\"/collections/all\" target=\"_blank\" title=\"All products\">elitdsada</a>",
         "heading_tag": "h2",
         "heading_max_width": 20,
         "heading_tidy_text": true,
@@ -157,7 +153,7 @@
         "tab_panel_Lqi6P6": {
           "type": "tab-panel",
           "settings": {
-            "tab_text": "Basische Ernährung",
+            "text": "Lorem ipsum dolor sit amet",
             "collection": "basische-ernaehrung",
             "teaser_card_eyebrow": "Energie, die bleibt",
             "teaser_card_eyebrow_tag": "p",
@@ -172,7 +168,7 @@
         "tab_panel_qAqPTU": {
           "type": "tab-panel",
           "settings": {
-            "tab_text": "Basische Körperpflege",
+            "text": "Lorem ipsum dolor sit amet",
             "collection": "basische-koerperpflege",
             "teaser_card_eyebrow": "Energie, die bleibt",
             "teaser_card_eyebrow_tag": "p",
@@ -187,7 +183,7 @@
         "tab_panel_JEjDnP": {
           "type": "tab-panel",
           "settings": {
-            "tab_text": "Basische Accessoires",
+            "text": "Lorem ipsum dolor sit amet",
             "collection": "basische-accessoires",
             "teaser_card_eyebrow": "Energie, die bleibt",
             "teaser_card_eyebrow_tag": "p",
@@ -269,8 +265,7 @@
       "settings": {
         "section_id": "",
         "spacing_top": "main",
-        "spacing_bottom": "main",
-        "icon": "shopify://shop_images/coldpress-icon.avif"
+        "spacing_bottom": "main"
       }
     },
     "recipe_slider_QekpTM": {
