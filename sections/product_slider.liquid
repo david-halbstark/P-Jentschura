@@ -223,24 +223,53 @@
 </div>
 
 <style>
-     .u-heading a em {
+
+  .u-heading a em {
+    --heading-arrow-url: url("{{ 'arrow-up-right.svg' | asset_url }}");
+  }
+
+  .u-heading a em {
     display: inline-block;
     white-space: nowrap;
     font-style: inherit;
   }
 
   .u-heading a em::after {
-    content: "\00a0";
+    content: "";
     display: inline-block;
+
     width: 0.8em;
     height: 0.8em;
-    margin-inline-start: 0.2em;
+    margin-inline-start: 0.25em;
     vertical-align: -0.05em;
 
-    background-image: url("{{ 'arrow-up-right.svg' | asset_url }}");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    background-color: currentColor;
+
+    -webkit-mask-image: var(--heading-arrow-url);
+    mask-image: var(--heading-arrow-url);
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    transition: transform 0.2s ease;
+    transform: translate(calc(var(--_trigger---on, 0) * -0.25em), calc(var(--_trigger---on, 0) * -0.25em));
+  }
+
+  .u-heading a:focus-visible {
+    --_trigger---on: 0;
+    --_trigger---off: 1;
+  }
+
+  @media (hover: hover) {
+    .u-heading a:hover {
+      --_trigger---on: 0;
+      --_trigger---off: 1;
+    }
   }
 </style>
 {% schema %}
