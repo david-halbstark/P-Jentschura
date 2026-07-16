@@ -129,6 +129,7 @@
                   <div li-for="recipe in sorted_recipes" class="recipe_slider_slider_slide swiper-slide">
                     <div class="recipe_slider_card_wrap">
                       <div class="recipe_slider_card_element">
+                        {{ recipe.image.value | json }}
                         <div class="recipe_slider_card_top">
                           {% render 'image',
                             loading: 'lazy',
