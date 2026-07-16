@@ -130,6 +130,8 @@
                     <div class="recipe_slider_card_wrap">
                       <div class="recipe_slider_card_element">
                         <div class="recipe_slider_card_top">
+                          {% assign recipe_image = recipe.image.value %}
+
                           {% render 'image',
                             loading: 'lazy',
                             image: recipe_image.value,
