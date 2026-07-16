@@ -32,29 +32,6 @@
       --collection-theme-color: {{ theme_color }};
     }
   </style>
-
-  <style>
-        h2 a i {
-          display: inline-block;
-          white-space: nowrap;
-          font-style: inherit;
-
-    color: red;    }
-
-        h2 a i::after {
-          content: "";
-          display: inline-block;
-          width: 0.8em;
-          height: 0.8em;
-          margin-left: 0.2em;
-          vertical-align: 0.05em;
-
-          background-image: url("{{ 'arrow-up-right.svg' | asset_url }}");
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: contain;
-        }
-  </style>
 </div>
 <div class="u-display-none"></div>
 
@@ -244,6 +221,29 @@
     });
   </script>
 </div>
+
+<style>
+      h2 a i {
+        display: inline-block;
+        white-space: nowrap;
+        font-style: inherit;
+
+  color: red;    }
+
+      h2 a i::after {
+        content: "";
+        display: inline-block;
+        width: 0.8em;
+        height: 0.8em;
+        margin-left: 0.2em;
+        vertical-align: 0.05em;
+
+        background-image: url("{{ 'arrow-up-right.svg' | asset_url }}");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+</style>
 {% schema %}
 {
   "tag": "section",
