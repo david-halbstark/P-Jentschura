@@ -83,8 +83,8 @@
               <div class="recipe_slider_slider_wrap slider_wrap">
                 <div style="--lg: 1.8; --md: 1.6; --sm: 1.15; --xs: 1.15;" class="recipe_slider_slider_offset slider_offset">
                   <div class="recipe_slider_slider_element swiper">
-                    <div li-for:inside="recipe in " class="recipe_slider_slider_list swiper-wrapper">
-        {% for recipe in  %}                            
+                    <div li-for:inside="recipe in sorted_recipes" class="recipe_slider_slider_list swiper-wrapper">
+        {% for recipe in sorted_recipes %}                            
                       
                             {% for recipe in sorted_recipes %}    <div li-for="recipe in sorted_recipes" class="recipe_slider_slider_slide swiper-slide">
                                     
