@@ -131,7 +131,12 @@
                       <div class="recipe_slider_card_element">
                         <div class="recipe_slider_card_top">
                           {% assign recipe_image = recipe.image.value %}
+                          {% assign recipe_image = recipe.image.value %}
 
+                          <p>Bild vorhanden: {{ recipe_image }}</p>
+                          <p>Breite: {{ recipe_image.width }}</p>
+                          <p>Höhe: {{ recipe_image.height }}</p>
+                          <p>URL: {{ recipe_image | image_url: width: 900 }}</p>
                           {% render 'image',
                             loading: 'lazy',
                             image: recipe_image.value,
