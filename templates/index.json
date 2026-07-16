@@ -268,8 +268,8 @@
       "name": "Text Carousel",
       "settings": {
         "section_id": "",
-        "spacing_top": "main",
-        "spacing_bottom": "main"
+        "spacing_top": "xxsmall",
+        "spacing_bottom": "xxsmall"
       }
     },
     "recipe_slider_QekpTM": {
