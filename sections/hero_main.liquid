@@ -387,27 +387,27 @@
                     "type": "image_picker",
                     "id": "image",
                     "label": "Bild",
-                    "visible_if": "{{ block.settings.media_type == 'image' }}"
+                    "visible_if": "{{ section.settings.media_type == 'image' }}"
                 },
                 {
                     "type": "image_picker",
                     "id": "image_mobile",
                     "label": "Bild mobil",
-                    "visible_if": "{{ block.settings.media_type == 'image' }}"
+                    "visible_if": "{{ section.settings.media_type == 'image' }}"
                 },
                 {
                     "type": "number",
                     "id": "image_width",
                     "label": "Bildbreite",
                     "default": 2000,
-                    "visible_if": "{{ block.settings.media_type == 'image' }}"
+                    "visible_if": "{{ section.settings.media_type == 'image' }}"
                 },
                 {
                     "type": "number",
                     "id": "image_width_mobile",
                     "label": "Bildbreite Mobil",
                     "default": 900,
-                    "visible_if": "{{ block.settings.media_type == 'image' }}"
+                    "visible_if": "{{ section.settings.media_type == 'image' }}"
                 },
                 {
                     "type": "select",
@@ -424,7 +424,7 @@
                         }
                     ],
                     "default": "lazy",
-                    "visible_if": "{{ block.settings.media_type == 'image' }}"
+                    "visible_if": "{{ section.settings.media_type == 'image' }}"
                 },
                 {
                     "type": "select",
@@ -445,7 +445,7 @@
                         }
                     ],
                     "default": "auto",
-                    "visible_if": "{{ block.settings.media_type == 'image' }}"
+                    "visible_if": "{{ section.settings.media_type == 'image' }}"
                 },
                 {
                     "type": "select",
@@ -462,41 +462,41 @@
                         }
                     ],
                     "default": "cover",
-                    "visible_if": "{{ block.settings.media_type == 'image' }}"
+                    "visible_if": "{{ section.settings.media_type == 'image' }}"
                 },
                 {
                     "type": "video",
                     "id": "video",
                     "label": "Video",
-                    "visible_if": "{{ block.settings.media_type == 'video' }}"
+                    "visible_if": "{{ section.settings.media_type == 'video' }}"
                 },
                 {
                     "type": "checkbox",
                     "id": "video_autoplay",
                     "label": "Automatisch abspielen",
                     "default": false,
-                    "visible_if": "{{ block.settings.media_type == 'video' }}"
+                    "visible_if": "{{ section.settings.media_type == 'video' }}"
                 },
                 {
                     "type": "checkbox",
                     "id": "video_loop",
                     "label": "Wiederholen",
                     "default": true,
-                    "visible_if": "{{ block.settings.media_type == 'video' }}"
+                    "visible_if": "{{ section.settings.media_type == 'video' }}"
                 },
                 {
                     "type": "checkbox",
                     "id": "video_muted",
                     "label": "Stumm",
                     "default": true,
-                    "visible_if": "{{ block.settings.media_type == 'video' }}"
+                    "visible_if": "{{ section.settings.media_type == 'video' }}"
                 },
                 {
                     "type": "checkbox",
                     "id": "video_controls",
                     "label": "Steuerung anzeigen",
                     "default": false,
-                    "visible_if": "{{ block.settings.media_type == 'video' }}"
+                    "visible_if": "{{ section.settings.media_type == 'video' }}"
                 },
                 {
                     "type": "select",
@@ -521,7 +521,7 @@
                         }
                     ],
                     "default": "none",
-                    "visible_if": "{{ block.settings.media_type == 'video' }}"
+                    "visible_if": "{{ section.settings.media_type == 'video' }}"
                 },
                 {
                     "type": "color",
