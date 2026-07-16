@@ -222,9 +222,13 @@
   </script>
 </div>
 {% style %}
-    #shopify-section-{{ section.id }} .u-heading a em{
-      --heading-arrow-url: url('{{ "arrow-up-right.svg" | asset_url }}');
-    }
+  .u-heading a em {
+    --heading-arrow-url: url('{{ "arrow-up-right.svg" | asset_url }}');
+  }
+
+  .u-heading a {
+    color: var(--_theme---heading-accent);
+  }
 
   .u-heading a em {
     display: inline-block;
@@ -233,7 +237,7 @@
   }
 
   .u-heading a em::after {
-    content: "\00a0";
+    content: '\00a0';
     display: inline-block;
 
     width: 0.8em;
