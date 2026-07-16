@@ -277,8 +277,8 @@
       "name": "Recipe Slider",
       "settings": {
         "section_id": "",
-        "spacing_top": "main",
-        "spacing_bottom": "main",
+        "spacing_top": "large",
+        "spacing_bottom": "large",
         "eyebrow": "Übertitel Text",
         "eyebrow_tag": "p",
         "heading": "Lorem ipsum dolor sit amet elit",
