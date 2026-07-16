@@ -153,6 +153,7 @@
   --_spacing---space--9: clamp(1.25 * 1rem, ((1.25 - ((2 - 1.25) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2 - 1.25) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2 * 1rem);
   --_spacing---space--11: clamp(1.75 * 1rem, ((1.75 - ((2.5 - 1.75) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2.5 - 1.75) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2.5 * 1rem);
   --_spacing---space--12: clamp(2 * 1rem, ((2 - ((3 - 2) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((3 - 2) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 3 * 1rem);
+  --_spacing---space--13: clamp(2.5 * 1rem, ((2.5 - ((3.75 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((3.75 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 3.75 * 1rem);
   --_typography---font--secondary-family: "Ms Madi", Georgia, sans-serif;
   --_typography---font--secondary-regular: 400;
   --_typography---line-height--relaxed: 1.5;
@@ -168,7 +169,6 @@
   --_theme---text-4: var(--swatch--crimson);
   --_theme---background-7: var(--swatch--charcoal);
   --radius--xsmall: .375rem;
-  --_spacing---space--13: clamp(2.5 * 1rem, ((2.5 - ((3.75 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((3.75 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 3.75 * 1rem);
   --misc--text-carousel-gap: clamp(1.375 * 1rem, ((1.375 - ((4.375 - 1.375) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((4.375 - 1.375) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 4.375 * 1rem);
   --misc--text-carousel-icon: clamp(2.75 * 1rem, ((2.75 - ((3.5 - 2.75) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((3.5 - 2.75) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 3.5 * 1rem);
   --_spacing---space--14: clamp(3.75 * 1rem, ((3.75 - ((6.25 - 3.75) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((6.25 - 3.75) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 6.25 * 1rem);
@@ -7134,8 +7134,9 @@ figure {
 }
 
 .recipe_slider_layout {
-  grid-column-gap: var(--_spacing---section-space--large);
-  grid-row-gap: var(--_spacing---section-space--large);
+  grid-column-gap: calc(calc(var(--_spacing---section-space--large) * var(--_responsive---large))  + calc(var(--_spacing---space--13) * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  grid-row-gap: calc(calc(var(--_spacing---section-space--large) * var(--_responsive---large))  + calc(var(--_spacing---space--13) * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  flex-flow: column;
   grid-template-rows: auto;
   grid-template-columns: minmax(0, 400fr) minmax(0, 780fr);
   grid-auto-columns: 1fr;
@@ -8115,9 +8116,13 @@ figure {
 .recipe_slider_left {
   grid-column-gap: var(--_spacing---space--11);
   grid-row-gap: var(--_spacing---space--11);
+  display: var(--contents-medium, flex);
   flex-flow: column;
   justify-content: space-between;
-  display: flex;
+}
+
+.recipe_slider_left_bot {
+  order: calc(999 * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall)));
 }
 
 .product_tabs_layout {
@@ -8264,6 +8269,13 @@ figure {
   width: 100%;
 }
 
+.recipe_slider_slider_element.swiper {
+  margin-top: -.5rem;
+  margin-bottom: -.5rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
 .recipe_slider_card_element {
   grid-column-gap: var(--_spacing---space--11);
   grid-row-gap: var(--_spacing---space--11);
@@ -8281,7 +8293,9 @@ figure {
 }
 
 .recipe_slider_card_top {
+  aspect-ratio: 4.5 / 2.4;
   border-radius: var(--radius--xsmall);
+  width: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -8292,10 +8306,8 @@ figure {
 }
 
 .recipe_slider_card_meta {
-  flex-flow: wrap;
-  place-content: center;
-  align-items: flex-start;
-  display: flex;
+  text-align: center;
+  align-content: center;
 }
 
 .recipe_slider_card_text {
