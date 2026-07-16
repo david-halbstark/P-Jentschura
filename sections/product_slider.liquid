@@ -223,26 +223,35 @@
 </div>
 
 <style>
-      h2 a em {
-        display: inline-block;
-        white-space: nowrap;
-        font-style: inherit;
+    .u-heading a em {
+    display: inline-block;
+    white-space: nowrap;
+    font-style: inherit;
+  }
 
-      }
+  .u-heading a em::after {
+    content: "";
+    display: inline-block;
 
-      h2 a em::after {
-  content: "\00a0";
-  display: inline-block;
-  width: 0.8em;
-  height: 0.8em;
-  margin-inline-start: 0.2em;
-  vertical-align: -0.05em;
+    width: 0.8em;
+    height: 0.8em;
+    margin-inline-start: 0.25em;
+    vertical-align: -0.05em;
 
-        background-image: url("{{ 'arrow-up-right.svg' | asset_url }}");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-      }
+    background-color: currentColor;
+
+    -webkit-mask-image: var(--heading-arrow-url);
+    mask-image: var(--heading-arrow-url);
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+  }
 </style>
 {% schema %}
 {
