@@ -131,7 +131,7 @@
         "spacing_bottom": "xxsmall",
         "eyebrow": "Übertitel Textdasda",
         "eyebrow_tag": "p",
-        "heading": "Lorem ipsum dolor sit amet <a href=\"/collections/all\" target=\"_blank\" title=\"All products\">sadadsadsad<strong> litdsada</strong></a>",
+        "heading": "Lorem ipsum dolor sit amet <a href=\"/collections/all\" target=\"_blank\" title=\"All products\">sadadsadsad<strong> </strong><em>litdsada</em></a>",
         "heading_tag": "h2",
         "heading_max_width": 20,
         "heading_tidy_text": true,
