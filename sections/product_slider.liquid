@@ -34,25 +34,26 @@
   </style>
 
   <style>
-    h2 a i {
-      display: inline-block;
-      white-space: nowrap;
-      font-style: inherit;
-    }
+        h2 a i {
+          display: inline-block;
+          white-space: nowrap;
+          font-style: inherit;
 
-    h2 a i::after {
-      content: "";
-      display: inline-block;
-      width: 0.8em;
-      height: 0.8em;
-      margin-left: 0.2em;
-      vertical-align: 0.05em;
+    color: red;    }
 
-      background-image: url("{{ 'arrow-up-right.svg' | asset_url }}");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-    }
+        h2 a i::after {
+          content: "";
+          display: inline-block;
+          width: 0.8em;
+          height: 0.8em;
+          margin-left: 0.2em;
+          vertical-align: 0.05em;
+
+          background-image: url("{{ '~/assets/arrow-up-right.svg' | asset_url }}");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
   </style>
 </div>
 <div class="u-display-none"></div>
