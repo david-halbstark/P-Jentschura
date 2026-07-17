@@ -30,10 +30,7 @@
                 }
 
 
-    .category_card_bot_text:has(
-      > .u-display-contents:nth-child(2):not(:empty)
-    ) > :first-child::after {
-
+    .category_card_bot_text:has(.u-display-contents:nth-child(2):not(:empty)) .u-display-contents:first-child:after {
 
         content: '\00a0\2022  ';
                   color: var(--_theme---text-4);
