@@ -265,6 +265,7 @@
       ],
       "name": "Text Carousel",
       "settings": {
+        "section_id": "",
         "spacing_top": "xxsmall",
         "spacing_bottom": "xxsmall"
       }
@@ -291,6 +292,7 @@
     },
     "review_slider_b9FWPH": {
       "type": "review_slider",
+      "disabled": true,
       "name": "Review Slider",
       "settings": {
         "section_id": "",
