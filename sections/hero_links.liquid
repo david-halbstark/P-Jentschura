@@ -1,0 +1,1077 @@
+{% assign opacity_top = block.settings.gradient_opacity_top | divided_by: 100.0 %}{% assign gradient_color_top = block.settings.gradient_color_top | color_modify: 'alpha', opacity_top %}{% assign opacity_bottom = block.settings.gradient_opacity_bottom | divided_by: 100.0 %}{% assign gradient_color_bottom = block.settings.gradient_color_bottom | color_modify: 'alpha', opacity_bottom %}
+        <style> .hero_slider_slide_overlay.is-top{background: linear-gradient(180deg, var(--gradient-color) 0%, transparent 100%);}.hero_slider_slide_overlay.is-bottom{background: linear-gradient(0deg, var(--gradient-color) 0%, transparent 100%);}</style>
+        <div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          {% case section.settings.spacing_top %}{% when 'xxsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_top = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_top = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_top = 'var(--_spacing---section-space--large)' %}{% when 'large_medium_off' %}{% assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' %}{% when 'page_top' %}{% assign spacing_top = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_top = '0' %}{% endcase %}{% case section.settings.spacing_bottom %}{% when 'xxsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_bottom = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_bottom = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_bottom = 'var(--_spacing---section-space--large)' %}{% when 'page_top' %}{% assign spacing_bottom = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_bottom = '0' %}{% endcase %}
+          <div class="u-embed-css w-embed">
+            <style>
+  #shopify-section-{{ section.id }} [data-section-spacing] {
+    --section-spacing-top: {{ spacing_top }};
+    --section-spacing-bottom: {{ spacing_bottom }};
+  }
+</style>
+          </div>
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+          
+        </div>
+        
+        <div class="u-display-none">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+        </div>
+        
+        <div class="hero_links_background">
+          {% render 'media', image_breakpoint: '41.9375em', image_object_fit: block.settings.image_object_fit, media_type: block.settings.media_type, video_controls: block.settings.video_controls, video_playsinline: block.settings.video_playsinline, video_play_behavi: block.settings.video_play_behaviour, image_loading: block.settings.image_loading, image_width_mobile: block.settings.image_width_mobile, image_fetchpriority: block.settings.image_fetchpriority, image: block.settings.image, video: block.settings.video, image_mobile: block.settings.image_mobile, video_autoplay: block.settings.video_autoplay, video_loop: block.settings.video_loop, image_width: block.settings.image_width, video_preload: block.settings.video_preload, video_muted: block.settings.video_muted, video_custom_class: , image_custom_class: %}
+          <div style="--gradient-color: {{ gradient_color_top }}" class="hero_links_overlay is-top"></div>
+          <div style="--gradient-color: {{ gradient_color_bottom }}" class="hero_links_overlay is-bottom"></div>
+        </div>
+        <div class="hero_links_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
+          
+          <div data-section-spacing="" class="hero_links_layout {{ section.settings.text_color }}">
+            <div class="hero_links_top">
+              {% render 'eyebrow', wrapper_class: 'is-eyebrow-large', eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-large' %}
+              {% render 'heading', tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, tag: section.settings.heading_tag, variant: 'u-text-h1-primary', max_width: section.settings.heading_max_width %}
+            </div>
+            <div class="hero_links_bot">
+              {% for block in section.blocks %}
+    {% if block.type == "button" %}
+                    <div li-block="Button" class="hero_links_button_wrap u-display-contents">
+                                    
+                
+                                    <div class="hero_links_button_element u-display-contents">
+                  <div class="u-display-none">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                  </div>
+                  {% render 'button', url: section.settings.button_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_action, text_size: 'u-text-eyebrow-base', icon: section.settings.button_1_icon, label: section.settings.button_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, mode: section.settings.button_mode, color: 'white', pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: 'pill' %}
+                </div>
+                                    
+              
+                            </div>
+            {% endif %}
+{% endfor %}
+              
+              
+              
+            </div>
+          </div>
+          
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Hero Links",
+    "class": "hero_links_wrap u-section",
+    "blocks": [
+        {
+            "name": "Button",
+            "type": "button",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Button"
+                },
+                {
+                    "type": "text",
+                    "id": "button_label",
+                    "label": "Text",
+                    "default": "Text"
+                },
+                {
+                    "type": "select",
+                    "id": "button_mode",
+                    "label": "Funktion",
+                    "options": [
+                        {
+                            "value": "link",
+                            "label": "Link \u00f6ffnen"
+                        },
+                        {
+                            "value": "action",
+                            "label": "Aktion ausf\u00fchren"
+                        }
+                    ],
+                    "default": "link"
+                },
+                {
+                    "type": "url",
+                    "id": "button_url",
+                    "label": "Link",
+                    "visible_if": "{{ section.settings.button_mode == 'link' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_action",
+                    "label": "Aktion",
+                    "options": [
+                        {
+                            "value": "newsletter_modal",
+                            "label": "Newsletter-Modal \u00f6ffnen"
+                        },
+                        {
+                            "value": "contact_modal",
+                            "label": "Kontaktformular-Modal \u00f6ffnen"
+                        }
+                    ],
+                    "default": "newsletter_modal",
+                    "visible_if": "{{ section.settings.button_mode == 'action' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_variant",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "solid",
+                            "label": "Fl\u00e4che"
+                        },
+                        {
+                            "value": "transparent",
+                            "label": "Transparent"
+                        },
+                        {
+                            "value": "text",
+                            "label": "Textlink"
+                        },
+                        {
+                            "value": "pill",
+                            "label": "Kapsel"
+                        }
+                    ],
+                    "default": "solid"
+                },
+                {
+                    "type": "select",
+                    "id": "button_solid_color",
+                    "label": "Farbe",
+                    "options": [
+                        {
+                            "value": "red",
+                            "label": "Rot"
+                        },
+                        {
+                            "value": "white",
+                            "label": "Wei\u00df"
+                        }
+                    ],
+                    "default": "red",
+                    "visible_if": "{{ section.settings.button_variant == 'solid' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_solid_text_size",
+                    "label": "Textgr\u00f6\u00dfe",
+                    "options": [
+                        {
+                            "value": "u-text-link-large",
+                            "label": "Link gro\u00df"
+                        },
+                        {
+                            "value": "u-text-link-base",
+                            "label": "Link Standard"
+                        }
+                    ],
+                    "default": "u-text-link-large",
+                    "visible_if": "{{ section.settings.button_variant == 'solid' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_solid_padding",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "base",
+                            "label": "Standard"
+                        },
+                        {
+                            "value": "small",
+                            "label": "Klein"
+                        }
+                    ],
+                    "default": "base",
+                    "visible_if": "{{ section.settings.button_variant == 'solid' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_text_text_size",
+                    "label": "Textgr\u00f6\u00dfe",
+                    "options": [
+                        {
+                            "value": "u-text-link-large",
+                            "label": "Link gro\u00df"
+                        },
+                        {
+                            "value": "u-text-link-base",
+                            "label": "Link Standard"
+                        }
+                    ],
+                    "default": "u-text-link-large",
+                    "visible_if": "{{ section.settings.button_variant == 'text' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_text_color",
+                    "label": "Farbe",
+                    "options": [
+                        {
+                            "value": "green",
+                            "label": "Gr\u00fcn"
+                        },
+                        {
+                            "value": "red",
+                            "label": "Rot"
+                        }
+                    ],
+                    "default": "green",
+                    "visible_if": "{{ section.settings.button_variant == 'text' }}"
+                },
+                {
+                    "type": "text",
+                    "id": "button_pill_tag_inner",
+                    "label": "Innerer Tag",
+                    "visible_if": "{{ section.settings.button_variant == 'pill' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_icon",
+                    "label": "Icon",
+                    "options": [
+                        {
+                            "value": "none",
+                            "label": "Kein Icon"
+                        },
+                        {
+                            "value": "arrow_left",
+                            "label": "Pfeil links"
+                        },
+                        {
+                            "value": "arrow_right",
+                            "label": "Pfeil rechts"
+                        },
+                        {
+                            "value": "arrow_up_right",
+                            "label": "Pfeil hoch rechts"
+                        },
+                        {
+                            "value": "chevron_left",
+                            "label": "Chevron links"
+                        },
+                        {
+                            "value": "chevron_right",
+                            "label": "Chevron rechts"
+                        },
+                        {
+                            "value": "download",
+                            "label": "Herunterladen"
+                        },
+                        {
+                            "value": "copy",
+                            "label": "Kopieren"
+                        },
+                        {
+                            "value": "external",
+                            "label": "Externe Seite"
+                        }
+                    ],
+                    "default": "none"
+                },
+                {
+                    "type": "select",
+                    "id": "button_icon_position",
+                    "label": "Icon-Position",
+                    "options": [
+                        {
+                            "value": "before",
+                            "label": "Vor dem Text"
+                        },
+                        {
+                            "value": "after",
+                            "label": "Nach dem Text"
+                        }
+                    ],
+                    "default": "after",
+                    "visible_if": "{{ section.settings.button_icon != 'none' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_icon_animation",
+                    "label": "Icon-Animation",
+                    "options": [
+                        {
+                            "value": "none",
+                            "label": "Keine Animation"
+                        },
+                        {
+                            "value": "move_left",
+                            "label": "Nach links bewegen"
+                        },
+                        {
+                            "value": "move_right",
+                            "label": "Nach rechts bewegen"
+                        },
+                        {
+                            "value": "move_up_right",
+                            "label": "Nach oben rechts bewegen"
+                        }
+                    ],
+                    "default": "none",
+                    "visible_if": "{{ section.settings.button_icon != 'none' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_icon_color",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "inherit",
+                            "label": "Wie Text"
+                        },
+                        {
+                            "value": "red",
+                            "label": "Rot"
+                        }
+                    ],
+                    "default": "inherit",
+                    "visible_if": "{{ section.settings.button_icon != 'none' }}"
+                }
+            ]
+        }
+    ],
+    "settings": [
+        {
+            "type": "header",
+            "content": "Sektion"
+        },
+        {
+            "type": "text",
+            "id": "section_id",
+            "label": "ID"
+        },
+        {
+            "type": "header",
+            "content": "Abst\u00e4nde"
+        },
+        {
+            "type": "select",
+            "id": "spacing_top",
+            "label": "Oben",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "large_medium_off",
+                    "label": "Gro\u00df | Medium kein Abstand"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "large"
+        },
+        {
+            "type": "select",
+            "id": "spacing_bottom",
+            "label": "Unten",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                }
+            ],
+            "default": "small"
+        },
+        {
+            "type": "header",
+            "content": "\u00dcbertitel"
+        },
+        {
+            "type": "text",
+            "id": "eyebrow",
+            "label": "Text",
+            "default": "\u00dcbertitel Text"
+        },
+        {
+            "type": "select",
+            "id": "eyebrow_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "p"
+        },
+        {
+            "type": "header",
+            "content": "\u00dcberschrift"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "heading",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+            "type": "select",
+            "id": "heading_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "number",
+            "id": "heading_max_width",
+            "label": "Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 20
+        },
+        {
+            "type": "checkbox",
+            "id": "heading_tidy_text",
+            "label": "Ausgewogener Zeilenumbruch",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Textfarbe"
+        },
+        {
+            "type": "select",
+            "id": "text_color",
+            "label": "Stil",
+            "options": [
+                {
+                    "value": "u-color-2",
+                    "label": "Wei\u00df"
+                },
+                {
+                    "value": "u-color-1",
+                    "label": "Dunkelgr\u00fcn"
+                }
+            ],
+            "default": "u-color-2"
+        },
+        {
+            "type": "header",
+            "content": "Medien"
+        },
+        {
+            "type": "select",
+            "id": "media_type",
+            "label": "Medientyp",
+            "options": [
+                {
+                    "value": "image",
+                    "label": "Bild"
+                },
+                {
+                    "value": "video",
+                    "label": "Video"
+                }
+            ],
+            "default": "image"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Bild",
+            "visible_if": "{{ section.settings.media_type == 'image' }}"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "Bild mobil",
+            "visible_if": "{{ section.settings.media_type == 'image' }}"
+        },
+        {
+            "type": "number",
+            "id": "image_width",
+            "label": "Bildbreite",
+            "default": 2000,
+            "visible_if": "{{ section.settings.media_type == 'image' }}"
+        },
+        {
+            "type": "number",
+            "id": "image_width_mobile",
+            "label": "Bildbreite Mobil",
+            "default": 900,
+            "visible_if": "{{ section.settings.media_type == 'image' }}"
+        },
+        {
+            "type": "select",
+            "id": "image_loading",
+            "label": "Ladeverhalten",
+            "options": [
+                {
+                    "value": "lazy",
+                    "label": "Lazy"
+                },
+                {
+                    "value": "eager",
+                    "label": "Eager"
+                }
+            ],
+            "default": "lazy",
+            "visible_if": "{{ section.settings.media_type == 'image' }}"
+        },
+        {
+            "type": "select",
+            "id": "image_fetchpriority",
+            "label": "Fetch Priority",
+            "options": [
+                {
+                    "value": "auto",
+                    "label": "Automatisch"
+                },
+                {
+                    "value": "high",
+                    "label": "Hoch"
+                },
+                {
+                    "value": "low",
+                    "label": "Niedrig"
+                }
+            ],
+            "default": "auto",
+            "visible_if": "{{ section.settings.media_type == 'image' }}"
+        },
+        {
+            "type": "select",
+            "id": "image_object_fit",
+            "label": "Bild-Anpassung",
+            "options": [
+                {
+                    "value": "cover",
+                    "label": "Cover"
+                },
+                {
+                    "value": "contain",
+                    "label": "Contain"
+                }
+            ],
+            "default": "cover",
+            "visible_if": "{{ section.settings.media_type == 'image' }}"
+        },
+        {
+            "type": "video",
+            "id": "video",
+            "label": "Video",
+            "visible_if": "{{ section.settings.media_type == 'video' }}"
+        },
+        {
+            "type": "checkbox",
+            "id": "video_autoplay",
+            "label": "Automatisch abspielen",
+            "default": false,
+            "visible_if": "{{ section.settings.media_type == 'video' }}"
+        },
+        {
+            "type": "checkbox",
+            "id": "video_loop",
+            "label": "Wiederholen",
+            "default": true,
+            "visible_if": "{{ section.settings.media_type == 'video' }}"
+        },
+        {
+            "type": "checkbox",
+            "id": "video_muted",
+            "label": "Stumm",
+            "default": true,
+            "visible_if": "{{ section.settings.media_type == 'video' }}"
+        },
+        {
+            "type": "checkbox",
+            "id": "video_controls",
+            "label": "Steuerung anzeigen",
+            "default": false,
+            "visible_if": "{{ section.settings.media_type == 'video' }}"
+        },
+        {
+            "type": "select",
+            "id": "video_play_behavior",
+            "label": "Abspielverhalten",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Keine Automatik"
+                },
+                {
+                    "value": "in_view",
+                    "label": "Wenn sichtbar"
+                },
+                {
+                    "value": "active_slide",
+                    "label": "Wenn aktiver Slide"
+                },
+                {
+                    "value": "manual",
+                    "label": "Manuell"
+                }
+            ],
+            "default": "none",
+            "visible_if": "{{ section.settings.media_type == 'video' }}"
+        },
+        {
+            "type": "color",
+            "id": "gradient_color_top",
+            "label": "Verlauf-Farbe oben",
+            "info": "Desktop und Mobil",
+            "default": "#182804"
+        },
+        {
+            "type": "range",
+            "id": "gradient_opacity_top",
+            "label": "Verlauf-Deckkraft oben",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "unit": "%",
+            "info": "Desktop und Mobil",
+            "default": 80
+        },
+        {
+            "type": "color",
+            "id": "gradient_color_bottom",
+            "label": "Verlauf-Farbe unten",
+            "info": "Mobil",
+            "default": "#182804"
+        },
+        {
+            "type": "range",
+            "id": "gradient_opacity_bottom",
+            "label": "Verlauf-Deckkraft unten",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "unit": "%",
+            "info": "Mobil",
+            "default": 80
+        },
+        {
+            "type": "header",
+            "content": "Button"
+        },
+        {
+            "type": "text",
+            "id": "button_label",
+            "label": "Text",
+            "default": "Text"
+        },
+        {
+            "type": "select",
+            "id": "button_mode",
+            "label": "Funktion",
+            "options": [
+                {
+                    "value": "link",
+                    "label": "Link \u00f6ffnen"
+                },
+                {
+                    "value": "action",
+                    "label": "Aktion ausf\u00fchren"
+                }
+            ],
+            "default": "link"
+        },
+        {
+            "type": "url",
+            "id": "button_url",
+            "label": "Link",
+            "visible_if": "{{ section.settings.button_mode == 'link' }}"
+        },
+        {
+            "type": "select",
+            "id": "button_action",
+            "label": "Aktion",
+            "options": [
+                {
+                    "value": "newsletter_modal",
+                    "label": "Newsletter-Modal \u00f6ffnen"
+                },
+                {
+                    "value": "contact_modal",
+                    "label": "Kontaktformular-Modal \u00f6ffnen"
+                }
+            ],
+            "default": "newsletter_modal",
+            "visible_if": "{{ section.settings.button_mode == 'action' }}"
+        },
+        {
+            "type": "select",
+            "id": "button_variant",
+            "label": "Stil",
+            "options": [
+                {
+                    "value": "solid",
+                    "label": "Fl\u00e4che"
+                },
+                {
+                    "value": "transparent",
+                    "label": "Transparent"
+                },
+                {
+                    "value": "text",
+                    "label": "Textlink"
+                },
+                {
+                    "value": "pill",
+                    "label": "Kapsel"
+                }
+            ],
+            "default": "solid"
+        },
+        {
+            "type": "select",
+            "id": "button_solid_color",
+            "label": "Farbe",
+            "options": [
+                {
+                    "value": "red",
+                    "label": "Rot"
+                },
+                {
+                    "value": "white",
+                    "label": "Wei\u00df"
+                }
+            ],
+            "default": "red",
+            "visible_if": "{{ section.settings.button_variant == 'solid' }}"
+        },
+        {
+            "type": "select",
+            "id": "button_solid_text_size",
+            "label": "Textgr\u00f6\u00dfe",
+            "options": [
+                {
+                    "value": "u-text-link-large",
+                    "label": "Link gro\u00df"
+                },
+                {
+                    "value": "u-text-link-base",
+                    "label": "Link Standard"
+                }
+            ],
+            "default": "u-text-link-large",
+            "visible_if": "{{ section.settings.button_variant == 'solid' }}"
+        },
+        {
+            "type": "select",
+            "id": "button_solid_padding",
+            "label": "Stil",
+            "options": [
+                {
+                    "value": "base",
+                    "label": "Standard"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                }
+            ],
+            "default": "base",
+            "visible_if": "{{ section.settings.button_variant == 'solid' }}"
+        },
+        {
+            "type": "select",
+            "id": "button_text_text_size",
+            "label": "Textgr\u00f6\u00dfe",
+            "options": [
+                {
+                    "value": "u-text-link-large",
+                    "label": "Link gro\u00df"
+                },
+                {
+                    "value": "u-text-link-base",
+                    "label": "Link Standard"
+                }
+            ],
+            "default": "u-text-link-large",
+            "visible_if": "{{ section.settings.button_variant == 'text' }}"
+        },
+        {
+            "type": "select",
+            "id": "button_text_color",
+            "label": "Farbe",
+            "options": [
+                {
+                    "value": "green",
+                    "label": "Gr\u00fcn"
+                },
+                {
+                    "value": "red",
+                    "label": "Rot"
+                }
+            ],
+            "default": "green",
+            "visible_if": "{{ section.settings.button_variant == 'text' }}"
+        },
+        {
+            "type": "text",
+            "id": "button_pill_tag_inner",
+            "label": "Innerer Tag",
+            "visible_if": "{{ section.settings.button_variant == 'pill' }}"
+        },
+        {
+            "type": "select",
+            "id": "button_icon",
+            "label": "Icon",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Icon"
+                },
+                {
+                    "value": "arrow_left",
+                    "label": "Pfeil links"
+                },
+                {
+                    "value": "arrow_right",
+                    "label": "Pfeil rechts"
+                },
+                {
+                    "value": "arrow_up_right",
+                    "label": "Pfeil hoch rechts"
+                },
+                {
+                    "value": "chevron_left",
+                    "label": "Chevron links"
+                },
+                {
+                    "value": "chevron_right",
+                    "label": "Chevron rechts"
+                },
+                {
+                    "value": "download",
+                    "label": "Herunterladen"
+                },
+                {
+                    "value": "copy",
+                    "label": "Kopieren"
+                },
+                {
+                    "value": "external",
+                    "label": "Externe Seite"
+                }
+            ],
+            "default": "none"
+        },
+        {
+            "type": "select",
+            "id": "button_icon_position",
+            "label": "Icon-Position",
+            "options": [
+                {
+                    "value": "before",
+                    "label": "Vor dem Text"
+                },
+                {
+                    "value": "after",
+                    "label": "Nach dem Text"
+                }
+            ],
+            "default": "after",
+            "visible_if": "{{ section.settings.button_icon != 'none' }}"
+        },
+        {
+            "type": "select",
+            "id": "button_icon_animation",
+            "label": "Icon-Animation",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Keine Animation"
+                },
+                {
+                    "value": "move_left",
+                    "label": "Nach links bewegen"
+                },
+                {
+                    "value": "move_right",
+                    "label": "Nach rechts bewegen"
+                },
+                {
+                    "value": "move_up_right",
+                    "label": "Nach oben rechts bewegen"
+                }
+            ],
+            "default": "none",
+            "visible_if": "{{ section.settings.button_icon != 'none' }}"
+        },
+        {
+            "type": "select",
+            "id": "button_icon_color",
+            "label": "Stil",
+            "options": [
+                {
+                    "value": "inherit",
+                    "label": "Wie Text"
+                },
+                {
+                    "value": "red",
+                    "label": "Rot"
+                }
+            ],
+            "default": "inherit",
+            "visible_if": "{{ section.settings.button_icon != 'none' }}"
+        },
+        {
+            "type": "header",
+            "content": "Button"
+        },
+        {
+            "type": "header",
+            "content": "Button"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Hero Links",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "button"
+                }
+            ]
+        }
+    ]
+} {% endschema %}
