@@ -1,4 +1,11 @@
-<div class="u-display-none">
+<div class="u-embed-css w-embed">
+          <style>
+  .recipe_slider_slider_wrap {
+    --_gap---size: 1rem;
+  }
+</style>
+        </div>
+        <div class="u-display-none">
           
           
         </div>
@@ -25,16 +32,110 @@
           
           
         </div>
-        <div class="newsletter_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
+        <div class="u-display-none">
           
-          <div class="section_layout u-grid-autofit">
-            {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant, custom_class: , wrapper_class: %}
+          
+          
+        </div>
+        <div class="testimonial_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
+          
+          <div class="section_layout">
+            <div class="testimonial_slider_top">
+              <div class="testimonial_slider_top_left u-margin-trim">
+                {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-base', custom_class: 'u-color-3', wrapper_class: is-eyebrow-bass %}
+                {% render 'heading', custom_class: , heading: section.settings.heading, tag: section.settings.heading_tag, variant: 'u-text-h2-primary', max_width: section.settings.heading_max_width, tidy_text: section.settings.heading_tidy_text %}
+              </div>
+              <div class="testimonial_slider_top_right">
+                <div class="testimonial_slider_top_link">
+                  <div class="testimonial_slider_link">
+                    {% render 'typography', custom_attribute_value: 'true', text: section.settings.button_1_label, tag: 'span', variant: 'u-text-link-base', custom_class: 'u-margin-bottom-0 u-min-width-auto', custom_attribute_name: 'aria-hidden' %}
+                    {% render 'clickable', url: section.settings.button_1_url, label: section.settings.button_1_label, mode: 'link' %}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial_slider_bot">
+              <div class="testimonial_slider_slider_wrap slider_wrap">
+                <div style="--lg: 1.1; --md: 1.05; --sm: 1.05; --xs: 1.05;" class="testimonial_slider_slider_offset slider_offset">
+                  <div class="testimonial_slider_slider_element swiper">
+                    <div class="testimonial_slider_slider_list swiper-wrapper">
+                      <div class="testimonial_slider_slider_slide swiper-slide">
+                        <div class="testimonial_slider_card_wrap">
+                          <div class="testimonial_slider_card_element">
+                            <div class="testimonial_slider_card_left">
+                              {% render 'video', controls: section.settings.video_controls, playsinline: section.settings.video_playsinline, video: section.settings.video, autoplay: section.settings.video_autoplay, play_behavior: section.settings.video_play_behavior, loop: section.settings.video_loop, custom_class: , preload: section.settings.video_preload, muted: section.settings.video_muted %}
+                            </div>
+                            <div class="testimonial_slider_card_right">
+                              <div class="testimonial_slider_card_tag">
+                                {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', text: testimonial.overline.value, tag: 'span', variant: 'u-text-h3-secondary', max_width: section.settings.text_max_width %}
+                              </div>
+                              <div class="testimonial_slider_card_rating">
+                                <div class="testimonial_slider_card_stars">
+                                  <div class="testimonial_slider_card_star">
+                                    {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
+                                  </div>
+                                  <div class="testimonial_slider_card_star">
+                                    {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
+                                  </div>
+                                  <div class="testimonial_slider_card_star">
+                                    {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
+                                  </div>
+                                  <div class="testimonial_slider_card_star">
+                                    {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
+                                  </div>
+                                </div>
+                                {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: testimonial.rating_text.value, tag: 'span', variant: 'u-text-body-base' %}
+                              </div>
+                              {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: testimonial.title.value, custom_class: 'u-margin-bottom-0', variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+                              {% render 'paragraph', tidy_text: section.settings.paragraph_tidy_text, custom_class: 'u-margin-bottom-0', paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant, max_width: section.settings.paragraph_max_width %}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="slider_controls">
+                  <div class="slider_bullet_list">
+                    <div class="slider_bullet_item is-active"></div>
+                    <div class="slider_bullet_item"></div>
+                  </div>
+                  <div class="slider_button_layout"><button data-trigger="hover focus" class="slider_button_wrap is-prev">
+                      <div class="slider_button_element">
+                        <div class="slider_button_icon">
+                          {% render 'icon', aria-hidden: true, icon: 'arrow_left' %}
+                        </div>
+                      </div>
+                    </button><button data-trigger="hover focus" class="slider_button_wrap is-next">
+                      <div class="slider_button_element">
+                        <div class="slider_button_icon">
+                          {% render 'icon', aria-hidden: true, icon: 'arrow_right' %}
+                        </div>
+                      </div>
+                    </button></div>
+                </div>
+              </div>
+            </div>
           </div>
           
+        </div>
+        <div class="u-embed-js w-embed w-script">
+          <script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".your-element").forEach((component) => {
+    if (component.dataset.scriptInitialized) return;
+    component.dataset.scriptInitialized = "true";
+    // run script here
+  });
+});
+</script>
         </div> {% schema %} {
     "tag": "section",
     "name": "Testimonial Slider",
-    "class": "section_wrap u-section",
+    "class": "testimonial_slider_wrap u-section",
     "settings": [
         {
             "type": "header",
@@ -229,6 +330,21 @@
             "id": "heading_visually_hidden",
             "label": "Nur f\u00fcr Screenreader anzeigen",
             "default": false
+        },
+        {
+            "type": "header",
+            "content": "Button"
+        },
+        {
+            "type": "text",
+            "id": "button_1_label",
+            "label": "Text",
+            "default": "Button 1 Text"
+        },
+        {
+            "type": "url",
+            "id": "button_1_url",
+            "label": "Link"
         }
     ],
     "presets": [
