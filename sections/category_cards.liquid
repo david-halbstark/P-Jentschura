@@ -1,393 +1,359 @@
 <div class="u-embed-css w-embed">
-  <style>
-                            @container (width < 73em) {
-                              .category_cards_layout {
-                                --_column-count---value: 2;
-                              }
-                            }
-                            @container (width < 42em) {
-                              .category_cards_layout {
-                                --_column-count---value: 1;
-                              }
-                              .category_cards_card_element {
-                                flex-flow: row wrap;
-                              }
-                              .category_card_bot {
-                                flex: 1 1 12rem;
-                                align-items: flex-start;
-                                text-align: start;
-                              }
-                            }
-                            .category_cards_card_element:before {
-                              content: '';
-                              width: 100%;
-                              height: 100%;
-                              position: absolute;
-                              inset: 0;
-                              background-image: linear-gradient(#f2f1f1 0%, #ededed 100%);
-                              opacity: calc(100% * var(--_trigger---off));
-                              transition: opacity 0.2s ease;
-                            }
-
-
-       .category_card_bot_text:has(> :nth-child(2) span) > :first-child > span::after {
-      content: "\00a0\2022";
-      display: inline;
-      color: var(--_theme---text-4);
+          <style>
+  @container (width < 73em) {
+    .category_cards_layout {
+      --_column-count---value: 2;
     }
-
-    .category_card_bot_text:not(:has(> :nth-child(2) span)) > :first-child > span::after {
-      content: none !important;
+  }
+  @container (width < 42em) {
+    .category_cards_layout {
+      --_column-count---value: 1;
     }
-
-    .category_card_bot_text > :nth-child(2) > span::after {
-      content: none !important;
+    .category_cards_card_element {
+      flex-flow: row wrap;
     }
-
-    .category_card_bot_text span.u-text {
-      display: inline;
+    .category_card_bot {
+      flex: 1 1 12rem;
+      align-items: flex-start;
+      text-align: start;
     }
-
-    .category_card_bot_text .u-text::before {
-      content: none !important;
-    }
-
-    .category_card_bot_text .u-text::after {
-      display: inline;
-    }
-    .category_card_bot_text {
-      display: flow-root;
-    }
-
-    .category_card_bot_text::before {
-      content: "";
-      display: table;
-      margin-bottom: calc(-0.5lh + var(--_text-style-1---trim-top));
-    }
-
-    .category_card_bot_text::after {
-      content: "";
-      display: table;
-      margin-bottom: calc(-0.5lh + var(--_text-style-1---trim-bottom));
-    }
-  </style>
-</div>
-
-<div class="u-display-none"></div>
-<div class="u-display-none">
-  {% case section.settings.spacing_top -%}
-    {%- when 'xxsmall' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--xxsmall)' -%}
-    {%- when 'xsmall' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--xsmall)' -%}
-    {%- when 'small' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--small)' -%}
-    {%- when 'medium' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--medium)' -%}
-    {%- when 'large' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--large)' -%}
-    {%- when 'large_medium_off' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' -%}
-    {%- when 'page_top' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--page-top)' -%}
-    {%- else -%}
-      {%- assign spacing_top = '0' -%}
-  {%- endcase -%}
-  {%- case section.settings.spacing_bottom -%}
-    {%- when 'xxsmall' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' -%}
-    {%- when 'xsmall' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' -%}
-    {%- when 'small' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--small)' -%}
-    {%- when 'medium' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--medium)' -%}
-    {%- when 'large' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--large)' -%}
-    {%- when 'page_top' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--page-top)' -%}
-    {%- else -%}
-      {%- assign spacing_bottom = '0' -%}
-  {%- endcase %}
-  <div class="u-embed-css w-embed">
-    <style>
-      #shopify-section-{{ section.id }} [data-section-spacing] {
-        --section-spacing-top: {{ spacing_top }};
-        --section-spacing-bottom: {{ spacing_bottom }};
-      }
-    </style>
-  </div>
-</div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div
-  class="category_cards_contain u-container"
-  {% if section.settings.section_id != blank %}
-    id="{{ section.settings.section_id | handleize }}"
-  {% endif %}
->
-  <div data-section-spacing="" class="category_cards_layout u-grid-custom">
-    {% render 'heading', custom_class: , heading: section.settings.heading, tag: h2, visually_hidden: true %}
-    {% for block in section.blocks %}
-      {% if block.type == 'card' %}
-        <div li-block="Card" class="category_cards_card_wrap">
-          <div class="u-display-none"></div>
-
-          <div class="u-display-none"></div>
-
-          <div class="u-display-none"></div>
-
-          <div class="u-display-none"></div>
-
-          <div data-trigger="hover focus" class="category_cards_card_component">
-            <div class="category_cards_card_element">
-              <div class="category_card_top">
-                <div class="category_card_icon">
-                  {% render 'image', width: 132, image: section.settings.image, object_fit: 'contain' %}
-                </div>
-              </div>
-              <div class="category_card_bot">
-                {% render 'heading',
-                  custom_class: 'u-margin-bottom-0',
-                  heading: block.settings.heading,
-                  tag: 'h3',
-                  variant: 'u-text-h3-secondary'
-                %}
-                <div class="category_card_bot_text">
-                  <div class="u-display-contents">
-                    {% render 'typography',
-                      custom_class: 'u-margin-bottom-0 u-min-width-auto',
-                      text: block.settings.text_1,
-                      tag: 'span',
-                      variant: 'u-text-body-small'
-                    %}
-                  </div>
-                  <div class="u-display-contents">
-                    {% render 'typography',
-                      custom_class: 'u-margin-bottom-0 u-min-width-auto',
-                      text: block.settings.text_2,
-                      tag: 'span',
-                      variant: 'u-text-body-small'
-                    %}
-                  </div>
-                </div>
-              </div>
-            </div>
-            {% render 'clickable', url: block.settings.clickable_url, label: section.settings.heading, mode: 'link' %}
+  }
+  .category_cards_card_element:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(#f2f1f1 0%, #ededed 100%);
+    opacity: calc(100% * var(--_trigger---off));
+    transition: opacity 0.2s ease;
+  }
+  .category_card_bot_text:has(> :nth-child(2) span) > :first-child > span::after {
+    content: '\00a0\2022';
+    display: inline;
+    color: var(--_theme---text-4);
+  }
+  .category_card_bot_text:not(:has(> :nth-child(2) span)) > :first-child > span::after {
+    content: none !important;
+  }
+  .category_card_bot_text > :nth-child(2) > span::after {
+    content: none !important;
+  }
+  .category_card_bot_text span.u-text {
+    display: inline;
+  }
+  .category_card_bot_text .u-text::before {
+    content: none !important;
+  }
+  .category_card_bot_text .u-text::after {
+    display: inline;
+  }
+  .category_card_bot_text::before {
+    content: '';
+    display: table;
+    margin-bottom: calc(-0.5lh + var(--_text-style-1---trim-top));
+  }
+  .category_card_bot_text::after {
+    content: '';
+    display: table;
+    margin-bottom: calc(-0.5lh + var(--_text-style-1---trim-bottom));
+  }
+</style>
+        </div>
+        
+        <div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          {% case section.settings.spacing_top %}{% when 'xxsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_top = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_top = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_top = 'var(--_spacing---section-space--large)' %}{% when 'large_medium_off' %}{% assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' %}{% when 'page_top' %}{% assign spacing_top = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_top = '0' %}{% endcase %}{% case section.settings.spacing_bottom %}{% when 'xxsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_bottom = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_bottom = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_bottom = 'var(--_spacing---section-space--large)' %}{% when 'page_top' %}{% assign spacing_bottom = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_bottom = '0' %}{% endcase %}
+          <div class="u-embed-css w-embed">
+            <style>
+  #shopify-section-{{ section.id }} [data-section-spacing] {
+    --section-spacing-top: {{ spacing_top }};
+    --section-spacing-bottom: {{ spacing_bottom }};
+  }
+</style>
           </div>
         </div>
-      {% endif %}
-    {% endfor %}
-  </div>
-</div>
-{% schema %}
-{
-  "tag": "section",
-  "name": "Category Cards",
-  "class": "category_cards_wrap u-section",
-  "blocks": [
-    {
-      "name": "Card",
-      "type": "card",
-      "settings": [
+        <div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+        </div>
+        <div class="category_cards_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
+          
+          <div data-section-spacing="" class="category_cards_layout u-grid-custom">
+            {% render 'heading', custom_class: , heading: section.settings.heading, tag: h2, visually_hidden: true %}
+            {% for block in section.blocks %}
+    {% if block.type == "card" %}
+                    <div li-block="Card" class="category_cards_card_wrap">
+                                    
+              
+                                    <div class="u-display-none">
+                
+                
+                
+              </div>
+                                    
+              
+                                    <div class="u-display-none">
+                
+                
+              </div>
+                                    
+              
+                                    <div class="u-display-none">
+                
+              </div>
+                                    
+              
+                                    <div class="u-display-none">
+                
+                
+              </div>
+                                    
+              
+                                    <div data-trigger="hover focus" class="category_cards_card_component">
+                <div class="category_cards_card_element">
+                  <div class="category_card_top">
+                    <div class="category_card_icon">
+                      {% render 'image', width: 132, image: section.settings.image, object_fit: 'contain' %}
+                    </div>
+                  </div>
+                  <div class="category_card_bot">
+                    {% render 'heading', custom_class: 'u-margin-bottom-0', heading: block.settings.heading, tag: 'h3', variant: 'u-text-h3-secondary' %}
+                    <div class="category_card_bot_text">
+                      <div class="u-display-contents">
+                        {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: block.settings.text_1, tag: 'span', variant: 'u-text-body-small' %}
+                      </div>
+                      <div class="u-display-contents">
+                        {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: block.settings.text_2, tag: 'span', variant: 'u-text-body-small' %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% render 'clickable', url: block.settings.clickable_url, label: section.settings.heading, mode: 'link' %}
+              </div>
+                                    
+            
+                            </div>
+            {% endif %}
+{% endfor %}
+          </div>
+          
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Category Cards",
+    "class": "category_cards_wrap u-section",
+    "blocks": [
         {
-          "type": "header",
-          "content": "\u00dcberschrift"
-        },
-        {
-          "type": "inline_richtext",
-          "id": "heading",
-          "label": "Text",
-          "default": "Lorem ipsum dolor sit amet elit"
-        },
-        {
-          "type": "select",
-          "id": "heading_variant",
-          "label": "Stil",
-          "options": [
-            {
-              "value": "u-text-h1-primary",
-              "label": "H1 Prim\u00e4r"
-            },
-            {
-              "value": "u-text-h1-secondary",
-              "label": "H1 Sekund\u00e4r"
-            },
-            {
-              "value": "u-text-h2-primary",
-              "label": "H2 Prim\u00e4r"
-            },
-            {
-              "value": "u-text-h2-secondary",
-              "label": "H2 Sekund\u00e4r"
-            },
-            {
-              "value": "u-text-h3-primary",
-              "label": "H3 Prim\u00e4r"
-            },
-            {
-              "value": "u-text-h3-secondary",
-              "label": "H3 Sekund\u00e4r"
-            },
-            {
-              "value": "u-text-h4-primary",
-              "label": "H4 Prim\u00e4r"
-            },
-            {
-              "value": "u-text-h5-primary",
-              "label": "H5 Prim\u00e4r"
-            },
-            {
-              "value": "u-text-h6-primary",
-              "label": "H6 Prim\u00e4r"
-            }
-          ],
-          "default": "u-text-h2-primary"
-        },
-        {
-          "type": "header",
-          "content": "Text"
-        },
-        {
-          "type": "text",
-          "id": "text_1",
-          "label": "Text 1",
-          "default": "Lorem ipsum dolor sit amet"
-        },
-        {
-          "type": "text",
-          "id": "text_2",
-          "label": "Text 2",
-          "default": "Lorem ipsum dolor sit amet"
-        },
-        {
-          "type": "header",
-          "content": "Link"
-        },
-        {
-          "type": "url",
-          "id": "clickable_url",
-          "label": "Link"
+            "name": "Card",
+            "type": "card",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "\u00dcberschrift"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "heading",
+                    "label": "Text",
+                    "default": "Lorem ipsum dolor sit amet elit"
+                },
+                {
+                    "type": "select",
+                    "id": "heading_variant",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "u-text-h1-primary",
+                            "label": "H1 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h1-secondary",
+                            "label": "H1 Sekund\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h2-primary",
+                            "label": "H2 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h2-secondary",
+                            "label": "H2 Sekund\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h3-primary",
+                            "label": "H3 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h3-secondary",
+                            "label": "H3 Sekund\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h4-primary",
+                            "label": "H4 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h5-primary",
+                            "label": "H5 Prim\u00e4r"
+                        },
+                        {
+                            "value": "u-text-h6-primary",
+                            "label": "H6 Prim\u00e4r"
+                        }
+                    ],
+                    "default": "u-text-h2-primary"
+                },
+                {
+                    "type": "header",
+                    "content": "Text"
+                },
+                {
+                    "type": "text",
+                    "id": "text_1",
+                    "label": "Text 1",
+                    "default": "Lorem ipsum dolor sit amet"
+                },
+                {
+                    "type": "text",
+                    "id": "text_2",
+                    "label": "Text 2",
+                    "default": "Lorem ipsum dolor sit amet"
+                },
+                {
+                    "type": "header",
+                    "content": "Link"
+                },
+                {
+                    "type": "url",
+                    "id": "clickable_url",
+                    "label": "Link"
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "settings": [
-    {
-      "type": "header",
-      "content": "Sektion"
-    },
-    {
-      "type": "text",
-      "id": "section_id",
-      "label": "ID"
-    },
-    {
-      "type": "header",
-      "content": "Abst\u00e4nde"
-    },
-    {
-      "type": "select",
-      "id": "spacing_top",
-      "label": "Oben",
-      "options": [
+    ],
+    "settings": [
         {
-          "value": "none",
-          "label": "Kein Abstand"
+            "type": "header",
+            "content": "Sektion"
         },
         {
-          "value": "xxsmall",
-          "label": "Extra extra klein"
+            "type": "text",
+            "id": "section_id",
+            "label": "ID"
         },
         {
-          "value": "xsmall",
-          "label": "Extra klein"
+            "type": "header",
+            "content": "Abst\u00e4nde"
         },
         {
-          "value": "small",
-          "label": "Klein"
+            "type": "select",
+            "id": "spacing_top",
+            "label": "Oben",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "large_medium_off",
+                    "label": "Gro\u00df | Medium kein Abstand"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "large"
         },
         {
-          "value": "medium",
-          "label": "Mittel"
+            "type": "select",
+            "id": "spacing_bottom",
+            "label": "Unten",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                }
+            ],
+            "default": "large"
         },
         {
-          "value": "large",
-          "label": "Gro\u00df"
+            "type": "header",
+            "content": "\u00dcberschrift"
         },
         {
-          "value": "large_medium_off",
-          "label": "Gro\u00df | Medium kein Abstand"
+            "type": "inline_richtext",
+            "id": "heading",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet elit"
         },
         {
-          "value": "page_top",
-          "label": "Seitenanfang"
+            "type": "header",
+            "content": "Bild"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Bild"
         }
-      ],
-      "default": "large"
-    },
-    {
-      "type": "select",
-      "id": "spacing_bottom",
-      "label": "Unten",
-      "options": [
+    ],
+    "presets": [
         {
-          "value": "none",
-          "label": "Kein Abstand"
-        },
-        {
-          "value": "xxsmall",
-          "label": "Extra extra klein"
-        },
-        {
-          "value": "xsmall",
-          "label": "Extra klein"
-        },
-        {
-          "value": "small",
-          "label": "Klein"
-        },
-        {
-          "value": "medium",
-          "label": "Mittel"
-        },
-        {
-          "value": "large",
-          "label": "Gro\u00df"
+            "name": "Category Cards",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "card"
+                }
+            ]
         }
-      ],
-      "default": "large"
-    },
-    {
-      "type": "header",
-      "content": "\u00dcberschrift"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "heading",
-      "label": "Text",
-      "default": "Lorem ipsum dolor sit amet elit"
-    },
-    {
-      "type": "header",
-      "content": "Bild"
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Bild"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Category Cards",
-      "category": "Liquify",
-      "blocks": [
-        {
-          "type": "card"
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}
+    ]
+} {% endschema %}
