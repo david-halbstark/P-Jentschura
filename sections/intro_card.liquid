@@ -8,12 +8,25 @@
     display: inline;
     color: var(--_theme---text-4);
   }
+  .intro_card_items .intro_card_item_wrap:last-child .intro_card_item_element > ::after {
+    content: none !important;
+  }
   .intro_card_item_element span.u-text,
   .intro_card_item_element::after {
     display: inline;
   }
   .intro_card_item_element span::before {
     content: none !important;
+  }
+  .intro_card_items::before {
+    content: '';
+    display: table;
+    margin-bottom: calc(-0.5lh + var(--_text-style-1---trim-top));
+  }
+  .intro_card_items::after {
+    content: '';
+    display: table;
+    margin-bottom: calc(-0.5lh + var(--_text-style-1---trim-bottom));
   }
 </style>
         </div>
