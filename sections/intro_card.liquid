@@ -8,7 +8,7 @@
     display: inline;
     color: var(--_theme---text-4);
   }
-  .intro_card_item_element span,
+  .intro_card_item_element span.u-text, {
   .intro_card_item_element::after {
     display: inline;
   }
@@ -17,6 +17,7 @@
   }
 </style>
         </div>
+        
         <div class="u-display-none">
           
           
@@ -72,7 +73,6 @@
                             </div>
             {% endif %}
 {% endfor %}
-                  
                   
                 </div>
               </div>
@@ -272,20 +272,6 @@
             "id": "paragraph_tidy_text",
             "label": "Ausgewogener Zeilenumbruch",
             "default": true
-        },
-        {
-            "type": "header",
-            "content": "Text"
-        },
-        {
-            "type": "text",
-            "id": "text",
-            "label": "Text",
-            "default": "Lorem ipsum dolor sit amet"
-        },
-        {
-            "type": "header",
-            "content": "Text"
         }
     ],
     "presets": [
