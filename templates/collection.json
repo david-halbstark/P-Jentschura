@@ -148,12 +148,23 @@
         "collection_source": "automatic",
         "manual_collection": ""
       }
+    },
+    "trust_rating_GVFDb9": {
+      "type": "trust_rating",
+      "name": "Trust Rating",
+      "settings": {
+        "section_id": "",
+        "spacing_top": "large",
+        "spacing_bottom": "large",
+        "heading": "Lorem ipsum dolor sit amet elit"
+      }
     }
   },
   "layout": "theme",
   "wrapper": "main#main.page_main",
   "order": [
     "hero_links_8tENT6",
+    "trust_rating_GVFDb9",
     "intro_card_Gb3fRL",
     "dealer_cta_h8RhjP"
   ]
