@@ -29,6 +29,8 @@
             "button_2_url": "",
             "button_2_solid_color": "red",
             "media_type": "image",
+            "image": "shopify://shop_images/p-jentschura-home-hero-desktop.avif",
+            "image_mobile": "shopify://shop_images/p-jentschura-home-hero-mobile.avif",
             "image_width": 2000,
             "image_width_mobile": 900,
             "image_loading": "lazy",
