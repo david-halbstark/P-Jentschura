@@ -37,7 +37,7 @@
           
           
         </div>
-        <div class="testimonial_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
+        <div class="testimonial_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
           
           <div class="section_layout">
             <div class="testimonial_slider_top">

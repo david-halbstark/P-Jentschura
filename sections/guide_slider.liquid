@@ -59,7 +59,7 @@
         <div class="u-display-none">
           
         </div>
-        <div class="guide_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
+        <div class="guide_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
           
           <div data-section-spacing="" class="guide_slider_layout">
             <div class="guide_slider_top">

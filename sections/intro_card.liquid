@@ -89,7 +89,7 @@
           
           
         </div>
-        <div class="intro_card_contain u-container" id="{% if section.settings.section_id != blank %}{{ section_id }}{% endif %}">
+        <div class="intro_card_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
           <div data-section-spacing="" class="intro_card_layout">
             
             <div class="intro_card_inner">
