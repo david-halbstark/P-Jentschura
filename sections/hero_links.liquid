@@ -52,7 +52,7 @@
         </div>
         
         <div class="hero_links_background">
-          {% render 'media', image_breakpoint: '41.9375em', image_object_fit: block.settings.image_object_fit, media_type: block.settings.media_type, video_controls: block.settings.video_controls, video_playsinline: block.settings.video_playsinline, video_play_behavi: block.settings.video_play_behaviour, image_loading: block.settings.image_loading, image_width_mobile: block.settings.image_width_mobile, image_fetchpriority: block.settings.image_fetchpriority, image: block.settings.image, video: block.settings.video, image_mobile: block.settings.image_mobile, video_autoplay: block.settings.video_autoplay, video_loop: block.settings.video_loop, image_width: block.settings.image_width, video_preload: block.settings.video_preload, video_muted: block.settings.video_muted, video_custom_class: , image_custom_class: %}
+          {% render 'media', image_breakpoint: '41.9375em', image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
           <div style="--gradient-color: {{ gradient_color_top }}" class="hero_links_overlay is-top"></div>
           <div style="--gradient-color: {{ gradient_color_bottom }}" class="hero_links_overlay is-bottom"></div>
         </div>
@@ -71,12 +71,6 @@
                 
                                     <div class="hero_links_button_element u-display-contents">
                   <div class="u-display-none">
-                    
-                    
-                    
-                    
-                    
-                    
                     
                     
                     
@@ -158,115 +152,6 @@
                     ],
                     "default": "newsletter_modal",
                     "visible_if": "{{ section.settings.button_mode == 'action' }}"
-                },
-                {
-                    "type": "select",
-                    "id": "button_variant",
-                    "label": "Stil",
-                    "options": [
-                        {
-                            "value": "solid",
-                            "label": "Fl\u00e4che"
-                        },
-                        {
-                            "value": "transparent",
-                            "label": "Transparent"
-                        },
-                        {
-                            "value": "text",
-                            "label": "Textlink"
-                        },
-                        {
-                            "value": "pill",
-                            "label": "Kapsel"
-                        }
-                    ],
-                    "default": "solid"
-                },
-                {
-                    "type": "select",
-                    "id": "button_solid_color",
-                    "label": "Farbe",
-                    "options": [
-                        {
-                            "value": "red",
-                            "label": "Rot"
-                        },
-                        {
-                            "value": "white",
-                            "label": "Wei\u00df"
-                        }
-                    ],
-                    "default": "red",
-                    "visible_if": "{{ section.settings.button_variant == 'solid' }}"
-                },
-                {
-                    "type": "select",
-                    "id": "button_solid_text_size",
-                    "label": "Textgr\u00f6\u00dfe",
-                    "options": [
-                        {
-                            "value": "u-text-link-large",
-                            "label": "Link gro\u00df"
-                        },
-                        {
-                            "value": "u-text-link-base",
-                            "label": "Link Standard"
-                        }
-                    ],
-                    "default": "u-text-link-large",
-                    "visible_if": "{{ section.settings.button_variant == 'solid' }}"
-                },
-                {
-                    "type": "select",
-                    "id": "button_solid_padding",
-                    "label": "Stil",
-                    "options": [
-                        {
-                            "value": "base",
-                            "label": "Standard"
-                        },
-                        {
-                            "value": "small",
-                            "label": "Klein"
-                        }
-                    ],
-                    "default": "base",
-                    "visible_if": "{{ section.settings.button_variant == 'solid' }}"
-                },
-                {
-                    "type": "select",
-                    "id": "button_text_text_size",
-                    "label": "Textgr\u00f6\u00dfe",
-                    "options": [
-                        {
-                            "value": "u-text-link-large",
-                            "label": "Link gro\u00df"
-                        },
-                        {
-                            "value": "u-text-link-base",
-                            "label": "Link Standard"
-                        }
-                    ],
-                    "default": "u-text-link-large",
-                    "visible_if": "{{ section.settings.button_variant == 'text' }}"
-                },
-                {
-                    "type": "select",
-                    "id": "button_text_color",
-                    "label": "Farbe",
-                    "options": [
-                        {
-                            "value": "green",
-                            "label": "Gr\u00fcn"
-                        },
-                        {
-                            "value": "red",
-                            "label": "Rot"
-                        }
-                    ],
-                    "default": "green",
-                    "visible_if": "{{ section.settings.button_variant == 'text' }}"
                 },
                 {
                     "type": "text",
@@ -835,115 +720,6 @@
             ],
             "default": "newsletter_modal",
             "visible_if": "{{ section.settings.button_mode == 'action' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "solid",
-                    "label": "Fl\u00e4che"
-                },
-                {
-                    "value": "transparent",
-                    "label": "Transparent"
-                },
-                {
-                    "value": "text",
-                    "label": "Textlink"
-                },
-                {
-                    "value": "pill",
-                    "label": "Kapsel"
-                }
-            ],
-            "default": "solid"
-        },
-        {
-            "type": "select",
-            "id": "button_solid_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "red",
-                    "label": "Rot"
-                },
-                {
-                    "value": "white",
-                    "label": "Wei\u00df"
-                }
-            ],
-            "default": "red",
-            "visible_if": "{{ section.settings.button_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_solid_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_solid_padding",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "base",
-                    "label": "Standard"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                }
-            ],
-            "default": "base",
-            "visible_if": "{{ section.settings.button_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_text_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_text_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "green",
-                    "label": "Gr\u00fcn"
-                },
-                {
-                    "value": "red",
-                    "label": "Rot"
-                }
-            ],
-            "default": "green",
-            "visible_if": "{{ section.settings.button_variant == 'text' }}"
         },
         {
             "type": "text",
