@@ -8513,29 +8513,30 @@ figure {
   display: flex;
 }
 
-.intro_card_layout {
-  grid-column-gap: 2.5rem;
-  grid-row-gap: 2.5rem;
-  flex-flow: column;
-  display: flex;
-}
-
 .intro_card_inner {
   padding-top: var(--_spacing---space--13);
+  padding-right: var(--_spacing---space--11);
   padding-bottom: var(--_spacing---space--13);
-  grid-column-gap: var(--_spacing---space--12);
-  grid-row-gap: var(--_spacing---space--12);
-  border-radius: var(--radius--main);
+  padding-left: var(--_spacing---space--11);
+  grid-column-gap: var(--_spacing---space--13);
+  grid-row-gap: var(--_spacing---space--13);
+  border-top-left-radius: var(--radius--main);
+  border-top-right-radius: var(--radius--main);
+  border-bottom-left-radius: var(--radius--main);
+  border-bottom-right-radius: var(--radius--main);
   background-color: var(--_theme---background-2);
-  text-align: center;
+  align-items: var(--start-small, center);
+  justify-content: var(--start-small, center);
+  text-align: var(--start-small, center);
   flex-flow: column;
-  justify-content: flex-start;
-  align-items: center;
   display: flex;
 }
 
-.intro_card_item_wrap {
-  display: inline-block;
+.intro_card_top {
+  grid-column-gap: var(--_spacing---space--9);
+  grid-row-gap: var(--_spacing---space--9);
+  flex-flow: column;
+  display: flex;
 }
 
 .dealer_cta_layout {

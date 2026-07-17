@@ -1,1038 +1,335 @@
 <div class="u-embed-css w-embed">
-  <style>
-      .intro_card_items .intro_card_item_wrap:not(:last-child) .intro_card_item_element > ::after {
-        content: '\00a0\2022  ';
-        color: var(--_theme---text-4);
-        display: inline;
-      }
-
-      .intro_card_item_wrap {
-      display: contents;
-    }
-      .intro_card_item_element span {
-        display: inline;
-      }
-  </style>
-</div>
-<div class="u-display-none"></div>
-<div class="u-display-none">
-  {% case section.settings.spacing_top -%}
-    {%- when 'xxsmall' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--xxsmall)' -%}
-    {%- when 'xsmall' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--xsmall)' -%}
-    {%- when 'small' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--small)' -%}
-    {%- when 'medium' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--medium)' -%}
-    {%- when 'large' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--large)' -%}
-    {%- when 'large_medium_off' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' -%}
-    {%- when 'page_top' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--page-top)' -%}
-    {%- else -%}
-      {%- assign spacing_top = '0' -%}
-  {%- endcase -%}
-  {%- case section.settings.spacing_bottom -%}
-    {%- when 'xxsmall' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' -%}
-    {%- when 'xsmall' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' -%}
-    {%- when 'small' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--small)' -%}
-    {%- when 'medium' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--medium)' -%}
-    {%- when 'large' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--large)' -%}
-    {%- when 'page_top' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--page-top)' -%}
-    {%- else -%}
-      {%- assign spacing_bottom = '0' -%}
-  {%- endcase %}
-  <div class="u-embed-css w-embed">
-    <style>
-      #shopify-section-{{ section.id }} [data-section-spacing] {
-        --section-spacing-top: {{ spacing_top }};
-        --section-spacing-bottom: {{ spacing_bottom }};
-      }
-    </style>
-  </div>
-</div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div
-  class="intro_card_contain u-container"
-  {% if section.settings.section_id != blank %}
-    id="{{ section.settings.section_id | handleize }}"
-  {% endif %}
->
-  <div data-section-spacing="" class="intro_card_layout">
-    <div class="intro_card_inner">
-      <div class="intro_card_top u-alignment-center">
-        {% render 'heading',
-          visually_hidden: section.settings.heading_visually_hidden,
-          heading: section.settings.heading,
-          tag: 'h2',
-          variant: 'u-text-h1-secondary',
-          max_width: section.settings.heading_max_width,
-          tidy_text: section.settings.heading_tidy_text
-        %}
-        <div class="intro_card_items">
-          {% for block in section.blocks %}
-            {% if block.type == 'item' %}
-              <div li-block="Item" class="intro_card_item_wrap u-display-contents">
-                <div class="intro_card_item_element u-display-contents">
-                  <div class="u-display-none"></div>
-                  {% render 'typography',
-                    custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3 u-display-inline',
-                    text: block.settings.text,
-                    tag: 'span',
-                    variant: 'u-text-body-small'
-                  %}
+          <style>
+  .intro_card_items .intro_card_item_wrap:not(:last-child) .intro_card_item_element > ::after {
+    content: '\00a0\2022  ';
+    display: inline;
+    color: var(--_theme---text-4);
+  }
+  .intro_card_item_element span, .intro_card_item_element::after {
+    display: inline;
+  }
+  .intro_card_item_element span::before {
+    content: none;
+  }
+</style>
+        </div>
+        <div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          {% case section.settings.spacing_top %}{% when 'xxsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_top = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_top = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_top = 'var(--_spacing---section-space--large)' %}{% when 'large_medium_off' %}{% assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' %}{% when 'page_top' %}{% assign spacing_top = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_top = '0' %}{% endcase %}{% case section.settings.spacing_bottom %}{% when 'xxsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_bottom = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_bottom = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_bottom = 'var(--_spacing---section-space--large)' %}{% when 'page_top' %}{% assign spacing_bottom = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_bottom = '0' %}{% endcase %}
+          <div class="u-embed-css w-embed">
+            <style>
+  #shopify-section-{{ section.id }} [data-section-spacing] {
+    --section-spacing-top: {{ spacing_top }};
+    --section-spacing-bottom: {{ spacing_bottom }};
+  }
+</style>
+          </div>
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+        </div>
+        <div class="intro_card_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
+          <div data-section-spacing="" class="intro_card_layout">
+            
+            <div class="intro_card_inner">
+              <div class="intro_card_top">
+                {% render 'heading', custom_class: 'u-margin-bottom-0', heading: section.settings.heading, tag: 'h2', variant: 'u-text-h1-secondary', max_width: section.settings.heading_max_width, tidy_text: section.settings.heading_tidy_text %}
+                <div class="intro_card_items">
+                  {% for block in section.blocks %}
+    {% if block.type == "item" %}
+                    <div li-block="Item" class="intro_card_item_wrap u-display-contents">
+                                    
+                    
+                                    <div class="intro_card_item_element u-display-contents">
+                      <div class="u-display-none">
+                        
+                        
+                      </div>
+                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', text: block.settings.text, tag: 'span', variant: 'u-text-body-small' %}
+                    </div>
+                                    
+                  
+                            </div>
+            {% endif %}
+{% endfor %}
+                  {% for block in section.blocks %}
+    {% if block.type == "item" %}
+                    <div li-block="Item" class="intro_card_item_wrap u-display-contents">
+                                    
+                    
+                                    <div class="intro_card_item_element u-display-contents">
+                      <div class="u-display-none">
+                        
+                        
+                      </div>
+                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3 u-display-inline', text: block.settings.text, tag: 'span', variant: 'u-text-body-small' %}
+                    </div>
+                                    
+                  
+                            </div>
+            {% endif %}
+{% endfor %}
+                  {% for block in section.blocks %}
+    {% if block.type == "item" %}
+                    <div li-block="Item" class="intro_card_item_wrap u-display-contents">
+                                    
+                    
+                                    <div class="intro_card_item_element u-display-contents">
+                      <div class="u-display-none">
+                        
+                        
+                      </div>
+                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', text: block.settings.text, tag: 'span', variant: 'u-text-body-small' %}
+                    </div>
+                                    
+                  
+                            </div>
+            {% endif %}
+{% endfor %}
                 </div>
               </div>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </div>
-      <div class="intro_card_bot">
-        {% render 'paragraph',
-          tidy_text: section.settings.paragraph_tidy_text,
-          custom_class: 'u-margin-bottom-0',
-          paragraph: section.settings.paragraph,
-          variant: 'u-text-body-large',
-          max_width: section.settings.paragraph_max_width
-        %}
-      </div>
-    </div>
-  </div>
-</div>
-{% schema %}
-{
-  "tag": "section",
-  "name": "Intro Card",
-  "class": "intro_card_wrap u-section",
-  "blocks": [
-    {
-      "name": "Item",
-      "type": "item",
-      "settings": [
+              <div class="intro_card_bot">
+                {% render 'paragraph', tidy_text: section.settings.paragraph_tidy_text, custom_class: 'u-margin-bottom-0', paragraph: section.settings.paragraph, variant: 'u-text-body-large', max_width: section.settings.paragraph_max_width %}
+              </div>
+            </div>
+            
+          </div>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Intro Card",
+    "class": "intro_card_wrap u-section",
+    "blocks": [
         {
-          "type": "header",
-          "content": "Text"
-        },
-        {
-          "type": "text",
-          "id": "text",
-          "label": "Text",
-          "default": "Lorem ipsum dolor sit amet"
+            "name": "Item",
+            "type": "item",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Text"
+                },
+                {
+                    "type": "text",
+                    "id": "text",
+                    "label": "Text",
+                    "default": "Lorem ipsum dolor sit amet"
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "settings": [
-    {
-      "type": "header",
-      "content": "Sektion"
-    },
-    {
-      "type": "text",
-      "id": "section_id",
-      "label": "ID"
-    },
-    {
-      "type": "header",
-      "content": "Abst\u00e4nde"
-    },
-    {
-      "type": "select",
-      "id": "spacing_top",
-      "label": "Oben",
-      "options": [
+    ],
+    "settings": [
         {
-          "value": "none",
-          "label": "Kein Abstand"
+            "type": "header",
+            "content": "Sektion"
         },
         {
-          "value": "xxsmall",
-          "label": "Extra extra klein"
+            "type": "text",
+            "id": "section_id",
+            "label": "ID"
         },
         {
-          "value": "xsmall",
-          "label": "Extra klein"
+            "type": "header",
+            "content": "Abst\u00e4nde"
         },
         {
-          "value": "small",
-          "label": "Klein"
+            "type": "select",
+            "id": "spacing_top",
+            "label": "Oben",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "large_medium_off",
+                    "label": "Gro\u00df | Medium kein Abstand"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "xxsmall"
         },
         {
-          "value": "medium",
-          "label": "Mittel"
+            "type": "select",
+            "id": "spacing_bottom",
+            "label": "Unten",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                }
+            ],
+            "default": "xxsmall"
         },
         {
-          "value": "large",
-          "label": "Gro\u00df"
+            "type": "header",
+            "content": "\u00dcbertitel"
         },
         {
-          "value": "large_medium_off",
-          "label": "Gro\u00df | Medium kein Abstand"
+            "type": "text",
+            "id": "eyebrow",
+            "label": "Text",
+            "default": "\u00dcbertitel Text"
         },
         {
-          "value": "page_top",
-          "label": "Seitenanfang"
+            "type": "select",
+            "id": "eyebrow_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "p"
+        },
+        {
+            "type": "header",
+            "content": "\u00dcberschrift"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "heading",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+            "type": "number",
+            "id": "heading_max_width",
+            "label": "Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 20
+        },
+        {
+            "type": "checkbox",
+            "id": "heading_tidy_text",
+            "label": "Ausgewogener Zeilenumbruch",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Text"
+        },
+        {
+            "type": "richtext",
+            "id": "paragraph",
+            "label": "Text",
+            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
+        },
+        {
+            "type": "number",
+            "id": "paragraph_max_width",
+            "label": "Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 60
+        },
+        {
+            "type": "checkbox",
+            "id": "paragraph_tidy_text",
+            "label": "Ausgewogener Zeilenumbruch",
+            "default": true
         }
-      ],
-      "default": "xxsmall"
-    },
-    {
-      "type": "select",
-      "id": "spacing_bottom",
-      "label": "Unten",
-      "options": [
+    ],
+    "presets": [
         {
-          "value": "none",
-          "label": "Kein Abstand"
-        },
-        {
-          "value": "xxsmall",
-          "label": "Extra extra klein"
-        },
-        {
-          "value": "xsmall",
-          "label": "Extra klein"
-        },
-        {
-          "value": "small",
-          "label": "Klein"
-        },
-        {
-          "value": "medium",
-          "label": "Mittel"
-        },
-        {
-          "value": "large",
-          "label": "Gro\u00df"
+            "name": "Intro Card",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "item"
+                },
+                {
+                    "type": "item"
+                },
+                {
+                    "type": "item"
+                }
+            ]
         }
-      ],
-      "default": "xxsmall"
-    },
-    {
-      "type": "header",
-      "content": "\u00dcbertitel"
-    },
-    {
-      "type": "text",
-      "id": "eyebrow",
-      "label": "Text",
-      "default": "\u00dcbertitel Text"
-    },
-    {
-      "type": "select",
-      "id": "eyebrow_variant",
-      "label": "Stil",
-      "options": [
-        {
-          "value": "u-text-eyebrow-small",
-          "label": "Klein"
-        },
-        {
-          "value": "u-text-eyebrow-base",
-          "label": "Standard"
-        },
-        {
-          "value": "u-text-eyebrow-large",
-          "label": "Gro\u00df"
-        }
-      ],
-      "default": "u-text-eyebrow-large"
-    },
-    {
-      "type": "select",
-      "id": "eyebrow_tag",
-      "label": "HTML-Tag",
-      "options": [
-        {
-          "value": "h1",
-          "label": "H1"
-        },
-        {
-          "value": "h2",
-          "label": "H2"
-        },
-        {
-          "value": "h3",
-          "label": "H3"
-        },
-        {
-          "value": "h4",
-          "label": "H4"
-        },
-        {
-          "value": "h5",
-          "label": "H5"
-        },
-        {
-          "value": "h6",
-          "label": "H6"
-        },
-        {
-          "value": "p",
-          "label": "P"
-        }
-      ],
-      "default": "p"
-    },
-    {
-      "type": "header",
-      "content": "\u00dcberschrift"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "heading",
-      "label": "Text",
-      "default": "Lorem ipsum dolor sit amet elit"
-    },
-    {
-      "type": "select",
-      "id": "heading_variant",
-      "label": "Stil",
-      "options": [
-        {
-          "value": "u-text-h1-primary",
-          "label": "H1 Prim\u00e4r"
-        },
-        {
-          "value": "u-text-h1-secondary",
-          "label": "H1 Sekund\u00e4r"
-        },
-        {
-          "value": "u-text-h2-primary",
-          "label": "H2 Prim\u00e4r"
-        },
-        {
-          "value": "u-text-h2-secondary",
-          "label": "H2 Sekund\u00e4r"
-        },
-        {
-          "value": "u-text-h3-primary",
-          "label": "H3 Prim\u00e4r"
-        },
-        {
-          "value": "u-text-h3-secondary",
-          "label": "H3 Sekund\u00e4r"
-        },
-        {
-          "value": "u-text-h4-primary",
-          "label": "H4 Prim\u00e4r"
-        },
-        {
-          "value": "u-text-h5-primary",
-          "label": "H5 Prim\u00e4r"
-        },
-        {
-          "value": "u-text-h6-primary",
-          "label": "H6 Prim\u00e4r"
-        }
-      ],
-      "default": "u-text-h2-primary"
-    },
-    {
-      "type": "select",
-      "id": "heading_tag",
-      "label": "HTML-Tag",
-      "options": [
-        {
-          "value": "h1",
-          "label": "H1"
-        },
-        {
-          "value": "h2",
-          "label": "H2"
-        },
-        {
-          "value": "h3",
-          "label": "H3"
-        },
-        {
-          "value": "h4",
-          "label": "H4"
-        },
-        {
-          "value": "h5",
-          "label": "H5"
-        },
-        {
-          "value": "h6",
-          "label": "H6"
-        },
-        {
-          "value": "p",
-          "label": "P"
-        }
-      ],
-      "default": "h2"
-    },
-    {
-      "type": "number",
-      "id": "heading_max_width",
-      "label": "Maximale Breite",
-      "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-      "default": 20
-    },
-    {
-      "type": "checkbox",
-      "id": "heading_tidy_text",
-      "label": "Ausgewogener Zeilenumbruch",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "heading_visually_hidden",
-      "label": "Nur f\u00fcr Screenreader anzeigen",
-      "default": false
-    },
-    {
-      "type": "header",
-      "content": "Text"
-    },
-    {
-      "type": "richtext",
-      "id": "paragraph",
-      "label": "Text",
-      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
-    },
-    {
-      "type": "select",
-      "id": "paragraph_variant",
-      "label": "Stil",
-      "options": [
-        {
-          "value": "u-text-body-small",
-          "label": "Klein"
-        },
-        {
-          "value": "u-text-body-base",
-          "label": "Standard"
-        },
-        {
-          "value": "u-text-body-large",
-          "label": "Gro\u00df"
-        }
-      ],
-      "default": "u-text-body-base"
-    },
-    {
-      "type": "number",
-      "id": "paragraph_max_width",
-      "label": "Maximale Breite",
-      "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-      "default": 60
-    },
-    {
-      "type": "checkbox",
-      "id": "paragraph_tidy_text",
-      "label": "Ausgewogener Zeilenumbruch",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Button 1"
-    },
-    {
-      "type": "text",
-      "id": "button_1_label",
-      "label": "Text",
-      "default": "Text"
-    },
-    {
-      "type": "select",
-      "id": "button_1_mode",
-      "label": "Funktion",
-      "options": [
-        {
-          "value": "link",
-          "label": "Link \u00f6ffnen"
-        },
-        {
-          "value": "action",
-          "label": "Aktion ausf\u00fchren"
-        }
-      ],
-      "default": "link"
-    },
-    {
-      "type": "url",
-      "id": "button_1_url",
-      "label": "Link",
-      "visible_if": "{{ section.settings.button_1_mode == 'link' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_1_action",
-      "label": "Aktion",
-      "options": [
-        {
-          "value": "newsletter_modal",
-          "label": "Newsletter-Modal \u00f6ffnen"
-        },
-        {
-          "value": "contact_modal",
-          "label": "Kontaktformular-Modal \u00f6ffnen"
-        }
-      ],
-      "default": "newsletter_modal",
-      "visible_if": "{{ section.settings.button_1_mode == 'action' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_1_variant",
-      "label": "Stil",
-      "options": [
-        {
-          "value": "solid",
-          "label": "Fl\u00e4che"
-        },
-        {
-          "value": "transparent",
-          "label": "Transparent"
-        },
-        {
-          "value": "text",
-          "label": "Textlink"
-        },
-        {
-          "value": "pill",
-          "label": "Kapsel"
-        }
-      ],
-      "default": "solid"
-    },
-    {
-      "type": "select",
-      "id": "button_1_solid_color",
-      "label": "Farbe",
-      "options": [
-        {
-          "value": "red",
-          "label": "Rot"
-        },
-        {
-          "value": "white",
-          "label": "Wei\u00df"
-        }
-      ],
-      "default": "red",
-      "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_1_solid_text_size",
-      "label": "Textgr\u00f6\u00dfe",
-      "options": [
-        {
-          "value": "u-text-link-large",
-          "label": "Link gro\u00df"
-        },
-        {
-          "value": "u-text-link-base",
-          "label": "Link Standard"
-        }
-      ],
-      "default": "u-text-link-large",
-      "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_1_solid_padding",
-      "label": "Stil",
-      "options": [
-        {
-          "value": "base",
-          "label": "Standard"
-        },
-        {
-          "value": "small",
-          "label": "Klein"
-        }
-      ],
-      "default": "base",
-      "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_1_text_text_size",
-      "label": "Textgr\u00f6\u00dfe",
-      "options": [
-        {
-          "value": "u-text-link-large",
-          "label": "Link gro\u00df"
-        },
-        {
-          "value": "u-text-link-base",
-          "label": "Link Standard"
-        }
-      ],
-      "default": "u-text-link-large",
-      "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_1_text_color",
-      "label": "Farbe",
-      "options": [
-        {
-          "value": "green",
-          "label": "Gr\u00fcn"
-        },
-        {
-          "value": "red",
-          "label": "Rot"
-        }
-      ],
-      "default": "green",
-      "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_1_pill_color",
-      "label": "Farbe",
-      "options": [
-        {
-          "value": "white",
-          "label": "Wei\u00df"
-        },
-        {
-          "value": "white_transparent",
-          "label": "Wei\u00df transparent"
-        }
-      ],
-      "default": "white",
-      "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_1_pill_text_size",
-      "label": "Textgr\u00f6\u00dfe",
-      "options": [
-        {
-          "value": "u-text-eyebrow-large",
-          "label": "\u00dcbertitel gro\u00df"
-        },
-        {
-          "value": "u-text-eyebrow-base",
-          "label": "\u00dcbertitel Standard"
-        },
-        {
-          "value": "u-text-link-base",
-          "label": "Link Standard"
-        },
-        {
-          "value": "u-text-link-small",
-          "label": "Link klein"
-        }
-      ],
-      "default": "u-text-eyebrow-base",
-      "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
-    },
-    {
-      "type": "text",
-      "id": "button_1_pill_tag_inner",
-      "label": "Innerer Tag",
-      "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
-    },
-    {
-      "type": "checkbox",
-      "id": "button_1_underline",
-      "label": "Unterstreichung anzeigen",
-      "default": false,
-      "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_2_icon",
-      "label": "Icon",
-      "options": [
-        {
-          "value": "none",
-          "label": "Kein Icon"
-        },
-        {
-          "value": "arrow_left",
-          "label": "Pfeil links"
-        },
-        {
-          "value": "arrow_right",
-          "label": "Pfeil rechts"
-        },
-        {
-          "value": "arrow_up_right",
-          "label": "Pfeil hoch rechts"
-        },
-        {
-          "value": "chevron_left",
-          "label": "Chevron links"
-        },
-        {
-          "value": "chevron_right",
-          "label": "Chevron rechts"
-        },
-        {
-          "value": "download",
-          "label": "Herunterladen"
-        },
-        {
-          "value": "copy",
-          "label": "Kopieren"
-        },
-        {
-          "value": "external",
-          "label": "Externe Seite"
-        }
-      ],
-      "default": "none"
-    },
-    {
-      "type": "select",
-      "id": "button_1_icon_position",
-      "label": "Icon-Position",
-      "options": [
-        {
-          "value": "before",
-          "label": "Vor dem Text"
-        },
-        {
-          "value": "after",
-          "label": "Nach dem Text"
-        }
-      ],
-      "default": "after",
-      "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_1_icon_animation",
-      "label": "Icon-Animation",
-      "options": [
-        {
-          "value": "none",
-          "label": "Keine Animation"
-        },
-        {
-          "value": "move_left",
-          "label": "Nach links bewegen"
-        },
-        {
-          "value": "move_right",
-          "label": "Nach rechts bewegen"
-        },
-        {
-          "value": "move_up_right",
-          "label": "Nach oben rechts bewegen"
-        }
-      ],
-      "default": "none",
-      "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_1_icon_color",
-      "label": "Stil",
-      "options": [
-        {
-          "value": "inherit",
-          "label": "Wie Text"
-        },
-        {
-          "value": "red",
-          "label": "Rot"
-        }
-      ],
-      "default": "inherit",
-      "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
-    },
-    {
-      "type": "header",
-      "content": "Button 2"
-    },
-    {
-      "type": "text",
-      "id": "button_2_label",
-      "label": "Text",
-      "default": "Text"
-    },
-    {
-      "type": "select",
-      "id": "button_2_mode",
-      "label": "Funktion",
-      "options": [
-        {
-          "value": "link",
-          "label": "Link \u00f6ffnen"
-        },
-        {
-          "value": "action",
-          "label": "Aktion ausf\u00fchren"
-        }
-      ],
-      "default": "link"
-    },
-    {
-      "type": "url",
-      "id": "button_2_url",
-      "label": "Link",
-      "visible_if": "{{ section.settings.button_2_mode == 'link' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_2_variant",
-      "label": "Stil",
-      "options": [
-        {
-          "value": "solid",
-          "label": "Fl\u00e4che"
-        },
-        {
-          "value": "transparent",
-          "label": "Transparent"
-        },
-        {
-          "value": "text",
-          "label": "Textlink"
-        },
-        {
-          "value": "pill",
-          "label": "Kapsel"
-        }
-      ],
-      "default": "solid"
-    },
-    {
-      "type": "select",
-      "id": "button_2_action",
-      "label": "Aktion",
-      "options": [
-        {
-          "value": "newsletter_modal",
-          "label": "Newsletter-Modal \u00f6ffnen"
-        },
-        {
-          "value": "contact_modal",
-          "label": "Kontaktformular-Modal \u00f6ffnen"
-        }
-      ],
-      "default": "newsletter_modal",
-      "visible_if": "{{ section.settings.button_2_mode == 'action' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_2_solid_color",
-      "label": "Farbe",
-      "options": [
-        {
-          "value": "red",
-          "label": "Rot"
-        },
-        {
-          "value": "white",
-          "label": "Wei\u00df"
-        }
-      ],
-      "default": "red",
-      "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_2_solid_text_size",
-      "label": "Textgr\u00f6\u00dfe",
-      "options": [
-        {
-          "value": "u-text-link-large",
-          "label": "Link gro\u00df"
-        },
-        {
-          "value": "u-text-link-base",
-          "label": "Link Standard"
-        }
-      ],
-      "default": "u-text-link-large",
-      "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_2_solid_padding",
-      "label": "Stil",
-      "options": [
-        {
-          "value": "base",
-          "label": "Standard"
-        },
-        {
-          "value": "small",
-          "label": "Klein"
-        }
-      ],
-      "default": "base",
-      "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_2_text_text_size",
-      "label": "Textgr\u00f6\u00dfe",
-      "options": [
-        {
-          "value": "u-text-link-large",
-          "label": "Link gro\u00df"
-        },
-        {
-          "value": "u-text-link-base",
-          "label": "Link Standard"
-        }
-      ],
-      "default": "u-text-link-large",
-      "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_2_text_color",
-      "label": "Farbe",
-      "options": [
-        {
-          "value": "green",
-          "label": "Gr\u00fcn"
-        },
-        {
-          "value": "red",
-          "label": "Rot"
-        }
-      ],
-      "default": "green",
-      "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_2_pill_color",
-      "label": "Farbe",
-      "options": [
-        {
-          "value": "white",
-          "label": "Wei\u00df"
-        },
-        {
-          "value": "white_transparent",
-          "label": "Wei\u00df transparent"
-        }
-      ],
-      "default": "white",
-      "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_2_pill_text_size",
-      "label": "Textgr\u00f6\u00dfe",
-      "options": [
-        {
-          "value": "u-text-eyebrow-large",
-          "label": "\u00dcbertitel gro\u00df"
-        },
-        {
-          "value": "u-text-eyebrow-base",
-          "label": "\u00dcbertitel Standard"
-        },
-        {
-          "value": "u-text-link-base",
-          "label": "Link Standard"
-        },
-        {
-          "value": "u-text-link-small",
-          "label": "Link klein"
-        }
-      ],
-      "default": "u-text-eyebrow-base",
-      "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
-    },
-    {
-      "type": "text",
-      "id": "button_2_pill_tag_inner",
-      "label": "Innerer Tag",
-      "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
-    },
-    {
-      "type": "checkbox",
-      "id": "button_2_underline",
-      "label": "Unterstreichung anzeigen",
-      "default": false,
-      "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_2_icon_position",
-      "label": "Icon-Position",
-      "options": [
-        {
-          "value": "before",
-          "label": "Vor dem Text"
-        },
-        {
-          "value": "after",
-          "label": "Nach dem Text"
-        }
-      ],
-      "default": "after",
-      "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
-    },
-    {
-      "type": "select",
-      "id": "button_2_icon_animation",
-      "label": "Icon-Animation",
-      "options": [
-        {
-          "value": "none",
-          "label": "Keine Animation"
-        },
-        {
-          "value": "move_left",
-          "label": "Nach links bewegen"
-        },
-        {
-          "value": "move_right",
-          "label": "Nach rechts bewegen"
-        },
-        {
-          "value": "move_up_right",
-          "label": "Nach oben rechts bewegen"
-        }
-      ],
-      "default": "none",
-      "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
-    },
-    {
-      "type": "header",
-      "content": "Text"
-    },
-    {
-      "type": "text",
-      "id": "text",
-      "label": "Text",
-      "default": "Lorem ipsum dolor sit amet"
-    },
-    {
-      "type": "header",
-      "content": "Text"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Intro Card",
-      "category": "Liquify",
-      "blocks": [
-        {
-          "type": "item"
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}
+    ]
+} {% endschema %}
