@@ -17,6 +17,7 @@
     @container (width < 65em) {
       .dealer_cta_layout {
         display: flex;
+      }
         .dealer_cta_image.is-2 {
           display: none;
         }
@@ -31,12 +32,13 @@
        margin-top: 3rem;
      }
 
-     #shopify-section-{{ section.id }} {
-       --collection-theme-color: {{ theme_color }};
-     }
-
           .dealer_cta_card {
        background: var(--collection-theme-color, grey);
+     }
+
+
+     #shopify-section-{{ section.id }} {
+       --collection-theme-color: {{ theme_color }};
      }
   </style>
 </div>
