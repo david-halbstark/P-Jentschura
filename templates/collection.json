@@ -1,12 +1,47 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "placeholder": {
-            "type": "placeholder"
-        }
+  "sections": {
+    "placeholder": {
+      "type": "placeholder",
+      "settings": {}
     },
-    "layout": "theme",
-    "wrapper": "main#main.page_main",
-    "order": [
-        "placeholder"
-    ]
+    "dealer_cta_mqg84C": {
+      "type": "dealer_cta",
+      "name": "Dealer CTA",
+      "settings": {
+        "section_id": "",
+        "spacing_top": "large",
+        "spacing_bottom": "large",
+        "heading": "Finde P. Jentschura in deiner Nähe",
+        "heading_variant": "u-text-h2-primary",
+        "heading_tag": "h2",
+        "heading_max_width": 20,
+        "heading_tidy_text": true,
+        "heading_visually_hidden": false,
+        "text_top": "Finde",
+        "text_bottom": "in deiner Nähe",
+        "button_1_label": "Händler in der Nähe",
+        "button_1_url": "",
+        "image_1": "shopify://shop_images/p-jentschura-home-hero-desktop.avif",
+        "image_2": "shopify://shop_images/family-lies-on-the-grass-with-a-soccer-ball-VEsFPNBozM0.png",
+        "collection_source": "automatic",
+        "collection": "",
+        "manual_collection": ""
+      }
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main#main.page_main",
+  "order": [
+    "placeholder",
+    "dealer_cta_mqg84C"
+  ]
 }
