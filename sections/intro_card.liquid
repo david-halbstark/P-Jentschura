@@ -1,361 +1,316 @@
 <div class="u-embed-css w-embed">
-  <style>
-    .intro_card_items .intro_card_item_wrap:not(:last-child) .intro_card_item_element > ::after {
-      content: '\00a0\2022  ';
-      display: inline;
-      color: var(--_theme---text-4);
-    }
-    .intro_card_item_element span, .intro_card_item_element::after {
-      display: inline;
-    }
-    .intro_card_item_element span::before {
-      content: none;
-    }
-  </style>
-</div>
-<div class="u-display-none"></div>
-<div class="u-display-none">
-  {% case section.settings.spacing_top -%}
-    {%- when 'xxsmall' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--xxsmall)' -%}
-    {%- when 'xsmall' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--xsmall)' -%}
-    {%- when 'small' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--small)' -%}
-    {%- when 'medium' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--medium)' -%}
-    {%- when 'large' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--large)' -%}
-    {%- when 'large_medium_off' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' -%}
-    {%- when 'page_top' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--page-top)' -%}
-    {%- else -%}
-      {%- assign spacing_top = '0' -%}
-  {%- endcase -%}
-  {%- case section.settings.spacing_bottom -%}
-    {%- when 'xxsmall' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' -%}
-    {%- when 'xsmall' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' -%}
-    {%- when 'small' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--small)' -%}
-    {%- when 'medium' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--medium)' -%}
-    {%- when 'large' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--large)' -%}
-    {%- when 'page_top' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--page-top)' -%}
-    {%- else -%}
-      {%- assign spacing_bottom = '0' -%}
-  {%- endcase %}
-  <div class="u-embed-css w-embed">
-    <style>
-      #shopify-section-{{ section.id }} [data-section-spacing] {
-        --section-spacing-top: {{ spacing_top }};
-        --section-spacing-bottom: {{ spacing_bottom }};
-      }
-    </style>
-  </div>
-</div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div
-  class="intro_card_contain u-container"
-  {% if section.settings.section_id != blank %}
-    id="{{ section.settings.section_id | handleize }}"
-  {% endif %}
->
-  <div data-section-spacing="" class="intro_card_layout">
-    <div class="intro_card_inner">
-      <div class="intro_card_top">
-        {% render 'heading',
-          custom_class: 'u-margin-bottom-0',
-          heading: section.settings.heading,
-          tag: 'h2',
-          variant: 'u-text-h1-secondary',
-          max_width: section.settings.heading_max_width,
-          tidy_text: section.settings.heading_tidy_text
-        %}
-        <div class="intro_card_items">
-          {% for block in section.blocks %}
-            {% if block.type == 'item' %}
-              <div li-block="Item" class="intro_card_item_wrap u-display-contents">
-                <div class="intro_card_item_element u-display-contents">
-                  <div class="u-display-none"></div>
-                  {% render 'typography',
-                    custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3',
-                    text: block.settings.text,
-                    tag: 'span',
-                    variant: 'u-text-body-small'
-                  %}
-                </div>
-              </div>
-            {% endif %}
-          {% endfor %}
-          {% for block in section.blocks %}
-            {% if block.type == 'item' %}
-              <div li-block="Item" class="intro_card_item_wrap u-display-contents">
-                <div class="intro_card_item_element u-display-contents">
-                  <div class="u-display-none"></div>
-                  {% render 'typography',
-                    custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3 u-display-inline',
-                    text: block.settings.text,
-                    tag: 'span',
-                    variant: 'u-text-body-small'
-                  %}
-                </div>
-              </div>
-            {% endif %}
-          {% endfor %}
-          {% for block in section.blocks %}
-            {% if block.type == 'item' %}
-              <div li-block="Item" class="intro_card_item_wrap u-display-contents">
-                <div class="intro_card_item_element u-display-contents">
-                  <div class="u-display-none"></div>
-                  {% render 'typography',
-                    custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3',
-                    text: block.settings.text,
-                    tag: 'span',
-                    variant: 'u-text-body-small'
-                  %}
-                </div>
-              </div>
-            {% endif %}
-          {% endfor %}
+          <style>
+  .intro_card_top .u-heading > * {
+    width: 100%;
+  }
+  .intro_card_items .intro_card_item_wrap:not(:last-child) .intro_card_item_element > ::after {
+    content: '\00a0\2022  ';
+    display: inline;
+    color: var(--_theme---text-4);
+  }
+  .intro_card_item_element span,
+  .intro_card_item_element::after {
+    display: inline;
+  }
+  .intro_card_item_element span::before {
+    content: none !important;
+  }
+</style>
         </div>
-      </div>
-      <div class="intro_card_bot">
-        {% render 'paragraph',
-          tidy_text: section.settings.paragraph_tidy_text,
-          custom_class: 'u-margin-bottom-0',
-          paragraph: section.settings.paragraph,
-          variant: 'u-text-body-large',
-          max_width: section.settings.paragraph_max_width
-        %}
-      </div>
-    </div>
-  </div>
-</div>
-{% schema %}
-{
-  "tag": "section",
-  "name": "Intro Card",
-  "class": "intro_card_wrap u-section",
-  "blocks": [
-    {
-      "name": "Item",
-      "type": "item",
-      "settings": [
+        <div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          {% case section.settings.spacing_top %}{% when 'xxsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_top = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_top = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_top = 'var(--_spacing---section-space--large)' %}{% when 'large_medium_off' %}{% assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' %}{% when 'page_top' %}{% assign spacing_top = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_top = '0' %}{% endcase %}{% case section.settings.spacing_bottom %}{% when 'xxsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_bottom = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_bottom = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_bottom = 'var(--_spacing---section-space--large)' %}{% when 'page_top' %}{% assign spacing_bottom = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_bottom = '0' %}{% endcase %}
+          <div class="u-embed-css w-embed">
+            <style>
+  #shopify-section-{{ section.id }} [data-section-spacing] {
+    --section-spacing-top: {{ spacing_top }};
+    --section-spacing-bottom: {{ spacing_bottom }};
+  }
+</style>
+          </div>
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+        </div>
+        <div class="intro_card_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
+          <div data-section-spacing="" class="intro_card_layout">
+            
+            <div class="intro_card_inner">
+              <div class="intro_card_top">
+                {% render 'heading', custom_class: 'u-margin-bottom-0 u-min-width-auto', heading: section.settings.heading, tag: 'h2', variant: 'u-text-h1-secondary', max_width: section.settings.heading_max_width, tidy_text: section.settings.heading_tidy_text %}
+                <div class="intro_card_items">
+                  {% for block in section.blocks %}
+    {% if block.type == "item" %}
+                    <div li-block="Item" class="intro_card_item_wrap u-display-contents">
+                                    
+                    
+                                    <div class="intro_card_item_element u-display-contents">
+                      <div class="u-display-none">
+                        
+                        
+                      </div>
+                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', text: block.settings.text, tag: 'span', variant: 'u-text-body-small' %}
+                    </div>
+                                    
+                  
+                            </div>
+            {% endif %}
+{% endfor %}
+                  
+                  
+                </div>
+              </div>
+              <div class="intro_card_bot">
+                {% render 'paragraph', tidy_text: section.settings.paragraph_tidy_text, custom_class: 'u-margin-bottom-0', paragraph: section.settings.paragraph, variant: 'u-text-body-large', max_width: section.settings.paragraph_max_width %}
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="u-heading"></div> {% schema %} {
+    "tag": "section",
+    "name": "Intro Card",
+    "class": "intro_card_wrap u-section",
+    "blocks": [
         {
-          "type": "header",
-          "content": "Text"
-        },
-        {
-          "type": "text",
-          "id": "text",
-          "label": "Text",
-          "default": "Lorem ipsum dolor sit amet"
+            "name": "Item",
+            "type": "item",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Text"
+                },
+                {
+                    "type": "text",
+                    "id": "text",
+                    "label": "Text",
+                    "default": "Lorem ipsum dolor sit amet"
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "settings": [
-    {
-      "type": "header",
-      "content": "Sektion"
-    },
-    {
-      "type": "text",
-      "id": "section_id",
-      "label": "ID"
-    },
-    {
-      "type": "header",
-      "content": "Abst\u00e4nde"
-    },
-    {
-      "type": "select",
-      "id": "spacing_top",
-      "label": "Oben",
-      "options": [
+    ],
+    "settings": [
         {
-          "value": "none",
-          "label": "Kein Abstand"
+            "type": "header",
+            "content": "Sektion"
         },
         {
-          "value": "xxsmall",
-          "label": "Extra extra klein"
+            "type": "text",
+            "id": "section_id",
+            "label": "ID"
         },
         {
-          "value": "xsmall",
-          "label": "Extra klein"
+            "type": "header",
+            "content": "Abst\u00e4nde"
         },
         {
-          "value": "small",
-          "label": "Klein"
+            "type": "select",
+            "id": "spacing_top",
+            "label": "Oben",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "large_medium_off",
+                    "label": "Gro\u00df | Medium kein Abstand"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "xxsmall"
         },
         {
-          "value": "medium",
-          "label": "Mittel"
+            "type": "select",
+            "id": "spacing_bottom",
+            "label": "Unten",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                }
+            ],
+            "default": "xxsmall"
         },
         {
-          "value": "large",
-          "label": "Gro\u00df"
+            "type": "header",
+            "content": "\u00dcbertitel"
         },
         {
-          "value": "large_medium_off",
-          "label": "Gro\u00df | Medium kein Abstand"
+            "type": "text",
+            "id": "eyebrow",
+            "label": "Text",
+            "default": "\u00dcbertitel Text"
         },
         {
-          "value": "page_top",
-          "label": "Seitenanfang"
+            "type": "select",
+            "id": "eyebrow_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "p"
+        },
+        {
+            "type": "header",
+            "content": "\u00dcberschrift"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "heading",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+            "type": "number",
+            "id": "heading_max_width",
+            "label": "Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 20
+        },
+        {
+            "type": "checkbox",
+            "id": "heading_tidy_text",
+            "label": "Ausgewogener Zeilenumbruch",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Text"
+        },
+        {
+            "type": "richtext",
+            "id": "paragraph",
+            "label": "Text",
+            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
+        },
+        {
+            "type": "number",
+            "id": "paragraph_max_width",
+            "label": "Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 60
+        },
+        {
+            "type": "checkbox",
+            "id": "paragraph_tidy_text",
+            "label": "Ausgewogener Zeilenumbruch",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Text"
+        },
+        {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet"
+        },
+        {
+            "type": "header",
+            "content": "Text"
         }
-      ],
-      "default": "xxsmall"
-    },
-    {
-      "type": "select",
-      "id": "spacing_bottom",
-      "label": "Unten",
-      "options": [
+    ],
+    "presets": [
         {
-          "value": "none",
-          "label": "Kein Abstand"
-        },
-        {
-          "value": "xxsmall",
-          "label": "Extra extra klein"
-        },
-        {
-          "value": "xsmall",
-          "label": "Extra klein"
-        },
-        {
-          "value": "small",
-          "label": "Klein"
-        },
-        {
-          "value": "medium",
-          "label": "Mittel"
-        },
-        {
-          "value": "large",
-          "label": "Gro\u00df"
+            "name": "Intro Card",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "item"
+                }
+            ]
         }
-      ],
-      "default": "xxsmall"
-    },
-    {
-      "type": "header",
-      "content": "\u00dcbertitel"
-    },
-    {
-      "type": "text",
-      "id": "eyebrow",
-      "label": "Text",
-      "default": "\u00dcbertitel Text"
-    },
-    {
-      "type": "select",
-      "id": "eyebrow_tag",
-      "label": "HTML-Tag",
-      "options": [
-        {
-          "value": "h1",
-          "label": "H1"
-        },
-        {
-          "value": "h2",
-          "label": "H2"
-        },
-        {
-          "value": "h3",
-          "label": "H3"
-        },
-        {
-          "value": "h4",
-          "label": "H4"
-        },
-        {
-          "value": "h5",
-          "label": "H5"
-        },
-        {
-          "value": "h6",
-          "label": "H6"
-        },
-        {
-          "value": "p",
-          "label": "P"
-        }
-      ],
-      "default": "p"
-    },
-    {
-      "type": "header",
-      "content": "\u00dcberschrift"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "heading",
-      "label": "Text",
-      "default": "Lorem ipsum dolor sit amet elit"
-    },
-    {
-      "type": "number",
-      "id": "heading_max_width",
-      "label": "Maximale Breite",
-      "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-      "default": 20
-    },
-    {
-      "type": "checkbox",
-      "id": "heading_tidy_text",
-      "label": "Ausgewogener Zeilenumbruch",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Text"
-    },
-    {
-      "type": "richtext",
-      "id": "paragraph",
-      "label": "Text",
-      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
-    },
-    {
-      "type": "number",
-      "id": "paragraph_max_width",
-      "label": "Maximale Breite",
-      "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-      "default": 60
-    },
-    {
-      "type": "checkbox",
-      "id": "paragraph_tidy_text",
-      "label": "Ausgewogener Zeilenumbruch",
-      "default": true
-    }
-  ],
-  "presets": [
-    {
-      "name": "Intro Card",
-      "category": "Liquify",
-      "blocks": [
-        {
-          "type": "item"
-        },
-        {
-          "type": "item"
-        },
-        {
-          "type": "item"
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}
+    ]
+} {% endschema %}
