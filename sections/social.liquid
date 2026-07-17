@@ -1,26 +1,4 @@
-<div class="u-embed-css w-embed">
-          <style>
-  .social_top_track {
-    animation: text-carousel 15s linear infinite;
-  }
-  @keyframes text-carousel {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
-  .text_carousel_item::after {
-    content: '';
-    width: calc(calc(0.375rem * max(var(--_responsive---large), var(--_responsive---medium))) + calc(0.25rem * max(var(--_responsive---small), var(--_responsive---xsmall))));
-    height: calc(calc(0.375rem * max(var(--_responsive---large), var(--_responsive---medium))) + calc(0.25rem * max(var(--_responsive---small), var(--_responsive---xsmall))));
-    background-color: var(--_theme---background-3);
-    border-radius: var(--radius--round);
-  }
-</style>
-        </div>
-        <div class="u-display-none">
+<div class="u-display-none">
           
           
         </div>
@@ -124,7 +102,7 @@
                   
                             {% for block in section.blocks %}
     {% if block.type == "item" %}
-                    <div li-block="Item" class="text_carousel_item">
+                    <div li-block="Item" class="text_carousel_item_wrap">
                                     
                     
                                     <div class="u-display-none">
@@ -133,7 +111,9 @@
                     </div>
                                     
                     
-                                    {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: block.settings.text, tag: 'div', variant: 'u-text-h1-secondary', max_width: section.settings.text_max_width %}
+                                    <div class="text_carousel_item_element">
+                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: block.settings.text, tag: 'div', variant: 'u-text-h1-secondary', max_width: section.settings.text_max_width %}
+                    </div>
                                     
                   
                             </div>

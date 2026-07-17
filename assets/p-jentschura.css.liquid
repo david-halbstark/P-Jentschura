@@ -8087,12 +8087,8 @@ figure {
   background-color: pink;
 }
 
-.text_carousel_item {
-  grid-column-gap: var(--misc--text-carousel-gap);
-  grid-row-gap: var(--misc--text-carousel-gap);
+.text_carousel_item_wrap {
   flex: none;
-  justify-content: flex-start;
-  align-items: center;
   display: flex;
 }
 
@@ -8607,6 +8603,15 @@ figure {
 
 .dealer_cta_card_svg {
   max-width: calc(calc(18.75rem * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(14.375rem * max(var(--_responsive---small), var(--_responsive---xsmall))));
+}
+
+.text_carousel_item_element {
+  grid-column-gap: var(--misc--text-carousel-gap);
+  grid-row-gap: var(--misc--text-carousel-gap);
+  flex: none;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
 }
 
 @media screen and (max-width: 991px) {
