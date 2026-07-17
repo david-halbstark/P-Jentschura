@@ -1,25 +1,27 @@
 {% assign selected_collection = blank %}{% assign theme_metaobject = blank %}{% assign theme_color = blank %}{% if section.settings.collection_source == 'manual' %}{% assign selected_collection = section.settings.manual_collection %}{% elsif collection != blank %}{% assign selected_collection = collection %}{% endif %}{% if selected_collection != blank %}{% assign theme_metaobject = selected_collection.metafields.custom.theme_color.value %}{% endif %}{% if theme_metaobject != blank and theme_metaobject.color.value != blank %}{% assign theme_color = theme_metaobject.color.value | color_to_hex %}{% endif %}
         <div class="u-embed-css w-embed">
           <style>
- @container (width < 60em) {
-   .dealer_cta_layout {
-     display: flex;
+  @container (width < 65em) {
+    .dealer_cta_layout {
+      display: flex;
+      .dealer_cta_image.is-2 {
+        display: none;
+      }
+  }
+   @container (width < 30em) {
+     .dealer_cta_image {
+       max-height: none;
+     }
    }
- }
-  @container (width < 30em) {
-    .dealer_cta_image {
-      max-height: none;
-    }
-  }
-  .dealer_cta_card_bot .u-button-wrapper {
-    margin-top: 2.5rem;
-  }
-  .dealer_cta_card {
-    background: var(--collection-theme-color, grey);
-  }
-  #shopify-section-{{ section.id }}.dealer_cta_wrap {
-    --collection-theme-color: {{ theme_color }};
-  }
+   .dealer_cta_card_bot .u-button-wrapper {
+     margin-top: 3rem;
+   }
+   .dealer_cta_card {
+     background: var(--collection-theme-color, grey);
+   }
+   #shopify-section-{{ section.id }}.dealer_cta_wrap {
+     --collection-theme-color: {{ theme_color }};
+   }
 </style>
         </div>
         <div class="u-display-none">
