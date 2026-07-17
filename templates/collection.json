@@ -12,6 +12,20 @@
     "hero_links_8tENT6": {
       "type": "hero_links",
       "blocks": {
+        "button_ejkGCa": {
+          "type": "button",
+          "settings": {
+            "button_label": "Text",
+            "button_mode": "link",
+            "button_url": "",
+            "button_action": "newsletter_modal",
+            "button_pill_tag_inner": "",
+            "button_icon": "none",
+            "button_icon_position": "after",
+            "button_icon_animation": "none",
+            "button_icon_color": "inherit"
+          }
+        },
         "button_WUbccD": {
           "type": "button",
           "settings": {
@@ -28,6 +42,7 @@
         }
       },
       "block_order": [
+        "button_ejkGCa",
         "button_WUbccD"
       ],
       "name": "Hero Links",
