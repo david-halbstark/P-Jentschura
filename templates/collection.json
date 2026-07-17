@@ -9,6 +9,78 @@
  */
 {
   "sections": {
+    "hero_links_8tENT6": {
+      "type": "hero_links",
+      "blocks": {
+        "button_tEcExn": {
+          "type": "button",
+          "settings": {
+            "button_label": "Text",
+            "button_mode": "link",
+            "button_url": "",
+            "button_action": "newsletter_modal",
+            "button_variant": "solid",
+            "button_solid_color": "red",
+            "button_solid_text_size": "u-text-link-large",
+            "button_solid_padding": "base",
+            "button_text_text_size": "u-text-link-large",
+            "button_text_color": "green",
+            "button_pill_tag_inner": "",
+            "button_icon": "none",
+            "button_icon_position": "after",
+            "button_icon_animation": "none",
+            "button_icon_color": "inherit"
+          }
+        }
+      },
+      "block_order": [
+        "button_tEcExn"
+      ],
+      "name": "Hero Links",
+      "settings": {
+        "section_id": "",
+        "spacing_top": "large",
+        "spacing_bottom": "small",
+        "eyebrow": "Übertitel Text",
+        "eyebrow_tag": "p",
+        "heading": "Lorem ipsum dolor sit amet elit",
+        "heading_tag": "h2",
+        "heading_max_width": 20,
+        "heading_tidy_text": true,
+        "text_color": "u-color-2",
+        "media_type": "image",
+        "image": "shopify://shop_images/p-jentschura-home-hero-desktop.avif",
+        "image_width": 2000,
+        "image_width_mobile": 900,
+        "image_loading": "lazy",
+        "image_fetchpriority": "auto",
+        "image_object_fit": "cover",
+        "video_autoplay": false,
+        "video_loop": true,
+        "video_muted": true,
+        "video_controls": false,
+        "video_play_behavior": "none",
+        "gradient_color_top": "#182804",
+        "gradient_opacity_top": 80,
+        "gradient_color_bottom": "#182804",
+        "gradient_opacity_bottom": 80,
+        "button_label": "Text",
+        "button_mode": "link",
+        "button_url": "",
+        "button_action": "newsletter_modal",
+        "button_variant": "solid",
+        "button_solid_color": "red",
+        "button_solid_text_size": "u-text-link-large",
+        "button_solid_padding": "base",
+        "button_text_text_size": "u-text-link-large",
+        "button_text_color": "green",
+        "button_pill_tag_inner": "",
+        "button_icon": "none",
+        "button_icon_position": "after",
+        "button_icon_animation": "none",
+        "button_icon_color": "inherit"
+      }
+    },
     "intro_card_Gb3fRL": {
       "type": "intro_card",
       "blocks": {
@@ -57,77 +129,6 @@
         "image_2": "shopify://shop_images/family-lies-on-the-grass-with-a-soccer-ball-VEsFPNBozM0.png",
         "collection_source": "automatic",
         "manual_collection": ""
-      }
-    },
-    "hero_links_8tENT6": {
-      "type": "hero_links",
-      "blocks": {
-        "button_tEcExn": {
-          "type": "button",
-          "settings": {
-            "button_label": "Text",
-            "button_mode": "link",
-            "button_url": "",
-            "button_action": "newsletter_modal",
-            "button_variant": "solid",
-            "button_solid_color": "red",
-            "button_solid_text_size": "u-text-link-large",
-            "button_solid_padding": "base",
-            "button_text_text_size": "u-text-link-large",
-            "button_text_color": "green",
-            "button_pill_tag_inner": "",
-            "button_icon": "none",
-            "button_icon_position": "after",
-            "button_icon_animation": "none",
-            "button_icon_color": "inherit"
-          }
-        }
-      },
-      "block_order": [
-        "button_tEcExn"
-      ],
-      "name": "Hero Links",
-      "settings": {
-        "section_id": "",
-        "spacing_top": "large",
-        "spacing_bottom": "small",
-        "eyebrow": "Übertitel Text",
-        "eyebrow_tag": "p",
-        "heading": "Lorem ipsum dolor sit amet elit",
-        "heading_tag": "h2",
-        "heading_max_width": 20,
-        "heading_tidy_text": true,
-        "text_color": "u-color-2",
-        "media_type": "image",
-        "image_width": 2000,
-        "image_width_mobile": 900,
-        "image_loading": "lazy",
-        "image_fetchpriority": "auto",
-        "image_object_fit": "cover",
-        "video_autoplay": false,
-        "video_loop": true,
-        "video_muted": true,
-        "video_controls": false,
-        "video_play_behavior": "none",
-        "gradient_color_top": "#182804",
-        "gradient_opacity_top": 80,
-        "gradient_color_bottom": "#182804",
-        "gradient_opacity_bottom": 80,
-        "button_label": "Text",
-        "button_mode": "link",
-        "button_url": "",
-        "button_action": "newsletter_modal",
-        "button_variant": "solid",
-        "button_solid_color": "red",
-        "button_solid_text_size": "u-text-link-large",
-        "button_solid_padding": "base",
-        "button_text_text_size": "u-text-link-large",
-        "button_text_color": "green",
-        "button_pill_tag_inner": "",
-        "button_icon": "none",
-        "button_icon_position": "after",
-        "button_icon_animation": "none",
-        "button_icon_color": "inherit"
       }
     }
   },
