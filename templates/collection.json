@@ -62,7 +62,7 @@
       ],
       "name": "Hero Links",
       "settings": {
-        "section_id": "",
+        "section_id": "hero-id",
         "spacing_top": "large",
         "spacing_bottom": "small",
         "eyebrow": "{{ collection.title }}",
