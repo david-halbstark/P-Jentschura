@@ -62,7 +62,7 @@
           
           
         </div>
-        <div class="review_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
+        <div class="review_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
           
           <div data-section-spacing="" class="review_slider_layout"></div>
           

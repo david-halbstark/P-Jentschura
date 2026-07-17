@@ -151,7 +151,7 @@
         <div class="social_bot_wrap">
           <div class="social_bot_contain"></div>
         </div>
-        <div class="social_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
+        <div class="social_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
           
           <div class="social_layout">
             {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant, custom_class: , wrapper_class: %}

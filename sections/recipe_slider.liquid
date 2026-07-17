@@ -58,7 +58,7 @@
           
           
         </div>
-        <div class="recipe_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
+        <div class="recipe_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
           
           <div data-section-spacing="" class="recipe_slider_layout">
             <div class="recipe_slider_left">

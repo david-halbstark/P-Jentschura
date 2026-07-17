@@ -63,7 +63,7 @@
           
           
         </div>
-        <div class="category_cards_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
+        <div class="category_cards_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
           
           <div data-section-spacing="" class="category_cards_layout u-grid-custom">
             {% render 'heading', custom_class: , heading: section.settings.heading, tag: h2, visually_hidden: true %}

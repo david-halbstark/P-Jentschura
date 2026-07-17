@@ -70,7 +70,7 @@
           
         </div>
         
-        <div class="product_tabs_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
+        <div class="product_tabs_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
           
           <div data-section-spacing="" class="product_tabs_layout">
             <div class="product_tabs_top">

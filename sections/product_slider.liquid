@@ -1,211 +1,171 @@
-{% assign selected_collection = section.settings.collection -%}
-{%- assign theme_metaobject = selected_collection.metafields.custom.theme_color.value -%}
-{%- assign theme_color = theme_metaobject.color.value | color_to_hex %}
-<div class="u-embed-css w-embed">
-  <style>
-    .product_slider_layout:not([data-script-initialized='true']) .product_slider_tab:first-child {
-      --_state---true: 0;
-      --_state---false: 1;
+{% assign selected_collection = section.settings.collection %}{% assign theme_metaobject = selected_collection.metafields.custom.theme_color.value %}{% assign theme_color = theme_metaobject.color.value | color_to_hex %}
+        <div class="u-embed-css w-embed">
+          <style>
+  .product_slider_layout:not([data-script-initialized='true']) .product_slider_tab:first-child {
+    --_state---true: 0;
+    --_state---false: 1;
+  }
+  .product_slider_layout:not([data-script-initialized='true']) .product_slider_panel:not(:first-child) {
+    display: none;
+  }
+  .product_slider_slider_wrap {
+    --_gap---size: 1rem;
+  }
+  @container (width < 75em) {
+    .product_slider_bot .slider_offset {
+      --slide-count: var(--md);
     }
-    .product_slider_layout:not([data-script-initialized='true']) .product_slider_panel:not(:first-child) {
-      display: none;
+  }
+  @container (width < 60em) {
+    .product_slider_bot .slider_offset {
+      --slide-count: var(--sm);
     }
-    .product_slider_slider_wrap {
-      --_gap---size: 1rem;
+  }
+  @container (width < 40em) {
+    .product_slider_bot .slider_offset {
+      --slide-count: var(--xs);
     }
-    @container (width < 75em) {
-      .product_slider_bot .slider_offset {
-        --slide-count: var(--md);
-      }
-    }
-    @container (width < 60em) {
-      .product_slider_bot .slider_offset {
-        --slide-count: var(--sm);
-      }
-    }
-    @container (width < 40em) {
-      .product_slider_bot .slider_offset {
-        --slide-count: var(--xs);
-      }
-    }
-    #shopify-section-{{ section.id }}.product_slider_wrap {
-      --collection-theme-color: {{ theme_color }};
-    }
-  </style>
-</div>
-<div class="u-display-none"></div>
-
-<div class="u-display-none">
-  {% case section.settings.spacing_top -%}
-    {%- when 'xxsmall' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--xxsmall)' -%}
-    {%- when 'xsmall' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--xsmall)' -%}
-    {%- when 'small' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--small)' -%}
-    {%- when 'medium' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--medium)' -%}
-    {%- when 'large' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--large)' -%}
-    {%- when 'large_medium_off' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' -%}
-    {%- when 'page_top' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--page-top)' -%}
-    {%- else -%}
-      {%- assign spacing_top = '0' -%}
-  {%- endcase -%}
-  {%- case section.settings.spacing_bottom -%}
-    {%- when 'xxsmall' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' -%}
-    {%- when 'xsmall' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' -%}
-    {%- when 'small' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--small)' -%}
-    {%- when 'medium' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--medium)' -%}
-    {%- when 'large' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--large)' -%}
-    {%- when 'page_top' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--page-top)' -%}
-    {%- else -%}
-      {%- assign spacing_bottom = '0' -%}
-  {%- endcase %}
-  <div class="u-embed-css w-embed">
-    <style>
-      #shopify-section-{{ section.id }} [data-section-spacing] {
-        --section-spacing-top: {{ spacing_top }};
-        --section-spacing-bottom: {{ spacing_bottom }};
-      }
-    </style>
-  </div>
-</div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-
-<div
-  class="product_slider_contain u-container"
-  {% if section.settings.section_id != blank %}
-    id="{{ section.settings.section_id }}"
-  {% endif %}
->
-  <div data-section-spacing="" class="product_slider_layout">
-    <div class="product_slider_top">
-      <div class="product_slider_top_left u-margin-trim">
-        {% render 'eyebrow',
-          wrapper_class: 'is-eyebrow-base',
-          eyebrow: section.settings.eyebrow,
-          variant: 'u-text-eyebrow-base',
-          custom_class: 'u-color-3'
-        %}
-        {% render 'heading',
-          tag: section.settings.heading_tag,
-          visually_hidden: section.settings.heading_visually_hidden,
-          tidy_text: section.settings.heading_tidy_text,
-          heading: section.settings.heading,
-          custom_class: 'u-margin-bottom-0',
-          variant: 'u-text-h2-primary',
-          max_width: section.settings.heading_max_width
-        %}
-      </div>
-      <div class="product_slider_top_right">
-        <div class="product_slider_link">
-          {% render 'typography',
-            custom_attribute_value: 'true',
-            text: section.settings.clickable_label,
-            tag: 'span',
-            variant: 'u-text-link-base',
-            custom_class: 'u-margin-bottom-0 u-min-width-auto',
-            custom_attribute_name: 'aria-hidden'
-          %}
-          {% render 'clickable', url: section.settings.clickable_url, label: section.settings.clickable_label %}
+  }
+  #shopify-section-{{ section.id }}.product_slider_wrap {
+    --collection-theme-color: {{ theme_color }};
+  }
+</style>
         </div>
-      </div>
-    </div>
-    <div class="product_slider_bot">
-      <div class="product_slider_slider_wrap slider_wrap">
-        <div style="--lg: 4; --md: 2.5; --sm: 1.9; --xs: 1.1;" class="product_slider_slider_offset slider_offset">
-          <div class="product_slider_slider_element swiper">
-            <div class="product_slider_slider_list swiper-wrapper">
-              <div class="product_slider_slider_slide is-first swiper-slide">
-                {% render 'product_teaser_card',
-                  paragraph: section.settings.teaser_card_paragraph,
-                  button_url: section.settings.teaser_card_button_url,
-                  heading_tag: section.settings.teaser_card_heading_tag,
-                  button_label: section.settings.teaser_card_button_label,
-                  heading: section.settings.teaser_card_heading,
-                  eyebrow_tag: section.settings.teaser_card_eyebrow_tag,
-                  eyebrow: section.settings.teaser_card_eyebrow
-                %}
+        <div class="u-display-none">
+          
+          
+        </div>
+        
+        <div class="u-display-none">
+          
+          
+          
+          {% case section.settings.spacing_top %}{% when 'xxsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_top = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_top = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_top = 'var(--_spacing---section-space--large)' %}{% when 'large_medium_off' %}{% assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' %}{% when 'page_top' %}{% assign spacing_top = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_top = '0' %}{% endcase %}{% case section.settings.spacing_bottom %}{% when 'xxsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_bottom = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_bottom = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_bottom = 'var(--_spacing---section-space--large)' %}{% when 'page_top' %}{% assign spacing_bottom = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_bottom = '0' %}{% endcase %}
+          <div class="u-embed-css w-embed">
+            <style>
+  #shopify-section-{{ section.id }} [data-section-spacing] {
+    --section-spacing-top: {{ spacing_top }};
+    --section-spacing-bottom: {{ spacing_bottom }};
+  }
+</style>
+          </div>
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+          
+        </div>
+        
+        
+        
+        <div class="product_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
+          
+          <div data-section-spacing="" class="product_slider_layout">
+            <div class="product_slider_top">
+              <div class="product_slider_top_left u-margin-trim">
+                {% render 'eyebrow', wrapper_class: 'is-eyebrow-base', eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-base', custom_class: 'u-color-3' %}
+                {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: 'u-margin-bottom-0', variant: 'u-text-h2-primary', max_width: section.settings.heading_max_width %}
               </div>
-              {% for product in selected_collection.products %}
-                <div li-for="product in selected_collection.products" class="product_slider_slider_slide swiper-slide">
-                  {% assign product_story = product.metafields.custom.product_story.value -%}
-                  {%- assign top_image = product_story.top_image.value %}
-
-                  {% render 'product_card',
-                    product_hover_button_label: section.settings.product_card_button_label,
-                    product_url: product.url,
-                    product_hover_image: top_image,
-                    product_title: product.title,
-                    product_tag: product.metafields.custom.hero_eyebrow,
-                    product_image: product.images.first,
-                    product_description: product.description
-                  %}
+              <div class="product_slider_top_right">
+                <div class="product_slider_link">
+                  {% render 'typography', custom_attribute_value: 'true', text: section.settings.clickable_label, tag: 'span', variant: 'u-text-link-base', custom_class: 'u-margin-bottom-0 u-min-width-auto', custom_attribute_name: 'aria-hidden' %}
+                  {% render 'clickable', url: section.settings.clickable_url, label: section.settings.clickable_label %}
                 </div>
-              {% endfor %}
+              </div>
+            </div>
+            <div class="product_slider_bot">
+              <div class="product_slider_slider_wrap slider_wrap">
+                <div style="--lg: 4; --md: 2.5; --sm: 1.9; --xs: 1.1;" class="product_slider_slider_offset slider_offset">
+                  <div class="product_slider_slider_element swiper">
+                    <div class="product_slider_slider_list swiper-wrapper">
+                      <div class="product_slider_slider_slide is-first swiper-slide">
+                        {% render 'product_teaser_card', paragraph: section.settings.teaser_card_paragraph, button_url: section.settings.teaser_card_button_url, heading_tag: section.settings.teaser_card_heading_tag, button_label: section.settings.teaser_card_button_label, heading: section.settings.teaser_card_heading, eyebrow_tag: section.settings.teaser_card_eyebrow_tag, eyebrow: section.settings.teaser_card_eyebrow %}
+                      </div>
+                      {% for product in selected_collection.products %}    <div li-for="product in selected_collection.products" class="product_slider_slider_slide swiper-slide">
+                                    
+                        
+                            {% assign product_story = product.metafields.custom.product_story.value %}{% assign top_image = product_story.top_image.value %}
+                            
+                        
+                            {% render 'product_card', product_hover_button_label: section.settings.product_card_button_label, product_url: product.url, product_hover_image: top_image, product_title: product.title, product_tag: product.metafields.custom.hero_eyebrow, product_image: product.images.first, product_description: product.description %}
+                            
+                      
+                        </div>
+{% endfor %}
+                      
+                      
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="slider_controls">
+                  <div class="slider_bullet_list">
+                    <div class="slider_bullet_item is-active"></div>
+                    <div class="slider_bullet_item"></div>
+                  </div>
+                  <div class="slider_button_layout"><button data-trigger="hover focus" class="slider_button_wrap is-prev">
+                      <div class="slider_button_element">
+                        <div class="slider_button_icon">
+                          {% render 'icon', aria-hidden: true, icon: 'arrow_left' %}
+                        </div>
+                      </div>
+                    </button><button data-trigger="hover focus" class="slider_button_wrap is-next">
+                      <div class="slider_button_element">
+                        <div class="slider_button_icon">
+                          {% render 'icon', aria-hidden: true, icon: 'arrow_right' %}
+                        </div>
+                      </div>
+                    </button></div>
+                </div>
+              </div>
             </div>
           </div>
+          
         </div>
-        <div class="slider_controls">
-          <div class="slider_bullet_list">
-            <div class="slider_bullet_item is-active"></div>
-            <div class="slider_bullet_item"></div>
-          </div>
-          <div class="slider_button_layout">
-            <button data-trigger="hover focus" class="slider_button_wrap is-prev">
-              <div class="slider_button_element">
-                <div class="slider_button_icon">
-                  {% render 'icon', aria-hidden: true, icon: 'arrow_left' %}
-                </div>
-              </div></button
-            ><button data-trigger="hover focus" class="slider_button_wrap is-next">
-              <div class="slider_button_element">
-                <div class="slider_button_icon">
-                  {% render 'icon', aria-hidden: true, icon: 'arrow_right' %}
-                </div>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="u-embed-js w-embed w-script">
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      document.querySelectorAll('.product_slider_layout').forEach((component) => {
-        if (component.dataset.scriptInitialized === 'true') return;
-        component.dataset.scriptInitialized = 'true';
-        const swiperElement = component.querySelector('.product_slider_slider_element.swiper');
+        <div class="u-embed-js w-embed w-script">
+          <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document
+      .querySelectorAll(".product_slider_layout")
+      .forEach((component) => {
+        if (component.dataset.scriptInitialized === "true") return;
+        component.dataset.scriptInitialized = "true";
+        const swiperElement = component.querySelector(
+          ".product_slider_slider_element.swiper"
+        );
         if (!swiperElement || swiperElement.swiper) return;
-        const sliderWrap = swiperElement.closest('.product_slider_slider_wrap');
+        const sliderWrap = swiperElement.closest(
+          ".product_slider_slider_wrap"
+        );
         if (!sliderWrap) return;
-        const previousButton = sliderWrap.querySelector('.slider_button_wrap.is-prev');
-        const nextButton = sliderWrap.querySelector('.slider_button_wrap.is-next');
-        const pagination = sliderWrap.querySelector('.slider_bullet_list');
+        const previousButton = sliderWrap.querySelector(
+          ".slider_button_wrap.is-prev"
+        );
+        const nextButton = sliderWrap.querySelector(
+          ".slider_button_wrap.is-next"
+        );
+        const pagination = sliderWrap.querySelector(
+          ".slider_bullet_list"
+        );
         new Swiper(swiperElement, {
-          slidesPerView: 'auto',
+          slidesPerView: "auto",
           navigation: {
             prevEl: previousButton,
             nextEl: nextButton,
-            disabledClass: 'is-disabled',
+            disabledClass: "is-disabled",
           },
           pagination: {
             el: pagination,
             clickable: true,
-            bulletClass: 'slider_bullet_item',
-            bulletActiveClass: 'is-active',
+            bulletClass: "slider_bullet_item",
+            bulletActiveClass: "is-active",
             renderBullet(index, className) {
               return `
                 <button
@@ -218,347 +178,344 @@
           },
         });
       });
-    });
-  </script>
-</div>
-{% schema %}
-{
-  "tag": "section",
-  "name": "Product Slider",
-  "class": "product_slider_wrap u-section",
-  "settings": [
-    {
-      "type": "header",
-      "content": "Sektion"
-    },
-    {
-      "type": "text",
-      "id": "section_id",
-      "label": "ID"
-    },
-    {
-      "type": "collection",
-      "id": "collection",
-      "label": "Kollektion"
-    },
-    {
-      "type": "header",
-      "content": "Abst\u00e4nde"
-    },
-    {
-      "type": "select",
-      "id": "spacing_top",
-      "label": "Oben",
-      "options": [
+  });
+</script>
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Product Slider",
+    "class": "product_slider_wrap u-section",
+    "settings": [
         {
-          "value": "none",
-          "label": "Kein Abstand"
+            "type": "header",
+            "content": "Sektion"
         },
         {
-          "value": "xxsmall",
-          "label": "Extra extra klein"
+            "type": "text",
+            "id": "section_id",
+            "label": "ID"
         },
         {
-          "value": "xsmall",
-          "label": "Extra klein"
+            "type": "collection",
+            "id": "collection",
+            "label": "Kollektion"
         },
         {
-          "value": "small",
-          "label": "Klein"
+            "type": "header",
+            "content": "Abst\u00e4nde"
         },
         {
-          "value": "medium",
-          "label": "Mittel"
+            "type": "select",
+            "id": "spacing_top",
+            "label": "Oben",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "large_medium_off",
+                    "label": "Gro\u00df | Medium kein Abstand"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "large"
         },
         {
-          "value": "large",
-          "label": "Gro\u00df"
+            "type": "select",
+            "id": "spacing_bottom",
+            "label": "Unten",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                }
+            ],
+            "default": "large"
         },
         {
-          "value": "large_medium_off",
-          "label": "Gro\u00df | Medium kein Abstand"
+            "type": "header",
+            "content": "\u00dcbertitel"
         },
         {
-          "value": "page_top",
-          "label": "Seitenanfang"
+            "type": "text",
+            "id": "eyebrow",
+            "label": "Text",
+            "default": "\u00dcbertitel Text"
+        },
+        {
+            "type": "select",
+            "id": "eyebrow_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "p"
+        },
+        {
+            "type": "header",
+            "content": "\u00dcberschrift"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "heading",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+            "type": "select",
+            "id": "heading_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "number",
+            "id": "heading_max_width",
+            "label": "Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 20
+        },
+        {
+            "type": "checkbox",
+            "id": "heading_tidy_text",
+            "label": "Ausgewogener Zeilenumbruch",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Link"
+        },
+        {
+            "type": "text",
+            "id": "clickable_label",
+            "label": "Beschriftung",
+            "default": "Mehr erfahren"
+        },
+        {
+            "type": "url",
+            "id": "clickable_url",
+            "label": "Link"
+        },
+        {
+            "type": "header",
+            "content": "Teaser-Kachel"
+        },
+        {
+            "type": "text",
+            "id": "teaser_card_eyebrow",
+            "label": "\u00dcbertitel Text",
+            "default": "\u00dcbertitel Text"
+        },
+        {
+            "type": "select",
+            "id": "teaser_card_eyebrow_tag",
+            "label": "\u00dcbertitel HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "p"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "teaser_card_heading",
+            "label": "\u00dcberschrift Text",
+            "default": "\u00dcberschrift Text"
+        },
+        {
+            "type": "select",
+            "id": "teaser_card_heading_tag",
+            "label": "\u00dcberschrift HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "h3"
+        },
+        {
+            "type": "richtext",
+            "id": "teaser_card_paragraph",
+            "label": "Paragraph Text",
+            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.<\/p>"
+        },
+        {
+            "type": "text",
+            "id": "teaser_card_button_label",
+            "label": "Button Text",
+            "default": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "teaser_card_button_url",
+            "label": "Button Link"
+        },
+        {
+            "type": "header",
+            "content": "Produkt-Karten"
+        },
+        {
+            "type": "text",
+            "id": "product_card_button_label",
+            "label": "Button Text",
+            "default": "Button Text"
         }
-      ],
-      "default": "large"
-    },
-    {
-      "type": "select",
-      "id": "spacing_bottom",
-      "label": "Unten",
-      "options": [
+    ],
+    "presets": [
         {
-          "value": "none",
-          "label": "Kein Abstand"
-        },
-        {
-          "value": "xxsmall",
-          "label": "Extra extra klein"
-        },
-        {
-          "value": "xsmall",
-          "label": "Extra klein"
-        },
-        {
-          "value": "small",
-          "label": "Klein"
-        },
-        {
-          "value": "medium",
-          "label": "Mittel"
-        },
-        {
-          "value": "large",
-          "label": "Gro\u00df"
+            "name": "Product Slider",
+            "category": "Liquify",
+            "blocks": []
         }
-      ],
-      "default": "large"
-    },
-    {
-      "type": "header",
-      "content": "\u00dcbertitel"
-    },
-    {
-      "type": "text",
-      "id": "eyebrow",
-      "label": "Text",
-      "default": "\u00dcbertitel Text"
-    },
-    {
-      "type": "select",
-      "id": "eyebrow_tag",
-      "label": "HTML-Tag",
-      "options": [
-        {
-          "value": "h1",
-          "label": "H1"
-        },
-        {
-          "value": "h2",
-          "label": "H2"
-        },
-        {
-          "value": "h3",
-          "label": "H3"
-        },
-        {
-          "value": "h4",
-          "label": "H4"
-        },
-        {
-          "value": "h5",
-          "label": "H5"
-        },
-        {
-          "value": "h6",
-          "label": "H6"
-        },
-        {
-          "value": "p",
-          "label": "P"
-        }
-      ],
-      "default": "p"
-    },
-    {
-      "type": "header",
-      "content": "\u00dcberschrift"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "heading",
-      "label": "Text",
-      "default": "Lorem ipsum dolor sit amet elit"
-    },
-    {
-      "type": "select",
-      "id": "heading_tag",
-      "label": "HTML-Tag",
-      "options": [
-        {
-          "value": "h1",
-          "label": "H1"
-        },
-        {
-          "value": "h2",
-          "label": "H2"
-        },
-        {
-          "value": "h3",
-          "label": "H3"
-        },
-        {
-          "value": "h4",
-          "label": "H4"
-        },
-        {
-          "value": "h5",
-          "label": "H5"
-        },
-        {
-          "value": "h6",
-          "label": "H6"
-        },
-        {
-          "value": "p",
-          "label": "P"
-        }
-      ],
-      "default": "h2"
-    },
-    {
-      "type": "number",
-      "id": "heading_max_width",
-      "label": "Maximale Breite",
-      "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-      "default": 20
-    },
-    {
-      "type": "checkbox",
-      "id": "heading_tidy_text",
-      "label": "Ausgewogener Zeilenumbruch",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Link"
-    },
-    {
-      "type": "text",
-      "id": "clickable_label",
-      "label": "Beschriftung",
-      "default": "Mehr erfahren"
-    },
-    {
-      "type": "url",
-      "id": "clickable_url",
-      "label": "Link"
-    },
-    {
-      "type": "header",
-      "content": "Teaser-Kachel"
-    },
-    {
-      "type": "text",
-      "id": "teaser_card_eyebrow",
-      "label": "\u00dcbertitel Text",
-      "default": "\u00dcbertitel Text"
-    },
-    {
-      "type": "select",
-      "id": "teaser_card_eyebrow_tag",
-      "label": "\u00dcbertitel HTML-Tag",
-      "options": [
-        {
-          "value": "h1",
-          "label": "H1"
-        },
-        {
-          "value": "h2",
-          "label": "H2"
-        },
-        {
-          "value": "h3",
-          "label": "H3"
-        },
-        {
-          "value": "h4",
-          "label": "H4"
-        },
-        {
-          "value": "h5",
-          "label": "H5"
-        },
-        {
-          "value": "h6",
-          "label": "H6"
-        },
-        {
-          "value": "p",
-          "label": "P"
-        }
-      ],
-      "default": "p"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "teaser_card_heading",
-      "label": "\u00dcberschrift Text",
-      "default": "\u00dcberschrift Text"
-    },
-    {
-      "type": "select",
-      "id": "teaser_card_heading_tag",
-      "label": "\u00dcberschrift HTML-Tag",
-      "options": [
-        {
-          "value": "h1",
-          "label": "H1"
-        },
-        {
-          "value": "h2",
-          "label": "H2"
-        },
-        {
-          "value": "h3",
-          "label": "H3"
-        },
-        {
-          "value": "h4",
-          "label": "H4"
-        },
-        {
-          "value": "h5",
-          "label": "H5"
-        },
-        {
-          "value": "h6",
-          "label": "H6"
-        },
-        {
-          "value": "p",
-          "label": "P"
-        }
-      ],
-      "default": "h3"
-    },
-    {
-      "type": "richtext",
-      "id": "teaser_card_paragraph",
-      "label": "Paragraph Text",
-      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.<\/p>"
-    },
-    {
-      "type": "text",
-      "id": "teaser_card_button_label",
-      "label": "Button Text",
-      "default": "Button Text"
-    },
-    {
-      "type": "url",
-      "id": "teaser_card_button_url",
-      "label": "Button Link"
-    },
-    {
-      "type": "header",
-      "content": "Produkt-Karten"
-    },
-    {
-      "type": "text",
-      "id": "product_card_button_label",
-      "label": "Button Text",
-      "default": "Button Text"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Product Slider",
-      "category": "Liquify",
-      "blocks": []
-    }
-  ]
-}
-{% endschema %}
+    ]
+} {% endschema %}

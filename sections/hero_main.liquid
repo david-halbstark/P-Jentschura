@@ -3,7 +3,7 @@
           
           
         </div>
-        <div class="hero_main_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
+        <div class="hero_main_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
           <div class="hero_main_layout">
             <div class="hero_main_slider_wrap slider_wrap" {% if section.settings.section_id != blank %}{{ section.settings.section_id }}{% endif %}>
               <div style="--lg: 1; --md: 1; --sm: 1; --xs: 1;" class="hero_main_slider_offset slider_offset">
