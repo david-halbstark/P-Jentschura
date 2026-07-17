@@ -19,32 +19,6 @@
             "button_mode": "link",
             "button_url": "shopify://collections",
             "button_action": "newsletter_modal",
-            "button_variant": "solid",
-            "button_solid_color": "red",
-            "button_solid_text_size": "u-text-link-large",
-            "button_solid_padding": "base",
-            "button_text_text_size": "u-text-link-large",
-            "button_text_color": "green",
-            "button_pill_tag_inner": "",
-            "button_icon": "none",
-            "button_icon_position": "after",
-            "button_icon_animation": "none",
-            "button_icon_color": "inherit"
-          }
-        },
-        "button_tEcExn": {
-          "type": "button",
-          "settings": {
-            "button_label": "Text",
-            "button_mode": "link",
-            "button_url": "",
-            "button_action": "newsletter_modal",
-            "button_variant": "solid",
-            "button_solid_color": "red",
-            "button_solid_text_size": "u-text-link-large",
-            "button_solid_padding": "base",
-            "button_text_text_size": "u-text-link-large",
-            "button_text_color": "green",
             "button_pill_tag_inner": "",
             "button_icon": "none",
             "button_icon_position": "after",
@@ -54,8 +28,7 @@
         }
       },
       "block_order": [
-        "button_WUbccD",
-        "button_tEcExn"
+        "button_WUbccD"
       ],
       "name": "Hero Links",
       "settings": {
@@ -89,12 +62,6 @@
         "button_mode": "link",
         "button_url": "",
         "button_action": "newsletter_modal",
-        "button_variant": "solid",
-        "button_solid_color": "red",
-        "button_solid_text_size": "u-text-link-large",
-        "button_solid_padding": "base",
-        "button_text_text_size": "u-text-link-large",
-        "button_text_color": "green",
         "button_pill_tag_inner": "",
         "button_icon": "none",
         "button_icon_position": "after",
