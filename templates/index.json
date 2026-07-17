@@ -75,7 +75,7 @@
             "heading": "Basische Ernährung",
             "heading_variant": "u-text-h2-primary",
             "text_1": "Natürlich & gesund",
-            "text_2": "Von innen heraus",
+            "text_2": "",
             "clickable_url": "shopify://collections/basische-ernaehrung"
           }
         },
@@ -148,7 +148,7 @@
         "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>",
         "teaser_card_button_label": "Button Text",
         "teaser_card_button_url": "shopify://policies/privacy-policy",
-        "product_card_button_text": "Mehr erfahren"
+        "product_card_button_label": "Button Text"
       }
     },
     "product_tabs_8F6RVB": {
@@ -165,8 +165,7 @@
             "teaser_card_heading_tag": "h3",
             "teaser_card_paragraph": "<p>Unsere Produkte unterstützen dich natürlich und basisch: für mehr Energie im Alltag und ein Leben voller Vitalität.</p>",
             "teaser_card_button_label": "Mehr erfahren",
-            "teaser_card_button_url": "shopify://collections/basische-ernaehrung",
-            "product_card_button_label": "Mehr erfahren"
+            "teaser_card_button_url": "shopify://collections/basische-ernaehrung"
           }
         },
         "tab_panel_qAqPTU": {
@@ -180,8 +179,7 @@
             "teaser_card_heading_tag": "h3",
             "teaser_card_paragraph": "<p>Unsere Produkte unterstützen dich natürlich und basisch: für mehr Energie im Alltag und ein Leben voller Vitalität.</p>",
             "teaser_card_button_label": "Mehr erfahren",
-            "teaser_card_button_url": "shopify://collections/basische-koerperpflege",
-            "product_card_button_label": "Mehr erfahren"
+            "teaser_card_button_url": "shopify://collections/basische-koerperpflege"
           }
         },
         "tab_panel_JEjDnP": {
@@ -195,8 +193,7 @@
             "teaser_card_heading_tag": "h3",
             "teaser_card_paragraph": "<p>Unsere Produkte unterstützen dich natürlich und basisch: für mehr Energie im Alltag und ein Leben voller Vitalität.</p>",
             "teaser_card_button_label": "Mehr erfahren",
-            "teaser_card_button_url": "shopify://collections/basische-accessoires",
-            "product_card_button_label": "Mehr erfahren"
+            "teaser_card_button_url": "shopify://collections/basische-accessoires"
           }
         }
       },
@@ -215,7 +212,8 @@
         "heading": "Aktiv & Vital — Für Körper in Bewegung",
         "heading_tag": "h2",
         "heading_max_width": 30,
-        "heading_tidy_text": true
+        "heading_tidy_text": true,
+        "product_card_button_label": "Button Text"
       }
     },
     "guide_slider_FBaGd6": {
@@ -267,7 +265,6 @@
       ],
       "name": "Text Carousel",
       "settings": {
-        "section_id": "",
         "spacing_top": "xxsmall",
         "spacing_bottom": "xxsmall"
       }
@@ -298,7 +295,41 @@
       "settings": {
         "section_id": "",
         "spacing_top": "main",
-        "spacing_bottom": "main"
+        "spacing_bottom": "main",
+        "button_1_label": "Text",
+        "button_1_mode": "link",
+        "button_1_url": "",
+        "button_1_action": "newsletter_modal",
+        "button_1_variant": "solid",
+        "button_1_solid_color": "red",
+        "button_1_solid_text_size": "u-text-link-large",
+        "button_1_solid_padding": "base",
+        "button_1_text_text_size": "u-text-link-large",
+        "button_1_text_color": "green",
+        "button_1_pill_color": "white",
+        "button_1_pill_text_size": "u-text-eyebrow-base",
+        "button_1_pill_tag_inner": "",
+        "button_1_underline": false,
+        "button_2_icon": "none",
+        "button_1_icon_position": "after",
+        "button_1_icon_animation": "none",
+        "button_1_icon_color": "inherit",
+        "button_2_label": "Text",
+        "button_2_mode": "link",
+        "button_2_url": "",
+        "button_2_variant": "solid",
+        "button_2_action": "newsletter_modal",
+        "button_2_solid_color": "red",
+        "button_2_solid_text_size": "u-text-link-large",
+        "button_2_solid_padding": "base",
+        "button_2_text_text_size": "u-text-link-large",
+        "button_2_text_color": "green",
+        "button_2_pill_color": "white",
+        "button_2_pill_text_size": "u-text-eyebrow-base",
+        "button_2_pill_tag_inner": "",
+        "button_2_underline": false,
+        "button_2_icon_position": "after",
+        "button_2_icon_animation": "none"
       }
     },
     "testimonial_slider_QcxrrE": {
@@ -313,7 +344,9 @@
         "heading_tag": "h2",
         "heading_max_width": 20,
         "heading_tidy_text": true,
-        "heading_visually_hidden": false
+        "heading_visually_hidden": false,
+        "button_1_label": "Button 1 Text",
+        "button_1_url": ""
       }
     },
     "image_links_WT9tM6": {
@@ -331,7 +364,15 @@
       "settings": {
         "section_id": "",
         "spacing_top": "main",
-        "spacing_bottom": "main"
+        "spacing_bottom": "main",
+        "eyebrow": "Übertitel Text",
+        "eyebrow_tag": "p",
+        "heading": "Lorem ipsum dolor sit amet elit",
+        "heading_tag": "h2",
+        "heading_max_width": 20,
+        "heading_tidy_text": true,
+        "button_1_label": "Text",
+        "button_1_url": ""
       }
     },
     "social_RUF7jw": {
