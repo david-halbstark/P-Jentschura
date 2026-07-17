@@ -33,12 +33,16 @@
     .category_card_bot_text:has(> :nth-child(2) span) > :first-child > span::after {
           content: '\00a0\2022';
                   display: inline;
+
                   color: var(--_theme---text-4);
                 }
 
                     .category_card_bot_text > :nth-child(2) > span::after {
                         content: none !important;
+                    }
 
+                .category_card_bot_text span.u-text {
+                  display: inline;
                 }
 
                 .category_card_bot_text .u-text::before {
