@@ -1,4 +1,19 @@
 <div class="u-embed-css w-embed">
+  {% assign selected_collection = blank -%}
+  {%- assign theme_metaobject = blank -%}
+  {%- assign theme_color = blank -%}
+  {%- if section.settings.collection_source == 'manual' -%}
+    {%- assign selected_collection = section.settings.manual_collection -%}
+  {%- elsif collection != blank -%}
+    {%- assign selected_collection = collection -%}
+  {%- endif -%}
+  {%- if selected_collection != blank -%}
+    {%- assign theme_metaobject = selected_collection.metafields.custom.theme_color.value -%}
+  {%- endif -%}
+  {%- if theme_metaobject != blank and theme_metaobject.color.value != blank -%}
+    {%- assign theme_color = theme_metaobject.color.value | color_to_hex -%}
+  {%- endif %}
+
   <style>
     @container (width < 42em) {
       .dealer_cta_image {
@@ -65,20 +80,6 @@
 <div class="u-display-none"></div>
 <div class="u-display-none"></div>
 
-{% assign selected_collection = blank -%}
-{%- assign theme_metaobject = blank -%}
-{%- assign theme_color = blank -%}
-{%- if section.settings.collection_source == 'manual' -%}
-  {%- assign selected_collection = section.settings.manual_collection -%}
-{%- elsif collection != blank -%}
-  {%- assign selected_collection = collection -%}
-{%- endif -%}
-{%- if selected_collection != blank -%}
-  {%- assign theme_metaobject = selected_collection.metafields.custom.theme_color.value -%}
-{%- endif -%}
-{%- if theme_metaobject != blank and theme_metaobject.color.value != blank -%}
-  {%- assign theme_color = theme_metaobject.color.value | color_to_hex -%}
-{%- endif %}
 <div
   class="dealer_cta_contain u-container"
   id="{% if section.settings.section_id != blank %}{{ section_id }}{% endif %}"
