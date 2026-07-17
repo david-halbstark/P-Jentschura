@@ -267,7 +267,8 @@
       "settings": {
         "section_id": "",
         "spacing_top": "xxsmall",
-        "spacing_bottom": "xxsmall"
+        "spacing_bottom": "xxsmall",
+        "animation_speed": 15
       }
     },
     "recipe_slider_QekpTM": {
@@ -286,8 +287,8 @@
         "paragraph": "<p>Ein Alltagsgericht, das in unter 10 Minuten auf dem Tisch steht — und trotzdem alles mitbringt, was der Körper braucht.</p>",
         "paragraph_max_width": 60,
         "paragraph_tidy_text": true,
-        "button_1_label": "Button 1 Text",
-        "button_1_url": ""
+        "button_1_label": "Alle Rezepte entdecken",
+        "button_1_url": "shopify://blogs/blog"
       }
     },
     "review_slider_b9FWPH": {
