@@ -12,6 +12,20 @@
     "hero_links_8tENT6": {
       "type": "hero_links",
       "blocks": {
+        "button_WyFH4f": {
+          "type": "button",
+          "settings": {
+            "button_label": "Text",
+            "button_mode": "link",
+            "button_url": "",
+            "button_action": "newsletter_modal",
+            "button_pill_tag_inner": "",
+            "button_icon": "none",
+            "button_icon_position": "after",
+            "button_icon_animation": "none",
+            "button_icon_color": "inherit"
+          }
+        },
         "button_ejkGCa": {
           "type": "button",
           "settings": {
@@ -42,6 +56,7 @@
         }
       },
       "block_order": [
+        "button_WyFH4f",
         "button_ejkGCa",
         "button_WUbccD"
       ],
@@ -50,10 +65,10 @@
         "section_id": "",
         "spacing_top": "large",
         "spacing_bottom": "small",
-        "eyebrow": "Übertitel Text",
-        "eyebrow_tag": "p",
+        "eyebrow": "{{ collection.title }}",
+        "eyebrow_tag": "h1",
         "heading": "Lorem ipsum dolor sit amet elit",
-        "heading_tag": "h2",
+        "heading_tag": "p",
         "heading_max_width": 20,
         "heading_tidy_text": true,
         "text_color": "u-color-2",
