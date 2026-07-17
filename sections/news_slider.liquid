@@ -1,4 +1,11 @@
-<div class="u-display-none">
+<div class="u-embed-css w-embed">
+          <style>
+  .news_slider_slider_wrap {
+    --_gap---size: 1rem;
+  }
+</style>
+        </div>
+        <div class="u-display-none">
           
           
         </div>
@@ -16,10 +23,131 @@
 </style>
           </div>
         </div>
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+        </div>
         <div class="news_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
           
-          <div class="news_slider_layout u-grid-autofit"></div>
+          <div data-section-spacing="" class="news_slider_layout">
+            <div class="news_slider_top">
+              <div class="news_slider_top_left u-margin-trim">
+                {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-base u-color-3', wrapper_class: 'is-eyebrow-base' %}
+                {% render 'heading', visually_hidden: section.settings.heading_visually_hidden, heading: section.settings.heading, tag: section.settings.heading_tag, variant: 'u-text-h2-primary', max_width: section.settings.heading_max_width, tidy_text: section.settings.heading_tidy_text %}
+              </div>
+              <div class="news_slider_top_right">
+                <div class="news_slider_link">
+                  {% render 'typography', custom_attribute_value: 'true', text: section.settings.button_1_label, tag: 'span', variant: 'u-text-link-base', custom_class: 'u-margin-bottom-0 u-min-width-auto', custom_attribute_name: 'aria-hidden' %}
+                  {% render 'clickable', url: section.settings.button_1_url, label: section.settings.button_1_label, mode: 'link' %}
+                </div>
+              </div>
+            </div>
+            <div class="news_slider_bot">
+              <div class="news_slider_slider_wrap slider_wrap">
+                <div style="--lg: 3; --md: 2; --sm: 1.5; --xs: 1;" class="news_slider_slider_offset slider_offset">
+                  <div class="news_slider_slider_element swiper">
+                    <div class="news_slider_slider_list swiper-wrapper">
+                      <div class="news_slider_slider_slide swiper-slide">
+                        <div class="news_slider_card_wrap">
+                          <div class="news_slider_card_element">
+                            <div class="news_slider_card_top">
+                              {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                              <div class="news_slider_card_tag">
+                                {% render 'tag', custom_class: , tag: section.settings.tag, variant: section.settings.tag_variant, solid_text_size: section.settings.tag_solid_text_size, solid_color: section.settings.tag_solid_color, pill_text_size: section.settings.tag_pill_text_size %}
+                              </div>
+                            </div>
+                            <div class="news_slider_card_bot">
+                              {% render 'typography', variant: 'u-text-body-small', text: news.date.value, tag: 'div' %}
+                              {% render 'heading', variant: 'u-text-h3-primary', heading: news.title.value, tag: 'h3' %}
+                              {% render 'paragraph', variant: 'u-text-body-base', paragraph: news.text.value %}
+                            </div>
+                          </div>
+                          {% render 'clickable', url: news.system.url, label: news.title.value, mode: 'link' %}
+                        </div>
+                      </div>
+                      
+                      
+                      
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="slider_controls">
+                  <div class="slider_bullet_list">
+                    <div class="slider_bullet_item is-active"></div>
+                    <div class="slider_bullet_item"></div>
+                  </div>
+                  <div class="slider_button_layout"><button data-trigger="hover focus" class="slider_button_wrap is-prev">
+                      <div class="slider_button_element">
+                        <div class="slider_button_icon">
+                          {% render 'icon', aria-hidden: true, icon: 'arrow_left' %}
+                        </div>
+                      </div>
+                    </button><button data-trigger="hover focus" class="slider_button_wrap is-next">
+                      <div class="slider_button_element">
+                        <div class="slider_button_icon">
+                          {% render 'icon', aria-hidden: true, icon: 'arrow_right' %}
+                        </div>
+                      </div>
+                    </button></div>
+                </div>
+              </div>
+            </div>
+          </div>
           
+        </div>
+        <div class="u-embed-js w-embed w-script">
+          <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.news_slider_layout').forEach((component) => {
+      if (component.dataset.scriptInitialized === 'true') return;
+      component.dataset.scriptInitialized = 'true';
+      const swiperElement = component.querySelector('.news_slider_slider_element.swiper');
+      if (!swiperElement || swiperElement.swiper) return;
+      const sliderWrap = swiperElement.closest('.news_slider_slider_wrap');
+      if (!sliderWrap) return;
+      const previousButton = sliderWrap.querySelector('.slider_button_wrap.is-prev');
+      const nextButton = sliderWrap.querySelector('.slider_button_wrap.is-next');
+      const pagination = sliderWrap.querySelector('.slider_bullet_list');
+      new Swiper(swiperElement, {
+        slidesPerView: 'auto',
+        navigation: {
+          prevEl: previousButton,
+          nextEl: nextButton,
+          disabledClass: 'is-disabled',
+        },
+        pagination: {
+          el: pagination,
+          clickable: true,
+          bulletClass: 'slider_bullet_item',
+          bulletActiveClass: 'is-active',
+          renderBullet(index, className) {
+            return `
+                <button
+                  type="button"
+                  class="${className}"
+                  aria-label="Slide ${index + 1}"
+                ></button>
+              `;
+          },
+        },
+      });
+    });
+  });
+</script>
         </div> {% schema %} {
     "tag": "section",
     "name": "News Slider",
@@ -109,6 +237,127 @@
                 }
             ],
             "default": "large"
+        },
+        {
+            "type": "header",
+            "content": "\u00dcbertitel"
+        },
+        {
+            "type": "text",
+            "id": "eyebrow",
+            "label": "Text",
+            "default": "\u00dcbertitel Text"
+        },
+        {
+            "type": "select",
+            "id": "eyebrow_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "p"
+        },
+        {
+            "type": "header",
+            "content": "\u00dcberschrift"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "heading",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+            "type": "select",
+            "id": "heading_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "number",
+            "id": "heading_max_width",
+            "label": "Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 20
+        },
+        {
+            "type": "checkbox",
+            "id": "heading_tidy_text",
+            "label": "Ausgewogener Zeilenumbruch",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Button"
+        },
+        {
+            "type": "text",
+            "id": "button_1_label",
+            "label": "Text",
+            "default": "Text"
+        },
+        {
+            "type": "url",
+            "id": "button_1_url",
+            "label": "Link",
+            "visible_if": "{{ section.settings.button_1_mode == 'link' }}"
         }
     ],
     "presets": [

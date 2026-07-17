@@ -1,78 +1,52 @@
-<div class="u-embed-css w-embed">
-          <style>
-  .text_carousel_track {
-    animation: text-carousel 15s linear infinite;
-  }
-  @keyframes text-carousel {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
-  .text_carousel_item::after {
-    content: '';
-    width: calc(calc(0.375rem * max(var(--_responsive---large), var(--_responsive---medium))) + calc(0.25rem * max(var(--_responsive---small), var(--_responsive---xsmall))));
-    height: calc(calc(0.375rem * max(var(--_responsive---large), var(--_responsive---medium))) + calc(0.25rem * max(var(--_responsive---small), var(--_responsive---xsmall))));
-    background-color: var(--_theme---background-3);
-    border-radius: var(--radius--round);
-  }
-</style>
-        </div>
-        <div class="u-display-none">
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          {% case section.settings.spacing_top %}{% when 'xxsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_top = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_top = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_top = 'var(--_spacing---section-space--large)' %}{% when 'large_medium_off' %}{% assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' %}{% when 'page_top' %}{% assign spacing_top = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_top = '0' %}{% endcase %}{% case section.settings.spacing_bottom %}{% when 'xxsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_bottom = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_bottom = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_bottom = 'var(--_spacing---section-space--large)' %}{% when 'page_top' %}{% assign spacing_bottom = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_bottom = '0' %}{% endcase %}
-          <div class="u-embed-css w-embed">
-            <style>
+<div class="u-display-none">
+            
+            
+            
+            {% case section.settings.spacing_top %}{% when 'xxsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_top = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_top = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_top = 'var(--_spacing---section-space--large)' %}{% when 'large_medium_off' %}{% assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' %}{% when 'page_top' %}{% assign spacing_top = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_top = '0' %}{% endcase %}{% case section.settings.spacing_bottom %}{% when 'xxsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_bottom = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_bottom = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_bottom = 'var(--_spacing---section-space--large)' %}{% when 'page_top' %}{% assign spacing_bottom = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_bottom = '0' %}{% endcase %}
+            <div class="u-embed-css w-embed">
+              <style>
   #shopify-section-{{ section.id }} [data-section-spacing] {
     --section-spacing-top: {{ spacing_top }};
     --section-spacing-bottom: {{ spacing_bottom }};
   }
 </style>
+            </div>
           </div>
-        </div>
-        <div class="text_carousel_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
-          
-          <div data-section-spacing="" class="text_carousel_layout">
-            <div class="text_carousel_track">
-              {% for repeat in (1..4) %}    <div li-for="repeat in (1..4)" class="text_carousel_group">
+          <div class="social_top_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
+            
+            <div data-section-spacing="" class="social_top_layout">
+              <div class="social_top_track">
+                {% for repeat in (1..4) %}    <div li-for="repeat in (1..4)" class="social_top_group">
                                     
-                
+                  
                             {% for block in section.blocks %}
     {% if block.type == "item" %}
                     <div li-block="Item" class="text_carousel_item">
                                     
-                  
+                    
                                     <div class="u-display-none">
-                    
-                    
-                  </div>
+                      
+                      
+                    </div>
                                     
-                  
+                    
                                     {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: block.settings.text, tag: 'div', variant: 'u-text-h1-secondary', max_width: section.settings.text_max_width %}
                                     
-                
+                  
                             </div>
             {% endif %}
 {% endfor %}
                             
-              
+                
                         </div>
 {% endfor %}
+              </div>
             </div>
-          </div>
-          
-        </div> {% schema %} {
+            
+          </div> {% schema %} {
     "tag": "section",
     "name": "Text Carousel",
-    "class": "text_carousel_wrap u-section",
+    "class": "social_top_wrap u-section",
     "blocks": [
         {
             "name": "Item",
@@ -92,15 +66,6 @@
         }
     ],
     "settings": [
-        {
-            "type": "header",
-            "content": "Sektion"
-        },
-        {
-            "type": "text",
-            "id": "section_id",
-            "label": "ID"
-        },
         {
             "type": "header",
             "content": "Abst\u00e4nde"
