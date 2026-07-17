@@ -1,40 +1,39 @@
 <div class="u-embed-css w-embed">
   <style>
-    @container (width < 73em) {
-      .category_cards_layout {
-        --_column-count---value: 2;
-      }
-    }
-    @container (width < 42em) {
-      .category_cards_layout {
-        --_column-count---value: 1;
-      }
-      .category_cards_card_element {
-        flex-flow: row wrap;
-      }
-      .category_card_bot {
-        flex: 1 1 12rem;
-        align-items: flex-start;
-        text-align: start;
-      }
-    }
-    .category_cards_card_element:before {
-      content: '';
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      inset: 0;
-      background-image: linear-gradient(#f2f1f1 0%, #ededed 100%);
-      opacity: calc(100% * var(--_trigger---off));
-      transition: opacity 0.2s ease;
-    }
-    .category_card_bot_text:has(> :nth-child(2):not(:empty)) > :first-child:after {
-      content: '\00a0\2022  ';
-      color: var(--_theme---text-4);
-    }
-    .category_card_bot_text span.u-text {
-      display: inline;
-    }
+        @container (width < 73em) {
+          .category_cards_layout {
+            --_column-count---value: 2;
+          }
+        }
+        @container (width < 42em) {
+          .category_cards_layout {
+            --_column-count---value: 1;
+          }
+          .category_cards_card_element {
+            flex-flow: row wrap;
+          }
+          .category_card_bot {
+            flex: 1 1 12rem;
+            align-items: flex-start;
+            text-align: start;
+          }
+        }
+        .category_cards_card_element:before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          inset: 0;
+          background-image: linear-gradient(#f2f1f1 0%, #ededed 100%);
+          opacity: calc(100% * var(--_trigger---off));
+          transition: opacity 0.2s ease;
+        }
+    .category_card_bot_text:has(>:nth-child(2):not(:empty)) > :first-child:after {      content: '\00a0\2022  ';
+          color: var(--_theme---text-4);
+        }
+        .category_card_bot_text span.u-text {
+          display: inline;
+        }
   </style>
 </div>
 
