@@ -85,7 +85,7 @@
       "type": "dealer_cta",
       "name": "Dealer CTA",
       "settings": {
-        "section_id": "test_test",
+        "section_id": "",
         "spacing_top": "large",
         "spacing_bottom": "large",
         "heading": "Finde P. Jentschura in deiner Nähe",
