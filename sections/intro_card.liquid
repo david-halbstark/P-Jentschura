@@ -79,10 +79,10 @@
           {% for block in section.blocks %}
             {% if block.type == 'item' %}
               <div li-block="Item" class="intro_card_item_wrap u-display-contents">
-                <div class="intro_card_item_element u-display-content">
+                <div class="intro_card_item_element u-display-contents">
                   <div class="u-display-none"></div>
                   {% render 'typography',
-                    custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3',
+                    custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3 u-display-inline-block',
                     text: block.settings.text,
                     tag: 'div',
                     variant: 'u-text-body-small'
