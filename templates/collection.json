@@ -86,8 +86,6 @@
       "name": "Dealer CTA",
       "settings": {
         "section_id": "",
-        "spacing_top": "large",
-        "spacing_bottom": "large",
         "heading": "Finde P. Jentschura in deiner Nähe",
         "heading_variant": "u-text-h2-primary",
         "heading_tag": "h2",
@@ -100,8 +98,8 @@
         "button_1_url": "shopify://pages/contact",
         "image_1": "shopify://shop_images/p-jentschura-home-hero-desktop.avif",
         "image_2": "shopify://shop_images/family-lies-on-the-grass-with-a-soccer-ball-VEsFPNBozM0.png",
-        "collection_source": "manual",
-        "manual_collection": "basische-ernaehrung"
+        "collection_source": "automatic",
+        "manual_collection": ""
       }
     }
   },
