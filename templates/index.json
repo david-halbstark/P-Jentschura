@@ -9,49 +9,47 @@
  */
 {
   "sections": {
-    "hero_main_Wx4xLA": {
-      "type": "hero_main",
+    "hero_slider_gFXMbR": {
+      "type": "hero_slider",
       "blocks": {
-        "slide_FqViYR": {
+        "slide_kHaXVT": {
           "type": "slide",
           "settings": {
             "text_color": "u-color-2",
-            "eyebrow": "Willkommen bei P. Jentschura",
+            "eyebrow": "Übertitel Text",
             "eyebrow_tag": "p",
-            "heading": "Für alle, die das Leben in vollen Zügen genießen",
-            "heading_tag": "h1",
+            "heading": "Lorem ipsum dolor sit amet elit",
+            "heading_tag": "h2",
             "heading_max_width": 20,
             "heading_tidy_text": true,
-            "button_1_label": "Jetzt entdecken",
-            "button_1_url": "shopify://policies/privacy-policy",
+            "button_1_label": "Text",
+            "button_1_url": "",
             "button_1_solid_color": "red",
-            "button_2_label": "",
-            "button_2_url": "shopify://blogs/blog",
+            "button_2_label": "Text",
+            "button_2_url": "",
             "button_2_solid_color": "red",
             "media_type": "image",
-            "image": "shopify://shop_images/p-jentschura-home-hero-desktop.avif",
-            "image_mobile": "shopify://shop_images/p-jentschura-home-hero-mobile.avif",
             "image_width": 2000,
             "image_width_mobile": 900,
-            "image_loading": "eager",
+            "image_loading": "lazy",
             "image_fetchpriority": "auto",
             "image_object_fit": "cover",
-            "video_autoplay": true,
+            "video_autoplay": false,
             "video_loop": true,
             "video_muted": true,
             "video_controls": false,
-            "video_play_behavior": "active_slide",
-            "gradient_color_top": "#232e20",
-            "gradient_opacity_top": 40,
-            "gradient_color_bottom": "#232e20",
-            "gradient_opacity_bottom": 60
+            "video_play_behavior": "none",
+            "gradient_color_top": "#182804",
+            "gradient_opacity_top": 80,
+            "gradient_color_bottom": "#182804",
+            "gradient_opacity_bottom": 80
           }
         }
       },
       "block_order": [
-        "slide_FqViYR"
+        "slide_kHaXVT"
       ],
-      "name": "Hero Main",
+      "name": "Hero Slider",
       "settings": {
         "section_id": ""
       }
@@ -265,10 +263,8 @@
       ],
       "name": "Text Carousel",
       "settings": {
-        "section_id": "",
         "spacing_top": "xxsmall",
-        "spacing_bottom": "xxsmall",
-        "animation_speed": 15
+        "spacing_bottom": "xxsmall"
       }
     },
     "recipe_slider_QekpTM": {
@@ -514,7 +510,7 @@
   "layout": "theme",
   "wrapper": "main#main.page_main",
   "order": [
-    "hero_main_Wx4xLA",
+    "hero_slider_gFXMbR",
     "trust_rating_pfUfjq",
     "category_cards_FxBKGM",
     "product_slider_p6jeKx",
