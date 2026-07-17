@@ -32,8 +32,8 @@
         "button_1_url": "shopify://pages/contact",
         "image_1": "shopify://shop_images/p-jentschura-home-hero-desktop.avif",
         "image_2": "shopify://shop_images/family-lies-on-the-grass-with-a-soccer-ball-VEsFPNBozM0.png",
-        "collection_source": "automatic",
-        "manual_collection": "basische-accessoires"
+        "collection_source": "manual",
+        "manual_collection": "basische-ernaehrung"
       }
     }
   },
