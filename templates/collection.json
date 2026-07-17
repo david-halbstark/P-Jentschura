@@ -87,15 +87,12 @@
       "settings": {
         "section_id": "",
         "heading": "Lorem ipsum dolor sit amet elit",
-        "heading_variant": "u-text-h2-primary",
-        "heading_tag": "h2",
-        "heading_max_width": 20,
-        "heading_tidy_text": true,
-        "heading_visually_hidden": false,
         "text_top": "Lorem ipsum dolor sit amet",
         "text_bottom": "Lorem ipsum dolor sit amet",
         "button_1_label": "Text",
-        "button_1_url": "",
+        "button_1_url": "shopify://collections",
+        "image_1": "shopify://shop_images/p-jentschura-home-hero-desktop.avif",
+        "image_2": "shopify://shop_images/family-lies-on-the-grass-with-a-soccer-ball-VEsFPNBozM0.png",
         "collection_source": "automatic",
         "manual_collection": ""
       }
