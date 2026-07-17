@@ -16,6 +16,18 @@
     "intro_card_Gb3fRL": {
       "type": "intro_card",
       "blocks": {
+        "item_XC4hJx": {
+          "type": "item",
+          "settings": {
+            "text": "Lorem ipsum dolor sit amet"
+          }
+        },
+        "item_npNTdc": {
+          "type": "item",
+          "settings": {
+            "text": "Lorem ipsum dolor sit amet"
+          }
+        },
         "item_gQiECQ": {
           "type": "item",
           "settings": {
@@ -24,6 +36,8 @@
         }
       },
       "block_order": [
+        "item_XC4hJx",
+        "item_npNTdc",
         "item_gQiECQ"
       ],
       "name": "Intro Card",
