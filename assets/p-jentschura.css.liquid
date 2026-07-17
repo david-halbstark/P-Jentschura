@@ -8541,7 +8541,7 @@ figure {
 .dealer_cta_layout {
   width: 100vw;
   color: var(--_theme---text-2);
-  display: var(--flex-small, grid);
+  display: var(--flex-medium, grid);
   flex-flow: column;
   grid-template-rows: auto;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
@@ -8556,12 +8556,12 @@ figure {
   width: 100%;
   min-width: 0;
   height: 100%;
-  max-height: 38rem;
+  max-height: calc(calc(38rem * var(--_responsive---large))  + calc(30rem * var(--_responsive---medium))  + calc(25rem * max(var(--_responsive---small), var(--_responsive---xsmall))));
   position: relative;
 }
 
 .dealer_cta_image.is-2 {
-  display: var(--none-small, block);
+  display: var(--none-medium, block);
 }
 
 .dealer_cta_card {
