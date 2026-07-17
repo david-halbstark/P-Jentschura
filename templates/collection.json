@@ -81,23 +81,21 @@
         "text": "Lorem ipsum dolor sit amet"
       }
     },
-    "dealer_cta_mqg84C": {
+    "dealer_cta_h8RhjP": {
       "type": "dealer_cta",
       "name": "Dealer CTA",
       "settings": {
         "section_id": "",
-        "heading": "Finde P. Jentschura in deiner Nähe",
+        "heading": "Lorem ipsum dolor sit amet elit",
         "heading_variant": "u-text-h2-primary",
         "heading_tag": "h2",
         "heading_max_width": 20,
         "heading_tidy_text": true,
         "heading_visually_hidden": false,
-        "text_top": "Finde",
-        "text_bottom": "in deiner Nähe",
-        "button_1_label": "Händler in der Nähe",
-        "button_1_url": "shopify://pages/contact",
-        "image_1": "shopify://shop_images/p-jentschura-home-hero-desktop.avif",
-        "image_2": "shopify://shop_images/family-lies-on-the-grass-with-a-soccer-ball-VEsFPNBozM0.png",
+        "text_top": "Lorem ipsum dolor sit amet",
+        "text_bottom": "Lorem ipsum dolor sit amet",
+        "button_1_label": "Text",
+        "button_1_url": "",
         "collection_source": "automatic",
         "manual_collection": ""
       }
@@ -108,6 +106,6 @@
   "order": [
     "placeholder",
     "intro_card_Gb3fRL",
-    "dealer_cta_mqg84C"
+    "dealer_cta_h8RhjP"
   ]
 }
