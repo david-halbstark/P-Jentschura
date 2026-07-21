@@ -84,7 +84,7 @@
       ],
       "name": "Intro Card",
       "settings": {
-        "section_id": "",
+        "section_id": "informationen",
         "spacing_top": "none",
         "spacing_bottom": "xxsmall",
         "heading": "Basische Ernährung",
@@ -100,7 +100,7 @@
       "type": "dealer_cta",
       "name": "Dealer CTA",
       "settings": {
-        "section_id": "",
+        "section_id": "haendler",
         "heading": "Lorem ipsum dolor sit amet elit",
         "text_top": "Lorem ipsum dolor sit amet",
         "text_bottom": "Lorem ipsum dolor sit amet",
