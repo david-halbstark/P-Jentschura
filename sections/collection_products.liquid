@@ -1,0 +1,300 @@
+<div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          {% case section.settings.spacing_top %}{% when 'xxsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_top = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_top = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_top = 'var(--_spacing---section-space--large)' %}{% when 'large_medium_off' %}{% assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' %}{% when 'page_top' %}{% assign spacing_top = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_top = '0' %}{% endcase %}{% case section.settings.spacing_bottom %}{% when 'xxsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_bottom = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_bottom = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_bottom = 'var(--_spacing---section-space--large)' %}{% when 'page_top' %}{% assign spacing_bottom = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_bottom = '0' %}{% endcase %}
+          <div class="u-embed-css w-embed">
+            <style>
+  #shopify-section-{{ section.id }} [data-section-spacing] {
+    --section-spacing-top: {{ spacing_top }};
+    --section-spacing-bottom: {{ spacing_bottom }};
+  }
+</style>
+          </div>
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+          
+          
+          
+        </div>
+        <div class="collection_products_contain u-container" {% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% endif %}>
+          
+          <div data-section-spacing="" class="collection_products_layout">
+            <div class="product_filter_wrap">
+              <div class="product_filter_element">
+                <div class="product_filter_top">
+                  <div class="product_filter_top_left">
+                    {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+                  </div>
+                  <div class="product_filter_top_right">
+                    <div li-for:inside="filter in collection.filters" class="product_filter_filters">
+        {% for filter in collection.filters %}                            
+                      
+                            <div class="product_filter_filter">
+                        <div data-dropdown="" class="product_filter_filter_dd"><button type="button" data-dropdown-trigger="" aria-expanded="false" data-trigger="hover focus" class="product_filter_filter_dd_button">
+                            {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: filter.label, tag: 'span', variant: 'u-text-link-base' %}
+                            <div class="product_filter_filter_dd_icon">
+                              {% render 'icon', aria-hidden: true, icon: 'chevron_down' %}
+                            </div>
+                          </button>
+                          <div hidden="" data-dropdown-menu="" class="product_filter_filter_dd_list_wrap">
+                            <ul li-for:inside="filter_value in filter.values" class="product_filter_filter_dd_list">
+        {% for filter_value in filter.values %}                            
+                              
+                            <li class="product_filter_filter_dd_item"></li>
+                            
+                            
+                    {% endfor %}    </ul>
+                          </div>
+                        </div>
+                      </div>
+                            
+                    
+                    {% endfor %}    </div>
+                    <div class="product_filter_sort">
+                      <div data-dropdown="" class="product_filter_sort_dd"><button type="button" data-dropdown-trigger="" aria-expanded="false" data-trigger="hover focus" class="product_filter_sort_dd_button">
+                          {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: filter.label, tag: 'span', variant: 'u-text-link-base' %}
+                          <div class="product_filter_filter_dd_icon">
+                            {% render 'icon', aria-hidden: true, icon: 'chevron_down' %}
+                          </div>
+                        </button>
+                        <div hidden="" data-dropdown-menu="" class="product_filter_sort_dd_list_wrap">
+                          <ul li-for:inside="option in collection.sort_options" class="product_filter_sort_dd_list">
+        {% for option in collection.sort_options %}                            
+                            
+                            <li class="product_filter_sort_dd_item"></li>
+                            
+                          
+                    {% endfor %}    </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div li-for:inside="product in collection.products" class="product_filter_bot u-grid-autofill">
+        {% for product in collection.products %}                            
+                  
+                            {% render 'product_card', product_hover_button_label: block.settings.product_card_button_label, product_url: product.url, product_hover_image: top_image, product_title: product.title, product_tag: product.metafields.custom.hero_eyebrow, product_image: product.images.first, product_description: product.description %}
+                            
+                
+                    {% endfor %}    </div>
+              </div>
+            </div>
+          </div>
+          
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Collection Products",
+    "class": "collection_products_wrap u-section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Sektion"
+        },
+        {
+            "type": "text",
+            "id": "section_id",
+            "label": "ID"
+        },
+        {
+            "type": "header",
+            "content": "Abst\u00e4nde"
+        },
+        {
+            "type": "select",
+            "id": "spacing_top",
+            "label": "Oben",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "large_medium_off",
+                    "label": "Gro\u00df | Medium kein Abstand"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "large"
+        },
+        {
+            "type": "select",
+            "id": "spacing_bottom",
+            "label": "Unten",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                }
+            ],
+            "default": "large"
+        },
+        {
+            "type": "header",
+            "content": "\u00dcberschrift"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "heading",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+            "type": "select",
+            "id": "heading_variant",
+            "label": "Stil",
+            "options": [
+                {
+                    "value": "u-text-h1-primary",
+                    "label": "H1 Prim\u00e4r"
+                },
+                {
+                    "value": "u-text-h1-secondary",
+                    "label": "H1 Sekund\u00e4r"
+                },
+                {
+                    "value": "u-text-h2-primary",
+                    "label": "H2 Prim\u00e4r"
+                },
+                {
+                    "value": "u-text-h2-secondary",
+                    "label": "H2 Sekund\u00e4r"
+                },
+                {
+                    "value": "u-text-h3-primary",
+                    "label": "H3 Prim\u00e4r"
+                },
+                {
+                    "value": "u-text-h3-secondary",
+                    "label": "H3 Sekund\u00e4r"
+                },
+                {
+                    "value": "u-text-h4-primary",
+                    "label": "H4 Prim\u00e4r"
+                },
+                {
+                    "value": "u-text-h5-primary",
+                    "label": "H5 Prim\u00e4r"
+                },
+                {
+                    "value": "u-text-h6-primary",
+                    "label": "H6 Prim\u00e4r"
+                }
+            ],
+            "default": "u-text-h2-primary"
+        },
+        {
+            "type": "select",
+            "id": "heading_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "number",
+            "id": "heading_max_width",
+            "label": "Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 20
+        },
+        {
+            "type": "checkbox",
+            "id": "heading_tidy_text",
+            "label": "Ausgewogener Zeilenumbruch",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "heading_visually_hidden",
+            "label": "Nur f\u00fcr Screenreader anzeigen",
+            "default": false
+        }
+    ],
+    "presets": [
+        {
+            "name": "Collection Products",
+            "category": "Liquify",
+            "blocks": []
+        }
+    ]
+} {% endschema %}
