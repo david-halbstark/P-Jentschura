@@ -51,23 +51,7 @@
           
         </div>
         
-        <div class="u-embed-json w-embed">[
-          {
-          "type": "header",
-          "content": "Buttons"
-          },
-          {
-          "type": "select",
-          "id": "buttons_mode",
-          "label": "Modus",
-          "options": [
-          { "value": "blocks", "label": "Blöcke" },
-          { "value": "collection", "label": "Kollektion" },
-          { "value": "guide", "label": "Rubrik" }
-          ],
-          "default": "blocks"
-          }
-          ]</div>
+        
         <div class="hero_links_background">
           {% render 'media', image_breakpoint: '41.9375em', image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
           <div style="--gradient-color: {{ gradient_color_top }}" class="hero_links_overlay is-top"></div>
@@ -98,7 +82,7 @@
                     
                     
                   </div>
-                  {% render 'button', url: section.settings.button_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_action, text_size: 'u-text-eyebrow-base', icon: section.settings.button_1_icon, label: section.settings.button_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, mode: section.settings.button_mode, color: 'white_transparent', pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: 'pill' %}
+                  {% render 'button', url: block.settings.button_url, icon_position: block.settings.button_1_icon_position, action: block.settings.button_action, text_size: 'u-text-eyebrow-base', icon: block.settings.button_1_icon, label: block.settings.button_label, icon_color: block.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: block.settings.button_1_icon_animation, mode: block.settings.button_mode, color: 'white_transparent', pill_tag_inner: block.settings.button_1_pill_tag_inner, variant: 'pill' %}
                   
                 </div>
                                     
@@ -694,6 +678,30 @@
             "unit": "%",
             "info": "Mobil",
             "default": 80
+        },
+        {
+            "type": "header",
+            "content": "Buttons"
+        },
+        {
+            "type": "select",
+            "id": "buttons_mode",
+            "label": "Modus",
+            "options": [
+                {
+                    "value": "blocks",
+                    "label": "Bl\u00f6cke"
+                },
+                {
+                    "value": "collection",
+                    "label": "Kollektion"
+                },
+                {
+                    "value": "guide",
+                    "label": "Rubrik"
+                }
+            ],
+            "default": "blocks"
         }
     ],
     "presets": [
