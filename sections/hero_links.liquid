@@ -1,4 +1,5 @@
 {% assign opacity_top = block.settings.gradient_opacity_top | divided_by: 100.0 %}{% assign gradient_color_top = block.settings.gradient_color_top | color_modify: 'alpha', opacity_top %}{% assign opacity_bottom = block.settings.gradient_opacity_bottom | divided_by: 100.0 %}{% assign gradient_color_bottom = block.settings.gradient_color_bottom | color_modify: 'alpha', opacity_bottom %}
+        {% if section.settings.buttons_mode == 'collection' %}{% assign show_recipe_button = collection.metafields.custom.show_recipes.value %}{% endif %}
         <style> .hero_slider_slide_overlay.is-top{background: linear-gradient(180deg, var(--gradient-color) 0%, transparent 100%);}.hero_slider_slide_overlay.is-bottom{background: linear-gradient(0deg, var(--gradient-color) 0%, transparent 100%);}</style>
         <div class="u-display-none">
           
@@ -52,6 +53,7 @@
         </div>
         
         
+        
         <div class="hero_links_background">
           {% render 'media', image_breakpoint: '41.9375em', image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
           <div style="--gradient-color: {{ gradient_color_top }}" class="hero_links_overlay is-top"></div>
@@ -60,47 +62,59 @@
         <div class="hero_links_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
           
           <div data-section-spacing="" class="hero_links_layout {{ section.settings.text_color }}">
-            {% render 'eyebrow', wrapper_class: 'is-eyebrow-large', eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-large' %}
-            {% render 'heading', tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, tag: section.settings.heading_tag, variant: 'u-text-h1-primary', max_width: section.settings.heading_max_width %}
-            {% if section.settings.buttons_mode == 'blocks' %}    <div li-if="section.settings.buttons_mode == 'blocks'" class="u-button-wrapper is-spacing-small">
+            <div class="hero_links_content">
+              {% render 'eyebrow', wrapper_class: 'is-eyebrow-large', eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-large' %}
+              {% render 'heading', tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, tag: section.settings.heading_tag, variant: 'u-text-h1-primary', max_width: section.settings.heading_max_width %}
+              {% if section.settings.buttons_mode == 'blocks' %}    <div li-if="section.settings.buttons_mode == 'blocks'" class="hero_links_buttons u-button-wrapper">
     
-              {% for block in section.blocks %}
+                {% for block in section.blocks %}
     {% if block.type == "button" %}
                     <div li-block="Button" class="hero_links_button_wrap u-display-contents">
                                     
-                
+                  
                                     <div class="hero_links_button_element u-display-contents">
-                  <div class="u-display-none">
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
+                    <div class="u-display-none">
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                    </div>
+                    {% render 'button', url: block.settings.button_url, icon_position: block.settings.button_1_icon_position, action: block.settings.button_action, text_size: 'u-text-eyebrow-large', icon: block.settings.button_1_icon, label: block.settings.button_label, icon_color: block.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: block.settings.button_1_icon_animation, mode: block.settings.button_mode, color: 'white_transparent', pill_tag_inner: block.settings.button_1_pill_tag_inner, variant: 'pill' %}
                     
                   </div>
-                  {% render 'button', url: block.settings.button_url, icon_position: block.settings.button_1_icon_position, action: block.settings.button_action, text_size: 'u-text-eyebrow-base', icon: block.settings.button_1_icon, label: block.settings.button_label, icon_color: block.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: block.settings.button_1_icon_animation, mode: block.settings.button_mode, color: 'white_transparent', pill_tag_inner: block.settings.button_1_pill_tag_inner, variant: 'pill' %}
-                  
-                </div>
                                     
-              
+                
                             </div>
             {% endif %}
 {% endfor %}
-              
-              
-              
-                </div>
+                
+                
+                
+                  </div>
 {% endif %}
-            {% if section.settings.buttons_mode == 'collection' %}    <div li-if="section.settings.buttons_mode == 'collection'" class="u-button-wrapper">
+              {% if section.settings.buttons_mode == 'collection' %}    <div li-if="section.settings.buttons_mode == 'collection'" class="hero_links_buttons u-button-wrapper">
+    
+                {% render 'button', trigger: 'hover focus', label: section.settings.button_information_label, url: section.settings.button_information_url, variant: 'pill', color: 'white_transparent', text_size: 'u-text-eyebrow-large' %}
+                {% render 'button', trigger: 'hover focus', label: section.settings.button_products_label, url: section.settings.button_products_url, variant: 'pill', color: 'white_transparent', text_size: 'u-text-eyebrow-large' %}
+                {% render 'button', trigger: 'hover focus', label: section.settings.button_dealers_text, url: section.settings.button_dealers_url, variant: 'pill', color: 'white_transparent', text_size: 'u-text-eyebrow-large' %}
+                {% if show_recipe_button %}    <div li-if="show_recipe_button" class="u-display-contents">
+    
+                  {% render 'button', trigger: 'hover focus', label: section.settings.button_recipes_label, url: section.settings.button_recipes_url, variant: 'pill', color: 'white_transparent', text_size: 'u-text-eyebrow-large' %}
+                    </div>
+{% endif %}
+                {% render 'button', trigger: 'hover focus', label: section.settings.button_blog_label, url: section.settings.button_blog_url, variant: 'pill', color: 'white_transparent', text_size: 'u-text-eyebrow-large' %}
+                  </div>
+{% endif %}
+              {% if section.settings.buttons_mode == 'guide' %}    <div li-if="section.settings.buttons_mode == 'guide'" class="hero_links_buttons u-button-wrapper">
         </div>
 {% endif %}
-            {% if section.settings.buttons_mode == 'guide' %}    <div li-if="section.settings.buttons_mode == 'guide'" class="u-button-wrapper">
-        </div>
-{% endif %}
+            </div>
           </div>
           
         </div> {% schema %} {
@@ -702,6 +716,71 @@
                 }
             ],
             "default": "blocks"
+        },
+        {
+            "type": "text",
+            "id": "button_information_label",
+            "label": "Informationen Text",
+            "default": "Text",
+            "visible_if": "{{ section.settings.button_mode == 'collection' }}"
+        },
+        {
+            "type": "url",
+            "id": "button_information_url",
+            "label": "Informationen Link",
+            "visible_if": "{{ section.settings.button_mode == 'collection' }}"
+        },
+        {
+            "type": "text",
+            "id": "button_products_label",
+            "label": "Produkte Text",
+            "default": "Text",
+            "visible_if": "{{ section.settings.button_mode == 'collection' }}"
+        },
+        {
+            "type": "url",
+            "id": "button_products_url",
+            "label": "Produkte Link",
+            "visible_if": "{{ section.settings.button_mode == 'collection' }}"
+        },
+        {
+            "type": "text",
+            "id": "button_dealers_label",
+            "label": "H\u00e4ndler Text",
+            "default": "Text",
+            "visible_if": "{{ section.settings.button_mode == 'collection' }}"
+        },
+        {
+            "type": "url",
+            "id": "button_dealers_url",
+            "label": "H\u00e4ndler Link",
+            "visible_if": "{{ section.settings.button_mode == 'collection' }}"
+        },
+        {
+            "type": "text",
+            "id": "button_recipes_label",
+            "label": "Rezepte Text",
+            "default": "Text",
+            "visible_if": "{{ section.settings.button_mode == 'collection' }}"
+        },
+        {
+            "type": "url",
+            "id": "button_recipes_url",
+            "label": "Rezepte Link",
+            "visible_if": "{{ section.settings.button_mode == 'collection' }}"
+        },
+        {
+            "type": "text",
+            "id": "button_blog_label",
+            "label": "Blog Text",
+            "default": "Text",
+            "visible_if": "{{ section.settings.button_mode == 'collection' }}"
+        },
+        {
+            "type": "url",
+            "id": "button_blog_url",
+            "label": "Blog Link",
+            "visible_if": "{{ section.settings.button_mode == 'collection' }}"
         }
     ],
     "presets": [
