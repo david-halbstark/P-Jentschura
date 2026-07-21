@@ -87,11 +87,11 @@
         "section_id": "informationen",
         "spacing_top": "none",
         "spacing_bottom": "xxsmall",
-        "heading": "Basische Ernährung",
+        "heading": "{{ collection.metafields.custom.intro_heading.value }}",
         "heading_tag": "h2",
         "heading_max_width": 20,
         "heading_tidy_text": true,
-        "paragraph": "<p>Eine ausgewogene, basische Ernährung ist der Schlüssel zu mehr Vitalität und innerem Wohlbefinden. Indem wir unseren Körper gezielt mit wertvollen Mineralstoffen unterstützen und säurebildende Lebensmittel reduzieren, bringen wir unseren Säure-Basen-Haushalt wieder in ein natürliches Gleichgewicht. </p>",
+        "paragraph": "{{ collection.metafields.custom.intro_paragraph | metafield_tag }}",
         "paragraph_max_width": 70,
         "paragraph_tidy_text": true
       }
