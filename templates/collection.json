@@ -24,7 +24,6 @@
         "heading_tidy_text": true,
         "text_color": "u-color-2",
         "media_type": "image",
-        "image": "shopify://shop_images/p-jentschura-home-hero-desktop.avif",
         "image_width": 2000,
         "image_width_mobile": 900,
         "image_loading": "lazy",
