@@ -2685,6 +2685,11 @@ figure {
   display: flex;
 }
 
+.u-button-wrapper.is-spacing-small {
+  grid-column-gap: var(--_spacing---space--3);
+  grid-row-gap: var(--_spacing---space--3);
+}
+
 .u-section {
   background-color: var(--_theme---background);
   color: var(--_theme---text);
@@ -8606,11 +8611,10 @@ figure {
 }
 
 .hero_links_layout {
-  grid-column-gap: calc(calc(var(--_spacing---space--12) * var(--_responsive---large))  + calc(var(--_spacing---space--11) * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
-  grid-row-gap: calc(calc(var(--_spacing---space--12) * var(--_responsive---large))  + calc(var(--_spacing---space--11) * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
   flex-flow: column;
   flex: 1;
   justify-content: flex-end;
+  align-items: flex-start;
   display: flex;
 }
 
