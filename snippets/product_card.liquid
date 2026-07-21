@@ -1,28 +1,28 @@
 <div data-trigger="hover focus" class="product_card_wrap">
-                              <div class="product_card_element">
-                                <div class="product_card_inner">
-                                  <div class="product_card_top">
-                                    <div class="product_card_image">
-                                      {% render 'image', loading: 'auto', image: product_image, object_fit: 'contain', width: 400 %}
-                                    </div>
-                                    <div class="product_card_tag">
-                                      {% render 'tag', solid_text_size: 'u-text-link-small', tag: product_tag, variant: 'solid' %}
-                                    </div>
-                                  </div>
-                                  <div class="product_card_bot">
-                                    {% render 'heading', custom_class: 'u-margin-bottom-5', heading: product_title, tag: 'h3', variant: 'u-text-eyebrow-large' %}
-                                    {% render 'paragraph', variant: 'u-text-body-base', custom_class: 'u-margin-bottom-0 u-color-3', paragraph: product_description %}
-                                  </div>
-                                </div>
-                                {% if product_hover_image != blank %}    <div li-if="product_hover_image != blank" class="product_card_hover">
-    
-                                  <div class="product_card_hover_image"></div>
-                                  {% render 'image', loading: 'auto', image: product_hover_image, object_fit: 'cover', width: 400 %}
-                                  <div class="product_card_hover_inner">
-                                    {% render 'button_group', button_1_solid_color: 'red', button_1_label: section.settings.product_card_button_label, button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-base', button_1_mode: 'visual', button_1_variant: 'solid', button_1_custom_class: 'u-width-full' %}
-                                  </div>
-                                    </div>
-{% endif %}
-                              </div>
-                              {% render 'clickable', url: product_url, label: product_title, mode: 'link' %}
+                      <div class="product_card_element">
+                        <div class="product_card_inner">
+                          <div class="product_card_top">
+                            <div class="product_card_image">
+                              {% render 'image', loading: 'auto', image: product_image, object_fit: 'contain', width: 400 %}
                             </div>
+                            <div class="product_card_tag">
+                              {% render 'tag', solid_text_size: 'u-text-link-small', tag: product_tag, variant: 'solid' %}
+                            </div>
+                          </div>
+                          <div class="product_card_bot">
+                            {% render 'heading', custom_class: 'u-margin-bottom-5', heading: product_title, tag: 'h3', variant: 'u-text-eyebrow-large' %}
+                            {% render 'paragraph', variant: 'u-text-body-base', custom_class: 'u-margin-bottom-0 u-color-3', paragraph: product_description %}
+                          </div>
+                        </div>
+                        {% if product_hover_image != blank %}    <div li-if="product_hover_image != blank" class="product_card_hover">
+    
+                          <div class="product_card_hover_image"></div>
+                          {% render 'image', loading: 'auto', image: product_hover_image, object_fit: 'cover', width: 400 %}
+                          <div class="product_card_hover_inner">
+                            {% render 'button_group', button_1_solid_color: 'red', button_1_label: section.settings.product_card_button_label, button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-base', button_1_mode: 'visual', button_1_variant: 'solid', button_1_custom_class: 'u-width-full' %}
+                          </div>
+                            </div>
+{% endif %}
+                      </div>
+                      {% render 'clickable', url: product_url, label: product_title, mode: 'link' %}
+                    </div>
