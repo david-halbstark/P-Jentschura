@@ -46,10 +46,44 @@
             "gradient_color_bottom": "#182804",
             "gradient_opacity_bottom": 80
           }
+        },
+        "slide_A7khri": {
+          "type": "slide",
+          "settings": {
+            "text_color": "u-color-2",
+            "eyebrow": "Übertitel Text",
+            "eyebrow_tag": "p",
+            "heading": "Lorem ipsum dolor sit amet elit",
+            "heading_tag": "h2",
+            "heading_max_width": 20,
+            "heading_tidy_text": true,
+            "button_1_label": "Text",
+            "button_1_url": "shopify://pages/contact",
+            "button_1_solid_color": "red",
+            "button_2_label": "Text",
+            "button_2_url": "",
+            "button_2_solid_color": "red",
+            "media_type": "image",
+            "image_width": 2000,
+            "image_width_mobile": 900,
+            "image_loading": "lazy",
+            "image_fetchpriority": "auto",
+            "image_object_fit": "cover",
+            "video_autoplay": false,
+            "video_loop": true,
+            "video_muted": true,
+            "video_controls": false,
+            "video_play_behavior": "none",
+            "gradient_color_top": "#182804",
+            "gradient_opacity_top": 80,
+            "gradient_color_bottom": "#182804",
+            "gradient_opacity_bottom": 80
+          }
         }
       },
       "block_order": [
-        "slide_pLtTxA"
+        "slide_pLtTxA",
+        "slide_A7khri"
       ],
       "name": "Hero Slider",
       "settings": {
