@@ -102,16 +102,43 @@
         "gradient_color_top": "#182804",
         "gradient_opacity_top": 80,
         "gradient_color_bottom": "#182804",
-        "gradient_opacity_bottom": 80,
-        "button_label": "Text",
-        "button_mode": "link",
-        "button_url": "",
-        "button_action": "newsletter_modal",
-        "button_pill_tag_inner": "",
-        "button_icon": "none",
-        "button_icon_position": "after",
-        "button_icon_animation": "none",
-        "button_icon_color": "inherit"
+        "gradient_opacity_bottom": 80
+      }
+    },
+    "trust_rating_jCxEnb": {
+      "type": "trust_rating",
+      "name": "Trust Rating",
+      "settings": {
+        "section_id": "",
+        "spacing_top": "xsmall",
+        "spacing_bottom": "xsmall",
+        "heading": "Lorem ipsum dolor sit amet elit"
+      }
+    },
+    "product_slider_7JCNd3": {
+      "type": "product_slider",
+      "name": "Product Slider",
+      "settings": {
+        "section_id": "",
+        "collection": "basische-ernaehrung",
+        "spacing_top": "large",
+        "spacing_bottom": "large",
+        "eyebrow": "Unsere Produkte",
+        "eyebrow_tag": "p",
+        "heading": "Aktiv & Vital — Für Körper in Bewegung",
+        "heading_tag": "h2",
+        "heading_max_width": 20,
+        "heading_tidy_text": true,
+        "clickable_label": "Alle Produkte entdecken",
+        "clickable_url": "shopify://blogs/blog",
+        "teaser_card_eyebrow": "Übertitel Text",
+        "teaser_card_eyebrow_tag": "p",
+        "teaser_card_heading": "Überschrift Text",
+        "teaser_card_heading_tag": "h3",
+        "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>",
+        "teaser_card_button_label": "Button Text",
+        "teaser_card_button_url": "",
+        "product_card_button_label": "Button Text"
       }
     },
     "intro_card_Gb3fRL": {
@@ -146,16 +173,6 @@
         "paragraph": "<p>Eine ausgewogene, basische Ernährung ist der Schlüssel zu mehr Vitalität und innerem Wohlbefinden. Indem wir unseren Körper gezielt mit wertvollen Mineralstoffen unterstützen und säurebildende Lebensmittel reduzieren, bringen wir unseren Säure-Basen-Haushalt wieder in ein natürliches Gleichgewicht. </p>",
         "paragraph_max_width": 70,
         "paragraph_tidy_text": true
-      }
-    },
-    "trust_rating_jCxEnb": {
-      "type": "trust_rating",
-      "name": "Trust Rating",
-      "settings": {
-        "section_id": "",
-        "spacing_top": "xsmall",
-        "spacing_bottom": "xsmall",
-        "heading": "Lorem ipsum dolor sit amet elit"
       }
     },
     "dealer_cta_h8RhjP": {
@@ -358,6 +375,7 @@
   "order": [
     "hero_links_8tENT6",
     "trust_rating_jCxEnb",
+    "product_slider_7JCNd3",
     "intro_card_Gb3fRL",
     "dealer_cta_h8RhjP",
     "guide_slider_8kgVMm",
