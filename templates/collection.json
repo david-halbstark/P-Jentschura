@@ -53,12 +53,27 @@
             "button_icon_animation": "none",
             "button_icon_color": "inherit"
           }
+        },
+        "button_KcWxKD": {
+          "type": "button",
+          "settings": {
+            "button_label": "P. Jentschura Konzept",
+            "button_mode": "link",
+            "button_url": "shopify://blogs/news",
+            "button_action": "newsletter_modal",
+            "button_pill_tag_inner": "",
+            "button_icon": "none",
+            "button_icon_position": "after",
+            "button_icon_animation": "none",
+            "button_icon_color": "inherit"
+          }
         }
       },
       "block_order": [
         "button_WyFH4f",
         "button_FTd8iP",
-        "button_wcRY9K"
+        "button_wcRY9K",
+        "button_KcWxKD"
       ],
       "name": "Hero Links",
       "settings": {
