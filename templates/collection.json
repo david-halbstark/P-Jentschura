@@ -136,7 +136,7 @@
       "type": "recipe_slider",
       "name": "Recipe Slider",
       "settings": {
-        "section_id": "",
+        "section_id": "rezepte",
         "spacing_top": "large",
         "spacing_bottom": "large",
         "eyebrow": "Übertitel Text",
