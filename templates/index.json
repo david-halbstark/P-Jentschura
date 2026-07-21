@@ -125,32 +125,6 @@
         "image": "shopify://shop_images/coldpress-icon.avif"
       }
     },
-    "product_slider_p6jeKx": {
-      "type": "product_slider",
-      "name": "Product Slider",
-      "settings": {
-        "section_id": "",
-        "collection": "basische-ernaehrung",
-        "spacing_top": "large",
-        "spacing_bottom": "xxsmall",
-        "eyebrow": "Unsere Produkte",
-        "eyebrow_tag": "p",
-        "heading": "Lorem ipsum dolor sit amet <a href=\"/collections/all\" target=\"_blank\" title=\"All products\">sadadsadsad <em>litdsada</em></a>",
-        "heading_tag": "h2",
-        "heading_max_width": 37,
-        "heading_tidy_text": false,
-        "clickable_label": "Mehr erfahren",
-        "clickable_url": "shopify://collections/basische-ernaehrung",
-        "teaser_card_eyebrow": "Übertitel Text",
-        "teaser_card_eyebrow_tag": "p",
-        "teaser_card_heading": "Überschrift Text",
-        "teaser_card_heading_tag": "h3",
-        "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>",
-        "teaser_card_button_label": "Button Text",
-        "teaser_card_button_url": "shopify://policies/privacy-policy",
-        "product_card_button_label": "Button Text"
-      }
-    },
     "product_tabs_8F6RVB": {
       "type": "product_tabs",
       "blocks": {
@@ -515,7 +489,6 @@
     "hero_slider_fJxzjR",
     "trust_rating_pfUfjq",
     "category_cards_FxBKGM",
-    "product_slider_p6jeKx",
     "product_tabs_8F6RVB",
     "guide_slider_FBaGd6",
     "text_carousel_K4NQ6g",
