@@ -142,12 +142,12 @@
         "product_card_button_label": "Mehr erfahren"
       }
     },
-    "product_slider_pwLGVG": {
+    "product_slider_QfUM3V": {
       "type": "product_slider",
       "name": "Product Slider",
       "settings": {
         "section_id": "",
-        "collection": "basische-accessoires",
+        "collection": "basische-koerperpflege",
         "spacing_top": "large",
         "spacing_bottom": "large",
         "eyebrow": "Unsere Produkte",
@@ -168,12 +168,12 @@
         "product_card_button_label": "Mehr erfahren"
       }
     },
-    "product_slider_QfUM3V": {
+    "product_slider_pwLGVG": {
       "type": "product_slider",
       "name": "Product Slider",
       "settings": {
         "section_id": "",
-        "collection": "basische-ernaehrung",
+        "collection": "basische-accessoires",
         "spacing_top": "large",
         "spacing_bottom": "large",
         "eyebrow": "Unsere Produkte",
@@ -200,7 +200,7 @@
   "order": [
     "hero_links_VdHzY4",
     "product_slider_hdFwMQ",
-    "product_slider_pwLGVG",
-    "product_slider_QfUM3V"
+    "product_slider_QfUM3V",
+    "product_slider_pwLGVG"
   ]
 }
