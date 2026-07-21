@@ -39,7 +39,17 @@
         "gradient_opacity_top": 80,
         "gradient_color_bottom": "#182804",
         "gradient_opacity_bottom": 80,
-        "buttons_mode": "collection"
+        "buttons_mode": "collection",
+        "button_information_label": "Informationen",
+        "button_information_url": "#informationen",
+        "button_products_label": "Produkte",
+        "button_products_url": "#produkte",
+        "button_dealers_label": "Händler",
+        "button_dealers_url": "#haendler",
+        "button_recipes_label": "Rezepte",
+        "button_recipes_url": "#rezepte",
+        "button_blog_label": "Blog",
+        "button_blog_url": "#blog"
       }
     },
     "trust_rating_jCxEnb": {
