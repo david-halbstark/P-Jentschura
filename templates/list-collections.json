@@ -193,6 +193,26 @@
         "teaser_card_button_url": "shopify://collections/basische-ernaehrung",
         "product_card_button_label": "Mehr erfahren"
       }
+    },
+    "guide_slider_Htc3w4": {
+      "type": "guide_slider",
+      "name": "Guide Slider",
+      "settings": {
+        "section_id": "",
+        "spacing_top": "large",
+        "spacing_bottom": "large",
+        "eyebrow": "Übertitel Text",
+        "eyebrow_tag": "p",
+        "heading": "Lorem ipsum dolor sit amet elit",
+        "heading_tag": "h2",
+        "heading_max_width": 20,
+        "heading_tidy_text": true,
+        "button_1_label": "Button 1 Text",
+        "button_1_url": "",
+        "card_heading_max_width": 20,
+        "card_paragraph_max_width": 60,
+        "card_button_1_label": "Button Text"
+      }
     }
   },
   "layout": "theme",
@@ -201,6 +221,7 @@
     "hero_links_VdHzY4",
     "product_slider_hdFwMQ",
     "product_slider_QfUM3V",
-    "product_slider_pwLGVG"
+    "product_slider_pwLGVG",
+    "guide_slider_Htc3w4"
   ]
 }
