@@ -8561,7 +8561,8 @@ figure {
   width: 100%;
   min-width: 0;
   height: 100%;
-  max-height: calc(calc(34rem * var(--_responsive---large))  + calc(30rem * var(--_responsive---medium))  + calc(25rem * max(var(--_responsive---small), var(--_responsive---xsmall))));
+  min-height: 100%;
+  max-height: 50rem;
   position: relative;
 }
 
@@ -8582,6 +8583,8 @@ figure {
   grid-column-gap: var(--_spacing---space--8);
   grid-row-gap: var(--_spacing---space--8);
   flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
   display: flex;
 }
 
