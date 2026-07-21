@@ -1,12 +1,125 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "placeholder": {
-            "type": "placeholder"
+  "sections": {
+    "hero_links_VdHzY4": {
+      "type": "hero_links",
+      "blocks": {
+        "button_ngxxXz": {
+          "type": "button",
+          "settings": {
+            "button_label": "Lebensmittel",
+            "button_mode": "link",
+            "button_url": "",
+            "button_action": "newsletter_modal",
+            "button_pill_tag_inner": "",
+            "button_icon": "none",
+            "button_icon_position": "after",
+            "button_icon_animation": "none",
+            "button_icon_color": "inherit"
+          }
+        },
+        "button_ztQWY7": {
+          "type": "button",
+          "settings": {
+            "button_label": "Text",
+            "button_mode": "link",
+            "button_url": "",
+            "button_action": "newsletter_modal",
+            "button_pill_tag_inner": "",
+            "button_icon": "none",
+            "button_icon_position": "after",
+            "button_icon_animation": "none",
+            "button_icon_color": "inherit"
+          }
+        },
+        "button_grNPPV": {
+          "type": "button",
+          "settings": {
+            "button_label": "Text",
+            "button_mode": "link",
+            "button_url": "",
+            "button_action": "newsletter_modal",
+            "button_pill_tag_inner": "",
+            "button_icon": "none",
+            "button_icon_position": "after",
+            "button_icon_animation": "none",
+            "button_icon_color": "inherit"
+          }
+        },
+        "button_QfqRbb": {
+          "type": "button",
+          "settings": {
+            "button_label": "Text",
+            "button_mode": "link",
+            "button_url": "",
+            "button_action": "newsletter_modal",
+            "button_pill_tag_inner": "",
+            "button_icon": "none",
+            "button_icon_position": "after",
+            "button_icon_animation": "none",
+            "button_icon_color": "inherit"
+          }
         }
-    },
-    "layout": "theme",
-    "wrapper": "main#main.page_main",
-    "order": [
-        "placeholder"
-    ]
+      },
+      "block_order": [
+        "button_ngxxXz",
+        "button_ztQWY7",
+        "button_grNPPV",
+        "button_QfqRbb"
+      ],
+      "name": "Hero Links",
+      "settings": {
+        "section_id": "",
+        "spacing_top": "large",
+        "spacing_bottom": "small",
+        "eyebrow": "P. Jentschura Produkte",
+        "eyebrow_tag": "p",
+        "heading": "Für jeden Moment. Für jede Familie.",
+        "heading_tag": "h2",
+        "heading_max_width": 20,
+        "heading_tidy_text": true,
+        "text_color": "u-color-2",
+        "media_type": "image",
+        "image": "shopify://shop_images/p-jentschura-home-hero-desktop.avif",
+        "image_width": 2000,
+        "image_width_mobile": 900,
+        "image_loading": "lazy",
+        "image_fetchpriority": "auto",
+        "image_object_fit": "cover",
+        "video_autoplay": false,
+        "video_loop": true,
+        "video_muted": true,
+        "video_controls": false,
+        "video_play_behavior": "none",
+        "gradient_color_top": "#182804",
+        "gradient_opacity_top": 80,
+        "gradient_color_bottom": "#182804",
+        "gradient_opacity_bottom": 80,
+        "buttons_mode": "blocks",
+        "button_information_label": "Text",
+        "button_information_url": "",
+        "button_products_label": "Text",
+        "button_products_url": "",
+        "button_dealers_label": "Text",
+        "button_dealers_url": "",
+        "button_recipes_label": "Text",
+        "button_recipes_url": "",
+        "button_blog_label": "Text",
+        "button_blog_url": ""
+      }
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main#main.page_main",
+  "order": [
+    "hero_links_VdHzY4"
+  ]
 }
