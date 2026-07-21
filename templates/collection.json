@@ -141,6 +141,58 @@
         "product_card_button_label": "Button Text"
       }
     },
+    "product_slider_EDbrp8": {
+      "type": "product_slider",
+      "name": "Product Slider",
+      "settings": {
+        "section_id": "",
+        "collection": "basische-koerperpflege",
+        "spacing_top": "large",
+        "spacing_bottom": "large",
+        "eyebrow": "Unsere Produkte",
+        "eyebrow_tag": "p",
+        "heading": "Aktiv & Vital — Für Körper in Bewegung",
+        "heading_tag": "h2",
+        "heading_max_width": 20,
+        "heading_tidy_text": true,
+        "clickable_label": "Alle Produkte entdecken",
+        "clickable_url": "shopify://blogs/blog",
+        "teaser_card_eyebrow": "Übertitel Text",
+        "teaser_card_eyebrow_tag": "p",
+        "teaser_card_heading": "Überschrift Text",
+        "teaser_card_heading_tag": "h3",
+        "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>",
+        "teaser_card_button_label": "Button Text",
+        "teaser_card_button_url": "",
+        "product_card_button_label": "Button Text"
+      }
+    },
+    "product_slider_b3Fcwp": {
+      "type": "product_slider",
+      "name": "Product Slider",
+      "settings": {
+        "section_id": "",
+        "collection": "basische-accessoires",
+        "spacing_top": "large",
+        "spacing_bottom": "large",
+        "eyebrow": "Unsere Produkte",
+        "eyebrow_tag": "p",
+        "heading": "Aktiv & Vital — Für Körper in Bewegung",
+        "heading_tag": "h2",
+        "heading_max_width": 20,
+        "heading_tidy_text": true,
+        "clickable_label": "Alle Produkte entdecken",
+        "clickable_url": "shopify://blogs/blog",
+        "teaser_card_eyebrow": "Übertitel Text",
+        "teaser_card_eyebrow_tag": "p",
+        "teaser_card_heading": "Überschrift Text",
+        "teaser_card_heading_tag": "h3",
+        "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>",
+        "teaser_card_button_label": "Button Text",
+        "teaser_card_button_url": "",
+        "product_card_button_label": "Button Text"
+      }
+    },
     "intro_card_Gb3fRL": {
       "type": "intro_card",
       "blocks": {
@@ -376,6 +428,8 @@
     "hero_links_8tENT6",
     "trust_rating_jCxEnb",
     "product_slider_7JCNd3",
+    "product_slider_EDbrp8",
+    "product_slider_b3Fcwp",
     "intro_card_Gb3fRL",
     "dealer_cta_h8RhjP",
     "guide_slider_8kgVMm",
