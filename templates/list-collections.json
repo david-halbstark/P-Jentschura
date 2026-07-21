@@ -115,11 +115,92 @@
         "button_blog_label": "Text",
         "button_blog_url": ""
       }
+    },
+    "product_slider_hdFwMQ": {
+      "type": "product_slider",
+      "name": "Product Slider",
+      "settings": {
+        "section_id": "",
+        "collection": "basische-ernaehrung",
+        "spacing_top": "large",
+        "spacing_bottom": "large",
+        "eyebrow": "Unsere Produkte",
+        "eyebrow_tag": "p",
+        "heading": "Aktiv & Vital — Für Körper in Bewegung",
+        "heading_tag": "h2",
+        "heading_max_width": 0,
+        "heading_tidy_text": true,
+        "clickable_label": "Alle Produkte entdecken",
+        "clickable_url": "shopify://collections/basische-ernaehrung",
+        "teaser_card_eyebrow": "Energie, die bleibt",
+        "teaser_card_eyebrow_tag": "p",
+        "teaser_card_heading": "Deine Basis jetzt für mehr Bewegung",
+        "teaser_card_heading_tag": "h3",
+        "teaser_card_paragraph": "<p>Unsere Produkte unterstützen dich natürlich und basisch: für mehr Energie im Alltag und ein Leben voller Vitalität.</p>",
+        "teaser_card_button_label": "Mehr erfahren",
+        "teaser_card_button_url": "shopify://collections/basische-ernaehrung",
+        "product_card_button_label": "Mehr erfahren"
+      }
+    },
+    "product_slider_pwLGVG": {
+      "type": "product_slider",
+      "name": "Product Slider",
+      "settings": {
+        "section_id": "",
+        "collection": "basische-accessoires",
+        "spacing_top": "large",
+        "spacing_bottom": "large",
+        "eyebrow": "Unsere Produkte",
+        "eyebrow_tag": "p",
+        "heading": "Aktiv & Vital — Für Körper in Bewegung",
+        "heading_tag": "h2",
+        "heading_max_width": 0,
+        "heading_tidy_text": true,
+        "clickable_label": "Alle Produkte entdecken",
+        "clickable_url": "shopify://collections/basische-ernaehrung",
+        "teaser_card_eyebrow": "Energie, die bleibt",
+        "teaser_card_eyebrow_tag": "p",
+        "teaser_card_heading": "Deine Basis jetzt für mehr Bewegung",
+        "teaser_card_heading_tag": "h3",
+        "teaser_card_paragraph": "<p>Unsere Produkte unterstützen dich natürlich und basisch: für mehr Energie im Alltag und ein Leben voller Vitalität.</p>",
+        "teaser_card_button_label": "Mehr erfahren",
+        "teaser_card_button_url": "shopify://collections/basische-ernaehrung",
+        "product_card_button_label": "Mehr erfahren"
+      }
+    },
+    "product_slider_QfUM3V": {
+      "type": "product_slider",
+      "name": "Product Slider",
+      "settings": {
+        "section_id": "",
+        "collection": "basische-ernaehrung",
+        "spacing_top": "large",
+        "spacing_bottom": "large",
+        "eyebrow": "Unsere Produkte",
+        "eyebrow_tag": "p",
+        "heading": "Aktiv & Vital — Für Körper in Bewegung",
+        "heading_tag": "h2",
+        "heading_max_width": 0,
+        "heading_tidy_text": true,
+        "clickable_label": "Alle Produkte entdecken",
+        "clickable_url": "shopify://collections/basische-ernaehrung",
+        "teaser_card_eyebrow": "Energie, die bleibt",
+        "teaser_card_eyebrow_tag": "p",
+        "teaser_card_heading": "Deine Basis jetzt für mehr Bewegung",
+        "teaser_card_heading_tag": "h3",
+        "teaser_card_paragraph": "<p>Unsere Produkte unterstützen dich natürlich und basisch: für mehr Energie im Alltag und ein Leben voller Vitalität.</p>",
+        "teaser_card_button_label": "Mehr erfahren",
+        "teaser_card_button_url": "shopify://collections/basische-ernaehrung",
+        "product_card_button_label": "Mehr erfahren"
+      }
     }
   },
   "layout": "theme",
   "wrapper": "main#main.page_main",
   "order": [
-    "hero_links_VdHzY4"
+    "hero_links_VdHzY4",
+    "product_slider_hdFwMQ",
+    "product_slider_pwLGVG",
+    "product_slider_QfUM3V"
   ]
 }
