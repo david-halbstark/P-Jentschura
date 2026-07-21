@@ -16,82 +16,103 @@
     --section-spacing-bottom: {{ spacing_bottom }};
   }
 </style>
-          </div>
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          
-          
-        </div>
-        
-        <div class="u-display-none">
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-        </div>
-        
-        <div class="hero_links_background">
-          {% render 'media', image_breakpoint: '41.9375em', image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
-          <div style="--gradient-color: {{ gradient_color_top }}" class="hero_links_overlay is-top"></div>
-          <div style="--gradient-color: {{ gradient_color_bottom }}" class="hero_links_overlay is-bottom"></div>
-        </div>
-        <div class="hero_links_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
-          
-          <div data-section-spacing="" class="hero_links_layout {{ section.settings.text_color }}">
-            <div class="hero_links_top">
-              {% render 'eyebrow', wrapper_class: 'is-eyebrow-large', eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-large' %}
-              {% render 'heading', tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, tag: section.settings.heading_tag, variant: 'u-text-h1-primary', max_width: section.settings.heading_max_width %}
-            </div>
-            <div class="hero_links_bot">
-              {% for block in section.blocks %}
-    {% if block.type == "button" %}
-                    <div li-block="Button" class="hero_links_button_wrap u-display-contents">
-                                    
-                
-                                    <div class="hero_links_button_element u-display-contents">
-                  <div class="u-display-none">
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                  </div>
-                  {% render 'button', url: section.settings.button_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_action, text_size: 'u-text-eyebrow-base', icon: section.settings.button_1_icon, label: section.settings.button_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, mode: section.settings.button_mode, color: 'white', pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: 'pill' %}
-                </div>
-                                    
-              
-                            </div>
-            {% endif %}
-{% endfor %}
-              
-              
-              
+<div class="u-display-none"></div>
+<div class="u-display-none">
+  {% case section.settings.spacing_top -%}
+    {%- when 'xxsmall' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--xxsmall)' -%}
+    {%- when 'xsmall' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--xsmall)' -%}
+    {%- when 'small' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--small)' -%}
+    {%- when 'medium' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--medium)' -%}
+    {%- when 'large' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--large)' -%}
+    {%- when 'large_medium_off' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' -%}
+    {%- when 'page_top' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--page-top)' -%}
+    {%- else -%}
+      {%- assign spacing_top = '0' -%}
+  {%- endcase -%}
+  {%- case section.settings.spacing_bottom -%}
+    {%- when 'xxsmall' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' -%}
+    {%- when 'xsmall' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' -%}
+    {%- when 'small' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--small)' -%}
+    {%- when 'medium' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--medium)' -%}
+    {%- when 'large' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--large)' -%}
+    {%- when 'page_top' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--page-top)' -%}
+    {%- else -%}
+      {%- assign spacing_bottom = '0' -%}
+  {%- endcase %}
+  <div class="u-embed-css w-embed">
+    <style>
+      #shopify-section-{{ section.id }} [data-section-spacing] {
+        --section-spacing-top: {{ spacing_top }};
+        --section-spacing-bottom: {{ spacing_bottom }};
+      }
+    </style>
+  </div>
+</div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+
+<div class="u-display-none"></div>
+
+<div class="hero_links_background">
+  {% render 'media', image_breakpoint: '41.9375em', image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
+  <div style="--gradient-color: {{ gradient_color_top }}" class="hero_links_overlay is-top"></div>
+  <div style="--gradient-color: {{ gradient_color_bottom }}" class="hero_links_overlay is-bottom"></div>
+</div>
+<div
+  class="hero_links_contain u-container"
+  {% if section.settings.section_id != blank %}
+    id="{{ section.settings.section_id | handleize }}"
+  {% endif %}
+>
+  <div data-section-spacing="" class="hero_links_layout {{ section.settings.text_color }}">
+    <div class="hero_links_top">
+      {% render 'eyebrow',
+        wrapper_class: 'is-eyebrow-large',
+        eyebrow: section.settings.eyebrow,
+        variant: 'u-text-eyebrow-large'
+      %}
+      {% render 'heading',
+        tidy_text: section.settings.heading_tidy_text,
+        heading: section.settings.heading,
+        tag: section.settings.heading_tag,
+        variant: 'u-text-h1-primary',
+        max_width: section.settings.heading_max_width
+      %}
+    </div>
+    <div class="hero_links_bot">
+      {% for block in section.blocks %}
+        {% if block.type == 'button' %}
+          <div li-block="Button" class="hero_links_button_wrap u-display-contents">
+            <div class="hero_links_button_element u-display-contents">
+              <div class="u-display-none"></div>
+              {% render 'button',
+                url: block.settings.button_url,
+                icon_position: block.settings.button_1_icon_position,
+                action: block.settings.button_action,
+                text_size: 'u-text-eyebrow-base',
+                icon: block.settings.button_1_icon,
+                label: block.settings.button_label,
+                icon_color: block.settings.button_1_icon_color,
+                trigger: 'hover focus',
+                icon_animation: block.settings.button_1_icon_animation,
+                mode: block.settings.button_mode,
+                color: 'white',
+                pill_tag_inner: block.settings.button_1_pill_tag_inner,
+                variant: 'pill'
+              %}
             </div>
           </div>
           

@@ -15,9 +15,9 @@
         "button_WyFH4f": {
           "type": "button",
           "settings": {
-            "button_label": "Text",
+            "button_label": "Lebensmittel",
             "button_mode": "link",
-            "button_url": "",
+            "button_url": "shopify://blogs/news",
             "button_action": "newsletter_modal",
             "button_pill_tag_inner": "",
             "button_icon": "none",
@@ -26,12 +26,12 @@
             "button_icon_color": "inherit"
           }
         },
-        "button_ejkGCa": {
+        "button_FTd8iP": {
           "type": "button",
           "settings": {
-            "button_label": "Text",
+            "button_label": "Körperpflege",
             "button_mode": "link",
-            "button_url": "",
+            "button_url": "shopify://blogs/news",
             "button_action": "newsletter_modal",
             "button_pill_tag_inner": "",
             "button_icon": "none",
@@ -40,12 +40,26 @@
             "button_icon_color": "inherit"
           }
         },
-        "button_WUbccD": {
+        "button_wcRY9K": {
           "type": "button",
           "settings": {
-            "button_label": "Text",
+            "button_label": "Accessoires",
             "button_mode": "link",
-            "button_url": "shopify://collections",
+            "button_url": "shopify://blogs/news",
+            "button_action": "newsletter_modal",
+            "button_pill_tag_inner": "",
+            "button_icon": "none",
+            "button_icon_position": "after",
+            "button_icon_animation": "none",
+            "button_icon_color": "inherit"
+          }
+        },
+        "button_KcWxKD": {
+          "type": "button",
+          "settings": {
+            "button_label": "P. Jentschura Konzept",
+            "button_mode": "link",
+            "button_url": "shopify://blogs/news",
             "button_action": "newsletter_modal",
             "button_pill_tag_inner": "",
             "button_icon": "none",
@@ -57,8 +71,9 @@
       },
       "block_order": [
         "button_WyFH4f",
-        "button_ejkGCa",
-        "button_WUbccD"
+        "button_FTd8iP",
+        "button_wcRY9K",
+        "button_KcWxKD"
       ],
       "name": "Hero Links",
       "settings": {
