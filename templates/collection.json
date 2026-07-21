@@ -68,13 +68,13 @@
         "item_XC4hJx": {
           "type": "item",
           "settings": {
-            "text": "Natürlich & gesund"
+            "text": "{{ collection.metafields.custom.intro_item_1.value }}"
           }
         },
         "item_npNTdc": {
           "type": "item",
           "settings": {
-            "text": "Von innen heraus"
+            "text": "{{ collection.metafields.custom.intro_item_2.value }}"
           }
         }
       },
