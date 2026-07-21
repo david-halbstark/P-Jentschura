@@ -97,6 +97,21 @@
         "paragraph_tidy_text": true
       }
     },
+    "collection_products_iXUpdC": {
+      "type": "collection_products",
+      "name": "Collection Products",
+      "settings": {
+        "section_id": "",
+        "spacing_top": "large",
+        "spacing_bottom": "large",
+        "heading": "Lorem ipsum dolor sit amet elit",
+        "heading_variant": "u-text-h2-primary",
+        "heading_tag": "h2",
+        "heading_max_width": 20,
+        "heading_tidy_text": true,
+        "heading_visually_hidden": false
+      }
+    },
     "dealer_cta_h8RhjP": {
       "type": "dealer_cta",
       "name": "Dealer CTA",
@@ -298,6 +313,7 @@
     "hero_links_8tENT6",
     "trust_rating_jCxEnb",
     "intro_card_Gb3fRL",
+    "collection_products_iXUpdC",
     "dealer_cta_h8RhjP",
     "guide_slider_8kgVMm",
     "recipe_slider_jpy37k",
