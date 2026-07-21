@@ -114,16 +114,6 @@
         "button_icon_color": "inherit"
       }
     },
-    "trust_rating_GVFDb9": {
-      "type": "trust_rating",
-      "name": "Trust Rating",
-      "settings": {
-        "section_id": "",
-        "spacing_top": "large",
-        "spacing_bottom": "large",
-        "heading": "Lorem ipsum dolor sit amet elit"
-      }
-    },
     "intro_card_Gb3fRL": {
       "type": "intro_card",
       "blocks": {
@@ -156,6 +146,16 @@
         "paragraph": "<p>Eine ausgewogene, basische Ernährung ist der Schlüssel zu mehr Vitalität und innerem Wohlbefinden. Indem wir unseren Körper gezielt mit wertvollen Mineralstoffen unterstützen und säurebildende Lebensmittel reduzieren, bringen wir unseren Säure-Basen-Haushalt wieder in ein natürliches Gleichgewicht. </p>",
         "paragraph_max_width": 70,
         "paragraph_tidy_text": true
+      }
+    },
+    "trust_rating_jCxEnb": {
+      "type": "trust_rating",
+      "name": "Trust Rating",
+      "settings": {
+        "section_id": "",
+        "spacing_top": "xsmall",
+        "spacing_bottom": "xsmall",
+        "heading": "Lorem ipsum dolor sit amet elit"
       }
     },
     "dealer_cta_h8RhjP": {
@@ -357,7 +357,7 @@
   "wrapper": "main#main.page_main",
   "order": [
     "hero_links_8tENT6",
-    "trust_rating_GVFDb9",
+    "trust_rating_jCxEnb",
     "intro_card_Gb3fRL",
     "dealer_cta_h8RhjP",
     "guide_slider_8kgVMm",
