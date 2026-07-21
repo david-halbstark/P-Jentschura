@@ -194,6 +194,21 @@
         "product_card_button_label": "Mehr erfahren"
       }
     },
+    "all_products_AfFtgt": {
+      "type": "all_products",
+      "name": "All Products",
+      "settings": {
+        "section_id": "",
+        "spacing_top": "large",
+        "spacing_bottom": "large",
+        "heading": "Lorem ipsum dolor sit amet elit",
+        "heading_variant": "u-text-h2-primary",
+        "heading_tag": "h2",
+        "heading_max_width": 20,
+        "heading_tidy_text": true,
+        "heading_visually_hidden": false
+      }
+    },
     "guide_slider_Htc3w4": {
       "type": "guide_slider",
       "name": "Guide Slider",
@@ -360,6 +375,7 @@
     "product_slider_hdFwMQ",
     "product_slider_QfUM3V",
     "product_slider_pwLGVG",
+    "all_products_AfFtgt",
     "guide_slider_Htc3w4",
     "social_V66cEX",
     "seo_content_wUNK8K",
