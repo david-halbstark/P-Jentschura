@@ -229,10 +229,10 @@
         "card_button_1_label": "Button Text"
       }
     },
-    "social_V66cEX": {
-      "type": "social",
+    "social_media_PHtqwb": {
+      "type": "social_media",
       "blocks": {
-        "item_j47RTi": {
+        "item_9ngVFt": {
           "type": "item",
           "settings": {
             "text": "Lorem ipsum dolor sit amet"
@@ -240,9 +240,9 @@
         }
       },
       "block_order": [
-        "item_j47RTi"
+        "item_9ngVFt"
       ],
-      "name": "Social",
+      "name": "Social Media",
       "settings": {
         "section_id": "",
         "spacing_top": "large",
@@ -377,7 +377,7 @@
     "product_slider_pwLGVG",
     "all_products_AfFtgt",
     "guide_slider_Htc3w4",
-    "social_V66cEX",
+    "social_media_PHtqwb",
     "seo_content_wUNK8K",
     "newsletter_zRRDHH"
   ]
