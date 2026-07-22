@@ -19,18 +19,15 @@
                 {% for repeat in (1..4) %}    <div li-for="repeat in (1..4)" class="social_media_top_group">
                                     
                   
-                            {% for block in section.blocks %}
-    {% if block.type == "item-in-marquee-text-items" %}
-                    <div li-block="Item" li-for="item in marquee_text_items" class="social_media_text_item_wrap">
+                            {% for item in marquee_text_items %}    <div li-for="item in marquee_text_items" class="social_media_text_item_wrap">
                                     
                     
-                                    <div class="social_media_text_item_element">
+                            <div class="social_media_text_item_element">
                       {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: item.value, tag: 'div', variant: 'u-text-h1-secondary', max_width: section.settings.text_max_width %}
                     </div>
-                                    
+                            
                   
-                            </div>
-            {% endif %}
+                        </div>
 {% endfor %}
                             
                   
@@ -55,13 +52,6 @@
     "tag": "section",
     "name": "Text Carousel",
     "class": "social_media_top_wrap u-section",
-    "blocks": [
-        {
-            "name": "item in marquee_text_items",
-            "type": "item-in-marquee-text-items",
-            "settings": null
-        }
-    ],
     "settings": [
         {
             "type": "header",
@@ -144,11 +134,7 @@
         {
             "name": "Text Carousel",
             "category": "Liquify",
-            "blocks": [
-                {
-                    "type": "item-in-marquee-text-items"
-                }
-            ]
+            "blocks": []
         }
     ]
 } {% endschema %}
