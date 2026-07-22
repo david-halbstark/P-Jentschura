@@ -1,4 +1,14 @@
-<div class="u-display-none">
+<div class="u-embed-css w-embed">
+          <style>
+  .product_ingredients__slider_wrap {
+    --_gap---size: calc(calc(var(--_spacing---space--13) * var(--_responsive---large)) + calc(var(--_spacing---space--4) * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  }
+  .product_ingredients_table_item:nth-child(odd) {
+    background-color: rgba(188, 188, 188, 0.1);
+  }
+</style>
+        </div>
+        <div class="u-display-none">
           
           
         </div>
@@ -38,57 +48,205 @@
           
           
         </div>
-        <div class="u-display-none">
+        <div class="product_ingredients_contain u-container" {% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% endif %}>
           
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-        </div>
-        <div class="section_contain u-container" {% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% endif %}>
-          <div data-section-spacing="" class="section_layout u-grid-autofit">
-            {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant, custom_class: , wrapper_class: %}
-            {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
-            {% render 'paragraph', custom_class: , paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant, max_width: section.settings.paragraph_max_width, tidy_text: section.settings.paragraph_tidy_text %}
-            {% render 'button_group', button_1_solid_color: section.settings.button_1_solid_color, button_1_icon_position: section.settings.button_1_icon_position, button_1_url: section.settings.button_1_url, button_2_url: section.settings.button_2_url, button_2_solid_color: section.settings.button_2_solid_color, button_2_icon_position: section.settings.button_2_icon_position, button_2_action: section.settings.button_2_action, button_1_action: section.settings.button_1_action, button_2_icon: section.settings.button_2_icon, button_1_label: section.settings.button_1_label, button_1_icon: section.settings.button_1_icon, button_2_label: section.settings.button_2_label, button_2_icon_color: section.settings.button_2_icon_color, button_2_pill_color: section.settings.button_2_pill_color, button_1_trigger: 'hover focus', button_2_icon_animation: section.settings.button_2_icon_animation, button_2_trigger: 'hover focus', button_1_icon_color: section.settings.button_1_icon_color, button_1_pill_color: section.settings.button_1_pill_color, button_1_icon_animation: section.settings.button_1_icon_animation, button_2_custom_attribute_value: , button_2_text_text_size: section.settings.button_2_text_text_size, button_1_custom_attribute_name: , button_1_custom_attribute_value: , button_1_solid_padding: section.settings.button_1_solid_padding, button_2_custom_attribute_name: , button_1_text_text_size: section.settings.button_1_text_text_size, button_2_mode: section.settings.button_2_mode, button_2_solid_padding: section.settings.button_2_solid_padding, button_1_solid_text_size: section.settings.button_1_solid_text_size, button_1_mode: section.settings.button_1_mode, button_2_solid_text_size: section.settings.button_2_solid_text_size, button_1_variant: section.settings.button_1_variant, button_2_custom_class: , button_1_custom_class: , button_2_pill_tag_inner: section.settings.button_2_pill_tag_inner, button_2_variant: section.settings.button_2_variant, button_1_pill_tag_inner: section.settings.button_1_pill_tag_inner, button_2_pill_text_size: section.settings.button_2_pill_text_size, button_1_pill_text_size: section.settings.button_1_pill_text_size, button_2_text_color: section.settings.button_2_text_color, button_1_underline: section.settings.button_1_underline, button_1_text_color: section.settings.button_1_text_color, button_2_underline: section.settings.button_2_underline %}
+          <div data-section-spacing="" class="product_ingredients_layout">
+            <div class="product_ingredients_top u-alignment-center">
+              {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant, custom_class: , wrapper_class: %}
+              {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+              {% render 'paragraph', custom_class: , paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant, max_width: section.settings.paragraph_max_width, tidy_text: section.settings.paragraph_tidy_text %}
+            </div>
+            <div class="product_ingredients_mid">
+              {% render 'heading', custom_class: 'u-margin-bottom-0 u-alignment-center u-color-3', heading: section.settings.heading, tag: 'h3', variant: 'u-text-eyebrow-base' %}
+              <div class="product_ingredients_slider_outer">
+                <div class="product_ingredients_slider_button u-flex-noshrink"><button data-wf--slider-button--variant="prev" data-trigger="hover focus" class="slider_button_wrap is-prev is-prev">
+                    <div class="slider_button_element">
+                      <div class="slider_button_icon">
+                        {% render 'icon', aria-hidden: true, icon: 'arrow_left' %}
+                      </div>
+                    </div>
+                  </button></div>
+                <div class="product_ingredients_slider_wrap slider_wrap">
+                  <div style="--lg: 5; --md: 3; --sm: 2.5; --xs: 2.2;" class="product_ingredients_slider_offset slider_offset">
+                    <div class="product_ingredients_slider_element swiper">
+                      <div class="product_ingredients_slider_list swiper-wrapper">
+                        <div class="product_ingredients_slider_slide swiper-slide">
+                          <div class="product_ingredients_slide_wrap">
+                            <div class="product_ingredients_slide_image">
+                              {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                            </div>
+                            <div class="product_ingredients_slide_text u-alignment-center">
+                              {% render 'typography', custom_class: 'u-margin-bottom-0', text: section.settings.text, tag: 'h4', variant: 'u-text-h3-secondary' %}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="product_ingredients_slider_slide swiper-slide">
+                          <div class="product_ingredients_slide_wrap">
+                            <div class="product_ingredients_slide_image">
+                              {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                            </div>
+                            <div class="product_ingredients_slide_text u-alignment-center">
+                              {% render 'typography', variant: 'u-text-h3-secondary', text: section.settings.text, tag: 'h4' %}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="product_ingredients_slider_slide swiper-slide">
+                          <div class="product_ingredients_slide_wrap">
+                            <div class="product_ingredients_slide_image">
+                              {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                            </div>
+                            <div class="product_ingredients_slide_text u-alignment-center">
+                              {% render 'typography', variant: 'u-text-h3-secondary', text: section.settings.text, tag: 'h4' %}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="product_ingredients_slider_slide swiper-slide">
+                          <div class="product_ingredients_slide_wrap">
+                            <div class="product_ingredients_slide_image">
+                              {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                            </div>
+                            <div class="product_ingredients_slide_text u-alignment-center">
+                              {% render 'typography', variant: 'u-text-h3-secondary', text: section.settings.text, tag: 'h4' %}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="product_ingredients_slider_slide swiper-slide">
+                          <div class="product_ingredients_slide_wrap">
+                            <div class="product_ingredients_slide_image">
+                              {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                            </div>
+                            <div class="product_ingredients_slide_text u-alignment-center">
+                              {% render 'typography', variant: 'u-text-h3-secondary', text: section.settings.text, tag: 'h4' %}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="product_ingredients_slider_slide swiper-slide">
+                          <div class="product_ingredients_slide_wrap">
+                            <div class="product_ingredients_slide_image">
+                              {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                            </div>
+                            <div class="product_ingredients_slide_text u-alignment-center">
+                              {% render 'typography', variant: 'u-text-h3-secondary', text: section.settings.text, tag: 'h4' %}
+                            </div>
+                          </div>
+                        </div>
+                        <div class="product_ingredients_slider_slide swiper-slide">
+                          <div class="product_ingredients_slide_wrap">
+                            <div class="product_ingredients_slide_image">
+                              {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                            </div>
+                            <div class="product_ingredients_slide_text u-alignment-center">
+                              {% render 'typography', variant: 'u-text-h3-secondary', text: section.settings.text, tag: 'h4' %}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product_ingredients_slider_bullet_list">
+                    <div class="slider_bullet_list">
+                      <div class="slider_bullet_item is-active"></div>
+                      <div class="slider_bullet_item"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="product_ingredients_slider_button"><button data-wf--slider-button--variant="next" data-trigger="hover focus" class="slider_button_wrap is-prev is-next">
+                    <div class="slider_button_element">
+                      <div class="slider_button_icon">
+                        {% render 'icon', aria-hidden: true, icon: 'arrow-right' %}
+                      </div>
+                    </div>
+                  </button></div>
+              </div>
+            </div>
+            <div class="product_ingredients_bot">
+              <div class="product_ingredients_bot_left">
+                <div class="product_ingredients_table_heading">
+                  <div data-dropdown="" class="product_ingredients_table_dd"><button type="button" data-dropdown-trigger="" aria-expanded="false" lang="{{ localization.language.iso_code }}" data-trigger="hover focus" class="product_ingredients_table_dd_button">
+                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: localization.language.name | capitalize, tag: 'span', variant: 'u-text-h4-primary' %}
+                      <div class="product_ingredients_table_dd_icon">
+                        {% render 'icon', aria-hidden: true, icon: 'chevron_down' %}
+                      </div>
+                    </button>
+                    <div hidden="" data-dropdown-menu="" class="product_ingredients_table_dd_list_wrap">
+                      <ul li-for:inside="language in localization.available_languages" class="product_ingredients_table_dd_list">
+        {% for language in localization.available_languages %}                            
+                        
+                            {% unless localization.language.iso_code == language.iso_code %}    <li li-unless="localization.language.iso_code == language.iso_code" class="product_ingredients_table_dd_item">
+    
+                          {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: language.name | capitalize, tag: 'span', variant: 'u-text-link-small' %}
+                            </li>
+{% endunless %}
+                            
+                      
+                    {% endfor %}    </ul>
+                    </div>
+                  </div>
+                  {% render 'typography', tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, tidy_text: section.settings.text_tidy_text, custom_class: 'u-margin-bottom-0 u-min-width-auto', variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
+                </div>
+                <div class="product_ingredients_table_wrap">
+                  <div class="product_ingredients_table_item">
+                    {% render 'typography', tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, tidy_text: section.settings.text_tidy_text, custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
+                    {% render 'typography', tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, tidy_text: section.settings.text_tidy_text, custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
+                  </div>
+                  <div class="product_ingredients_table_item">
+                    {% render 'typography', tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, tidy_text: section.settings.text_tidy_text, custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
+                    {% render 'typography', tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, tidy_text: section.settings.text_tidy_text, custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
+                  </div>
+                  <div class="product_ingredients_table_item">
+                    {% render 'typography', tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, tidy_text: section.settings.text_tidy_text, custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
+                    {% render 'typography', tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, tidy_text: section.settings.text_tidy_text, custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
+                  </div>
+                  <div class="product_ingredients_table_item">
+                    {% render 'typography', tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, tidy_text: section.settings.text_tidy_text, custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
+                    {% render 'typography', tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, tidy_text: section.settings.text_tidy_text, custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
+                  </div>
+                  <div class="product_ingredients_table_item">
+                    {% render 'typography', tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, tidy_text: section.settings.text_tidy_text, custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
+                    {% render 'typography', tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, tidy_text: section.settings.text_tidy_text, custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
+                  </div>
+                  <div class="product_ingredients_table_item">
+                    {% render 'typography', tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, tidy_text: section.settings.text_tidy_text, custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
+                    {% render 'typography', tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, tidy_text: section.settings.text_tidy_text, custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
+                  </div>
+                </div>
+              </div>
+              <div class="product_ingredients_bot_right">
+                <div class="product_ingredients_info_item">
+                  <div class="product_ingredients_info_item_icon">
+                    {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                  </div>
+                  <div class="product_ingredients_info_item_right">
+                    {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+                    {% render 'paragraph', variant: 'u-text-body-base', custom_class: 'u-margin-bottom-0', paragraph: section.settings.paragraph %}
+                  </div>
+                </div>
+                <div class="product_ingredients_info_item">
+                  <div class="product_ingredients_info_item_icon">
+                    {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                  </div>
+                  <div class="product_ingredients_info_item_right">
+                    {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+                    {% render 'paragraph', variant: 'u-text-body-base', custom_class: 'u-margin-bottom-0', paragraph: section.settings.paragraph %}
+                  </div>
+                </div>
+                <div class="product_ingredients_info_item">
+                  <div class="product_ingredients_info_item_icon">
+                    {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                  </div>
+                  <div class="product_ingredients_info_item_right">
+                    {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+                    {% render 'paragraph', variant: 'u-text-body-base', custom_class: 'u-margin-bottom-0', paragraph: section.settings.paragraph %}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          
         </div> {% schema %} {
     "tag": "section",
     "name": "Product Ingredients",
-    "class": "section_wrap u-section",
+    "class": "product_ingredients_wrap u-section",
     "settings": [
         {
             "type": "header",
@@ -392,577 +550,6 @@
             "id": "paragraph_tidy_text",
             "label": "Ausgewogener Zeilenumbruch",
             "default": true
-        },
-        {
-            "type": "header",
-            "content": "Button 1"
-        },
-        {
-            "type": "text",
-            "id": "button_1_label",
-            "label": "Text",
-            "default": "Text"
-        },
-        {
-            "type": "select",
-            "id": "button_1_mode",
-            "label": "Funktion",
-            "options": [
-                {
-                    "value": "link",
-                    "label": "Link \u00f6ffnen"
-                },
-                {
-                    "value": "action",
-                    "label": "Aktion ausf\u00fchren"
-                }
-            ],
-            "default": "link"
-        },
-        {
-            "type": "url",
-            "id": "button_1_url",
-            "label": "Link",
-            "visible_if": "{{ section.settings.button_1_mode == 'link' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_action",
-            "label": "Aktion",
-            "options": [
-                {
-                    "value": "newsletter_modal",
-                    "label": "Newsletter-Modal \u00f6ffnen"
-                },
-                {
-                    "value": "contact_modal",
-                    "label": "Kontaktformular-Modal \u00f6ffnen"
-                }
-            ],
-            "default": "newsletter_modal",
-            "visible_if": "{{ section.settings.button_1_mode == 'action' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "solid",
-                    "label": "Fl\u00e4che"
-                },
-                {
-                    "value": "transparent",
-                    "label": "Transparent"
-                },
-                {
-                    "value": "text",
-                    "label": "Textlink"
-                },
-                {
-                    "value": "pill",
-                    "label": "Kapsel"
-                }
-            ],
-            "default": "solid"
-        },
-        {
-            "type": "select",
-            "id": "button_1_solid_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "red",
-                    "label": "Rot"
-                },
-                {
-                    "value": "white",
-                    "label": "Wei\u00df"
-                }
-            ],
-            "default": "red",
-            "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_solid_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_solid_padding",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "base",
-                    "label": "Standard"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                }
-            ],
-            "default": "base",
-            "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_text_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_text_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "green",
-                    "label": "Gr\u00fcn"
-                },
-                {
-                    "value": "red",
-                    "label": "Rot"
-                }
-            ],
-            "default": "green",
-            "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_pill_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "white",
-                    "label": "Wei\u00df"
-                },
-                {
-                    "value": "white_transparent",
-                    "label": "Wei\u00df transparent"
-                }
-            ],
-            "default": "white",
-            "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_pill_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-eyebrow-large",
-                    "label": "\u00dcbertitel gro\u00df"
-                },
-                {
-                    "value": "u-text-eyebrow-base",
-                    "label": "\u00dcbertitel Standard"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                },
-                {
-                    "value": "u-text-link-small",
-                    "label": "Link klein"
-                }
-            ],
-            "default": "u-text-eyebrow-base",
-            "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
-        },
-        {
-            "type": "text",
-            "id": "button_1_pill_tag_inner",
-            "label": "Innerer Tag",
-            "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
-        },
-        {
-            "type": "checkbox",
-            "id": "button_1_underline",
-            "label": "Unterstreichung anzeigen",
-            "default": false,
-            "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_icon",
-            "label": "Icon",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Icon"
-                },
-                {
-                    "value": "arrow_left",
-                    "label": "Pfeil links"
-                },
-                {
-                    "value": "arrow_right",
-                    "label": "Pfeil rechts"
-                },
-                {
-                    "value": "arrow_up_right",
-                    "label": "Pfeil hoch rechts"
-                },
-                {
-                    "value": "chevron_left",
-                    "label": "Chevron links"
-                },
-                {
-                    "value": "chevron_right",
-                    "label": "Chevron rechts"
-                },
-                {
-                    "value": "download",
-                    "label": "Herunterladen"
-                },
-                {
-                    "value": "copy",
-                    "label": "Kopieren"
-                },
-                {
-                    "value": "external",
-                    "label": "Externe Seite"
-                }
-            ],
-            "default": "none"
-        },
-        {
-            "type": "select",
-            "id": "button_1_icon_position",
-            "label": "Icon-Position",
-            "options": [
-                {
-                    "value": "before",
-                    "label": "Vor dem Text"
-                },
-                {
-                    "value": "after",
-                    "label": "Nach dem Text"
-                }
-            ],
-            "default": "after",
-            "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_icon_animation",
-            "label": "Icon-Animation",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Keine Animation"
-                },
-                {
-                    "value": "move_left",
-                    "label": "Nach links bewegen"
-                },
-                {
-                    "value": "move_right",
-                    "label": "Nach rechts bewegen"
-                },
-                {
-                    "value": "move_up_right",
-                    "label": "Nach oben rechts bewegen"
-                }
-            ],
-            "default": "none",
-            "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_icon_color",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "inherit",
-                    "label": "Wie Text"
-                },
-                {
-                    "value": "red",
-                    "label": "Rot"
-                }
-            ],
-            "default": "inherit",
-            "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
-        },
-        {
-            "type": "header",
-            "content": "Button 2"
-        },
-        {
-            "type": "text",
-            "id": "button_2_label",
-            "label": "Text",
-            "default": "Text"
-        },
-        {
-            "type": "select",
-            "id": "button_2_mode",
-            "label": "Funktion",
-            "options": [
-                {
-                    "value": "link",
-                    "label": "Link \u00f6ffnen"
-                },
-                {
-                    "value": "action",
-                    "label": "Aktion ausf\u00fchren"
-                }
-            ],
-            "default": "link"
-        },
-        {
-            "type": "url",
-            "id": "button_2_url",
-            "label": "Link",
-            "visible_if": "{{ section.settings.button_2_mode == 'link' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "solid",
-                    "label": "Fl\u00e4che"
-                },
-                {
-                    "value": "transparent",
-                    "label": "Transparent"
-                },
-                {
-                    "value": "text",
-                    "label": "Textlink"
-                },
-                {
-                    "value": "pill",
-                    "label": "Kapsel"
-                }
-            ],
-            "default": "solid"
-        },
-        {
-            "type": "select",
-            "id": "button_2_action",
-            "label": "Aktion",
-            "options": [
-                {
-                    "value": "newsletter_modal",
-                    "label": "Newsletter-Modal \u00f6ffnen"
-                },
-                {
-                    "value": "contact_modal",
-                    "label": "Kontaktformular-Modal \u00f6ffnen"
-                }
-            ],
-            "default": "newsletter_modal",
-            "visible_if": "{{ section.settings.button_2_mode == 'action' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_solid_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "red",
-                    "label": "Rot"
-                },
-                {
-                    "value": "white",
-                    "label": "Wei\u00df"
-                }
-            ],
-            "default": "red",
-            "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_solid_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_solid_padding",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "base",
-                    "label": "Standard"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                }
-            ],
-            "default": "base",
-            "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_text_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_text_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "green",
-                    "label": "Gr\u00fcn"
-                },
-                {
-                    "value": "red",
-                    "label": "Rot"
-                }
-            ],
-            "default": "green",
-            "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_pill_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "white",
-                    "label": "Wei\u00df"
-                },
-                {
-                    "value": "white_transparent",
-                    "label": "Wei\u00df transparent"
-                }
-            ],
-            "default": "white",
-            "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_pill_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-eyebrow-large",
-                    "label": "\u00dcbertitel gro\u00df"
-                },
-                {
-                    "value": "u-text-eyebrow-base",
-                    "label": "\u00dcbertitel Standard"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                },
-                {
-                    "value": "u-text-link-small",
-                    "label": "Link klein"
-                }
-            ],
-            "default": "u-text-eyebrow-base",
-            "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
-        },
-        {
-            "type": "text",
-            "id": "button_2_pill_tag_inner",
-            "label": "Innerer Tag",
-            "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
-        },
-        {
-            "type": "checkbox",
-            "id": "button_2_underline",
-            "label": "Unterstreichung anzeigen",
-            "default": false,
-            "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_icon_position",
-            "label": "Icon-Position",
-            "options": [
-                {
-                    "value": "before",
-                    "label": "Vor dem Text"
-                },
-                {
-                    "value": "after",
-                    "label": "Nach dem Text"
-                }
-            ],
-            "default": "after",
-            "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_icon_animation",
-            "label": "Icon-Animation",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Keine Animation"
-                },
-                {
-                    "value": "move_left",
-                    "label": "Nach links bewegen"
-                },
-                {
-                    "value": "move_right",
-                    "label": "Nach rechts bewegen"
-                },
-                {
-                    "value": "move_up_right",
-                    "label": "Nach oben rechts bewegen"
-                }
-            ],
-            "default": "none",
-            "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
         }
     ],
     "presets": [
