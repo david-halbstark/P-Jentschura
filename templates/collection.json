@@ -168,10 +168,10 @@
         "button_1_url": ""
       }
     },
-    "social_CJMEyD": {
-      "type": "social",
+    "social_media_8akNU9": {
+      "type": "social_media",
       "blocks": {
-        "item_wTEQP8": {
+        "item_TUBVqF": {
           "type": "item",
           "settings": {
             "text": "Lorem ipsum dolor sit amet"
@@ -179,9 +179,9 @@
         }
       },
       "block_order": [
-        "item_wTEQP8"
+        "item_TUBVqF"
       ],
-      "name": "Social",
+      "name": "Social Media",
       "settings": {
         "section_id": "",
         "spacing_top": "large",
@@ -317,7 +317,7 @@
     "dealer_cta_h8RhjP",
     "guide_slider_8kgVMm",
     "recipe_slider_jpy37k",
-    "social_CJMEyD",
+    "social_media_8akNU9",
     "seo_content_YGbTic",
     "newsletter_Qr4N9G"
   ]
