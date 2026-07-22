@@ -7962,9 +7962,9 @@ figure {
   background-color: color-mix(in srgb, var(--_theme---background-2) calc(100% * var(--_trigger---on)), color-mix(in hsl, var(--_theme---background-2) 95%, black 5%) calc(100% * var(--_trigger---off)));
   flex: none;
   width: 2.5rem;
-  transition-property: background-color;
-  transition-duration: .2s;
-  transition-timing-function: ease;
+  transition-property: opacity, background-color;
+  transition-duration: .2s, .2s;
+  transition-timing-function: ease, ease;
 }
 
 .slider_button_element {

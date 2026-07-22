@@ -100,25 +100,11 @@
                 {% for repeat in (1..4) %}    <div li-for="repeat in (1..4)" class="social_media_top_group">
                                     
                   
-                            {% for block in section.blocks %}
-    {% if block.type == "item" %}
-                    <div li-block="Item" class="text_carousel_item_wrap">
-                                    
-                    
-                                    <div class="u-display-none">
-                      
-                      
-                    </div>
-                                    
-                    
-                                    <div class="text_carousel_item_element">
+                            <div class="text_carousel_item_wrap">
+                    <div class="text_carousel_item_element">
                       {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: block.settings.text, tag: 'div', variant: 'u-text-h1-secondary', max_width: section.settings.text_max_width %}
                     </div>
-                                    
-                  
-                            </div>
-            {% endif %}
-{% endfor %}
+                  </div>
                             
                 
                         </div>
@@ -143,24 +129,6 @@
     "tag": "section",
     "name": "Social Media",
     "class": "social_media_wrap u-section",
-    "blocks": [
-        {
-            "name": "Item",
-            "type": "item",
-            "settings": [
-                {
-                    "type": "header",
-                    "content": "Text"
-                },
-                {
-                    "type": "text",
-                    "id": "text",
-                    "label": "Text",
-                    "default": "Lorem ipsum dolor sit amet"
-                }
-            ]
-        }
-    ],
     "settings": [
         {
             "type": "header",
@@ -1045,11 +1013,7 @@
         {
             "name": "Social Media",
             "category": "Liquify",
-            "blocks": [
-                {
-                    "type": "item"
-                }
-            ]
+            "blocks": []
         }
     ]
 } {% endschema %}
