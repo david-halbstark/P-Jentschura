@@ -8507,6 +8507,9 @@ figure {
 }
 
 .social_media_top_group {
+  padding-right: var(--misc--text-carousel-gap);
+  grid-column-gap: var(--misc--text-carousel-gap);
+  grid-row-gap: var(--misc--text-carousel-gap);
   flex: none;
   justify-content: flex-start;
   align-items: center;
@@ -9565,6 +9568,20 @@ figure {
 
 .related_products_slider_slide.is-first {
   display: var(--none-medium, block);
+}
+
+.social_media_text_item_wrap {
+  flex: none;
+  display: flex;
+}
+
+.social_media_text_item_element {
+  grid-column-gap: var(--misc--text-carousel-gap);
+  grid-row-gap: var(--misc--text-carousel-gap);
+  flex: none;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
 }
 
 @media screen and (max-width: 991px) {

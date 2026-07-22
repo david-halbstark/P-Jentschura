@@ -19,15 +19,35 @@
                 {% for repeat in (1..4) %}    <div li-for="repeat in (1..4)" class="social_media_top_group">
                                     
                   
-                            <div class="text_carousel_item_wrap">
-                    <div class="text_carousel_item_element">
-                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: block.settings.text, tag: 'div', variant: 'u-text-h1-secondary', max_width: section.settings.text_max_width %}
+                            {% for block in section.blocks %}
+    {% if block.type == "item-in-marquee-text-items" %}
+                    <div li-block="Item" li-for="item in marquee_text_items" class="social_media_text_item_wrap">
+                                    
+                    
+                                    <div class="social_media_text_item_element">
+                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: item.value, tag: 'div', variant: 'u-text-h1-secondary', max_width: section.settings.text_max_width %}
                     </div>
-                  </div>
+                                    
+                  
+                            </div>
+            {% endif %}
+{% endfor %}
+                            
+                  
+                            
+                            
+                  
+                            
+                            
+                  
+                            
                             
                 
                         </div>
 {% endfor %}
+                
+                
+                
               </div>
             </div>
             
@@ -35,6 +55,13 @@
     "tag": "section",
     "name": "Text Carousel",
     "class": "social_media_top_wrap u-section",
+    "blocks": [
+        {
+            "name": "item in marquee_text_items",
+            "type": "item-in-marquee-text-items",
+            "settings": null
+        }
+    ],
     "settings": [
         {
             "type": "header",
@@ -117,7 +144,11 @@
         {
             "name": "Text Carousel",
             "category": "Liquify",
-            "blocks": []
+            "blocks": [
+                {
+                    "type": "item-in-marquee-text-items"
+                }
+            ]
         }
     ]
 } {% endschema %}
