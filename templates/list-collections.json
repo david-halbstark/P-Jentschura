@@ -69,12 +69,7 @@
           }
         }
       },
-      "block_order": [
-        "button_ngxxXz",
-        "button_ztQWY7",
-        "button_grNPPV",
-        "button_QfqRbb"
-      ],
+      "block_order": ["button_ngxxXz", "button_ztQWY7", "button_grNPPV", "button_QfqRbb"],
       "name": "Hero Links",
       "settings": {
         "section_id": "",
@@ -231,17 +226,6 @@
     },
     "social_media_PHtqwb": {
       "type": "social_media",
-      "blocks": {
-        "item_9ngVFt": {
-          "type": "item",
-          "settings": {
-            "text": "Lorem ipsum dolor sit amet"
-          }
-        }
-      },
-      "block_order": [
-        "item_9ngVFt"
-      ],
       "name": "Social Media",
       "settings": {
         "section_id": "",

@@ -178,17 +178,6 @@
     },
     "social_media_74WRCe": {
       "type": "social_media",
-      "blocks": {
-        "item_ycabTM": {
-          "type": "item",
-          "settings": {
-            "text": "Lorem ipsum dolor sit amet"
-          }
-        }
-      },
-      "block_order": [
-        "item_ycabTM"
-      ],
       "name": "Social Media",
       "settings": {
         "section_id": "",
@@ -314,12 +303,5 @@
       }
     }
   },
-  "order": [
-    "recipe_detail_h8JKEe",
-    "newsletter_BP9np6",
-    "related_recipes_N4aYFn",
-    "social_media_74WRCe",
-    "seo_content_3krCja",
-    "newsletter_jfkgDg"
-  ]
+  "order": ["recipe_detail_h8JKEe", "newsletter_BP9np6", "related_recipes_N4aYFn", "social_media_74WRCe", "seo_content_3krCja", "newsletter_jfkgDg"]
 }

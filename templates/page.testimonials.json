@@ -67,17 +67,6 @@
     },
     "social_media_xAmTEd": {
       "type": "social_media",
-      "blocks": {
-        "item_RDRbHG": {
-          "type": "item",
-          "settings": {
-            "text": "Lorem ipsum dolor sit amet"
-          }
-        }
-      },
-      "block_order": [
-        "item_RDRbHG"
-      ],
       "name": "Social Media",
       "settings": {
         "section_id": "",
@@ -205,10 +194,5 @@
   },
   "layout": "theme",
   "wrapper": "main#main.page_main",
-  "order": [
-    "testimonial_list_WLJMcX",
-    "social_media_xAmTEd",
-    "newsletter_rPFxqp",
-    "seo_content_nR4PJU"
-  ]
+  "order": ["testimonial_list_WLJMcX", "social_media_xAmTEd", "newsletter_rPFxqp", "seo_content_nR4PJU"]
 }

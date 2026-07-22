@@ -68,7 +68,5 @@
   },
   "layout": "theme",
   "wrapper": "main#main.page_main",
-  "order": [
-    "search_results_NF6zxE"
-  ]
+  "order": ["search_results_NF6zxE"]
 }

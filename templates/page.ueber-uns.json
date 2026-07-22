@@ -27,9 +27,7 @@
           }
         }
       },
-      "block_order": [
-        "button_iQXKfU"
-      ],
+      "block_order": ["button_iQXKfU"],
       "name": "Hero Links",
       "settings": {
         "section_id": "",
@@ -360,9 +358,7 @@
           }
         }
       },
-      "block_order": [
-        "item_qKyg9j"
-      ],
+      "block_order": ["item_qKyg9j"],
       "name": "Text Carousel",
       "settings": {
         "spacing_top": "large",
@@ -556,17 +552,6 @@
     },
     "social_media_4iXwHE": {
       "type": "social_media",
-      "blocks": {
-        "item_Lp9MYw": {
-          "type": "item",
-          "settings": {
-            "text": "Lorem ipsum dolor sit amet"
-          }
-        }
-      },
-      "block_order": [
-        "item_Lp9MYw"
-      ],
       "name": "Social Media",
       "settings": {
         "section_id": "",

@@ -123,17 +123,6 @@
     },
     "social_media_ajHCja": {
       "type": "social_media",
-      "blocks": {
-        "item_ENUcm6": {
-          "type": "item",
-          "settings": {
-            "text": "Lorem ipsum dolor sit amet"
-          }
-        }
-      },
-      "block_order": [
-        "item_ENUcm6"
-      ],
       "name": "Social Media",
       "settings": {
         "section_id": "",
@@ -259,11 +248,5 @@
       }
     }
   },
-  "order": [
-    "lexicon_detail_96dp4D",
-    "lexicon_products_6MxhCF",
-    "social_media_ajHCja",
-    "seo_content_9zfknc",
-    "newsletter_PdHhXi"
-  ]
+  "order": ["lexicon_detail_96dp4D", "lexicon_products_6MxhCF", "social_media_ajHCja", "seo_content_9zfknc", "newsletter_PdHhXi"]
 }

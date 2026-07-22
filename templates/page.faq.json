@@ -123,17 +123,6 @@
     },
     "social_media_4iXwHE": {
       "type": "social_media",
-      "blocks": {
-        "item_Lp9MYw": {
-          "type": "item",
-          "settings": {
-            "text": "Lorem ipsum dolor sit amet"
-          }
-        }
-      },
-      "block_order": [
-        "item_Lp9MYw"
-      ],
       "name": "Social Media",
       "settings": {
         "section_id": "",
@@ -261,11 +250,5 @@
   },
   "layout": "theme",
   "wrapper": "main#main.page_main",
-  "order": [
-    "faq_6EQirX",
-    "event_slider_4bGnNj",
-    "social_media_4iXwHE",
-    "seo_content_DP789E",
-    "newsletter_LC9wfj"
-  ]
+  "order": ["faq_6EQirX", "event_slider_4bGnNj", "social_media_4iXwHE", "seo_content_DP789E", "newsletter_LC9wfj"]
 }

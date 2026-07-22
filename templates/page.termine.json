@@ -27,9 +27,7 @@
           }
         }
       },
-      "block_order": [
-        "button_AdhNKT"
-      ],
+      "block_order": ["button_AdhNKT"],
       "name": "Hero Links",
       "settings": {
         "section_id": "",
@@ -128,17 +126,6 @@
     },
     "social_media_xAmTEd": {
       "type": "social_media",
-      "blocks": {
-        "item_RDRbHG": {
-          "type": "item",
-          "settings": {
-            "text": "Lorem ipsum dolor sit amet"
-          }
-        }
-      },
-      "block_order": [
-        "item_RDRbHG"
-      ],
       "name": "Social Media",
       "settings": {
         "section_id": "",
@@ -266,11 +253,5 @@
   },
   "layout": "theme",
   "wrapper": "main#main.page_main",
-  "order": [
-    "hero_links_FXekjk",
-    "event_list_JpnNrA",
-    "newsletter_rPFxqp",
-    "social_media_xAmTEd",
-    "seo_content_nR4PJU"
-  ]
+  "order": ["hero_links_FXekjk", "event_list_JpnNrA", "newsletter_rPFxqp", "social_media_xAmTEd", "seo_content_nR4PJU"]
 }

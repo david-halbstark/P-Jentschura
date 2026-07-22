@@ -66,17 +66,6 @@
     },
     "social_media_KmYBtP": {
       "type": "social_media",
-      "blocks": {
-        "item_Jfyw4p": {
-          "type": "item",
-          "settings": {
-            "text": "Lorem ipsum dolor sit amet"
-          }
-        }
-      },
-      "block_order": [
-        "item_Jfyw4p"
-      ],
       "name": "Social Media",
       "settings": {
         "section_id": "",
@@ -149,9 +138,5 @@
   },
   "layout": "theme",
   "wrapper": "main#main.page_main",
-  "order": [
-    "newsletter_p6VABD",
-    "social_media_KmYBtP",
-    "seo_content_TKHTk6"
-  ]
+  "order": ["newsletter_p6VABD", "social_media_KmYBtP", "seo_content_TKHTk6"]
 }
