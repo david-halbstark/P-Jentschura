@@ -1,154 +1,619 @@
-<div class="u-display-none"></div>
 <div class="u-display-none">
-  {% case section.settings.spacing_top -%}
-    {%- when 'xxsmall' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--xxsmall)' -%}
-    {%- when 'xsmall' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--xsmall)' -%}
-    {%- when 'small' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--small)' -%}
-    {%- when 'medium' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--medium)' -%}
-    {%- when 'large' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--large)' -%}
-    {%- when 'large_medium_off' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' -%}
-    {%- when 'page_top' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--page-top)' -%}
-    {%- else -%}
-      {%- assign spacing_top = '0' -%}
-  {%- endcase -%}
-  {%- case section.settings.spacing_bottom -%}
-    {%- when 'xxsmall' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' -%}
-    {%- when 'xsmall' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' -%}
-    {%- when 'small' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--small)' -%}
-    {%- when 'medium' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--medium)' -%}
-    {%- when 'large' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--large)' -%}
-    {%- when 'page_top' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--page-top)' -%}
-    {%- else -%}
-      {%- assign spacing_bottom = '0' -%}
-  {%- endcase %}
-  <div class="u-embed-css w-embed">
-    <style>
-      #shopify-section-{{ section.id }} [data-section-spacing] {
-        --section-spacing-top: {{ spacing_top }};
-        --section-spacing-bottom: {{ spacing_bottom }};
-      }
-    </style>
-  </div>
-</div>
-<div
-  class="image_links_contain u-container"
-  {% if section.settings.section_id != blank %}
-    id="{{ section.settings.section_id }}"
-  {% endif %}
->
-  <div class="image_links_layout u-grid-autofit"></div>
-</div>
-{% schema %}
-{
-  "tag": "section",
-  "name": "Image Links",
-  "class": "image_links_wrap u-section",
-  "settings": [
-    {
-      "type": "header",
-      "content": "Sektion"
-    },
-    {
-      "type": "text",
-      "id": "section_id",
-      "label": "ID"
-    },
-    {
-      "type": "header",
-      "content": "Abst\u00e4nde"
-    },
-    {
-      "type": "select",
-      "id": "spacing_top",
-      "label": "Oben",
-      "options": [
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          {% case section.settings.spacing_top %}{% when 'xxsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_top = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_top = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_top = 'var(--_spacing---section-space--large)' %}{% when 'large_medium_off' %}{% assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' %}{% when 'page_top' %}{% assign spacing_top = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_top = '0' %}{% endcase %}{% case section.settings.spacing_bottom %}{% when 'xxsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_bottom = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_bottom = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_bottom = 'var(--_spacing---section-space--large)' %}{% when 'page_top' %}{% assign spacing_bottom = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_bottom = '0' %}{% endcase %}
+          <div class="u-embed-css w-embed">
+            <style>
+  #shopify-section-{{ section.id }} [data-section-spacing] {
+    --section-spacing-top: {{ spacing_top }};
+    --section-spacing-bottom: {{ spacing_bottom }};
+  }
+</style>
+          </div>
+        </div>
+        <div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+        </div>
+        <div class="image_links_background u-cover-absolute">
+          {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+        </div>
+        <div class="image_links_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
+          
+          <div data-section-spacing="" class="image_links_layout">
+            <div class="image_links_top">
+              {% render 'heading', visually_hidden: true, heading: section.settings.heading, tag: 'h2' %}
+              <div aria-hidden="true" class="image_links_top_top">
+                {% render 'eyebrow', tag: 'span', eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-large', custom_class: 'u-margin-bottom-0', wrapper_class: 'is-eyebrow-large' %}
+                <div class="image_links_svg">
+                  <div class="u-svg">
+                    <div class="u-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="100%" height="100%" viewbox="0 0 256 83" fill="none">
+                        <path d="M157.816 23.6104C158.735 24.6013 158.507 24.5101 159.913 24.8703C155.999 26.3368 153.902 27.8054 150.402 30.1793C152.151 27.7224 155.328 25.2724 157.816 23.6104Z" fill="currentColor"></path>
+                        <path d="M44.9269 1.41862C50.0605 -1.71283 59.3482 0.540577 61.9152 6.20573C67.0667 17.5757 61.0311 31.4566 57.6876 42.4782C64.5264 37.7352 66.4601 26.0522 75.422 24.2458C76.9924 23.9291 80.9275 25.4965 80.7257 27.2897C79.8822 34.7865 69.9097 37.5409 65.3009 42.3893C64.3698 43.3653 61.7496 48.5466 63.5294 49.486C65.8249 50.6972 70.3244 47.9162 72.4621 46.904C78.6511 43.9728 80.9192 40.6312 84.3322 35.0807C82.8527 35.3175 80.1737 35.9346 79.2599 34.5485C80.4742 31.5092 96.0961 21.2004 90.1613 33.2409C92.6081 30.8427 96.9445 27.0415 100.474 28.2614C103.906 29.8662 100.334 35.574 99.1408 37.4967C97.1492 40.7068 95.4361 43.4727 94.0363 46.8708C96.5024 45.1371 101.927 41.0807 103.882 39.0573C103.862 38.1646 103.696 36.7961 103.614 35.8688C105.141 35.2255 106.321 34.7949 107.894 34.276C109.655 32.0389 110.832 28.9836 112.216 26.36C110.673 26.5033 107.492 26.693 106.053 26.4137L105.891 26.1413C108.009 23.9716 112.385 24.4597 115.371 21.8737C118.624 19.0574 120.323 12.9177 123.833 10.7975C124.357 10.481 126.334 11.6173 127.055 11.9762C125.748 13.6895 123.346 17.8709 122.139 19.8639C125.321 18.8759 128.401 17.324 131.553 16.4743C134.552 15.6658 136 16.3392 138.409 17.7985C132.991 19.9962 126.501 20.9224 121.084 23.4255C117.421 25.1182 116.027 28.4163 114.433 31.7624C121.604 28.0914 126.098 26.5082 133.051 22.029C133.475 22.1784 133.896 22.3367 134.314 22.5036C136.258 23.2935 136.512 24.7827 135.751 26.6208C134.616 29.3608 130.099 27.6579 127.981 28.6178C126.872 29.1203 125.581 30.3219 124.652 31.1393C119.003 36.418 121.707 37.3442 127.645 38.8854C130.088 34.6018 135.343 28.9332 140.515 28.2028C142.905 27.865 144.079 28.6139 145.846 30.027C146.416 29.1577 146.995 28.2428 147.63 27.4235L147.73 27.2966C147.562 26.5453 146.975 26.5245 146.053 25.9235L146.045 25.4264C147.114 23.7959 149.211 23.0441 150.588 21.3415C153.877 17.2744 156.664 4.0204 164.186 7.55144C166.136 8.46716 166.991 10.629 167.606 12.568C166.202 18.894 162.938 20.3349 157.812 23.6091C158.731 24.5998 158.503 24.5087 159.908 24.8688C160.835 24.6235 162.323 24.287 163.201 24.321C175.617 24.8013 163.369 39.1897 160.436 43.2887C158.459 46.0512 157.494 47.4005 156.159 49.8512C162.243 45.068 169.533 41.6982 175.061 36.403C177.012 34.5332 180.561 24.6947 184.457 27.1598C184.629 27.6532 184.625 28.1691 184.371 28.6296C181.871 33.1778 179.051 37.4752 177.465 42.4743C177.116 43.5752 175.912 46.1945 176.769 47.0846C183.364 47.4405 194.086 26.5183 198.416 26.8854C201.628 28.9598 198.396 32.783 197.032 35.0348C194.792 38.7336 192.104 42.3678 190.861 46.5563C194.661 41.3725 204.339 34.5714 210.51 32.57C214.184 31.3784 214.083 26.6017 217.129 23.7341C218.348 23.8958 219.563 24.0795 220.776 24.2848C220.436 30.9671 217.692 34.1793 222.266 40.4333C224.79 32.1335 230.22 24.0713 238.92 21.5124C252.43 27.8967 228.46 43.1719 231.627 52.2233C232.33 54.2324 234.249 54.5365 235.918 53.5866C241.7 50.2964 249.372 43.4286 251.766 37.2165C253.201 38.2702 253.806 38.8373 255.071 40.1012C251.969 46.4385 240.363 56.3552 232.683 55.7868C226.669 55.3416 227.906 49.4494 228.487 45.2712L228.223 45.0241C223.521 48.0947 224.577 46.5579 222.285 44.0505C218.039 39.405 216.564 38.9929 215.894 32.4245C214.965 34.3737 214.558 36.4886 213.72 38.4489C211.884 42.654 209.613 46.7949 207.279 50.7419C206.542 51.9891 205.122 53.9267 203.595 53.9782C202.716 54.0578 201.397 52.9073 201.392 52.0202C201.368 48.0374 206.755 41.0917 208.876 38.0505C204.067 41.0631 192.461 52.348 188.484 53.5954C185.451 53.4461 186.528 47.5211 186.795 45.6159C183.283 48.5206 179.056 52.2893 174.802 53.7878C174.218 53.6391 173.071 53.3652 172.554 53.1169C168.73 51.2815 172.329 44.8814 173.542 42.5309C170.086 45.1553 154.375 56.867 150.405 53.6139C148.33 48.7105 166.273 31.2995 163.161 27.82C161.126 27.4519 157.269 30.126 155.617 31.278C150.526 34.8286 145.863 39.0979 142.266 44.1813C139.854 47.5905 137.776 51.2031 135.284 54.5749C134.061 54.6238 132.633 54.5648 131.393 54.5436C132.927 51.463 134.489 48.3957 136.079 45.3434C134.438 45.8295 132.18 45.8582 130.863 46.444C130.121 46.7742 127.939 48.4694 127.174 48.987C122.428 52.187 117.751 56.4571 111.78 56.8835C109.12 57.0735 108.055 56.0324 108.069 53.3493C108.077 51.6899 108.737 51.1764 109.86 50.068C113.264 49.4788 114.183 48.9261 115.207 52.4723C117.997 50.4686 127.682 45.8917 127.409 42.2145C126.33 39.3985 120.615 39.9332 118.637 38.7829C117.788 37.6481 117.793 35.4109 117.698 33.9626C109.272 36.1652 108.53 45.074 104.46 51.4841C103.41 53.1373 101.829 55.4686 99.9005 53.1608C99.4953 51.5562 101.716 47.7195 102.533 46.0505C99.2711 48.1794 95.3077 52.9284 92.2443 53.8132C84.7446 52.9944 95.252 35.5635 96.7453 33.0856C93.671 34.4297 91.5251 35.3069 89.3244 38.0505C85.3077 43.057 83.0235 49.0063 79.8058 54.5436L77.1583 52.5846C77.9862 50.078 78.6978 48.3183 80.0734 46.0778C75.6321 49.0155 70.3285 52.6544 65.2052 54.0339C57.1607 56.1996 58.3996 49.5825 59.0128 44.5134C57.9889 45.139 57.0668 45.4999 55.9699 45.9626C53.3662 49.8464 51.4542 53.6742 49.0646 57.6081C45.0785 64.0923 40.3074 70.0611 34.8605 75.3776C29.6838 80.3383 20.5974 86.1167 14.3117 79.2721C11.4552 76.1613 11.6279 71.0462 11.799 67.0807C12.6559 66.2011 13.8232 64.8209 15.0607 64.7575C16.8277 66.3723 13.2011 85.8136 25.1066 77.1188C35.8424 69.2781 43.0824 58.1486 50.0734 47.0641C51.0772 45.4726 49.6093 44.2872 50.2414 43.2262L51.4855 43.0358C53.4565 41.2712 57.1945 30.7469 57.8898 28.0026C59.2146 22.7718 60.7881 10.3261 57.131 5.76726C56.1494 4.53295 54.6992 3.76201 53.1271 3.63933C49.6885 3.33788 47.2468 4.88792 44.796 6.93132C43.4517 6.14665 42.7046 5.49089 41.5158 4.50554C42.6559 3.16473 43.3842 2.35991 44.9269 1.41862ZM144.555 31.2526C143.787 30.8216 142.425 30.9483 141.515 31.0104C138.768 32.0945 131.934 37.8199 131.866 40.8229C132.475 41.8971 132.561 42.635 133.447 43.0202L134.398 42.8112C135.108 42.435 138.085 40.8556 138.485 40.4557C139.58 39.3597 144.652 32.3463 144.555 31.2526ZM238.255 25.9499C235.047 27.242 232.614 29.3393 230.471 32.0368C229.282 33.5336 226.372 38.1042 226.826 39.9811L227.258 40.0925C228.609 39.4365 235.337 33.9339 236.298 32.7731C237.303 31.57 238.077 30.1904 238.578 28.7048C238.901 27.7677 239.027 27.3044 238.87 26.3298L238.255 25.9499ZM77.2013 27.4841C76.5152 26.7405 76.3142 26.7252 75.2423 26.7829C72.921 27.9856 66.8409 33.9684 66.7443 36.4352L67.0841 36.6423C67.5909 36.4794 68.092 36.3256 68.589 36.1344C71.0227 35.1217 78.026 30.5255 77.2013 27.4841ZM162.288 9.4362C159.705 11.8437 156.019 17.5875 155.008 20.8161L155.139 21.2048L155.648 20.9538C159.335 18.4152 164.206 15.3475 163.402 10.1794C162.85 9.47434 163.146 9.66936 162.288 9.4362Z" fill="currentColor"></path>
+                        <path d="M203.401 64.5599C214.977 64.0274 227.123 64.8485 238.747 64.8207C243.857 64.8083 248.425 65.868 252.718 68.6993C252.153 69.1502 250.798 70.2303 250.195 70.4786C244.764 72.7215 236.92 70.863 231.355 70.0311C228.227 69.5807 225.074 69.3293 221.915 69.2785C212.677 69.1868 203.437 69.2427 194.201 69.4457C188.772 69.5318 183.057 69.4826 177.65 69.7111C172.06 69.9476 166.454 70.4691 160.826 70.7154L98.7204 73.6699C84.5127 73.7873 70.0684 75.3098 55.7911 74.6631C54.2259 74.5922 48.3474 74.3348 48.5402 71.939C49.8044 70.7528 53.7374 70.8543 55.4405 70.8733C66.5703 70.9968 77.6623 70.2323 88.7641 69.5766C93.1057 69.3202 97.494 69.3295 101.845 69.1134L169.356 66.0164C180.687 65.5274 192.067 64.7666 203.401 64.5599Z" fill="currentColor"></path>
+                        <path d="M13.9611 49.5924C14.6235 49.5736 15.2859 49.5663 15.9486 49.5705C16.7352 49.5797 17.6027 49.5851 18.1713 50.1679C18.1195 50.9267 18.0288 50.7899 17.3705 51.4338C15.9712 51.8187 14.4073 51.8924 13.3878 50.7268C13.4651 50.0999 13.5115 50.0396 13.9611 49.5924Z" fill="currentColor"></path>
+                        <path d="M23.5183 13.2129C36.3863 13.8351 35.0349 24.5591 27.49 31.3184C25.756 32.872 24.4942 33.7286 22.4373 34.9541C18.1296 37.5206 15.0592 38.4367 10.071 38.2568C8.69345 41.5093 7.62475 44.8358 6.51832 48.1797C5.61848 50.8992 5.42549 54.9447 3.1189 56.6143C2.16595 56.7462 0.883698 56.8884 0.0681199 56.377C-0.683896 54.6475 5.01787 40.1286 5.98609 36.7998C4.93175 36.2972 3.80045 35.8986 3.47437 34.6816C3.5067 33.8452 3.50745 33.7284 4.02808 33.083C5.01317 32.4265 6.34854 32.5234 7.54957 32.501C8.64428 31.2787 10.4925 23.0758 11.5369 20.4609C10.1001 20.9479 8.2411 21.6177 7.03492 20.3096C6.82617 16.5345 20.0118 13.6328 23.2048 13.2236C23.3091 13.2198 23.4141 13.2165 23.5183 13.2129ZM27.8503 24.2139C30.1207 20.9077 27.5576 15.2834 24.2429 15.8018C20.477 16.2963 15.136 18.3399 11.8923 20.3799L15.7371 19.9775C15.7368 20.9486 15.7503 21.9918 15.5349 22.916C15.1103 24.7388 10.7627 35.1522 11.1785 36.4023C11.537 36.3923 11.6598 36.4124 12.0105 36.3213C18.9241 34.1831 23.7512 30.1831 27.8503 24.2139Z" fill="currentColor"></path>
+                      </svg></div>
+                  </div>
+                </div>
+              </div>
+              <div class="image_links_top_bot">
+                {% render 'paragraph', tidy_text: section.settings.paragraph_tidy_text, custom_class: 'u-margin-bottom-0', paragraph: section.settings.paragraph, variant: 'u-text-body-large', max_width: section.settings.paragraph_max_width %}
+                <div class="image_links_buttons">
+                  {% for block in section.blocks %}
+    {% if block.type == "button" %}
+                    <div li-block="Button" class="image_link_button">
+                                    
+                    
+                                    <div class="u-display-none">
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                    </div>
+                                    
+                    
+                                    {% render 'button', url: section.settings.button_1_url, action: section.settings.button_1_action, padding: 'base', text_size: 'u-text-eyebrow-base', icon: section.settings.button_1_icon, label: block.settings.button_1_label, trigger: 'hover focus', icon_animation: block.settings.button_1_icon_animation, mode: 'link', color: 'white', variant: section.settings.button_1_variant %}
+                                    
+                  
+                            </div>
+            {% endif %}
+{% endfor %}
+                </div>
+              </div>
+            </div>
+            <div class="image_links_bot">
+              <div class="image_links_card u-alignment-center u-margin-trim">
+                {% render 'heading', visually_hidden: section.settings.heading_visually_hidden, heading: section.settings.card_heading, tag: 'h3', variant: 'u-text-eyebrow-large', max_width: section.settings.heading_max_width, tidy_text: section.settings.heading_tidy_text %}
+                {% render 'paragraph', custom_class: , paragraph: section.settings.card_paragraph, variant: 'u-text-body-small', max_width: section.settings.paragraph_max_width, tidy_text: section.settings.paragraph_tidy_text %}
+              </div>
+            </div>
+          </div>
+          
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Image Links",
+    "class": "image_links_wrap u-section",
+    "blocks": [
         {
-          "value": "none",
-          "label": "Kein Abstand"
-        },
-        {
-          "value": "xxsmall",
-          "label": "Extra extra klein"
-        },
-        {
-          "value": "xsmall",
-          "label": "Extra klein"
-        },
-        {
-          "value": "small",
-          "label": "Klein"
-        },
-        {
-          "value": "medium",
-          "label": "Mittel"
-        },
-        {
-          "value": "large",
-          "label": "Gro\u00df"
-        },
-        {
-          "value": "large_medium_off",
-          "label": "Gro\u00df | Medium kein Abstand"
-        },
-        {
-          "value": "page_top",
-          "label": "Seitenanfang"
+            "name": "Button",
+            "type": "button",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Button"
+                },
+                {
+                    "type": "text",
+                    "id": "button_1_label",
+                    "label": "Text",
+                    "default": "Text"
+                },
+                {
+                    "type": "url",
+                    "id": "button_1_url",
+                    "label": "Link",
+                    "visible_if": "{{ section.settings.button_1_mode == 'link' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_icon",
+                    "label": "Icon",
+                    "options": [
+                        {
+                            "value": "none",
+                            "label": "Kein Icon"
+                        },
+                        {
+                            "value": "arrow_left",
+                            "label": "Pfeil links"
+                        },
+                        {
+                            "value": "arrow_right",
+                            "label": "Pfeil rechts"
+                        },
+                        {
+                            "value": "arrow_up_right",
+                            "label": "Pfeil hoch rechts"
+                        },
+                        {
+                            "value": "chevron_left",
+                            "label": "Chevron links"
+                        },
+                        {
+                            "value": "chevron_right",
+                            "label": "Chevron rechts"
+                        },
+                        {
+                            "value": "download",
+                            "label": "Herunterladen"
+                        },
+                        {
+                            "value": "copy",
+                            "label": "Kopieren"
+                        },
+                        {
+                            "value": "external",
+                            "label": "Externe Seite"
+                        }
+                    ],
+                    "default": "none"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_icon_animation",
+                    "label": "Icon-Animation",
+                    "options": [
+                        {
+                            "value": "none",
+                            "label": "Keine Animation"
+                        },
+                        {
+                            "value": "move_left",
+                            "label": "Nach links bewegen"
+                        },
+                        {
+                            "value": "move_right",
+                            "label": "Nach rechts bewegen"
+                        },
+                        {
+                            "value": "move_up_right",
+                            "label": "Nach oben rechts bewegen"
+                        }
+                    ],
+                    "default": "none",
+                    "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_1_icon_color",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "inherit",
+                            "label": "Wie Text"
+                        },
+                        {
+                            "value": "red",
+                            "label": "Rot"
+                        }
+                    ],
+                    "default": "inherit",
+                    "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
+                },
+                {
+                    "type": "header",
+                    "content": "Button 2"
+                },
+                {
+                    "type": "text",
+                    "id": "button_2_label",
+                    "label": "Text",
+                    "default": "Text"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_mode",
+                    "label": "Funktion",
+                    "options": [
+                        {
+                            "value": "link",
+                            "label": "Link \u00f6ffnen"
+                        },
+                        {
+                            "value": "action",
+                            "label": "Aktion ausf\u00fchren"
+                        }
+                    ],
+                    "default": "link"
+                },
+                {
+                    "type": "url",
+                    "id": "button_2_url",
+                    "label": "Link",
+                    "visible_if": "{{ section.settings.button_2_mode == 'link' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_variant",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "solid",
+                            "label": "Fl\u00e4che"
+                        },
+                        {
+                            "value": "transparent",
+                            "label": "Transparent"
+                        },
+                        {
+                            "value": "text",
+                            "label": "Textlink"
+                        },
+                        {
+                            "value": "pill",
+                            "label": "Kapsel"
+                        }
+                    ],
+                    "default": "solid"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_action",
+                    "label": "Aktion",
+                    "options": [
+                        {
+                            "value": "newsletter_modal",
+                            "label": "Newsletter-Modal \u00f6ffnen"
+                        },
+                        {
+                            "value": "contact_modal",
+                            "label": "Kontaktformular-Modal \u00f6ffnen"
+                        }
+                    ],
+                    "default": "newsletter_modal",
+                    "visible_if": "{{ section.settings.button_2_mode == 'action' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_solid_color",
+                    "label": "Farbe",
+                    "options": [
+                        {
+                            "value": "red",
+                            "label": "Rot"
+                        },
+                        {
+                            "value": "white",
+                            "label": "Wei\u00df"
+                        }
+                    ],
+                    "default": "red",
+                    "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_solid_text_size",
+                    "label": "Textgr\u00f6\u00dfe",
+                    "options": [
+                        {
+                            "value": "u-text-link-large",
+                            "label": "Link gro\u00df"
+                        },
+                        {
+                            "value": "u-text-link-base",
+                            "label": "Link Standard"
+                        }
+                    ],
+                    "default": "u-text-link-large",
+                    "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_solid_padding",
+                    "label": "Stil",
+                    "options": [
+                        {
+                            "value": "base",
+                            "label": "Standard"
+                        },
+                        {
+                            "value": "small",
+                            "label": "Klein"
+                        }
+                    ],
+                    "default": "base",
+                    "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_text_text_size",
+                    "label": "Textgr\u00f6\u00dfe",
+                    "options": [
+                        {
+                            "value": "u-text-link-large",
+                            "label": "Link gro\u00df"
+                        },
+                        {
+                            "value": "u-text-link-base",
+                            "label": "Link Standard"
+                        }
+                    ],
+                    "default": "u-text-link-large",
+                    "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_text_color",
+                    "label": "Farbe",
+                    "options": [
+                        {
+                            "value": "green",
+                            "label": "Gr\u00fcn"
+                        },
+                        {
+                            "value": "red",
+                            "label": "Rot"
+                        }
+                    ],
+                    "default": "green",
+                    "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_pill_color",
+                    "label": "Farbe",
+                    "options": [
+                        {
+                            "value": "white",
+                            "label": "Wei\u00df"
+                        },
+                        {
+                            "value": "white_transparent",
+                            "label": "Wei\u00df transparent"
+                        }
+                    ],
+                    "default": "white",
+                    "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_pill_text_size",
+                    "label": "Textgr\u00f6\u00dfe",
+                    "options": [
+                        {
+                            "value": "u-text-eyebrow-large",
+                            "label": "\u00dcbertitel gro\u00df"
+                        },
+                        {
+                            "value": "u-text-eyebrow-base",
+                            "label": "\u00dcbertitel Standard"
+                        },
+                        {
+                            "value": "u-text-link-base",
+                            "label": "Link Standard"
+                        },
+                        {
+                            "value": "u-text-link-small",
+                            "label": "Link klein"
+                        }
+                    ],
+                    "default": "u-text-eyebrow-base",
+                    "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
+                },
+                {
+                    "type": "text",
+                    "id": "button_2_pill_tag_inner",
+                    "label": "Innerer Tag",
+                    "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "button_2_underline",
+                    "label": "Unterstreichung anzeigen",
+                    "default": false,
+                    "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_icon_position",
+                    "label": "Icon-Position",
+                    "options": [
+                        {
+                            "value": "before",
+                            "label": "Vor dem Text"
+                        },
+                        {
+                            "value": "after",
+                            "label": "Nach dem Text"
+                        }
+                    ],
+                    "default": "after",
+                    "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
+                },
+                {
+                    "type": "select",
+                    "id": "button_2_icon_animation",
+                    "label": "Icon-Animation",
+                    "options": [
+                        {
+                            "value": "none",
+                            "label": "Keine Animation"
+                        },
+                        {
+                            "value": "move_left",
+                            "label": "Nach links bewegen"
+                        },
+                        {
+                            "value": "move_right",
+                            "label": "Nach rechts bewegen"
+                        },
+                        {
+                            "value": "move_up_right",
+                            "label": "Nach oben rechts bewegen"
+                        }
+                    ],
+                    "default": "none",
+                    "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
+                }
+            ]
         }
-      ],
-      "default": "large"
-    },
-    {
-      "type": "select",
-      "id": "spacing_bottom",
-      "label": "Unten",
-      "options": [
+    ],
+    "settings": [
         {
-          "value": "none",
-          "label": "Kein Abstand"
+            "type": "header",
+            "content": "Sektion"
         },
         {
-          "value": "xxsmall",
-          "label": "Extra extra klein"
+            "type": "text",
+            "id": "section_id",
+            "label": "ID"
         },
         {
-          "value": "xsmall",
-          "label": "Extra klein"
+            "type": "header",
+            "content": "Abst\u00e4nde"
         },
         {
-          "value": "small",
-          "label": "Klein"
+            "type": "select",
+            "id": "spacing_top",
+            "label": "Oben",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "large_medium_off",
+                    "label": "Gro\u00df | Medium kein Abstand"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "large"
         },
         {
-          "value": "medium",
-          "label": "Mittel"
+            "type": "select",
+            "id": "spacing_bottom",
+            "label": "Unten",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                }
+            ],
+            "default": "xxsmall"
         },
         {
-          "value": "large",
-          "label": "Gro\u00df"
+            "type": "header",
+            "content": "\u00dcberschrift"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "heading",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+            "type": "header",
+            "content": "\u00dcbertitel"
+        },
+        {
+            "type": "text",
+            "id": "eyebrow",
+            "label": "Text",
+            "default": "\u00dcbertitel Text"
+        },
+        {
+            "type": "header",
+            "content": "Text"
+        },
+        {
+            "type": "richtext",
+            "id": "paragraph",
+            "label": "Text",
+            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
+        },
+        {
+            "type": "number",
+            "id": "paragraph_max_width",
+            "label": "Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 60
+        },
+        {
+            "type": "checkbox",
+            "id": "paragraph_tidy_text",
+            "label": "Ausgewogener Zeilenumbruch",
+            "default": true
         }
-      ],
-      "default": "large"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Image Links",
-      "category": "Liquify",
-      "blocks": []
-    }
-  ]
-}
-{% endschema %}
+    ],
+    "presets": [
+        {
+            "name": "Image Links",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "button"
+                }
+            ]
+        }
+    ]
+} {% endschema %}

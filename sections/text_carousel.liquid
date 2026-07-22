@@ -14,9 +14,9 @@
           </div>
           <div class="social_top_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
             
-            <div data-section-spacing="" class="social_top_layout">
-              <div class="social_top_track">
-                {% for repeat in (1..4) %}    <div li-for="repeat in (1..4)" class="social_top_group">
+            <div data-section-spacing="" class="social_media_top_layout">
+              <div class="social_media_top_track">
+                {% for repeat in (1..4) %}    <div li-for="repeat in (1..4)" class="social_media_top_group">
                                     
                   
                             {% for block in section.blocks %}
@@ -48,7 +48,7 @@
           </div> {% schema %} {
     "tag": "section",
     "name": "Text Carousel",
-    "class": "social_top_wrap u-section",
+    "class": "social_media_top_wrap u-section",
     "blocks": [
         {
             "name": "Item",
