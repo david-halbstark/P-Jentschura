@@ -1,4 +1,63 @@
-<div class="u-display-none">
+<div class="u-embed-css w-embed">
+          <style>
+  @container (width < 53em) {
+    .product_layout {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'breadcrumbs'
+        'gallery'
+        'summary'
+        'story'
+        'journeys'
+        'details'
+        'complements'
+        'links';
+    }
+    .product_gallery_wrap {
+      grid-area: gallery;
+    }
+    .product_story_wrap {
+      grid-area: story;
+    }
+    .product_summary_wrap {
+      grid-area: summary;
+    }
+    .product_journeys_wrap {
+      grid-area: journeys;
+    }
+    .product_details_wrap {
+      grid-area: details;
+    }
+    .product_complements_wrap {
+      grid-area: complements;
+    }
+    .product_links_wrap {
+      grid-area: links;
+    }
+  }
+  .product_gallery_thumb_slider_wrap {
+    --_gap---size: 0.5rem;
+  }
+  @container (width >= 53em) {
+    .product_story_card.is-image-large {
+      grid-column: span 2;
+      aspect-ratio: 6.57 / 6.4;
+    }
+    .product_story_heading {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  }
+</style>
+        </div>
+        <div class="u-display-none">
           
           
         </div>
@@ -78,17 +137,199 @@
           
           
         </div>
-        <div class="section_contain u-container" {% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% endif %}>
-          <div data-section-spacing="" class="section_layout u-grid-autofit">
-            {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant, custom_class: , wrapper_class: %}
-            {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
-            {% render 'paragraph', custom_class: , paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant, max_width: section.settings.paragraph_max_width, tidy_text: section.settings.paragraph_tidy_text %}
-            {% render 'button_group', button_1_solid_color: section.settings.button_1_solid_color, button_1_icon_position: section.settings.button_1_icon_position, button_1_url: section.settings.button_1_url, button_2_url: section.settings.button_2_url, button_2_solid_color: section.settings.button_2_solid_color, button_2_icon_position: section.settings.button_2_icon_position, button_2_action: section.settings.button_2_action, button_1_action: section.settings.button_1_action, button_2_icon: section.settings.button_2_icon, button_1_label: section.settings.button_1_label, button_1_icon: section.settings.button_1_icon, button_2_label: section.settings.button_2_label, button_2_icon_color: section.settings.button_2_icon_color, button_2_pill_color: section.settings.button_2_pill_color, button_1_trigger: 'hover focus', button_2_icon_animation: section.settings.button_2_icon_animation, button_2_trigger: 'hover focus', button_1_icon_color: section.settings.button_1_icon_color, button_1_pill_color: section.settings.button_1_pill_color, button_1_icon_animation: section.settings.button_1_icon_animation, button_2_custom_attribute_value: , button_2_text_text_size: section.settings.button_2_text_text_size, button_1_custom_attribute_name: , button_1_custom_attribute_value: , button_1_solid_padding: section.settings.button_1_solid_padding, button_2_custom_attribute_name: , button_1_text_text_size: section.settings.button_1_text_text_size, button_2_mode: section.settings.button_2_mode, button_2_solid_padding: section.settings.button_2_solid_padding, button_1_solid_text_size: section.settings.button_1_solid_text_size, button_1_mode: section.settings.button_1_mode, button_2_solid_text_size: section.settings.button_2_solid_text_size, button_1_variant: section.settings.button_1_variant, button_2_custom_class: , button_1_custom_class: , button_2_pill_tag_inner: section.settings.button_2_pill_tag_inner, button_2_variant: section.settings.button_2_variant, button_1_pill_tag_inner: section.settings.button_1_pill_tag_inner, button_2_pill_text_size: section.settings.button_2_pill_text_size, button_1_pill_text_size: section.settings.button_1_pill_text_size, button_2_text_color: section.settings.button_2_text_color, button_1_underline: section.settings.button_1_underline, button_1_text_color: section.settings.button_1_text_color, button_2_underline: section.settings.button_2_underline %}
+        <div class="product_contain u-container" {% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% endif %}>
+          
+          <div data-section-spacing="" class="product_layout">
+            <div class="product_breadcrumbs_wrap">
+              <nav role="navigation" aria-label="Breadcrumbs" class="product_breadcrumbs_element">
+                <a href="#" class="product_breadcrumbs_link u-text-link-base w-inline-block">
+                  <div class="product_breadcrumbs_text">Alle Produkte</div>
+                </a>
+              </nav>
+            </div>
+            <div class="product_left">
+              <div class="product_gallery_wrap">
+                <div class="product_gallery_main_slider_wrap">
+                  <div style="--lg: 1; --md: 1; --sm: 1; --xs: 1;" class="product_gallery_main_slider_offset slider_offset">
+                    <div class="product_gallery_main_slider_element swiper">
+                      <div class="product_gallery_main_slider_list swiper-wrapper">
+                        <div class="product_gallery_main_slider_slide swiper-slide">
+                          <div class="product_gallery_main_slide"><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" alt=""></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="w-node-_13cd7729-04cc-1977-9779-b110c3d873da-e9743541" class="product_gallery_thumb_slider_wrap">
+                  <div style="--lg: 7; --md: 1; --sm: 1; --xs: 1;" class="product_gallery_thumb_slider_offset slider_offset">
+                    <div class="product_gallery_thumb_slider_element swiper">
+                      <div class="product_gallery_thumb_slider_list swiper-wrapper">
+                        <div class="product_gallery_thumb_slider_slide swiper-slide">
+                          <div class="product_gallery_thumb_slide"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="image-2"></div>
+                        </div>
+                        <div class="product_gallery_thumb_slider_slide swiper-slide">
+                          <div class="product_gallery_thumb_slide"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="image-2"></div>
+                        </div>
+                        <div class="product_gallery_thumb_slider_slide swiper-slide">
+                          <div class="product_gallery_thumb_slide"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="image-2"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="w-node-_89cb1887-d675-2995-df8d-fe1352c01f23-e9743541" class="product_gallery_tag">
+                  {% render 'tag', custom_class: , tag: section.settings.tag, variant: section.settings.tag_variant, solid_text_size: section.settings.tag_solid_text_size, solid_color: section.settings.tag_solid_color, pill_text_size: section.settings.tag_pill_text_size %}
+                </div>
+                <div id="w-node-cb4e057a-55a2-6eec-55e0-356b60d03128-e9743541" class="product_gallery_certifications">
+                  <div class="product_gallery_certification"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="image"></div>
+                  <div class="product_gallery_certification"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="image"></div>
+                  <div class="product_gallery_certification"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="image"></div>
+                </div>
+              </div>
+              <div class="product_story_wrap">
+                <div class="product_story_heading">
+                  {% render 'heading', variant: 'u-text-eyebrow-large', heading: section.settings.heading, tag: 'div' %}
+                </div>
+                <div class="product_story_slider_wrap slider_wrap">
+                  <div style="--lg: 1; --md: 1.3; --sm: 1.3; --xs: 1.3;" class="product_story_slider_offset slider_offset">
+                    <div class="product_story_slider_element swiper">
+                      <div class="product_story_slider_list swiper-wrapper">
+                        <div class="product_story_slider_slide swiper-slide">
+                          <div class="product_story_card is-text"></div>
+                        </div>
+                        <div class="product_story_slider_slide">
+                          <div class="product_story_card is-image-small">
+                            {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                          </div>
+                        </div>
+                        <div class="product_story_slider_slide">
+                          <div class="product_story_card is-image-large">
+                            {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                          </div>
+                        </div>
+                        <div class="product_story_slider_slide">
+                          <div class="product_story_card is-image-small">
+                            {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                          </div>
+                        </div>
+                        <div class="product_story_slider_slide">
+                          <div class="product_story_card is-text"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product_right">
+              <div class="product_summary_wrap">
+                <div class="product_summary_top">
+                  <div class="product_detail_top_left">
+                    {% render 'heading', custom_class: 'u-margin-bottom-0 u-min-width-auto', heading: product.title, tag: 'h1', variant: 'u-text-h2-primary' %}
+                    <div class="product_detail_reviews_wrap">
+                      <div class="product_detail_reviews_stars u-flex-noshrink">
+                        <div class="product_detail_reviews_star">
+                          {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                        </div>
+                        <div class="product_detail_reviews_star">
+                          {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                        </div>
+                        <div class="product_detail_reviews_star">
+                          {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                        </div>
+                        <div class="product_detail_reviews_star">
+                          {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                        </div>
+                        <div class="product_detail_reviews_star">
+                          {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                        </div>
+                      </div>
+                      <div class="product_detail_reviews_rating u-flex-noshrink">
+                        {% render 'typography', tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, tidy_text: section.settings.text_tidy_text, custom_class: 'u-margin-bottom-0', variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product_detail_top_right u-flex-noshrink"><button class="product_wishlist_button">
+                      <div class="product_wishlist_icon">
+                        {% render 'icon', custom_class: , icon: 'heart', aria-hidden: true %}
+                      </div>
+                    </button></div>
+                </div>
+                <div class="product_summary_description">
+                  {% render 'paragraph', variant: 'u-text-body-base', custom_class: 'u-margin-bottom-0', paragraph: product.description %}
+                </div>
+                <div class="product_summary_checks">
+                  {% render 'paragraph', variant: section.settings.paragraph_variant, custom_class: 'u-margin-bottom-0', paragraph: section.settings.checks %}
+                </div>
+                <div class="product_summary_add_to_cart">
+                  {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
+                  
+                </div>
+                <div class="product_summary_certifications">
+                  <div class="product_summary_certification u-flex-noshrink">
+                    {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                  </div>
+                  
+                  
+                  
+                </div>
+              </div>
+              <div class="product_details_wrap">
+                <div class="u-display-contents">
+                  {% render 'product_detail_modal_trigger' %}
+                </div>
+                <div class="u-display-contents">
+                  {% render 'product_detail_modal_trigger' %}
+                </div>
+                <div class="u-display-contents">
+                  {% render 'product_detail_modal_trigger' %}
+                </div>
+                <div class="u-display-contents">
+                  {% render 'product_detail_modal_trigger' %}
+                </div>
+                <div class="u-display-contents">
+                  {% render 'product_detail_modal_trigger' %}
+                </div>
+              </div>
+              <div class="product_complements_wrap">
+                <div class="product_complements_top">
+                  {% render 'heading', variant: 'u-text-eyebrow-large', heading: section.settings.heading, tag: 'div' %}
+                </div>
+                <div class="product_complements_bot">
+                  {% render 'product_complement' %}
+                </div>
+              </div>
+              <div class="product_links_wrap">
+                <div class="product_links_buttons u-button-wrapper">
+                  <div class="u-display-contents">
+                    {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
+                    
+                  </div>
+                  <div class="u-display-contents">
+                    {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
+                    
+                  </div>
+                  <div class="u-display-contents">
+                    {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
+                    
+                  </div>
+                  <div class="u-display-contents">
+                    {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
+                    
+                  </div>
+                  <div class="u-display-contents">
+                    {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          
         </div> {% schema %} {
     "tag": "section",
     "name": "Product",
-    "class": "section_wrap u-section",
+    "class": "product_section u-section",
     "settings": [
         {
             "type": "header",
@@ -141,7 +382,7 @@
                     "label": "Seitenanfang"
                 }
             ],
-            "default": "large"
+            "default": "xxsmall"
         },
         {
             "type": "select",
@@ -173,7 +414,7 @@
                     "label": "Gro\u00df"
                 }
             ],
-            "default": "large"
+            "default": "medium"
         },
         {
             "type": "header",

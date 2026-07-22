@@ -78,17 +78,46 @@
           
           
         </div>
-        <div class="section_contain u-container" {% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% endif %}>
-          <div data-section-spacing="" class="section_layout u-grid-autofit">
-            {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant, custom_class: , wrapper_class: %}
-            {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
-            {% render 'paragraph', custom_class: , paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant, max_width: section.settings.paragraph_max_width, tidy_text: section.settings.paragraph_tidy_text %}
-            {% render 'button_group', button_1_solid_color: section.settings.button_1_solid_color, button_1_icon_position: section.settings.button_1_icon_position, button_1_url: section.settings.button_1_url, button_2_url: section.settings.button_2_url, button_2_solid_color: section.settings.button_2_solid_color, button_2_icon_position: section.settings.button_2_icon_position, button_2_action: section.settings.button_2_action, button_1_action: section.settings.button_1_action, button_2_icon: section.settings.button_2_icon, button_1_label: section.settings.button_1_label, button_1_icon: section.settings.button_1_icon, button_2_label: section.settings.button_2_label, button_2_icon_color: section.settings.button_2_icon_color, button_2_pill_color: section.settings.button_2_pill_color, button_1_trigger: 'hover focus', button_2_icon_animation: section.settings.button_2_icon_animation, button_2_trigger: 'hover focus', button_1_icon_color: section.settings.button_1_icon_color, button_1_pill_color: section.settings.button_1_pill_color, button_1_icon_animation: section.settings.button_1_icon_animation, button_2_custom_attribute_value: , button_2_text_text_size: section.settings.button_2_text_text_size, button_1_custom_attribute_name: , button_1_custom_attribute_value: , button_1_solid_padding: section.settings.button_1_solid_padding, button_2_custom_attribute_name: , button_1_text_text_size: section.settings.button_1_text_text_size, button_2_mode: section.settings.button_2_mode, button_2_solid_padding: section.settings.button_2_solid_padding, button_1_solid_text_size: section.settings.button_1_solid_text_size, button_1_mode: section.settings.button_1_mode, button_2_solid_text_size: section.settings.button_2_solid_text_size, button_1_variant: section.settings.button_1_variant, button_2_custom_class: , button_1_custom_class: , button_2_pill_tag_inner: section.settings.button_2_pill_tag_inner, button_2_variant: section.settings.button_2_variant, button_1_pill_tag_inner: section.settings.button_1_pill_tag_inner, button_2_pill_text_size: section.settings.button_2_pill_text_size, button_1_pill_text_size: section.settings.button_1_pill_text_size, button_2_text_color: section.settings.button_2_text_color, button_1_underline: section.settings.button_1_underline, button_1_text_color: section.settings.button_1_text_color, button_2_underline: section.settings.button_2_underline %}
+        <div class="product_faq_contain u-container" {% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% endif %}>
+          
+          <div data-section-spacing="" class="product_faq_layout">
+            <div class="product_faq_left u-alignment-center">
+              <div class="product_faq_left_top u-alignment-inherit">
+                {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant, custom_class: , wrapper_class: %}
+              </div>
+              <div class="product_faq_left_bot u-alignment-inherit">
+                {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+                {% render 'paragraph', custom_class: , paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant, max_width: section.settings.paragraph_max_width, tidy_text: section.settings.paragraph_tidy_text %}
+                {% render 'button_group', button_1_solid_color: section.settings.button_1_solid_color, button_1_icon_position: section.settings.button_1_icon_position, button_1_url: section.settings.button_1_url, button_2_url: section.settings.button_2_url, button_2_solid_color: section.settings.button_2_solid_color, button_2_icon_position: section.settings.button_2_icon_position, button_2_action: section.settings.button_2_action, button_1_action: section.settings.button_1_action, button_2_icon: section.settings.button_2_icon, button_1_label: section.settings.button_1_label, button_1_icon: section.settings.button_1_icon, button_2_label: section.settings.button_2_label, button_2_icon_color: section.settings.button_2_icon_color, button_2_pill_color: section.settings.button_2_pill_color, button_1_trigger: 'hover focus', button_2_icon_animation: section.settings.button_2_icon_animation, button_2_trigger: 'hover focus', button_1_icon_color: section.settings.button_1_icon_color, button_1_pill_color: section.settings.button_1_pill_color, button_1_icon_animation: section.settings.button_1_icon_animation, button_2_custom_attribute_value: , button_2_text_text_size: section.settings.button_2_text_text_size, button_1_custom_attribute_name: , button_1_custom_attribute_value: , button_1_solid_padding: section.settings.button_1_solid_padding, button_2_custom_attribute_name: , button_1_text_text_size: section.settings.button_1_text_text_size, button_2_mode: section.settings.button_2_mode, button_2_solid_padding: section.settings.button_2_solid_padding, button_1_solid_text_size: section.settings.button_1_solid_text_size, button_1_mode: section.settings.button_1_mode, button_2_solid_text_size: section.settings.button_2_solid_text_size, button_1_variant: section.settings.button_1_variant, button_2_custom_class: , button_1_custom_class: , button_2_pill_tag_inner: section.settings.button_2_pill_tag_inner, button_2_variant: section.settings.button_2_variant, button_1_pill_tag_inner: section.settings.button_1_pill_tag_inner, button_2_pill_text_size: section.settings.button_2_pill_text_size, button_1_pill_text_size: section.settings.button_1_pill_text_size, button_2_text_color: section.settings.button_2_text_color, button_1_underline: section.settings.button_1_underline, button_1_text_color: section.settings.button_1_text_color, button_2_underline: section.settings.button_2_underline %}
+              </div>
+            </div>
+            <div class="product_faq_right">
+              <div class="product_faq_item_wrap">
+                <div class="product_faq_item_element">
+                  <h3 class="product_faq_item_top"><button class="product_faq_item_button">
+                      {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}<svg class="product_faq_item_icon u-svg">
+                        <path d="M19.5 25C19.3674 25 19.2402 24.9429 19.1464 24.8414C19.0527 24.7398 19 24.602 19 24.4583L19 12.5417C19 12.398 19.0527 12.2602 19.1464 12.1587C19.2402 12.0571 19.3674 12 19.5 12C19.6326 12 19.7598 12.0571 19.8536 12.1587C19.9473 12.2602 20 12.398 20 12.5417L20 24.4583C20 24.602 19.9473 24.7398 19.8536 24.8414C19.7598 24.9429 19.6326 25 19.5 25Z" fill="currentColor" class="product_faq_item_icon_line_top u-path no-stroke"></path>
+                        <path d="M26 18.5C26 18.6326 25.9429 18.7598 25.8414 18.8536C25.7398 18.9473 25.602 19 25.4583 19H13.5417C13.398 19 13.2602 18.9473 13.1587 18.8536C13.0571 18.7598 13 18.6326 13 18.5C13 18.3674 13.0571 18.2402 13.1587 18.1464C13.2602 18.0527 13.398 18 13.5417 18H25.4583C25.602 18 25.7398 18.0527 25.8414 18.1464C25.9429 18.2402 26 18.3674 26 18.5Z" fill="currentColor" class="product_faq_item_icon_line_bot u-path no-stroke"></path>
+                      </svg>
+                    </button></h3>
+                  <div class="product_faq_item_bot">
+                    <div class="product_faq_item_bot_wrap">
+                      <div class="product_faq_item_bot_element">
+                        <div class="product_faq_item_bot">
+                          {% render 'paragraph', tidy_text: section.settings.paragraph_tidy_text, custom_class: , paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant, max_width: section.settings.paragraph_max_width %}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          
         </div> {% schema %} {
     "tag": "section",
     "name": "Product FAQ",
-    "class": "section_wrap u-section",
+    "class": "product_faq_wrap u-section",
     "settings": [
         {
             "type": "header",

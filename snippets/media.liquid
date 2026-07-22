@@ -1,11 +1,11 @@
 {% assign media_type_value = media_type | default: 'image' %}
-            {% if media_type_value == 'image' %}    <div li-if="media_type_value == 'image'" class="u-display-contents">
+                      {% if media_type_value == 'image' %}    <div li-if="media_type_value == 'image'" class="u-display-contents">
     
-              {% render 'image', image_width_mobile: image_width_mobile, image: image, loading: image_loading, fetchpriority: image_fetchpriority, image_mobile: image_mobile, custom_class: image_custom_class, width: image_width, breakpoint: image_breakpoint, object_fit: image_object_fit %}
-                </div>
+                        {% render 'image', image_width_mobile: image_width_mobile, image: image, loading: image_loading, fetchpriority: image_fetchpriority, image_mobile: image_mobile, custom_class: image_custom_class, width: image_width, breakpoint: image_breakpoint, object_fit: image_object_fit %}
+                          </div>
 {% endif %}
-            {% if media_type_value == 'video' %}    <div li-if="media_type_value == 'video'" class="u-display-contents">
+                      {% if media_type_value == 'video' %}    <div li-if="media_type_value == 'video'" class="u-display-contents">
     
-              {% render 'video', controls: video_controls, playsinline: video_playsinline, video: video, autoplay: video_autoplay, play_behavior: video_play_behavior, loop: video_loop, custom_class: video_custom_class, preload: video_preload, muted: video_muted %}
-                </div>
+                        {% render 'video', controls: video_controls, playsinline: video_playsinline, video: video, autoplay: video_autoplay, play_behavior: video_play_behavior, loop: video_loop, custom_class: video_custom_class, preload: video_preload, muted: video_muted %}
+                          </div>
 {% endif %}

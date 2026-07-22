@@ -78,17 +78,46 @@
           
           
         </div>
-        <div class="section_contain u-container" {% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% endif %}>
-          <div data-section-spacing="" class="section_layout u-grid-autofit">
-            {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant, custom_class: , wrapper_class: %}
-            {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
-            {% render 'paragraph', custom_class: , paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant, max_width: section.settings.paragraph_max_width, tidy_text: section.settings.paragraph_tidy_text %}
-            {% render 'button_group', button_1_solid_color: section.settings.button_1_solid_color, button_1_icon_position: section.settings.button_1_icon_position, button_1_url: section.settings.button_1_url, button_2_url: section.settings.button_2_url, button_2_solid_color: section.settings.button_2_solid_color, button_2_icon_position: section.settings.button_2_icon_position, button_2_action: section.settings.button_2_action, button_1_action: section.settings.button_1_action, button_2_icon: section.settings.button_2_icon, button_1_label: section.settings.button_1_label, button_1_icon: section.settings.button_1_icon, button_2_label: section.settings.button_2_label, button_2_icon_color: section.settings.button_2_icon_color, button_2_pill_color: section.settings.button_2_pill_color, button_1_trigger: 'hover focus', button_2_icon_animation: section.settings.button_2_icon_animation, button_2_trigger: 'hover focus', button_1_icon_color: section.settings.button_1_icon_color, button_1_pill_color: section.settings.button_1_pill_color, button_1_icon_animation: section.settings.button_1_icon_animation, button_2_custom_attribute_value: , button_2_text_text_size: section.settings.button_2_text_text_size, button_1_custom_attribute_name: , button_1_custom_attribute_value: , button_1_solid_padding: section.settings.button_1_solid_padding, button_2_custom_attribute_name: , button_1_text_text_size: section.settings.button_1_text_text_size, button_2_mode: section.settings.button_2_mode, button_2_solid_padding: section.settings.button_2_solid_padding, button_1_solid_text_size: section.settings.button_1_solid_text_size, button_1_mode: section.settings.button_1_mode, button_2_solid_text_size: section.settings.button_2_solid_text_size, button_1_variant: section.settings.button_1_variant, button_2_custom_class: , button_1_custom_class: , button_2_pill_tag_inner: section.settings.button_2_pill_tag_inner, button_2_variant: section.settings.button_2_variant, button_1_pill_tag_inner: section.settings.button_1_pill_tag_inner, button_2_pill_text_size: section.settings.button_2_pill_text_size, button_1_pill_text_size: section.settings.button_1_pill_text_size, button_2_text_color: section.settings.button_2_text_color, button_1_underline: section.settings.button_1_underline, button_1_text_color: section.settings.button_1_text_color, button_2_underline: section.settings.button_2_underline %}
+        <div class="product_instructions_contain u-container" {% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% endif %}>
+          
+          <div data-section-spacing="" class="product_instructions_layout">
+            <div class="product_instructions_top">
+              <div class="product_instructions_top_left">
+                {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant, custom_class: , wrapper_class: %}
+                {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+              </div>
+              <div class="product_instructions_top_right">
+                <div class="product_instructions_tabs"><button data-trigger="hover focus" class="product_instructions_tab">
+                    {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: block.settings.tab_text, tag: 'span', variant: 'u-text-link-base' %}
+                  </button><button data-trigger="hover focus" class="product_instructions_tab">
+                    {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: block.settings.tab_text, tag: 'span', variant: 'u-text-link-base' %}
+                  </button></div>
+              </div>
+            </div>
+            <div class="product_instructions_bot">
+              <div class="product_instructions_panels">
+                <div class="product_instructions_panel">
+                  <div class="product_instructions_panel_top">
+                    {% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
+                  </div>
+                  <div class="product_instructions_panel_bot">
+                    <div class="product_instructions_steps">
+                      <div class="product_instructions_step_count"></div>
+                      <div class="product_instructions_step_info">
+                        {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+                        {% render 'paragraph', custom_class: , paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant, max_width: section.settings.paragraph_max_width, tidy_text: section.settings.paragraph_tidy_text %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          
         </div> {% schema %} {
     "tag": "section",
     "name": "Product Instructions",
-    "class": "section_wrap u-section",
+    "class": "product_instructions_wrap u-section",
     "settings": [
         {
             "type": "header",
