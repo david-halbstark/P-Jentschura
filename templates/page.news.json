@@ -9,70 +9,9 @@
  */
 {
   "sections": {
-    "hero_links_dYU4tW": {
-      "type": "hero_links",
-      "blocks": {
-        "button_iQXKfU": {
-          "type": "button",
-          "settings": {
-            "button_label": "Text",
-            "button_mode": "link",
-            "button_url": "",
-            "button_action": "newsletter_modal",
-            "button_pill_tag_inner": "",
-            "button_icon": "none",
-            "button_icon_position": "after",
-            "button_icon_animation": "none",
-            "button_icon_color": "inherit"
-          }
-        }
-      },
-      "block_order": [
-        "button_iQXKfU"
-      ],
-      "name": "Hero Links",
-      "settings": {
-        "section_id": "",
-        "spacing_top": "large",
-        "spacing_bottom": "small",
-        "eyebrow": "Übertitel Text",
-        "eyebrow_tag": "p",
-        "heading": "Lorem ipsum dolor sit amet elit",
-        "heading_tag": "h2",
-        "heading_max_width": 20,
-        "heading_tidy_text": true,
-        "text_color": "u-color-2",
-        "media_type": "image",
-        "image_width": 2000,
-        "image_width_mobile": 900,
-        "image_loading": "lazy",
-        "image_fetchpriority": "auto",
-        "image_object_fit": "cover",
-        "video_autoplay": false,
-        "video_loop": true,
-        "video_muted": true,
-        "video_controls": false,
-        "video_play_behavior": "none",
-        "gradient_color_top": "#182804",
-        "gradient_opacity_top": 80,
-        "gradient_color_bottom": "#182804",
-        "gradient_opacity_bottom": 80,
-        "buttons_mode": "blocks",
-        "button_information_label": "Text",
-        "button_information_url": "",
-        "button_products_label": "Text",
-        "button_products_url": "",
-        "button_dealers_label": "Text",
-        "button_dealers_url": "",
-        "button_recipes_label": "Text",
-        "button_recipes_url": "",
-        "button_blog_label": "Text",
-        "button_blog_url": ""
-      }
-    },
-    "image_tabs_djEmjK": {
-      "type": "image_tabs",
-      "name": "Image Tabs",
+    "news_hero_9WA8Ax": {
+      "type": "news_hero",
+      "name": "News Hero",
       "settings": {
         "section_id": "",
         "spacing_top": "large",
@@ -126,28 +65,9 @@
         "button_2_icon_animation": "none"
       }
     },
-    "text_carousel_WTzB9R": {
-      "type": "text_carousel",
-      "blocks": {
-        "item_qKyg9j": {
-          "type": "item",
-          "settings": {
-            "text": "Lorem ipsum dolor sit amet"
-          }
-        }
-      },
-      "block_order": [
-        "item_qKyg9j"
-      ],
-      "name": "Text Carousel",
-      "settings": {
-        "spacing_top": "large",
-        "spacing_bottom": "large"
-      }
-    },
-    "value_slider_tP6c4G": {
-      "type": "value_slider",
-      "name": "Value Slider",
+    "news_list_c7V9hz": {
+      "type": "news_list",
+      "name": "News List",
       "settings": {
         "section_id": "",
         "spacing_top": "large",
@@ -201,9 +121,9 @@
         "button_2_icon_animation": "none"
       }
     },
-    "career_benefits_aydh79": {
-      "type": "career_benefits",
-      "name": "Career Benefits",
+    "press_slider_NE6WeJ": {
+      "type": "press_slider",
+      "name": "Press Slider",
       "settings": {
         "section_id": "",
         "spacing_top": "large",
@@ -257,9 +177,9 @@
         "button_2_icon_animation": "none"
       }
     },
-    "team_quotes_UP3kFW": {
-      "type": "team_quotes",
-      "name": "Team Quotes",
+    "press_kit_aQUN7E": {
+      "type": "press_kit",
+      "name": "Press Kit",
       "settings": {
         "section_id": "",
         "spacing_top": "large",
@@ -313,9 +233,9 @@
         "button_2_icon_animation": "none"
       }
     },
-    "related_jobs_PqTR7W": {
-      "type": "related_jobs",
-      "name": "Related Jobs",
+    "event_slider_Q4jMWU": {
+      "type": "event_slider",
+      "name": "Event Slider",
       "settings": {
         "section_id": "",
         "spacing_top": "large",
@@ -510,13 +430,11 @@
   "layout": "theme",
   "wrapper": "main#main.page_main",
   "order": [
-    "hero_links_dYU4tW",
-    "image_tabs_djEmjK",
-    "text_carousel_WTzB9R",
-    "value_slider_tP6c4G",
-    "career_benefits_aydh79",
-    "team_quotes_UP3kFW",
-    "related_jobs_PqTR7W",
+    "news_hero_9WA8Ax",
+    "news_list_c7V9hz",
+    "press_slider_NE6WeJ",
+    "press_kit_aQUN7E",
+    "event_slider_Q4jMWU",
     "social_media_4iXwHE",
     "seo_content_DP789E",
     "newsletter_LC9wfj"
