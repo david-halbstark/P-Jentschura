@@ -124,23 +124,6 @@
         "button_2_icon_animation": "none"
       }
     },
-    "text_carousel_WTzB9R": {
-      "type": "text_carousel",
-      "blocks": {
-        "item_qKyg9j": {
-          "type": "item",
-          "settings": {
-            "text": "Lorem ipsum dolor sit amet"
-          }
-        }
-      },
-      "block_order": ["item_qKyg9j"],
-      "name": "Text Carousel",
-      "settings": {
-        "spacing_top": "large",
-        "spacing_bottom": "large"
-      }
-    },
     "value_slider_tP6c4G": {
       "type": "value_slider",
       "name": "Value Slider",
