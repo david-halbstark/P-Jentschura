@@ -245,32 +245,18 @@
         "card_button_1_label": "Mehr erfahren"
       }
     },
-    "text_carousel_K4NQ6g": {
+    "text_carousel_cY8UTE": {
       "type": "text_carousel",
       "blocks": {
-        "item_qbGn3Y": {
+        "item_kmm4JF": {
           "type": "item",
           "settings": {
-            "text": "Aus der Natur, für den Menschen"
-          }
-        },
-        "item_3Nhp8p": {
-          "type": "item",
-          "settings": {
-            "text": "Aus eigener Manufaktur"
-          }
-        },
-        "item_HEtjcM": {
-          "type": "item",
-          "settings": {
-            "text": "Wissen, das seit 30 Jahren trägt"
+            "text": "Lorem ipsum dolor sit amet"
           }
         }
       },
       "block_order": [
-        "item_qbGn3Y",
-        "item_3Nhp8p",
-        "item_HEtjcM"
+        "item_kmm4JF"
       ],
       "name": "Text Carousel",
       "settings": {
@@ -542,7 +528,7 @@
     "category_cards_FxBKGM",
     "product_tabs_8F6RVB",
     "guide_slider_FBaGd6",
-    "text_carousel_K4NQ6g",
+    "text_carousel_cY8UTE",
     "recipe_slider_QekpTM",
     "review_slider_b9FWPH",
     "testimonial_slider_QcxrrE",
