@@ -427,8 +427,8 @@
       "name": "SEO Content",
       "settings": {
         "section_id": "",
-        "spacing_top": "main",
-        "spacing_bottom": "main",
+        "spacing_top": "large",
+        "spacing_bottom": "large",
         "heading": "Qualität Und Geschmack müssen bleiben",
         "heading_max_width": 0,
         "heading_tidy_text": true,
