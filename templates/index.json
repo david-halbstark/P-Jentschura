@@ -249,8 +249,8 @@
       "type": "text_carousel",
       "name": "Text Carousel",
       "settings": {
-        "spacing_top": "large",
-        "spacing_bottom": "large"
+        "spacing_top": "xxsmall",
+        "spacing_bottom": "xxsmall"
       }
     },
     "recipe_slider_QekpTM": {
