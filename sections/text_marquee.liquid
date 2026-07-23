@@ -22,9 +22,10 @@
           
           <div data-section-spacing="" class="text_marquee_layout">
             <div class="text_marquee_track">
-              {% unless repeat in (1..4) %}    <div li-unless="{% unless forloop.first %} aria-hidden='true'{% endunless %}" li-for="repeat in (1..4)" class="text_marquee_group">
-    
-                {% for item in marquee_items %}    <div li-for="item in marquee_items" class="text_marquee_item_wrap">
+              {% for repeat in (1..4) %}    <div li-for="repeat in (1..4)" class="text_marquee_group">
+                                    
+                
+                            {% for item in marquee_items %}    <div li-for="item in marquee_items" class="text_marquee_item_wrap">
                                     
                   
                             <div class="text_marquee_item_element">
@@ -34,11 +35,19 @@
                 
                         </div>
 {% endfor %}
+                            
                 
+                            
+                            
                 
+                            
+                            
                 
-                  </div>
-{% endunless %}
+                            
+                            
+              
+                        </div>
+{% endfor %}
               
               
               
