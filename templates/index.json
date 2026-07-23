@@ -371,8 +371,8 @@
       "name": "Social Media",
       "settings": {
         "section_id": "",
-        "spacing_top": "large",
-        "spacing_bottom": "large",
+        "spacing_top": "small",
+        "spacing_bottom": "small",
         "eyebrow": "Übertitel Text",
         "eyebrow_variant": "u-text-eyebrow-large",
         "eyebrow_tag": "p",
