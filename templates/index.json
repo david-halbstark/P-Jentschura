@@ -245,10 +245,11 @@
         "card_button_1_label": "Mehr erfahren"
       }
     },
-    "text_carousel_rDVBwD": {
-      "type": "text_carousel",
-      "name": "Text Carousel",
+    "text_marquee_97Gmqx": {
+      "type": "text_marquee",
+      "name": "Text Marquee",
       "settings": {
+        "section_id": "",
         "spacing_top": "xxsmall",
         "spacing_bottom": "xxsmall"
       }
@@ -506,7 +507,7 @@
     "category_cards_FxBKGM",
     "product_tabs_8F6RVB",
     "guide_slider_FBaGd6",
-    "text_carousel_rDVBwD",
+    "text_marquee_97Gmqx",
     "recipe_slider_QekpTM",
     "review_slider_b9FWPH",
     "testimonial_slider_QcxrrE",
