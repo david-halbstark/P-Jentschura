@@ -199,7 +199,12 @@
     <div class="social_media_bot_layout">
       <div class="social_media_text_card">
         <div class="social_media_text_card_top">
-          {% render 'eyebrow', tag: 'p', eyebrow: shop.metafields.custom.social_media_eyebrow.value, variant: 'u-text-h3-secondary', custom_class: u-margin-bottom-0 u-min-width-auto' %}
+          {% render 'eyebrow',
+            tag: 'p',
+            eyebrow: shop.metafields.custom.social_media_eyebrow.value,
+            variant: 'u-text-h3-secondary',
+            custom_class: 'u-margin-bottom-0 u-min-width-auto'
+          %}
         </div>
         <div class="social_media_text_card_bot">
           <svg
