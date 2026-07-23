@@ -1,155 +1,179 @@
-{% assign marquee_items = shop.metafields.custom.text_marquee_items.value %}{% assign marquee_speed = shop.metafields.custom.text_marquee_animation_speed.value %}
-        <style> #shopify-section-{{section.id}}&nbsp;.text_marquee_group{--animation-speed:{{marquee_speed}}s;}.text_marquee_group{animation: text-carousel var(--animation-speed, 15s) linear infinite;}@keyframes text-carousel{from{transform: translateX(0);}to{transform: translateX(-100%);}}.text_marquee_item_element::after{content: ''; width: calc(calc(0.375rem * max(var(--_responsive---large), var(--_responsive---medium))) + calc(0.25rem * max(var(--_responsive---small), var(--_responsive---xsmall)))); height: calc(calc(0.375rem * max(var(--_responsive---large), var(--_responsive---medium))) + calc(0.25rem * max(var(--_responsive---small), var(--_responsive---xsmall)))); background-color: var(--_theme---background-3); border-radius: var(--radius--round);}</style>
-        <div class="u-display-none">
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          {% case section.settings.spacing_top %}{% when 'xxsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_top = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_top = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_top = 'var(--_spacing---section-space--large)' %}{% when 'large_medium_off' %}{% assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' %}{% when 'page_top' %}{% assign spacing_top = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_top = '0' %}{% endcase %}{% case section.settings.spacing_bottom %}{% when 'xxsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_bottom = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_bottom = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_bottom = 'var(--_spacing---section-space--large)' %}{% when 'page_top' %}{% assign spacing_bottom = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_bottom = '0' %}{% endcase %}
-          <div class="u-embed-css w-embed">
-            <style>
-  #shopify-section-{{ section.id }} [data-section-spacing] {
-    --section-spacing-top: {{ spacing_top }};
-    --section-spacing-bottom: {{ spacing_bottom }};
-  }
+{% assign marquee_items = shop.metafields.custom.text_marquee_items.value -%}
+{%- assign marquee_speed = shop.metafields.custom.text_marquee_animation_speed.value %}
+<style>
+  #shopify-section-{{section.id}}&nbsp;.text_marquee_group{--animation-speed:{{marquee_speed}}s;}.text_marquee_group{animation: text-carousel var(--animation-speed, 15s) linear infinite;}@keyframes text-carousel{from{transform: translateX(0);}to{transform: translateX(-100%);}}.text_marquee_item_element::after{content: ''; width: calc(calc(0.375rem * max(var(--_responsive---large), var(--_responsive---medium))) + calc(0.25rem * max(var(--_responsive---small), var(--_responsive---xsmall)))); height: calc(calc(0.375rem * max(var(--_responsive---large), var(--_responsive---medium))) + calc(0.25rem * max(var(--_responsive---small), var(--_responsive---xsmall)))); background-color: var(--_theme---background-3); border-radius: var(--radius--round);}
 </style>
-          </div>
-        </div>
-        <div class="text_marquee_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
-          
-          <div data-section-spacing="" class="text_marquee_layout">
-            <div class="text_marquee_track">
-              {% for repeat in (1..4) %}    <div li-for="repeat in (1..4)" class="text_marquee_group">
-                                    
-                
-                            {% for item in marquee_items %}    <div li-for="item in marquee_items" class="text_marquee_item_wrap">
-                                    
-                  
-                            <div class="text_marquee_item_element">
-                    {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: item, tag: 'div', variant: 'u-text-h1-secondary', max_width: section.settings.text_max_width %}
-                  </div>
-                            
-                
-                        </div>
-{% endfor %}
-                            
-                
-                            
-                            
-                
-                            
-                            
-                
-                            
-                            
-              
-                        </div>
-{% endfor %}
-              
-              
-              
+<div class="u-display-none"></div>
+<div class="u-display-none">
+  {% case section.settings.spacing_top -%}
+    {%- when 'xxsmall' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--xxsmall)' -%}
+    {%- when 'xsmall' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--xsmall)' -%}
+    {%- when 'small' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--small)' -%}
+    {%- when 'medium' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--medium)' -%}
+    {%- when 'large' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--large)' -%}
+    {%- when 'large_medium_off' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' -%}
+    {%- when 'page_top' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--page-top)' -%}
+    {%- else -%}
+      {%- assign spacing_top = '0' -%}
+  {%- endcase -%}
+  {%- case section.settings.spacing_bottom -%}
+    {%- when 'xxsmall' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' -%}
+    {%- when 'xsmall' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' -%}
+    {%- when 'small' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--small)' -%}
+    {%- when 'medium' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--medium)' -%}
+    {%- when 'large' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--large)' -%}
+    {%- when 'page_top' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--page-top)' -%}
+    {%- else -%}
+      {%- assign spacing_bottom = '0' -%}
+  {%- endcase %}
+  <div class="u-embed-css w-embed">
+    <style>
+      #shopify-section-{{ section.id }} [data-section-spacing] {
+        --section-spacing-top: {{ spacing_top }};
+        --section-spacing-bottom: {{ spacing_bottom }};
+      }
+    </style>
+  </div>
+</div>
+<div
+  class="text_marquee_contain u-container"
+  {% if section.settings.section_id != blank %}
+    id="{{ section.settings.section_id | handleize }}"
+  {% endif %}
+>
+  <div data-section-spacing="" class="text_marquee_layout">
+    <div class="text_marquee_track">
+      {% for repeat in (1..4) %}
+        <div li-for="repeat in (1..4)" class="text_marquee_group">
+          {% for item in marquee_items %}
+            <div li-for="item in marquee_items" class="text_marquee_item_wrap">
+              <div class="text_marquee_item_element">
+                {% render 'typography',
+                  custom_class: 'u-margin-bottom-0 u-min-width-auto',
+                  text: item,
+                  tag: 'div',
+                  variant: 'u-text-h1-secondary',
+                  max_width: section.settings.text_max_width
+                %}
+              </div>
             </div>
-          </div>
-          
-        </div> {% schema %} {
-    "tag": "section",
-    "name": "Text Marquee",
-    "class": "text_marquee_wrap u-section",
-    "settings": [
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "tag": "section",
+  "name": "Text Marquee",
+  "class": "text_marquee_wrap u-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Sektion"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "ID"
+    },
+    {
+      "type": "header",
+      "content": "Abst\u00e4nde"
+    },
+    {
+      "type": "select",
+      "id": "spacing_top",
+      "label": "Oben",
+      "options": [
         {
-            "type": "header",
-            "content": "Sektion"
+          "value": "none",
+          "label": "Kein Abstand"
         },
         {
-            "type": "text",
-            "id": "section_id",
-            "label": "ID"
+          "value": "xxsmall",
+          "label": "Extra extra klein"
         },
         {
-            "type": "header",
-            "content": "Abst\u00e4nde"
+          "value": "xsmall",
+          "label": "Extra klein"
         },
         {
-            "type": "select",
-            "id": "spacing_top",
-            "label": "Oben",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Abstand"
-                },
-                {
-                    "value": "xxsmall",
-                    "label": "Extra extra klein"
-                },
-                {
-                    "value": "xsmall",
-                    "label": "Extra klein"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "medium",
-                    "label": "Mittel"
-                },
-                {
-                    "value": "large",
-                    "label": "Gro\u00df"
-                },
-                {
-                    "value": "large_medium_off",
-                    "label": "Gro\u00df | Medium kein Abstand"
-                },
-                {
-                    "value": "page_top",
-                    "label": "Seitenanfang"
-                }
-            ],
-            "default": "xxsmall"
+          "value": "small",
+          "label": "Klein"
         },
         {
-            "type": "select",
-            "id": "spacing_bottom",
-            "label": "Unten",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Abstand"
-                },
-                {
-                    "value": "xxsmall",
-                    "label": "Extra extra klein"
-                },
-                {
-                    "value": "xsmall",
-                    "label": "Extra klein"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "medium",
-                    "label": "Mittel"
-                },
-                {
-                    "value": "large",
-                    "label": "Gro\u00df"
-                }
-            ],
-            "default": "xxsmall"
+          "value": "medium",
+          "label": "Mittel"
+        },
+        {
+          "value": "large",
+          "label": "Gro\u00df"
+        },
+        {
+          "value": "large_medium_off",
+          "label": "Gro\u00df | Medium kein Abstand"
+        },
+        {
+          "value": "page_top",
+          "label": "Seitenanfang"
         }
-    ],
-    "presets": [
+      ],
+      "default": "xxsmall"
+    },
+    {
+      "type": "select",
+      "id": "spacing_bottom",
+      "label": "Unten",
+      "options": [
         {
-            "name": "Text Marquee",
-            "category": "Liquify",
-            "blocks": []
+          "value": "none",
+          "label": "Kein Abstand"
+        },
+        {
+          "value": "xxsmall",
+          "label": "Extra extra klein"
+        },
+        {
+          "value": "xsmall",
+          "label": "Extra klein"
+        },
+        {
+          "value": "small",
+          "label": "Klein"
+        },
+        {
+          "value": "medium",
+          "label": "Mittel"
+        },
+        {
+          "value": "large",
+          "label": "Gro\u00df"
         }
-    ]
-} {% endschema %}
+      ],
+      "default": "xxsmall"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text Marquee",
+      "category": "Liquify",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
