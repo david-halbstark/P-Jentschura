@@ -250,8 +250,8 @@
       "name": "Text Marquee",
       "settings": {
         "section_id": "",
-        "spacing_top": "xxsmall",
-        "spacing_bottom": "xxsmall"
+        "spacing_top": "small",
+        "spacing_bottom": "small"
       }
     },
     "recipe_slider_QekpTM": {
