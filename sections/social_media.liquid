@@ -102,25 +102,21 @@
                 {% for repeat in (1..4) %}    <div li-for="repeat in (1..4)" class="social_media_top_group">
                                     
                   
-                            {% for item in marquee_items %}    <div li-for="item in marquee_items" class="social_media_text_item_wrap">
+                            <div class="u-display-contents" {% unless forloop.first %} aria-hidden='true'{% endunless %}>
+                    {% for item in marquee_items %}    <div li-for="item in marquee_items" class="social_media_text_item_wrap">
                                     
-                    
+                      
                             <div class="social_media_text_item_element">
-                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: item, tag: 'div', variant: 'u-text-h1-secondary', max_width: section.settings.text_max_width %}
-                    </div>
+                        {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: item, tag: 'div', variant: 'u-text-h1-secondary', max_width: section.settings.text_max_width %}
+                      </div>
                             
-                  
+                    
                         </div>
 {% endfor %}
-                            
-                  
-                            
-                            
-                  
-                            
-                            
-                  
-                            
+                    
+                    
+                    
+                  </div>
                             
                 
                         </div>
