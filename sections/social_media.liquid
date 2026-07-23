@@ -1,199 +1,285 @@
-{% assign marquee_items = shop.metafields.custom.social_media_text_marquee_items.value %}{% assign marquee_speed = shop.metafields.custom.social_media_text_marquee_animation_speed.value %}
-        <style> #shopify-section-{{section.id}}.social_media_top_group{--animation-speed:{{marquee_speed}}s;}.social_media_top_group{animation: text-carousel var(--animation-speed, 15s) linear infinite;}@keyframes text-carousel{from{transform: translateX(0);}to{transform: translateX(-100%);}}.social_media_text_item_element::after{content: ''; width: calc(calc(0.375rem * max(var(--_responsive---large), var(--_responsive---medium))) + calc(0.25rem * max(var(--_responsive---small), var(--_responsive---xsmall)))); height: calc(calc(0.375rem * max(var(--_responsive---large), var(--_responsive---medium))) + calc(0.25rem * max(var(--_responsive---small), var(--_responsive---xsmall)))); background-color: var(--_theme---background-3); border-radius: var(--radius--round);}</style>
-        <div class="u-embed-css w-embed">
-          <style>
-  .social_media_text_card_bot .u-button-wrapper {
-    margin-top: 0rem;
-  }
-  @container (width >= 68em) {
-    .social_media_bot_layout {
-      grid-template-areas: 'media-1 media-2 text media-3 media-4';
-    }
-    .social_media_media_card.is-1 {
-      grid-area: media-1;
-    }
-    .social_media_media_card.is-2 {
-      grid-area: media-2;
-    }
-    .social_media_media_card.is-3 {
-      grid-area: media-3;
-    }
-    .social_media_media_card.is-4 {
-      grid-area: media-4;
-    }
-    .social_media_text_card {
-      grid-area: text;
-    }
-    .social_media_media_slider_wrap,
-    .social_media_media_slider_offset,
-    .social_media_media_slider_element,
-    .social_media_media_slider_list,
-    .social_media_media_slider_slide {
-      display: contents;
-    }
-  }
-  @container (width < 68em) {
-    .social_media_bot_layout {
-      display: flex;
-      flex-flow: column;
-      width: 100vw;
-    }
-    .social_media_media_slider_wrap {
-      --_gap---size: 0.125rem;
-    }
-    .product_slider_bot .slider_offset {
-      --slide-count: var(--md);
-    }
-  }
-  .social_media_text_card_top::before {
-    content: '';
-    width: var(--misc--social-text-card-label-width);
-    height: 100%;
-    position: absolute;
-    left: 50%;
-    top: 0%;
-    right: auto;
-    bottom: 0%;
-    background-color: var(--swatch--white-o20);
-    transform: translateX(-50%);
-  }
+{% assign marquee_items = shop.metafields.custom.social_media_text_marquee_items.value -%}
+{%- assign marquee_speed = shop.metafields.custom.social_media_text_marquee_animation_speed.value %}
+<style>
+  #shopify-section-{{section.id}}.social_media_top_group{--animation-speed:{{marquee_speed}}s;}.social_media_top_group{animation: text-carousel var(--animation-speed, 15s) linear infinite;}@keyframes text-carousel{from{transform: translateX(0);}to{transform: translateX(-100%);}}.social_media_text_item_element::after{content: ''; width: calc(calc(0.375rem * max(var(--_responsive---large), var(--_responsive---medium))) + calc(0.25rem * max(var(--_responsive---small), var(--_responsive---xsmall)))); height: calc(calc(0.375rem * max(var(--_responsive---large), var(--_responsive---medium))) + calc(0.25rem * max(var(--_responsive---small), var(--_responsive---xsmall)))); background-color: var(--_theme---background-3); border-radius: var(--radius--round);}
 </style>
-        </div>
-        <div class="u-display-none">
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          {% case section.settings.spacing_top %}{% when 'xxsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_top = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_top = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_top = 'var(--_spacing---section-space--large)' %}{% when 'large_medium_off' %}{% assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' %}{% when 'page_top' %}{% assign spacing_top = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_top = '0' %}{% endcase %}{% case section.settings.spacing_bottom %}{% when 'xxsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_bottom = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_bottom = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_bottom = 'var(--_spacing---section-space--large)' %}{% when 'page_top' %}{% assign spacing_bottom = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_bottom = '0' %}{% endcase %}
-          <div class="u-embed-css w-embed">
-            <style>
-  #shopify-section-{{ section.id }} [data-section-spacing] {
-    --section-spacing-top: {{ spacing_top }};
-    --section-spacing-bottom: {{ spacing_bottom }};
-  }
-</style>
-          </div>
-        </div>
-        {% render 'heading', visually_hidden: true, heading: shop.metafields.custom.social_media_heading.value, tag: 'h2', variant: 'u-text-h1-primary' %}
-        <div class="social_media_top_wrap u-section">
-          <div class="u-display-none">
-            
-            
-            
-            {% case section.settings.spacing_top %}{% when 'xxsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_top = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_top = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_top = 'var(--_spacing---section-space--large)' %}{% when 'large_medium_off' %}{% assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' %}{% when 'page_top' %}{% assign spacing_top = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_top = '0' %}{% endcase %}{% case section.settings.spacing_bottom %}{% when 'xxsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_bottom = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_bottom = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_bottom = 'var(--_spacing---section-space--large)' %}{% when 'page_top' %}{% assign spacing_bottom = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_bottom = '0' %}{% endcase %}
-            <div class="u-embed-css w-embed">
-              <style>
-  #shopify-section-{{ section.id }} [data-section-spacing] {
-    --section-spacing-top: {{ spacing_top }};
-    --section-spacing-bottom: {{ spacing_bottom }};
-  }
-</style>
-            </div>
-          </div>
-          <div class="social_media_top_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id }}'{% endif %}>
-            
-            <div data-section-spacing="" class="social_media_top_layout">
-              <div class="social_media_top_track">
-                {% for repeat in (1..4) %}    <div li-for="repeat in (1..4)" class="social_media_top_group">
-                                    
-                  
-                            <div class="u-display-contents" {% unless forloop.first %} aria-hidden='true'{% endunless %}>
-                    {% for item in marquee_items %}    <div li-for="item in marquee_items" class="social_media_text_item_wrap">
-                                    
-                      
-                            <div class="social_media_text_item_element">
-                        {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: item, tag: 'div', variant: 'u-text-h1-secondary', max_width: section.settings.text_max_width %}
-                      </div>
-                            
-                    
-                        </div>
-{% endfor %}
-                    
-                    
-                    
+<div class="u-embed-css w-embed">
+  <style>
+    .social_media_text_card_bot .u-button-wrapper {
+      margin-top: 0rem;
+    }
+    @container (width >= 68em) {
+      .social_media_bot_layout {
+        grid-template-areas: 'media-1 media-2 text media-3 media-4';
+      }
+      .social_media_media_card.is-1 {
+        grid-area: media-1;
+      }
+      .social_media_media_card.is-2 {
+        grid-area: media-2;
+      }
+      .social_media_media_card.is-3 {
+        grid-area: media-3;
+      }
+      .social_media_media_card.is-4 {
+        grid-area: media-4;
+      }
+      .social_media_text_card {
+        grid-area: text;
+      }
+      .social_media_media_slider_wrap,
+      .social_media_media_slider_offset,
+      .social_media_media_slider_element,
+      .social_media_media_slider_list,
+      .social_media_media_slider_slide {
+        display: contents;
+      }
+    }
+    @container (width < 68em) {
+      .social_media_bot_layout {
+        display: flex;
+        flex-flow: column;
+        width: 100vw;
+      }
+      .social_media_media_slider_wrap {
+        --_gap---size: 0.125rem;
+      }
+      .product_slider_bot .slider_offset {
+        --slide-count: var(--md);
+      }
+    }
+    .social_media_text_card_top::before {
+      content: '';
+      width: var(--misc--social-text-card-label-width);
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      top: 0%;
+      right: auto;
+      bottom: 0%;
+      background-color: var(--swatch--white-o20);
+      transform: translateX(-50%);
+    }
+  </style>
+</div>
+<div class="u-display-none"></div>
+<div class="u-display-none">
+  {% case section.settings.spacing_top -%}
+    {%- when 'xxsmall' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--xxsmall)' -%}
+    {%- when 'xsmall' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--xsmall)' -%}
+    {%- when 'small' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--small)' -%}
+    {%- when 'medium' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--medium)' -%}
+    {%- when 'large' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--large)' -%}
+    {%- when 'large_medium_off' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' -%}
+    {%- when 'page_top' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--page-top)' -%}
+    {%- else -%}
+      {%- assign spacing_top = '0' -%}
+  {%- endcase -%}
+  {%- case section.settings.spacing_bottom -%}
+    {%- when 'xxsmall' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' -%}
+    {%- when 'xsmall' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' -%}
+    {%- when 'small' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--small)' -%}
+    {%- when 'medium' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--medium)' -%}
+    {%- when 'large' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--large)' -%}
+    {%- when 'page_top' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--page-top)' -%}
+    {%- else -%}
+      {%- assign spacing_bottom = '0' -%}
+  {%- endcase %}
+  <div class="u-embed-css w-embed">
+    <style>
+      #shopify-section-{{ section.id }} [data-section-spacing] {
+        --section-spacing-top: {{ spacing_top }};
+        --section-spacing-bottom: {{ spacing_bottom }};
+      }
+    </style>
+  </div>
+</div>
+{% render 'heading',
+  visually_hidden: true,
+  heading: shop.metafields.custom.social_media_heading.value,
+  tag: 'h2',
+  variant: 'u-text-h1-primary'
+%}
+<div class="social_media_top_wrap u-section">
+  <div class="u-display-none">
+    {% case section.settings.spacing_top -%}
+      {%- when 'xxsmall' -%}
+        {%- assign spacing_top = 'var(--_spacing---section-space--xxsmall)' -%}
+      {%- when 'xsmall' -%}
+        {%- assign spacing_top = 'var(--_spacing---section-space--xsmall)' -%}
+      {%- when 'small' -%}
+        {%- assign spacing_top = 'var(--_spacing---section-space--small)' -%}
+      {%- when 'medium' -%}
+        {%- assign spacing_top = 'var(--_spacing---section-space--medium)' -%}
+      {%- when 'large' -%}
+        {%- assign spacing_top = 'var(--_spacing---section-space--large)' -%}
+      {%- when 'large_medium_off' -%}
+        {%- assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' -%}
+      {%- when 'page_top' -%}
+        {%- assign spacing_top = 'var(--_spacing---section-space--page-top)' -%}
+      {%- else -%}
+        {%- assign spacing_top = '0' -%}
+    {%- endcase -%}
+    {%- case section.settings.spacing_bottom -%}
+      {%- when 'xxsmall' -%}
+        {%- assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' -%}
+      {%- when 'xsmall' -%}
+        {%- assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' -%}
+      {%- when 'small' -%}
+        {%- assign spacing_bottom = 'var(--_spacing---section-space--small)' -%}
+      {%- when 'medium' -%}
+        {%- assign spacing_bottom = 'var(--_spacing---section-space--medium)' -%}
+      {%- when 'large' -%}
+        {%- assign spacing_bottom = 'var(--_spacing---section-space--large)' -%}
+      {%- when 'page_top' -%}
+        {%- assign spacing_bottom = 'var(--_spacing---section-space--page-top)' -%}
+      {%- else -%}
+        {%- assign spacing_bottom = '0' -%}
+    {%- endcase %}
+    <div class="u-embed-css w-embed">
+      <style>
+        #shopify-section-{{ section.id }} [data-section-spacing] {
+          --section-spacing-top: {{ spacing_top }};
+          --section-spacing-bottom: {{ spacing_bottom }};
+        }
+      </style>
+    </div>
+  </div>
+  <div
+    class="social_media_top_contain u-container"
+    {% if section.settings.section_id != blank %}
+      id="{{ section.settings.section_id }}"
+    {% endif %}
+  >
+    <div data-section-spacing="" class="social_media_top_layout">
+      <div class="social_media_top_track">
+        {% for repeat in (1..4) %}
+          <div li-for="repeat in (1..4)" class="social_media_top_group">
+            <div
+              class="u-display-contents"
+              {% unless forloop.first %}
+                aria-hidden="true"
+              {% endunless %}
+            >
+              {% for item in marquee_items %}
+                <div li-for="item in marquee_items" class="social_media_text_item_wrap">
+                  <div class="social_media_text_item_element">
+                    {% render 'typography',
+                      custom_class: 'u-margin-bottom-0 u-min-width-auto',
+                      text: item,
+                      tag: 'div',
+                      variant: 'u-text-h1-secondary',
+                      max_width: section.settings.text_max_width
+                    %}
                   </div>
-                            
-                
-                        </div>
-{% endfor %}
-                
-                
-                
-              </div>
-            </div>
-            
-          </div>
-        </div>
-        <div class="social_media_bot_wrap">
-          <div class="social_media_bot_contain u-container">
-            <div class="social_media_bot_layout">
-              <div class="social_media_text_card">
-                <div class="social_media_text_card_top">
-                  {% render 'eyebrow', tag: 'p', eyebrow: shop.metafields.custom.social_media_eyebrow.value, variant: 'u-text-h3-secondary', custom_class: u-margin-bottom-0 u-min-width-auto' %}
                 </div>
-                <div class="social_media_text_card_bot"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" aria-hidden="true" viewbox="0 0 190 62" class="social_media_text_svg">
-                    <path d="M117.372 17.5605C118.056 18.2975 117.886 18.2297 118.932 18.4976C116.021 19.5883 114.461 20.6805 111.858 22.4461C113.159 20.6188 115.522 18.7967 117.372 17.5605Z" fill="currentColor" class="u-path"></path>
-                    <path d="M33.4164 1.05485C37.2346 -1.27377 44.1421 0.402161 46.0512 4.6154C49.8825 13.0716 45.3933 23.3958 42.9067 31.5929C47.9928 28.0653 49.4309 19.3769 56.0961 18.0334C57.2639 17.7979 60.1898 18.9626 60.0405 20.2961C59.4131 25.8716 51.9966 27.9207 48.5688 31.5265C47.8763 32.2523 45.9273 36.1058 47.2504 36.8049C48.9574 37.7058 52.3039 35.638 53.894 34.8849C58.4971 32.7048 60.1847 30.2191 62.7231 26.091C61.6229 26.2671 59.6304 26.7262 58.9506 25.6955C59.8535 23.4351 71.472 15.7678 67.058 24.7228C68.8779 22.9392 72.1031 20.1124 74.728 21.0197C77.2805 22.2134 74.6239 26.4578 73.7367 27.8879C72.2555 30.2753 70.981 32.3322 69.9399 34.8595C71.7741 33.5701 75.8091 30.5528 77.2631 29.048C77.2481 28.384 77.1246 27.3665 77.0639 26.6769C78.1991 26.1984 79.0767 25.8783 80.2465 25.4923C81.5562 23.8285 82.432 21.5568 83.4614 19.6056C82.3139 19.7122 79.9474 19.8524 78.8774 19.6447L78.7573 19.4425C80.333 17.829 83.5872 18.192 85.808 16.2687C88.2269 14.1741 89.4904 9.60728 92.101 8.03044C92.4906 7.79504 93.9618 8.64058 94.4975 8.90739C93.5254 10.1817 91.738 13.2914 90.8403 14.7736C93.2072 14.0387 95.4987 12.8851 97.8432 12.2531C100.074 11.6519 101.15 12.1522 102.942 13.2375C98.9122 14.872 94.0845 15.5604 90.0561 17.422C87.3318 18.681 86.2957 21.1347 85.1098 23.6232C90.4432 20.893 93.7856 19.7152 98.9565 16.384C99.272 16.4951 99.5853 16.6123 99.8959 16.7365C101.342 17.324 101.531 18.432 100.964 19.799C100.12 21.8365 96.7612 20.5704 95.186 21.2843C94.3615 21.658 93.4008 22.5513 92.7104 23.1593C88.5085 27.0853 90.5197 27.7738 94.936 28.9201C96.7532 25.7342 100.662 21.519 104.508 20.9757C106.286 20.7247 107.159 21.2812 108.473 22.3322C108.897 21.6857 109.327 21.005 109.799 20.3957L109.873 20.3019C109.749 19.7432 109.312 19.7275 108.626 19.2804L108.621 18.9113C109.416 17.6983 110.975 17.1387 111.999 15.8722C114.446 12.8473 116.519 2.99024 122.113 5.61637C123.563 6.29742 124.198 7.9057 124.656 9.34782C123.612 14.0522 121.185 15.1239 117.372 17.5588C118.056 18.2957 117.886 18.2284 118.932 18.4963C119.621 18.3139 120.727 18.0628 121.38 18.0881C130.615 18.4452 121.505 29.1469 119.324 32.1955C117.853 34.25 117.136 35.2536 116.143 37.0763C120.668 33.5189 126.09 31.0126 130.201 27.0744C131.652 25.684 134.291 18.3671 137.189 20.2004C137.317 20.5673 137.314 20.9507 137.125 21.2931C135.266 24.6758 133.169 27.872 131.99 31.59C131.73 32.4088 130.834 34.3567 131.471 35.0187C136.376 35.2835 144.35 19.7238 147.571 19.9953C149.96 21.538 147.557 24.382 146.542 26.0568C144.876 28.8076 142.877 31.5101 141.953 34.6252C144.779 30.7698 151.977 25.7123 156.566 24.2238C159.299 23.3375 159.224 19.7852 161.489 17.6525C162.395 17.7728 163.299 17.909 164.201 18.0617C163.948 23.0316 161.907 25.421 165.309 30.0724C167.186 23.8995 171.225 17.9024 177.696 15.9992C187.744 20.7474 169.917 32.1092 172.272 38.841C172.795 40.3346 174.221 40.5609 175.462 39.8547C179.762 37.4077 185.469 32.3 187.249 27.6798C188.317 28.4635 188.767 28.8853 189.707 29.8254C187.4 34.5387 178.768 41.9135 173.056 41.4904C168.583 41.1592 169.505 36.7776 169.937 33.6701L169.739 33.4865C166.243 35.7698 167.028 34.6266 165.324 32.7619C162.165 29.3069 161.068 29.0005 160.57 24.1154C159.879 25.5651 159.576 27.1379 158.953 28.5959C157.587 31.7235 155.898 34.8038 154.163 37.7394C153.614 38.6671 152.558 40.1075 151.422 40.1457C150.769 40.2046 149.789 39.3493 149.785 38.6896C149.767 35.7275 153.772 30.5609 155.35 28.299C151.774 30.5396 143.142 38.9339 140.184 39.8615C137.928 39.7505 138.73 35.3426 138.928 33.9259C136.316 36.0863 133.172 38.8896 130.008 40.0041C129.574 39.8935 128.721 39.6897 128.336 39.505C125.493 38.1399 128.169 33.3801 129.072 31.632C126.501 33.5838 114.818 42.2934 111.865 39.8752C110.321 36.2287 123.664 23.28 121.351 20.6916C119.837 20.4177 116.968 22.4061 115.74 23.2629C111.953 25.9036 108.485 29.0789 105.81 32.8595C104.016 35.395 102.471 38.0814 100.618 40.589C99.7076 40.6254 98.6464 40.5813 97.7241 40.5656C98.8649 38.2745 100.027 35.9938 101.209 33.7238C99.9884 34.0854 98.3085 34.1064 97.3295 34.5422C96.7774 34.7879 95.1555 36.0487 94.5864 36.4338C91.0567 38.8137 87.5774 41.9897 83.1371 42.3068C81.1587 42.4482 80.3661 41.6734 80.3764 39.6779C80.3828 38.4438 80.8738 38.0618 81.7084 37.2375C84.2408 36.7993 84.9239 36.3882 85.686 39.0256C87.7613 37.5352 94.9629 34.1314 94.7602 31.3966C93.9573 29.3026 89.708 29.7003 88.2367 28.8449C87.605 28.001 87.6086 26.3362 87.5385 25.259C81.2719 26.8971 80.7192 33.5229 77.6928 38.2902C76.9121 39.5198 75.7355 41.2538 74.3012 39.5373C74.0003 38.3437 75.652 35.4914 76.2602 34.2502C73.8339 35.8335 70.8853 39.3648 68.6069 40.0226C63.0294 39.4132 70.8456 26.4482 71.9555 24.6066C69.669 25.6062 68.0727 26.2587 66.436 28.299C63.4486 32.0225 61.749 36.4473 59.3559 40.5656L57.3871 39.1086C58.0028 37.2445 58.5331 35.9359 59.5561 34.2697C56.2529 36.4546 52.3079 39.1617 48.4975 40.1877C42.5143 41.7984 43.436 36.8758 43.892 33.1056C43.1305 33.571 42.4451 33.8397 41.6293 34.1838C39.6928 37.0725 38.2699 39.92 36.4926 42.8459C33.5281 47.6682 29.98 52.1068 25.9291 56.0607C22.0791 59.7501 15.3209 64.0485 10.6459 58.9582C8.52152 56.6446 8.64956 52.84 8.77679 49.8908C9.41403 49.2367 10.2824 48.2097 11.2026 48.1623C12.5171 49.3624 9.81987 63.8228 18.6743 57.3566C26.6589 51.5252 32.0432 43.247 37.2426 35.0031C37.9891 33.8196 36.8989 32.9386 37.3686 32.1496L38.2934 32.007C39.7593 30.6946 42.5401 22.8671 43.0571 20.8263C44.0424 16.9359 45.2124 7.6797 42.4926 4.28923C41.7625 3.37121 40.6833 2.7984 39.5141 2.70719C36.9569 2.4831 35.1414 3.63578 33.3188 5.15544C32.3187 4.57176 31.7627 4.0837 30.8784 3.35075C31.7264 2.35346 32.2689 1.755 33.4164 1.05485ZM107.513 23.2443C106.942 22.9236 105.929 23.0184 105.252 23.0646C103.209 23.871 98.1266 28.1291 98.0766 30.3625C98.5294 31.1611 98.5931 31.7098 99.2524 31.9963L99.9594 31.841C100.488 31.5609 102.702 30.3854 102.998 30.0881C103.814 29.2717 107.586 24.0576 107.513 23.2443ZM177.2 19.3C174.814 20.261 173.005 21.822 171.411 23.8283C170.526 24.9417 168.361 28.3407 168.7 29.7365L169.02 29.8195C170.024 29.3325 175.028 25.2404 175.744 24.3761C176.491 23.4813 177.067 22.4549 177.44 21.3498C177.68 20.6527 177.774 20.3082 177.658 19.5832L177.2 19.3ZM57.4213 20.4416C56.9108 19.8884 56.7607 19.8772 55.9633 19.9201C54.2366 20.8149 49.7148 25.2643 49.643 27.0988L49.8959 27.2521C50.2728 27.131 50.6455 27.0173 51.0151 26.8752C52.8249 26.1221 58.0345 22.7037 57.4213 20.4416ZM120.701 7.01872C118.779 8.80923 116.038 13.0814 115.286 15.4826L115.383 15.7716L115.761 15.5841C118.504 13.6961 122.127 11.4151 121.529 7.57145C121.118 7.04723 121.339 7.19209 120.701 7.01872Z" fill="currentColor" class="u-path"></path>
-                    <path d="M151.276 48.0148C159.886 47.6187 168.919 48.2294 177.565 48.2087C181.365 48.1995 184.763 48.9876 187.955 51.0934C187.535 51.4287 186.528 52.232 186.079 52.4167C182.04 54.0848 176.206 52.7026 172.067 52.0839C169.741 51.7489 167.396 51.5619 165.046 51.5241C158.175 51.4559 151.304 51.4975 144.434 51.6485C140.396 51.7125 136.146 51.6759 132.125 51.8459C127.967 52.0218 123.798 52.4096 119.612 52.5928L73.4218 54.7901C62.855 54.8775 52.1123 56.0098 41.4938 55.5288C40.3297 55.4761 35.9576 55.2847 36.101 53.5028C37.0413 52.6206 39.9664 52.6961 41.233 52.7103C49.5107 52.8021 57.7602 52.2335 66.017 51.7458C69.246 51.5552 72.5097 51.5621 75.7454 51.4013L125.956 49.098C134.384 48.7343 142.847 48.1685 151.276 48.0148Z" fill="currentColor" class="u-path"></path>
-                    <path d="M10.3834 36.8843C10.876 36.8703 11.3687 36.865 11.8616 36.868C12.4466 36.8749 13.0918 36.8789 13.5147 37.3124C13.4762 37.8767 13.4087 37.775 12.9191 38.2538C11.8784 38.5401 10.7153 38.5949 9.95703 37.728C10.0145 37.2618 10.049 37.217 10.3834 36.8843Z" fill="currentColor" class="u-path"></path>
-                    <path d="M17.4911 9.82812C27.0614 10.2909 26.0566 18.2668 20.4452 23.2939C19.1555 24.4495 18.2172 25.0865 16.6874 25.998C13.4836 27.9069 11.1999 28.5878 7.49012 28.4541C6.46557 30.873 5.6704 33.3471 4.84754 35.834C4.1783 37.8566 4.03471 40.8657 2.31922 42.1074C1.61048 42.2055 0.657231 42.311 0.0506618 41.9307C-0.50861 40.6445 3.73164 29.8475 4.45203 27.3711C3.66778 26.9972 2.82631 26.7003 2.58386 25.7949C2.60791 25.1728 2.60764 25.0857 2.995 24.6055C3.72764 24.1172 4.72089 24.1905 5.61414 24.1738C6.42828 23.2657 7.80312 17.1637 8.57996 15.2188C7.51134 15.5809 6.12841 16.0795 5.23133 15.1064C5.07607 12.2988 14.8829 10.1402 17.2577 9.83594C17.3353 9.83306 17.4135 9.83081 17.4911 9.82812ZM18.0311 11.7529C15.2302 12.1206 11.2581 13.6419 8.84558 15.1592L11.705 14.8594C11.7048 15.5816 11.7148 16.3576 11.5546 17.0449C11.2387 18.4009 8.00487 26.1458 8.31433 27.0752C8.58107 27.0677 8.67249 27.0825 8.93347 27.0146C14.0753 25.4244 17.6651 22.4493 20.7137 18.0098C22.4023 15.5509 20.4963 11.3675 18.0311 11.7529Z" fill="currentColor" class="u-path"></path>
-                  </svg>
-                  {% render 'paragraph', custom_class: 'u-margin-bottom-0', paragraph: shop.metafields.custom.social_media_text.value, variant: 'u-text-body-large', max_width: section.settings.paragraph_max_width, tidy_text: section.settings.paragraph_tidy_text %}
-                  {% render 'button_group', button_1_solid_color: 'whiteÄ', button_1_url: shop.metafields.custom.social_media_button_url, button_1_label: section.settings.button_1_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-base', button_1_mode: 'link', button_1_variant: 'solid' %}
-                </div>
-              </div>
-              <div class="social_media_media_slider_wrap slider_wrap">
-                <div style="--lg: 2; --md: 2.1; --sm: 1.4; --xs: 1.2;" class="social_media_media_slider_offset slider_offset">
-                  <div class="social_media_media_slider_element swiper">
-                    <div class="social_media_media_slider_list swiper-wrapper">
-                      <div class="social_media_media_slider_slide swiper-slide">
-                        <div class="social_media_media_card is-1">
-                          {% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
-                        </div>
-                      </div>
-                      <div class="social_media_media_slider_slide swiper-slide">
-                        <div class="social_media_media_card is-2">
-                          {% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
-                        </div>
-                      </div>
-                      <div class="social_media_media_slider_slide swiper-slide">
-                        <div class="social_media_media_card is-3">
-                          {% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
-                        </div>
-                      </div>
-                      <div class="social_media_media_slider_slide swiper-slide">
-                        <div class="social_media_media_card is-4">
-                          {% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {% endfor %}
             </div>
           </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="social_media_bot_wrap">
+  <div class="social_media_bot_contain u-container">
+    <div class="social_media_bot_layout">
+      <div class="social_media_text_card">
+        <div class="social_media_text_card_top">
+          {% render 'eyebrow', tag: 'p', eyebrow: shop.metafields.custom.social_media_eyebrow.value, variant: 'u-text-h3-secondary', custom_class: u-margin-bottom-0 u-min-width-auto' %}
         </div>
-        <div class="u-embed-js w-embed w-script">
-          <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    document
-      .querySelectorAll(".social_media_bot_layout")
-      .forEach((component) => {
-        if (component.dataset.scriptInitialized === "true") return;
-        component.dataset.scriptInitialized = "true";
-        const swiperElement = component.querySelector(
-          ".social_media_media_slider_element.swiper"
-        );
+        <div class="social_media_text_card_bot">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="100%"
+            height="100%"
+            aria-hidden="true"
+            viewbox="0 0 190 62"
+            class="social_media_text_svg"
+          >
+            <path d="M117.372 17.5605C118.056 18.2975 117.886 18.2297 118.932 18.4976C116.021 19.5883 114.461 20.6805 111.858 22.4461C113.159 20.6188 115.522 18.7967 117.372 17.5605Z" fill="currentColor" class="u-path"></path>
+            <path d="M33.4164 1.05485C37.2346 -1.27377 44.1421 0.402161 46.0512 4.6154C49.8825 13.0716 45.3933 23.3958 42.9067 31.5929C47.9928 28.0653 49.4309 19.3769 56.0961 18.0334C57.2639 17.7979 60.1898 18.9626 60.0405 20.2961C59.4131 25.8716 51.9966 27.9207 48.5688 31.5265C47.8763 32.2523 45.9273 36.1058 47.2504 36.8049C48.9574 37.7058 52.3039 35.638 53.894 34.8849C58.4971 32.7048 60.1847 30.2191 62.7231 26.091C61.6229 26.2671 59.6304 26.7262 58.9506 25.6955C59.8535 23.4351 71.472 15.7678 67.058 24.7228C68.8779 22.9392 72.1031 20.1124 74.728 21.0197C77.2805 22.2134 74.6239 26.4578 73.7367 27.8879C72.2555 30.2753 70.981 32.3322 69.9399 34.8595C71.7741 33.5701 75.8091 30.5528 77.2631 29.048C77.2481 28.384 77.1246 27.3665 77.0639 26.6769C78.1991 26.1984 79.0767 25.8783 80.2465 25.4923C81.5562 23.8285 82.432 21.5568 83.4614 19.6056C82.3139 19.7122 79.9474 19.8524 78.8774 19.6447L78.7573 19.4425C80.333 17.829 83.5872 18.192 85.808 16.2687C88.2269 14.1741 89.4904 9.60728 92.101 8.03044C92.4906 7.79504 93.9618 8.64058 94.4975 8.90739C93.5254 10.1817 91.738 13.2914 90.8403 14.7736C93.2072 14.0387 95.4987 12.8851 97.8432 12.2531C100.074 11.6519 101.15 12.1522 102.942 13.2375C98.9122 14.872 94.0845 15.5604 90.0561 17.422C87.3318 18.681 86.2957 21.1347 85.1098 23.6232C90.4432 20.893 93.7856 19.7152 98.9565 16.384C99.272 16.4951 99.5853 16.6123 99.8959 16.7365C101.342 17.324 101.531 18.432 100.964 19.799C100.12 21.8365 96.7612 20.5704 95.186 21.2843C94.3615 21.658 93.4008 22.5513 92.7104 23.1593C88.5085 27.0853 90.5197 27.7738 94.936 28.9201C96.7532 25.7342 100.662 21.519 104.508 20.9757C106.286 20.7247 107.159 21.2812 108.473 22.3322C108.897 21.6857 109.327 21.005 109.799 20.3957L109.873 20.3019C109.749 19.7432 109.312 19.7275 108.626 19.2804L108.621 18.9113C109.416 17.6983 110.975 17.1387 111.999 15.8722C114.446 12.8473 116.519 2.99024 122.113 5.61637C123.563 6.29742 124.198 7.9057 124.656 9.34782C123.612 14.0522 121.185 15.1239 117.372 17.5588C118.056 18.2957 117.886 18.2284 118.932 18.4963C119.621 18.3139 120.727 18.0628 121.38 18.0881C130.615 18.4452 121.505 29.1469 119.324 32.1955C117.853 34.25 117.136 35.2536 116.143 37.0763C120.668 33.5189 126.09 31.0126 130.201 27.0744C131.652 25.684 134.291 18.3671 137.189 20.2004C137.317 20.5673 137.314 20.9507 137.125 21.2931C135.266 24.6758 133.169 27.872 131.99 31.59C131.73 32.4088 130.834 34.3567 131.471 35.0187C136.376 35.2835 144.35 19.7238 147.571 19.9953C149.96 21.538 147.557 24.382 146.542 26.0568C144.876 28.8076 142.877 31.5101 141.953 34.6252C144.779 30.7698 151.977 25.7123 156.566 24.2238C159.299 23.3375 159.224 19.7852 161.489 17.6525C162.395 17.7728 163.299 17.909 164.201 18.0617C163.948 23.0316 161.907 25.421 165.309 30.0724C167.186 23.8995 171.225 17.9024 177.696 15.9992C187.744 20.7474 169.917 32.1092 172.272 38.841C172.795 40.3346 174.221 40.5609 175.462 39.8547C179.762 37.4077 185.469 32.3 187.249 27.6798C188.317 28.4635 188.767 28.8853 189.707 29.8254C187.4 34.5387 178.768 41.9135 173.056 41.4904C168.583 41.1592 169.505 36.7776 169.937 33.6701L169.739 33.4865C166.243 35.7698 167.028 34.6266 165.324 32.7619C162.165 29.3069 161.068 29.0005 160.57 24.1154C159.879 25.5651 159.576 27.1379 158.953 28.5959C157.587 31.7235 155.898 34.8038 154.163 37.7394C153.614 38.6671 152.558 40.1075 151.422 40.1457C150.769 40.2046 149.789 39.3493 149.785 38.6896C149.767 35.7275 153.772 30.5609 155.35 28.299C151.774 30.5396 143.142 38.9339 140.184 39.8615C137.928 39.7505 138.73 35.3426 138.928 33.9259C136.316 36.0863 133.172 38.8896 130.008 40.0041C129.574 39.8935 128.721 39.6897 128.336 39.505C125.493 38.1399 128.169 33.3801 129.072 31.632C126.501 33.5838 114.818 42.2934 111.865 39.8752C110.321 36.2287 123.664 23.28 121.351 20.6916C119.837 20.4177 116.968 22.4061 115.74 23.2629C111.953 25.9036 108.485 29.0789 105.81 32.8595C104.016 35.395 102.471 38.0814 100.618 40.589C99.7076 40.6254 98.6464 40.5813 97.7241 40.5656C98.8649 38.2745 100.027 35.9938 101.209 33.7238C99.9884 34.0854 98.3085 34.1064 97.3295 34.5422C96.7774 34.7879 95.1555 36.0487 94.5864 36.4338C91.0567 38.8137 87.5774 41.9897 83.1371 42.3068C81.1587 42.4482 80.3661 41.6734 80.3764 39.6779C80.3828 38.4438 80.8738 38.0618 81.7084 37.2375C84.2408 36.7993 84.9239 36.3882 85.686 39.0256C87.7613 37.5352 94.9629 34.1314 94.7602 31.3966C93.9573 29.3026 89.708 29.7003 88.2367 28.8449C87.605 28.001 87.6086 26.3362 87.5385 25.259C81.2719 26.8971 80.7192 33.5229 77.6928 38.2902C76.9121 39.5198 75.7355 41.2538 74.3012 39.5373C74.0003 38.3437 75.652 35.4914 76.2602 34.2502C73.8339 35.8335 70.8853 39.3648 68.6069 40.0226C63.0294 39.4132 70.8456 26.4482 71.9555 24.6066C69.669 25.6062 68.0727 26.2587 66.436 28.299C63.4486 32.0225 61.749 36.4473 59.3559 40.5656L57.3871 39.1086C58.0028 37.2445 58.5331 35.9359 59.5561 34.2697C56.2529 36.4546 52.3079 39.1617 48.4975 40.1877C42.5143 41.7984 43.436 36.8758 43.892 33.1056C43.1305 33.571 42.4451 33.8397 41.6293 34.1838C39.6928 37.0725 38.2699 39.92 36.4926 42.8459C33.5281 47.6682 29.98 52.1068 25.9291 56.0607C22.0791 59.7501 15.3209 64.0485 10.6459 58.9582C8.52152 56.6446 8.64956 52.84 8.77679 49.8908C9.41403 49.2367 10.2824 48.2097 11.2026 48.1623C12.5171 49.3624 9.81987 63.8228 18.6743 57.3566C26.6589 51.5252 32.0432 43.247 37.2426 35.0031C37.9891 33.8196 36.8989 32.9386 37.3686 32.1496L38.2934 32.007C39.7593 30.6946 42.5401 22.8671 43.0571 20.8263C44.0424 16.9359 45.2124 7.6797 42.4926 4.28923C41.7625 3.37121 40.6833 2.7984 39.5141 2.70719C36.9569 2.4831 35.1414 3.63578 33.3188 5.15544C32.3187 4.57176 31.7627 4.0837 30.8784 3.35075C31.7264 2.35346 32.2689 1.755 33.4164 1.05485ZM107.513 23.2443C106.942 22.9236 105.929 23.0184 105.252 23.0646C103.209 23.871 98.1266 28.1291 98.0766 30.3625C98.5294 31.1611 98.5931 31.7098 99.2524 31.9963L99.9594 31.841C100.488 31.5609 102.702 30.3854 102.998 30.0881C103.814 29.2717 107.586 24.0576 107.513 23.2443ZM177.2 19.3C174.814 20.261 173.005 21.822 171.411 23.8283C170.526 24.9417 168.361 28.3407 168.7 29.7365L169.02 29.8195C170.024 29.3325 175.028 25.2404 175.744 24.3761C176.491 23.4813 177.067 22.4549 177.44 21.3498C177.68 20.6527 177.774 20.3082 177.658 19.5832L177.2 19.3ZM57.4213 20.4416C56.9108 19.8884 56.7607 19.8772 55.9633 19.9201C54.2366 20.8149 49.7148 25.2643 49.643 27.0988L49.8959 27.2521C50.2728 27.131 50.6455 27.0173 51.0151 26.8752C52.8249 26.1221 58.0345 22.7037 57.4213 20.4416ZM120.701 7.01872C118.779 8.80923 116.038 13.0814 115.286 15.4826L115.383 15.7716L115.761 15.5841C118.504 13.6961 122.127 11.4151 121.529 7.57145C121.118 7.04723 121.339 7.19209 120.701 7.01872Z" fill="currentColor" class="u-path"></path>
+            <path d="M151.276 48.0148C159.886 47.6187 168.919 48.2294 177.565 48.2087C181.365 48.1995 184.763 48.9876 187.955 51.0934C187.535 51.4287 186.528 52.232 186.079 52.4167C182.04 54.0848 176.206 52.7026 172.067 52.0839C169.741 51.7489 167.396 51.5619 165.046 51.5241C158.175 51.4559 151.304 51.4975 144.434 51.6485C140.396 51.7125 136.146 51.6759 132.125 51.8459C127.967 52.0218 123.798 52.4096 119.612 52.5928L73.4218 54.7901C62.855 54.8775 52.1123 56.0098 41.4938 55.5288C40.3297 55.4761 35.9576 55.2847 36.101 53.5028C37.0413 52.6206 39.9664 52.6961 41.233 52.7103C49.5107 52.8021 57.7602 52.2335 66.017 51.7458C69.246 51.5552 72.5097 51.5621 75.7454 51.4013L125.956 49.098C134.384 48.7343 142.847 48.1685 151.276 48.0148Z" fill="currentColor" class="u-path"></path>
+            <path d="M10.3834 36.8843C10.876 36.8703 11.3687 36.865 11.8616 36.868C12.4466 36.8749 13.0918 36.8789 13.5147 37.3124C13.4762 37.8767 13.4087 37.775 12.9191 38.2538C11.8784 38.5401 10.7153 38.5949 9.95703 37.728C10.0145 37.2618 10.049 37.217 10.3834 36.8843Z" fill="currentColor" class="u-path"></path>
+            <path d="M17.4911 9.82812C27.0614 10.2909 26.0566 18.2668 20.4452 23.2939C19.1555 24.4495 18.2172 25.0865 16.6874 25.998C13.4836 27.9069 11.1999 28.5878 7.49012 28.4541C6.46557 30.873 5.6704 33.3471 4.84754 35.834C4.1783 37.8566 4.03471 40.8657 2.31922 42.1074C1.61048 42.2055 0.657231 42.311 0.0506618 41.9307C-0.50861 40.6445 3.73164 29.8475 4.45203 27.3711C3.66778 26.9972 2.82631 26.7003 2.58386 25.7949C2.60791 25.1728 2.60764 25.0857 2.995 24.6055C3.72764 24.1172 4.72089 24.1905 5.61414 24.1738C6.42828 23.2657 7.80312 17.1637 8.57996 15.2188C7.51134 15.5809 6.12841 16.0795 5.23133 15.1064C5.07607 12.2988 14.8829 10.1402 17.2577 9.83594C17.3353 9.83306 17.4135 9.83081 17.4911 9.82812ZM18.0311 11.7529C15.2302 12.1206 11.2581 13.6419 8.84558 15.1592L11.705 14.8594C11.7048 15.5816 11.7148 16.3576 11.5546 17.0449C11.2387 18.4009 8.00487 26.1458 8.31433 27.0752C8.58107 27.0677 8.67249 27.0825 8.93347 27.0146C14.0753 25.4244 17.6651 22.4493 20.7137 18.0098C22.4023 15.5509 20.4963 11.3675 18.0311 11.7529Z" fill="currentColor" class="u-path"></path>
+          </svg>
+          {% render 'paragraph',
+            custom_class: 'u-margin-bottom-0',
+            paragraph: shop.metafields.custom.social_media_text.value,
+            variant: 'u-text-body-large',
+            max_width: section.settings.paragraph_max_width,
+            tidy_text: section.settings.paragraph_tidy_text
+          %}
+          {% render 'button_group',
+            button_1_solid_color: 'whiteÄ',
+            button_1_url: shop.metafields.custom.social_media_button_url,
+            button_1_label: section.settings.button_1_label,
+            button_1_trigger: 'hover focus',
+            button_1_solid_padding: 'base',
+            button_1_solid_text_size: 'u-text-link-base',
+            button_1_mode: 'link',
+            button_1_variant: 'solid'
+          %}
+        </div>
+      </div>
+      <div class="social_media_media_slider_wrap slider_wrap">
+        <div style="--lg: 2; --md: 2.1; --sm: 1.4; --xs: 1.2;" class="social_media_media_slider_offset slider_offset">
+          <div class="social_media_media_slider_element swiper">
+            <div class="social_media_media_slider_list swiper-wrapper">
+              <div class="social_media_media_slider_slide swiper-slide">
+                <div class="social_media_media_card is-1">
+                  {% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
+                </div>
+              </div>
+              <div class="social_media_media_slider_slide swiper-slide">
+                <div class="social_media_media_card is-2">
+                  {% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
+                </div>
+              </div>
+              <div class="social_media_media_slider_slide swiper-slide">
+                <div class="social_media_media_card is-3">
+                  {% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
+                </div>
+              </div>
+              <div class="social_media_media_slider_slide swiper-slide">
+                <div class="social_media_media_card is-4">
+                  {% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="u-embed-js w-embed w-script">
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.social_media_bot_layout').forEach((component) => {
+        if (component.dataset.scriptInitialized === 'true') return;
+        component.dataset.scriptInitialized = 'true';
+        const swiperElement = component.querySelector('.social_media_media_slider_element.swiper');
         if (!swiperElement) return;
         let swiperInstance = null;
         function buildSwiper() {
           if (swiperInstance || swiperElement.swiper) return;
-          if (typeof Swiper === "undefined") return;
+          if (typeof Swiper === 'undefined') return;
           swiperInstance = new Swiper(swiperElement, {
-            slidesPerView: "auto",
+            slidesPerView: 'auto',
             keyboard: {
               enabled: true,
               onlyInViewport: true,
@@ -202,126 +288,125 @@
           });
         }
         function destroySwiper() {
-          const activeSwiper =
-            swiperInstance || swiperElement.swiper;
+          const activeSwiper = swiperInstance || swiperElement.swiper;
           if (!activeSwiper) return;
           activeSwiper.destroy(true, true);
           swiperInstance = null;
         }
-        if (typeof component.observeContainer !== "function") return;
-        component.observeContainer(
-          "(max-width: 68em)",
-          function (match) {
-            if (match) {
-              buildSwiper();
-            } else {
-              destroySwiper();
-            }
+        if (typeof component.observeContainer !== 'function') return;
+        component.observeContainer('(max-width: 68em)', function (match) {
+          if (match) {
+            buildSwiper();
+          } else {
+            destroySwiper();
           }
-        );
+        });
       });
-  });
-</script>
-        </div> {% schema %} {
-    "tag": "section",
-    "name": "Social Media",
-    "class": "social_media_wrap u-section",
-    "settings": [
+    });
+  </script>
+</div>
+{% schema %}
+{
+  "tag": "section",
+  "name": "Social Media",
+  "class": "social_media_wrap u-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Sektion"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "ID"
+    },
+    {
+      "type": "header",
+      "content": "Abst\u00e4nde"
+    },
+    {
+      "type": "select",
+      "id": "spacing_top",
+      "label": "Oben",
+      "options": [
         {
-            "type": "header",
-            "content": "Sektion"
+          "value": "none",
+          "label": "Kein Abstand"
         },
         {
-            "type": "text",
-            "id": "section_id",
-            "label": "ID"
+          "value": "xxsmall",
+          "label": "Extra extra klein"
         },
         {
-            "type": "header",
-            "content": "Abst\u00e4nde"
+          "value": "xsmall",
+          "label": "Extra klein"
         },
         {
-            "type": "select",
-            "id": "spacing_top",
-            "label": "Oben",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Abstand"
-                },
-                {
-                    "value": "xxsmall",
-                    "label": "Extra extra klein"
-                },
-                {
-                    "value": "xsmall",
-                    "label": "Extra klein"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "medium",
-                    "label": "Mittel"
-                },
-                {
-                    "value": "large",
-                    "label": "Gro\u00df"
-                },
-                {
-                    "value": "large_medium_off",
-                    "label": "Gro\u00df | Medium kein Abstand"
-                },
-                {
-                    "value": "page_top",
-                    "label": "Seitenanfang"
-                }
-            ],
-            "default": "large"
+          "value": "small",
+          "label": "Klein"
         },
         {
-            "type": "select",
-            "id": "spacing_bottom",
-            "label": "Unten",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Abstand"
-                },
-                {
-                    "value": "xxsmall",
-                    "label": "Extra extra klein"
-                },
-                {
-                    "value": "xsmall",
-                    "label": "Extra klein"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "medium",
-                    "label": "Mittel"
-                },
-                {
-                    "value": "large",
-                    "label": "Gro\u00df"
-                }
-            ],
-            "default": "large"
+          "value": "medium",
+          "label": "Mittel"
         },
         {
-            "type": "header",
-            "content": "Abst\u00e4nde"
+          "value": "large",
+          "label": "Gro\u00df"
+        },
+        {
+          "value": "large_medium_off",
+          "label": "Gro\u00df | Medium kein Abstand"
+        },
+        {
+          "value": "page_top",
+          "label": "Seitenanfang"
         }
-    ],
-    "presets": [
+      ],
+      "default": "large"
+    },
+    {
+      "type": "select",
+      "id": "spacing_bottom",
+      "label": "Unten",
+      "options": [
         {
-            "name": "Social Media",
-            "category": "Liquify",
-            "blocks": []
+          "value": "none",
+          "label": "Kein Abstand"
+        },
+        {
+          "value": "xxsmall",
+          "label": "Extra extra klein"
+        },
+        {
+          "value": "xsmall",
+          "label": "Extra klein"
+        },
+        {
+          "value": "small",
+          "label": "Klein"
+        },
+        {
+          "value": "medium",
+          "label": "Mittel"
+        },
+        {
+          "value": "large",
+          "label": "Gro\u00df"
         }
-    ]
-} {% endschema %}
+      ],
+      "default": "large"
+    },
+    {
+      "type": "header",
+      "content": "Abst\u00e4nde"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Social Media",
+      "category": "Liquify",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
