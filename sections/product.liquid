@@ -127,7 +127,9 @@
             <div class="product_gallery_main_slider_element swiper">
               <div class="product_gallery_main_slider_list swiper-wrapper">
                 <div class="product_gallery_main_slider_slide swiper-slide">
-                  <div class="product_gallery_main_slide"></div>
+                  <div class="product_gallery_main_slide">
+                    {{ product.featured_image | image_url }}
+                  </div>
                 </div>
               </div>
             </div>
