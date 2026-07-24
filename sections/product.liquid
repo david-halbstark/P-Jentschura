@@ -133,12 +133,13 @@
           >
             {% render 'typography',
               custom_class: 'u-margin-bottom-0 u-min-width-auto',
-              text: section.settings.breadcrumb_text,
+              text: 'alle produkte',
               tag: 'span',
               variant: 'u-text-link-base'
             %}
           </a>
         </div>
+
         {%- assign exclude = 'all,frontpage' | split: ',' -%}
         {%- assign crumb_collection = null -%}
         {%- for coll in product.collections -%}
