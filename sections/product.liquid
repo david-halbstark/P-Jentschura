@@ -11,8 +11,20 @@
     content: '\00a0\00a0\203A\00a0   ' !important;
     display: inline;
   }
-  .product_gallery_tag .tag_wrap, .product_story_card.is-text {
+  .product_gallery_tag .tag_wrap,
+  .product_story_card.is-text {
     background-color: var(--collection-theme-color, grey);
+  }
+  .product_story_card_top::before {
+    content: '';
+    width: 45%;
+    height: 100%;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    right: auto;
+    bottom: 0%;
+    background-color: var(--swatch--white-o20);
   }
   @container (width < 53em) {
     .product_layout {
@@ -163,18 +175,18 @@
                   </a>
                 </div>
                 {% assign exclude = 'all,frontpage' | split: ',' %}{% assign crumb_collection = null %}
-                {% unless unless exclude contains coll.handle %}    <div li-unless="unless exclude contains coll.handle" class="u-display-contents">
+                {% unless exclude contains coll.handle %}    <div li-unless="exclude contains coll.handle" class="u-display-contents">
     
                   {% - assign crumb_collection = coll -%}{% - break -%}
                     </div>
 {% endunless %}
-                <div class="product_breadcrumbs_item">
-                  {% if crumb_collection %}    <a li-if="crumb_collection" href="{ crumb_collection.url }}" data-trigger="hover focus" class="product_breadcrumbs_link is-color-3">
+                {% if crumb_collection %}    <div li-if="crumb_collection" class="product_breadcrumbs_item">
     
+                  <a href="{ crumb_collection.url }}" data-trigger="hover focus" class="product_breadcrumbs_link is-color-3">
                     {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto u-display-inline', text: crumb_collection.title, tag: 'span', variant: 'u-text-link-base' %}
-                      </a>
+                  </a>
+                    </div>
 {% endif %}
-                </div>
                 <div class="product_breadcrumbs_item">
                   <div class="product_breadcrumbs_link u-text-link-base">
                     {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto u-display-inline', text: product.title, tag: 'span', variant: 'u-text-link-base' %}
@@ -222,6 +234,7 @@
                 </div>
               </div>
               <div class="product_story_wrap">
+                {% assign story = product.metafields.custom.product_story.value %}
                 <div class="product_story_heading">
                   {% render 'heading', variant: 'u-text-eyebrow-large', heading: section.settings.heading, tag: 'div' %}
                 </div>
@@ -230,25 +243,43 @@
                     <div class="product_story_slider_element swiper">
                       <div class="product_story_slider_list swiper-wrapper">
                         <div class="product_story_slider_slide swiper-slide">
-                          <div class="product_story_card is-text"></div>
-                        </div>
-                        <div class="product_story_slider_slide">
-                          <div class="product_story_card is-image-small">
-                            {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                          <div class="product_story_card is-text">
+                            <div class="product_story_card_top">
+                              {% render 'eyebrow', tag: 'div', eyebrow: story.top_eyebrow.value, variant: 'u-text-h3-secondary', custom_class: 'u-margin-bottom-0' %}
+                            </div>
+                            <div class="product_story_card_bot">
+                              {% render 'typography', variant: 'u-text-eyebrow-large', text: story.top_title.value, tag: section.settings.text_tag %}
+                              {% render 'paragraph', variant: 'u-text-body-base', custom_class: 'u-margin-bottom-0', paragraph: story.top_text.value %}
+                            </div>
                           </div>
                         </div>
                         <div class="product_story_slider_slide">
+                          <div class="product_story_card is-image-small">
+                            {% render 'image', width: 400, image: story.top_image, object_fit: 'cover' %}
+                          </div>
+                        </div>
+                        {% if story.middle_image != blank %}    <div li-if="story.middle_image != blank" class="product_story_slider_slide">
+    
                           <div class="product_story_card is-image-large">
-                            {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                            {% render 'image', width: 700, image: story.middle_image, object_fit: 'cover' %}
                           </div>
-                        </div>
+                            </div>
+{% endif %}
                         <div class="product_story_slider_slide">
                           <div class="product_story_card is-image-small">
-                            {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                            {% render 'image', width: 400, image: story.bottom_image, object_fit: 'cover' %}
                           </div>
                         </div>
                         <div class="product_story_slider_slide">
-                          <div class="product_story_card is-text"></div>
+                          <div class="product_story_card is-text">
+                            <div class="product_story_card_top">
+                              {% render 'eyebrow', tag: 'div', eyebrow: story.bottom_eyebrow.value, variant: 'u-text-h3-secondary', custom_class: 'u-margin-bottom-0' %}
+                            </div>
+                            <div class="product_story_card_bot">
+                              {% render 'typography', variant: 'u-text-eyebrow-large', text: story.bottom_title.value, tag: section.settings.text_tag %}
+                              {% render 'paragraph', variant: 'u-text-body-base', custom_class: 'u-margin-bottom-0', paragraph: story.bottom_text.value %}
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
