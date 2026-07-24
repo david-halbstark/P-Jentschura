@@ -1,1216 +1,1247 @@
 <div class="u-embed-css w-embed">
-          <style>
-  @container (width < 53em) {
-    .product_layout {
-      grid-template-columns: 1fr;
-      grid-template-areas:
-        'breadcrumbs'
-        'gallery'
-        'summary'
-        'story'
-        'journeys'
-        'details'
-        'complements'
-        'links';
+  <style>
+    @container (width < 53em) {
+      .product_layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          'breadcrumbs'
+          'gallery'
+          'summary'
+          'story'
+          'journeys'
+          'details'
+          'complements'
+          'links';
+      }
+      .product_gallery_wrap {
+        grid-area: gallery;
+      }
+      .product_story_wrap {
+        grid-area: story;
+      }
+      .product_summary_wrap {
+        grid-area: summary;
+      }
+      .product_journeys_wrap {
+        grid-area: journeys;
+      }
+      .product_details_wrap {
+        grid-area: details;
+      }
+      .product_complements_wrap {
+        grid-area: complements;
+      }
+      .product_links_wrap {
+        grid-area: links;
+      }
     }
-    .product_gallery_wrap {
-      grid-area: gallery;
+    .product_gallery_thumb_slider_wrap {
+      --_gap---size: 0.5rem;
     }
-    .product_story_wrap {
-      grid-area: story;
+    @container (width >= 53em) {
+      .product_story_card.is-image-large {
+        grid-column: span 2;
+        aspect-ratio: 6.57 / 6.4;
+      }
+      .product_story_heading {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
     }
-    .product_summary_wrap {
-      grid-area: summary;
-    }
-    .product_journeys_wrap {
-      grid-area: journeys;
-    }
-    .product_details_wrap {
-      grid-area: details;
-    }
-    .product_complements_wrap {
-      grid-area: complements;
-    }
-    .product_links_wrap {
-      grid-area: links;
-    }
-  }
-  .product_gallery_thumb_slider_wrap {
-    --_gap---size: 0.5rem;
-  }
-  @container (width >= 53em) {
-    .product_story_card.is-image-large {
-      grid-column: span 2;
-      aspect-ratio: 6.57 / 6.4;
-    }
-    .product_story_heading {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-  }
-</style>
-        </div>
-        <div class="u-display-none">
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          {% case section.settings.spacing_top %}{% when 'xxsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_top = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_top = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_top = 'var(--_spacing---section-space--large)' %}{% when 'large_medium_off' %}{% assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' %}{% when 'page_top' %}{% assign spacing_top = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_top = '0' %}{% endcase %}{% case section.settings.spacing_bottom %}{% when 'xxsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_bottom = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_bottom = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_bottom = 'var(--_spacing---section-space--large)' %}{% when 'page_top' %}{% assign spacing_bottom = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_bottom = '0' %}{% endcase %}
-          <div class="u-embed-css w-embed">
-            <style>
-  #shopify-section-{{ section.id }} [data-section-spacing] {
-    --section-spacing-top: {{ spacing_top }};
-    --section-spacing-bottom: {{ spacing_bottom }};
-  }
-</style>
+  </style>
+</div>
+<div class="u-display-none"></div>
+<div class="u-display-none">
+  {% case section.settings.spacing_top -%}
+    {%- when 'xxsmall' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--xxsmall)' -%}
+    {%- when 'xsmall' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--xsmall)' -%}
+    {%- when 'small' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--small)' -%}
+    {%- when 'medium' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--medium)' -%}
+    {%- when 'large' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--large)' -%}
+    {%- when 'large_medium_off' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' -%}
+    {%- when 'page_top' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--page-top)' -%}
+    {%- else -%}
+      {%- assign spacing_top = '0' -%}
+  {%- endcase -%}
+  {%- case section.settings.spacing_bottom -%}
+    {%- when 'xxsmall' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' -%}
+    {%- when 'xsmall' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' -%}
+    {%- when 'small' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--small)' -%}
+    {%- when 'medium' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--medium)' -%}
+    {%- when 'large' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--large)' -%}
+    {%- when 'page_top' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--page-top)' -%}
+    {%- else -%}
+      {%- assign spacing_bottom = '0' -%}
+  {%- endcase %}
+  <div class="u-embed-css w-embed">
+    <style>
+      #shopify-section-{{ section.id }} [data-section-spacing] {
+        --section-spacing-top: {{ spacing_top }};
+        --section-spacing-bottom: {{ spacing_bottom }};
+      }
+    </style>
+  </div>
+</div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div
+  class="product_contain u-container"
+  {% if section.settings.section_id != blank %}
+    {{- section.settings.section_id | handleize -}}
+  {% endif %}
+>
+  <div data-section-spacing="" class="product_layout">
+    <div class="product_breadcrumbs_wrap">
+      <nav role="navigation" aria-label="Breadcrumbs" class="product_breadcrumbs_element">
+        <a href="#" class="product_breadcrumbs_link u-text-link-base w-inline-block">
+          <div class="product_breadcrumbs_text">Alle Produkte</div>
+        </a>
+      </nav>
+    </div>
+    <div class="product_left">
+      <div class="product_gallery_wrap">
+        <div class="product_gallery_main_slider_wrap">
+          <div style="--lg: 1; --md: 1; --sm: 1; --xs: 1;" class="product_gallery_main_slider_offset slider_offset">
+            <div class="product_gallery_main_slider_element swiper">
+              <div class="product_gallery_main_slider_list swiper-wrapper">
+                <div class="product_gallery_main_slider_slide swiper-slide">
+                  <div class="product_gallery_main_slide">{{ product.featured_image | image_url }}</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="u-display-none">
-          
-          
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          
-          
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-        </div>
-        <div class="product_contain u-container" {% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% endif %}>
-          
-          <div data-section-spacing="" class="product_layout">
-            <div class="product_breadcrumbs_wrap">
-              <nav role="navigation" aria-label="Breadcrumbs" class="product_breadcrumbs_element">
-                <a href="#" class="product_breadcrumbs_link u-text-link-base w-inline-block">
-                  <div class="product_breadcrumbs_text">Alle Produkte</div>
-                </a>
-              </nav>
-            </div>
-            <div class="product_left">
-              <div class="product_gallery_wrap">
-                <div class="product_gallery_main_slider_wrap">
-                  <div style="--lg: 1; --md: 1; --sm: 1; --xs: 1;" class="product_gallery_main_slider_offset slider_offset">
-                    <div class="product_gallery_main_slider_element swiper">
-                      <div class="product_gallery_main_slider_list swiper-wrapper">
-                        <div class="product_gallery_main_slider_slide swiper-slide">
-                          <div class="product_gallery_main_slide"><img src="{{ 'placeholder.svg' | asset_url }}" loading="lazy" li-object="product.featured_image | image_url" alt=""></div>
-                        </div>
-                      </div>
-                    </div>
+        <div id="w-node-_13cd7729-04cc-1977-9779-b110c3d873da-e9743541" class="product_gallery_thumb_slider_wrap">
+          <div style="--lg: 7; --md: 1; --sm: 1; --xs: 1;" class="product_gallery_thumb_slider_offset slider_offset">
+            <div class="product_gallery_thumb_slider_element swiper">
+              <div class="product_gallery_thumb_slider_list swiper-wrapper">
+                <div class="product_gallery_thumb_slider_slide swiper-slide">
+                  <div class="product_gallery_thumb_slide">
+                    <img
+                      src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
+                      loading="lazy"
+                      alt=""
+                      class="image-2"
+                    >
                   </div>
                 </div>
-                <div id="w-node-_13cd7729-04cc-1977-9779-b110c3d873da-e9743541" class="product_gallery_thumb_slider_wrap">
-                  <div style="--lg: 7; --md: 1; --sm: 1; --xs: 1;" class="product_gallery_thumb_slider_offset slider_offset">
-                    <div class="product_gallery_thumb_slider_element swiper">
-                      <div class="product_gallery_thumb_slider_list swiper-wrapper">
-                        <div class="product_gallery_thumb_slider_slide swiper-slide">
-                          <div class="product_gallery_thumb_slide"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="image-2"></div>
-                        </div>
-                        <div class="product_gallery_thumb_slider_slide swiper-slide">
-                          <div class="product_gallery_thumb_slide"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="image-2"></div>
-                        </div>
-                        <div class="product_gallery_thumb_slider_slide swiper-slide">
-                          <div class="product_gallery_thumb_slide"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="image-2"></div>
-                        </div>
-                      </div>
-                    </div>
+                <div class="product_gallery_thumb_slider_slide swiper-slide">
+                  <div class="product_gallery_thumb_slide">
+                    <img
+                      src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
+                      loading="lazy"
+                      alt=""
+                      class="image-2"
+                    >
                   </div>
                 </div>
-                <div id="w-node-_89cb1887-d675-2995-df8d-fe1352c01f23-e9743541" class="product_gallery_tag">
-                  {% render 'tag', custom_class: , tag: section.settings.tag, variant: section.settings.tag_variant, solid_text_size: section.settings.tag_solid_text_size, solid_color: section.settings.tag_solid_color, pill_text_size: section.settings.tag_pill_text_size %}
-                </div>
-                <div id="w-node-cb4e057a-55a2-6eec-55e0-356b60d03128-e9743541" class="product_gallery_certifications">
-                  <div class="product_gallery_certification"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="image"></div>
-                  <div class="product_gallery_certification"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="image"></div>
-                  <div class="product_gallery_certification"><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="image"></div>
-                </div>
-              </div>
-              <div class="product_story_wrap">
-                <div class="product_story_heading">
-                  {% render 'heading', variant: 'u-text-eyebrow-large', heading: section.settings.heading, tag: 'div' %}
-                </div>
-                <div class="product_story_slider_wrap slider_wrap">
-                  <div style="--lg: 1; --md: 1.3; --sm: 1.3; --xs: 1.3;" class="product_story_slider_offset slider_offset">
-                    <div class="product_story_slider_element swiper">
-                      <div class="product_story_slider_list swiper-wrapper">
-                        <div class="product_story_slider_slide swiper-slide">
-                          <div class="product_story_card is-text"></div>
-                        </div>
-                        <div class="product_story_slider_slide">
-                          <div class="product_story_card is-image-small">
-                            {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
-                          </div>
-                        </div>
-                        <div class="product_story_slider_slide">
-                          <div class="product_story_card is-image-large">
-                            {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
-                          </div>
-                        </div>
-                        <div class="product_story_slider_slide">
-                          <div class="product_story_card is-image-small">
-                            {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
-                          </div>
-                        </div>
-                        <div class="product_story_slider_slide">
-                          <div class="product_story_card is-text"></div>
-                        </div>
-                      </div>
-                    </div>
+                <div class="product_gallery_thumb_slider_slide swiper-slide">
+                  <div class="product_gallery_thumb_slide">
+                    <img
+                      src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
+                      loading="lazy"
+                      alt=""
+                      class="image-2"
+                    >
                   </div>
                 </div>
               </div>
             </div>
-            <div class="product_right">
-              <div class="product_summary_wrap">
-                <div class="product_summary_top">
-                  <div class="product_detail_top_left">
-                    {% render 'heading', custom_class: 'u-margin-bottom-0 u-min-width-auto', heading: product.title, tag: 'h1', variant: 'u-text-h2-primary' %}
-                    <div class="product_detail_reviews_wrap">
-                      <div class="product_detail_reviews_stars u-flex-noshrink">
-                        <div class="product_detail_reviews_star">
-                          {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
-                        </div>
-                        <div class="product_detail_reviews_star">
-                          {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
-                        </div>
-                        <div class="product_detail_reviews_star">
-                          {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
-                        </div>
-                        <div class="product_detail_reviews_star">
-                          {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
-                        </div>
-                        <div class="product_detail_reviews_star">
-                          {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
-                        </div>
-                      </div>
-                      <div class="product_detail_reviews_rating u-flex-noshrink">
-                        {% render 'typography', tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, tidy_text: section.settings.text_tidy_text, custom_class: 'u-margin-bottom-0', variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product_detail_top_right u-flex-noshrink"><button class="product_wishlist_button">
-                      <div class="product_wishlist_icon">
-                        {% render 'icon', custom_class: , icon: 'heart', aria-hidden: true %}
-                      </div>
-                    </button></div>
+          </div>
+        </div>
+        <div id="w-node-_89cb1887-d675-2995-df8d-fe1352c01f23-e9743541" class="product_gallery_tag">
+          {% render 'tag', custom_class: , tag: section.settings.tag, variant: section.settings.tag_variant, solid_text_size: section.settings.tag_solid_text_size, solid_color: section.settings.tag_solid_color, pill_text_size: section.settings.tag_pill_text_size %}
+        </div>
+        <div id="w-node-cb4e057a-55a2-6eec-55e0-356b60d03128-e9743541" class="product_gallery_certifications">
+          <div class="product_gallery_certification">
+            <img
+              src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
+              loading="lazy"
+              alt=""
+              class="image"
+            >
+          </div>
+          <div class="product_gallery_certification">
+            <img
+              src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
+              loading="lazy"
+              alt=""
+              class="image"
+            >
+          </div>
+          <div class="product_gallery_certification">
+            <img
+              src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
+              loading="lazy"
+              alt=""
+              class="image"
+            >
+          </div>
+        </div>
+      </div>
+      <div class="product_story_wrap">
+        <div class="product_story_heading">
+          {% render 'heading', variant: 'u-text-eyebrow-large', heading: section.settings.heading, tag: 'div' %}
+        </div>
+        <div class="product_story_slider_wrap slider_wrap">
+          <div style="--lg: 1; --md: 1.3; --sm: 1.3; --xs: 1.3;" class="product_story_slider_offset slider_offset">
+            <div class="product_story_slider_element swiper">
+              <div class="product_story_slider_list swiper-wrapper">
+                <div class="product_story_slider_slide swiper-slide">
+                  <div class="product_story_card is-text"></div>
                 </div>
-                <div class="product_summary_description">
-                  {% render 'paragraph', variant: 'u-text-body-base', custom_class: 'u-margin-bottom-0', paragraph: product.description %}
-                </div>
-                <div class="product_summary_checks">
-                  {% render 'paragraph', variant: section.settings.paragraph_variant, custom_class: 'u-margin-bottom-0', paragraph: section.settings.checks %}
-                </div>
-                <div class="product_summary_add_to_cart">
-                  {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
-                  
-                </div>
-                <div class="product_summary_certifications">
-                  <div class="product_summary_certification u-flex-noshrink">
+                <div class="product_story_slider_slide">
+                  <div class="product_story_card is-image-small">
                     {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
                   </div>
-                  
-                  
-                  
                 </div>
-              </div>
-              <div class="product_details_wrap">
-                <div class="u-display-contents">
-                  {% render 'product_detail_modal_trigger' %}
-                </div>
-                <div class="u-display-contents">
-                  {% render 'product_detail_modal_trigger' %}
-                </div>
-                <div class="u-display-contents">
-                  {% render 'product_detail_modal_trigger' %}
-                </div>
-                <div class="u-display-contents">
-                  {% render 'product_detail_modal_trigger' %}
-                </div>
-                <div class="u-display-contents">
-                  {% render 'product_detail_modal_trigger' %}
-                </div>
-              </div>
-              <div class="product_complements_wrap">
-                <div class="product_complements_top">
-                  {% render 'heading', variant: 'u-text-eyebrow-large', heading: section.settings.heading, tag: 'div' %}
-                </div>
-                <div class="product_complements_bot">
-                  {% render 'product_complement' %}
-                </div>
-              </div>
-              <div class="product_links_wrap">
-                <div class="product_links_buttons u-button-wrapper">
-                  <div class="u-display-contents">
-                    {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
-                    
+                <div class="product_story_slider_slide">
+                  <div class="product_story_card is-image-large">
+                    {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
                   </div>
-                  <div class="u-display-contents">
-                    {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
-                    
+                </div>
+                <div class="product_story_slider_slide">
+                  <div class="product_story_card is-image-small">
+                    {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
                   </div>
-                  <div class="u-display-contents">
-                    {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
-                    
-                  </div>
-                  <div class="u-display-contents">
-                    {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
-                    
-                  </div>
-                  <div class="u-display-contents">
-                    {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
-                    
-                  </div>
+                </div>
+                <div class="product_story_slider_slide">
+                  <div class="product_story_card is-text"></div>
                 </div>
               </div>
             </div>
           </div>
-          
-        </div> {% schema %} {
-    "tag": "section",
-    "name": "Product",
-    "class": "product_section u-section",
-    "settings": [
+        </div>
+      </div>
+    </div>
+    <div class="product_right">
+      <div class="product_summary_wrap">
+        <div class="product_summary_top">
+          <div class="product_detail_top_left">
+            {% render 'heading',
+              custom_class: 'u-margin-bottom-0 u-min-width-auto',
+              heading: product.title,
+              tag: 'h1',
+              variant: 'u-text-h2-primary'
+            %}
+            <div class="product_detail_reviews_wrap">
+              <div class="product_detail_reviews_stars u-flex-noshrink">
+                <div class="product_detail_reviews_star">
+                  {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                </div>
+                <div class="product_detail_reviews_star">
+                  {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                </div>
+                <div class="product_detail_reviews_star">
+                  {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                </div>
+                <div class="product_detail_reviews_star">
+                  {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                </div>
+                <div class="product_detail_reviews_star">
+                  {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                </div>
+              </div>
+              <div class="product_detail_reviews_rating u-flex-noshrink">
+                {% render 'typography',
+                  tag: section.settings.text_tag,
+                  visually_hidden: section.setttings.text_visually_hidden,
+                  tidy_text: section.settings.text_tidy_text,
+                  custom_class: 'u-margin-bottom-0',
+                  variant: section.settings.text_variant,
+                  text: section.settings.text,
+                  max_width: section.settings.text_max_width
+                %}
+              </div>
+            </div>
+          </div>
+          <div class="product_detail_top_right u-flex-noshrink">
+            <button class="product_wishlist_button">
+              <div class="product_wishlist_icon">
+                {% render 'icon', custom_class: , icon: 'heart', aria-hidden: true %}
+              </div>
+            </button>
+          </div>
+        </div>
+        <div class="product_summary_description">
+          {% render 'paragraph',
+            variant: 'u-text-body-base',
+            custom_class: 'u-margin-bottom-0',
+            paragraph: product.description
+          %}
+        </div>
+        <div class="product_summary_checks">
+          {% render 'paragraph',
+            variant: section.settings.paragraph_variant,
+            custom_class: 'u-margin-bottom-0',
+            paragraph: section.settings.checks
+          %}
+        </div>
+        <div class="product_summary_add_to_cart">
+          {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
+        </div>
+        <div class="product_summary_certifications">
+          <div class="product_summary_certification u-flex-noshrink">
+            {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+          </div>
+        </div>
+      </div>
+      <div class="product_details_wrap">
+        <div class="u-display-contents">
+          {% render 'product_detail_modal_trigger' %}
+        </div>
+        <div class="u-display-contents">
+          {% render 'product_detail_modal_trigger' %}
+        </div>
+        <div class="u-display-contents">
+          {% render 'product_detail_modal_trigger' %}
+        </div>
+        <div class="u-display-contents">
+          {% render 'product_detail_modal_trigger' %}
+        </div>
+        <div class="u-display-contents">
+          {% render 'product_detail_modal_trigger' %}
+        </div>
+      </div>
+      <div class="product_complements_wrap">
+        <div class="product_complements_top">
+          {% render 'heading', variant: 'u-text-eyebrow-large', heading: section.settings.heading, tag: 'div' %}
+        </div>
+        <div class="product_complements_bot">
+          {% render 'product_complement' %}
+        </div>
+      </div>
+      <div class="product_links_wrap">
+        <div class="product_links_buttons u-button-wrapper">
+          <div class="u-display-contents">
+            {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
+          </div>
+          <div class="u-display-contents">
+            {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
+          </div>
+          <div class="u-display-contents">
+            {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
+          </div>
+          <div class="u-display-contents">
+            {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
+          </div>
+          <div class="u-display-contents">
+            {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "tag": "section",
+  "name": "Product",
+  "class": "product_section u-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Sektion"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "ID"
+    },
+    {
+      "type": "header",
+      "content": "Abst\u00e4nde"
+    },
+    {
+      "type": "select",
+      "id": "spacing_top",
+      "label": "Oben",
+      "options": [
         {
-            "type": "header",
-            "content": "Sektion"
+          "value": "none",
+          "label": "Kein Abstand"
         },
         {
-            "type": "text",
-            "id": "section_id",
-            "label": "ID"
+          "value": "xxsmall",
+          "label": "Extra extra klein"
         },
         {
-            "type": "header",
-            "content": "Abst\u00e4nde"
+          "value": "xsmall",
+          "label": "Extra klein"
         },
         {
-            "type": "select",
-            "id": "spacing_top",
-            "label": "Oben",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Abstand"
-                },
-                {
-                    "value": "xxsmall",
-                    "label": "Extra extra klein"
-                },
-                {
-                    "value": "xsmall",
-                    "label": "Extra klein"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "medium",
-                    "label": "Mittel"
-                },
-                {
-                    "value": "large",
-                    "label": "Gro\u00df"
-                },
-                {
-                    "value": "large_medium_off",
-                    "label": "Gro\u00df | Medium kein Abstand"
-                },
-                {
-                    "value": "page_top",
-                    "label": "Seitenanfang"
-                }
-            ],
-            "default": "xxsmall"
+          "value": "small",
+          "label": "Klein"
         },
         {
-            "type": "select",
-            "id": "spacing_bottom",
-            "label": "Unten",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Abstand"
-                },
-                {
-                    "value": "xxsmall",
-                    "label": "Extra extra klein"
-                },
-                {
-                    "value": "xsmall",
-                    "label": "Extra klein"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "medium",
-                    "label": "Mittel"
-                },
-                {
-                    "value": "large",
-                    "label": "Gro\u00df"
-                }
-            ],
-            "default": "medium"
+          "value": "medium",
+          "label": "Mittel"
         },
         {
-            "type": "header",
-            "content": "\u00dcbertitel"
+          "value": "large",
+          "label": "Gro\u00df"
         },
         {
-            "type": "text",
-            "id": "eyebrow",
-            "label": "Text",
-            "default": "\u00dcbertitel Text"
+          "value": "large_medium_off",
+          "label": "Gro\u00df | Medium kein Abstand"
         },
         {
-            "type": "select",
-            "id": "eyebrow_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "u-text-eyebrow-small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "u-text-eyebrow-base",
-                    "label": "Standard"
-                },
-                {
-                    "value": "u-text-eyebrow-large",
-                    "label": "Gro\u00df"
-                }
-            ],
-            "default": "u-text-eyebrow-large"
-        },
-        {
-            "type": "select",
-            "id": "eyebrow_tag",
-            "label": "HTML-Tag",
-            "options": [
-                {
-                    "value": "h1",
-                    "label": "H1"
-                },
-                {
-                    "value": "h2",
-                    "label": "H2"
-                },
-                {
-                    "value": "h3",
-                    "label": "H3"
-                },
-                {
-                    "value": "h4",
-                    "label": "H4"
-                },
-                {
-                    "value": "h5",
-                    "label": "H5"
-                },
-                {
-                    "value": "h6",
-                    "label": "H6"
-                },
-                {
-                    "value": "p",
-                    "label": "P"
-                }
-            ],
-            "default": "p"
-        },
-        {
-            "type": "header",
-            "content": "\u00dcberschrift"
-        },
-        {
-            "type": "inline_richtext",
-            "id": "heading",
-            "label": "Text",
-            "default": "Lorem ipsum dolor sit amet elit"
-        },
-        {
-            "type": "select",
-            "id": "heading_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "u-text-h1-primary",
-                    "label": "H1 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h1-secondary",
-                    "label": "H1 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h2-primary",
-                    "label": "H2 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h2-secondary",
-                    "label": "H2 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h3-primary",
-                    "label": "H3 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h3-secondary",
-                    "label": "H3 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h4-primary",
-                    "label": "H4 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h5-primary",
-                    "label": "H5 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h6-primary",
-                    "label": "H6 Prim\u00e4r"
-                }
-            ],
-            "default": "u-text-h2-primary"
-        },
-        {
-            "type": "select",
-            "id": "heading_tag",
-            "label": "HTML-Tag",
-            "options": [
-                {
-                    "value": "h1",
-                    "label": "H1"
-                },
-                {
-                    "value": "h2",
-                    "label": "H2"
-                },
-                {
-                    "value": "h3",
-                    "label": "H3"
-                },
-                {
-                    "value": "h4",
-                    "label": "H4"
-                },
-                {
-                    "value": "h5",
-                    "label": "H5"
-                },
-                {
-                    "value": "h6",
-                    "label": "H6"
-                },
-                {
-                    "value": "p",
-                    "label": "P"
-                }
-            ],
-            "default": "h2"
-        },
-        {
-            "type": "number",
-            "id": "heading_max_width",
-            "label": "Maximale Breite",
-            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-            "default": 20
-        },
-        {
-            "type": "checkbox",
-            "id": "heading_tidy_text",
-            "label": "Ausgewogener Zeilenumbruch",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "heading_visually_hidden",
-            "label": "Nur f\u00fcr Screenreader anzeigen",
-            "default": false
-        },
-        {
-            "type": "header",
-            "content": "Text"
-        },
-        {
-            "type": "richtext",
-            "id": "paragraph",
-            "label": "Text",
-            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
-        },
-        {
-            "type": "select",
-            "id": "paragraph_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "u-text-body-small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "u-text-body-base",
-                    "label": "Standard"
-                },
-                {
-                    "value": "u-text-body-large",
-                    "label": "Gro\u00df"
-                }
-            ],
-            "default": "u-text-body-base"
-        },
-        {
-            "type": "number",
-            "id": "paragraph_max_width",
-            "label": "Maximale Breite",
-            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-            "default": 60
-        },
-        {
-            "type": "checkbox",
-            "id": "paragraph_tidy_text",
-            "label": "Ausgewogener Zeilenumbruch",
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": "Button 1"
-        },
-        {
-            "type": "text",
-            "id": "button_1_label",
-            "label": "Text",
-            "default": "Text"
-        },
-        {
-            "type": "select",
-            "id": "button_1_mode",
-            "label": "Funktion",
-            "options": [
-                {
-                    "value": "link",
-                    "label": "Link \u00f6ffnen"
-                },
-                {
-                    "value": "action",
-                    "label": "Aktion ausf\u00fchren"
-                }
-            ],
-            "default": "link"
-        },
-        {
-            "type": "url",
-            "id": "button_1_url",
-            "label": "Link",
-            "visible_if": "{{ section.settings.button_1_mode == 'link' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_action",
-            "label": "Aktion",
-            "options": [
-                {
-                    "value": "newsletter_modal",
-                    "label": "Newsletter-Modal \u00f6ffnen"
-                },
-                {
-                    "value": "contact_modal",
-                    "label": "Kontaktformular-Modal \u00f6ffnen"
-                }
-            ],
-            "default": "newsletter_modal",
-            "visible_if": "{{ section.settings.button_1_mode == 'action' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "solid",
-                    "label": "Fl\u00e4che"
-                },
-                {
-                    "value": "transparent",
-                    "label": "Transparent"
-                },
-                {
-                    "value": "text",
-                    "label": "Textlink"
-                },
-                {
-                    "value": "pill",
-                    "label": "Kapsel"
-                }
-            ],
-            "default": "solid"
-        },
-        {
-            "type": "select",
-            "id": "button_1_solid_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "red",
-                    "label": "Rot"
-                },
-                {
-                    "value": "white",
-                    "label": "Wei\u00df"
-                }
-            ],
-            "default": "red",
-            "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_solid_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_solid_padding",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "base",
-                    "label": "Standard"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                }
-            ],
-            "default": "base",
-            "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_text_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_text_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "green",
-                    "label": "Gr\u00fcn"
-                },
-                {
-                    "value": "red",
-                    "label": "Rot"
-                }
-            ],
-            "default": "green",
-            "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_pill_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "white",
-                    "label": "Wei\u00df"
-                },
-                {
-                    "value": "white_transparent",
-                    "label": "Wei\u00df transparent"
-                }
-            ],
-            "default": "white",
-            "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_pill_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-eyebrow-large",
-                    "label": "\u00dcbertitel gro\u00df"
-                },
-                {
-                    "value": "u-text-eyebrow-base",
-                    "label": "\u00dcbertitel Standard"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                },
-                {
-                    "value": "u-text-link-small",
-                    "label": "Link klein"
-                }
-            ],
-            "default": "u-text-eyebrow-base",
-            "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
-        },
-        {
-            "type": "text",
-            "id": "button_1_pill_tag_inner",
-            "label": "Innerer Tag",
-            "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
-        },
-        {
-            "type": "checkbox",
-            "id": "button_1_underline",
-            "label": "Unterstreichung anzeigen",
-            "default": false,
-            "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_icon",
-            "label": "Icon",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Icon"
-                },
-                {
-                    "value": "arrow_left",
-                    "label": "Pfeil links"
-                },
-                {
-                    "value": "arrow_right",
-                    "label": "Pfeil rechts"
-                },
-                {
-                    "value": "arrow_up_right",
-                    "label": "Pfeil hoch rechts"
-                },
-                {
-                    "value": "chevron_left",
-                    "label": "Chevron links"
-                },
-                {
-                    "value": "chevron_right",
-                    "label": "Chevron rechts"
-                },
-                {
-                    "value": "download",
-                    "label": "Herunterladen"
-                },
-                {
-                    "value": "copy",
-                    "label": "Kopieren"
-                },
-                {
-                    "value": "external",
-                    "label": "Externe Seite"
-                }
-            ],
-            "default": "none"
-        },
-        {
-            "type": "select",
-            "id": "button_1_icon_position",
-            "label": "Icon-Position",
-            "options": [
-                {
-                    "value": "before",
-                    "label": "Vor dem Text"
-                },
-                {
-                    "value": "after",
-                    "label": "Nach dem Text"
-                }
-            ],
-            "default": "after",
-            "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_icon_animation",
-            "label": "Icon-Animation",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Keine Animation"
-                },
-                {
-                    "value": "move_left",
-                    "label": "Nach links bewegen"
-                },
-                {
-                    "value": "move_right",
-                    "label": "Nach rechts bewegen"
-                },
-                {
-                    "value": "move_up_right",
-                    "label": "Nach oben rechts bewegen"
-                }
-            ],
-            "default": "none",
-            "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_icon_color",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "inherit",
-                    "label": "Wie Text"
-                },
-                {
-                    "value": "red",
-                    "label": "Rot"
-                }
-            ],
-            "default": "inherit",
-            "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
-        },
-        {
-            "type": "header",
-            "content": "Button 2"
-        },
-        {
-            "type": "text",
-            "id": "button_2_label",
-            "label": "Text",
-            "default": "Text"
-        },
-        {
-            "type": "select",
-            "id": "button_2_mode",
-            "label": "Funktion",
-            "options": [
-                {
-                    "value": "link",
-                    "label": "Link \u00f6ffnen"
-                },
-                {
-                    "value": "action",
-                    "label": "Aktion ausf\u00fchren"
-                }
-            ],
-            "default": "link"
-        },
-        {
-            "type": "url",
-            "id": "button_2_url",
-            "label": "Link",
-            "visible_if": "{{ section.settings.button_2_mode == 'link' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "solid",
-                    "label": "Fl\u00e4che"
-                },
-                {
-                    "value": "transparent",
-                    "label": "Transparent"
-                },
-                {
-                    "value": "text",
-                    "label": "Textlink"
-                },
-                {
-                    "value": "pill",
-                    "label": "Kapsel"
-                }
-            ],
-            "default": "solid"
-        },
-        {
-            "type": "select",
-            "id": "button_2_action",
-            "label": "Aktion",
-            "options": [
-                {
-                    "value": "newsletter_modal",
-                    "label": "Newsletter-Modal \u00f6ffnen"
-                },
-                {
-                    "value": "contact_modal",
-                    "label": "Kontaktformular-Modal \u00f6ffnen"
-                }
-            ],
-            "default": "newsletter_modal",
-            "visible_if": "{{ section.settings.button_2_mode == 'action' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_solid_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "red",
-                    "label": "Rot"
-                },
-                {
-                    "value": "white",
-                    "label": "Wei\u00df"
-                }
-            ],
-            "default": "red",
-            "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_solid_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_solid_padding",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "base",
-                    "label": "Standard"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                }
-            ],
-            "default": "base",
-            "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_text_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_text_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "green",
-                    "label": "Gr\u00fcn"
-                },
-                {
-                    "value": "red",
-                    "label": "Rot"
-                }
-            ],
-            "default": "green",
-            "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_pill_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "white",
-                    "label": "Wei\u00df"
-                },
-                {
-                    "value": "white_transparent",
-                    "label": "Wei\u00df transparent"
-                }
-            ],
-            "default": "white",
-            "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_pill_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-eyebrow-large",
-                    "label": "\u00dcbertitel gro\u00df"
-                },
-                {
-                    "value": "u-text-eyebrow-base",
-                    "label": "\u00dcbertitel Standard"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                },
-                {
-                    "value": "u-text-link-small",
-                    "label": "Link klein"
-                }
-            ],
-            "default": "u-text-eyebrow-base",
-            "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
-        },
-        {
-            "type": "text",
-            "id": "button_2_pill_tag_inner",
-            "label": "Innerer Tag",
-            "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
-        },
-        {
-            "type": "checkbox",
-            "id": "button_2_underline",
-            "label": "Unterstreichung anzeigen",
-            "default": false,
-            "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_icon_position",
-            "label": "Icon-Position",
-            "options": [
-                {
-                    "value": "before",
-                    "label": "Vor dem Text"
-                },
-                {
-                    "value": "after",
-                    "label": "Nach dem Text"
-                }
-            ],
-            "default": "after",
-            "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_icon_animation",
-            "label": "Icon-Animation",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Keine Animation"
-                },
-                {
-                    "value": "move_left",
-                    "label": "Nach links bewegen"
-                },
-                {
-                    "value": "move_right",
-                    "label": "Nach rechts bewegen"
-                },
-                {
-                    "value": "move_up_right",
-                    "label": "Nach oben rechts bewegen"
-                }
-            ],
-            "default": "none",
-            "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
+          "value": "page_top",
+          "label": "Seitenanfang"
         }
-    ],
-    "presets": [
+      ],
+      "default": "xxsmall"
+    },
+    {
+      "type": "select",
+      "id": "spacing_bottom",
+      "label": "Unten",
+      "options": [
         {
-            "name": "Product",
-            "category": "Liquify",
-            "blocks": []
+          "value": "none",
+          "label": "Kein Abstand"
+        },
+        {
+          "value": "xxsmall",
+          "label": "Extra extra klein"
+        },
+        {
+          "value": "xsmall",
+          "label": "Extra klein"
+        },
+        {
+          "value": "small",
+          "label": "Klein"
+        },
+        {
+          "value": "medium",
+          "label": "Mittel"
+        },
+        {
+          "value": "large",
+          "label": "Gro\u00df"
         }
-    ]
-} {% endschema %}
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "header",
+      "content": "\u00dcbertitel"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Text",
+      "default": "\u00dcbertitel Text"
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_variant",
+      "label": "Stil",
+      "options": [
+        {
+          "value": "u-text-eyebrow-small",
+          "label": "Klein"
+        },
+        {
+          "value": "u-text-eyebrow-base",
+          "label": "Standard"
+        },
+        {
+          "value": "u-text-eyebrow-large",
+          "label": "Gro\u00df"
+        }
+      ],
+      "default": "u-text-eyebrow-large"
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_tag",
+      "label": "HTML-Tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "p",
+          "label": "P"
+        }
+      ],
+      "default": "p"
+    },
+    {
+      "type": "header",
+      "content": "\u00dcberschrift"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Text",
+      "default": "Lorem ipsum dolor sit amet elit"
+    },
+    {
+      "type": "select",
+      "id": "heading_variant",
+      "label": "Stil",
+      "options": [
+        {
+          "value": "u-text-h1-primary",
+          "label": "H1 Prim\u00e4r"
+        },
+        {
+          "value": "u-text-h1-secondary",
+          "label": "H1 Sekund\u00e4r"
+        },
+        {
+          "value": "u-text-h2-primary",
+          "label": "H2 Prim\u00e4r"
+        },
+        {
+          "value": "u-text-h2-secondary",
+          "label": "H2 Sekund\u00e4r"
+        },
+        {
+          "value": "u-text-h3-primary",
+          "label": "H3 Prim\u00e4r"
+        },
+        {
+          "value": "u-text-h3-secondary",
+          "label": "H3 Sekund\u00e4r"
+        },
+        {
+          "value": "u-text-h4-primary",
+          "label": "H4 Prim\u00e4r"
+        },
+        {
+          "value": "u-text-h5-primary",
+          "label": "H5 Prim\u00e4r"
+        },
+        {
+          "value": "u-text-h6-primary",
+          "label": "H6 Prim\u00e4r"
+        }
+      ],
+      "default": "u-text-h2-primary"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "HTML-Tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "p",
+          "label": "P"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "number",
+      "id": "heading_max_width",
+      "label": "Maximale Breite",
+      "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+      "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_tidy_text",
+      "label": "Ausgewogener Zeilenumbruch",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_visually_hidden",
+      "label": "Nur f\u00fcr Screenreader anzeigen",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Text"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph",
+      "label": "Text",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
+    },
+    {
+      "type": "select",
+      "id": "paragraph_variant",
+      "label": "Stil",
+      "options": [
+        {
+          "value": "u-text-body-small",
+          "label": "Klein"
+        },
+        {
+          "value": "u-text-body-base",
+          "label": "Standard"
+        },
+        {
+          "value": "u-text-body-large",
+          "label": "Gro\u00df"
+        }
+      ],
+      "default": "u-text-body-base"
+    },
+    {
+      "type": "number",
+      "id": "paragraph_max_width",
+      "label": "Maximale Breite",
+      "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+      "default": 60
+    },
+    {
+      "type": "checkbox",
+      "id": "paragraph_tidy_text",
+      "label": "Ausgewogener Zeilenumbruch",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Button 1"
+    },
+    {
+      "type": "text",
+      "id": "button_1_label",
+      "label": "Text",
+      "default": "Text"
+    },
+    {
+      "type": "select",
+      "id": "button_1_mode",
+      "label": "Funktion",
+      "options": [
+        {
+          "value": "link",
+          "label": "Link \u00f6ffnen"
+        },
+        {
+          "value": "action",
+          "label": "Aktion ausf\u00fchren"
+        }
+      ],
+      "default": "link"
+    },
+    {
+      "type": "url",
+      "id": "button_1_url",
+      "label": "Link",
+      "visible_if": "{{ section.settings.button_1_mode == 'link' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_action",
+      "label": "Aktion",
+      "options": [
+        {
+          "value": "newsletter_modal",
+          "label": "Newsletter-Modal \u00f6ffnen"
+        },
+        {
+          "value": "contact_modal",
+          "label": "Kontaktformular-Modal \u00f6ffnen"
+        }
+      ],
+      "default": "newsletter_modal",
+      "visible_if": "{{ section.settings.button_1_mode == 'action' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_variant",
+      "label": "Stil",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Fl\u00e4che"
+        },
+        {
+          "value": "transparent",
+          "label": "Transparent"
+        },
+        {
+          "value": "text",
+          "label": "Textlink"
+        },
+        {
+          "value": "pill",
+          "label": "Kapsel"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "select",
+      "id": "button_1_solid_color",
+      "label": "Farbe",
+      "options": [
+        {
+          "value": "red",
+          "label": "Rot"
+        },
+        {
+          "value": "white",
+          "label": "Wei\u00df"
+        }
+      ],
+      "default": "red",
+      "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_solid_text_size",
+      "label": "Textgr\u00f6\u00dfe",
+      "options": [
+        {
+          "value": "u-text-link-large",
+          "label": "Link gro\u00df"
+        },
+        {
+          "value": "u-text-link-base",
+          "label": "Link Standard"
+        }
+      ],
+      "default": "u-text-link-large",
+      "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_solid_padding",
+      "label": "Stil",
+      "options": [
+        {
+          "value": "base",
+          "label": "Standard"
+        },
+        {
+          "value": "small",
+          "label": "Klein"
+        }
+      ],
+      "default": "base",
+      "visible_if": "{{ section.settings.button_1_variant == 'solid' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_text_text_size",
+      "label": "Textgr\u00f6\u00dfe",
+      "options": [
+        {
+          "value": "u-text-link-large",
+          "label": "Link gro\u00df"
+        },
+        {
+          "value": "u-text-link-base",
+          "label": "Link Standard"
+        }
+      ],
+      "default": "u-text-link-large",
+      "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_text_color",
+      "label": "Farbe",
+      "options": [
+        {
+          "value": "green",
+          "label": "Gr\u00fcn"
+        },
+        {
+          "value": "red",
+          "label": "Rot"
+        }
+      ],
+      "default": "green",
+      "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_pill_color",
+      "label": "Farbe",
+      "options": [
+        {
+          "value": "white",
+          "label": "Wei\u00df"
+        },
+        {
+          "value": "white_transparent",
+          "label": "Wei\u00df transparent"
+        }
+      ],
+      "default": "white",
+      "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_pill_text_size",
+      "label": "Textgr\u00f6\u00dfe",
+      "options": [
+        {
+          "value": "u-text-eyebrow-large",
+          "label": "\u00dcbertitel gro\u00df"
+        },
+        {
+          "value": "u-text-eyebrow-base",
+          "label": "\u00dcbertitel Standard"
+        },
+        {
+          "value": "u-text-link-base",
+          "label": "Link Standard"
+        },
+        {
+          "value": "u-text-link-small",
+          "label": "Link klein"
+        }
+      ],
+      "default": "u-text-eyebrow-base",
+      "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
+    },
+    {
+      "type": "text",
+      "id": "button_1_pill_tag_inner",
+      "label": "Innerer Tag",
+      "visible_if": "{{ section.settings.button_1_variant == 'pill' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_1_underline",
+      "label": "Unterstreichung anzeigen",
+      "default": false,
+      "visible_if": "{{ section.settings.button_1_variant == 'text' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_icon",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "none",
+          "label": "Kein Icon"
+        },
+        {
+          "value": "arrow_left",
+          "label": "Pfeil links"
+        },
+        {
+          "value": "arrow_right",
+          "label": "Pfeil rechts"
+        },
+        {
+          "value": "arrow_up_right",
+          "label": "Pfeil hoch rechts"
+        },
+        {
+          "value": "chevron_left",
+          "label": "Chevron links"
+        },
+        {
+          "value": "chevron_right",
+          "label": "Chevron rechts"
+        },
+        {
+          "value": "download",
+          "label": "Herunterladen"
+        },
+        {
+          "value": "copy",
+          "label": "Kopieren"
+        },
+        {
+          "value": "external",
+          "label": "Externe Seite"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "select",
+      "id": "button_1_icon_position",
+      "label": "Icon-Position",
+      "options": [
+        {
+          "value": "before",
+          "label": "Vor dem Text"
+        },
+        {
+          "value": "after",
+          "label": "Nach dem Text"
+        }
+      ],
+      "default": "after",
+      "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_icon_animation",
+      "label": "Icon-Animation",
+      "options": [
+        {
+          "value": "none",
+          "label": "Keine Animation"
+        },
+        {
+          "value": "move_left",
+          "label": "Nach links bewegen"
+        },
+        {
+          "value": "move_right",
+          "label": "Nach rechts bewegen"
+        },
+        {
+          "value": "move_up_right",
+          "label": "Nach oben rechts bewegen"
+        }
+      ],
+      "default": "none",
+      "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_icon_color",
+      "label": "Stil",
+      "options": [
+        {
+          "value": "inherit",
+          "label": "Wie Text"
+        },
+        {
+          "value": "red",
+          "label": "Rot"
+        }
+      ],
+      "default": "inherit",
+      "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
+    },
+    {
+      "type": "header",
+      "content": "Button 2"
+    },
+    {
+      "type": "text",
+      "id": "button_2_label",
+      "label": "Text",
+      "default": "Text"
+    },
+    {
+      "type": "select",
+      "id": "button_2_mode",
+      "label": "Funktion",
+      "options": [
+        {
+          "value": "link",
+          "label": "Link \u00f6ffnen"
+        },
+        {
+          "value": "action",
+          "label": "Aktion ausf\u00fchren"
+        }
+      ],
+      "default": "link"
+    },
+    {
+      "type": "url",
+      "id": "button_2_url",
+      "label": "Link",
+      "visible_if": "{{ section.settings.button_2_mode == 'link' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_variant",
+      "label": "Stil",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Fl\u00e4che"
+        },
+        {
+          "value": "transparent",
+          "label": "Transparent"
+        },
+        {
+          "value": "text",
+          "label": "Textlink"
+        },
+        {
+          "value": "pill",
+          "label": "Kapsel"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "select",
+      "id": "button_2_action",
+      "label": "Aktion",
+      "options": [
+        {
+          "value": "newsletter_modal",
+          "label": "Newsletter-Modal \u00f6ffnen"
+        },
+        {
+          "value": "contact_modal",
+          "label": "Kontaktformular-Modal \u00f6ffnen"
+        }
+      ],
+      "default": "newsletter_modal",
+      "visible_if": "{{ section.settings.button_2_mode == 'action' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_solid_color",
+      "label": "Farbe",
+      "options": [
+        {
+          "value": "red",
+          "label": "Rot"
+        },
+        {
+          "value": "white",
+          "label": "Wei\u00df"
+        }
+      ],
+      "default": "red",
+      "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_solid_text_size",
+      "label": "Textgr\u00f6\u00dfe",
+      "options": [
+        {
+          "value": "u-text-link-large",
+          "label": "Link gro\u00df"
+        },
+        {
+          "value": "u-text-link-base",
+          "label": "Link Standard"
+        }
+      ],
+      "default": "u-text-link-large",
+      "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_solid_padding",
+      "label": "Stil",
+      "options": [
+        {
+          "value": "base",
+          "label": "Standard"
+        },
+        {
+          "value": "small",
+          "label": "Klein"
+        }
+      ],
+      "default": "base",
+      "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_text_text_size",
+      "label": "Textgr\u00f6\u00dfe",
+      "options": [
+        {
+          "value": "u-text-link-large",
+          "label": "Link gro\u00df"
+        },
+        {
+          "value": "u-text-link-base",
+          "label": "Link Standard"
+        }
+      ],
+      "default": "u-text-link-large",
+      "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_text_color",
+      "label": "Farbe",
+      "options": [
+        {
+          "value": "green",
+          "label": "Gr\u00fcn"
+        },
+        {
+          "value": "red",
+          "label": "Rot"
+        }
+      ],
+      "default": "green",
+      "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_pill_color",
+      "label": "Farbe",
+      "options": [
+        {
+          "value": "white",
+          "label": "Wei\u00df"
+        },
+        {
+          "value": "white_transparent",
+          "label": "Wei\u00df transparent"
+        }
+      ],
+      "default": "white",
+      "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_pill_text_size",
+      "label": "Textgr\u00f6\u00dfe",
+      "options": [
+        {
+          "value": "u-text-eyebrow-large",
+          "label": "\u00dcbertitel gro\u00df"
+        },
+        {
+          "value": "u-text-eyebrow-base",
+          "label": "\u00dcbertitel Standard"
+        },
+        {
+          "value": "u-text-link-base",
+          "label": "Link Standard"
+        },
+        {
+          "value": "u-text-link-small",
+          "label": "Link klein"
+        }
+      ],
+      "default": "u-text-eyebrow-base",
+      "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
+    },
+    {
+      "type": "text",
+      "id": "button_2_pill_tag_inner",
+      "label": "Innerer Tag",
+      "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_2_underline",
+      "label": "Unterstreichung anzeigen",
+      "default": false,
+      "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_icon_position",
+      "label": "Icon-Position",
+      "options": [
+        {
+          "value": "before",
+          "label": "Vor dem Text"
+        },
+        {
+          "value": "after",
+          "label": "Nach dem Text"
+        }
+      ],
+      "default": "after",
+      "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_2_icon_animation",
+      "label": "Icon-Animation",
+      "options": [
+        {
+          "value": "none",
+          "label": "Keine Animation"
+        },
+        {
+          "value": "move_left",
+          "label": "Nach links bewegen"
+        },
+        {
+          "value": "move_right",
+          "label": "Nach rechts bewegen"
+        },
+        {
+          "value": "move_up_right",
+          "label": "Nach oben rechts bewegen"
+        }
+      ],
+      "default": "none",
+      "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product",
+      "category": "Liquify",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
