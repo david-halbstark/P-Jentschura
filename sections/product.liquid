@@ -139,18 +139,19 @@
             %}
           </a>
         </div>
-        {% assign exclude = 'all,frontpage' | split: ',' %}
-        {% assign crumb_collection = null %}
-        {% unless exclude contains collection.handle %}
-          <div class="u-display-contents">
-            {% assign crumb_collection = collection %}
-            {% break %}
-          </div>
-        {% endunless %}
+
+        {%- assign exclude = 'all,frontpage' | split: ',' -%}
+        {%- assign crumb_collection = null -%}
+        {%- for coll in product.collections -%}
+          {%- unless exclude contains coll.handle -%}
+            {%- assign crumb_collection = coll -%}
+            {%- break -%}
+          {%- endunless -%}
+        {%- endfor -%}
+
         <div class="product_breadcrumbs_item">
           {% if crumb_collection %}
             <a
-              li-if="crumb_collection"
               href="{{ crumb_collection.url }}"
               data-trigger="hover focus"
               class="product_breadcrumbs_link is-color-3"
@@ -164,6 +165,7 @@
             </a>
           {% endif %}
         </div>
+
         <div class="product_breadcrumbs_item">
           <div class="product_breadcrumbs_link u-text-link-base">
             {% render 'typography',
