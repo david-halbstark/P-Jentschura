@@ -127,7 +127,7 @@
             <div class="product_gallery_main_slider_element swiper">
               <div class="product_gallery_main_slider_list swiper-wrapper">
                 <div class="product_gallery_main_slider_slide swiper-slide">
-                  <div class="product_gallery_main_slide">{{ product.featured_image | image_url }}</div>
+                  <div class="product_gallery_main_slide"></div>
                 </div>
               </div>
             </div>
@@ -214,7 +214,7 @@
                 </div>
                 <div class="product_story_slider_slide">
                   <div class="product_story_card is-image-small">
-                    {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                    {% render 'image', width_mobile: section.settings.^width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
                   </div>
                 </div>
                 <div class="product_story_slider_slide">
