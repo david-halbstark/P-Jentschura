@@ -67,6 +67,7 @@
     },
     "product_ingredients_thrJbY": {
       "type": "product_ingredients",
+      "disabled": true,
       "name": "Product Ingredients",
       "settings": {
         "section_id": "",
