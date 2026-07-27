@@ -26,7 +26,12 @@
     bottom: 0%;
     background-color: var(--swatch--white-o20);
   }
-  @container (width < 53em) {
+  @container (width < 70em) {
+    .product_story_slider_wrap {
+      grid-template-areas: ;
+    }
+  }
+  @container (width < 60em) {
     .product_layout {
       grid-template-columns: 1fr;
       grid-template-areas:
@@ -177,7 +182,7 @@
                 {% assign exclude = 'all,frontpage' | split: ',' %}{% assign crumb_collection = null %}
                 {% unless exclude contains coll.handle %}    <div li-unless="exclude contains coll.handle" class="u-display-contents">
     
-                  {% - assign crumb_collection = coll -%}{% - break -%}
+                  {% assign crumb_collection = coll %}{% break %}
                     </div>
 {% endunless %}
                 {% if crumb_collection %}    <div li-if="crumb_collection" class="product_breadcrumbs_item">
