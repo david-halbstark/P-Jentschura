@@ -230,7 +230,7 @@
       "name": "Product Slider",
       "settings": {
         "section_id": "",
-        "collection": "",
+        "collection": "basische-ernaehrung",
         "spacing_top": "large",
         "spacing_bottom": "large",
         "eyebrow": "Übertitel Text",
