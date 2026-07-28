@@ -247,7 +247,7 @@
         "teaser_card_heading_tag": "h3",
         "teaser_card_paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>",
         "teaser_card_button_label": "Button Text",
-        "teaser_card_button_url": "",
+        "teaser_card_button_url": "shopify://metaobjects/guide_main_topic/jentschura-konzepte",
         "product_card_button_label": "Button Text"
       }
     },
