@@ -7462,8 +7462,6 @@ figure {
 
 .product_slider_slider_element {
   width: 100%;
-  max-width: 100%;
-  overflow: visible;
 }
 
 .product_slider_slider_slide {
@@ -7582,10 +7580,10 @@ figure {
 }
 
 .product_card_hover {
+  opacity: 0;
   border-radius: inherit;
   width: 100%;
   height: 100%;
-  opacity: calc(1 * var(--_trigger---off));
   transition-property: opacity;
   transition-duration: .15s;
   transition-timing-function: ease;
@@ -8207,8 +8205,6 @@ figure {
 
 .product_tabs_slider_element {
   width: 100%;
-  max-width: 100%;
-  overflow: visible;
 }
 
 .product_tabs_slider_list, .product_tabs_slider_slide {
@@ -9717,6 +9713,10 @@ figure {
 .newsletter_button_wrap {
   flex: none;
   margin-top: 0;
+}
+
+.product_card_clickable {
+  border-radius: inherit;
 }
 
 @media screen and (max-width: 991px) {
