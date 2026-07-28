@@ -220,7 +220,7 @@
         "eyebrow_tag": "p",
         "heading": "Aktiv & Vital — Für Körper in Bewegung",
         "heading_tag": "h2",
-        "heading_max_width": 30,
+        "heading_max_width": 0,
         "heading_tidy_text": true,
         "product_card_button_label": "Button Text"
       }
@@ -395,6 +395,7 @@
       "name": "Newsletter",
       "settings": {
         "section_id": "",
+        "variant": "small",
         "eyebrow": "Newsletter",
         "eyebrow_tag": "p",
         "heading": "Jetzt zum Newsletter anmelden",
