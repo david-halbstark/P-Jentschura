@@ -1,46 +1,50 @@
 <div class="u-embed-css w-embed">
   <style>
-    .product_tabs_layout:not([data-script-initialized='true']) .product_tabs_tab:first-child {
-      --_state---true: 0;
-      --_state---false: 1;
-    }
-    .product_tabs_layout:not([data-script-initialized='true']) .product_tabs_panel:not(:first-child) {
-      display: none;
-    }
-    .product_tabs_slider_wrap {
-      --_gap---size: 1rem;
-    }
-    .product_tabs_card_top::before {
-      content: '';
-      width: 50%;
-      height: 100%;
-      position: absolute;
-      left: 50%;
-      top: 0%;
-      right: auto;
-      bottom: 0%;
-      background-color: var(--swatch--white-o20);
-      transform: translateX(-50%);
-    }
-    @container (width < 75em) {
-      .product_tabs_bot .slider_offset {
-        --slide-count: var(--md);
+      .product_tabs_layout:not([data-script-initialized='true']) .product_tabs_tab:first-child {
+        --_state---true: 0;
+        --_state---false: 1;
       }
-    }
-    @container (width < 60em) {
-      .product_tabs_bot .slider_offset {
-        --slide-count: var(--sm);
+      .product_tabs_layout:not([data-script-initialized='true']) .product_tabs_panel:not(:first-child) {
+        display: none;
       }
-    }
-    @container (width < 40em) {
-      .product_tabs_bot .slider_offset {
-        --slide-count: var(--xs);
+      .product_tabs_slider_wrap {
+        --_gap---size: 1rem;
       }
+      .product_tabs_card_top::before {
+        content: '';
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        top: 0%;
+        right: auto;
+        bottom: 0%;
+        background-color: var(--swatch--white-o20);
+        transform: translateX(-50%);
+      }
+      @container (width < 75em) {
+        .product_tabs_bot .slider_offset {
+          --slide-count: var(--md);
+        }
+      }
+      @container (width < 60em) {
+        .product_tabs_bot .slider_offset {
+          --slide-count: var(--sm);
+        }
+      }
+      @container (width < 40em) {
+        .product_tabs_bot .slider_offset {
+          --slide-count: var(--xs);
+        }
+      }
+
+      .product_teaser_card_button_wrap:has(:focus-visible) {
+      transition: none;
     }
 
-    .product_teaser_card_button_element:has(:focus-visible) {
-    overflow: visible;
-    }
+      .product_teaser_card_button_element:has(:focus-visible) {
+      overflow: visible;
+      }
   </style>
 </div>
 <div class="u-display-none"></div>
