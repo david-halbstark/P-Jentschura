@@ -85,6 +85,7 @@
                 <div style="--lg: 4; --md: 2.5; --sm: 1.9; --xs: 1.1;" class="product_slider_slider_offset slider_offset">
                   <div class="product_slider_slider_element swiper">
                     <div class="product_slider_slider_list swiper-wrapper">
+                      <div aria-hidden="true" class="product_slider_slider_slide u-sr-only"></div>
                       <div class="product_slider_slider_slide is-first swiper-slide">
                         {% render 'product_teaser_card', paragraph: section.settings.teaser_card_paragraph, button_url: section.settings.teaser_card_button_url, heading_tag: section.settings.teaser_card_heading_tag, button_label: section.settings.teaser_card_button_label, heading: section.settings.teaser_card_heading, eyebrow_tag: section.settings.teaser_card_eyebrow_tag, eyebrow: section.settings.teaser_card_eyebrow %}
                       </div>
