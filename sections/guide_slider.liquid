@@ -87,7 +87,7 @@
                       
                             <div class="guide_slider_slider_slide swiper-slide">
                         <div class="guide_slider_card_wrap">
-                          <div class="guide_slider_card_element">
+                          <div data-clickable-card="" class="guide_slider_card_element">
                             <div class="guide_slider_card_background u-cover-absolute">
                               {% render 'image', loading: 'lazy', image: guide.image.value, object_fit: 'cover', width: 1400 %}
                             </div>
@@ -98,9 +98,10 @@
                               <div class="guide_slider_card_bot">
                                 {% render 'heading', max_width: section.settings.card_heading_max_width, heading: guide.heading.value, tag: 'h3', variant: 'u-text-h3-primary' %}
                                 {% render 'paragraph', max_width: section.settings.card_paragraph_max_width, paragraph: guide.text | metafield tag, variant: 'u-text-body-base' %}
-                                {% render 'button_group', button_1_solid_color: 'red', button_1_url: guide.system.url, button_1_label: section.settings.card_button_1_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: 'link', button_1_variant: 'solid' %}
+                                {% render 'button_group', button_1_solid_color: 'red', button_1_url: guide.system.url, button_1_label: section.settings.card_button_1_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: 'visual', button_1_variant: 'solid' %}
                               </div>
                             </div>
+                            {% render 'clickable', url: section.settings.clickable_url, action: section.settings.clickable_action, focus_ring: section.settings.clickable_focus_ring, label: section.settings.clickable_label, mode: section.settings.clickable_mode, custom_class: , target: section.settings.clickable_target %}
                           </div>
                         </div>
                       </div>

@@ -1,5 +1,5 @@
 <div data-trigger="hover focus" class="product_card_wrap">
-                            <div class="product_card_element">
+                            <div data-clickable-card="" class="product_card_element">
                               <div class="product_card_inner">
                                 <div class="product_card_top">
                                   <div class="product_card_image">
@@ -19,10 +19,9 @@
                                 <div class="product_card_hover_image"></div>
                                 {% render 'image', loading: 'auto', image: product_hover_image, object_fit: 'cover', width: 400 %}
                                 <div class="product_card_hover_inner">
-                                  {% render 'button_group', button_1_solid_color: 'red', button_1_label: section.settings.product_card_button_label, button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-base', button_1_mode: 'visual', button_1_variant: 'solid', button_1_custom_class: 'u-width-full' %}
+                                  {% render 'button_group', button_1_solid_color: 'red', button_1_url: product_url, button_1_label: button_label, button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-base', button_1_mode: 'link', button_1_variant: 'solid', button_1_custom_class: 'u-width-full' %}
                                 </div>
                                   </div>
 {% endif %}
                             </div>
-                            {% render 'clickable', url: product_url, label: product_title, mode: 'link' %}
                           </div>

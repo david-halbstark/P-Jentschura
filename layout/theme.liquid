@@ -44,5 +44,20 @@
   <script src="https://cdn.prod.website-files.com/gsap/3.15.0/gsap.min.js" type="text/javascript"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   {% render 'search_javascript' %}
+  <script>
+document.addEventListener("click", (e) => {
+  const card = e.target.closest("[data-clickable-card]");
+  if (!card) return;
+  if (e.target.closest("a, button, input, textarea, select, label")) return;
+  if (window.getSelection().toString()) return;
+  const link = card.querySelector("[data-card-link]") || card.querySelector("a[href]");
+  if (!link) return;
+  if (e.metaKey || e.ctrlKey || e.shiftKey) {
+    window.open(link.href, "_blank", "noopener");
+  } else {
+    link.click();
+  }
+});
+</script>
 </body>
 </html>
