@@ -23,7 +23,7 @@
         %}
       </div>
     </div>
-    {% if product_hover_image != blank %}
+    {% if hover_image != blank %}
       <div li-if="product_hover_image != blank" class="product_card_hover">
         <div class="product_card_hover_image">
           {% render 'image', loading: 'auto', image: product_hover_image, object_fit: 'cover', width: 400 %}
@@ -43,7 +43,7 @@
       </div>
     {% endif %}
   </div>
-  {% if product_hover_image == blank %}
+  {% if hover_image == blank %}
     <div li-if="product_hover_image == blank" class="product_card_clickable u-cover-absolute">
       {% render 'clickable', url: product_url, label: button_label, mode: 'link' %}
       <a href="#" class="u-cover-absolute u-radius-inherit w-inline-block"></a>
