@@ -7492,8 +7492,6 @@ figure {
 
 .product_teaser_card_bot {
   flex-flow: column;
-  flex: 1;
-  justify-content: flex-end;
   display: flex;
 }
 
@@ -7971,11 +7969,9 @@ figure {
 }
 
 .product_slider_top_right {
-  justify-content: flex-start;
-  align-items: center;
   align-self: var(--auto-medium, end);
-  flex-flow: wrap;
   flex: none;
+  max-width: 100%;
   display: flex;
 }
 
@@ -7984,6 +7980,7 @@ figure {
   margin-left: -.75rem;
   margin-right: -.75rem;
   margin-bottom: calc(-.375rem * var(--_responsive---large));
+  flex: none;
   padding: .75rem;
   text-decoration: underline;
   position: relative;
@@ -8025,12 +8022,8 @@ figure {
   padding-right: var(--_spacing---space--11);
   padding-bottom: var(--_spacing---space--11);
   padding-left: var(--_spacing---space--11);
-  grid-column-gap: var(--_spacing---space--11);
-  grid-row-gap: var(--_spacing---space--11);
-  border-top-left-radius: var(--radius--main);
-  border-top-right-radius: var(--radius--main);
-  border-bottom-left-radius: var(--radius--main);
-  border-bottom-right-radius: var(--radius--main);
+  grid-column-gap: 2.5rem;
+  grid-row-gap: 2.5rem;
   text-align: center;
   border-radius: inherit;
   flex-flow: column;
@@ -8049,6 +8042,7 @@ figure {
 }
 
 .product_teaser_card_button_element {
+  min-height: 0;
   overflow: hidden;
 }
 
@@ -8058,15 +8052,19 @@ figure {
 
 .guide_slider_top {
   grid-column-gap: var(--_spacing---space--11);
-  grid-row-gap: var(--_spacing---space--11);
+  grid-row-gap: calc(calc(var(--_spacing---space--9) * var(--_responsive---large))  + calc(var(--_spacing---space--7) * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
   flex-flow: wrap;
+  flex-flow: var(--column-medium, row) var(--nowrap-medium, wrap);
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: stretch;
   display: flex;
 }
 
 .guide_slider_top_right {
+  align-self: var(--auto-medium, end);
   flex: none;
+  max-width: 100%;
+  display: flex;
   position: relative;
 }
 
@@ -8136,8 +8134,8 @@ figure {
 }
 
 .product_tabs_layout {
-  grid-column-gap: calc(calc(var(--_spacing---space--12) * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(calc(var(--_spacing---space--13)  - .5rem) * max(var(--_responsive---small), var(--_responsive---xsmall))));
-  grid-row-gap: calc(calc(var(--_spacing---space--12) * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(calc(var(--_spacing---space--13)  - .5rem) * max(var(--_responsive---small), var(--_responsive---xsmall))));
+  grid-column-gap: var(--_spacing---space--12);
+  grid-row-gap: var(--_spacing---space--12);
   flex-flow: column;
   display: flex;
 }
@@ -8263,9 +8261,10 @@ figure {
 
 .guide_slider_link {
   text-underline-offset: .4375em;
-  margin-top: -.75rem;
   margin-left: -.75rem;
   margin-right: -.75rem;
+  margin-bottom: calc(-.375rem * var(--_responsive---large));
+  flex: none;
   padding: .75rem;
   text-decoration: underline;
   position: relative;
