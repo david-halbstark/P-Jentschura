@@ -1,354 +1,352 @@
 <div class="u-embed-css w-embed">
-  <style>
-    .newsletter_bot_paragraph a {
-      font-weight: var(--_typography---font--primary-semibold);
-    }
-      .newsletter_bot_paragraph .u-text a {
-        font-weight: var(--_typography---font--primary-semibold);
-        text-decoration: underline;
-      }
-  </style>
-</div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div class="newsletter_background">
-  {% render 'image',
-    width_mobile: 1200,
-    image: section.settings.image,
-    loading: 'lazy',
-    image_mobile: section.settings.image_mobile,
-    width: 2000,
-    breakpoint: '41.9375em',
-    object_fit: 'cover'
-  %}
-</div>
-<div
-  class="newsletter_contain u-container"
-  {% if section.settings.section_id != blank %}
-    id="{{ section.settings.section_id | handleize }}"
-  {% endif %}
->
-  <div class="newsletter_layout">
-    <div class="newsletter_form_block w-form">
-      <form
-        id="email-form"
-        name="email-form"
-        data-name="Email Form"
-        method="get"
-        class="newsletter_form"
-        data-wf-page-id="6a28298c06ea8567096aa065"
-        data-wf-element-id="df392e1f-adb4-56c5-1565-3028b85261b3"
-      >
-        <div class="newsletter_top">
-          {% render 'eyebrow',
-            custom_class: 'u-margin-bottom-0',
-            eyebrow: section.settings.eyebrow,
-            variant: 'u-text-eyebrow-base'
-          %}
-          {% render 'heading',
-            custom_class: 'u-margin-bottom-0 u-min-width-auto',
-            heading: section.settings.heading,
-            tag: section.settings.heading_tag,
-            variant: 'u-text-h2-primary',
-            max_width: section.settings.heading_max_width,
-            tidy_text: section.settings.heading_tidy_text
-          %}
+          <style>
+.newsletter_bot_paragraph a {
+  font-weight: var(--_typography---font--primary-semibold);
+}
+  .newsletter_bot_paragraph .u-text a {
+    font-weight: var(--_typography---font--primary-semibold);
+    text-decoration: underline;
+  }
+</style>
         </div>
-        <div class="newsletter_bot">
-          <div class="newsletter_bot_inner">
-            <label class="newsletter_label_wrap"
-              ><span for="newsletter-email" class="newsletter_label u-sr-only"></span
-              ><input
-                id="newsletter-email"
-                name="email"
-                type="email"
-                autocomplete="email"
-                placeholder=""
-                class="newsletter_input"
-            ></label>
-            <div class="newsletter_button_wrap u-button-wrapper">
-              {% render 'button', url: 'https://www.google.com', padding: 'base', label: section.settings.button_1_label, trigger: 'hover focus', custom_attribute_value: , custom_attribute_name: , mode: 'link', color: 'red', variant: 'solid' %}
+        <div class="u-display-none">
+          
+          
+        </div>
+        
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+          
+          
+          
+          
+        </div>
+        <div class="newsletter_background">
+          {% render 'image', width_mobile: 1200, image: section.settings.image, loading: 'lazy', image_mobile: section.settings.image_mobile, width: 2000, breakpoint: '41.9375em', object_fit: 'cover' %}
+        </div>
+        <div class="newsletter_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
+          <div class="newsletter_layout">
+            <div class="newsletter_form_block w-form">
+              <form id="email-form" name="email-form" data-name="Email Form" method="get" class="newsletter_form" data-wf-page-id="6a28298c06ea8567096aa065" data-wf-element-id="df392e1f-adb4-56c5-1565-3028b85261b3">
+                <div class="newsletter_top u-margin-trim">
+                  {% render 'eyebrow', variant: 'u-text-eyebrow-base', eyebrow: section.settings.eyebrow %}
+                  {% render 'heading', custom_class: 'u-margin-bottom-0 u-min-width-auto', heading: section.settings.heading, tag: section.settings.heading_tag, variant: 'u-text-h2-primary', max_width: section.settings.heading_max_width, tidy_text: section.settings.heading_tidy_text %}
+                </div>
+                <div class="newsletter_bot">
+                  <div class="newsletter_bot_inner u-box-shadow"><label class="newsletter_label_wrap"><span for="newsletter-email" class="newsletter_label u-sr-only"></span><input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="{{ settings.newsletter_form_placeholder }}" method="post" action="{{ settings.newsletter_form_action }}" class="newsletter_input"></label>
+                    <div class="newsletter_button_wrap u-button-wrapper">
+                      {% render 'button', action: section.settings.button_1_action, padding: 'base', text_size: 'u-text-link-large', label: section.settings.button_1_label, trigger: 'hover focus', custom_attribute_value: , custom_attribute_name: , mode: 'solid', color: 'red', variant: 'base' %}
+                      
+                    </div>
+                  </div>
+                  <div class="newsletter_bot_paragraph">
+                    {% render 'paragraph', tidy_text: section.settings.paragraph_tidy_text, custom_class: 'u-margin-bottom-0', paragraph: section.settings.paragraph, variant: 'u-text-body-small', max_width: section.settings.paragraph_max_width %}
+                  </div>
+                </div>
+              </form>
+              <div class="w-form-done">
+                <div>Thank you! Your submission has been received!</div>
+              </div>
+              <div class="w-form-fail">
+                <div>Oops! Something went wrong while submitting the form.</div>
+              </div>
             </div>
           </div>
-          <div class="newsletter_bot_paragraph">
-            {% render 'paragraph',
-              tidy_text: section.settings.paragraph_tidy_text,
-              custom_class: 'u-margin-bottom-0',
-              paragraph: section.settings.paragraph,
-              variant: 'u-text-body-small',
-              max_width: section.settings.paragraph_max_width
-            %}
-          </div>
-        </div>
-      </form>
-      <div class="w-form-done">
-        <div>Thank you! Your submission has been received!</div>
-      </div>
-      <div class="w-form-fail">
-        <div>Oops! Something went wrong while submitting the form.</div>
-      </div>
-    </div>
-  </div>
-</div>
-{% schema %}
-{
-  "tag": "section",
-  "name": "Newsletter",
-  "class": "newsletter_wrap u-section",
-  "settings": [
-    {
-      "type": "header",
-      "content": "Sektion"
-    },
-    {
-      "type": "text",
-      "id": "section_id",
-      "label": "ID"
-    },
-    {
-      "type": "header",
-      "content": "\u00dcbertitel"
-    },
-    {
-      "type": "text",
-      "id": "eyebrow",
-      "label": "Text",
-      "default": "\u00dcbertitel Text"
-    },
-    {
-      "type": "select",
-      "id": "eyebrow_tag",
-      "label": "HTML-Tag",
-      "options": [
+        </div> {% schema %} {
+    "tag": "section",
+    "name": "Newsletter",
+    "class": "newsletter_wrap u-section",
+    "settings": [
         {
-          "value": "h1",
-          "label": "H1"
+            "type": "header",
+            "content": "Sektion"
         },
         {
-          "value": "h2",
-          "label": "H2"
+            "type": "text",
+            "id": "section_id",
+            "label": "ID"
         },
         {
-          "value": "h3",
-          "label": "H3"
+            "type": "select",
+            "id": "variant",
+            "label": "Variante",
+            "options": [
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                }
+            ],
+            "default": "small"
         },
         {
-          "value": "h4",
-          "label": "H4"
+            "type": "header",
+            "content": "\u00dcbertitel"
         },
         {
-          "value": "h5",
-          "label": "H5"
+            "type": "text",
+            "id": "eyebrow",
+            "label": "Text",
+            "default": "\u00dcbertitel Text"
         },
         {
-          "value": "h6",
-          "label": "H6"
+            "type": "select",
+            "id": "eyebrow_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "p"
         },
         {
-          "value": "p",
-          "label": "P"
+            "type": "header",
+            "content": "\u00dcberschrift"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "heading",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+            "type": "select",
+            "id": "heading_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "number",
+            "id": "heading_max_width",
+            "label": "Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 20
+        },
+        {
+            "type": "checkbox",
+            "id": "heading_tidy_text",
+            "label": "Ausgewogener Zeilenumbruch",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Text"
+        },
+        {
+            "type": "richtext",
+            "id": "paragraph",
+            "label": "Text",
+            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
+        },
+        {
+            "type": "number",
+            "id": "paragraph_max_width",
+            "label": "Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 60
+        },
+        {
+            "type": "checkbox",
+            "id": "paragraph_tidy_text",
+            "label": "Ausgewogener Zeilenumbruch",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Button"
+        },
+        {
+            "type": "text",
+            "id": "button_1_label",
+            "label": "Text",
+            "default": "Text"
+        },
+        {
+            "type": "select",
+            "id": "button_1_action",
+            "label": "Aktion",
+            "options": [
+                {
+                    "value": "newsletter_modal",
+                    "label": "Newsletter-Modal \u00f6ffnen"
+                },
+                {
+                    "value": "contact_modal",
+                    "label": "Kontaktformular-Modal \u00f6ffnen"
+                }
+            ],
+            "default": "newsletter_modal",
+            "visible_if": "{{ section.settings.button_1_mode == 'action' }}"
+        },
+        {
+            "type": "header",
+            "content": "Bild"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Bild"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "Bild mobil"
+        },
+        {
+            "type": "select",
+            "id": "image_object_fit",
+            "label": "Bild-Anpassung",
+            "options": [
+                {
+                    "value": "cover",
+                    "label": "Cover"
+                },
+                {
+                    "value": "contain",
+                    "label": "Contain"
+                }
+            ],
+            "default": "cover"
+        },
+        {
+            "type": "number",
+            "id": "image_width",
+            "label": "Bildbreite",
+            "default": 2000
+        },
+        {
+            "type": "number",
+            "id": "image_width_mobile",
+            "label": "Bildbreite Mobil",
+            "default": 900
+        },
+        {
+            "type": "select",
+            "id": "image_loading",
+            "label": "Ladeverhalten",
+            "options": [
+                {
+                    "value": "lazy",
+                    "label": "Lazy"
+                },
+                {
+                    "value": "eager",
+                    "label": "Eager"
+                }
+            ],
+            "default": "lazy"
+        },
+        {
+            "type": "select",
+            "id": "image_fetchpriority",
+            "label": "Fetch Priority",
+            "options": [
+                {
+                    "value": "auto",
+                    "label": "Automatisch"
+                },
+                {
+                    "value": "high",
+                    "label": "Hoch"
+                },
+                {
+                    "value": "low",
+                    "label": "Niedrig"
+                }
+            ],
+            "default": "auto"
         }
-      ],
-      "default": "p"
-    },
-    {
-      "type": "header",
-      "content": "\u00dcberschrift"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "heading",
-      "label": "Text",
-      "default": "Lorem ipsum dolor sit amet elit"
-    },
-    {
-      "type": "select",
-      "id": "heading_tag",
-      "label": "HTML-Tag",
-      "options": [
+    ],
+    "presets": [
         {
-          "value": "h1",
-          "label": "H1"
-        },
-        {
-          "value": "h2",
-          "label": "H2"
-        },
-        {
-          "value": "h3",
-          "label": "H3"
-        },
-        {
-          "value": "h4",
-          "label": "H4"
-        },
-        {
-          "value": "h5",
-          "label": "H5"
-        },
-        {
-          "value": "h6",
-          "label": "H6"
-        },
-        {
-          "value": "p",
-          "label": "P"
+            "name": "Newsletter",
+            "category": "Liquify",
+            "blocks": []
         }
-      ],
-      "default": "h2"
-    },
-    {
-      "type": "number",
-      "id": "heading_max_width",
-      "label": "Maximale Breite",
-      "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-      "default": 20
-    },
-    {
-      "type": "checkbox",
-      "id": "heading_tidy_text",
-      "label": "Ausgewogener Zeilenumbruch",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Text"
-    },
-    {
-      "type": "richtext",
-      "id": "paragraph",
-      "label": "Text",
-      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
-    },
-    {
-      "type": "number",
-      "id": "paragraph_max_width",
-      "label": "Maximale Breite",
-      "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-      "default": 60
-    },
-    {
-      "type": "checkbox",
-      "id": "paragraph_tidy_text",
-      "label": "Ausgewogener Zeilenumbruch",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Button"
-    },
-    {
-      "type": "text",
-      "id": "button_1_label",
-      "label": "Text",
-      "default": "Text"
-    },
-    {
-      "type": "select",
-      "id": "button_1_action",
-      "label": "Aktion",
-      "options": [
-        {
-          "value": "newsletter_modal",
-          "label": "Newsletter-Modal \u00f6ffnen"
-        },
-        {
-          "value": "contact_modal",
-          "label": "Kontaktformular-Modal \u00f6ffnen"
-        }
-      ],
-      "default": "newsletter_modal",
-      "visible_if": "{{ section.settings.button_1_mode == 'action' }}"
-    },
-    {
-      "type": "header",
-      "content": "Bild"
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Bild"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_mobile",
-      "label": "Bild mobil"
-    },
-    {
-      "type": "select",
-      "id": "image_object_fit",
-      "label": "Bild-Anpassung",
-      "options": [
-        {
-          "value": "cover",
-          "label": "Cover"
-        },
-        {
-          "value": "contain",
-          "label": "Contain"
-        }
-      ],
-      "default": "cover"
-    },
-    {
-      "type": "number",
-      "id": "image_width",
-      "label": "Bildbreite",
-      "default": 2000
-    },
-    {
-      "type": "number",
-      "id": "image_width_mobile",
-      "label": "Bildbreite Mobil",
-      "default": 900
-    },
-    {
-      "type": "select",
-      "id": "image_loading",
-      "label": "Ladeverhalten",
-      "options": [
-        {
-          "value": "lazy",
-          "label": "Lazy"
-        },
-        {
-          "value": "eager",
-          "label": "Eager"
-        }
-      ],
-      "default": "lazy"
-    },
-    {
-      "type": "select",
-      "id": "image_fetchpriority",
-      "label": "Fetch Priority",
-      "options": [
-        {
-          "value": "auto",
-          "label": "Automatisch"
-        },
-        {
-          "value": "high",
-          "label": "Hoch"
-        },
-        {
-          "value": "low",
-          "label": "Niedrig"
-        }
-      ],
-      "default": "auto"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Newsletter",
-      "category": "Liquify",
-      "blocks": []
-    }
-  ]
-}
-{% endschema %}
+    ]
+} {% endschema %}

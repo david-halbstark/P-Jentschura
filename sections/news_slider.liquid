@@ -60,24 +60,30 @@
                 <div style="--lg: 3; --md: 2; --sm: 1.5; --xs: 1;" class="news_slider_slider_offset slider_offset">
                   <div class="news_slider_slider_element swiper">
                     <div class="news_slider_slider_list swiper-wrapper">
-                      <div class="news_slider_slider_slide swiper-slide">
-                        <div class="news_slider_card_wrap">
+                      {% assign articles = blogs.news.articles | sort: 'metafields.custom.date.value' %}
+                      {% for article in articles limit: 9 %}    <div li-for="article in articles limit: 9" class="news_slider_slider_slide swiper-slide">
+                                    
+                        
+                            <div class="news_slider_card_wrap">
                           <div class="news_slider_card_element">
                             <div class="news_slider_card_top">
-                              {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                              {% render 'image', width: 800, image: article.image, image_mobile: section.settings.image_mobile, object_fit: 'cover' %}
                               <div class="news_slider_card_tag">
-                                {% render 'tag', custom_class: , tag: section.settings.tag, variant: section.settings.tag_variant, solid_text_size: section.settings.tag_solid_text_size, solid_color: section.settings.tag_solid_color, pill_text_size: section.settings.tag_pill_text_size %}
+                                {% render 'tag', solid_color: 'red', tag: article.tags.first, variant: 'solid', solid_text_size: 'u-text-eyebrow-small' %}
                               </div>
                             </div>
-                            <div class="news_slider_card_bot">
-                              {% render 'typography', variant: 'u-text-body-small', text: news.date.value, tag: 'div' %}
-                              {% render 'heading', variant: 'u-text-h3-primary', heading: news.title.value, tag: 'h3' %}
-                              {% render 'paragraph', variant: 'u-text-body-base', paragraph: news.text.value %}
+                            <div class="news_slider_card_bot u-margin-trim">
+                              {% render 'typography', custom_class: 'u-color-3 u-margin-bottom-6', text: article.metafields.custom.date.value | date: '%d.%m.%Y', tag: 'div', variant: 'u-text-body-small' %}
+                              {% render 'heading', custom_class: 'u-margin-bottom-7', heading: article.title, tag: 'h3', variant: 'u-text-h3-primary' %}
+                              {% render 'paragraph', variant: 'u-text-body-base u-color-3', custom_class: u-color-3, paragraph: news.text.value %}
                             </div>
                           </div>
-                          {% render 'clickable', url: news.system.url, label: news.title.value, mode: 'link' %}
+                          {% render 'clickable', url: article.url, label: article.title, mode: 'link' %}
                         </div>
-                      </div>
+                            
+                      
+                        </div>
+{% endfor %}
                       
                       
                       
