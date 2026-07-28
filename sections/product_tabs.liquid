@@ -78,36 +78,32 @@
                 {% render 'eyebrow', wrapper_class: 'is-eyebrow-base', eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-base', custom_class: 'u-color-3' %}
                 {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: 'u-margin-bottom-0', variant: 'u-text-h2-primary', max_width: section.settings.heading_max_width %}
               </div>
-              <div class="product_tabs_top_right">
-                <div class="product_tabs_tabs">
-                  <div class="product_tabs_tabs_inner">{% for block in section.blocks %}
+              <div class="product_tabs_top_right">{% for block in section.blocks %}
     {% if block.type == "tab-panel" %}
                     <button li-block="Tab + Panel" data-trigger="hover focus" class="product_tabs_tab">
                                     
-                      
+                  
                                     <div class="u-display-none">
-                        
-                        
-                      </div>
+                    
+                    
+                  </div>
                                     
-                      
-                                    
-                                    
-                      
+                  
                                     
                                     
-                      
+                  
                                     
                                     
-                      
+                  
+                                    
+                                    
+                  
                                     {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: block.settings.tab_text, tag: 'span', variant: 'u-text-link-base' %}
                                     
-                    
+                
                             </button>
             {% endif %}
 {% endfor %}</div>
-                </div>
-              </div>
             </div>
             <div class="product_tabs_bot">
               {% for block in section.blocks %}    <div li-for="block in section.blocks" class="product_tabs_panel">
