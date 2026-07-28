@@ -21,7 +21,7 @@
         <div class="text_marquee_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
           
           <div data-section-spacing="" class="text_marquee_layout">
-            <div class="text_marquee_track">
+            <div class="text_marquee_track u-pointer-off">
               {% for repeat in (1..4) %}    <div li-for="repeat in (1..4)" class="text_marquee_group">
                                     
                 

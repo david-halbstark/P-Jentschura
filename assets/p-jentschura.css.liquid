@@ -7115,9 +7115,9 @@ figure {
 }
 
 .product_slider_top {
+  grid-column-gap: var(--_spacing---space--11);
   flex-flow: wrap;
   flex-flow: var(--column-medium, row) var(--nowrap-medium, wrap);
-  grid-column-gap: calc(calc(var(--_spacing---space--9) * var(--_responsive---large))  + calc(var(--_spacing---space--7) * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
   grid-row-gap: calc(calc(var(--_spacing---space--9) * var(--_responsive---large))  + calc(var(--_spacing---space--7) * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
   justify-content: space-between;
   align-items: stretch;
@@ -7983,6 +7983,7 @@ figure {
   text-underline-offset: .4375em;
   margin-left: -.75rem;
   margin-right: -.75rem;
+  margin-bottom: calc(-.375rem * var(--_responsive---large));
   padding: .75rem;
   text-decoration: underline;
   position: relative;
@@ -8142,7 +8143,7 @@ figure {
 }
 
 .product_tabs_top {
-  grid-column-gap: calc(calc(var(--_spacing---space--9) * var(--_responsive---large))  + calc(var(--_spacing---space--7) * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
+  grid-column-gap: var(--_spacing---space--11);
   grid-row-gap: calc(calc(var(--_spacing---space--9) * var(--_responsive---large))  + calc(var(--_spacing---space--7) * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
   flex-flow: wrap;
   flex-flow: var(--column-medium, row) var(--nowrap-medium, wrap);
@@ -8172,6 +8173,10 @@ figure {
   width: var(--auto-large, calc(100vw * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall))));
   overflow-y: var(--auto-medium, visible);
   scrollbar-width: thin;
+  padding-top: calc(.5rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall)));
+  padding-bottom: calc(.5rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall)));
+  margin-top: calc(-.5rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall)));
+  margin-bottom: calc(-.5rem * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall)));
   display: flex;
   position: relative;
 }
@@ -8188,6 +8193,7 @@ figure {
   text-decoration: underline;
   -webkit-text-decoration-color: color-mix(in srgb, var(--swatch--transparent), currentColor calc(var(--mix-state) * 100%));
   text-decoration-color: color-mix(in srgb, var(--swatch--transparent), currentColor calc(var(--mix-state) * 100%));
+  margin-bottom: calc(-.375rem * var(--_responsive---large));
   flex: none;
   padding: .75rem;
   transition-property: color;
