@@ -1,21 +1,15 @@
 <div class="u-embed-css w-embed">P
           <style>
   @container (width < 53em) {
-    .review_slider_layout[data-section-spacing] {
-      padding-top: 0rem !important;
-    }
     .review_card_element {
       box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 60px 0px;
     }
   }
   .review_slider_slider_wrap {
-    --_gap---size: calc(
-      calc(var(--_spacing---space--5) * max(var(--_responsive---large), var(--_responsive---medium))) +
-        calc(var(--_spacing---space--3) * max(var(--_responsive---small), var(--_responsive---xsmall)))
-    );
+    --_gap---size: calc(calc(var(--_spacing---space--5) * max(var(--_responsive---large), var(--_responsive---medium))) + calc(var(--_spacing---space--3) * max(var(--_responsive---small), var(--_responsive---xsmall))));
   }
   .review_slider_first_card_top::before {
-    content: "";
+    content: '';
     width: 50%;
     height: 100%;
     position: absolute;
@@ -28,7 +22,6 @@
   }
 </style>
         </div>
-        
         <div class="u-display-none">
           
           
@@ -55,6 +48,7 @@
         <div class="u-display-none">
           
           
+          
         </div>
         
         <div class="review_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
@@ -71,7 +65,7 @@
                 <div class="review_slider_first_card_wrap">
                   <div class="review_slider_first_card_element">
                     <div class="review_slider_first_card_top">
-                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: first_card_eyebrow, tag: first_card_eyebrow_tag, variant: 'u-text-h3-secondary' %}
+                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: section.settings.first_card_eyebrow, tag: first_card_eyebrow_tag, variant: 'u-text-h3-secondary' %}
                     </div>
                     <div class="review_slider_first_card_bot">
                       <div class="review_slider_first_card_stars">
@@ -277,6 +271,20 @@
         },
         {
             "type": "header",
+            "content": "Bild"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Bild"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "Bild mobil"
+        },
+        {
+            "type": "header",
             "content": "\u00dcberschrift"
         },
         {
@@ -320,15 +328,6 @@
                 }
             ],
             "default": "h2"
-        },
-        {
-            "type": "header",
-            "content": "Bild"
-        },
-        {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Bild"
         },
         {
             "type": "header",

@@ -77,7 +77,7 @@
         </div>
         <div class="testimonial_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
           
-          <div class="testimonial_slider_layout">
+          <div data-section-spacing="" class="testimonial_slider_layout">
             <div class="testimonial_slider_top">
               <div class="testimonial_slider_top_left u-margin-trim">
                 {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-base', custom_class: 'u-color-3', wrapper_class: is-eyebrow-bass %}
@@ -98,8 +98,12 @@
                       <div class="testimonial_slider_slider_slide swiper-slide">
                         {% render 'testimonial_card', description: testimonial.description, eyebrow: testimonial.eyebrow.value, rating: testimonial.rating.value, title: testimonial.title %}
                       </div>
-                      
-                      
+                      <div class="testimonial_slider_slider_slide swiper-slide">
+                        {% render 'testimonial_card', description: testimonial.description, eyebrow: testimonial.eyebrow.value, rating: testimonial.rating.value, title: testimonial.title %}
+                      </div>
+                      <div class="testimonial_slider_slider_slide swiper-slide">
+                        {% render 'testimonial_card', description: testimonial.description, eyebrow: testimonial.eyebrow.value, rating: testimonial.rating.value, title: testimonial.title %}
+                      </div>
                       
                     </div>
                   </div>
