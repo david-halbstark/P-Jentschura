@@ -361,13 +361,13 @@
         "card_text_max_width": 60
       }
     },
-    "news_slider_qEftGM": {
+    "news_slider_8Uyh3Q": {
       "type": "news_slider",
       "name": "News Slider",
       "settings": {
         "section_id": "",
-        "spacing_top": "main",
-        "spacing_bottom": "main",
+        "spacing_top": "large",
+        "spacing_bottom": "large",
         "eyebrow": "Übertitel Text",
         "eyebrow_tag": "p",
         "heading": "Lorem ipsum dolor sit amet elit",
@@ -446,7 +446,7 @@
     "review_slider_b9FWPH",
     "testimonial_slider_QcxrrE",
     "image_links_rpLJbm",
-    "news_slider_qEftGM",
+    "news_slider_8Uyh3Q",
     "social_media_fbp9cW",
     "seo_content_tQVFAg",
     "newsletter_VKqj4Y",
