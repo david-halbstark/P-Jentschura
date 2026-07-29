@@ -1,766 +1,471 @@
-{% assign show_recipes_section = true -%}
-{%- if request.page_type == 'collection' -%}
-  {%- unless collection.metafields.custom.show_recipes.value %}{% assign show_recipes_section = false %}{% endunless -%}
-{%- endif %}
-<div class="u-embed-css w-embed">
-  <style>
-    .recipe_slider_card_button_inner .u-button-wrapper {
-      margin-top: 0rem;
+{% assign show_recipes_section = true %}{% if request.page_type == 'collection' %}{% unless collection.metafields.custom.show_recipes.value %}{% assign show_recipes_section = false %}{% endunless %}{% endif %}
+        <div class="u-embed-css w-embed">
+          <style>
+  @container (width < 53em) {
+    .recipe_slider_slider_element {
+      clip-path: none;
     }
-    .recipe_slider_card_button_wrap {
-      transition: grid-template-rows 0.2s ease;
+    .recipe_card_element {
+      box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 60px 0px;
     }
-    @media (hover: hover) {
-      .recipe_slider_card_wrap:hover .recipe_slider_card_image {
-        aspect-ratio: 4.56 / 2.44;
-      }
-      .recipe_slider_card_wrap:hover .recipe_slider_card_button_wrap {
-        grid-template-rows: 1fr;
-      }
-    }
-    .recipe_slider_card_meta .u-display-contents:not(:last-child)) > span::after {
-      content: '\00a0\2022';
-      display: inline;
-      color: var(--_theme---text-4);
-    }
-  </style>
-</div>
-<div class="u-display-none"></div>
-<div class="u-display-none">
-  {% case section.settings.spacing_top -%}
-    {%- when 'xxsmall' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--xxsmall)' -%}
-    {%- when 'xsmall' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--xsmall)' -%}
-    {%- when 'small' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--small)' -%}
-    {%- when 'medium' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--medium)' -%}
-    {%- when 'large' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--large)' -%}
-    {%- when 'large_medium_off' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' -%}
-    {%- when 'page_top' -%}
-      {%- assign spacing_top = 'var(--_spacing---section-space--page-top)' -%}
-    {%- else -%}
-      {%- assign spacing_top = '0' -%}
-  {%- endcase -%}
-  {%- case section.settings.spacing_bottom -%}
-    {%- when 'xxsmall' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' -%}
-    {%- when 'xsmall' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' -%}
-    {%- when 'small' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--small)' -%}
-    {%- when 'medium' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--medium)' -%}
-    {%- when 'large' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--large)' -%}
-    {%- when 'page_top' -%}
-      {%- assign spacing_bottom = 'var(--_spacing---section-space--page-top)' -%}
-    {%- else -%}
-      {%- assign spacing_bottom = '0' -%}
-  {%- endcase %}
-  <div class="u-embed-css w-embed">
-    <style>
-      #shopify-section-{{ section.id }} [data-section-spacing] {
-        --section-spacing-top: {{ spacing_top }};
-        --section-spacing-bottom: {{ spacing_bottom }};
-      }
-    </style>
-  </div>
-</div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-<div class="u-display-none"></div>
-
-<style>
-  .recipe_slider_card_button_inner .u-button-wrapper {
+  }
+  .recipe_card_button_inner .u-button-wrapper {
     margin-top: 0rem;
   }
-
-  .recipe_slider_card_button_wrap {
+  .recipe_card_button_wrap {
     transition: grid-template-rows 0.2s ease;
   }
-
+  @media (prefers-reduced-motion: reduce) {
+    .recipe_card_button_wrap,
+    .recipe_card_image {
+      transition: none;
+    }
+  }
   @media (hover: hover) {
-    .recipe_slider_card_wrap:hover .recipe_slider_card_image {
+    .recipe_card_wrap:hover .recipe_card_image {
       aspect-ratio: 4.56 / 2.44;
     }
-
-    .recipe_slider_card_wrap:hover .recipe_slider_card_button_wrap {
+    .recipe_card_wrap:hover .recipe_card_button_wrap {
       grid-template-rows: 1fr;
     }
   }
-
-  .recipe_slider_card_wrap:has(:focus-visible) .recipe_slider_card_button_wrap {
+  .recipe_card_wrap:has(:focus-visible) .recipe_card_button_wrap {
     grid-template-rows: 1fr;
   }
-
-  .recipe_slider_card_wrap:has(:focus-visible) .recipe_slider_card_image {
+  .recipe_card_wrap:has(:focus-visible) .recipe_card_button_element {
+    overflow: visible;
+  }
+  .recipe_card_wrap:has(:focus-visible) .recipe_card_image {
     aspect-ratio: 4.56 / 2.44;
   }
-
-  .recipe_slider_card_wrap:has(:focus-visible)
-    :is(.recipe_slider_card_button_wrap, .recipe_slider_card_image) {
+  .recipe_card_wrap:has(:focus-visible)
+    :is(.recipe_card_button_wrap, .recipe_card_image) {
     transition: none;
   }
-
   @media (hover: none) {
-    .recipe_slider_card_wrap:hover .recipe_slider_card_button_wrap {
+    .recipe_card_wrap:hover .recipe_card_button_wrap {
       grid-template-rows: 1fr;
     }
-
-    .recipe_slider_card_wrap .recipe_slider_card_image {
+    .recipe_card_wrap .recipe_card_image {
       aspect-ratio: 4.56 / 2.44;
     }
   }
-
-  .recipe_slider_card_info span {
+  .recipe_card_info span {
     display: inline;
   }
-
-  .recipe_slider_card_info span::before,
-  .recipe_slider_card_info span::after {
+  .recipe_card_info span::before,
+  .recipe_card_info span::after {
     content: none !important;
   }
-
-  .recipe_slider_card_info .u-display-contents:not(:last-child) > span::after {
+  .recipe_card_info .u-display-contents:not(:last-child) > span::after {
     content: "\00a0\2022" !important;
     display: inline;
     color: var(--_theme---text-4);
   }
 </style>
-
-{% if show_recipes_section %}
-  <div li-if="show_recipes_section" class="recipe_slider_inner">
-    <div
-      class="recipe_slider_contain u-container"
-      {% if section.settings.section_id != blank %}
-        id="{{ section.settings.section_id | handleize }}"
-      {% endif %}
-    >
-      <div data-section-spacing="" class="recipe_slider_layout">
-        <div class="recipe_slider_left">
-          <div class="recipe_slider_left_top">
-            {% render 'eyebrow',
-              tag: section.settings.eyebrow_tag,
-              eyebrow: section.settings.eyebrow,
-              variant: 'u-text-eyebrow-base',
-              wrapper_class: 'is-eyebrow-base u-color-3'
-            %}
-            {% render 'heading',
-              tidy_text: section.settings.heading_tidy_text,
-              heading: section.settings.heading,
-              tag: section.settings.heading_tag,
-              variant: 'u-text-h2-primary',
-              max_width: section.settings.heading_max_width
-            %}
-            {% render 'paragraph',
-              tidy_text: section.settings.paragraph_tidy_text,
-              custom_class: 'u-color-3',
-              paragraph: section.settings.paragraph,
-              variant: 'u-text-body-base',
-              max_width: section.settings.paragraph_max_width
-            %}
-            {% render 'button_group',
-              button_1_solid_color: 'red',
-              button_1_url: section.settings.button_1_url,
-              button_1_label: section.settings.button_1_label,
-              button_1_trigger: 'hover focus',
-              button_1_solid_padding: 'base',
-              button_1_solid_text_size: 'u-text-link-large',
-              button_1_mode: 'link',
-              button_1_variant: 'solid'
-            %}
-          </div>
-          <div class="recipe_slider_left_bot">
-            <div class="slider_controls">
-              <div class="slider_bullet_list">
-                <div class="slider_bullet_item is-active"></div>
-                <div class="slider_bullet_item"></div>
-              </div>
-              <div class="slider_button_layout">
-                <button
-                  data-wf--slider-button--variant="prev"
-                  data-trigger="hover focus"
-                  class="slider_button_wrap is-prev"
-                >
-                  <div class="slider_button_element">
-                    <div class="slider_button_icon">
-                      {% render 'icon', aria-hidden: true, icon: 'arrow_left' %}
-                    </div>
-                  </div></button
-                ><button
-                  data-wf--slider-button--variant="next"
-                  data-trigger="hover focus"
-                  class="slider_button_wrap is-next"
-                >
-                  <div class="slider_button_element">
-                    <div class="slider_button_icon">
-                      {% render 'icon', aria-hidden: true, icon: 'arrow_right' %}
-                    </div>
-                  </div>
-                </button>
-              </div>
-            </div>
+        </div>
+        <div class="u-display-none">
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          {% case section.settings.spacing_top %}{% when 'xxsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_top = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_top = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_top = 'var(--_spacing---section-space--large)' %}{% when 'large_medium_off' %}{% assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' %}{% when 'page_top' %}{% assign spacing_top = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_top = '0' %}{% endcase %}{% case section.settings.spacing_bottom %}{% when 'xxsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_bottom = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_bottom = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_bottom = 'var(--_spacing---section-space--large)' %}{% when 'page_top' %}{% assign spacing_bottom = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_bottom = '0' %}{% endcase %}
+          <div class="u-embed-css w-embed">
+            <style>
+  #shopify-section-{{ section.id }} [data-section-spacing] {
+    --section-spacing-top: {{ spacing_top }};
+    --section-spacing-bottom: {{ spacing_bottom }};
+  }
+</style>
           </div>
         </div>
-        <div class="recipe_slider_right">
-          {% assign sorted_recipes = metaobjects.recipe.values | sort: 'date' | reverse %}
-          <div class="recipe_slider_slider_wrap slider_wrap">
-            <div
-              style="--lg: 1.3; --md: 1.6; --sm: 1.15; --xs: 1.15;"
-              class="recipe_slider_slider_offset slider_offset"
-            >
-              <div class="recipe_slider_slider_element swiper">
-                <div li-for:inside="recipe in sorted_recipes" class="recipe_slider_slider_list swiper-wrapper">
-                  {% for recipe in sorted_recipes %}
-                    <div class="recipe_slider_slider_slide swiper-slide">
-                      <div class="recipe_slider_card_wrap">
-                        <div data-clickable-card="" class="recipe_slider_card_element">
-                          <div class="recipe_slider_card_top">
-                            <div class="recipe_slider_card_image">
-                              {% render 'image',
-                                loading: 'lazy',
-                                image: recipe.image.value,
-                                object_fit: 'cover',
-                                width: 900
-                              %}
-                            </div>
-                            <div id="w-node-e7a88a7b-3dd3-d2f5-b376-1e4232ed5c52-d1e74837" class="recipe_slider_tag">
-                              {% render 'tag',
-                                solid_color: 'green',
-                                tag: recipe.metafields.custom.tag.value.title.value,
-                                variant: 'solid',
-                                solid_text_size: 'u-text-eyebrow-small'
-                              %}
-                            </div>
-                          </div>
-                          <div class="recipe_slider_card_bot">
-                            <div class="recipe_slider_card_bot_top">
-                              <div class="recipe_slider_card_text u-margin-trim u-alignment-center">
-                                {% render 'heading',
-                                  variant: 'u-text-h4-primary',
-                                  heading: recipe.title.value,
-                                  tag: 'h3'
-                                %}
-                                {% render 'paragraph',
-                                  variant: 'u-text-body-base',
-                                  custom_class: 'u-margin-bottom-0 u-color-3',
-                                  paragraph: section.settings.paragraph
-                                %}
-                              </div>
-                            </div>
-                            <div class="recipe_slider_card_bot_bot">
-                              <div class="recipe_slider_card_meta">
-                                <div class="u-display-contents">
-                                  {% render 'typography',
-                                    custom_class: 'u-margin-bottom-0 u-min-width-auto',
-                                    text: recipe.difficulty.value,
-                                    tag: 'span',
-                                    variant: 'u-text-body-small'
-                                  %}
-                                </div>
-                                <div class="u-display-contents">
-                                  {% render 'typography',
-                                    custom_class: 'u-margin-bottom-0 u-min-width-auto',
-                                    text: recipe.preperation_time.value,
-                                    tag: 'span',
-                                    variant: 'u-text-body-small'
-                                  %}
-                                </div>
-                                <div class="u-display-contents">
-                                  {% render 'typography',
-                                    custom_class: 'u-margin-bottom-0 u-min-width-auto',
-                                    text: recipe.serving.value,
-                                    tag: 'span',
-                                    variant: 'u-text-body-small'
-                                  %}
-                                </div>
-                              </div>
-                              <div class="recipe_slider_card_button_wrap">
-                                <div class="recipe_slider_card_button_element">
-                                  <div class="recipe_slider_card_button_inner">
-                                    {% render 'button_group', button_1_solid_color: 'red', button_1_url: recipe.system.url, button_1_label: section.settings.cards_button_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: ‘link', button_1_variant: 'solid', button_1_custom_class: 'u-width-full' %}
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        
+        {% if show_recipes_section %}    <div li-if="show_recipes_section" class="recipe_slider_inner">
+    
+          <div class="recipe_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
+            
+            <div data-section-spacing="" class="recipe_slider_layout">
+              <div class="recipe_slider_left">
+                <div class="recipe_slider_left_top">
+                  {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-base', wrapper_class: 'is-eyebrow-base u-color-3' %}
+                  {% render 'heading', tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, tag: section.settings.heading_tag, variant: 'u-text-h2-primary', max_width: section.settings.heading_max_width %}
+                  {% render 'paragraph', tidy_text: section.settings.paragraph_tidy_text, custom_class: 'u-color-3 u-margin-bottom-0', paragraph: section.settings.paragraph, variant: 'u-text-body-large', max_width: section.settings.paragraph_max_width %}
+                  {% render 'button_group', button_1_solid_color: 'red', button_1_url: section.settings.button_1_url, button_1_label: section.settings.button_1_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: 'link', button_1_variant: 'solid' %}
+                </div>
+                <div class="recipe_slider_left_bot">
+                  <div class="slider_controls">
+                    <div class="slider_bullet_list">
+                      <div class="slider_bullet_item is-active"></div>
+                      <div class="slider_bullet_item"></div>
+                    </div>
+                    <div class="slider_button_layout"><button data-wf--slider-button--variant="prev" data-trigger="hover focus" class="slider_button_wrap is-prev">
+                        <div class="slider_button_element">
+                          <div class="slider_button_icon">
+                            {% render 'icon', aria-hidden: true, icon: 'arrow_left' %}
                           </div>
                         </div>
-                      </div>
-                    </div>
-
-                    <div class="recipe_slider_slider_slide swiper-slide">
-                      <div class="recipe_slider_card_wrap">
-                        <div data-clickable-card="" class="recipe_slider_card_element">
-                          <div class="recipe_slider_card_top">
-                            <div class="recipe_slider_card_image">
-                              {% render 'image',
-                                loading: 'lazy',
-                                image: recipe.image.value,
-                                object_fit: 'cover',
-                                width: 900
-                              %}
-                            </div>
-                            <div id="w-node-_6dc50a9a-08f6-6f2d-6ec3-e21f8b4740f3-d1e74837" class="recipe_slider_tag">
-                              {% render 'tag',
-                                solid_color: 'green',
-                                tag: recipe.metafields.custom.tag.value.title.value,
-                                variant: 'solid',
-                                solid_text_size: 'u-text-eyebrow-small'
-                              %}
-                            </div>
-                          </div>
-                          <div class="recipe_slider_card_bot">
-                            <div class="recipe_slider_card_bot_top">
-                              <div class="recipe_slider_card_text u-margin-trim u-alignment-center">
-                                {% render 'heading',
-                                  variant: 'u-text-h4-primary',
-                                  heading: recipe.title.value,
-                                  tag: 'h3'
-                                %}
-                                {% render 'paragraph',
-                                  variant: 'u-text-body-base',
-                                  custom_class: 'u-margin-bottom-0 u-color-3',
-                                  paragraph: section.settings.paragraph
-                                %}
-                              </div>
-                            </div>
-                            <div class="recipe_slider_card_bot_bot">
-                              <div class="recipe_slider_card_meta">
-                                <div class="u-display-contents">
-                                  {% render 'typography',
-                                    custom_class: 'u-margin-bottom-0 u-min-width-auto',
-                                    text: recipe.difficulty.value,
-                                    tag: 'span',
-                                    variant: 'u-text-body-small'
-                                  %}
-                                </div>
-                                <div class="u-display-contents">
-                                  {% render 'typography',
-                                    custom_class: 'u-margin-bottom-0 u-min-width-auto',
-                                    text: recipe.preperation_time.value,
-                                    tag: 'span',
-                                    variant: 'u-text-body-small'
-                                  %}
-                                </div>
-                                <div class="u-display-contents">
-                                  {% render 'typography',
-                                    custom_class: 'u-margin-bottom-0 u-min-width-auto',
-                                    text: recipe.serving.value,
-                                    tag: 'span',
-                                    variant: 'u-text-body-small'
-                                  %}
-                                </div>
-                              </div>
-                              <div class="recipe_slider_card_button_wrap">
-                                <div class="recipe_slider_card_button_element">
-                                  <div class="recipe_slider_card_button_inner">
-                                    {% render 'button_group',
-                                      button_1_solid_color: 'red',
-                                      button_1_url: section.settings.button_1_url,
-                                      button_1_label: 'test',
-                                      button_1_trigger: 'hover focus',
-                                      button_1_solid_padding: 'base',
-                                      button_1_solid_text_size: 'u-text-link-large',
-                                      button_1_mode: 'link',
-                                      button_1_variant: 'solid',
-                                      button_1_custom_class: 'u-width-full'
-                                    %}
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                      </button><button data-wf--slider-button--variant="next" data-trigger="hover focus" class="slider_button_wrap is-next">
+                        <div class="slider_button_element">
+                          <div class="slider_button_icon">
+                            {% render 'icon', aria-hidden: true, icon: 'arrow_right' %}
                           </div>
                         </div>
-                      </div>
-                    </div>
-
-                    <div class="recipe_slider_slider_slide swiper-slide">
-                      <div class="recipe_slider_card_wrap">
-                        <div data-clickable-card="" class="recipe_slider_card_element">
-                          <div class="recipe_slider_card_top">
-                            <div class="recipe_slider_card_image">
-                              {% render 'image',
-                                loading: 'lazy',
-                                image: recipe.image.value,
-                                object_fit: 'cover',
-                                width: 900
-                              %}
-                            </div>
-                            <div id="w-node-c617a83b-ddc9-0060-0808-80e877fef5f1-d1e74837" class="recipe_slider_tag">
-                              {% render 'tag',
-                                solid_color: 'green',
-                                tag: recipe.metafields.custom.tag.value.title.value,
-                                variant: 'solid',
-                                solid_text_size: 'u-text-eyebrow-small'
-                              %}
-                            </div>
-                          </div>
-                          <div class="recipe_slider_card_bot">
-                            <div class="recipe_slider_card_bot_top">
-                              <div class="recipe_slider_card_text u-margin-trim u-alignment-center">
-                                {% render 'heading',
-                                  variant: 'u-text-h4-primary',
-                                  heading: recipe.title.value,
-                                  tag: 'h3'
-                                %}
-                                {% render 'paragraph',
-                                  variant: 'u-text-body-base',
-                                  custom_class: 'u-margin-bottom-0 u-color-3',
-                                  paragraph: section.settings.paragraph
-                                %}
-                              </div>
-                            </div>
-                            <div class="recipe_slider_card_bot_bot">
-                              <div class="recipe_slider_card_meta">
-                                <div class="u-display-contents">
-                                  {% render 'typography',
-                                    custom_class: 'u-margin-bottom-0 u-min-width-auto',
-                                    text: recipe.difficulty.value,
-                                    tag: 'span',
-                                    variant: 'u-text-body-small'
-                                  %}
-                                </div>
-                                <div class="u-display-contents">
-                                  {% render 'typography',
-                                    custom_class: 'u-margin-bottom-0 u-min-width-auto',
-                                    text: recipe.preperation_time.value,
-                                    tag: 'span',
-                                    variant: 'u-text-body-small'
-                                  %}
-                                </div>
-                                <div class="u-display-contents">
-                                  {% render 'typography',
-                                    custom_class: 'u-margin-bottom-0 u-min-width-auto',
-                                    text: recipe.serving.value,
-                                    tag: 'span',
-                                    variant: 'u-text-body-small'
-                                  %}
-                                </div>
-                              </div>
-                              <div class="recipe_slider_card_button_wrap">
-                                <div class="recipe_slider_card_button_element">
-                                  <div class="recipe_slider_card_button_inner">
-                                    {% render 'button_group', button_1_solid_color: 'red', button_1_url: recipe.system.url, button_1_label: section.settings.card_button_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: ‘link', button_1_variant: 'solid', button_1_custom_class: 'u-width-full' %}
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                      </button></div>
+                  </div>
+                </div>
+              </div>
+              <div class="recipe_slider_right">
+                {% assign sorted_recipes = metaobjects.recipe.values | sort: 'date' | reverse %}
+                <div class="recipe_slider_slider_wrap slider_wrap">
+                  <div style="--lg: 1.3; --md: 1.6; --sm: 1.15; --xs: 1.15;" class="recipe_slider_slider_offset slider_offset">
+                    <div class="recipe_slider_slider_element swiper">
+                      <div li-for:inside="recipe in sorted_recipes" class="recipe_slider_slider_list swiper-wrapper">
+        {% for recipe in sorted_recipes %}                            
+                        
+                            <div aria-hidden="true" class="recipe_slider_slider_slide u-sr-only"></div>
+                            
+                        
+                            <div class="recipe_slider_slider_slide swiper-slide">
+                          {% render 'recipe_card', url: recipe.system.url, preparation_time: recipe.preperation_time.value, difficulty: recipe.difficulty.value, title: recipe.title.value, tag: recipe.metafields.custom.tag.value.title.value, image: recipe.image.value, description: recipe.description.value, serving: recipe.serving.value %}
                         </div>
-                      </div>
+                            
+                        
+                            
+                            
+                        
+                            
+                            
+                        
+                            
+                            
+                      
+                    {% endfor %}    </div>
                     </div>
-                  {% endfor %}
+                  </div>
                 </div>
               </div>
             </div>
+            
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="u-embed-js w-embed w-script">
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          document.querySelectorAll('.recipe_slider_layout').forEach((component) => {
-            if (component.dataset.scriptInitialized === 'true') return;
-            const swiperElement = component.querySelector('.recipe_slider_slider_element.swiper');
-            if (!swiperElement || swiperElement.swiper) return;
-            // Navigation und Pagination liegen im Layout-Component
-            const previousButton = component.querySelector('.slider_button_wrap.is-prev');
-            const nextButton = component.querySelector('.slider_button_wrap.is-next');
-            const pagination = component.querySelector('.slider_bullet_list');
-            component.dataset.scriptInitialized = 'true';
-            const swiperOptions = {
-              slidesPerView: 'auto',
-            };
-            // Navigation nur initialisieren, wenn beide Buttons existieren
-            if (previousButton && nextButton) {
-              swiperOptions.navigation = {
-                prevEl: previousButton,
-                nextEl: nextButton,
-                disabledClass: 'is-disabled',
-              };
-            }
-            // Pagination nur initialisieren, wenn das Element existiert
-            if (pagination) {
-              swiperOptions.pagination = {
-                el: pagination,
-                clickable: true,
-                bulletClass: 'slider_bullet_item',
-                bulletActiveClass: 'is-active',
-                renderBullet(index, className) {
-                  return `
+          <div class="u-embed-js w-embed w-script">
+            <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".recipe_slider_layout").forEach((component) => {
+      if (component.dataset.scriptInitialized === "true") return;
+      const swiperElement = component.querySelector(".recipe_slider_slider_element.swiper");
+      if (!swiperElement || swiperElement.swiper) return;
+      const previousButton = component.querySelector(".slider_button_wrap.is-prev");
+      const nextButton = component.querySelector(".slider_button_wrap.is-next");
+      const pagination = component.querySelector(".slider_bullet_list");
+      component.dataset.scriptInitialized = "true";
+      const swiperOptions = {
+        slidesPerView: "auto",
+      };
+      if (previousButton && nextButton) {
+        swiperOptions.navigation = {
+          prevEl: previousButton,
+          nextEl: nextButton,
+          disabledClass: "is-disabled",
+        };
+      }
+      if (pagination) {
+        swiperOptions.pagination = {
+          el: pagination,
+          clickable: true,
+          bulletClass: "slider_bullet_item",
+          bulletActiveClass: "is-active",
+          renderBullet(index, className) {
+            return `
               <button
                 type="button"
                 class="${className}"
                 aria-label="Slide ${index + 1}"
               ></button>
             `;
+          },
+        };
+      }
+      new Swiper(swiperElement, swiperOptions);
+    });
+  });
+</script>
+          </div>
+            </div>
+{% endif %} {% schema %} {
+    "tag": "section",
+    "name": "Recipe Slider",
+    "class": "recipe_slider_wrap u-section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Sektion"
+        },
+        {
+            "type": "text",
+            "id": "section_id",
+            "label": "ID"
+        },
+        {
+            "type": "header",
+            "content": "Abst\u00e4nde"
+        },
+        {
+            "type": "select",
+            "id": "spacing_top",
+            "label": "Oben",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
                 },
-              };
-            }
-            new Swiper(swiperElement, swiperOptions);
-          });
-        });
-      </script>
-    </div>
-  </div>
-{% endif %}
-{% schema %}
-{
-  "tag": "section",
-  "name": "Recipe Slider",
-  "class": "recipe_slider_wrap u-section",
-  "settings": [
-    {
-      "type": "header",
-      "content": "Sektion"
-    },
-    {
-      "type": "text",
-      "id": "section_id",
-      "label": "ID"
-    },
-    {
-      "type": "header",
-      "content": "Abst\u00e4nde"
-    },
-    {
-      "type": "select",
-      "id": "spacing_top",
-      "label": "Oben",
-      "options": [
-        {
-          "value": "none",
-          "label": "Kein Abstand"
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                },
+                {
+                    "value": "large_medium_off",
+                    "label": "Gro\u00df | Medium kein Abstand"
+                },
+                {
+                    "value": "page_top",
+                    "label": "Seitenanfang"
+                }
+            ],
+            "default": "large"
         },
         {
-          "value": "xxsmall",
-          "label": "Extra extra klein"
+            "type": "select",
+            "id": "spacing_bottom",
+            "label": "Unten",
+            "options": [
+                {
+                    "value": "none",
+                    "label": "Kein Abstand"
+                },
+                {
+                    "value": "xxsmall",
+                    "label": "Extra extra klein"
+                },
+                {
+                    "value": "xsmall",
+                    "label": "Extra klein"
+                },
+                {
+                    "value": "small",
+                    "label": "Klein"
+                },
+                {
+                    "value": "medium",
+                    "label": "Mittel"
+                },
+                {
+                    "value": "large",
+                    "label": "Gro\u00df"
+                }
+            ],
+            "default": "large"
         },
         {
-          "value": "xsmall",
-          "label": "Extra klein"
+            "type": "header",
+            "content": "\u00dcbertitel"
         },
         {
-          "value": "small",
-          "label": "Klein"
+            "type": "text",
+            "id": "eyebrow",
+            "label": "Text",
+            "default": "\u00dcbertitel Text"
         },
         {
-          "value": "medium",
-          "label": "Mittel"
+            "type": "select",
+            "id": "eyebrow_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "p"
         },
         {
-          "value": "large",
-          "label": "Gro\u00df"
+            "type": "header",
+            "content": "\u00dcberschrift"
         },
         {
-          "value": "large_medium_off",
-          "label": "Gro\u00df | Medium kein Abstand"
+            "type": "inline_richtext",
+            "id": "heading",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet elit"
         },
         {
-          "value": "page_top",
-          "label": "Seitenanfang"
+            "type": "select",
+            "id": "heading_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "number",
+            "id": "heading_max_width",
+            "label": "Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 20
+        },
+        {
+            "type": "checkbox",
+            "id": "heading_tidy_text",
+            "label": "Ausgewogener Zeilenumbruch",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Text"
+        },
+        {
+            "type": "richtext",
+            "id": "paragraph",
+            "label": "Text",
+            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
+        },
+        {
+            "type": "number",
+            "id": "paragraph_max_width",
+            "label": "Maximale Breite",
+            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+            "default": 60
+        },
+        {
+            "type": "checkbox",
+            "id": "paragraph_tidy_text",
+            "label": "Ausgewogener Zeilenumbruch",
+            "default": true
+        },
+        {
+            "type": "header",
+            "content": "Button"
+        },
+        {
+            "type": "text",
+            "id": "button_1_label",
+            "label": "Text",
+            "default": "Text"
+        },
+        {
+            "type": "url",
+            "id": "button_1_url",
+            "label": "Link"
+        },
+        {
+            "type": "header",
+            "content": "Karten"
+        },
+        {
+            "type": "text",
+            "id": "cards_button_label",
+            "label": "Text",
+            "default": "Text"
         }
-      ],
-      "default": "large"
-    },
-    {
-      "type": "select",
-      "id": "spacing_bottom",
-      "label": "Unten",
-      "options": [
+    ],
+    "presets": [
         {
-          "value": "none",
-          "label": "Kein Abstand"
-        },
-        {
-          "value": "xxsmall",
-          "label": "Extra extra klein"
-        },
-        {
-          "value": "xsmall",
-          "label": "Extra klein"
-        },
-        {
-          "value": "small",
-          "label": "Klein"
-        },
-        {
-          "value": "medium",
-          "label": "Mittel"
-        },
-        {
-          "value": "large",
-          "label": "Gro\u00df"
+            "name": "Recipe Slider",
+            "category": "Liquify",
+            "blocks": []
         }
-      ],
-      "default": "large"
-    },
-    {
-      "type": "header",
-      "content": "\u00dcbertitel"
-    },
-    {
-      "type": "text",
-      "id": "eyebrow",
-      "label": "Text",
-      "default": "\u00dcbertitel Text"
-    },
-    {
-      "type": "select",
-      "id": "eyebrow_tag",
-      "label": "HTML-Tag",
-      "options": [
-        {
-          "value": "h1",
-          "label": "H1"
-        },
-        {
-          "value": "h2",
-          "label": "H2"
-        },
-        {
-          "value": "h3",
-          "label": "H3"
-        },
-        {
-          "value": "h4",
-          "label": "H4"
-        },
-        {
-          "value": "h5",
-          "label": "H5"
-        },
-        {
-          "value": "h6",
-          "label": "H6"
-        },
-        {
-          "value": "p",
-          "label": "P"
-        }
-      ],
-      "default": "p"
-    },
-    {
-      "type": "header",
-      "content": "\u00dcberschrift"
-    },
-    {
-      "type": "inline_richtext",
-      "id": "heading",
-      "label": "Text",
-      "default": "Lorem ipsum dolor sit amet elit"
-    },
-    {
-      "type": "select",
-      "id": "heading_tag",
-      "label": "HTML-Tag",
-      "options": [
-        {
-          "value": "h1",
-          "label": "H1"
-        },
-        {
-          "value": "h2",
-          "label": "H2"
-        },
-        {
-          "value": "h3",
-          "label": "H3"
-        },
-        {
-          "value": "h4",
-          "label": "H4"
-        },
-        {
-          "value": "h5",
-          "label": "H5"
-        },
-        {
-          "value": "h6",
-          "label": "H6"
-        },
-        {
-          "value": "p",
-          "label": "P"
-        }
-      ],
-      "default": "h2"
-    },
-    {
-      "type": "number",
-      "id": "heading_max_width",
-      "label": "Maximale Breite",
-      "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-      "default": 20
-    },
-    {
-      "type": "checkbox",
-      "id": "heading_tidy_text",
-      "label": "Ausgewogener Zeilenumbruch",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Text"
-    },
-    {
-      "type": "richtext",
-      "id": "paragraph",
-      "label": "Text",
-      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
-    },
-    {
-      "type": "number",
-      "id": "paragraph_max_width",
-      "label": "Maximale Breite",
-      "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-      "default": 60
-    },
-    {
-      "type": "checkbox",
-      "id": "paragraph_tidy_text",
-      "label": "Ausgewogener Zeilenumbruch",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Button"
-    },
-    {
-      "type": "text",
-      "id": "button_1_label",
-      "label": "Text",
-      "default": "Text"
-    },
-    {
-      "type": "url",
-      "id": "button_1_url",
-      "label": "Link"
-    },
-    {
-      "type": "header",
-      "content": "Karten"
-    },
-    {
-      "type": "text",
-      "id": "cards_button_label",
-      "label": "Text",
-      "default": "Text"
-    }
-  ],
-  "presets": [
-    {
-      "name": "Recipe Slider",
-      "category": "Liquify",
-      "blocks": []
-    }
-  ]
-}
-{% endschema %}
+    ]
+} {% endschema %}

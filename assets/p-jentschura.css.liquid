@@ -8269,22 +8269,19 @@ figure {
 .recipe_slider_slider_element {
   clip-path: polygon(0 0, calc(100% + 100vw) 0, calc(100% + 100vw) 100%, 0% 100%);
   width: 100%;
+  padding-top: calc(.5rem * var(--_responsive---large));
+  padding-bottom: calc(.5rem * var(--_responsive---large));
+  margin-top: calc(-.5rem * var(--_responsive---large));
+  margin-bottom: calc(-.5rem * var(--_responsive---large));
 }
 
-.recipe_slider_slider_element.swiper {
-  margin-top: -.5rem;
-  margin-bottom: -.5rem;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-}
-
-.recipe_slider_card_wrap {
+.recipe_card_wrap {
   flex-flow: column;
   height: 100%;
   display: flex;
 }
 
-.recipe_slider_card_element {
+.recipe_card_element {
   grid-column-gap: var(--_spacing---space--11);
   grid-row-gap: var(--_spacing---space--11);
   border-top-left-radius: var(--radius--main);
@@ -8301,7 +8298,7 @@ figure {
   box-shadow: 0 .25rem .5rem #0000000a;
 }
 
-.recipe_slider_card_top {
+.recipe_card_top {
   border-radius: var(--radius--xsmall);
   grid-template-rows: auto;
   grid-template-columns: 1fr;
@@ -8312,7 +8309,7 @@ figure {
   overflow: hidden;
 }
 
-.recipe_slider_card_bot {
+.recipe_card_bot {
   grid-column-gap: var(--_spacing---space--10);
   grid-row-gap: var(--_spacing---space--10);
   flex-flow: column;
@@ -8325,35 +8322,35 @@ figure {
   position: relative;
 }
 
-.recipe_slider_card_meta {
+.recipe_card_info {
   text-align: center;
   align-content: center;
   display: flow-root;
 }
 
-.recipe_slider_card_text {
+.recipe_card_text {
   text-align: center;
 }
 
-.recipe_slider_card_bot_top {
+.recipe_card_bot_top {
   grid-column-gap: var(--_spacing---space--9);
   grid-row-gap: var(--_spacing---space--9);
   flex-flow: column;
   display: flex;
 }
 
-.recipe_slider_card_button_inner {
+.recipe_card_button_inner {
   padding-top: var(--_spacing---space--9);
 }
 
-.recipe_slider_card_button_wrap {
+.recipe_card_button_wrap {
   grid-template-rows: 0fr;
   grid-template-columns: 1fr;
   grid-auto-columns: 1fr;
   display: grid;
 }
 
-.recipe_slider_card_button_element {
+.recipe_card_button_element {
   overflow: hidden;
 }
 
@@ -9747,7 +9744,7 @@ figure {
   border-radius: inherit;
 }
 
-.recipe_slider_card_image {
+.recipe_card_image {
   aspect-ratio: 4.56 / 3.12;
   grid-area: 1 / 1;
   width: 100%;
@@ -9778,7 +9775,7 @@ figure {
   }
 }
 
-#w-node-e7a88a7b-3dd3-d2f5-b376-1e4232ed5c52-d1e74837, #w-node-_27ebc7ba-024a-75fe-f884-3dfbcaf3a5d0-d1e74837, #w-node-_6dc50a9a-08f6-6f2d-6ec3-e21f8b4740f3-d1e74837, #w-node-c617a83b-ddc9-0060-0808-80e877fef5f1-d1e74837, #w-node-_1dd65d99-2fbc-3611-83af-0855c1fb5b51-74281a3c {
+#w-node-_215d0754-feb9-e674-267e-5f976878f36f-6878f369, #w-node-_1dd65d99-2fbc-3611-83af-0855c1fb5b51-74281a3c {
   place-self: start;
 }
 
