@@ -338,7 +338,7 @@
         "image": "shopify://shop_images/p-jentschura-home-hero-desktop.avif",
         "image_mobile": "shopify://shop_images/p-jentschura-home-hero-mobile.avif",
         "card_heading": "„Der Körper ist unser wertvollstes Gut – pflege ihn mit dem, was die Natur dir gibt.\"",
-        "card_heading_max_width": 20,
+        "card_heading_max_width": 15,
         "card_text": "Dr. h.c. Peter Jentschura",
         "card_text_max_width": 60
       }
