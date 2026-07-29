@@ -1,0 +1,37 @@
+<div class="testimonial_card_wrap">
+                            <div class="testimonial_card_element u-box-shadow">
+                              <div class="testimonial_card_left">
+                                <div class="testimonial_card_media">
+                                  {% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
+                                </div>
+                              </div>
+                              <div class="testimonial_card_right">
+                                {% if eyebr %}    <div li-if="eyebr" class="testimonial_card_tag">
+    
+                                  {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', text: eyebrow, tag: 'span', variant: 'u-text-h3-secondary', max_width: section.settings.text_max_width %}
+                                    </div>
+{% endif %}
+                                <div class="testimonial_card_rating">
+                                  <div class="testimonial_slider_card_stars">
+                                    <div class="testimonial_slider_card_star">
+                                      {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
+                                    </div>
+                                    <div class="testimonial_slider_card_star">
+                                      {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
+                                    </div>
+                                    <div class="testimonial_slider_card_star">
+                                      {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
+                                    </div>
+                                    <div class="testimonial_slider_card_star">
+                                      {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
+                                    </div>
+                                  </div>
+                                  {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: rating, tag: 'span', variant: 'u-text-body-base' %}
+                                </div>
+                                <div class="testimonial_card_text u-margin-trim">
+                                  {% render 'heading', variant: 'u-text-h4-primary', heading: title, tag: 'h3' %}
+                                  {% render 'paragraph', variant: 'u-text-body-large', paragraph: description | metafield_tag %}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
