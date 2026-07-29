@@ -1,0 +1,39 @@
+<div class="review_card_wrap">
+                              <div data-clickable-card="" class="review_card_element u-alignment-center">
+                                <div class="review_card_top">
+                                  <div class="review_card_stars">
+                                    <div class="review_card_star u-flex-noshrink">
+                                      {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                                    </div>
+                                    <div class="review_card_star u-flex-noshrink">
+                                      {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                                    </div>
+                                    <div class="review_card_star u-flex-noshrink">
+                                      {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                                    </div>
+                                    <div class="review_card_star u-flex-noshrink">
+                                      {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                                    </div>
+                                    <div class="review_card_star u-flex-noshrink">
+                                      {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="review_card_bot">
+                                  <div class="review_card_bot_top">
+                                    <div class="recipe_card_text u-margin-trim u-alignment-center">
+                                      {% render 'heading', variant: 'u-text-eyebrow-base', heading: title, tag: 'h3' %}
+                                      {% render 'paragraph', variant: 'u-text-body-small', custom_class: 'u-margin-bottom-0 u-color-3', paragraph: short_description | metafield_tag %}
+                                    </div>
+                                  </div>
+                                  <div class="review_card_bot_bot u-color-3 u-margin-trim">
+                                    <div class="review_card_text_line">
+                                      {% render 'typography', custom_attribute_value: , tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, custom_attribute_name: , tidy_text: section.settings.text_tidy_text, custom_class: , variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
+                                    </div>
+                                    <div class="review_card_text_line">
+                                      {% render 'typography', custom_attribute_value: , tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, custom_attribute_name: , tidy_text: section.settings.text_tidy_text, custom_class: , variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>

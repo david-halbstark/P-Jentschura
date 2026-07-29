@@ -1,5 +1,28 @@
 <div class="u-embed-css w-embed">
           <style>
+  @container (width < 53em) {
+    .review_card_element {
+      box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 60px 0px;
+    }
+  }
+  .review_slider_slider_wrap {
+    --_gap---size: calc(
+      calc(var(--_spacing---space--5) * max(var(--_responsive---large), var(--_responsive---medium))) +
+        calc(var(--_spacing---space--3) * max(var(--_responsive---small), var(--_responsive---xsmall)))
+    );
+  }
+  .review_slider_first_card_top::before {
+    content: "";
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0%;
+    right: auto;
+    bottom: 0%;
+    background-color: var(--swatch--white-o20);
+    transform: translateX(-50%);
+  }
 </style>
         </div>
         <div class="u-display-none">
@@ -20,8 +43,17 @@
 </style>
           </div>
         </div>
-        {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant, custom_class: , wrapper_class: %}
-        {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
+          
+        </div>
+        
         <div class="u-display-none">
           
           
@@ -64,18 +96,141 @@
         </div>
         <div class="review_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
           
-          <div data-section-spacing="" class="review_slider_layout"></div>
+          <div data-section-spacing="" class="review_slider_layout">
+            {% render 'heading', visually_hidden: true, heading: section.settings.heading, tag: section.settings.heading_tag %}
+            <div class="review_slider_top">
+              <div class="review_slider_image">
+                {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+              </div>
+            </div>
+            <div class="review_slider_bot">
+              <div class="review_slider_bot_top">
+                <div class="review_slider_first_card_wrap">
+                  <div class="review_slider_first_card_element">
+                    <div class="review_slider_first_card_top">
+                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: first_card_eyebrow, tag: first_card_eyebrow_tag, variant: 'u-text-h3-secondary' %}
+                    </div>
+                    <div class="review_slider_first_card_bot">
+                      <div class="review_slider_first_card_stars">
+                        <div class="review_card_stars">
+                          <div class="review_card_star u-flex-noshrink">
+                            {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                          </div>
+                          <div class="review_card_star u-flex-noshrink">
+                            {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                          </div>
+                          <div class="review_card_star u-flex-noshrink">
+                            {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                          </div>
+                          <div class="review_card_star u-flex-noshrink">
+                            {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                          </div>
+                          <div class="review_card_star u-flex-noshrink">
+                            {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                          </div>
+                        </div>
+                      </div>
+                      {% render 'typography', custom_class: 'u-margin-bottom-0', text: section.settings.first_card_heading, tag: section.settings.first_card_heading_tag, variant: 'u-text-h4-primary' %}
+                    </div>
+                  </div>
+                </div>
+                <div class="review_slider_slider_wrap slider_wrap">
+                  <div style="--lg: 3; --md: 2.5; --sm: 1.2; --xs: 1.1;" class="review_slider_slider_offset slider_offset">
+                    <div class="review_slider_slider_element swiper">
+                      <div li-for:inside="recipe in sorted_recipes" class="review_slider_slider_list swiper-wrapper">
+        {% for recipe in sorted_recipes %}                            
+                        
+                            <div class="review_slider_slider_slide swiper-slide">
+                          {% render 'review_card' %}
+                        </div>
+                            
+                        
+                            <div class="review_slider_slider_slide swiper-slide">
+                          {% render 'review_card' %}
+                        </div>
+                            
+                        
+                            <div class="review_slider_slider_slide swiper-slide">
+                          {% render 'review_card' %}
+                        </div>
+                            
+                        
+                            <div class="review_slider_slider_slide swiper-slide">
+                          {% render 'review_card' %}
+                        </div>
+                            
+                      
+                    {% endfor %}    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="review_slider_bot_bot">
+                <div class="slider_controls">
+                  <div class="slider_bullet_list">
+                    <div class="slider_bullet_item is-active"></div>
+                    <div class="slider_bullet_item"></div>
+                  </div>
+                  <div class="slider_button_layout"><button data-wf--slider-button--variant="prev" data-trigger="hover focus" class="slider_button_wrap is-prev">
+                      <div class="slider_button_element">
+                        <div class="slider_button_icon">
+                          {% render 'icon', aria-hidden: true, icon: 'arrow_left' %}
+                        </div>
+                      </div>
+                    </button><button data-wf--slider-button--variant="next" data-trigger="hover focus" class="slider_button_wrap is-next">
+                      <div class="slider_button_element">
+                        <div class="slider_button_icon">
+                          {% render 'icon', aria-hidden: true, icon: 'arrow_right' %}
+                        </div>
+                      </div>
+                    </button></div>
+                </div>
+              </div>
+            </div>
+          </div>
           
         </div>
         <div class="u-embed-js w-embed w-script">
           <script>
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".your-element").forEach((component) => {
-    if (component.dataset.scriptInitialized) return;
-    component.dataset.scriptInitialized = "true";
-    // run script here
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".review_slider_layout").forEach((component) => {
+      if (component.dataset.scriptInitialized === "true") return;
+      const swiperElement = component.querySelector(".review_slider_slider_element.swiper");
+      if (!swiperElement || swiperElement.swiper) return;
+      const previousButton = component.querySelector(".slider_button_wrap.is-prev");
+      const nextButton = component.querySelector(".slider_button_wrap.is-next");
+      const pagination = component.querySelector(".slider_bullet_list");
+      component.dataset.scriptInitialized = "true";
+      const swiperOptions = {
+        slidesPerView: "auto",
+      };
+      if (previousButton && nextButton) {
+        swiperOptions.navigation = {
+          prevEl: previousButton,
+          nextEl: nextButton,
+          disabledClass: "is-disabled",
+        };
+      }
+      if (pagination) {
+        swiperOptions.pagination = {
+          el: pagination,
+          clickable: true,
+          bulletClass: "slider_bullet_item",
+          bulletActiveClass: "is-active",
+          renderBullet(index, className) {
+            return `
+              <button
+                type="button"
+                class="${className}"
+                aria-label="Slide ${index + 1}"
+              ></button>
+            `;
+          },
+        };
+      }
+      new Swiper(swiperElement, swiperOptions);
+    });
   });
-});
 </script>
         </div> {% schema %} {
     "tag": "section",
@@ -166,6 +321,140 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             ],
             "default": "large"
+        },
+        {
+            "type": "header",
+            "content": "\u00dcberschrift"
+        },
+        {
+            "type": "inline_richtext",
+            "id": "heading",
+            "label": "Text",
+            "default": "Lorem ipsum dolor sit amet elit"
+        },
+        {
+            "type": "select",
+            "id": "heading_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "header",
+            "content": "Erste Karte"
+        },
+        {
+            "type": "text",
+            "id": "first_card_eyebrow",
+            "label": "\u00dcbertitel Text",
+            "default": "\u00dcbertitel Text"
+        },
+        {
+            "type": "select",
+            "id": "first_card_eyebrow_tag",
+            "label": "\u00dcbertitel HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "p"
+        },
+        {
+            "type": "text",
+            "id": "first_card_heading",
+            "label": "\u00dcberschrift Text",
+            "default": "\u00dcberschrift Text"
+        },
+        {
+            "type": "select",
+            "id": "first_card_heading_tag",
+            "label": "\u00dcberschrift HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "p"
         },
         {
             "type": "header",
