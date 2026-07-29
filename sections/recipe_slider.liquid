@@ -75,6 +75,23 @@
 <div class="u-display-none"></div>
 <div class="u-display-none"></div>
 
+<style>
+  .recipe_slider_card_info span {
+    display: inline;
+  }
+
+  .recipe_slider_card_info span::before,
+  .recipe_slider_card_info span::after {
+    content: none !important;
+  }
+
+  .recipe_slider_card_info .u-display-contents:not(:last-child)) > span::after {
+    content: '\00a0\2022';
+    display: inline;
+    color: var(--_theme---text-4);
+  }
+</style>
+
 {% if show_recipes_section %}
   <div li-if="show_recipes_section" class="recipe_slider_inner">
     <div
