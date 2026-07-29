@@ -277,6 +277,7 @@
     },
     "review_slider_b9FWPH": {
       "type": "review_slider",
+      "disabled": true,
       "name": "Review Slider",
       "settings": {
         "section_id": "",
@@ -293,6 +294,7 @@
     },
     "testimonial_slider_QcxrrE": {
       "type": "testimonial_slider",
+      "disabled": true,
       "name": "Testimonial Slider",
       "settings": {
         "section_id": "",
