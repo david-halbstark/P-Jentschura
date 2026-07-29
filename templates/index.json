@@ -313,6 +313,22 @@
     "image_links_rpLJbm": {
       "type": "image_links",
       "blocks": {
+        "button_pYXa9e": {
+          "type": "button",
+          "settings": {
+            "button_label": "Text",
+            "button_url": "",
+            "button_icon": "none"
+          }
+        },
+        "button_YkU6G8": {
+          "type": "button",
+          "settings": {
+            "button_label": "Text",
+            "button_url": "",
+            "button_icon": "none"
+          }
+        },
         "button_faVKte": {
           "type": "button",
           "settings": {
@@ -323,6 +339,8 @@
         }
       },
       "block_order": [
+        "button_pYXa9e",
+        "button_YkU6G8",
         "button_faVKte"
       ],
       "name": "Image Links",
