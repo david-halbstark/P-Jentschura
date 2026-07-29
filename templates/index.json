@@ -310,26 +310,10 @@
         "button_1_url": ""
       }
     },
-    "image_links_WT9tM6": {
+    "image_links_rpLJbm": {
       "type": "image_links",
       "blocks": {
-        "button_zBnfCW": {
-          "type": "button",
-          "settings": {
-            "button_label": "Text",
-            "button_url": "",
-            "button_icon": "none"
-          }
-        },
-        "button_8UACTk": {
-          "type": "button",
-          "settings": {
-            "button_label": "Text",
-            "button_url": "",
-            "button_icon": "none"
-          }
-        },
-        "button_YYDzfn": {
+        "button_faVKte": {
           "type": "button",
           "settings": {
             "button_label": "Text",
@@ -339,21 +323,20 @@
         }
       },
       "block_order": [
-        "button_zBnfCW",
-        "button_8UACTk",
-        "button_YYDzfn"
+        "button_faVKte"
       ],
       "name": "Image Links",
       "settings": {
         "section_id": "",
-        "spacing_top": "main",
-        "spacing_bottom": "main",
+        "spacing_top": "large",
+        "spacing_bottom": "xxsmall",
         "heading": "Lorem ipsum dolor sit amet elit",
         "eyebrow": "Übertitel Text",
         "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
         "paragraph_max_width": 60,
         "paragraph_tidy_text": true,
         "image": "shopify://shop_images/p-jentschura-home-hero-desktop.avif",
+        "image_mobile": "shopify://shop_images/p-jentschura-home-hero-mobile.avif",
         "card_heading": "Lorem ipsum dolor sit amet elit",
         "card_heading_max_width": 60,
         "card_text": "Lorem ipsum dolor sit amet elit",
@@ -444,7 +427,7 @@
     "recipe_slider_QekpTM",
     "review_slider_b9FWPH",
     "testimonial_slider_QcxrrE",
-    "image_links_WT9tM6",
+    "image_links_rpLJbm",
     "news_slider_qEftGM",
     "social_media_fbp9cW",
     "seo_content_tQVFAg",
