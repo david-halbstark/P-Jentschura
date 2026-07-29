@@ -368,13 +368,13 @@
         "section_id": "",
         "spacing_top": "large",
         "spacing_bottom": "large",
-        "eyebrow": "Übertitel Text",
+        "eyebrow": "Newsroom",
         "eyebrow_tag": "p",
-        "heading": "Lorem ipsum dolor sit amet elit",
+        "heading": "Aktuelles aus dem Unternehmen P. Jentschura",
         "heading_tag": "h2",
         "heading_max_width": 20,
         "heading_tidy_text": true,
-        "button_1_label": "Text",
+        "button_1_label": "Alle News entdecken",
         "button_1_url": ""
       }
     },
