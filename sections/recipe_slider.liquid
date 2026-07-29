@@ -1,4 +1,27 @@
 {% assign show_recipes_section = true %}{% if request.page_type == 'collection' %}{% unless collection.metafields.custom.show_recipes.value %}{% assign show_recipes_section = false %}{% endunless %}{% endif %}
+        <div class="u-embed-css w-embed">
+          <style>
+  .recipe_slider_card_button_inner .u-button-wrapper {
+    margin-top: 0rem;
+  }
+  .recipe_slider_card_button_wrap {
+    transition: grid-template-rows 0.2s ease;
+  }
+  @media (hover: hover) {
+    .recipe_slider_card_wrap:hover .recipe_slider_card_image {
+      aspect-ratio: 4.56 / 2.44;
+    }
+    .recipe_slider_card_wrap:hover .recipe_slider_card_button_wrap {
+      grid-template-rows: 1fr;
+    }
+  }
+  .recipe_slider_card_meta .u-display-contents:not(:last-child)) > span::after {
+    content: '\00a0\2022';
+    display: inline;
+    color: var(--_theme---text-4);
+  }
+</style>
+        </div>
         <div class="u-display-none">
           
           
@@ -40,6 +63,7 @@
           
           
         </div>
+        
         {% if show_recipes_section %}    <div li-if="show_recipes_section" class="recipe_slider_inner">
     
           <div class="recipe_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
@@ -77,36 +101,46 @@
               <div class="recipe_slider_right">
                 {% assign sorted_recipes = metaobjects.recipe.values | sort: 'date' | reverse %}
                 <div class="recipe_slider_slider_wrap slider_wrap">
-                  <div style="--lg: 1.8; --md: 1.6; --sm: 1.15; --xs: 1.15;" class="recipe_slider_slider_offset slider_offset">
+                  <div style="--lg: 1.3; --md: 1.6; --sm: 1.15; --xs: 1.15;" class="recipe_slider_slider_offset slider_offset">
                     <div class="recipe_slider_slider_element swiper">
                       <div li-for:inside="recipe in sorted_recipes" class="recipe_slider_slider_list swiper-wrapper">
         {% for recipe in sorted_recipes %}                            
                         
                             <div class="recipe_slider_slider_slide swiper-slide">
                           <div class="recipe_slider_card_wrap">
-                            <div class="recipe_slider_card_element">
+                            <div data-clickable-card="" class="recipe_slider_card_element">
                               <div class="recipe_slider_card_top">
-                                {% render 'image', loading: 'lazy', image: recipe.image.value, object_fit: 'cover', width: 900 %}
-                                <div class="recipe_slider_tag">
+                                <div class="recipe_slider_card_image">
+                                  {% render 'image', loading: 'lazy', image: recipe.image.value, object_fit: 'cover', width: 900 %}
+                                </div>
+                                <div id="w-node-e7a88a7b-3dd3-d2f5-b376-1e4232ed5c52-d1e74837" class="recipe_slider_tag">
                                   {% render 'tag', solid_color: 'green', tag: recipe.metafields.custom.tag.value.title.value, variant: 'solid', solid_text_size: 'u-text-eyebrow-small' %}
                                 </div>
                               </div>
                               <div class="recipe_slider_card_bot">
                                 <div class="recipe_slider_card_bot_top">
-                                  <div class="recipe_slider_card_text">
-                                    {% render 'heading', custom_class: 'u-margin-bottom-0', heading: recipe.title.value, tag: 'h3', variant: 'u-text-h4-primary' %}
+                                  <div class="recipe_slider_card_text u-margin-trim u-alignment-center">
+                                    {% render 'heading', variant: 'u-text-h4-primary', heading: recipe.title.value, tag: 'h3' %}
                                     {% render 'paragraph', variant: 'u-text-body-base', custom_class: 'u-margin-bottom-0 u-color-3', paragraph: section.settings.paragraph %}
                                   </div>
                                 </div>
-                                <div class="recipe_slider_card_meta">
-                                  {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', text: recipe.difficulty.value, tag: 'span', variant: 'u-text-body-small' %}
-                                  {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', text: recipe.preperation_time.value, tag: 'span', variant: 'u-text-body-small' %}
-                                  {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', text: recipe.serving.value, tag: 'span', variant: 'u-text-body-small' %}
-                                </div>
-                                <div class="recipe_slider_card_button_wrap">
-                                  <div class="recipe_slider_card_button_element">
-                                    <div class="recipe_slider_card_button_inner">
-                                      {% render 'button_group', button_1_solid_color: 'red', button_1_url: recipe.system.url, button_1_label: section.settings.card_button_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: ‘link', button_1_variant: 'solid', button_1_custom_class: %}
+                                <div class="recipe_slider_card_bot_bot">
+                                  <div class="recipe_slider_card_meta">
+                                    <div class="u-display-contents">
+                                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: recipe.difficulty.value, tag: 'span', variant: 'u-text-body-small' %}
+                                    </div>
+                                    <div class="u-display-contents">
+                                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: recipe.preperation_time.value, tag: 'span', variant: 'u-text-body-small' %}
+                                    </div>
+                                    <div class="u-display-contents">
+                                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: recipe.serving.value, tag: 'span', variant: 'u-text-body-small' %}
+                                    </div>
+                                  </div>
+                                  <div class="recipe_slider_card_button_wrap">
+                                    <div class="recipe_slider_card_button_element">
+                                      <div class="recipe_slider_card_button_inner">
+                                        {% render 'button_group', button_1_solid_color: 'red', button_1_url: recipe.system.url, button_1_label: section.settings.cards_button_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: ‘link', button_1_variant: 'solid', button_1_custom_class: 'u-width-full' %}
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
@@ -119,10 +153,92 @@
                             
                             
                         
-                            
+                            <div class="recipe_slider_slider_slide swiper-slide">
+                          <div class="recipe_slider_card_wrap">
+                            <div data-clickable-card="" class="recipe_slider_card_element">
+                              <div class="recipe_slider_card_top">
+                                <div class="recipe_slider_card_image">
+                                  {% render 'image', loading: 'lazy', image: recipe.image.value, object_fit: 'cover', width: 900 %}
+                                </div>
+                                <div id="w-node-_6dc50a9a-08f6-6f2d-6ec3-e21f8b4740f3-d1e74837" class="recipe_slider_tag">
+                                  {% render 'tag', solid_color: 'green', tag: recipe.metafields.custom.tag.value.title.value, variant: 'solid', solid_text_size: 'u-text-eyebrow-small' %}
+                                </div>
+                              </div>
+                              <div class="recipe_slider_card_bot">
+                                <div class="recipe_slider_card_bot_top">
+                                  <div class="recipe_slider_card_text u-margin-trim u-alignment-center">
+                                    {% render 'heading', variant: 'u-text-h4-primary', heading: recipe.title.value, tag: 'h3' %}
+                                    {% render 'paragraph', variant: 'u-text-body-base', custom_class: 'u-margin-bottom-0 u-color-3', paragraph: section.settings.paragraph %}
+                                  </div>
+                                </div>
+                                <div class="recipe_slider_card_bot_bot">
+                                  <div class="recipe_slider_card_meta">
+                                    <div class="u-display-contents">
+                                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: recipe.difficulty.value, tag: 'span', variant: 'u-text-body-small' %}
+                                    </div>
+                                    <div class="u-display-contents">
+                                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: recipe.preperation_time.value, tag: 'span', variant: 'u-text-body-small' %}
+                                    </div>
+                                    <div class="u-display-contents">
+                                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: recipe.serving.value, tag: 'span', variant: 'u-text-body-small' %}
+                                    </div>
+                                  </div>
+                                  <div class="recipe_slider_card_button_wrap">
+                                    <div class="recipe_slider_card_button_element">
+                                      <div class="recipe_slider_card_button_inner">
+                                        {% render 'button_group', button_1_solid_color: 'red', button_1_url: recipe.system.url, button_1_label: section.settings.card_button_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: ‘link', button_1_variant: 'solid', button_1_custom_class: 'u-width-full' %}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                             
                         
-                            
+                            <div class="recipe_slider_slider_slide swiper-slide">
+                          <div class="recipe_slider_card_wrap">
+                            <div data-clickable-card="" class="recipe_slider_card_element">
+                              <div class="recipe_slider_card_top">
+                                <div class="recipe_slider_card_image">
+                                  {% render 'image', loading: 'lazy', image: recipe.image.value, object_fit: 'cover', width: 900 %}
+                                </div>
+                                <div id="w-node-c617a83b-ddc9-0060-0808-80e877fef5f1-d1e74837" class="recipe_slider_tag">
+                                  {% render 'tag', solid_color: 'green', tag: recipe.metafields.custom.tag.value.title.value, variant: 'solid', solid_text_size: 'u-text-eyebrow-small' %}
+                                </div>
+                              </div>
+                              <div class="recipe_slider_card_bot">
+                                <div class="recipe_slider_card_bot_top">
+                                  <div class="recipe_slider_card_text u-margin-trim u-alignment-center">
+                                    {% render 'heading', variant: 'u-text-h4-primary', heading: recipe.title.value, tag: 'h3' %}
+                                    {% render 'paragraph', variant: 'u-text-body-base', custom_class: 'u-margin-bottom-0 u-color-3', paragraph: section.settings.paragraph %}
+                                  </div>
+                                </div>
+                                <div class="recipe_slider_card_bot_bot">
+                                  <div class="recipe_slider_card_meta">
+                                    <div class="u-display-contents">
+                                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: recipe.difficulty.value, tag: 'span', variant: 'u-text-body-small' %}
+                                    </div>
+                                    <div class="u-display-contents">
+                                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: recipe.preperation_time.value, tag: 'span', variant: 'u-text-body-small' %}
+                                    </div>
+                                    <div class="u-display-contents">
+                                      {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: recipe.serving.value, tag: 'span', variant: 'u-text-body-small' %}
+                                    </div>
+                                  </div>
+                                  <div class="recipe_slider_card_button_wrap">
+                                    <div class="recipe_slider_card_button_element">
+                                      <div class="recipe_slider_card_button_inner">
+                                        {% render 'button_group', button_1_solid_color: 'red', button_1_url: recipe.system.url, button_1_label: section.settings.card_button_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: ‘link', button_1_variant: 'solid', button_1_custom_class: 'u-width-full' %}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                             
                       
                     {% endfor %}    </div>
@@ -418,6 +534,16 @@
             "type": "url",
             "id": "button_1_url",
             "label": "Link"
+        },
+        {
+            "type": "header",
+            "content": "Karten"
+        },
+        {
+            "type": "text",
+            "id": "cards_button_label",
+            "label": "Text",
+            "default": "Text"
         }
     ],
     "presets": [
