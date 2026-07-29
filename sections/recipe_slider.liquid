@@ -76,17 +76,58 @@
 <div class="u-display-none"></div>
 
 <style>
-  .recipe_slider_card_meta span {
+  .recipe_slider_card_button_inner .u-button-wrapper {
+    margin-top: 0rem;
+  }
+
+  .recipe_slider_card_button_wrap {
+    transition: grid-template-rows 0.2s ease;
+  }
+
+  @media (hover: hover) {
+    .recipe_slider_card_wrap:hover .recipe_slider_card_image {
+      aspect-ratio: 4.56 / 2.44;
+    }
+
+    .recipe_slider_card_wrap:hover .recipe_slider_card_button_wrap {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  .recipe_slider_card_wrap:has(:focus-visible) .recipe_slider_card_button_wrap {
+    grid-template-rows: 1fr;
+  }
+
+  .recipe_slider_card_wrap:has(:focus-visible) .recipe_slider_card_image {
+    aspect-ratio: 4.56 / 2.44;
+  }
+
+  .recipe_slider_card_wrap:has(:focus-visible)
+    :is(.recipe_slider_card_button_wrap, .recipe_slider_card_image) {
+    transition: none;
+  }
+
+  @media (hover: none) {
+    .recipe_slider_card_wrap:hover .recipe_slider_card_button_wrap {
+      grid-template-rows: 1fr;
+    }
+
+    .recipe_slider_card_wrap .recipe_slider_card_image {
+      aspect-ratio: 4.56 / 2.44;
+    }
+  }
+
+  .recipe_slider_card_info span {
     display: inline;
   }
 
-  .recipe_slider_card_meta span::before,
-  .recipe_slider_card_meta span::after {
+  .recipe_slider_card_info span::before,
+  .recipe_slider_card_info span::after {
     content: none !important;
   }
 
-  .recipe_slider_card_meta .u-display-contents:not(:last-child) span::after {
-    content: '\00a0\2022' !important;
+  .recipe_slider_card_info .u-display-contents:not(:last-child) > span::after {
+    content: "\00a0\2022" !important;
     display: inline;
     color: var(--_theme---text-4);
   }
