@@ -74,7 +74,7 @@
             eyebrow: section.settings.eyebrow,
             variant: 'u-text-eyebrow-large',
             custom_class: 'u-margin-bottom-0',
-            wrapper_class: 'is-eyebrow-large'
+            wrapper_class: 'is-eyebrow-large u-margin-bottom-0'
           %}
           <div class="image_links_svg">
             <div class="u-svg">
@@ -112,7 +112,7 @@
                   <div class="u-display-none"></div>
 
                   {% render 'button',
-                    url: section.settings.button_1_url,
+                    url: block.settings.button_1_url,
                     padding: 'base',
                     text_size: 'u-text-eyebrow-base',
                     icon: block.settings.button_1_icon,
