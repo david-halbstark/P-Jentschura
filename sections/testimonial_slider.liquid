@@ -1,8 +1,43 @@
 <div class="u-embed-css w-embed">
           <style>
-  .recipe_slider_slider_wrap {
+  .testimonial_slider_slider_wrap {
     --_gap---size: 1rem;
   }
+  @container (width < 80em) {
+    .testimonial_slider_slider_offset.slider_offset {
+      --slide-count: 1.05;
+    }
+  }
+  @container (width < 65em) {
+    .testimonial_slider_slider_offset.slider_offset {
+      --slide-count: var(--md);
+    }
+    .testimonial_card_element {
+      display: flex;
+    }
+    .testimonial_card_media {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3.35 / 3;
+    }
+    .testimonial_card_right {
+      padding-left: var(--_spacing---space--11);
+      padding-right: var(--_spacing---space--11);
+      padding-top: var(--_spacing---space--13);
+      padding-bottom: var(--_spacing---space--13);
+    }
+    .testimonial_card_tag {
+      display: none;
+    }
+  }
+    @container (width < 53em) {
+    .testimonial_slider_slider_offset.slider_offset {
+      --slide-count: var(--sm);
+    }
+          @container (width < 42em) {
+    .testimonial_slider_slider_offset.slider_offset {
+      --slide-count: var(--xs);
+    }
 </style>
         </div>
         <div class="u-display-none">
@@ -27,6 +62,9 @@
           
           
           
+        </div>
+        <div class="u-display-none">
+          
           
           
           
@@ -39,58 +77,26 @@
         </div>
         <div class="testimonial_slider_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
           
-          <div class="section_layout">
+          <div class="testimonial_slider_layout">
             <div class="testimonial_slider_top">
               <div class="testimonial_slider_top_left u-margin-trim">
                 {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-base', custom_class: 'u-color-3', wrapper_class: is-eyebrow-bass %}
                 {% render 'heading', custom_class: , heading: section.settings.heading, tag: section.settings.heading_tag, variant: 'u-text-h2-primary', max_width: section.settings.heading_max_width, tidy_text: section.settings.heading_tidy_text %}
               </div>
               <div class="testimonial_slider_top_right">
-                <div class="testimonial_slider_top_link">
-                  <div class="testimonial_slider_link">
-                    {% render 'typography', custom_attribute_value: 'true', text: section.settings.button_1_label, tag: 'span', variant: 'u-text-link-base', custom_class: 'u-margin-bottom-0 u-min-width-auto', custom_attribute_name: 'aria-hidden' %}
-                    {% render 'clickable', url: section.settings.button_1_url, label: section.settings.button_1_label, mode: 'link' %}
-                  </div>
+                <div class="testimonial_slider_link">
+                  {% render 'typography', custom_attribute_value: 'true', text: section.settings.button_1_label, tag: 'span', variant: 'u-text-link-base', custom_class: 'u-margin-bottom-0 u-min-width-auto', custom_attribute_name: 'aria-hidden' %}
+                  {% render 'clickable', url: section.settings.button_1_url, label: section.settings.button_1_label, mode: 'link' %}
                 </div>
               </div>
             </div>
             <div class="testimonial_slider_bot">
               <div class="testimonial_slider_slider_wrap slider_wrap">
-                <div style="--lg: 1.1; --md: 1.05; --sm: 1.05; --xs: 1.05;" class="testimonial_slider_slider_offset slider_offset">
+                <div style="--lg: 1.35; --md: 2; --sm: 1.7; --xs: 1;" class="testimonial_slider_slider_offset slider_offset">
                   <div class="testimonial_slider_slider_element swiper">
                     <div class="testimonial_slider_slider_list swiper-wrapper">
                       <div class="testimonial_slider_slider_slide swiper-slide">
-                        <div class="testimonial_slider_card_wrap">
-                          <div class="testimonial_slider_card_element">
-                            <div class="testimonial_slider_card_left">
-                              {% render 'video', controls: section.settings.video_controls, playsinline: section.settings.video_playsinline, video: section.settings.video, autoplay: section.settings.video_autoplay, play_behavior: section.settings.video_play_behavior, loop: section.settings.video_loop, custom_class: , preload: section.settings.video_preload, muted: section.settings.video_muted %}
-                            </div>
-                            <div class="testimonial_slider_card_right">
-                              <div class="testimonial_slider_card_tag">
-                                {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto u-color-3', text: testimonial.overline.value, tag: 'span', variant: 'u-text-h3-secondary', max_width: section.settings.text_max_width %}
-                              </div>
-                              <div class="testimonial_slider_card_rating">
-                                <div class="testimonial_slider_card_stars">
-                                  <div class="testimonial_slider_card_star">
-                                    {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
-                                  </div>
-                                  <div class="testimonial_slider_card_star">
-                                    {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
-                                  </div>
-                                  <div class="testimonial_slider_card_star">
-                                    {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
-                                  </div>
-                                  <div class="testimonial_slider_card_star">
-                                    {% render 'icon', custom_class: , icon: 'star', aria-hidden: true %}
-                                  </div>
-                                </div>
-                                {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: testimonial.rating_text.value, tag: 'span', variant: 'u-text-body-base' %}
-                              </div>
-                              {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: testimonial.title.value, custom_class: 'u-margin-bottom-0', variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
-                              {% render 'paragraph', tidy_text: section.settings.paragraph_tidy_text, custom_class: 'u-margin-bottom-0', paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant, max_width: section.settings.paragraph_max_width %}
-                            </div>
-                          </div>
-                        </div>
+                        {% render 'testimonial_card', description: testimonial.description, eyebrow: testimonial.eyebrow.value, rating: testimonial.rating.value, title: testimonial.title %}
                       </div>
                       
                       
@@ -124,13 +130,42 @@
         </div>
         <div class="u-embed-js w-embed w-script">
           <script>
-document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll(".your-element").forEach((component) => {
-    if (component.dataset.scriptInitialized) return;
-    component.dataset.scriptInitialized = "true";
-    // run script here
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.testimonial_slider_layout').forEach((component) => {
+      if (component.dataset.scriptInitialized === 'true') return;
+      component.dataset.scriptInitialized = 'true';
+      const swiperElement = component.querySelector('.testimonial_slider_slider_element.swiper');
+      if (!swiperElement || swiperElement.swiper) return;
+      const sliderWrap = swiperElement.closest('.testimonial_slider_slider_wrap');
+      if (!sliderWrap) return;
+      const previousButton = sliderWrap.querySelector('.slider_button_wrap.is-prev');
+      const nextButton = sliderWrap.querySelector('.slider_button_wrap.is-next');
+      const pagination = sliderWrap.querySelector('.slider_bullet_list');
+      new Swiper(swiperElement, {
+        slidesPerView: 'auto',
+        navigation: {
+          prevEl: previousButton,
+          nextEl: nextButton,
+          disabledClass: 'is-disabled',
+        },
+        pagination: {
+          el: pagination,
+          clickable: true,
+          bulletClass: 'slider_bullet_item',
+          bulletActiveClass: 'is-active',
+          renderBullet(index, className) {
+            return `
+                <button
+                  type="button"
+                  class="${className}"
+                  aria-label="Slide ${index + 1}"
+                ></button>
+              `;
+          },
+        },
+      });
+    });
   });
-});
 </script>
         </div> {% schema %} {
     "tag": "section",
@@ -224,6 +259,52 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             "type": "header",
+            "content": "\u00dcbertitel"
+        },
+        {
+            "type": "text",
+            "id": "eyebrow",
+            "label": "Text",
+            "default": "\u00dcbertitel Text"
+        },
+        {
+            "type": "select",
+            "id": "eyebrow_tag",
+            "label": "HTML-Tag",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "H1"
+                },
+                {
+                    "value": "h2",
+                    "label": "H2"
+                },
+                {
+                    "value": "h3",
+                    "label": "H3"
+                },
+                {
+                    "value": "h4",
+                    "label": "H4"
+                },
+                {
+                    "value": "h5",
+                    "label": "H5"
+                },
+                {
+                    "value": "h6",
+                    "label": "H6"
+                },
+                {
+                    "value": "p",
+                    "label": "P"
+                }
+            ],
+            "default": "p"
+        },
+        {
+            "type": "header",
             "content": "\u00dcberschrift"
         },
         {
@@ -231,50 +312,6 @@ document.addEventListener("DOMContentLoaded", function () {
             "id": "heading",
             "label": "Text",
             "default": "Lorem ipsum dolor sit amet elit"
-        },
-        {
-            "type": "select",
-            "id": "heading_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "u-text-h1-primary",
-                    "label": "H1 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h1-secondary",
-                    "label": "H1 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h2-primary",
-                    "label": "H2 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h2-secondary",
-                    "label": "H2 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h3-primary",
-                    "label": "H3 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h3-secondary",
-                    "label": "H3 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h4-primary",
-                    "label": "H4 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h5-primary",
-                    "label": "H5 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h6-primary",
-                    "label": "H6 Prim\u00e4r"
-                }
-            ],
-            "default": "u-text-h2-primary"
         },
         {
             "type": "select",
@@ -324,12 +361,6 @@ document.addEventListener("DOMContentLoaded", function () {
             "id": "heading_tidy_text",
             "label": "Ausgewogener Zeilenumbruch",
             "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "heading_visually_hidden",
-            "label": "Nur f\u00fcr Screenreader anzeigen",
-            "default": false
         },
         {
             "type": "header",
