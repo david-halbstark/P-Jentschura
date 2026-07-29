@@ -1,46 +1,75 @@
 <div class="recipe_card_wrap">
-                              <div data-clickable-card="" class="recipe_card_element">
-                                <div class="recipe_card_top">
-                                  <div class="recipe_card_image">
-                                    {% render 'image', loading: 'lazy', image: image, object_fit: 'cover', width: 900 %}
-                                  </div>
-                                  <div id="w-node-_215d0754-feb9-e674-267e-5f976878f36f-6878f369" class="recipe_slider_tag">
-                                    {% render 'tag', solid_color: 'green', tag: tag, variant: 'solid', solid_text_size: 'u-text-eyebrow-small' %}
-                                  </div>
-                                </div>
-                                <div class="recipe_card_bot">
-                                  <div class="recipe_card_bot_top">
-                                    <div class="recipe_card_text u-margin-trim u-alignment-center">
-                                      {% render 'heading', variant: 'u-text-h4-primary', heading: title, tag: 'h3' %}
-                                      {% render 'paragraph', variant: 'u-text-body-base', custom_class: 'u-margin-bottom-0 u-color-3', paragraph: description %}
-                                    </div>
-                                  </div>
-                                  <div class="recipe_card_bot_bot">
-                                    <div class="recipe_card_info">
-                                      {% if difficulty %}    <div li-if="difficulty" class="u-display-contents">
-    
-                                        {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: difficulty, tag: 'span', variant: 'u-text-body-small' %}
-                                          </div>
-{% endif %}
-                                      {% if preparation_time %}    <div li-if="preparation_time" class="u-display-contents">
-    
-                                        {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: preparation_time, tag: 'span', variant: 'u-text-body-small' %}
-                                          </div>
-{% endif %}
-                                      {% if serving %}    <div li-if="serving" class="u-display-contents">
-    
-                                        {% render 'typography', custom_class: 'u-margin-bottom-0 u-min-width-auto', text: serving, tag: 'span', variant: 'u-text-body-small' %}
-                                          </div>
-{% endif %}
-                                    </div>
-                                    <div class="recipe_card_button_wrap">
-                                      <div class="recipe_card_button_element">
-                                        <div class="recipe_card_button_inner">
-                                          {% render 'button_group', button_1_solid_color: 'red', button_1_url: url, button_1_label: section.settings.cards_button_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: 'link', button_1_variant: 'solid', button_1_custom_class: 'u-width-full' %}
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+  <div data-clickable-card="" class="recipe_card_element">
+    <div class="recipe_card_top">
+      <div class="recipe_card_image">
+        {% render 'image', loading: 'lazy', image: image, object_fit: 'cover', width: 900 %}
+      </div>
+      <div id="w-node-_215d0754-feb9-e674-267e-5f976878f36f-6878f369" class="recipe_slider_tag">
+        {% render 'tag', solid_color: 'green', tag: tag, variant: 'solid', solid_text_size: 'u-text-eyebrow-small' %}
+      </div>
+    </div>
+    <div class="recipe_card_bot">
+      <div class="recipe_card_bot_top">
+        <div class="recipe_card_text u-margin-trim u-alignment-center">
+          {% render 'heading', variant: 'u-text-h4-primary', heading: title, tag: 'h3' %}
+          {% render 'paragraph',
+            variant: 'u-text-body-base',
+            custom_class: 'u-margin-bottom-0 u-color-3',
+            paragraph: description
+          %}
+        </div>
+      </div>
+      <div class="recipe_card_bot_bot">
+        <div class="recipe_card_info">
+          {% if difficulty %}
+            <div li-if="difficulty" class="u-display-contents">
+              {% render 'typography',
+                custom_class: 'u-margin-bottom-0 u-min-width-auto',
+                text: difficulty,
+                tag: 'span',
+                variant: 'u-text-body-small'
+              %}
+            </div>
+          {% endif %}
+          {% if preparation_time %}
+            <div li-if="preparation_time" class="u-display-contents">
+              {% render 'typography',
+                custom_class: 'u-margin-bottom-0 u-min-width-auto',
+                text: preparation_time,
+                tag: 'span',
+                variant: 'u-text-body-small'
+              %}
+            </div>
+          {% endif %}
+          {% if serving %}
+            <div li-if="serving" class="u-display-contents">
+              {% render 'typography',
+                custom_class: 'u-margin-bottom-0 u-min-width-auto',
+                text: serving,
+                tag: 'span',
+                variant: 'u-text-body-small'
+              %}
+            </div>
+          {% endif %}
+        </div>
+        <div class="recipe_card_button_wrap">
+          <div class="recipe_card_button_element">
+            <div class="recipe_card_button_inner">
+              {% render 'button_group',
+                button_1_solid_color: 'red',
+                button_1_url: url,
+                button_1_label: section.settings.cards_button_label,
+                button_1_trigger: 'hover focus',
+                button_1_solid_padding: 'base',
+                button_1_solid_text_size: 'u-text-link-large',
+                button_1_mode: 'link',
+                button_1_variant: 'solid',
+                button_1_custom_class: 'u-width-full'
+              %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
