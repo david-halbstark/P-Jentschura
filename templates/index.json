@@ -283,9 +283,9 @@
         "section_id": "",
         "spacing_top": "main",
         "spacing_bottom": "main",
+        "image": "shopify://shop_images/Product.png",
         "heading": "Lorem ipsum dolor sit amet elit",
         "heading_tag": "h2",
-        "image": "shopify://shop_images/Product.png",
         "first_card_eyebrow": "Übertitel Text",
         "first_card_eyebrow_tag": "p",
         "first_card_heading": "Überschrift Text",
@@ -316,79 +316,25 @@
         "button_zBnfCW": {
           "type": "button",
           "settings": {
-            "button_1_label": "Text",
-            "button_1_url": "",
-            "button_2_icon": "none",
-            "button_1_icon_animation": "none",
-            "button_1_icon_color": "inherit",
-            "button_2_label": "Text",
-            "button_2_mode": "link",
-            "button_2_url": "",
-            "button_2_variant": "solid",
-            "button_2_action": "newsletter_modal",
-            "button_2_solid_color": "red",
-            "button_2_solid_text_size": "u-text-link-large",
-            "button_2_solid_padding": "base",
-            "button_2_text_text_size": "u-text-link-large",
-            "button_2_text_color": "green",
-            "button_2_pill_color": "white",
-            "button_2_pill_text_size": "u-text-eyebrow-base",
-            "button_2_pill_tag_inner": "",
-            "button_2_underline": false,
-            "button_2_icon_position": "after",
-            "button_2_icon_animation": "none"
+            "button_label": "Text",
+            "button_url": "",
+            "button_icon": "none"
           }
         },
         "button_8UACTk": {
           "type": "button",
           "settings": {
-            "button_1_label": "Text",
-            "button_1_url": "",
-            "button_2_icon": "none",
-            "button_1_icon_animation": "none",
-            "button_1_icon_color": "inherit",
-            "button_2_label": "Text",
-            "button_2_mode": "link",
-            "button_2_url": "",
-            "button_2_variant": "solid",
-            "button_2_action": "newsletter_modal",
-            "button_2_solid_color": "red",
-            "button_2_solid_text_size": "u-text-link-large",
-            "button_2_solid_padding": "base",
-            "button_2_text_text_size": "u-text-link-large",
-            "button_2_text_color": "green",
-            "button_2_pill_color": "white",
-            "button_2_pill_text_size": "u-text-eyebrow-base",
-            "button_2_pill_tag_inner": "",
-            "button_2_underline": false,
-            "button_2_icon_position": "after",
-            "button_2_icon_animation": "none"
+            "button_label": "Text",
+            "button_url": "",
+            "button_icon": "none"
           }
         },
         "button_YYDzfn": {
           "type": "button",
           "settings": {
-            "button_1_label": "Text",
-            "button_1_url": "",
-            "button_2_icon": "none",
-            "button_1_icon_animation": "none",
-            "button_1_icon_color": "inherit",
-            "button_2_label": "Text",
-            "button_2_mode": "link",
-            "button_2_url": "",
-            "button_2_variant": "solid",
-            "button_2_action": "newsletter_modal",
-            "button_2_solid_color": "red",
-            "button_2_solid_text_size": "u-text-link-large",
-            "button_2_solid_padding": "base",
-            "button_2_text_text_size": "u-text-link-large",
-            "button_2_text_color": "green",
-            "button_2_pill_color": "white",
-            "button_2_pill_text_size": "u-text-eyebrow-base",
-            "button_2_pill_tag_inner": "",
-            "button_2_underline": false,
-            "button_2_icon_position": "after",
-            "button_2_icon_animation": "none"
+            "button_label": "Text",
+            "button_url": "",
+            "button_icon": "none"
           }
         }
       },
@@ -406,7 +352,12 @@
         "eyebrow": "Übertitel Text",
         "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
         "paragraph_max_width": 60,
-        "paragraph_tidy_text": true
+        "paragraph_tidy_text": true,
+        "image": "shopify://shop_images/p-jentschura-home-hero-desktop.avif",
+        "card_heading": "Lorem ipsum dolor sit amet elit",
+        "card_heading_max_width": 60,
+        "card_text": "Lorem ipsum dolor sit amet elit",
+        "card_text_max_width": 60
       }
     },
     "news_slider_qEftGM": {
