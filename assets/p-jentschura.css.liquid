@@ -7155,11 +7155,17 @@ figure {
   display: flex;
 }
 
+.image_links_contain {
+  flex: none;
+}
+
 .image_links_layout {
   color: var(--_theme---text-2);
   grid-column-gap: calc(calc(20rem * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(12.5rem * max(var(--_responsive---small), var(--_responsive---xsmall))));
   grid-row-gap: calc(calc(20rem * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(12.5rem * max(var(--_responsive---small), var(--_responsive---xsmall))));
   flex-flow: column;
+  flex: 1;
+  justify-content: space-between;
   display: flex;
   position: relative;
 }
@@ -8507,8 +8513,15 @@ figure {
 }
 
 .image_links_card {
-  padding: var(--_spacing---space--9) var(--_spacing---space--11) var(--_spacing---space--8);
-  border-radius: var(--radius--main);
+  max-width: min(37.5rem, 100vw - 1.25rem);
+  padding-top: var(--_spacing---space--9);
+  padding-right: var(--_spacing---space--11);
+  padding-bottom: var(--_spacing---space--8);
+  padding-left: var(--_spacing---space--11);
+  border-top-left-radius: var(--radius--main);
+  border-top-right-radius: var(--radius--main);
+  border-bottom-left-radius: var(--radius--main);
+  border-bottom-right-radius: var(--radius--main);
   background-color: var(--swatch--white-o20);
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
@@ -9891,6 +9904,8 @@ figure {
   padding-right: var(--_spacing---space--9);
   padding-bottom: var(--_spacing---space--10);
   padding-left: var(--_spacing---space--9);
+  grid-column-gap: var(--_spacing---space--12);
+  grid-row-gap: var(--_spacing---space--12);
   border-radius: var(--radius--main);
   background-color: var(--_theme---background-3);
   color: var(--_theme---text-2);
@@ -9934,6 +9949,12 @@ figure {
 .testimonial_slider_layout {
   grid-column-gap: 2.5rem;
   grid-row-gap: 2.5rem;
+  flex-flow: column;
+  display: flex;
+}
+
+.image_links_contain_inner {
+  min-height: calc(100svh * max(var(--_responsive---medium), var(--_responsive---small), var(--_responsive---xsmall)));
   flex-flow: column;
   display: flex;
 }
