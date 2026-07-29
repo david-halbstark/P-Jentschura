@@ -372,7 +372,7 @@
         "eyebrow_tag": "p",
         "heading": "Aktuelles aus dem Unternehmen P. Jentschura",
         "heading_tag": "h2",
-        "heading_max_width": 20,
+        "heading_max_width": 0,
         "heading_tidy_text": true,
         "button_1_label": "Alle News entdecken",
         "button_1_url": ""
