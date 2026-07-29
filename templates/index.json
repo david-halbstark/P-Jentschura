@@ -297,17 +297,23 @@
         "paragraph_max_width": 60,
         "paragraph_tidy_text": true,
         "button_1_label": "Alle Rezepte entdecken",
-        "button_1_url": "shopify://blogs/blog"
+        "button_1_url": "shopify://blogs/blog",
+        "cards_button_label": "Button Text"
       }
     },
     "review_slider_b9FWPH": {
       "type": "review_slider",
-      "disabled": true,
       "name": "Review Slider",
       "settings": {
         "section_id": "",
         "spacing_top": "main",
         "spacing_bottom": "main",
+        "heading": "Lorem ipsum dolor sit amet elit",
+        "heading_tag": "h2",
+        "first_card_eyebrow": "Übertitel Text",
+        "first_card_eyebrow_tag": "p",
+        "first_card_heading": "Überschrift Text",
+        "first_card_heading_tag": "p",
         "button_1_label": "Text",
         "button_1_mode": "link",
         "button_1_url": "",
