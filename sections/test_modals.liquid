@@ -1,0 +1,370 @@
+{% comment %}
+  Zentrale Modal-Sektion (Floating-Drawer).
+  EINMAL im Layout rendern (theme.liquid), direkt vor </body>:
+      {% section 'modals' %}
+
+  Jeder Block ist ein Modal. Der "Schlüssel" (modal_key) verbindet Trigger und Modal:
+      Trigger-Button:  data-modal-open="brochure"
+      Modal-Block:     modal_key = "brochure"
+
+  Aufbau je Modal:
+      <dialog.modal>           transparenter Abstandsrahmen (Padding = Spalt, Blur scheint durch)
+        <div.modal__panel>     sichtbare weiße Box
+          Close + Inhalt + optional Sticky-CTA
+
+  Öffnen/Schließen: component-modals.js (einmal geladen, animierter Exit + Fokus-Rückgabe).
+{% endcomment %}
+
+{% for block in section.blocks %}
+  {%- if block.settings.enabled == false -%}{%- continue -%}{%- endif -%}
+  {%- liquid
+    assign key = block.settings.modal_key | strip | escape
+    assign heading = block.settings.heading
+    assign body = block.settings.content
+  -%}
+  {% if key != blank %}
+    <dialog
+      class="modal"
+      data-modal="{{ key }}"
+      aria-labelledby="modal-title-{{ block.id }}"
+      {{ block.shopify_attributes }}
+    >
+      <div class="modal__panel">
+        <button
+          type="button"
+          class="modal__close"
+          data-modal-close
+          aria-label="{{ 'general.accessibility.close' | t | default: 'Schließen' }}"
+        >
+          &times;
+        </button>
+
+        <div class="modal__content rte">
+          {% if heading != blank %}
+            <h2 id="modal-title-{{ block.id }}" class="modal__title">{{ heading }}</h2>
+          {% endif %}
+
+          {{ body }}
+
+          {%- if block.type == 'newsletter' -%}
+            {% form 'customer', class: 'modal__form' %}
+              <input type="hidden" name="contact[tags]" value="newsletter">
+              <label class="modal__label" for="modal-newsletter-{{ block.id }}">
+                {{ block.settings.field_label | default: 'E-Mail-Adresse' }}
+              </label>
+              <input
+                id="modal-newsletter-{{ block.id }}"
+                type="email"
+                name="contact[email]"
+                autocomplete="email"
+                required
+                placeholder="{{ block.settings.field_label | default: 'E-Mail-Adresse' }}"
+              >
+              <button type="submit" class="modal__submit">
+                {{ block.settings.cta_label | default: 'Anmelden' }}
+              </button>
+            {% endform %}
+          {%- endif -%}
+        </div>
+
+        {%- if block.type == 'brochure' and block.settings.file != blank -%}
+          <a
+            class="modal__cta"
+            href="{{ block.settings.file }}"
+            {% if block.settings.download %}
+              download
+            {% endif %}
+            target="_blank"
+            rel="noopener"
+          >
+            {{ block.settings.cta_label | default: 'Broschüre herunterladen' }}
+          </a>
+        {%- endif -%}
+      </div>
+    </dialog>
+  {% endif %}
+{% endfor %}
+
+<script src="{{ 'component-modals.js' | asset_url }}" defer="defer"></script>
+
+{% stylesheet %}
+  :root {
+    --modal-gap: 1rem;
+    --modal-dur: 0.3s;
+    --modal-dur-out: 0.16s;
+    --modal-ease: cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  /* Transparenter Abstandsrahmen: Padding = Spalt, Blur scheint durch,
+     Klick in den Spalt trifft <dialog> selbst -> schließt (siehe JS). */
+  .modal {
+    margin: 0 0 0 auto; /* rechts angeheftet */
+    height: 100dvh;
+    width: min(92vw, 452px);
+    max-width: 100%;
+    padding: var(--modal-gap);
+    border: 0;
+    background: transparent;
+    overflow: visible;
+
+    transform: translateX(100%);
+    transition: transform var(--modal-dur) var(--modal-ease);
+  }
+  .modal[open] {
+    transform: translateX(0);
+  }
+  @starting-style {
+    .modal[open] {
+      transform: translateX(100%);
+    }
+  }
+  /* Schließen: Dialog bleibt [open], slidet raus, dann close() im JS.
+     Kürzere Dauer -> Fokus kommt schneller zum Button zurück. */
+  .modal.is-closing {
+    transition: transform var(--modal-dur-out) var(--modal-ease);
+  }
+  .modal[open].is-closing {
+    transform: translateX(100%);
+  }
+
+  .modal::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    opacity: 0;
+    transition: opacity var(--modal-dur) var(--modal-ease);
+  }
+  .modal[open]::backdrop {
+    opacity: 1;
+  }
+  @starting-style {
+    .modal[open]::backdrop {
+      opacity: 0;
+    }
+  }
+  .modal.is-closing::backdrop {
+    transition: opacity var(--modal-dur-out) var(--modal-ease);
+  }
+  .modal[open].is-closing::backdrop {
+    opacity: 0;
+  }
+
+  /* Sichtbare Box */
+  .modal__panel {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: rgb(var(--color-background, 255 255 255));
+    color: rgb(var(--color-foreground, 26 26 26));
+    border-radius: 14px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    overflow: hidden;
+  }
+
+  .modal__close {
+    position: absolute;
+    top: 0.85rem;
+    right: 0.85rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    line-height: 1;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.06);
+    color: inherit;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .modal__close:hover {
+    background: rgba(0, 0, 0, 0.12);
+  }
+
+  .modal__content {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 2.5rem 1.75rem 1rem;
+    line-height: 1.5;
+  }
+  .modal__title {
+    margin: 0 0 1rem;
+    padding-right: 2rem;
+  }
+
+  .modal__cta,
+  .modal__submit {
+    display: block;
+    width: auto;
+    margin: 0.75rem 1rem 1rem;
+    padding: 1rem;
+    text-align: center;
+    font: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(var(--color-button-text, 255 255 255));
+    background: rgb(var(--color-button, 26 26 26));
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .modal__cta:hover,
+  .modal__submit:hover {
+    filter: brightness(0.95);
+  }
+
+  .modal__form {
+    display: grid;
+    gap: 0.5rem;
+    padding: 0 1.75rem 1rem;
+  }
+  .modal__form input[type='email'] {
+    padding: 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    font: inherit;
+  }
+  .modal__submit {
+    margin: 0.5rem 0 0;
+  }
+  .modal__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Mobile: Bottom-Sheet */
+  @media (max-width: 640px) {
+    .modal {
+      margin: auto 0 0 0;
+      width: 100%;
+      height: auto;
+      max-height: 92dvh;
+      padding: 0.6rem 0.6rem 0;
+      transform: translateY(100%);
+    }
+    .modal[open] {
+      transform: translateY(0);
+    }
+    @starting-style {
+      .modal[open] {
+        transform: translateY(100%);
+      }
+    }
+    .modal[open].is-closing {
+      transform: translateY(100%);
+    }
+
+    .modal__panel {
+      max-height: 92dvh;
+      border-radius: 16px 16px 0 0;
+    }
+    .modal__content::before {
+      content: '';
+      position: sticky;
+      top: 0;
+      display: block;
+      width: 40px;
+      height: 4px;
+      margin: -1.25rem auto 1rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.18);
+    }
+  }
+
+  /* Reduced motion: nur Fade */
+  @media (prefers-reduced-motion: reduce) {
+    .modal,
+    .modal[open],
+    .modal[open].is-closing {
+      transform: none;
+    }
+    .modal {
+      opacity: 0;
+      transition: opacity var(--modal-dur) ease;
+    }
+    .modal[open] {
+      opacity: 1;
+    }
+    .modal[open].is-closing {
+      opacity: 0;
+    }
+    @starting-style {
+      .modal[open] {
+        opacity: 0;
+      }
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Modals",
+  "blocks": [
+    {
+      "type": "brochure",
+      "name": "Broschüre-Modal",
+      "settings": [
+        { "type": "checkbox", "id": "enabled", "label": "Modal aktiv", "default": true },
+        {
+          "type": "text",
+          "id": "modal_key",
+          "label": "Schlüssel",
+          "info": "Muss mit data-modal-open am Button übereinstimmen, z. B. 'brochure'.",
+          "default": "brochure"
+        },
+        { "type": "text", "id": "heading", "label": "Überschrift", "default": "Broschüre" },
+        { "type": "richtext", "id": "content", "label": "Text" },
+        { "type": "url", "id": "file", "label": "Datei / Link (PDF)" },
+        { "type": "checkbox", "id": "download", "label": "Als Download erzwingen", "default": true },
+        { "type": "text", "id": "cta_label", "label": "Button-Text", "default": "Broschüre herunterladen" }
+      ]
+    },
+    {
+      "type": "newsletter",
+      "name": "Newsletter-Modal",
+      "settings": [
+        { "type": "checkbox", "id": "enabled", "label": "Modal aktiv", "default": true },
+        {
+          "type": "text",
+          "id": "modal_key",
+          "label": "Schlüssel",
+          "info": "Muss mit data-modal-open am Button übereinstimmen, z. B. 'newsletter'.",
+          "default": "newsletter"
+        },
+        { "type": "text", "id": "heading", "label": "Überschrift", "default": "Newsletter" },
+        { "type": "richtext", "id": "content", "label": "Text" },
+        { "type": "text", "id": "field_label", "label": "Feld-Beschriftung", "default": "E-Mail-Adresse" },
+        { "type": "text", "id": "cta_label", "label": "Button-Text", "default": "Anmelden" }
+      ]
+    },
+    {
+      "type": "custom",
+      "name": "Freies Modal",
+      "settings": [
+        { "type": "checkbox", "id": "enabled", "label": "Modal aktiv", "default": true },
+        {
+          "type": "text",
+          "id": "modal_key",
+          "label": "Schlüssel",
+          "info": "Muss mit data-modal-open am Button übereinstimmen.",
+          "default": "custom"
+        },
+        { "type": "text", "id": "heading", "label": "Überschrift" },
+        { "type": "richtext", "id": "content", "label": "Text" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Modalsss", "blocks": [{ "type": "brochure" }, { "type": "newsletter" }] }]
+}
+{% endschema %}
