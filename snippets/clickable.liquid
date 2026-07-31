@@ -1,4 +1,8 @@
-{% assign clickable_label = label -%}
+{%- assign char_lt = '%3C' | url_decode -%}
+{%- assign char_gt = '%3E' | url_decode -%}
+{%- assign char_slash = '%2F' | url_decode -%}
+
+{%- assign clickable_label = label -%}
 {%- assign clickable_url = url -%}
 {%- assign clickable_target = target | default: '_self' -%}
 {%- assign clickable_mode = mode | default: 'link' -%}
@@ -15,7 +19,11 @@
   {%- assign clickable_link_classes = clickable_link_classes | append: ' u-focus-ring-inside' -%}
 {%- endif -%}
 {%- assign clickable_a11y_attrs = '' -%}
-{%- if clickable_aria_hidden %}{% assign clickable_a11y_attrs = 'aria-hidden="true" tabindex="-1"' %}{% endif -%}
+{%- if clickable_aria_hidden -%}
+  {%- assign clickable_a11y_attrs = 'aria-hidden="true" tabindex="-1"' -%}
+{%- endif -%}
+
+{%- comment -%} Aktion aufloesen: open_modal_KEY wird zu data-modal-open, sonst data-action {%- endcomment -%}
 {%- assign clickable_modal_key = '' -%}
 {%- assign clickable_data_action = clickable_action -%}
 {%- if clickable_mode == 'action' -%}
@@ -29,6 +37,8 @@
     {%- endcase -%}
   {%- endif -%}
 {%- endif -%}
+
+{%- comment -%} Aktions-Attribut als String bauen {%- endcomment -%}
 {%- assign clickable_action_attr = '' -%}
 {%- if clickable_mode == 'action' -%}
   {%- if clickable_modal_key != blank -%}
@@ -37,6 +47,8 @@
     {%- assign clickable_action_attr = 'data-action="' | append: clickable_data_action | append: '"' -%}
   {%- endif -%}
 {%- endif -%}
+
+{%- comment -%} Aktions- und a11y-Attribute zu einem String kombinieren {%- endcomment -%}
 {%- assign clickable_action_all_attrs = clickable_action_attr -%}
 {%- if clickable_a11y_attrs != blank -%}
   {%- if clickable_action_all_attrs != blank -%}
@@ -45,6 +57,7 @@
     {%- assign clickable_action_all_attrs = clickable_a11y_attrs -%}
   {%- endif -%}
 {%- endif -%}
+
 {%- assign show_clickable = false -%}
 {%- if clickable_label != blank -%}
   {%- if clickable_mode == 'link' and clickable_url != blank -%}
@@ -57,28 +70,23 @@
     {%- assign show_clickable = true -%}
   {%- endif -%}
 {%- endif -%}
-{%- if show_clickable %}
-  <div class="{{clickable_classes}}">
-    {% if clickable_mode == 'link' -%}
-      <a
-        href="{{clickable_url}}"
-        target="{{clickable_target}}"
-        aria-label="{{- clickable_label | strip_html | escape -}}"
-        class="{{clickable_link_classes}}"
-      ></a>
-    {%- elsif clickable_mode == 'action' -%}
-      <button
-        type="button"
-        aria-label="{{clickable_label | strip_html | escape}}"
-        class="{{clickable_link_classes}}"
-      ></button>
-    {%- elsif clickable_mode == 'submit' -%}
-      <button
-        type="submit"
-        aria-label="{{clickable_label | strip_html | escape}}"
-        class="{{clickable_link_classes}}"
-        dasisteintest=""
-      ></button>
-    {%- endif %}
-  </div>
-{% endif %}
+
+{%- comment -%} Aria-Label vorab escapen {%- endcomment -%}
+{%- assign clickable_aria_label = clickable_label | strip_html | escape -%}
+
+{%- comment -%} Element als String zusammensetzen (Tags aus char_lt/char_gt/char_slash) {%- endcomment -%}
+{%- assign clickable_inner = '' -%}
+{%- if clickable_mode == 'link' -%}
+  {%- capture clickable_inner -%}{{ char_lt }}a href="{{ clickable_url }}" target="{{ clickable_target }}" aria-label="{{ clickable_aria_label }}" class="{{ clickable_link_classes }}" {{ clickable_a11y_attrs }}{{ char_gt }}{{ char_lt }}{{ char_slash }}a{{ char_gt }}{%- endcapture -%}
+{%- elsif clickable_mode == 'action' -%}
+  {%- capture clickable_inner -%}{{ char_lt }}button type="button" aria-label="{{ clickable_aria_label }}" class="{{ clickable_link_classes }}" {{ clickable_action_all_attrs }}{{ char_gt }}{{ char_lt }}{{ char_slash }}button{{ char_gt }}{%- endcapture -%}
+{%- elsif clickable_mode == 'submit' -%}
+  {%- capture clickable_inner -%}{{ char_lt }}button type="submit" aria-label="{{ clickable_aria_label }}" class="{{ clickable_link_classes }}" {{ clickable_a11y_attrs }}{{ char_gt }}{{ char_lt }}{{ char_slash }}button{{ char_gt }}{%- endcapture -%}
+{%- endif -%}
+
+{%- if show_clickable -%}
+  {{ char_lt }}div class="{{ clickable_classes }}"{{ char_gt -}}
+  {{- clickable_inner -}}
+  {{- char_lt -}}
+  {{- char_slash }}div{{ char_gt }}
+{%- endif -%}
