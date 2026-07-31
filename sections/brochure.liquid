@@ -72,9 +72,37 @@
   {%- endcase %}
   <div class="u-embed-css w-embed">
     <style>
-      #shopify-section-{{ section.id }} [data-section-spacing] {
-        --section-spacing-top: {{ spacing_top }};
-        --section-spacing-bottom: {{ spacing_bottom }};
+      #shopify-section-{{ section.id }}.brochure_wrap[data-variant='auto'] {
+        --collection-theme-color: {{ theme_color }};
+      }
+
+      .brochure_layout_inner[data-variant="auto"] {
+        background-color: var(--collection-theme-color, grey);
+      }
+
+       .brochure_layout_inner[data-variant="static"] {
+          color: var(--_theme---text);
+          background-color: var(--_theme---background);
+      }
+
+      .brochure_layout_inner[data-variant="static"] {
+          color: var(--_theme---text);
+        background-color: var(--_theme---background);
+      }
+
+        .brochure_layout_inner[data-variant="static"] .u-eyebrow-wrapper {
+          color: var(--_theme---text-3);
+      }
+
+      @container (width < 53em ) {
+        .brochure_contain [data-section-spacing] {
+          --section-spacing-top: 0rem;
+          --section-spacing-bottom: 0rem;
+        }
+
+        .brochure_layout_inner {
+          box-shadow: none;
+        }
       }
     </style>
   </div>
