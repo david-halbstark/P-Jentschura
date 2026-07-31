@@ -74,6 +74,12 @@
                     <div li-block="Details Modal" class="u-display-contents">
                                     
             
+                                    <div class="u-display-none">
+              
+              
+            </div>
+                                    
+            
                                     <dialog data-modal="details" aria-labelledby="modal-title-{{ block.id }}" class="modal_wrap" {{ block.shopify_attributes }}>
               <div class="modal_panel"><button type="button" data-modal-close="" aria-label="{{ 'general.accessibility.close' | t | default: 'Schließen' }}" class="modal_close_button"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 8 8" fill="none" class="modal_close_button_icon">
                     <path d="M0.614687 7.76271L0 7.14802L3.26667 3.88135L0 0.614688L0.614687 0L3.88135 3.26667L7.14802 0L7.76271 0.614688L4.49604 3.88135L7.76271 7.14802L7.14802 7.76271L3.88135 4.49604L0.614687 7.76271Z" fill="currentColor" class="u-path"></path>
@@ -183,7 +189,18 @@
         {
             "name": "Details Modal",
             "type": "details-modal",
-            "settings": null
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "\u00dcberschrift"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "heading",
+                    "label": "Text",
+                    "default": "Lorem ipsum dolor sit amet elit"
+                }
+            ]
         },
         {
             "name": "Brochure Modal",
