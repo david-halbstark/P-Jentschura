@@ -1,399 +1,433 @@
-{% assign product_collection = collection | default: product.collections.first %}{% assign theme_color = product_collection.metafields.custom.theme_color.value.color %}
-        <div class="u-embed-css w-embed">
-          <style>
-  #shopify-section-{{ section.id }}.brochure_wrap {
-    --collection-theme-color: {{ theme_color }};
-  }
-  .brochure_layout_inner {
-    background-color: var(--collection-theme-color, grey);
-  }
-  @container (width < 53em ) {
-    .brochure_contain [data-section-spacing] {
-      --section-spacing-top: 0rem;
-      --section-spacing-bottom: 0rem;
+{% assign product_collection = collection | default: product.collections.first -%}
+{%- assign theme_color = product_collection.metafields.custom.theme_color.value.color %}
+<div class="u-embed-css w-embed">
+  <style>
+    #shopify-section-{{ section.id }}.brochure_wrap {
+      --collection-theme-color: {{ theme_color }};
     }
-  }
-</style>
-        </div>
-        
-        <div class="u-display-none">
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          {% case section.settings.spacing_top %}{% when 'xxsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_top = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_top = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_top = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_top = 'var(--_spacing---section-space--large)' %}{% when 'large_medium_off' %}{% assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' %}{% when 'page_top' %}{% assign spacing_top = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_top = '0' %}{% endcase %}{% case section.settings.spacing_bottom %}{% when 'xxsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' %}{% when 'xsmall' %}{% assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' %}{% when 'small' %}{% assign spacing_bottom = 'var(--_spacing---section-space--small)' %}{% when 'medium' %}{% assign spacing_bottom = 'var(--_spacing---section-space--medium)' %}{% when 'large' %}{% assign spacing_bottom = 'var(--_spacing---section-space--large)' %}{% when 'page_top' %}{% assign spacing_bottom = 'var(--_spacing---section-space--page-top)' %}{% else %}{% assign spacing_bottom = '0' %}{% endcase %}
-          <div class="u-embed-css w-embed">
-            <style>
-  #shopify-section-{{ section.id }} [data-section-spacing] {
-    --section-spacing-top: {{ spacing_top }};
-    --section-spacing-bottom: {{ spacing_bottom }};
-  }
-</style>
+    .brochure_layout_inner {
+      background-color: var(--collection-theme-color, grey);
+    }
+    @container (width < 53em ) {
+      .brochure_contain [data-section-spacing] {
+        --section-spacing-top: 0rem;
+        --section-spacing-bottom: 0rem;
+      }
+    }
+  </style>
+</div>
+
+<div class="u-display-none"></div>
+<div class="u-display-none">
+  {% case section.settings.spacing_top -%}
+    {%- when 'xxsmall' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--xxsmall)' -%}
+    {%- when 'xsmall' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--xsmall)' -%}
+    {%- when 'small' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--small)' -%}
+    {%- when 'medium' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--medium)' -%}
+    {%- when 'large' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--large)' -%}
+    {%- when 'large_medium_off' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--large-medium-off)' -%}
+    {%- when 'page_top' -%}
+      {%- assign spacing_top = 'var(--_spacing---section-space--page-top)' -%}
+    {%- else -%}
+      {%- assign spacing_top = '0' -%}
+  {%- endcase -%}
+  {%- case section.settings.spacing_bottom -%}
+    {%- when 'xxsmall' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--xxsmall)' -%}
+    {%- when 'xsmall' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--xsmall)' -%}
+    {%- when 'small' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--small)' -%}
+    {%- when 'medium' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--medium)' -%}
+    {%- when 'large' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--large)' -%}
+    {%- when 'page_top' -%}
+      {%- assign spacing_bottom = 'var(--_spacing---section-space--page-top)' -%}
+    {%- else -%}
+      {%- assign spacing_bottom = '0' -%}
+  {%- endcase %}
+  <div class="u-embed-css w-embed">
+    <style>
+      #shopify-section-{{ section.id }} [data-section-spacing] {
+        --section-spacing-top: {{ spacing_top }};
+        --section-spacing-bottom: {{ spacing_bottom }};
+      }
+    </style>
+  </div>
+</div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div class="u-display-none"></div>
+<div
+  class="brochure_contain u-container"
+  {% if section.settings.section_id != blank %}
+    {{- section.settings.section_id | handleize -}}
+  {% endif %}
+>
+  <div data-section-spacing="" class="brochure_layout">
+    <div class="brochure_layout_inner">
+      <div class="brochure_left">
+        {% render 'eyebrow',
+          tag: section.settings.eyebrow_tag,
+          eyebrow: section.settings.eyebrow,
+          variant: 'u-text-eyebrow-base',
+          wrapper_class: 'is-eyebrow-base'
+        %}
+        {% render 'heading',
+          tidy_text: section.settings.heading_tidy_text,
+          heading: section.settings.heading,
+          tag: section.settings.heading_tag,
+          variant: 'u-text-h3-primary',
+          max_width: section.settings.heading_max_width
+        %}
+        {% render 'paragraph',
+          max_width: section.settings.paragraph_max_width,
+          paragraph: section.settings.paragraph,
+          variant: section.settings.paragraph_variant
+        %}
+        {% render 'button_group',
+          button_1_solid_color: 'white',
+          button_1_action: 'open_modal_brochure',
+          button_1_label: section.settings.button_1_label,
+          button_1_trigger: 'hover focus',
+          button_1_solid_padding: 'base',
+          button_1_solid_text_size: 'u-text-link-large',
+          button_1_mode: 'action',
+          button_1_variant: 'solid'
+        %}
+      </div>
+      <div class="brochure_right">
+        <div class="brochure_image_wrap">
+          {% render 'clickable',
+            aria_hidden: true,
+            label: section.settings.button_1_label,
+            mode: 'action',
+            action: 'open_modal_brochure'
+          %}
+          <div class="brochure_image">
+            {% render 'image', width: 500, image: section.settings.image, object_fit: 'contain' %}
           </div>
         </div>
-        <div class="u-display-none">
-          
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          
-          
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-        </div>
-        <div class="brochure_contain u-container" {% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% endif %}>
-          
-          <div data-section-spacing="" class="brochure_layout">
-            <div class="brochure_layout_inner">
-              <div class="brochure_left">
-                {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-base', wrapper_class: 'is-eyebrow-base' %}
-                {% render 'heading', tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, tag: section.settings.heading_tag, variant: 'u-text-h3-primary', max_width: section.settings.heading_max_width %}
-                {% render 'paragraph', max_width: section.settings.paragraph_max_width, paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant %}
-                {% render 'button_group', button_1_solid_color: 'white', button_1_action: 'open_modal_brochure', button_1_label: section.settings.button_1_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: 'action', button_1_variant: 'solid' %}
-              </div>
-              <div class="brochure_right">
-                <div class="brochure_image_wrap">
-                  {% render 'clickable', aria_hidden: true, label: section.settings.button_1_label, mode: 'action', action: 'open_modal_brochure' %}
-                  <div class="brochure_image">
-                    {% render 'image', width: 500, image: section.settings.image, object_fit: 'contain' %}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        </div> {% schema %} {
-    "tag": "section",
-    "name": "Brochure",
-    "class": "brochure_wrap u-section",
-    "settings": [
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "tag": "section",
+  "name": "Brochure",
+  "class": "brochure_wrap u-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Sektion"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "ID"
+    },
+    {
+      "type": "header",
+      "content": "Abst\u00e4nde"
+    },
+    {
+      "type": "select",
+      "id": "spacing_top",
+      "label": "Oben",
+      "options": [
         {
-            "type": "header",
-            "content": "Sektion"
+          "value": "none",
+          "label": "Kein Abstand"
         },
         {
-            "type": "text",
-            "id": "section_id",
-            "label": "ID"
+          "value": "xxsmall",
+          "label": "Extra extra klein"
         },
         {
-            "type": "header",
-            "content": "Abst\u00e4nde"
+          "value": "xsmall",
+          "label": "Extra klein"
         },
         {
-            "type": "select",
-            "id": "spacing_top",
-            "label": "Oben",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Abstand"
-                },
-                {
-                    "value": "xxsmall",
-                    "label": "Extra extra klein"
-                },
-                {
-                    "value": "xsmall",
-                    "label": "Extra klein"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "medium",
-                    "label": "Mittel"
-                },
-                {
-                    "value": "large",
-                    "label": "Gro\u00df"
-                },
-                {
-                    "value": "large_medium_off",
-                    "label": "Gro\u00df | Medium kein Abstand"
-                },
-                {
-                    "value": "page_top",
-                    "label": "Seitenanfang"
-                }
-            ],
-            "default": "xsmall"
+          "value": "small",
+          "label": "Klein"
         },
         {
-            "type": "select",
-            "id": "spacing_bottom",
-            "label": "Unten",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Kein Abstand"
-                },
-                {
-                    "value": "xxsmall",
-                    "label": "Extra extra klein"
-                },
-                {
-                    "value": "xsmall",
-                    "label": "Extra klein"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "medium",
-                    "label": "Mittel"
-                },
-                {
-                    "value": "large",
-                    "label": "Gro\u00df"
-                }
-            ],
-            "default": "xsmall"
+          "value": "medium",
+          "label": "Mittel"
         },
         {
-            "type": "header",
-            "content": "\u00dcbertitel"
+          "value": "large",
+          "label": "Gro\u00df"
         },
         {
-            "type": "text",
-            "id": "eyebrow",
-            "label": "Text",
-            "default": "\u00dcbertitel Text"
+          "value": "large_medium_off",
+          "label": "Gro\u00df | Medium kein Abstand"
         },
         {
-            "type": "select",
-            "id": "eyebrow_tag",
-            "label": "HTML-Tag",
-            "options": [
-                {
-                    "value": "h1",
-                    "label": "H1"
-                },
-                {
-                    "value": "h2",
-                    "label": "H2"
-                },
-                {
-                    "value": "h3",
-                    "label": "H3"
-                },
-                {
-                    "value": "h4",
-                    "label": "H4"
-                },
-                {
-                    "value": "h5",
-                    "label": "H5"
-                },
-                {
-                    "value": "h6",
-                    "label": "H6"
-                },
-                {
-                    "value": "p",
-                    "label": "P"
-                }
-            ],
-            "default": "p"
-        },
-        {
-            "type": "header",
-            "content": "\u00dcberschrift"
-        },
-        {
-            "type": "inline_richtext",
-            "id": "heading",
-            "label": "Text",
-            "default": "Lorem ipsum dolor sit amet elit"
-        },
-        {
-            "type": "select",
-            "id": "heading_tag",
-            "label": "HTML-Tag",
-            "options": [
-                {
-                    "value": "h1",
-                    "label": "H1"
-                },
-                {
-                    "value": "h2",
-                    "label": "H2"
-                },
-                {
-                    "value": "h3",
-                    "label": "H3"
-                },
-                {
-                    "value": "h4",
-                    "label": "H4"
-                },
-                {
-                    "value": "h5",
-                    "label": "H5"
-                },
-                {
-                    "value": "h6",
-                    "label": "H6"
-                },
-                {
-                    "value": "p",
-                    "label": "P"
-                }
-            ],
-            "default": "h2"
-        },
-        {
-            "type": "number",
-            "id": "heading_max_width",
-            "label": "Maximale Breite",
-            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-            "default": 20
-        },
-        {
-            "type": "checkbox",
-            "id": "heading_tidy_text",
-            "label": "Ausgewogener Zeilenumbruch",
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": "Text"
-        },
-        {
-            "type": "richtext",
-            "id": "paragraph",
-            "label": "Text",
-            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
-        },
-        {
-            "type": "number",
-            "id": "paragraph_max_width",
-            "label": "Maximale Breite",
-            "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
-            "default": 60
-        },
-        {
-            "type": "checkbox",
-            "id": "paragraph_tidy_text",
-            "label": "Ausgewogener Zeilenumbruch",
-            "default": true
-        },
-        {
-            "type": "header",
-            "content": "Button 1"
-        },
-        {
-            "type": "text",
-            "id": "button_1_label",
-            "label": "Text",
-            "default": "Text"
-        },
-        {
-            "type": "header",
-            "content": "Link"
-        },
-        {
-            "type": "text",
-            "id": "clickable_label",
-            "label": "Beschriftung",
-            "default": "Mehr erfahren"
-        },
-        {
-            "type": "select",
-            "id": "clickable_mode",
-            "label": "Funktion",
-            "options": [
-                {
-                    "value": "link",
-                    "label": "Link \u00f6ffnen"
-                },
-                {
-                    "value": "action",
-                    "label": "Aktion ausf\u00fchren"
-                }
-            ],
-            "default": "link"
-        },
-        {
-            "type": "url",
-            "id": "clickable_url",
-            "label": "Link",
-            "visible_if": "{{ section.settings.clickable_mode == 'link' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_1_action",
-            "label": "Aktion",
-            "options": [
-                {
-                    "value": "open_modal_brochure",
-                    "label": "Brosch\u00fcren-Modal \u00f6ffnen"
-                }
-            ],
-            "default": "open_modal_brochure",
-            "visible_if": "{{ section.settings.clickable_mode== 'action' }}"
-        },
-        {
-            "type": "select",
-            "id": "clickable_focus_ring",
-            "label": "Fokus-Rahmen",
-            "options": [
-                {
-                    "value": "outside",
-                    "label": "Au\u00dfen"
-                },
-                {
-                    "value": "inside",
-                    "label": "Innen"
-                }
-            ],
-            "default": "outside"
-        },
-        {
-            "type": "header",
-            "content": "Bild"
-        },
-        {
-            "type": "image_picker",
-            "id": "image",
-            "label": "Bild"
+          "value": "page_top",
+          "label": "Seitenanfang"
         }
-    ],
-    "presets": [
+      ],
+      "default": "xsmall"
+    },
+    {
+      "type": "select",
+      "id": "spacing_bottom",
+      "label": "Unten",
+      "options": [
         {
-            "name": "Brochure",
-            "category": "Liquify",
-            "blocks": []
+          "value": "none",
+          "label": "Kein Abstand"
+        },
+        {
+          "value": "xxsmall",
+          "label": "Extra extra klein"
+        },
+        {
+          "value": "xsmall",
+          "label": "Extra klein"
+        },
+        {
+          "value": "small",
+          "label": "Klein"
+        },
+        {
+          "value": "medium",
+          "label": "Mittel"
+        },
+        {
+          "value": "large",
+          "label": "Gro\u00df"
         }
-    ]
-} {% endschema %}
+      ],
+      "default": "xsmall"
+    },
+    {
+      "type": "header",
+      "content": "\u00dcbertitel"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Text",
+      "default": "\u00dcbertitel Text"
+    },
+    {
+      "type": "select",
+      "id": "eyebrow_tag",
+      "label": "HTML-Tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "p",
+          "label": "P"
+        }
+      ],
+      "default": "p"
+    },
+    {
+      "type": "header",
+      "content": "\u00dcberschrift"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Text",
+      "default": "Lorem ipsum dolor sit amet elit"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "HTML-Tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        },
+        {
+          "value": "p",
+          "label": "P"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "number",
+      "id": "heading_max_width",
+      "label": "Maximale Breite",
+      "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+      "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "heading_tidy_text",
+      "label": "Ausgewogener Zeilenumbruch",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Text"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph",
+      "label": "Text",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
+    },
+    {
+      "type": "number",
+      "id": "paragraph_max_width",
+      "label": "Maximale Breite",
+      "info": "Angabe in Zeichen\/ch. Leer lassen f\u00fcr keine Begrenzung.",
+      "default": 60
+    },
+    {
+      "type": "checkbox",
+      "id": "paragraph_tidy_text",
+      "label": "Ausgewogener Zeilenumbruch",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Button 1"
+    },
+    {
+      "type": "text",
+      "id": "button_1_label",
+      "label": "Text",
+      "default": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Link"
+    },
+    {
+      "type": "text",
+      "id": "clickable_label",
+      "label": "Beschriftung",
+      "default": "Mehr erfahren"
+    },
+    {
+      "type": "select",
+      "id": "clickable_mode",
+      "label": "Funktion",
+      "options": [
+        {
+          "value": "link",
+          "label": "Link \u00f6ffnen"
+        },
+        {
+          "value": "action",
+          "label": "Aktion ausf\u00fchren"
+        }
+      ],
+      "default": "link"
+    },
+    {
+      "type": "url",
+      "id": "clickable_url",
+      "label": "Link",
+      "visible_if": "{{ section.settings.clickable_mode == 'link' }}"
+    },
+    {
+      "type": "select",
+      "id": "button_1_action",
+      "label": "Aktion",
+      "options": [
+        {
+          "value": "open_modal_brochure",
+          "label": "Brosch\u00fcren-Modal \u00f6ffnen"
+        }
+      ],
+      "default": "open_modal_brochure",
+      "visible_if": "{{ section.settings.clickable_mode== 'action' }}"
+    },
+    {
+      "type": "select",
+      "id": "clickable_focus_ring",
+      "label": "Fokus-Rahmen",
+      "options": [
+        {
+          "value": "outside",
+          "label": "Au\u00dfen"
+        },
+        {
+          "value": "inside",
+          "label": "Innen"
+        }
+      ],
+      "default": "outside"
+    },
+    {
+      "type": "header",
+      "content": "Bild"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Bild"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brochure",
+      "category": "Liquify",
+      "blocks": []
+    }
+  ]
+}
+{% endschema %}
