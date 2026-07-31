@@ -532,6 +532,22 @@
         "image_loading": "lazy",
         "image_fetchpriority": "auto"
       }
+    },
+    "modals_LwcMib": {
+      "type": "modals",
+      "blocks": {
+        "brochure_modal_HCC6RE": {
+          "type": "brochure-modal",
+          "settings": {
+            "eyebrow": "Übertitel Text"
+          }
+        }
+      },
+      "block_order": [
+        "brochure_modal_HCC6RE"
+      ],
+      "name": "Modals",
+      "settings": {}
     }
   },
   "layout": "theme",
@@ -550,6 +566,7 @@
     "related_products_iALdDX",
     "social_media_JUHRJC",
     "seo_content_rxiKww",
-    "newsletter_bbcNma"
+    "newsletter_bbcNma",
+    "modals_LwcMib"
   ]
 }
