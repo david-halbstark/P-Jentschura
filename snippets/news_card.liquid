@@ -1,19 +1,14 @@
 <div class="news_slider_card_wrap">
   <div class="news_slider_card_element">
     <div class="news_slider_card_top">
-      {% render 'image', width: 800, image: image2, object_fit: 'cover' %}
+      {% render 'image', width: 800, image: image, object_fit: 'cover' %}
       <div id="w-node-_91cb3868-6d12-a0d8-3429-158489c3c7a5-89c3c7a0" class="news_slider_card_tag">
         {% render 'tag', solid_color: 'red', tag: tag, variant: 'solid', solid_text_size: 'u-text-eyebrow-small' %}
       </div>
     </div>
     <div class="news_slider_card_bot u-margin-trim">
       {% render 'typography', custom_class: 'u-color-3 u-margin-bottom-6', tag: 'div', variant: 'u-text-body-small' %}
-      {% render 'heading',
-        custom_class: 'u-margin-bottom-7',
-        heading: article.title,
-        tag: 'h3',
-        variant: 'u-text-h3-primary'
-      %}
+      {% render 'heading', custom_class: 'u-margin-bottom-7', heading: title, tag: 'h3', variant: 'u-text-h3-primary' %}
       {% render 'paragraph', variant: 'u-text-body-base u-color-3', custom_class: u-color-3, paragraph: text | metafield_tag %}
     </div>
     {% render 'clickable', url: url, label: title, mode: 'link' %}
