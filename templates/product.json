@@ -52,7 +52,6 @@
         "button_2_mode": "link",
         "button_2_url": "",
         "button_2_variant": "solid",
-        "button_2_action": "newsletter_modal",
         "button_2_solid_color": "red",
         "button_2_solid_text_size": "u-text-link-large",
         "button_2_solid_padding": "base",
@@ -130,7 +129,6 @@
         "button_2_mode": "link",
         "button_2_url": "",
         "button_2_variant": "solid",
-        "button_2_action": "newsletter_modal",
         "button_2_solid_color": "red",
         "button_2_solid_text_size": "u-text-link-large",
         "button_2_solid_padding": "base",
@@ -186,7 +184,6 @@
         "button_2_mode": "link",
         "button_2_url": "",
         "button_2_variant": "solid",
-        "button_2_action": "newsletter_modal",
         "button_2_solid_color": "red",
         "button_2_solid_text_size": "u-text-link-large",
         "button_2_solid_padding": "base",
@@ -263,7 +260,6 @@
         "button_2_mode": "link",
         "button_2_url": "",
         "button_2_variant": "solid",
-        "button_2_action": "newsletter_modal",
         "button_2_solid_color": "red",
         "button_2_solid_text_size": "u-text-link-large",
         "button_2_solid_padding": "base",
@@ -282,6 +278,7 @@
       "name": "Brochure",
       "settings": {
         "section_id": "",
+        "variant": "auto",
         "spacing_top": "large",
         "spacing_bottom": "large",
         "eyebrow": "Broschüre",
@@ -294,6 +291,37 @@
         "paragraph_max_width": 60,
         "paragraph_tidy_text": true,
         "button_1_label": "Jetzt entdecken",
+        "clickable_label": "Mehr erfahren",
+        "clickable_mode": "link",
+        "clickable_url": "",
+        "button_1_action": "open_modal_brochure",
+        "clickable_focus_ring": "outside",
+        "image": "{{ product.metafields.custom.brochure_image.value }}"
+      }
+    },
+    "brochure_EgGpE3": {
+      "type": "brochure",
+      "name": "Brochure",
+      "settings": {
+        "section_id": "",
+        "variant": "static",
+        "spacing_top": "large",
+        "spacing_bottom": "large",
+        "eyebrow": "Broschüre",
+        "eyebrow_tag": "p",
+        "heading": "Broschüre durchblättern",
+        "heading_tag": "h2",
+        "heading_max_width": 20,
+        "heading_tidy_text": true,
+        "paragraph": "<p>Uns liegt ein ressourcenschonender Umgang mit natürlichen Rohstoffen am Herzen. Nutzen Sie daher gern die Möglichkeit, die Broschüre online anzusehen.</p>",
+        "paragraph_max_width": 60,
+        "paragraph_tidy_text": true,
+        "button_1_label": "Jetzt entdecken",
+        "clickable_label": "Mehr erfahren",
+        "clickable_mode": "link",
+        "clickable_url": "",
+        "button_1_action": "open_modal_brochure",
+        "clickable_focus_ring": "outside",
         "image": "{{ product.metafields.custom.brochure_image.value }}"
       }
     },
@@ -359,7 +387,6 @@
         "button_2_mode": "link",
         "button_2_url": "",
         "button_2_variant": "solid",
-        "button_2_action": "newsletter_modal",
         "button_2_solid_color": "red",
         "button_2_solid_text_size": "u-text-link-large",
         "button_2_solid_padding": "base",
@@ -415,7 +442,6 @@
         "button_2_mode": "link",
         "button_2_url": "",
         "button_2_variant": "solid",
-        "button_2_action": "newsletter_modal",
         "button_2_solid_color": "red",
         "button_2_solid_text_size": "u-text-link-large",
         "button_2_solid_padding": "base",
@@ -471,7 +497,6 @@
         "button_2_mode": "link",
         "button_2_url": "",
         "button_2_variant": "solid",
-        "button_2_action": "newsletter_modal",
         "button_2_solid_color": "red",
         "button_2_solid_text_size": "u-text-link-large",
         "button_2_solid_padding": "base",
@@ -539,7 +564,7 @@
         "brochure_modal_HCC6RE": {
           "type": "brochure-modal",
           "settings": {
-            "eyebrow": "Übertitel Text"
+            "heading": "Lorem ipsum dolor sit amet elit"
           }
         }
       },
@@ -560,6 +585,7 @@
     "recipe_slider_e3zjb4",
     "review_list_CrLQGH",
     "brochure_9LmCFY",
+    "brochure_EgGpE3",
     "guide_slider_apVpGW",
     "event_slider_nVeKrG",
     "product_faq_kmV3N6",
