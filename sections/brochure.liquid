@@ -1,4 +1,4 @@
-{% assign theme_metaobject = collection.metafields.custom.theme_color.value -%}
+{% assign theme_metaobject = product.collection.metafields.custom.theme_color.value -%}
 {%- assign theme_color = theme_metaobject.color.value | color_to_hex %}
 
 <div class="u-embed-css w-embed">
