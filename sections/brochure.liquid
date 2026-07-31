@@ -1,6 +1,6 @@
 {%- assign product_collection = collection | default: product.collections.first -%}
-{%- assign theme_color = product_collection.metafields.custom.theme_color.value.color -%}
-
+{%- assign theme_color = product_collection.metafields.custom.theme_color.vaue.color -%}
+l
 <div style="color: {{ theme_color }}">{{ theme_color }}</div>
 
 <div class="u-embed-css w-embed">
@@ -8,7 +8,7 @@
     #shopify-section-{{ section.id }}.brochure_wrap {
       --collection-theme-color: {{ theme_color }};
     }
-    .borchure_layout_inner {
+    .brochure_layout_inner {
       background-color: var(--collection-theme-color, grey);
     }
     @container (width < 53em ) {
