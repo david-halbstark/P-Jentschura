@@ -375,7 +375,7 @@
         "heading_max_width": 0,
         "heading_tidy_text": true,
         "button_1_label": "Alle News entdecken",
-        "button_1_url": ""
+        "button_1_url": "shopify://blogs/news"
       }
     },
     "social_media_fbp9cW": {
