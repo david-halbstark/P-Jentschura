@@ -59,6 +59,15 @@
         <div class="u-display-none">
           
           
+          
+          
+          
+          
+          
+        </div>
+        <div class="u-display-none">
+          
+          
         </div>
         <div class="brochure_contain u-container" {% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% endif %}>
           
@@ -308,6 +317,67 @@
             "id": "button_1_label",
             "label": "Text",
             "default": "Text"
+        },
+        {
+            "type": "header",
+            "content": "Link"
+        },
+        {
+            "type": "text",
+            "id": "clickable_label",
+            "label": "Beschriftung",
+            "default": "Mehr erfahren"
+        },
+        {
+            "type": "select",
+            "id": "clickable_mode",
+            "label": "Funktion",
+            "options": [
+                {
+                    "value": "link",
+                    "label": "Link \u00f6ffnen"
+                },
+                {
+                    "value": "action",
+                    "label": "Aktion ausf\u00fchren"
+                }
+            ],
+            "default": "link"
+        },
+        {
+            "type": "url",
+            "id": "clickable_url",
+            "label": "Link",
+            "visible_if": "{{ section.settings.clickable_mode == 'link' }}"
+        },
+        {
+            "type": "select",
+            "id": "button_1_action",
+            "label": "Aktion",
+            "options": [
+                {
+                    "value": "open_modal_brochure",
+                    "label": "Brosch\u00fcren-Modal \u00f6ffnen"
+                }
+            ],
+            "default": "open_modal_brochure",
+            "visible_if": "{{ section.settings.clickable_mode== 'action' }}"
+        },
+        {
+            "type": "select",
+            "id": "clickable_focus_ring",
+            "label": "Fokus-Rahmen",
+            "options": [
+                {
+                    "value": "outside",
+                    "label": "Au\u00dfen"
+                },
+                {
+                    "value": "inside",
+                    "label": "Innen"
+                }
+            ],
+            "default": "outside"
         },
         {
             "type": "header",
