@@ -316,7 +316,7 @@
         "button_pYXa9e": {
           "type": "button",
           "settings": {
-            "button_label": "Text",
+            "button_label": "P. Jentschura",
             "button_url": "shopify://pages/downloads",
             "button_icon": "none"
           }
@@ -324,16 +324,16 @@
         "button_YkU6G8": {
           "type": "button",
           "settings": {
-            "button_label": "Text",
-            "button_url": "",
-            "button_icon": "none"
+            "button_label": "P. Jentschura Akademie",
+            "button_url": "shopify://pages/downloads",
+            "button_icon": "arrow_up_right"
           }
         },
-        "button_faVKte": {
+        "button_CdRyxC": {
           "type": "button",
           "settings": {
             "button_label": "Text",
-            "button_url": "",
+            "button_url": "shopify://pages/downloads",
             "button_icon": "none"
           }
         }
@@ -341,7 +341,7 @@
       "block_order": [
         "button_pYXa9e",
         "button_YkU6G8",
-        "button_faVKte"
+        "button_CdRyxC"
       ],
       "name": "Image Links",
       "settings": {
