@@ -100,9 +100,9 @@
         <div style="--lg: 3; --md: 2; --sm: 1.5; --xs: 1;" class="news_slider_slider_offset slider_offset">
           <div class="news_slider_slider_element swiper">
             <div class="news_slider_slider_list swiper-wrapper">
-              {% assign articles = blogs.news.articles | sort: 'metafields.custom.date.value' %}
+              {% assign articles = blogs.news.articles %}
               {% for article in articles limit: 9 %}
-                <div li-for="article in articles limit: 9" class="news_slider_slider_slide swiper-slide">
+                <div li-for="article in articles" class="news_slider_slider_slide swiper-slide">
                   {% render 'news_card' %}
                 </div>
               {% endfor %}
