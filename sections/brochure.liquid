@@ -2,7 +2,7 @@
 {%- assign theme_color = product_collection.metafields.custom.theme_color.value.color %}
 <div class="u-embed-css w-embed">
   <style>
-    #shopify-section-{{ section.id }}.brochure_wrap[data-variant='auto'] {
+    #shopify-section-{{ section.id }} .brochure_layout_inner[data-variant='auto'] {
       --collection-theme-color: {{ theme_color }};
     }
 
