@@ -103,55 +103,54 @@
             {% assign button_color = 'red' -%}
           {% else %}
             {% assign button_color = 'white' -%}
-            {% - endif %}
-            </div>
-            {% render 'eyebrow',
-              tag: section.settings.eyebrow_tag,
-              eyebrow: section.settings.eyebrow,
-              variant: 'u-text-eyebrow-base',
-              wrapper_class: 'is-eyebrow-base'
-            %}
-            {% render 'heading',
-              tidy_text: section.settings.heading_tidy_text,
-              heading: section.settings.heading,
-              tag: section.settings.heading_tag,
-              variant: 'u-text-h3-primary',
-              max_width: section.settings.heading_max_width
-            %}
-            {% render 'paragraph',
-              max_width: section.settings.paragraph_max_width,
-              paragraph: section.settings.paragraph,
-              variant: section.settings.paragraph_variant
-            %}
-            {% render 'button_group',
-              button_1_solid_color: button_color,
-              button_1_action: 'open_modal_brochure',
-              button_1_label: section.settings.button_1_label,
-              button_1_trigger: 'hover focus',
-              button_1_solid_padding: 'base',
-              button_1_solid_text_size: 'u-text-link-large',
-              button_1_mode: 'action',
-              button_1_variant: 'solid'
-            %}
-            </div>
-            <div class="brochure_right">
-              <div class="brochure_image_wrap">
-                {% render 'clickable',
-                  aria_hidden: true,
-                  label: section.settings.button_1_label,
-                  mode: 'action',
-                  action: 'open_modal_brochure'
-                %}
-                <div class="brochure_image">
-                  {% render 'image', width: 500, image: section.settings.image, object_fit: 'contain' %}
-                </div>
-              </div>
-            </div>
-            </div>
-            </div>
-
-            </div>
-            {% schema %}
+          {% endif %}
+        </div>
+        {% render 'eyebrow',
+          tag: section.settings.eyebrow_tag,
+          eyebrow: section.settings.eyebrow,
+          variant: 'u-text-eyebrow-base',
+          wrapper_class: 'is-eyebrow-base'
+        %}
+        {% render 'heading',
+          tidy_text: section.settings.heading_tidy_text,
+          heading: section.settings.heading,
+          tag: section.settings.heading_tag,
+          variant: 'u-text-h3-primary',
+          max_width: section.settings.heading_max_width
+        %}
+        {% render 'paragraph',
+          max_width: section.settings.paragraph_max_width,
+          paragraph: section.settings.paragraph,
+          variant: section.settings.paragraph_variant
+        %}
+        {% render 'button_group',
+          button_1_solid_color: button_color,
+          button_1_action: 'open_modal_brochure',
+          button_1_label: section.settings.button_1_label,
+          button_1_trigger: 'hover focus',
+          button_1_solid_padding: 'base',
+          button_1_solid_text_size: 'u-text-link-large',
+          button_1_mode: 'action',
+          button_1_variant: 'solid'
+        %}
+      </div>
+      <div class="brochure_right">
+        <div class="brochure_image_wrap">
+          {% render 'clickable',
+            aria_hidden: true,
+            label: section.settings.button_1_label,
+            mode: 'action',
+            action: 'open_modal_brochure'
+          %}
+          <div class="brochure_image">
+            {% render 'image', width: 500, image: section.settings.image, object_fit: 'contain' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
 {
   "tag": "section",
   "name": "Brochure",
@@ -435,5 +434,9 @@
     }
   ]
 }
-            {% endschema %}
-          {% endif -%}</div</div</div</div
+{% endschema %}
+{% endif -%}
+
+</div</div</div</div
+
+
