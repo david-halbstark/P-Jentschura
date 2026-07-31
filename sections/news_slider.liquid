@@ -111,7 +111,16 @@
               {% assign articles = blogs.news.articles | sort: 'metafields.custom.date.value' %}
               {% for article in articles limit: 9 %}
                 <div li-for="article in articles limit: 9" class="news_slider_slider_slide swiper-slide">
-                  {% render 'news_card', tag: article.tags.first, image: article.image, title: article.title, eyebrow: article.metafields.custom.date.value | date: '%d.%m.%Y', description: article.excerpt, url: article.url %}
+                  {% assign article_date = article.metafields.custom.date.value | date: '%d.%m.%Y' %}
+
+                  {% render 'news_card',
+                    tag: article.tags.first,
+                    image: article.image,
+                    title: article.title,
+                    eyebrow: article_date,
+                    description: article.excerpt,
+                    url: article.url
+                  %}
                 </div>
               {% endfor %}
             </div>
