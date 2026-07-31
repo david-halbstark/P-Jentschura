@@ -101,7 +101,7 @@
           <div class="news_slider_slider_element swiper">
             <div class="news_slider_slider_list swiper-wrapper">
               {% assign articles = blogs.news.articles %}
-              {% for article in articles limit: 9 %}
+              {% for article in articles %}
                 <div li-for="article in articles" class="news_slider_slider_slide swiper-slide">
                   {% render 'news_card' %}
                 </div>
