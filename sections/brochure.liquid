@@ -1,16 +1,30 @@
-{% assign product_collection = collection | default: product.collections.first %}{% assign theme_color = product_collection.metafields.custom.theme_color.value.color %}
+{% if section.settings.variant == 'auto' %}{% assign product_collection = collection | default: product.collections.first %}{% assign theme_color = product_collection.metafields.custom.theme_color.value.color %}{% endif %}
         <div class="u-embed-css w-embed">
           <style>
-  #shopify-section-{{ section.id }}.brochure_wrap {
+  #shopify-section-{{ section.id }}.brochure_wrap[data-variant="auto"] {
     --collection-theme-color: {{ theme_color }};
   }
-  .brochure_layout_inner {
+  .brochure_wrap[data-variant="auto"] .brochure_layout_inner {
     background-color: var(--collection-theme-color, grey);
+  }
+    .brochure_wrap[data-variant="static"] .brochure_layout_inner {
+      color: var(--_theme---text);
+      background-color: var(--_theme---background);
+  }
+      .brochure_wrap[data-variant="static"] .brochure_layout_inner {
+      color: var(--_theme---text);
+    background-color: var(--_theme---background);
+  }
+    .brochure_wrap[data-variant="static"] .u-eyebrow-wrapper {
+      color: var(--_theme---text-3);
   }
   @container (width < 53em ) {
     .brochure_contain [data-section-spacing] {
       --section-spacing-top: 0rem;
       --section-spacing-bottom: 0rem;
+    }
+    .brochure_layout_inner {
+      box-shadow: none;
     }
   }
 </style>
@@ -20,6 +34,7 @@
           
           
         </div>
+        
         <div class="u-display-none">
           
           
@@ -72,12 +87,18 @@
         <div class="brochure_contain u-container" {% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% endif %}>
           
           <div data-section-spacing="" class="brochure_layout">
-            <div class="brochure_layout_inner">
+            <div class="brochure_layout_inner u-box-shadow" data-variant="{% if section.settings.variant == 'auto' %}auto{% else %}static{% endif %}">
               <div class="brochure_left">
+                <div l-liquid="" class="u-embed-liquid w-embed">{% assign button_color %}
+                  {% if section.settings.variant == 'auto' %}
+                  {% assign button_color = 'red' -%}
+                  {% else %}
+                  {% assign button_color = 'white' -%}
+                  {% - endif %}</div>
                 {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: 'u-text-eyebrow-base', wrapper_class: 'is-eyebrow-base' %}
                 {% render 'heading', tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, tag: section.settings.heading_tag, variant: 'u-text-h3-primary', max_width: section.settings.heading_max_width %}
                 {% render 'paragraph', max_width: section.settings.paragraph_max_width, paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant %}
-                {% render 'button_group', button_1_solid_color: 'white', button_1_action: 'open_modal_brochure', button_1_label: section.settings.button_1_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: 'action', button_1_variant: 'solid' %}
+                {% render 'button_group', button_1_solid_color: button_color, button_1_action: 'open_modal_brochure', button_1_label: section.settings.button_1_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: 'action', button_1_variant: 'solid' %}
               </div>
               <div class="brochure_right">
                 <div class="brochure_image_wrap">
@@ -105,48 +126,24 @@
             "label": "ID"
         },
         {
-            "type": "header",
-            "content": "Abst\u00e4nde"
-        },
-        {
             "type": "select",
             "id": "spacing_top",
-            "label": "Oben",
+            "label": "Variante",
             "options": [
                 {
-                    "value": "none",
-                    "label": "Kein Abstand"
+                    "value": "auto",
+                    "label": "Automatisch"
                 },
                 {
-                    "value": "xxsmall",
-                    "label": "Extra extra klein"
-                },
-                {
-                    "value": "xsmall",
-                    "label": "Extra klein"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "medium",
-                    "label": "Mittel"
-                },
-                {
-                    "value": "large",
-                    "label": "Gro\u00df"
-                },
-                {
-                    "value": "large_medium_off",
-                    "label": "Gro\u00df | Medium kein Abstand"
-                },
-                {
-                    "value": "page_top",
-                    "label": "Seitenanfang"
+                    "value": "static",
+                    "label": "Statisch"
                 }
             ],
-            "default": "xsmall"
+            "default": "automatic"
+        },
+        {
+            "type": "header",
+            "content": "Abst\u00e4nde"
         },
         {
             "type": "select",
