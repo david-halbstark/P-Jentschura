@@ -1,16 +1,25 @@
 <div class="news_slider_card_wrap">
-                            <div class="news_slider_card_element">
-                              <div class="news_slider_card_top">
-                                {% render 'image', width: 800, image: image, object_fit: 'cover' %}
-                                <div class="news_slider_card_tag">
-                                  {% render 'tag', solid_color: 'red', tag: tag, variant: 'solid', solid_text_size: 'u-text-eyebrow-small' %}
-                                </div>
-                              </div>
-                              <div class="news_slider_card_bot u-margin-trim">
-                                {% render 'typography', custom_class: 'u-color-3 u-margin-bottom-6', text: article.metafields.custom.date.value | date: '%d.%m.%Y', tag: 'div', variant: 'u-text-body-small' %}
-                                {% render 'heading', custom_class: 'u-margin-bottom-7', heading: article.title, tag: 'h3', variant: 'u-text-h3-primary' %}
-                                {% render 'paragraph', variant: 'u-text-body-base u-color-3', custom_class: u-color-3, paragraph: news.text.value %}
-                              </div>
-                              {% render 'clickable', url: article.url, label: article.title, mode: 'link' %}
-                            </div>
-                          </div>
+  <div class="news_slider_card_element">
+    <div class="news_slider_card_top">
+      {% render 'image', width: 800, image: image, object_fit: 'cover' %}
+      <div class="news_slider_card_tag">
+        {% render 'tag', solid_color: 'red', tag: tag, variant: 'solid', solid_text_size: 'u-text-eyebrow-small' %}
+      </div>
+    </div>
+    <div class="news_slider_card_bot u-margin-trim">
+      {% render 'typography', custom_class: 'u-color-3 u-margin-bottom-6', text: article.metafields.custom.date.value | date: '%d.%m.%Y', tag: 'div', variant: 'u-text-body-small' %}
+      {% render 'heading',
+        custom_class: 'u-margin-bottom-7',
+        heading: article.title,
+        tag: 'h3',
+        variant: 'u-text-h3-primary'
+      %}
+      {% render 'paragraph',
+        variant: 'u-text-body-base u-color-3',
+        custom_class: u-color-3,
+        paragraph: news.text.value
+      %}
+    </div>
+    {% render 'clickable', url: article.url, label: article.title, mode: 'link' %}
+  </div>
+</div>
