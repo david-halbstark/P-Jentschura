@@ -1,80 +1,81 @@
-<div class="u-display-none w-embed">{% assign char_lt = '%3C' | url_decode %}
-        {% assign char_gt = '%3E' | url_decode %}
-        {% assign char_slash = '%2F' | url_decode %}
-        {% assign clickable_label = label %}
-        {% assign clickable_url = url %}
-        {% assign clickable_target = target | default: '_self' %}
-        {% assign clickable_mode = mode | default: 'link' %}
-        {% assign clickable_action = action %}
-        {% assign clickable_focus_ring = focus_ring | default: 'outside' %}
-        {% assign clickable_custom_class = custom_class %}
-        {% assign clickable_aria_hidden = aria_hidden | default: false %}
-        {% assign clickable_classes = 'clickable_wrap u-cover-absolute' %}
-        {% assign clickable_link_classes = 'clickable_link' %}
-        {% if clickable_custom_class != blank %}
-        {% assign clickable_classes = clickable_classes | append: ' ' | append: clickable_custom_class %}
-        {% endif %}
-        {% if clickable_focus_ring == 'inside' %}
-        {% assign clickable_link_classes = clickable_link_classes | append: ' u-focus-ring-inside' %}
-        {% endif %}
-        {% assign clickable_a11y_attrs = '' %}
-        {% if clickable_aria_hidden %}
-        {% assign clickable_a11y_attrs = 'aria-hidden="true" tabindex="-1"' %}
-        {% endif %}
-        {% assign clickable_modal_key = '' %}
-        {% assign clickable_data_action = clickable_action %}
-        {% if clickable_mode == 'action' %}
-        {% assign clickable_action_prefix = clickable_action | slice: 0, 11 %}
-        {% if clickable_action_prefix == 'open_modal_' %}
-        {% assign clickable_modal_key = clickable_action | remove_first: 'open_modal_' %}
-        {% else %}
-        {% case clickable_action %}
+<div class="u-display-contents w-embed">
+  {% assign char_lt = '%3C' | url_decode %}
+  {% assign char_gt = '%3E' | url_decode %}
+  {% assign char_slash = '%2F' | url_decode %}
+  {% assign clickable_label = label %}
+  {% assign clickable_url = url %}
+  {% assign clickable_target = target | default: '_self' %}
+  {% assign clickable_mode = mode | default: 'link' %}
+  {% assign clickable_action = action %}
+  {% assign clickable_focus_ring = focus_ring | default: 'outside' %}
+  {% assign clickable_custom_class = custom_class %}
+  {% assign clickable_aria_hidden = aria_hidden | default: false %}
+  {% assign clickable_classes = 'clickable_wrap u-cover-absolute' %}
+  {% assign clickable_link_classes = 'clickable_link' %}
+  {% if clickable_custom_class != blank %}
+    {% assign clickable_classes = clickable_classes | append: ' ' | append: clickable_custom_class %}
+  {% endif %}
+  {% if clickable_focus_ring == 'inside' %}
+    {% assign clickable_link_classes = clickable_link_classes | append: ' u-focus-ring-inside' %}
+  {% endif %}
+  {% assign clickable_a11y_attrs = '' %}
+  {% if clickable_aria_hidden %}
+    {% assign clickable_a11y_attrs = 'aria-hidden="true" tabindex="-1"' %}
+  {% endif %}
+  {% assign clickable_modal_key = '' %}
+  {% assign clickable_data_action = clickable_action %}
+  {% if clickable_mode == 'action' %}
+    {% assign clickable_action_prefix = clickable_action | slice: 0, 11 %}
+    {% if clickable_action_prefix == 'open_modal_' %}
+      {% assign clickable_modal_key = clickable_action | remove_first: 'open_modal_' %}
+    {% else %}
+      {% case clickable_action %}
         {% when 'copy_link' %}
-        {% assign clickable_data_action = 'copy_link' %}
-        {% endcase %}
-        {% endif %}
-        {% endif %}
-        {% assign clickable_action_attr = '' %}
-        {% if clickable_mode == 'action' %}
-        {% if clickable_modal_key != blank %}
-        {% assign clickable_action_attr = 'data-modal-open="' | append: clickable_modal_key | append: '"' %}
-        {% elsif clickable_data_action != blank %}
-        {% assign clickable_action_attr = 'data-action="' | append: clickable_data_action | append: '"' %}
-        {% endif %}
-        {% endif %}
-        {% assign clickable_action_all_attrs = clickable_action_attr %}
-        {% if clickable_a11y_attrs != blank %}
-        {% if clickable_action_all_attrs != blank %}
-        {% assign clickable_action_all_attrs = clickable_action_all_attrs | append: ' ' | append: clickable_a11y_attrs %}
-        {% else %}
-        {% assign clickable_action_all_attrs = clickable_a11y_attrs %}
-        {% endif %}
-        {% endif %}
-        {% assign show_clickable = false %}
-        {% if clickable_label != blank %}
-        {% if clickable_mode == 'link' and clickable_url != blank %}
-        {% assign show_clickable = true %}
-        {% elsif clickable_mode == 'action' and clickable_modal_key != blank %}
-        {% assign show_clickable = true %}
-        {% elsif clickable_mode == 'action' and clickable_data_action != blank %}
-        {% assign show_clickable = true %}
-        {% elsif clickable_mode == 'submit' %}
-        {% assign show_clickable = true %}
-        {% endif %}
-        {% endif %}
-        {% assign clickable_aria_label = clickable_label | strip_html | escape %}
-        {% assign clickable_inner = '' %}
-        {% if clickable_mode == 'link' %}
-        {% capture clickable_inner %}{{ char_lt }}a href="{{ clickable_url }}" target="{{ clickable_target }}" aria-label="{{ clickable_aria_label }}" class="{{ clickable_link_classes }}" {{ clickable_a11y_attrs }}{{ char_gt }}{{ char_lt }}{{ char_slash }}a{{ char_gt }}{% endcapture %}
-        {% elsif clickable_mode == 'action' %}
-        {% capture clickable_inner %}{{ char_lt }}button type="button" aria-label="{{ clickable_aria_label }}" class="{{ clickable_link_classes }}" {{ clickable_action_all_attrs }}{{ char_gt }}{{ char_lt }}{{ char_slash }}button{{ char_gt }}{% endcapture %}
-        {% elsif clickable_mode == 'submit' %}
-        {% capture clickable_inner %}{{ char_lt }}button type="submit" aria-label="{{ clickable_aria_label }}" class="{{ clickable_link_classes }}" {{ clickable_a11y_attrs }}{{ char_gt }}{{ char_lt }}{{ char_slash }}button{{ char_gt }}{% endcapture %}
-        {% endif %}
-        {% if show_clickable %}
-        {{ char_lt }}div class="{{ clickable_classes }}"{{ char_gt -}}
-        {{- clickable_inner -}}
-        {{- char_lt -}}
-        {{- char_slash }}div{{ char_gt }}
-        {% endif %}
-      </div>
+          {% assign clickable_data_action = 'copy_link' %}
+      {% endcase %}
+    {% endif %}
+  {% endif %}
+  {% assign clickable_action_attr = '' %}
+  {% if clickable_mode == 'action' %}
+    {% if clickable_modal_key != blank %}
+      {% assign clickable_action_attr = 'data-modal-open="' | append: clickable_modal_key | append: '"' %}
+    {% elsif clickable_data_action != blank %}
+      {% assign clickable_action_attr = 'data-action="' | append: clickable_data_action | append: '"' %}
+    {% endif %}
+  {% endif %}
+  {% assign clickable_action_all_attrs = clickable_action_attr %}
+  {% if clickable_a11y_attrs != blank %}
+    {% if clickable_action_all_attrs != blank %}
+      {% assign clickable_action_all_attrs = clickable_action_all_attrs | append: ' ' | append: clickable_a11y_attrs %}
+    {% else %}
+      {% assign clickable_action_all_attrs = clickable_a11y_attrs %}
+    {% endif %}
+  {% endif %}
+  {% assign show_clickable = false %}
+  {% if clickable_label != blank %}
+    {% if clickable_mode == 'link' and clickable_url != blank %}
+      {% assign show_clickable = true %}
+    {% elsif clickable_mode == 'action' and clickable_modal_key != blank %}
+      {% assign show_clickable = true %}
+    {% elsif clickable_mode == 'action' and clickable_data_action != blank %}
+      {% assign show_clickable = true %}
+    {% elsif clickable_mode == 'submit' %}
+      {% assign show_clickable = true %}
+    {% endif %}
+  {% endif %}
+  {% assign clickable_aria_label = clickable_label | strip_html | escape %}
+  {% assign clickable_inner = '' %}
+  {% if clickable_mode == 'link' %}
+    {% capture clickable_inner %}{{ char_lt }}a href="{{ clickable_url }}" target="{{ clickable_target }}" aria-label="{{ clickable_aria_label }}" class="{{ clickable_link_classes }}" {{ clickable_a11y_attrs }}{{ char_gt }}{{ char_lt }}{{ char_slash }}a{{ char_gt }}{% endcapture %}
+  {% elsif clickable_mode == 'action' %}
+    {% capture clickable_inner %}{{ char_lt }}button type="button" aria-label="{{ clickable_aria_label }}" class="{{ clickable_link_classes }}" {{ clickable_action_all_attrs }}{{ char_gt }}{{ char_lt }}{{ char_slash }}button{{ char_gt }}{% endcapture %}
+  {% elsif clickable_mode == 'submit' %}
+    {% capture clickable_inner %}{{ char_lt }}button type="submit" aria-label="{{ clickable_aria_label }}" class="{{ clickable_link_classes }}" {{ clickable_a11y_attrs }}{{ char_gt }}{{ char_lt }}{{ char_slash }}button{{ char_gt }}{% endcapture %}
+  {% endif %}
+  {% if show_clickable %}
+    {{ char_lt }}div class="{{ clickable_classes }}"{{ char_gt -}}
+    {{- clickable_inner -}}
+    {{- char_lt -}}
+    {{- char_slash }}div{{ char_gt }}
+  {% endif %}
+</div>
