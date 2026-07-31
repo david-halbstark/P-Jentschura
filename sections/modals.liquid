@@ -1,276 +1,242 @@
 <div class="u-embed-css w-embed">
-  <style>
-    /* offen */
+          <style>
+  /* offen */
+  .modal_wrap[open] {
+    transform: translateX(0);
+  }
+  /* Startwert beim &Ouml;ffnen -> Slide-in */
+  @starting-style {
     .modal_wrap[open] {
-      transform: translateX(0);
-    }
-    /* Startwert beim &Ouml;ffnen -> Slide-in */
-    @starting-style {
-      .modal_wrap[open] {
-        transform: translateX(100%);
-      }
-    }
-    /* Schlie&szlig;en: Dialog ist noch [open], slidet raus, dann close() im JS.
-       K&uuml;rzere Dauer -> Fokus kommt schneller zum Button zur&uuml;ck. */
-    .modal_wrap.is-closing {
-      transition: transform var(--dur-out) var(--ease);
-    }
-    .modal_wrap[open].is-closing {
       transform: translateX(100%);
     }
-    .modal_wrap::backdrop {
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      opacity: 0;
-      transition: opacity var(--dur) var(--ease);
-    }
+  }
+  /* Schlie&szlig;en: Dialog ist noch [open], slidet raus, dann close() im JS.
+       K&uuml;rzere Dauer -> Fokus kommt schneller zum Button zur&uuml;ck. */
+  .modal_wrap.is-closing {
+    transition: transform var(--dur-out) var(--ease);
+  }
+  .modal_wrap[open].is-closing {
+    transform: translateX(100%);
+  }
+  .modal_wrap::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    opacity: 0;
+    transition: opacity var(--dur) var(--ease);
+  }
+  .modal_wrap[open]::backdrop {
+    opacity: 1;
+  }
+  @starting-style {
     .modal_wrap[open]::backdrop {
-      opacity: 1;
-    }
-    @starting-style {
-      .modal_wrap[open]::backdrop {
-        opacity: 0;
-      }
-    }
-    .modal_wrap.is-closing::backdrop {
-      transition: opacity var(--dur-out) var(--ease);
-    }
-    .modal_wrap[open].is-closing::backdrop {
       opacity: 0;
     }
-    .modal_wrap.is-full {
+  }
+  .modal_wrap.is-closing::backdrop {
+    transition: opacity var(--dur-out) var(--ease);
+  }
+  .modal_wrap[open].is-closing::backdrop {
+    opacity: 0;
+  }
+  .modal_wrap.is-full {
+    transform: none;
+  }
+  /* ----------------- Reduced motion: nur Fade ----------------- */
+  @media (prefers-reduced-motion: reduce) {
+    .modal_wrap,
+    .modal_wrap[open],
+    .modal_wrap[open].is-closing {
       transform: none;
     }
-    /* ----------------- Reduced motion: nur Fade ----------------- */
-    @media (prefers-reduced-motion: reduce) {
-      .modal_wrap,
-      .modal_wrap[open],
-      .modal_wrap[open].is-closing {
-        transform: none;
-      }
-      .modal_wrap {
-        opacity: 0;
-        transition: opacity var(--dur) ease;
-      }
+    .modal_wrap {
+      opacity: 0;
+      transition: opacity var(--dur) ease;
+    }
+    .modal_wrap[open] {
+      opacity: 1;
+    }
+    .modal_wrap[open].is-closing {
+      opacity: 0;
+    }
+    @starting-style {
       .modal_wrap[open] {
-        opacity: 1;
-      }
-      .modal_wrap[open].is-closing {
         opacity: 0;
       }
-      @starting-style {
-        .modal_wrap[open] {
-          opacity: 0;
-        }
-      }
     }
-  </style>
-</div>
-
-<div class="modals_contain u-container">
-  {% for block in section.blocks %}
-    {% if block.type == 'details-modal' %}
-      <div li-block="Details Modal" class="u-display-contents">
-        <div class="u-display-none"></div>
-
-        <dialog
-          data-modal="details"
-          aria-labelledby="modal-title-{{ block.id }}"
-          class="modal_wrap"
-          {{ block.shopify_attributes }}
-        >
-          <div class="modal_panel">
-            <button
-              type="button"
-              data-modal-close=""
-              aria-label="{{ 'general.accessibility.close' | t | default: 'Schließen' }}"
-              class="modal_close_button"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="100%"
-                height="100%"
-                viewbox="0 0 8 8"
-                fill="none"
-                class="modal_close_button_icon"
-              >
-                <path d="M0.614687 7.76271L0 7.14802L3.26667 3.88135L0 0.614688L0.614687 0L3.88135 3.26667L7.14802 0L7.76271 0.614688L4.49604 3.88135L7.76271 7.14802L7.14802 7.76271L3.88135 4.49604L0.614687 7.76271Z" fill="currentColor" class="u-path"></path>
-              </svg>
-            </button>
-            <div class="modal_content">
-              <div class="modal_inner"></div>
+  }
+</style>
+        </div>
+        
+        <div class="modals_contain u-container">
+          {% for block in section.blocks %}
+    {% if block.type == "details-modal" %}
+                    <div li-block="Details Modal" class="u-display-contents">
+                                    
+            
+                                    <div class="u-display-none">
+              
+              
             </div>
-          </div>
-        </dialog>
-      </div>
-    {% endif %}
-  {% endfor %}
-  {% for block in section.blocks %}
-    {% if block.type == 'brochure-modal' %}
-      <div li-block="Brochure Modal" class="u-display-contents">
-        <dialog
-          data-modal="brochure"
-          aria-labelledby="modal-title-{{ block.id }}"
-          class="modal_wrap is-full"
-          {{ block.shopify_attributes }}
-        >
-          <div class="modal_panel is-padding-off">
-            <button
-              type="button"
-              data-modal-close=""
-              aria-label="{{ 'general.accessibility.close' | t | default: 'Schließen' }}"
-              class="modal_close_button"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="100%"
-                height="100%"
-                viewbox="0 0 8 8"
-                fill="none"
-                class="modal_close_button_icon"
-              >
-                <path d="M0.614687 7.76271L0 7.14802L3.26667 3.88135L0 0.614688L0.614687 0L3.88135 3.26667L7.14802 0L7.76271 0.614688L4.49604 3.88135L7.76271 7.14802L7.14802 7.76271L3.88135 4.49604L0.614687 7.76271Z" fill="currentColor" class="u-path"></path>
-              </svg>
-            </button>
-            <div class="modal_content">
-              <div class="modal_inner">
-                <iframe
-                  src="https://flips.p-jentschura.com/books/qhpf/"
-                  title="Produktbroschüre"
-                  allowfullscreen=""
-                  style="border: none; width: 100%; height: 100%"
-                  data-ccm-domain="flips.p-jentschura.com"
-                  class="modal_borchure_iframe"
-                ></iframe>
+                                    
+            
+                                    <dialog data-modal="details" aria-labelledby="modal-title-{{ block.id }}" class="modal_wrap" {{ block.shopify_attributes }}>
+              <div class="modal_panel"><button type="button" data-modal-close="" aria-label="{{ 'general.accessibility.close' | t | default: 'Schließen' }}" class="modal_close_button"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 8 8" fill="none" class="modal_close_button_icon">
+                    <path d="M0.614687 7.76271L0 7.14802L3.26667 3.88135L0 0.614688L0.614687 0L3.88135 3.26667L7.14802 0L7.76271 0.614688L4.49604 3.88135L7.76271 7.14802L7.14802 7.76271L3.88135 4.49604L0.614687 7.76271Z" fill="currentColor" class="u-path"></path>
+                  </svg></button>
+                <div class="modal_content">
+                  <div class="modal_inner"></div>
+                </div>
               </div>
+            </dialog>
+                                    
+          
+                            </div>
+            {% endif %}
+{% endfor %}
+          {% for block in section.blocks %}
+    {% if block.type == "brochure-modal" %}
+                    <div li-block="Brochure Modal" class="u-display-contents">
+                                    
+            
+                                    <div class="u-display-none">
+              
+              
             </div>
-          </div>
-        </dialog>
-      </div>
-    {% endif %}
-  {% endfor %}
-</div>
-<div class="u-embed-js w-embed w-script">
-  <script>
-    (function () {
-      'use strict';
-      var lastOpener = null; // Button, der das Modal ge&ouml;ffnet hat
-      function openModal(key, opener) {
-        var d = document.querySelector('dialog[data-modal="' + CSS.escape(key) + '"]');
-        if (d && d.showModal) {
-          lastOpener = opener || null;
-          d.classList.remove('is-closing');
-          d.showModal();
-          document.documentElement.style.overflow = 'hidden';
+                                    
+            
+                                    <dialog data-modal="brochure" aria-labelledby="modal-title-{{ block.id }}" class="modal_wrap is-full" {{ block.shopify_attributes }}>
+              <div class="modal_panel is-padding-off"><button type="button" data-modal-close="" aria-label="{{ 'general.accessibility.close' | t | default: 'Schließen' }}" class="modal_close_button is-left"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 8 8" fill="none" class="modal_close_button_icon">
+                    <path d="M0.614687 7.76271L0 7.14802L3.26667 3.88135L0 0.614688L0.614687 0L3.88135 3.26667L7.14802 0L7.76271 0.614688L4.49604 3.88135L7.76271 7.14802L7.14802 7.76271L3.88135 4.49604L0.614687 7.76271Z" fill="currentColor" class="u-path"></path>
+                  </svg></button>
+                <div class="modal_content">
+                  <div class="modal_inner"><iframe src="https://flips.p-jentschura.com/books/qhpf/" title="Produktbroschüre" allowfullscreen="" style="border: none; width: 100%; height: 100%" class="modal_borchure_iframe"></iframe></div>
+                </div>
+              </div>
+            </dialog>
+                                    
+          
+                            </div>
+            {% endif %}
+{% endfor %}
+        </div>
+        <div class="u-embed-js w-embed w-script">
+          <script>
+  (function () {
+    'use strict';
+    var lastOpener = null; // Button, der das Modal ge&ouml;ffnet hat
+    function openModal(key, opener) {
+      var d = document.querySelector('dialog[data-modal="' + CSS.escape(key) + '"]');
+      if (d && d.showModal) {
+        lastOpener = opener || null;
+        d.classList.remove('is-closing');
+        d.showModal();
+        document.documentElement.style.overflow = 'hidden';
+      }
+    }
+    // Animiertes, Safari-sicheres Schlie&szlig;en: erst rausslide, DANN close().
+    function closeModal(d) {
+      if (!d || !d.open || d.classList.contains('is-closing')) return;
+      d.classList.add('is-closing');
+      var finished = false;
+      var done = function () {
+        if (finished) return;
+        finished = true;
+        d.removeEventListener('transitionend', onEnd);
+        d.classList.remove('is-closing');
+        d.close(); // native Fokus-R&uuml;ckgabe an den Opener
+        document.documentElement.style.overflow = '';
+        // Sicherheitsnetz: falls der Fokus nicht am Button landet, nachhelfen
+        if (lastOpener && document.activeElement !== lastOpener) {
+          lastOpener.focus({ preventScroll: true });
         }
+        lastOpener = null;
+      };
+      var onEnd = function (e) {
+        if (e.target === d) done(); // nur die Transition des Dialogs selbst
+      };
+      d.addEventListener('transitionend', onEnd);
+      // Fallback, falls transitionend nicht feuert (etwas mehr als --dur-out)
+      setTimeout(done, 260);
+    }
+    document.addEventListener('click', function (e) {
+      var opener = e.target.closest('[data-modal-open]');
+      if (opener) {
+        e.preventDefault();
+        openModal(opener.getAttribute('data-modal-open'), opener);
+        return;
       }
-      // Animiertes, Safari-sicheres Schlie&szlig;en: erst rausslide, DANN close().
-      function closeModal(d) {
-        if (!d || !d.open || d.classList.contains('is-closing')) return;
-        d.classList.add('is-closing');
-        var finished = false;
-        var done = function () {
-          if (finished) return;
-          finished = true;
-          d.removeEventListener('transitionend', onEnd);
-          d.classList.remove('is-closing');
-          d.close(); // native Fokus-R&uuml;ckgabe an den Opener
-          document.documentElement.style.overflow = '';
-          // Sicherheitsnetz: falls der Fokus nicht am Button landet, nachhelfen
-          if (lastOpener && document.activeElement !== lastOpener) {
-            lastOpener.focus({ preventScroll: true });
-          }
-          lastOpener = null;
-        };
-        var onEnd = function (e) {
-          if (e.target === d) done(); // nur die Transition des Dialogs selbst
-        };
-        d.addEventListener('transitionend', onEnd);
-        // Fallback, falls transitionend nicht feuert (etwas mehr als --dur-out)
-        setTimeout(done, 260);
+      var closer = e.target.closest('[data-modal-close]');
+      if (closer) {
+        closeModal(closer.closest('dialog[data-modal]'));
+        return;
       }
-      document.addEventListener('click', function (e) {
-        var opener = e.target.closest('[data-modal-open]');
-        if (opener) {
+      if (e.target.matches('dialog[data-modal]')) closeModal(e.target);
+    });
+    // ESC: natives Sofort-Schlie&szlig;en abfangen und stattdessen animiert schlie&szlig;en.
+    // 'cancel' bubbelt nicht -> Capture-Phase.
+    document.addEventListener(
+      'cancel',
+      function (e) {
+        if (e.target.matches && e.target.matches('dialog[data-modal]')) {
           e.preventDefault();
-          openModal(opener.getAttribute('data-modal-open'), opener);
-          return;
+          closeModal(e.target);
         }
-        var closer = e.target.closest('[data-modal-close]');
-        if (closer) {
-          closeModal(closer.closest('dialog[data-modal]'));
-          return;
-        }
-        if (e.target.matches('dialog[data-modal]')) closeModal(e.target);
-      });
-      // ESC: natives Sofort-Schlie&szlig;en abfangen und stattdessen animiert schlie&szlig;en.
-      // 'cancel' bubbelt nicht -> Capture-Phase.
-      document.addEventListener(
-        'cancel',
-        function (e) {
-          if (e.target.matches && e.target.matches('dialog[data-modal]')) {
-            e.preventDefault();
-            closeModal(e.target);
-          }
-        },
-        true
-      );
-    })();
-  </script>
-</div>
-{% schema %}
-{
-  "tag": "div",
-  "name": "Modals",
-  "class": "modals_wrap",
-  "blocks": [
-    {
-      "name": "Details Modal",
-      "type": "details-modal",
-      "settings": [
+      },
+      true,
+    );
+  })();
+</script>
+        </div> {% schema %} {
+    "tag": "div",
+    "name": "Modals",
+    "class": "modals_wrap",
+    "blocks": [
         {
-          "type": "header",
-          "content": "\u00dcberschrift"
+            "name": "Details Modal",
+            "type": "details-modal",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "\u00dcberschrift"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "heading",
+                    "label": "Text",
+                    "default": "Lorem ipsum dolor sit amet elit"
+                }
+            ]
         },
         {
-          "type": "inline_richtext",
-          "id": "heading",
-          "label": "Text",
-          "default": "Lorem ipsum dolor sit amet elit"
+            "name": "Brochure Modal",
+            "type": "brochure-modal",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "\u00dcberschrift"
+                },
+                {
+                    "type": "inline_richtext",
+                    "id": "heading",
+                    "label": "Text",
+                    "default": "Lorem ipsum dolor sit amet elit"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "name": "Brochure Modal",
-      "type": "brochure-modal",
-      "settings": [
+    ],
+    "presets": [
         {
-          "type": "header",
-          "content": "\u00dcberschrift"
-        },
-        {
-          "type": "inline_richtext",
-          "id": "heading",
-          "label": "Text",
-          "default": "Lorem ipsum dolor sit amet elit"
+            "name": "Modals",
+            "category": "Liquify",
+            "blocks": [
+                {
+                    "type": "details-modal"
+                },
+                {
+                    "type": "brochure-modal"
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Modals",
-      "category": "Liquify",
-      "blocks": [
-        {
-          "type": "details-modal"
-        },
-        {
-          "type": "brochure-modal"
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}
+    ]
+} {% endschema %}
