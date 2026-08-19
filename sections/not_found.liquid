@@ -31,7 +31,6 @@
         <div class="u-display-none">
           
           
-          
         </div>
         <div class="not_found_contain u-container" {% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% endif %}>
           
@@ -39,7 +38,7 @@
             <div class="not_found_content u-margin-trim u-alignment-center">
               {% render 'heading', tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, tag: 'h1', variant: 'u-text-h2-primary', max_width: section.settings.heading_max_width %}
               {% render 'paragraph', tidy_text: section.settings.paragraph_tidy_text, custom_class: 'u-color-3', paragraph: section.settings.paragraph, variant: 'u-text-body-base', max_width: section.settings.paragraph_max_width %}
-              {% render 'button_group', button_1_solid_color: 'red', button_1_url: section.settings.button_1_url, button_1_label: section.settings.button_1_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: 'link', button_1_variant: 'solid', button_1_text_color: 'white' %}
+              {% render 'button_group', button_1_solid_color: 'red', button_1_url: routes.root_url , button_1_label: section.settings.button_1_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-large', button_1_mode: 'link', button_1_variant: 'solid', button_1_text_color: 'white' %}
             </div>
           </div>
           
@@ -181,19 +180,13 @@
         },
         {
             "type": "header",
-            "content": "Button 1"
+            "content": "Button"
         },
         {
             "type": "text",
             "id": "button_1_label",
             "label": "Text",
             "default": "Text"
-        },
-        {
-            "type": "url",
-            "id": "button_1_url",
-            "label": "Link",
-            "visible_if": "{{ section.settings.button_1_mode == 'link' }}"
         }
     ],
     "presets": [
