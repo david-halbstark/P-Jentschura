@@ -514,7 +514,7 @@
       "settings": {
         "section_id": "",
         "variant": "small",
-        "eyebrow": "Übertitel Text",
+        "eyebrow": "",
         "eyebrow_tag": "p",
         "heading": "Lorem ipsum dolor sit amet elit",
         "heading_tag": "h2",
@@ -525,6 +525,8 @@
         "paragraph_tidy_text": true,
         "button_1_label": "Text",
         "button_1_action": "newsletter_modal",
+        "image": "shopify://shop_images/p-jentschura-newsletter-background-desktop.avif",
+        "image_mobile": "shopify://shop_images/p-jentschura-newsletter-background-mobile.avif",
         "image_object_fit": "cover",
         "image_width": 2000,
         "image_width_mobile": 900,
