@@ -1,21 +1,16 @@
 <div class="news_slider_card_wrap">
-  <div data-trigger="hover focus" class="news_slider_card_element">
-    <div class="news_slider_card_top">
-      {% render 'image', width: 800, image: image, object_fit: 'cover' %}
-      <div id="w-node-_91cb3868-6d12-a0d8-3429-158489c3c7a5-89c3c7a0" class="news_slider_card_tag">
-        {% render 'tag', solid_color: 'red', tag: tag, variant: 'solid', solid_text_size: 'u-text-eyebrow-small' %}
-      </div>
-    </div>
-    <div class="news_slider_card_bot u-margin-trim">
-      {% render 'typography',
-        custom_class: 'u-color-3 u-margin-bottom-6',
-        text: eyebrow,
-        tag: 'div',
-        variant: 'u-text-body-small'
-      %}
-      {% render 'heading', variant: 'u-text-h3-primary', heading: title, tag: 'h3' %}
-      {% render 'paragraph', variant: 'u-text-body-base u-color-3', custom_class: u-color-3, paragraph: description | metafield_tag %}
-    </div>
-    {% render 'clickable', url: url, label: title, mode: 'link' %}
-  </div>
-</div>
+                            <div data-trigger="hover focus" class="news_slider_card_element">
+                              <div class="news_slider_card_top">
+                                {% render 'image', width: 800, image: image, object_fit: 'cover' %}
+                                <div id="w-node-_91cb3868-6d12-a0d8-3429-158489c3c7a5-89c3c7a0" class="news_slider_card_tag">
+                                  {% render 'tag', solid_color: 'red', tag: tag, variant: 'solid', solid_text_size: 'u-text-eyebrow-small' %}
+                                </div>
+                              </div>
+                              <div class="news_slider_card_bot u-margin-trim">
+                                {% render 'typography', custom_class: 'u-color-3 u-margin-bottom-6', text: eyebrow, tag: 'div', variant: 'u-text-body-small' %}
+                                {% render 'heading', variant: 'u-text-h3-primary', heading: title, tag: 'h3' %}
+                                {% render 'paragraph', variant: 'u-text-body-base u-color-3', custom_class: u-color-3, paragraph: description | metafield_tag %}
+                              </div>
+                              {% render 'clickable', url: url, label: title, mode: 'link' %}
+                            </div>
+                          </div>
