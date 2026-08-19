@@ -104,7 +104,7 @@
           
           
         </div>
-        {% if section.settings.variant == 'imprint' %}{% assign legal_text = pages.impressum.content %}{% elsif section.settings.variant == 'privacy_policy' %}{% assign legal_text = shop.privacy_policy.body %}{% else %}{% assign legal_text = section.settings.paragraph %}{% endif %}
+        {% if section.settings.variant == 'imprint' %}{% assign legal_attribute = 'imprint' %}{% if section.settings.variant == 'imprint' %}{% assign legal_text = pages.impressum.content %}{% elsif section.settings.variant == 'privacy_policy' %}{% assign legal_text = shop.privacy_policy.body %}{% else %}{% assign legal_text = section.settings.paragraph %}{% endif %}
         <div class="legal_contain u-container" {% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% endif %}>
           
           <div data-legal-imprint="" data-section-spacing="" class="legal_layout" {% if section.settings.variant == 'imprint' %}data-legal-imprint{% else %}data-legal-privacy{% endif}><div class="legal_top u-margin-trim u-alignment-center">{% render 'eyebrow', tag: 'h1', eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant %}
