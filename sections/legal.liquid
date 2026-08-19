@@ -105,7 +105,7 @@
           
           
         </div>
-        {% if section.settings.variant == 'imprint' %}{% assign legal_attribute = 'imprint' %}{% if section.settings.variant == 'privacy_policy' %}{% assign legal_text = shop.privacy_policy.body %}{% else %}{% assign legal_text = section.settings.paragraph %}{% endif %}
+        {% if section.settings.variant == 'primary' %}{% assign legal_variant = 'primary' %}{% else %}{% assign legal_variant = 'secondary' %}{% endif %}{% if section.settings.text_source == 'imprint' %}{% assign legal_text = shop.legal_notice.body %}{% elsif section.settings.text_source == 'privacy_policy' %}{% assign legal_text = shop.privacy_policy.body %}{% else %}{% assign legal_text = section.settings.paragraph %}{% endif %}
         <div class="legal_contain u-container" {% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% endif %}>
           
           <div data-legal-variant="{{ legal_variant }}" data-section-spacing="" class="legal_layout">
