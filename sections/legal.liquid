@@ -4,7 +4,7 @@
     color: var(--_theme---text-3);
   }
   /* Legal Imprint */
-  .legal_layout[data-legal-imprint] .legal_bot h2:not(:first-child) {
+  .legal_layout[data-legal-variant="primary"] .legal_bot h2:not(:first-child) {
     margin-top: var(--_spacing---space--11) !important;
   }
   .legal_layout[data-legal-imprint] .legal_bot h2 {
@@ -21,16 +21,16 @@
     --_text-style-1---text-transform: var(--_typography---text-transform--none);
   }
   /* Legal Privacy */
-  .legal_layout[data-legal-privacy] .legal_bot h2:not(:first-child) {
+  .legal_layout[data-legal-variant="secondary"] .legal_bot h2:not(:first-child) {
     margin-top: calc(var(--_spacing---space--14) * 0.8) !important;
   }
-  .legal_layout[data-legal-privacy] .legal_bot h2 {
+  .legal_layout[data-legal-variant="secondary"] .legal_bot h2 {
     margin-bottom: var(--_spacing---space--10) !important;
   }
-  .legal_layout[data-legal-privacy] .legal_bot h3:not(:first-child) {
+  .legal_layout[data-legal-variant="secondary"] .legal_bot h3:not(:first-child) {
     margin-top: var(--_spacing---space--10) !important;
   }
-  .legal_layout[data-legal-privacy] .legal_bot h2 {
+  .legal_layout[data-legal-variant="secondary"] .legal_bot h2 {
     --_text-style-1---font-family: var(--_typography---font--primary-family);
     --_text-style-1---font-size: var(--_typography---font-size--h3-primary);
     --_text-style-1---line-height: var(--_typography---line-height--snug);
@@ -43,7 +43,7 @@
     --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
     --_text-style-1---text-transform: var(--_typography---text-transform--none);
   }
-  .legal_layout[data-legal-privacy] .legal_bot h3 {
+  .legal_layout[data-legal-variant="secondary"] .legal_bot h3 {
     --_text-style-1---font-family: var(--_typography---font--primary-family);
     --_text-style-1---font-size: var(--_typography---font-size--h4-primary);
     --_text-style-1---line-height: var(--_typography---line-height--tight);
@@ -56,7 +56,7 @@
     --_text-style-1---trim-bottom: var(--_typography---font--primary-trim-bottom);
     --_text-style-1---text-transform: var(--_typography---text-transform--none);
   }
-  .legal_layout[data-legal-privacy] .legal_bot h4 {
+  .legal_layout[data-legal-variant="secondary"] .legal_bot h4 {
     --_text-style-1---font-family: var(--_typography---font--primary-family);
     --_text-style-1---font-size: var(--_typography---font-size--eyebrow-large);
     --_text-style-1---line-height: var(--_typography---line-height--snug);
@@ -75,6 +75,7 @@
           
           
         </div>
+        
         
         <div class="u-display-none">
           
@@ -104,19 +105,21 @@
           
           
         </div>
-        {% if section.settings.variant == 'imprint' %}{% assign legal_attribute = 'imprint' %}{% if section.settings.variant == 'imprint' %}{% assign legal_text = pages.impressum.content %}{% elsif section.settings.variant == 'privacy_policy' %}{% assign legal_text = shop.privacy_policy.body %}{% else %}{% assign legal_text = section.settings.paragraph %}{% endif %}
+        {% if section.settings.variant == 'imprint' %}{% assign legal_attribute = 'imprint' %}{% if section.settings.variant == 'privacy_policy' %}{% assign legal_text = shop.privacy_policy.body %}{% else %}{% assign legal_text = section.settings.paragraph %}{% endif %}
         <div class="legal_contain u-container" {% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% endif %}>
           
-          <div data-legal-imprint="" data-section-spacing="" class="legal_layout" {% if section.settings.variant == 'imprint' %}data-legal-imprint{% else %}data-legal-privacy{% endif}><div class="legal_top u-margin-trim u-alignment-center">{% render 'eyebrow', tag: 'h1', eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant %}
-  {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
-  {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
-  </div>
-  <div class="legal_bot u-margin-trim">
-    {% render 'paragraph', variant: 'u-text-body-base', custom_class: u-margin-trim, paragraph: legal_text %}
-  </div>
-  </div>
-  
-  </div> {% schema %} {
+          <div data-legal-variant="{{ legal_variant }}" data-section-spacing="" class="legal_layout">
+            <div class="legal_top u-margin-trim u-alignment-center">
+              {% render 'eyebrow', tag: 'h1', eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant %}
+              {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+              {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
+            </div>
+            <div class="legal_bot u-margin-trim">
+              {% render 'paragraph', variant: 'u-text-body-base', custom_class: u-margin-trim, paragraph: legal_text %}
+            </div>
+          </div>
+          
+        </div> {% schema %} {
     "tag": "section",
     "name": "Legal",
     "class": "legal_wrap u-section",
@@ -137,12 +140,12 @@
             "default": "imprint",
             "options": [
                 {
-                    "label": "Impressum",
-                    "value": "imprint"
+                    "label": "Prim\u00e4r",
+                    "value": "primary"
                 },
                 {
-                    "label": "Datenschutzerkl\u00e4rung",
-                    "value": "privacy_policy"
+                    "label": "Sekund\u00e4r",
+                    "value": "secondary"
                 }
             ]
         },
