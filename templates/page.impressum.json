@@ -14,8 +14,8 @@
       "name": "Legal",
       "settings": {
         "section_id": "",
-        "variant": "primary",
-        "text_source": "imprint",
+        "variant": "secondary",
+        "text_source": "privacy_policy",
         "spacing_top": "page_top",
         "spacing_bottom": "large",
         "eyebrow": "Impressum",
