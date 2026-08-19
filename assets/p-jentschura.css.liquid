@@ -154,6 +154,7 @@
   --_spacing---space--11: clamp(1.75 * 1rem, ((1.75 - ((2.5 - 1.75) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((2.5 - 1.75) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 2.5 * 1rem);
   --_spacing---space--12: clamp(2 * 1rem, ((2 - ((3 - 2) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((3 - 2) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 3 * 1rem);
   --_spacing---space--13: clamp(2.5 * 1rem, ((2.5 - ((3.75 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((3.75 - 2.5) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 3.75 * 1rem);
+  --_spacing---space--14: clamp(3.75 * 1rem, ((3.75 - ((6.25 - 3.75) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((6.25 - 3.75) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 6.25 * 1rem);
   --_typography---font--secondary-family: "Ms Madi", Georgia, sans-serif;
   --_typography---font--secondary-regular: 400;
   --_typography---line-height--relaxed: 1.5;
@@ -170,7 +171,6 @@
   --_theme---background-7: var(--swatch--charcoal);
   --radius--xsmall: .375rem;
   --misc--text-carousel-gap: clamp(1.375 * 1rem, ((1.375 - ((4.375 - 1.375) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((4.375 - 1.375) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 4.375 * 1rem);
-  --_spacing---space--14: clamp(3.75 * 1rem, ((3.75 - ((6.25 - 3.75) / (var(--site--viewport-max)  - var(--site--viewport-min)) * var(--site--viewport-min))) * 1rem + ((6.25 - 3.75) / (var(--site--viewport-max)  - var(--site--viewport-min))) * 100vw), 6.25 * 1rem);
   --swatch--white-o20: #fff3;
   --misc--product-padding: clamp(1 * 1rem, ((1 - ((5 - 1) / (var(--site--viewport-max)  - 53) * 53)) * 1rem + ((5 - 1) / (var(--site--viewport-max)  - 53)) * 100vw), 5 * 1rem);
   --misc--product-story-card-padding: clamp(1 * 1rem, ((1 - ((2.5 - 1) / (var(--site--viewport-max)  - 53) * 53)) * 1rem + ((2.5 - 1) / (var(--site--viewport-max)  - 53)) * 100vw), 2.5 * 1rem);
@@ -7082,7 +7082,7 @@ figure {
 }
 
 .newsletter_layout {
-  padding-top: 6.25rem;
+  padding-top: var(--_spacing---space--14);
   padding-bottom: calc(calc(10rem * max(var(--_responsive---large), var(--_responsive---medium)))  + calc(14.375rem * max(var(--_responsive---small), var(--_responsive---xsmall))));
   position: relative;
 }
@@ -7712,6 +7712,8 @@ figure {
   grid-row-gap: 2rem;
   color: var(--_theme---text-2);
   flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
   display: flex;
 }
 
@@ -7728,25 +7730,25 @@ figure {
 .newsletter_bot {
   grid-column-gap: 1.25rem;
   grid-row-gap: 1.25rem;
-  flex-flow: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: var(--stretch-small, center);
+  flex-flow: column;
   display: flex;
 }
 
 .newsletter_bot_inner {
-  flex-flow: var(--column-small, row);
+  align-self: var(--center-small, stretch);
   grid-column-gap: .25rem;
   grid-row-gap: .25rem;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
+  flex-flow: var(--column-small, row);
   background-color: #ffffff40;
   padding: .25rem;
   display: flex;
 }
 
 .newsletter_label_wrap {
-  flex: none;
   width: 100%;
   max-width: 18.125rem;
 }
