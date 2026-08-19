@@ -14,7 +14,8 @@
       "name": "Legal",
       "settings": {
         "section_id": "",
-        "spacing_top": "large",
+        "variant": "imprint",
+        "spacing_top": "page_top",
         "spacing_bottom": "large",
         "eyebrow": "Impressum",
         "eyebrow_variant": "u-text-eyebrow-large",
