@@ -1,12 +1,33 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "placeholder": {
-            "type": "placeholder"
-        }
-    },
-    "layout": "theme",
-    "wrapper": "main#main.page_main",
-    "order": [
-        "placeholder"
-    ]
+  "sections": {
+    "legal_xmYHqp": {
+      "type": "legal",
+      "name": "Legal",
+      "settings": {
+        "section_id": "",
+        "variant": "imprint",
+        "spacing_top": "page_top",
+        "spacing_bottom": "large",
+        "eyebrow": "Datenschutzerklärung",
+        "heading": "Jentschura International GmbH",
+        "heading_max_width": 20,
+        "heading_tidy_text": true,
+        "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
+      }
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main#main.page_main",
+  "order": [
+    "legal_xmYHqp"
+  ]
 }
