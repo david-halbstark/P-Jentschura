@@ -27,16 +27,6 @@
           
           
           
-          
-          
-          
-        </div>
-        <div class="u-display-none">
-          
-          
-          
-          
-          
         </div>
         <div class="u-display-none">
           
@@ -58,37 +48,21 @@
           
           
           
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
         </div>
-        <div class="section_contain u-container" {% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% endif %}>
-          <div data-section-spacing="" class="section_layout u-grid-autofit">
-            {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant, custom_class: , wrapper_class: %}
-            {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
-            {% render 'paragraph', custom_class: , paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant, max_width: section.settings.paragraph_max_width, tidy_text: section.settings.paragraph_tidy_text %}
-            {% render 'button_group', button_1_solid_color: section.settings.button_1_solid_color, button_1_icon_position: section.settings.button_1_icon_position, button_1_url: section.settings.button_1_url, button_2_url: section.settings.button_2_url, button_2_solid_color: section.settings.button_2_solid_color, button_2_icon_position: section.settings.button_2_icon_position, button_2_action: section.settings.button_2_action, button_1_action: section.settings.button_1_action, button_2_icon: section.settings.button_2_icon, button_1_label: section.settings.button_1_label, button_1_icon: section.settings.button_1_icon, button_2_label: section.settings.button_2_label, button_2_icon_color: section.settings.button_2_icon_color, button_2_pill_color: section.settings.button_2_pill_color, button_1_trigger: 'hover focus', button_2_icon_animation: section.settings.button_2_icon_animation, button_2_trigger: 'hover focus', button_1_icon_color: section.settings.button_1_icon_color, button_1_pill_color: section.settings.button_1_pill_color, button_1_icon_animation: section.settings.button_1_icon_animation, button_2_custom_attribute_value: , button_2_text_text_size: section.settings.button_2_text_text_size, button_1_custom_attribute_name: , button_1_custom_attribute_value: , button_1_solid_padding: section.settings.button_1_solid_padding, button_2_custom_attribute_name: , button_1_text_text_size: section.settings.button_1_text_text_size, button_2_mode: section.settings.button_2_mode, button_2_solid_padding: section.settings.button_2_solid_padding, button_1_solid_text_size: section.settings.button_1_solid_text_size, button_1_mode: section.settings.button_1_mode, button_2_solid_text_size: section.settings.button_2_solid_text_size, button_1_variant: section.settings.button_1_variant, button_2_custom_class: , button_1_custom_class: , button_2_pill_tag_inner: section.settings.button_2_pill_tag_inner, button_2_variant: section.settings.button_2_variant, button_1_pill_tag_inner: section.settings.button_1_pill_tag_inner, button_2_pill_text_size: section.settings.button_2_pill_text_size, button_1_pill_text_size: section.settings.button_1_pill_text_size, button_2_text_color: section.settings.button_2_text_color, button_1_underline: section.settings.button_1_underline, button_1_text_color: section.settings.button_1_text_color, button_2_underline: section.settings.button_2_underline %}
+        <div class="not_found_contain u-container" {% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% endif %}>
+          
+          <div data-section-spacing="" class="not_found_layout">
+            <div class="not_found_content u-margin-trim u-alignment-center">
+              {% render 'heading', tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, tag: 'h1', variant: 'u-text-h2-primary', max_width: section.settings.heading_max_width %}
+              {% render 'paragraph', tidy_text: section.settings.paragraph_tidy_text, paragraph: section.settings.paragraph, variant: 'u-text-body-base', max_width: section.settings.paragraph_max_width %}
+              {% render 'button_group', button_1_solid_color: 'red', button_1_url: section.settings.button_1_url, button_1_label: section.settings.button_1_label, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-body-base', button_1_mode: 'link', button_1_variant: 'solid', button_1_text_color: 'white' %}
+            </div>
           </div>
+          
         </div> {% schema %} {
     "tag": "section",
     "name": "Not Found",
-    "class": "section_wrap u-section",
+    "class": "not_found_wrap u-section",
     "settings": [
         {
             "type": "header",
@@ -141,7 +115,7 @@
                     "label": "Seitenanfang"
                 }
             ],
-            "default": "large"
+            "default": "page_top"
         },
         {
             "type": "select",
@@ -177,72 +151,6 @@
         },
         {
             "type": "header",
-            "content": "\u00dcbertitel"
-        },
-        {
-            "type": "text",
-            "id": "eyebrow",
-            "label": "Text",
-            "default": "\u00dcbertitel Text"
-        },
-        {
-            "type": "select",
-            "id": "eyebrow_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "u-text-eyebrow-small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "u-text-eyebrow-base",
-                    "label": "Standard"
-                },
-                {
-                    "value": "u-text-eyebrow-large",
-                    "label": "Gro\u00df"
-                }
-            ],
-            "default": "u-text-eyebrow-large"
-        },
-        {
-            "type": "select",
-            "id": "eyebrow_tag",
-            "label": "HTML-Tag",
-            "options": [
-                {
-                    "value": "h1",
-                    "label": "H1"
-                },
-                {
-                    "value": "h2",
-                    "label": "H2"
-                },
-                {
-                    "value": "h3",
-                    "label": "H3"
-                },
-                {
-                    "value": "h4",
-                    "label": "H4"
-                },
-                {
-                    "value": "h5",
-                    "label": "H5"
-                },
-                {
-                    "value": "h6",
-                    "label": "H6"
-                },
-                {
-                    "value": "p",
-                    "label": "P"
-                }
-            ],
-            "default": "p"
-        },
-        {
-            "type": "header",
             "content": "\u00dcberschrift"
         },
         {
@@ -250,86 +158,6 @@
             "id": "heading",
             "label": "Text",
             "default": "Lorem ipsum dolor sit amet elit"
-        },
-        {
-            "type": "select",
-            "id": "heading_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "u-text-h1-primary",
-                    "label": "H1 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h1-secondary",
-                    "label": "H1 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h2-primary",
-                    "label": "H2 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h2-secondary",
-                    "label": "H2 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h3-primary",
-                    "label": "H3 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h3-secondary",
-                    "label": "H3 Sekund\u00e4r"
-                },
-                {
-                    "value": "u-text-h4-primary",
-                    "label": "H4 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h5-primary",
-                    "label": "H5 Prim\u00e4r"
-                },
-                {
-                    "value": "u-text-h6-primary",
-                    "label": "H6 Prim\u00e4r"
-                }
-            ],
-            "default": "u-text-h2-primary"
-        },
-        {
-            "type": "select",
-            "id": "heading_tag",
-            "label": "HTML-Tag",
-            "options": [
-                {
-                    "value": "h1",
-                    "label": "H1"
-                },
-                {
-                    "value": "h2",
-                    "label": "H2"
-                },
-                {
-                    "value": "h3",
-                    "label": "H3"
-                },
-                {
-                    "value": "h4",
-                    "label": "H4"
-                },
-                {
-                    "value": "h5",
-                    "label": "H5"
-                },
-                {
-                    "value": "h6",
-                    "label": "H6"
-                },
-                {
-                    "value": "p",
-                    "label": "P"
-                }
-            ],
-            "default": "h2"
         },
         {
             "type": "number",
@@ -345,12 +173,6 @@
             "default": true
         },
         {
-            "type": "checkbox",
-            "id": "heading_visually_hidden",
-            "label": "Nur f\u00fcr Screenreader anzeigen",
-            "default": false
-        },
-        {
             "type": "header",
             "content": "Text"
         },
@@ -359,26 +181,6 @@
             "id": "paragraph",
             "label": "Text",
             "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>"
-        },
-        {
-            "type": "select",
-            "id": "paragraph_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "u-text-body-small",
-                    "label": "Klein"
-                },
-                {
-                    "value": "u-text-body-base",
-                    "label": "Standard"
-                },
-                {
-                    "value": "u-text-body-large",
-                    "label": "Gro\u00df"
-                }
-            ],
-            "default": "u-text-body-base"
         },
         {
             "type": "number",
@@ -704,244 +506,6 @@
             ],
             "default": "inherit",
             "visible_if": "{{ section.settings.button_1_icon != 'none' }}"
-        },
-        {
-            "type": "header",
-            "content": "Button 2"
-        },
-        {
-            "type": "text",
-            "id": "button_2_label",
-            "label": "Text",
-            "default": "Text"
-        },
-        {
-            "type": "select",
-            "id": "button_2_mode",
-            "label": "Funktion",
-            "options": [
-                {
-                    "value": "link",
-                    "label": "Link \u00f6ffnen"
-                },
-                {
-                    "value": "action",
-                    "label": "Aktion ausf\u00fchren"
-                }
-            ],
-            "default": "link"
-        },
-        {
-            "type": "url",
-            "id": "button_2_url",
-            "label": "Link",
-            "visible_if": "{{ section.settings.button_2_mode == 'link' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_variant",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "solid",
-                    "label": "Fl\u00e4che"
-                },
-                {
-                    "value": "transparent",
-                    "label": "Transparent"
-                },
-                {
-                    "value": "text",
-                    "label": "Textlink"
-                },
-                {
-                    "value": "pill",
-                    "label": "Kapsel"
-                }
-            ],
-            "default": "solid"
-        },
-        {
-            "type": "select",
-            "id": "button_2_solid_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "red",
-                    "label": "Rot"
-                },
-                {
-                    "value": "white",
-                    "label": "Wei\u00df"
-                }
-            ],
-            "default": "red",
-            "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_solid_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_solid_padding",
-            "label": "Stil",
-            "options": [
-                {
-                    "value": "base",
-                    "label": "Standard"
-                },
-                {
-                    "value": "small",
-                    "label": "Klein"
-                }
-            ],
-            "default": "base",
-            "visible_if": "{{ section.settings.button_2_variant == 'solid' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_text_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-link-large",
-                    "label": "Link gro\u00df"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                }
-            ],
-            "default": "u-text-link-large",
-            "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_text_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "green",
-                    "label": "Gr\u00fcn"
-                },
-                {
-                    "value": "red",
-                    "label": "Rot"
-                }
-            ],
-            "default": "green",
-            "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_pill_color",
-            "label": "Farbe",
-            "options": [
-                {
-                    "value": "white",
-                    "label": "Wei\u00df"
-                },
-                {
-                    "value": "white_transparent",
-                    "label": "Wei\u00df transparent"
-                }
-            ],
-            "default": "white",
-            "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_pill_text_size",
-            "label": "Textgr\u00f6\u00dfe",
-            "options": [
-                {
-                    "value": "u-text-eyebrow-large",
-                    "label": "\u00dcbertitel gro\u00df"
-                },
-                {
-                    "value": "u-text-eyebrow-base",
-                    "label": "\u00dcbertitel Standard"
-                },
-                {
-                    "value": "u-text-link-base",
-                    "label": "Link Standard"
-                },
-                {
-                    "value": "u-text-link-small",
-                    "label": "Link klein"
-                }
-            ],
-            "default": "u-text-eyebrow-base",
-            "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
-        },
-        {
-            "type": "text",
-            "id": "button_2_pill_tag_inner",
-            "label": "Innerer Tag",
-            "visible_if": "{{ section.settings.button_2_variant == 'pill' }}"
-        },
-        {
-            "type": "checkbox",
-            "id": "button_2_underline",
-            "label": "Unterstreichung anzeigen",
-            "default": false,
-            "visible_if": "{{ section.settings.button_2_variant == 'text' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_icon_position",
-            "label": "Icon-Position",
-            "options": [
-                {
-                    "value": "before",
-                    "label": "Vor dem Text"
-                },
-                {
-                    "value": "after",
-                    "label": "Nach dem Text"
-                }
-            ],
-            "default": "after",
-            "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
-        },
-        {
-            "type": "select",
-            "id": "button_2_icon_animation",
-            "label": "Icon-Animation",
-            "options": [
-                {
-                    "value": "none",
-                    "label": "Keine Animation"
-                },
-                {
-                    "value": "move_left",
-                    "label": "Nach links bewegen"
-                },
-                {
-                    "value": "move_right",
-                    "label": "Nach rechts bewegen"
-                },
-                {
-                    "value": "move_up_right",
-                    "label": "Nach oben rechts bewegen"
-                }
-            ],
-            "default": "none",
-            "visible_if": "{{ section.settings.button_2_icon != 'none' }}"
         }
     ],
     "presets": [
