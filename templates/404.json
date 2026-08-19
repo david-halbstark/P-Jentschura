@@ -24,7 +24,7 @@
         "paragraph_tidy_text": true,
         "button_1_label": "Zur Startseite",
         "button_1_mode": "link",
-        "button_1_url": "shopify://products/3x3®",
+        "button_1_url": "/",
         "button_1_action": "newsletter_modal",
         "button_1_variant": "solid",
         "button_1_solid_color": "red",
