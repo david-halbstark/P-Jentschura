@@ -9930,6 +9930,32 @@ figure {
   height: 100%;
 }
 
+.not_found_layout {
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.legal_layout {
+  grid-column-gap: var(--_spacing---space--12);
+  grid-row-gap: var(--_spacing---space--12);
+  flex-flow: column;
+  display: flex;
+}
+
+.legal_bot {
+  border-top-left-radius: var(--radius--main);
+  border-top-right-radius: var(--radius--main);
+  border-bottom-left-radius: var(--radius--main);
+  border-bottom-right-radius: var(--radius--main);
+  padding-left: calc(var(--_spacing---space--14) * .8 * var(--_responsive---large)  + var(--_spacing---space--9) * var(--_responsive---medium)  + var(--_spacing---space--8) * max(var(--_responsive---small), var(--_responsive---xsmall)));
+  padding-top: calc(var(--_spacing---space--14) * .8 * var(--_responsive---large)  + var(--_spacing---space--12) * var(--_responsive---medium)  + var(--_spacing---space--10) * max(var(--_responsive---small), var(--_responsive---xsmall)));
+  padding-right: calc(var(--_spacing---space--14) * .8 * var(--_responsive---large)  + var(--_spacing---space--9) * var(--_responsive---medium)  + var(--_spacing---space--8) * max(var(--_responsive---small), var(--_responsive---xsmall)));
+  padding-bottom: calc(var(--_spacing---space--14) * .8 * var(--_responsive---large)  + var(--_spacing---space--12) * var(--_responsive---medium)  + var(--_spacing---space--10) * max(var(--_responsive---small), var(--_responsive---xsmall)));
+  background-image: linear-gradient(#fbfbfb, #f2f1f1);
+}
+
 @media screen and (max-width: 991px) {
   .slider_bullet_list {
     width: auto !important;
