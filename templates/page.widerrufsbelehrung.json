@@ -1,0 +1,83 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "legal_GAEkCK": {
+      "type": "legal",
+      "name": "Legal",
+      "settings": {
+        "section_id": "",
+        "variant": "imprint",
+        "spacing_top": "page_top",
+        "spacing_bottom": "large",
+        "eyebrow": "Impressum",
+        "heading": "Jentschura International GmbH",
+        "heading_max_width": 20,
+        "heading_tidy_text": true,
+        "paragraph": ""
+      }
+    },
+    "social_media_xAmTEd": {
+      "type": "social_media",
+      "name": "Social Media",
+      "settings": {
+        "section_id": "",
+        "spacing_top": "large",
+        "spacing_bottom": "large"
+      }
+    },
+    "seo_content_nR4PJU": {
+      "type": "seo_content",
+      "name": "SEO Content",
+      "settings": {
+        "section_id": "",
+        "spacing_top": "large",
+        "spacing_bottom": "large",
+        "heading": "Lorem ipsum dolor sit amet elit",
+        "heading_max_width": 20,
+        "heading_tidy_text": true,
+        "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
+        "paragraph_max_width": -1,
+        "paragraph_tidy_text": true
+      }
+    },
+    "newsletter_rPFxqp": {
+      "type": "newsletter",
+      "name": "Newsletter",
+      "settings": {
+        "section_id": "",
+        "variant": "small",
+        "text_source": "theme",
+        "eyebrow": "Übertitel Text",
+        "eyebrow_tag": "p",
+        "heading": "Lorem ipsum dolor sit amet elit",
+        "heading_tag": "h2",
+        "heading_max_width": 20,
+        "heading_tidy_text": true,
+        "paragraph": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
+        "paragraph_max_width": 60,
+        "paragraph_tidy_text": true,
+        "image_object_fit": "cover",
+        "image_width": 2000,
+        "image_width_mobile": 900,
+        "image_loading": "lazy",
+        "image_fetchpriority": "auto"
+      }
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main#main.page_main",
+  "order": [
+    "legal_GAEkCK",
+    "social_media_xAmTEd",
+    "seo_content_nR4PJU",
+    "newsletter_rPFxqp"
+  ]
+}
