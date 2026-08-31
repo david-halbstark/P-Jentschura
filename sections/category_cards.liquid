@@ -89,7 +89,7 @@
         <div class="category_cards_contain u-container" {% if section.settings.section_id != blank %}id='{{ section.settings.section_id | handleize }}'{% endif %}>
           
           <div data-section-spacing="" class="category_cards_layout u-grid-custom">
-            {% render 'heading', custom_class: , heading: section.settings.heading, tag: h2, visually_hidden: true %}
+            {% render 'heading', heading: section.settings.heading, tag: h2, visually_hidden: true %}
             {% for block in section.blocks %}
     {% if block.type == "card" %}
                     <div li-block="Card" class="category_cards_card_wrap">
@@ -355,4 +355,15 @@
             ]
         }
     ]
-} {% endschema %}
+} {% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'heading', custom_class: , heading: section.settings.heading, tag:
+    h2, visually_hidden: true %}"
+  to: "{% render 'heading', heading: section.settings.heading, tag: h2, visually_hidden:
+    true %}"
+  position: 3834..3923
+{%- endcomment -%}

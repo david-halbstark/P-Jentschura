@@ -138,9 +138,9 @@
                     <path d="M10.3834 36.8843C10.876 36.8703 11.3687 36.865 11.8616 36.868C12.4466 36.8749 13.0918 36.8789 13.5147 37.3124C13.4762 37.8767 13.4087 37.775 12.9191 38.2538C11.8784 38.5401 10.7153 38.5949 9.95703 37.728C10.0145 37.2618 10.049 37.217 10.3834 36.8843Z" fill="currentColor" class="u-path"></path>
                     <path d="M17.4911 9.82812C27.0614 10.2909 26.0566 18.2668 20.4452 23.2939C19.1555 24.4495 18.2172 25.0865 16.6874 25.998C13.4836 27.9069 11.1999 28.5878 7.49012 28.4541C6.46557 30.873 5.6704 33.3471 4.84754 35.834C4.1783 37.8566 4.03471 40.8657 2.31922 42.1074C1.61048 42.2055 0.657231 42.311 0.0506618 41.9307C-0.50861 40.6445 3.73164 29.8475 4.45203 27.3711C3.66778 26.9972 2.82631 26.7003 2.58386 25.7949C2.60791 25.1728 2.60764 25.0857 2.995 24.6055C3.72764 24.1172 4.72089 24.1905 5.61414 24.1738C6.42828 23.2657 7.80312 17.1637 8.57996 15.2188C7.51134 15.5809 6.12841 16.0795 5.23133 15.1064C5.07607 12.2988 14.8829 10.1402 17.2577 9.83594C17.3353 9.83306 17.4135 9.83081 17.4911 9.82812ZM18.0311 11.7529C15.2302 12.1206 11.2581 13.6419 8.84558 15.1592L11.705 14.8594C11.7048 15.5816 11.7148 16.3576 11.5546 17.0449C11.2387 18.4009 8.00487 26.1458 8.31433 27.0752C8.58107 27.0677 8.67249 27.0825 8.93347 27.0146C14.0753 25.4244 17.6651 22.4493 20.7137 18.0098C22.4023 15.5509 20.4963 11.3675 18.0311 11.7529Z" fill="currentColor" class="u-path"></path>
                   </svg>
-                  {% render 'paragraph', custom_class: 'u-margin-bottom-0', paragraph: shop.metafields.custom.social_media_text | metafield_tag, variant: 'u-text-body-large', max_width: section.settings.paragraph_max_width %}
+                  {% render 'paragraph', custom_class: 'u-margin-bottom-0', paragraph: shop.metafields.custom.social_media_text, variant: 'u-text-body-large', max_width: section.settings.paragraph_max_width %}
                   {% render 'button_group', button_1_solid_color: 'white', button_1_url: shop.metafields.custom.social_media_button_url, button_1_label: shop.metafields.custom.social_media_button_text, button_1_trigger: 'hover focus', button_1_solid_padding: 'base', button_1_solid_text_size: 'u-text-link-base', button_1_mode: 'link', button_1_variant: 'solid' %}
-                  {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
+                  {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, mode: section.settings.button_1_mode, color: section.settings.button_1_color, pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
                 </div>
               </div>
               <div class="social_media_media_slider_wrap slider_wrap">
@@ -149,22 +149,22 @@
                     <div class="social_media_media_slider_list swiper-wrapper">
                       <div class="social_media_media_slider_slide swiper-slide">
                         <div class="social_media_media_card is-1">
-                          {% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
+                          {% render 'media', image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted %}
                         </div>
                       </div>
                       <div class="social_media_media_slider_slide swiper-slide">
                         <div class="social_media_media_card is-2">
-                          {% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
+                          {% render 'media', image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted %}
                         </div>
                       </div>
                       <div class="social_media_media_slider_slide swiper-slide">
                         <div class="social_media_media_card is-3">
-                          {% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
+                          {% render 'media', image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted %}
                         </div>
                       </div>
                       <div class="social_media_media_slider_slide swiper-slide">
                         <div class="social_media_media_card is-4">
-                          {% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
+                          {% render 'media', image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted %}
                         </div>
                       </div>
                     </div>
@@ -322,4 +322,111 @@
             "blocks": []
         }
     ]
-} {% endschema %}
+} {% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'paragraph', custom_class: 'u-margin-bottom-0', paragraph: shop.metafields.custom.social_media_text
+    | metafield_tag, variant: 'u-text-body-large', max_width: section.settings.paragraph_max_width
+    %}"
+  to: "{% render 'paragraph', custom_class: 'u-margin-bottom-0', paragraph: shop.metafields.custom.social_media_text,
+    variant: 'u-text-body-large', max_width: section.settings.paragraph_max_width
+    %}"
+  position: 17305..17496
+- from: "{% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position,
+    action: section.settings.button_1_action, padding: section.settings.button_1_padding,
+    text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon,
+    label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color,
+    trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation,
+    custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode,
+    color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner,
+    variant: section.settings.button_1_variant, underline: section.settings.button_1_underline
+    %}"
+  to: "{% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position,
+    action: section.settings.button_1_action, padding: section.settings.button_1_padding,
+    text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon,
+    label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color,
+    trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation,
+    mode: section.settings.button_1_mode, color: section.settings.button_1_color,
+    pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant,
+    underline: section.settings.button_1_underline %}"
+  position: 17880..18565
+- from: "{% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit,
+    media_type: section.settings.media_type, video_controls: section.settings.video_controls,
+    video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour,
+    image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile,
+    image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image,
+    video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay:
+    section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width:
+    section.settings.image_width, video_preload: section.settings.video_preload, video_muted:
+    section.settings.video_muted, video_custom_class: , image_custom_class: %}"
+  to: "{% render 'media', image_object_fit: section.settings.image_object_fit, media_type:
+    section.settings.media_type, video_controls: section.settings.video_controls,
+    video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour,
+    image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile,
+    image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image,
+    video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay:
+    section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width:
+    section.settings.image_width, video_preload: section.settings.video_preload, video_muted:
+    section.settings.video_muted %}"
+  position: 19135..19904
+- from: "{% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit,
+    media_type: section.settings.media_type, video_controls: section.settings.video_controls,
+    video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour,
+    image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile,
+    image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image,
+    video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay:
+    section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width:
+    section.settings.image_width, video_preload: section.settings.video_preload, video_muted:
+    section.settings.video_muted, video_custom_class: , image_custom_class: %}"
+  to: "{% render 'media', image_object_fit: section.settings.image_object_fit, media_type:
+    section.settings.media_type, video_controls: section.settings.video_controls,
+    video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour,
+    image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile,
+    image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image,
+    video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay:
+    section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width:
+    section.settings.image_width, video_preload: section.settings.video_preload, video_muted:
+    section.settings.video_muted %}"
+  position: 20139..20908
+- from: "{% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit,
+    media_type: section.settings.media_type, video_controls: section.settings.video_controls,
+    video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour,
+    image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile,
+    image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image,
+    video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay:
+    section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width:
+    section.settings.image_width, video_preload: section.settings.video_preload, video_muted:
+    section.settings.video_muted, video_custom_class: , image_custom_class: %}"
+  to: "{% render 'media', image_object_fit: section.settings.image_object_fit, media_type:
+    section.settings.media_type, video_controls: section.settings.video_controls,
+    video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour,
+    image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile,
+    image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image,
+    video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay:
+    section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width:
+    section.settings.image_width, video_preload: section.settings.video_preload, video_muted:
+    section.settings.video_muted %}"
+  position: 21143..21912
+- from: "{% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit,
+    media_type: section.settings.media_type, video_controls: section.settings.video_controls,
+    video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour,
+    image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile,
+    image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image,
+    video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay:
+    section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width:
+    section.settings.image_width, video_preload: section.settings.video_preload, video_muted:
+    section.settings.video_muted, video_custom_class: , image_custom_class: %}"
+  to: "{% render 'media', image_object_fit: section.settings.image_object_fit, media_type:
+    section.settings.media_type, video_controls: section.settings.video_controls,
+    video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour,
+    image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile,
+    image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image,
+    video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay:
+    section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width:
+    section.settings.image_width, video_preload: section.settings.video_preload, video_muted:
+    section.settings.video_muted %}"
+  position: 22147..22916
+{%- endcomment -%}

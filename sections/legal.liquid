@@ -111,8 +111,8 @@
           <div data-legal-variant="{{ legal_variant }}" data-section-spacing="" class="legal_layout">
             <div class="legal_top u-margin-trim u-alignment-center">
               {% render 'eyebrow', tag: 'h1', eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant %}
-              {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
-              {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
+              {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+              {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, mode: section.settings.button_1_mode, color: section.settings.button_1_color, pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
             </div>
             <div class="legal_bot u-margin-trim">
               {% render 'paragraph', variant: 'u-text-body-base', custom_class: u-margin-trim, paragraph: legal_text %}
@@ -296,4 +296,37 @@
             "blocks": []
         }
     ]
-} {% endschema %}
+} {% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'heading', tag: section.settings.heading_tag, visually_hidden:
+    section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text,
+    heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant,
+    max_width: section.settings.heading_max_width %}"
+  to: "{% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden,
+    tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading,
+    variant: section.settings.heading_variant, max_width: section.settings.heading_max_width
+    %}"
+  position: 7159..7447
+- from: "{% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position,
+    action: section.settings.button_1_action, padding: section.settings.button_1_padding,
+    text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon,
+    label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color,
+    trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation,
+    custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode,
+    color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner,
+    variant: section.settings.button_1_variant, underline: section.settings.button_1_underline
+    %}"
+  to: "{% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position,
+    action: section.settings.button_1_action, padding: section.settings.button_1_padding,
+    text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon,
+    label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color,
+    trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation,
+    mode: section.settings.button_1_mode, color: section.settings.button_1_color,
+    pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant,
+    underline: section.settings.button_1_underline %}"
+  position: 7462..8147
+{%- endcomment -%}

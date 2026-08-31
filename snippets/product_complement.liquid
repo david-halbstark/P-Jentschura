@@ -1,9 +1,36 @@
 <div class="product_complement_wrap">
                       <div class="product_complement_left u-flex-noshrink">
                         <div class="product_complement_image">
-                          {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                          {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, width: section.settings.image_width, object_fit: section.settings.image_object_fit %}
                         </div>
                       </div>
                       <div class="product_complement_right"></div>
-                      {% render 'clickable', url: section.settings.clickable_url, action: section.settings.clickable_action, focus_ring: section.settings.clickable_focus_ring, label: section.settings.clickable_label, mode: section.settings.clickable_mode, aria_hidden: , custom_class: , target: section.settings.clickable_target %}
+                      {% render 'clickable', url: section.settings.clickable_url, action: section.settings.clickable_action, focus_ring: section.settings.clickable_focus_ring, label: section.settings.clickable_label, mode: section.settings.clickable_mode, target: section.settings.clickable_target %}
                     </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'image', width_mobile: section.settings.image_width_mobile, image:
+    section.settings.image, loading: section.settings.image_loading, fetchpriority:
+    section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile,
+    custom_class: , width: section.settings.image_width, breakpoint: , object_fit:
+    section.settings.image_object_fit %}"
+  to: "{% render 'image', width_mobile: section.settings.image_width_mobile, image:
+    section.settings.image, loading: section.settings.image_loading, fetchpriority:
+    section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile,
+    width: section.settings.image_width, object_fit: section.settings.image_object_fit
+    %}"
+  position: 203..528
+- from: "{% render 'clickable', url: section.settings.clickable_url, action: section.settings.clickable_action,
+    focus_ring: section.settings.clickable_focus_ring, label: section.settings.clickable_label,
+    mode: section.settings.clickable_mode, aria_hidden: , custom_class: , target:
+    section.settings.clickable_target %}"
+  to: "{% render 'clickable', url: section.settings.clickable_url, action: section.settings.clickable_action,
+    focus_ring: section.settings.clickable_focus_ring, label: section.settings.clickable_label,
+    mode: section.settings.clickable_mode, target: section.settings.clickable_target
+    %}"
+  position: 678..956
+{% endcomment %}

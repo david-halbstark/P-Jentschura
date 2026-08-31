@@ -83,8 +83,8 @@
           <div data-section-spacing="" class="product_instructions_layout">
             <div class="product_instructions_top">
               <div class="product_instructions_top_left">
-                {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant, custom_class: , wrapper_class: %}
-                {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+                {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant %}
+                {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
               </div>
               <div class="product_instructions_top_right">
                 <div class="product_instructions_tabs"><button data-trigger="hover focus" class="product_instructions_tab">
@@ -98,14 +98,14 @@
               <div class="product_instructions_panels">
                 <div class="product_instructions_panel">
                   <div class="product_instructions_panel_top">
-                    {% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted, video_custom_class: , image_custom_class: %}
+                    {% render 'media', image_object_fit: section.settings.image_object_fit, media_type: section.settings.media_type, video_controls: section.settings.video_controls, video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour, image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile, image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image, video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay: section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width: section.settings.image_width, video_preload: section.settings.video_preload, video_muted: section.settings.video_muted %}
                   </div>
                   <div class="product_instructions_panel_bot">
                     <div class="product_instructions_steps">
                       <div class="product_instructions_step_count"></div>
                       <div class="product_instructions_step_info">
-                        {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
-                        {% render 'paragraph', custom_class: , paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant, max_width: section.settings.paragraph_max_width, tidy_text: section.settings.paragraph_tidy_text %}
+                        {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+                        {% render 'paragraph', paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant, max_width: section.settings.paragraph_max_width, tidy_text: section.settings.paragraph_tidy_text %}
                       </div>
                     </div>
                   </div>
@@ -980,4 +980,59 @@
             "blocks": []
         }
     ]
-} {% endschema %}
+} {% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow,
+    variant: section.settings.eyebrow_variant, custom_class: , wrapper_class: %}"
+  to: "{% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow,
+    variant: section.settings.eyebrow_variant %}"
+  position: 2957..3092
+- from: "{% render 'heading', tag: section.settings.heading_tag, visually_hidden:
+    section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text,
+    heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant,
+    max_width: section.settings.heading_max_width %}"
+  to: "{% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden,
+    tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading,
+    variant: section.settings.heading_variant, max_width: section.settings.heading_max_width
+    %}"
+  position: 3109..3397
+- from: "{% render 'media', image_breakpoint: , image_object_fit: section.settings.image_object_fit,
+    media_type: section.settings.media_type, video_controls: section.settings.video_controls,
+    video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour,
+    image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile,
+    image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image,
+    video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay:
+    section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width:
+    section.settings.image_width, video_preload: section.settings.video_preload, video_muted:
+    section.settings.video_muted, video_custom_class: , image_custom_class: %}"
+  to: "{% render 'media', image_object_fit: section.settings.image_object_fit, media_type:
+    section.settings.media_type, video_controls: section.settings.video_controls,
+    video_playsinline: section.settings.video_playsinline, video_play_behavi: section.settings.video_play_behaviour,
+    image_loading: section.settings.image_loading, image_width_mobile: section.settings.image_width_mobile,
+    image_fetchpriority: section.settings.image_fetchpriority, image: section.settings.image,
+    video: section.settings.video, image_mobile: section.settings.image_mobile, video_autoplay:
+    section.settings.video_autoplay, video_loop: section.settings.video_loop, image_width:
+    section.settings.image_width, video_preload: section.settings.video_preload, video_muted:
+    section.settings.video_muted %}"
+  position: 4361..5130
+- from: "{% render 'heading', tag: section.settings.heading_tag, visually_hidden:
+    section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text,
+    heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant,
+    max_width: section.settings.heading_max_width %}"
+  to: "{% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden,
+    tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading,
+    variant: section.settings.heading_variant, max_width: section.settings.heading_max_width
+    %}"
+  position: 5445..5733
+- from: "{% render 'paragraph', custom_class: , paragraph: section.settings.paragraph,
+    variant: section.settings.paragraph_variant, max_width: section.settings.paragraph_max_width,
+    tidy_text: section.settings.paragraph_tidy_text %}"
+  to: "{% render 'paragraph', paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant,
+    max_width: section.settings.paragraph_max_width, tidy_text: section.settings.paragraph_tidy_text
+    %}"
+  position: 5758..5964
+{%- endcomment -%}

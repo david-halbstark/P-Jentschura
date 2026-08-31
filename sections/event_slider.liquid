@@ -90,8 +90,8 @@
           <div data-section-spacing="" class="event_slider_layout">
             <div class="event_slider_top">
               <div class="event_slider_top_left">
-                {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant, custom_class: , wrapper_class: %}
-                {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+                {% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow, variant: section.settings.eyebrow_variant %}
+                {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
               </div>
               <div class="event_slider_top_right"></div>
             </div>
@@ -103,24 +103,24 @@
                       <div class="event_slider_slider_slide swiper-slide">
                         <div class="event_slider_slide_wrap u-box-shadow">
                           <div class="event_slider_slide_top">
-                            {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, custom_class: , width: section.settings.image_width, breakpoint: , object_fit: section.settings.image_object_fit %}
+                            {% render 'image', width_mobile: section.settings.image_width_mobile, image: section.settings.image, loading: section.settings.image_loading, fetchpriority: section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile, width: section.settings.image_width, object_fit: section.settings.image_object_fit %}
                             <div id="w-node-_1dd65d99-2fbc-3611-83af-0855c1fb5b51-74281a3c" class="event_slider_slide_tag">
-                              {% render 'tag', custom_class: , tag: section.settings.tag, variant: section.settings.tag_variant, solid_text_size: section.settings.tag_solid_text_size, solid_color: section.settings.tag_solid_color, pill_text_size: section.settings.tag_pill_text_size %}
+                              {% render 'tag', tag: section.settings.tag, variant: section.settings.tag_variant, solid_text_size: section.settings.tag_solid_text_size, solid_color: section.settings.tag_solid_color, pill_text_size: section.settings.tag_pill_text_size %}
                             </div>
                           </div>
                           <div class="event_slider_slide_bot u-alignment-center">
                             <div class="event_slider_slide_meta u-alignment-inherit">
                               <div class="event_slider_slide_meta_icon">
-                                {% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true %}
+                                {% render 'icon', icon: 'arrow_right', aria-hidden: true %}
                               </div>
-                              {% render 'typography', custom_attribute_value: , tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, custom_attribute_name: , tidy_text: section.settings.text_tidy_text, custom_class: , variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
+                              {% render 'typography', tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden, tidy_text: section.settings.text_tidy_text, variant: section.settings.text_variant, text: section.settings.text, max_width: section.settings.text_max_width %}
                             </div>
                             <div class="event_slider_slide_text u-alignment-inherit">
-                              {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
-                              {% render 'paragraph', tidy_text: section.settings.paragraph_tidy_text, custom_class: , paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant, max_width: section.settings.paragraph_max_width %}
+                              {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+                              {% render 'paragraph', tidy_text: section.settings.paragraph_tidy_text, paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant, max_width: section.settings.paragraph_max_width %}
                             </div>
                             <div class="event_slider_slide_button">
-                              {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode, color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
+                              {% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position, action: section.settings.button_1_action, padding: section.settings.button_1_padding, text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon, label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color, trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation, mode: section.settings.button_1_mode, color: section.settings.button_1_color, pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant, underline: section.settings.button_1_underline %}
                             </div>
                           </div>
                         </div>
@@ -998,4 +998,88 @@
             "blocks": []
         }
     ]
-} {% endschema %}
+} {% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow,
+    variant: section.settings.eyebrow_variant, custom_class: , wrapper_class: %}"
+  to: "{% render 'eyebrow', tag: section.settings.eyebrow_tag, eyebrow: section.settings.eyebrow,
+    variant: section.settings.eyebrow_variant %}"
+  position: 3068..3203
+- from: "{% render 'heading', tag: section.settings.heading_tag, visually_hidden:
+    section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text,
+    heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant,
+    max_width: section.settings.heading_max_width %}"
+  to: "{% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden,
+    tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading,
+    variant: section.settings.heading_variant, max_width: section.settings.heading_max_width
+    %}"
+  position: 3220..3508
+- from: "{% render 'image', width_mobile: section.settings.image_width_mobile, image:
+    section.settings.image, loading: section.settings.image_loading, fetchpriority:
+    section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile,
+    custom_class: , width: section.settings.image_width, breakpoint: , object_fit:
+    section.settings.image_object_fit %}"
+  to: "{% render 'image', width_mobile: section.settings.image_width_mobile, image:
+    section.settings.image, loading: section.settings.image_loading, fetchpriority:
+    section.settings.image_fetchpriority, image_mobile: section.settings.image_mobile,
+    width: section.settings.image_width, object_fit: section.settings.image_object_fit
+    %}"
+  position: 4222..4547
+- from: "{% render 'tag', custom_class: , tag: section.settings.tag, variant: section.settings.tag_variant,
+    solid_text_size: section.settings.tag_solid_text_size, solid_color: section.settings.tag_solid_color,
+    pill_text_size: section.settings.tag_pill_text_size %}"
+  to: "{% render 'tag', tag: section.settings.tag, variant: section.settings.tag_variant,
+    solid_text_size: section.settings.tag_solid_text_size, solid_color: section.settings.tag_solid_color,
+    pill_text_size: section.settings.tag_pill_text_size %}"
+  position: 4702..4941
+- from: "{% render 'icon', custom_class: , icon: 'arrow_right', aria-hidden: true
+    %}"
+  to: "{% render 'icon', icon: 'arrow_right', aria-hidden: true %}"
+  position: 5283..5342
+- from: "{% render 'typography', custom_attribute_value: , tag: section.settings.text_tag,
+    visually_hidden: section.setttings.text_visually_hidden, custom_attribute_name:
+    , tidy_text: section.settings.text_tidy_text, custom_class: , variant: section.settings.text_variant,
+    text: section.settings.text, max_width: section.settings.text_max_width %}"
+  to: "{% render 'typography', tag: section.settings.text_tag, visually_hidden: section.setttings.text_visually_hidden,
+    tidy_text: section.settings.text_tidy_text, variant: section.settings.text_variant,
+    text: section.settings.text, max_width: section.settings.text_max_width %}"
+  position: 5410..5681
+- from: "{% render 'heading', tag: section.settings.heading_tag, visually_hidden:
+    section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text,
+    heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant,
+    max_width: section.settings.heading_max_width %}"
+  to: "{% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden,
+    tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading,
+    variant: section.settings.heading_variant, max_width: section.settings.heading_max_width
+    %}"
+  position: 5833..6121
+- from: "{% render 'paragraph', tidy_text: section.settings.paragraph_tidy_text, custom_class:
+    , paragraph: section.settings.paragraph, variant: section.settings.paragraph_variant,
+    max_width: section.settings.paragraph_max_width %}"
+  to: "{% render 'paragraph', tidy_text: section.settings.paragraph_tidy_text, paragraph:
+    section.settings.paragraph, variant: section.settings.paragraph_variant, max_width:
+    section.settings.paragraph_max_width %}"
+  position: 6152..6358
+- from: "{% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position,
+    action: section.settings.button_1_action, padding: section.settings.button_1_padding,
+    text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon,
+    label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color,
+    trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation,
+    custom_attribute_value: , custom_attribute_name: , mode: section.settings.button_1_mode,
+    color: section.settings.button_1_color, custom_class: , pill_tag_inner: section.settings.button_1_pill_tag_inner,
+    variant: section.settings.button_1_variant, underline: section.settings.button_1_underline
+    %}"
+  to: "{% render 'button', url: section.settings.button_1_url, icon_position: section.settings.button_1_icon_position,
+    action: section.settings.button_1_action, padding: section.settings.button_1_padding,
+    text_size: section.settings.button_1_text_size, icon: section.settings.button_1_icon,
+    label: section.settings.button_1_label, icon_color: section.settings.button_1_icon_color,
+    trigger: 'hover focus', icon_animation: section.settings.button_1_icon_animation,
+    mode: section.settings.button_1_mode, color: section.settings.button_1_color,
+    pill_tag_inner: section.settings.button_1_pill_tag_inner, variant: section.settings.button_1_variant,
+    underline: section.settings.button_1_underline %}"
+  position: 6492..7177
+{%- endcomment -%}

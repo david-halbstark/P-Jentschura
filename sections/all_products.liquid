@@ -33,7 +33,7 @@
               <div class="product_filter_element">
                 <div class="product_filter_top">
                   <div class="product_filter_top_left">
-                    {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
+                    {% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading, variant: section.settings.heading_variant, max_width: section.settings.heading_max_width %}
                   </div>
                   <div class="product_filter_top_right">
                     <div li-for:inside="filter in collection.filters" class="product_filter_filters">
@@ -298,4 +298,19 @@
             "blocks": []
         }
     ]
-} {% endschema %}
+} {% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'heading', tag: section.settings.heading_tag, visually_hidden:
+    section.settings.heading_visually_hidden, tidy_text: section.settings.heading_tidy_text,
+    heading: section.settings.heading, custom_class: , variant: section.settings.heading_variant,
+    max_width: section.settings.heading_max_width %}"
+  to: "{% render 'heading', tag: section.settings.heading_tag, visually_hidden: section.settings.heading_visually_hidden,
+    tidy_text: section.settings.heading_tidy_text, heading: section.settings.heading,
+    variant: section.settings.heading_variant, max_width: section.settings.heading_max_width
+    %}"
+  position: 2426..2714
+{%- endcomment -%}

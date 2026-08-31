@@ -4,7 +4,7 @@
                           {% render 'heading', custom_class: 'u-margin-bottom-0 u-min-width-auto', heading: footer_group.settings.heading, tag: 'h3', variant: 'u-text-eyebrow-base' %}
                           <div data-element="footer-accordion-icon" class="footer_group_top_icon_wrap">
                             <div class="footer_group_top_icon">
-                              {% render 'icon', custom_class: , icon: 'chevron_down', aria-hidden: true %}
+                              {% render 'icon', icon: 'chevron_down', aria-hidden: true %}
                             </div>
                           </div>
                         </div>
@@ -23,7 +23,7 @@
                                     {% render 'typography', variant: 'u-text-link-large u-min-width-auto u-margin-bottom-0', text: link_title, tag: 'span' %}
                                     {% if tag_text != blank %}    <div li-if="tag_text != blank" class="footer_group_item_tag">
     
-                                      {% render 'tag', custom_class: , tag: tag_text, variant: 'pill', pill_text_size: 'u-text-body-small' %}
+                                      {% render 'tag', tag: tag_text, variant: 'pill', pill_text_size: 'u-text-body-small' %}
                                         </div>
 {% endif %}
                                     {% if is_external %}    <div li-if="is_external" class="footer_group_item_icon">
@@ -44,3 +44,19 @@
                         </div>
                       </div>
                     </section>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon', custom_class: , icon: 'chevron_down', aria-hidden: true
+    %}"
+  to: "{% render 'icon', icon: 'chevron_down', aria-hidden: true %}"
+  position: 568..628
+- from: "{% render 'tag', custom_class: , tag: tag_text, variant: 'pill', pill_text_size:
+    'u-text-body-small' %}"
+  to: "{% render 'tag', tag: tag_text, variant: 'pill', pill_text_size: 'u-text-body-small'
+    %}"
+  position: 2498..2585
+{% endcomment %}

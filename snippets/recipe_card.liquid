@@ -12,7 +12,7 @@
                                   <div class="recipe_card_bot_top">
                                     <div class="recipe_card_text u-margin-trim u-alignment-center">
                                       {% render 'heading', variant: 'u-text-h4-primary', heading: title, tag: 'h3' %}
-                                      {% render 'paragraph', variant: 'u-text-body-base', custom_class: 'u-margin-bottom-0 u-color-3', paragraph: short_description | metafield_tag %}
+                                      {% render 'paragraph', variant: 'u-text-body-base', custom_class: 'u-margin-bottom-0 u-color-3', paragraph: short_description %}
                                     </div>
                                   </div>
                                   <div class="recipe_card_bot_bot">
@@ -44,3 +44,15 @@
                                 </div>
                               </div>
                             </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'paragraph', variant: 'u-text-body-base', custom_class: 'u-margin-bottom-0
+    u-color-3', paragraph: short_description | metafield_tag %}"
+  to: "{% render 'paragraph', variant: 'u-text-body-base', custom_class: 'u-margin-bottom-0
+    u-color-3', paragraph: short_description %}"
+  position: 1145..1273
+{% endcomment %}

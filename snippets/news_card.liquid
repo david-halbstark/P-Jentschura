@@ -9,8 +9,20 @@
                               <div class="news_slider_card_bot u-margin-trim">
                                 {% render 'typography', custom_class: 'u-color-3 u-margin-bottom-6', text: eyebrow, tag: 'div', variant: 'u-text-body-small' %}
                                 {% render 'heading', variant: 'u-text-h3-primary', heading: title, tag: 'h3' %}
-                                {% render 'paragraph', variant: 'u-text-body-base u-color-3', custom_class: u-color-3, paragraph: description | metafield_tag %}
+                                {% render 'paragraph', variant: 'u-text-body-base u-color-3', custom_class: u-color-3, paragraph: description %}
                               </div>
                               {% render 'clickable', url: url, label: title, mode: 'link' %}
                             </div>
                           </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'paragraph', variant: 'u-text-body-base u-color-3', custom_class:
+    u-color-3, paragraph: description | metafield_tag %}"
+  to: "{% render 'paragraph', variant: 'u-text-body-base u-color-3', custom_class:
+    u-color-3, paragraph: description %}"
+  position: 1022..1134
+{% endcomment %}
