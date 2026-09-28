@@ -239,7 +239,7 @@
         "heading_max_width": 40,
         "heading_tidy_text": true,
         "button_1_label": "Jetzt entdecken",
-        "button_1_url": "shopify://pages/rubriken",
+        "button_1_url": "shopify://pages/basische-konzepte",
         "card_heading_max_width": 20,
         "card_paragraph_max_width": 60,
         "card_button_1_label": "Mehr erfahren"
